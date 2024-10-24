@@ -1,0 +1,8 @@
+clear @s
+give @s pumpkin_seeds[item_name='{"text":"Claws","color":"gold","italic":false}',lore=['{"text":"Don\'t get too close.","color":"dark_gray"}'],enchantments={sharpness:5},hide_additional_tooltip={}] 1
+item replace entity @s hotbar.1 with light_blue_dye[item_name='{"text":"Speed Boost","color":"gold","italic":false}',lore=['{"text":"Drop to enter sprinting mode.","color":"dark_gray"}']] 4
+give @s cooked_beef[item_name='{"text":"Steak","color":"gold","italic":false}',lore=['{"text":"Eat to regenerate.","color":"dark_gray"}']] 16
+item replace entity @s armor.head with leather_helmet[item_name='{"text":"Cheetah\'s Hat","color":"gold","italic":false}',lore=['{"text":"ZOOOMMMM!!!","color":"dark_gray"}'],dyed_color=13812827,unbreakable={},hide_additional_tooltip={}]
+item replace entity @s armor.chest with leather_chestplate[item_name='{"text":"Cheetah\'s Chestpiece","color":"gold","italic":false}',lore=['{"text":"Breathable leather. If that\'s a thing.","color":"dark_gray"}'],dyed_color=13812827,unbreakable={},hide_additional_tooltip={}]
+item replace entity @s armor.legs with leather_leggings[item_name='{"text":"Pants for Running","color":"gold","italic":false}',lore=['{"text":"Great for sprinting around.","color":"dark_gray"}'],dyed_color=13812827,unbreakable={},hide_additional_tooltip={}]
+item replace entity @s armor.feet with leather_boots[item_name='{"text":"Fancy Sneakers","color":"gold","italic":false}',lore=['{"text":"Outrun them!","color":"dark_gray"}'],dyed_color=13812827,unbreakable={},hide_additional_tooltip={}]

@@ -1,0 +1,7 @@
+clear @s
+effect give @s minecraft:water_breathing 1000000 100 true
+give @s trident[item_name='{"text":"Poseidon\'s Trident","color":"dark_aqua","italic":false}',lore=['{"text":"Good for melee. Good for throwing.","color":"dark_gray"}'],unbreakable={},enchantments={loyalty:7},hide_additional_tooltip={}]
+give @s cooked_beef[item_name='{"text":"Steak","color":"green","italic":false}',lore=['{"text":"Eat to regenerate.","color":"dark_gray"}']] 16
+item replace entity @s armor.chest with leather_chestplate[item_name='{"text":"Poseidon\'s Tunic","color":"dark_aqua","italic":false}',lore=['{"text":"Keep yourself covered.","color":"dark_gray"}'],dyed_color=5345997,unbreakable={},hide_additional_tooltip={}]
+item replace entity @s armor.legs with leather_leggings[item_name='{"text":"Poseidon\'s Leggings","color":"dark_aqua","italic":false}',lore=['{"text":"Waterproof. Or something.","color":"dark_gray"}'],dyed_color=5345997,unbreakable={},hide_additional_tooltip={}]
+item replace entity @s armor.feet with leather_boots[item_name='{"text":"Swimming Boots","color":"dark_aqua","italic":false}',lore=['{"text":"Drastically increases swim speed.","color":"dark_gray"}'],dyed_color=5345997,unbreakable={},enchantments={depth_strider:5},hide_additional_tooltip={}]

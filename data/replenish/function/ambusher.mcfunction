@@ -1,0 +1,8 @@
+clear @s
+give @s iron_sword[item_name='{"text":"Steel Dagger","color":"dark_purple","italic":false}',lore=['{"text":"Crafted by an expert blacksmith.","color":"dark_gray"}'],unbreakable={},hide_additional_tooltip={}]
+item replace entity @s hotbar.1 with nether_star[item_name='{"text":"Ambush Enemy","color":"dark_purple","italic":false}',lore=['{"text":"Drop to be teleported to a random enemy.","color":"dark_gray"}']]
+give @s cooked_beef[item_name='{"text":"Steak","color":"dark_purple","italic":false}',lore=['{"text":"Eat to regenerate.","color":"dark_gray"}']] 16
+item replace entity @s armor.chest with leather_chestplate[item_name='{"text":"Ambusher\'s Cloak","color":"dark_purple","italic":false}',lore=['{"text":"Allows for easy concealment.","color":"dark_gray"}'],dyed_color=2168370,unbreakable={},hide_additional_tooltip={}]
+item replace entity @s armor.legs with leather_leggings[item_name='{"text":"Ambusher\'s Pants","color":"dark_purple","italic":false}',lore=['{"text":"Make sure you can see yourself!","color":"dark_gray"}'],dyed_color=2168370,unbreakable={},hide_additional_tooltip={}]
+item replace entity @s armor.feet with leather_boots[item_name='{"text":"Ambusher\'s Shoes","color":"dark_purple","italic":false}',lore=['{"text":"Unbelievably silent.","color":"dark_gray"}'],dyed_color=2168370,unbreakable={},hide_additional_tooltip={}]
+scoreboard players set @s ambushDisplay 0

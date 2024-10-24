@@ -1,0 +1,8 @@
+clear @s
+give @s iron_axe[item_name='{"text":"Nordic Battleaxe","color":"dark_green","italic":false}',lore=['{"text":"Hit them hard.","color":"dark_gray"}'],unbreakable={},hide_additional_tooltip={}]
+give @s cooked_beef[item_name='{"text":"Steak","color":"dark_green","italic":false}',lore=['{"text":"Eat to regenerate.","color":"dark_gray"}']] 16
+item replace entity @s weapon.offhand with shield[banner_patterns=[{color:"cyan",pattern:"minecraft:circle"}],item_name='{"text":"Classic Buckler","color":"dark_green","italic":false}',lore=['{"text":"Ehh, it\'s not really round...","color":"dark_gray"}'],unbreakable={},hide_additional_tooltip={}]
+item replace entity @s armor.head with iron_helmet[item_name='{"text":"Viking\'s Helmet","color":"dark_green","italic":false}',lore=['{"text":"They. Did. Not. Have. Horns.","color":"dark_gray"}'],unbreakable={},hide_additional_tooltip={}]
+item replace entity @s armor.chest with leather_chestplate[item_name='{"text":"Rugged Shirt","color":"dark_green","italic":false}',lore=['{"text":"The viking\'s favourite.","color":"dark_gray"}'],dyed_color=6110759,unbreakable={},hide_additional_tooltip={}]
+item replace entity @s armor.legs with leather_leggings[item_name='{"text":"Old Pants","color":"dark_green","italic":false}',lore=['{"text":"Someone needs to wash these...","color":"dark_gray"}'],dyed_color=6110759,unbreakable={},hide_additional_tooltip={}]
+item replace entity @s armor.feet with leather_boots[item_name='{"text":"Black-ish Boots","color":"dark_green","italic":false}',lore=['{"text":"These are quite pretty.","color":"dark_gray"}'],dyed_color=2629658,unbreakable={},hide_additional_tooltip={}]

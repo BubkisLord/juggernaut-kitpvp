@@ -1,0 +1,12 @@
+execute as @a[scores={killstreak=5}] run function scoreboard:killstreak_5
+execute as @a[scores={killstreak=11}] run function scoreboard:killstreak_10
+execute as @a[scores={killstreak=17}] run function scoreboard:killstreak_15
+execute as @a[scores={killstreak=23}] run function scoreboard:killstreak_20
+execute as @a[scores={killstreak=29}] run function scoreboard:killstreak_25
+execute as @a[scores={killstreak=35}] run function scoreboard:killstreak_30
+execute as @a[scores={killstreak=41}] run function scoreboard:killstreak_35
+execute as @a[scores={killstreak=47}] run function scoreboard:killstreak_40
+execute as @a[scores={killstreak=53}] run function scoreboard:killstreak_45
+execute as @a[scores={killstreak=59}] run function scoreboard:killstreak_50
+execute as @a[scores={xpbar=1}] run function scoreboard:xpbar
+execute as @a[scores={health=0}] run function scoreboard:respawning

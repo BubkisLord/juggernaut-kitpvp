@@ -1,0 +1,10 @@
+{
+    "condition": "minecraft:entity_properties",
+    "entity": "this",
+    "predicate": {
+        "nbt": "{Tags:[\"arrow_rider\"]}",
+        "vehicle": {
+            "type": "minecraft:arrow"
+        }
+    }
+}

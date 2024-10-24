@@ -1,0 +1,7 @@
+clear @s
+give @s stone_sword[item_name='{"text":"Stone Sabre","color":"dark_green","italic":false}',lore=['{"text":"A trusty weapon.","color":"dark_gray"}'],unbreakable={},hide_additional_tooltip={}]
+give @s cooked_beef[item_name='{"text":"Steak","color":"dark_green","italic":false}',lore=['{"text":"Eat to regenerate.","color":"dark_gray"}']] 16
+item replace entity @s armor.head with cactus[item_name='{"text":"Cactus Hat","color":"dark_green","italic":false}',lore=['{"text":"It\'s actually not a hat.","color":"dark_gray"}'],dyed_color=1404953,unbreakable={},hide_additional_tooltip={}]
+item replace entity @s armor.chest with leather_chestplate[item_name='{"text":"Chestpiece with Needles","color":"dark_green","italic":false}',lore=['{"text":"Don\'t touch them.","color":"dark_gray"}'],dyed_color=1404953,enchantments={thorns:3},unbreakable={},hide_additional_tooltip={}]
+item replace entity @s armor.legs with leather_leggings[item_name='{"text":"Cactus Leggings","color":"dark_green","italic":false}',lore=['{"text":"Ouch! These needles hurt!","color":"dark_gray"}'],dyed_color=1404953,enchantments={thorns:3},unbreakable={},hide_additional_tooltip={}]
+item replace entity @s armor.feet with leather_boots[item_name='{"text":"Poorly designed Boots","color":"dark_green","italic":false}',lore=['{"text":"Why would you put needles on the INSIDE?!","color":"dark_gray"}'],dyed_color=1404953,enchantments:={thorns:3},unbreakable={},hide_additional_tooltip={}]

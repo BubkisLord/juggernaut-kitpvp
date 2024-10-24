@@ -1,0 +1,3 @@
+tellraw @s [{"text":"\n"},{"text":"[","color":"dark_gray","bold":true},{"text":"KitPvP","color":"gold","bold":true},{"text":"]","color":"dark_gray","bold":true},{"text":" Error: You have not yet unlocked this kit.","color":"yellow","bold":false},{"text":"\n"}]
+execute at @s run playsound minecraft:ui.button.click master @s ~ ~ ~ 0.4 1.5
+execute at @s run playsound minecraft:block.note_block.didgeridoo master @s ~ ~ ~ 1 1.2

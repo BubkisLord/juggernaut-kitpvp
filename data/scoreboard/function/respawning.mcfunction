@@ -1,0 +1,2 @@
+execute if entity @e[type=armor_stand,tag=juggernaut_manager,scores={game_state=0}] run function scoreboard:kitpvp_respawn
+execute unless entity @e[type=armor_stand,tag=juggernaut_manager,scores={game_state=0}] run function juggernaut:juggernaut_respawn
