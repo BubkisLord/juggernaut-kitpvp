@@ -1,4 +1,28 @@
 #Samurai
+execute as @a[tag=samurai,scores={damage_dealt=1..},nbt={Inventory:[{id:"minecraft:red_dye",Slot:-106b}]}] run scoreboard players add @s ryujins_wrath 1
+execute as @a[tag=samurai,scores={damage_dealt=1..},nbt={Inventory:[{id:"minecraft:cyan_dye",Slot:-106b}]}] run scoreboard players add @s bushido_flow 1
+execute as @a[tag=samurai,scores={damage_dealt=1..}] run scoreboard players remove @s damage_dealt 1
+
+# The more ryujins wrath, the more strength and recovery the samurai gains
+execute as @a[tag=samurai,scores={ryujins_wrath=15..}] at @s run effect give @s strength 1 0 true
+execute as @a[tag=samurai,scores={ryujins_wrath=30..}] at @s run effect give @s regeneration 2 0 true
+execute as @a[tag=samurai,scores={ryujins_wrath=45..}] at @s run effect give @s strength 1 1 true
+execute as @a[tag=samurai,scores={ryujins_wrath=60..}] at @s run effect give @s regeneration 2 1 true
+execute as @a[tag=samurai,scores={ryujins_wrath=80..}] at @s run effect give @s strength 1 2 true
+execute as @a[tag=samurai,scores={ryujins_wrath=100..}] at @s run effect give @s regeneration 2 2 true
+execute as @a[tag=samurai,scores={ryujins_wrath=200..}] at @s run effect give @s strength 1 3 true
+execute as @a[tag=samurai,scores={ryujins_wrath=200..}] at @s run effect give @s regeneration 2 4 true
+
+# The more bushido flow, the more speed and endurance the samurai gains
+execute as @a[tag=samurai,scores={bushido_flow=15..}] at @s run effect give @s speed 1 0 true
+execute as @a[tag=samurai,scores={bushido_flow=30..}] at @s run effect give @s resistance 2 0 true
+execute as @a[tag=samurai,scores={bushido_flow=45..}] at @s run effect give @s speed 1 1 true
+execute as @a[tag=samurai,scores={bushido_flow=60..}] at @s run effect give @s resistance 1 1 true
+execute as @a[tag=samurai,scores={bushido_flow=80..}] at @s run effect give @s speed 1 2 true
+execute as @a[tag=samurai,scores={bushido_flow=100..}] at @s run effect give @s resistance 1 2 true
+execute as @a[tag=samurai,scores={bushido_flow=200..}] at @s run effect give @s speed 1 3 true
+execute as @a[tag=samurai,scores={bushido_flow=200..}] at @s run effect give @s resistance 1 4 true
+
 execute as @e[type=item,nbt={Item:{id:"minecraft:gunpowder"}}] at @s run execute as @p[tag=samurai,distance=..3] run function abilities:dance_of_scattered_steps
 
 execute as @a[tag=samurai,scores={scattered_steps_duration=1..}] at @s run function abilities:scattered_aura
