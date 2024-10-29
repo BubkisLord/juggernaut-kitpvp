@@ -35,9 +35,5 @@ execute as @a[tag=shaman,tag=lobby.player,tag=autorespawn,scores={health=20}] ru
 execute as @a[tag=deflector,tag=lobby.player,tag=autorespawn,scores={health=20}] run function kits:deflector
 execute as @a[tag=alchemist,tag=lobby.player,tag=autorespawn,scores={health=20}] run function kits:alchemist
 
-execute as @a[tag=!lobby.player,tag=!tutorial.player,tag=!autorespawn] if entity @e[type=armor_stand,tag=juggernaut_manager,scores={game_state=0}] run item replace entity @s hotbar.7 with red_bed[item_name='[{"text":"Auto-Respawn: ","color":"yellow","italic":false},{"text":"[","color":"dark_gray"},{"text":"OFF","color":"red"},{"text":"]","color":"dark_gray"}]',lore=['{"text":"Drop this item to toggle","color":"dark_gray"}','{"text":"Auto-Respawn on.","color":"dark_gray"}'],hide_additional_tooltip={}]
-execute as @a[tag=!lobby.player,tag=!tutorial.player,tag=autorespawn] if entity @e[type=armor_stand,tag=juggernaut_manager,scores={game_state=0}] run item replace entity @s hotbar.7 with lime_bed[item_name='[{"text":"Auto-Respawn: ","color":"yellow","italic":false},{"text":"[","color":"dark_gray"},{"text":"ON","color":"green"},{"text":"]","color":"dark_gray"}]',lore=['{"text":"Drop this item to toggle","color":"dark_gray"}','{"text":"Auto-Respawn off.","color":"dark_gray"}'],hide_additional_tooltip={}]
-execute as @a[tag=!lobby.player,tag=!tutorial.player,tag=autorespawn] unless entity @e[type=armor_stand,tag=juggernaut_manager,scores={game_state=0}] run item replace entity @s hotbar.7 with air
-
 execute as @e[type=item,nbt={Item:{id:"minecraft:red_bed"}}] at @s as @p run function other:autorespawn_toggle_on
 execute as @e[type=item,nbt={Item:{id:"minecraft:lime_bed"}}] at @s as @p run function other:autorespawn_toggle_off
