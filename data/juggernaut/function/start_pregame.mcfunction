@@ -4,6 +4,8 @@ tag @a[limit=1,sort=random] add juggernaut
 tag @a[tag=!juggernaut] add runner
 clear @a
 
+function survival:remove_chests
+
 tp @a[tag=juggernaut] 2054.5 114 0.5 facing 2054.5 114 1.5
 tp @a[tag=runner] 2054.5 124 0.5 facing 2054.5 124 1.5
 execute as @a[tag=juggernaut] run playsound music_disc.creator master @s ~ ~ ~ 3 0.75
