@@ -1,0 +1,94 @@
+{
+    "type": "minecraft:chest",
+    "pools": [
+        {
+            "rolls": 2,
+            "entries": [
+                {
+                    "type": "item",
+                    "name": "minecraft:netherite_sword",
+                    "quality": 1,
+                    "functions": [
+                        {
+                            "function": "enchant_with_levels",
+                            "levels": 60
+                        }
+                    ],
+                    "weight": 7
+                },
+                {
+                    "type": "item",
+                    "name": "minecraft:netherite_chestplate",
+                    "quality": 1,
+                    "functions": [
+                        {
+                            "function": "enchant_with_levels",
+                            "levels": 60
+                        }
+                    ],
+                    "weight": 5
+                },
+                {
+                    "type": "item",
+                    "name": "minecraft:netherite_leggings",
+                    "quality": 1,
+                    "functions": [
+                        {
+                            "function": "enchant_with_levels",
+                            "levels": 60
+                        }
+                    ],
+                    "weight": 5
+                },
+                {
+                    "type": "item",
+                    "name": "minecraft:netherite_helmet",
+                    "quality": 1,
+                    "functions": [
+                        {
+                            "function": "enchant_with_levels",
+                            "levels": 60
+                        }
+                    ],
+                    "weight": 5
+                },
+                {
+                    "type": "item",
+                    "name": "minecraft:netherite_boots",
+                    "quality": 1,
+                    "functions": [
+                        {
+                            "function": "enchant_with_levels",
+                            "levels": 60
+                        }
+                    ],
+                    "weight": 5
+                },
+                {
+                    "type": "item",
+                    "name": "minecraft:golden_apple",
+                    "functions": [
+                        {
+                            "function": "set_count",
+                            "count": 4,
+                            "add": true
+                        }
+                    ],
+                    "weight": 8
+                },
+                {
+                    "type": "item",
+                    "name": "minecraft:enchanted_golden_apple",
+                    "functions": [
+                        {
+                            "function": "set_count",
+                            "count": 1,
+                            "add": true
+                        }
+                    ],
+                    "weight": 5
+                }
+            ]
+        }
+    ]
+}

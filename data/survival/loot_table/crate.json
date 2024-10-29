@@ -1,0 +1,29 @@
+{
+    "pools": [
+        {
+            "rolls": 1,
+            "entries": [
+                {
+                    "type": "loot_table",
+                    "value": "survival:chests/common",
+                    "weight": 30
+                },
+                {
+                    "type": "loot_table",
+                    "value": "survival:chests/uncommon",
+                    "weight": 30
+                },
+                {
+                    "type": "loot_table",
+                    "value": "survival:chests/rare",
+                    "weight": 20
+                },
+                {
+                    "type": "loot_table",
+                    "value": "survival:chests/legendary",
+                    "weight": 3
+                }
+            ]
+        }
+    ]
+}

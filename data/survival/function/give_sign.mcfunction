@@ -1,0 +1,1 @@
+give @s minecraft:oak_sign[minecraft:block_entity_data={id:"sign",front_text:{messages:['{"text": "-=+=+=+=-","clickEvent": {"action":"run_command","value":"/function survival:start"}}','{"text": "Survival","bold": true,"color": "dark_blue"}','{"text": "Start Game","italic": true,"color": "gray"}','{"text": "-=+=+=+=-"}']}}]
