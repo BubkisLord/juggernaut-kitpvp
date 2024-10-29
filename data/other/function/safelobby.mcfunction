@@ -22,7 +22,7 @@ execute as @e[type=item,nbt={Item:{id:"minecraft:dark_oak_door"}}] at @s as @p r
 execute as @e[type=item,nbt={Item:{id:"minecraft:chest"}}] at @s as @p run function tp:kit_select_tp
 
 #Spawnpoint
-execute if entity @e[type=armor_stand,tag=juggernaut_manager,scores={game_state=0}] run spawnpoint @a 2000 100 0
+execute if entity @e[type=armor_stand,tag=juggernaut_manager,scores={game_state=0}] if entity @e[type=armor_stand,tag=surv_game_manager,scores={game_state=0}] run spawnpoint @a 2000 100 0
 
 #Clearing extra lobby items and clearing armour slots
 scoreboard players add @a[tag=lobby.player] lobby_clearcount 1
@@ -33,7 +33,7 @@ item replace entity @a[tag=lobby.player] armor.legs with air
 item replace entity @a[tag=lobby.player] armor.feet with air
 
 #Forcing adventure mode
-gamemode adventure @a[tag=!spectator,name=!"BubkisLord"]
+# gamemode adventure @a[tag=!spectator,name=!"BubkisLord"]
 gamemode spectator @a[tag=spectator]
 
 #Remove old tags
