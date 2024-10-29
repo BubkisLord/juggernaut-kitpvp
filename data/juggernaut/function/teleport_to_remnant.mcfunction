@@ -1,0 +1,1 @@
+execute if function juggernaut:blinker_teleport_raycast run tp @s @n[tag=blinker_teleporting]
