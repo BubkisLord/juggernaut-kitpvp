@@ -1,6 +1,7 @@
 {
  "values": [
  "juggernaut:mainloop",
+ "survival:loop/try_mainloop",
  "tp:shulker_tp",
  "text:bossbars",
  "abilities:kitabilities",
