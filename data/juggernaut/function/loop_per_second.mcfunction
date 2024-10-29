@@ -28,6 +28,9 @@ execute if entity @a[tag=juggernaut] run tag @a[tag=juggernaut] remove is_glowin
 execute as @a unless entity @e[type=armor_stand,tag=juggernaut_manager,scores={game_state=0}] if score @s jug_kit_cooldown > #0 var run scoreboard players remove @s jug_kit_cooldown 1
 execute as @a if entity @e[type=armor_stand,tag=juggernaut_manager,scores={game_state=0}] if score @s jug_kit_cooldown > #0 var run scoreboard players set @s jug_kit_cooldown 0
 
+execute as @a unless entity @e[type=armor_stand,tag=juggernaut_manager,scores={game_state=0}] if score @s jug_kit_cooldown_2 > #0 var run scoreboard players remove @s jug_kit_cooldown_2 1
+execute as @a if entity @e[type=armor_stand,tag=juggernaut_manager,scores={game_state=0}] if score @s jug_kit_cooldown_2 > #0 var run scoreboard players set @s jug_kit_cooldown_2 0
+
 # Engineer tower cooldowns/duration
 execute as @e[type=armor_stand,tag=engineer_tower] run scoreboard players remove @s var 1
 execute as @e[tag=engineer] if score @s revealing_tower_cooldown > #0 var run scoreboard players remove @s revealing_tower_cooldown 1
