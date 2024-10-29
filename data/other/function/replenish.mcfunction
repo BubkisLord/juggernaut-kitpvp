@@ -47,4 +47,4 @@ execute as @s[tag=engineer] run function juggernaut:replenish_engineer
 execute as @s[tag=witchdoctor] run function juggernaut:replenish_witchdoctor
 execute as @s[tag=juggernaut] run function juggernaut:replenish_jug_steak
 
-# execute as @s[tag=samurai] run function replenish:samurai
+execute as @s[tag=samurai] run function replenish:samurai
