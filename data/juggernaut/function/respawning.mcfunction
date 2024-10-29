@@ -31,3 +31,4 @@ execute if score @s lives_remaining < #1 var run tag @s remove survivor
 execute if score @s lives_remaining < #1 var run attribute @s generic.max_health base set 20
 execute if score @s lives_remaining < #1 var run spawnpoint @s 2000 100 0
 execute if score @s lives_remaining < #1 var run tag @s add lobby.player
+execute if score @s lives_remaining < #1 var run clear @s
