@@ -7,7 +7,7 @@
                 {
                     "type": "item",
                     "name": "minecraft:netherite_sword",
-                    "quality": 1,
+                    "quality": 2,
                     "functions": [
                         {
                             "function": "enchant_with_levels",
@@ -19,7 +19,7 @@
                 {
                     "type": "item",
                     "name": "minecraft:netherite_chestplate",
-                    "quality": 1,
+                    "quality": 3,
                     "functions": [
                         {
                             "function": "enchant_with_levels",
@@ -31,7 +31,7 @@
                 {
                     "type": "item",
                     "name": "minecraft:netherite_leggings",
-                    "quality": 1,
+                    "quality": 2,
                     "functions": [
                         {
                             "function": "enchant_with_levels",
@@ -43,7 +43,7 @@
                 {
                     "type": "item",
                     "name": "minecraft:netherite_helmet",
-                    "quality": 1,
+                    "quality": 2,
                     "functions": [
                         {
                             "function": "enchant_with_levels",
@@ -55,7 +55,7 @@
                 {
                     "type": "item",
                     "name": "minecraft:netherite_boots",
-                    "quality": 1,
+                    "quality": 2,
                     "functions": [
                         {
                             "function": "enchant_with_levels",
@@ -67,6 +67,7 @@
                 {
                     "type": "item",
                     "name": "minecraft:golden_apple",
+                    "quality": 0,
                     "functions": [
                         {
                             "function": "set_count",
@@ -79,6 +80,7 @@
                 {
                     "type": "item",
                     "name": "minecraft:enchanted_golden_apple",
+                    "quality": 3,
                     "functions": [
                         {
                             "function": "set_count",

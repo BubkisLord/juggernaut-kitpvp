@@ -7,7 +7,7 @@
                 {
                     "type": "item",
                     "name": "minecraft:diamond_sword",
-                    "quality": 1,
+                    "quality": 3,
                     "functions": [
                         {
                             "function": "enchant_with_levels",
@@ -31,6 +31,7 @@
                 {
                     "type": "item",
                     "name": "minecraft:iron_helmet",
+                    "quality": 1,
                     "functions": [
                         {
                             "function": "enchant_randomly"
@@ -41,6 +42,7 @@
                 {
                     "type": "item",
                     "name": "minecraft:iron_boots",
+                    "quality": 1,
                     "functions": [
                         {
                             "function": "enchant_randomly"
@@ -51,6 +53,7 @@
                 {
                     "type": "item",
                     "name": "golden_carrot",
+                    "quality": 1,
                     "functions": [
                         {
                             "function": "set_count",
@@ -63,6 +66,7 @@
                 {
                     "type": "item",
                     "name": "golden_apple",
+                    "quality": 3,
                     "functions": [
                         {
                             "function": "set_count",
@@ -75,6 +79,7 @@
                 {
                     "type": "item",
                     "name": "bow",
+                    "quality": 3,
                     "functions": [
                         {
                             "function": "enchant_with_levels",
@@ -86,6 +91,7 @@
                 {
                     "type": "item",
                     "name": "fishing_rod",
+                    "quality": 1,
                     "weight": 1
                 }
             ]

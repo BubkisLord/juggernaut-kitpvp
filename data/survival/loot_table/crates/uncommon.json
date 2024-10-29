@@ -7,6 +7,7 @@
                 {
                     "type": "item",
                     "name": "minecraft:golden_apple",
+                    "quality": 4,
                     "functions": [
                         {
                             "function": "set_count",
@@ -19,6 +20,7 @@
                 {
                     "type": "item",
                     "name": "ender_pearl",
+                    "quality": 3,
                     "functions": [
                         {
                             "function": "set_count",
@@ -31,11 +33,11 @@
                 {
                     "type": "item",
                     "name": "minecraft:arrow",
-                    "quality": 0,
+                    "quality": 1,
                     "functions": [
                         {
                             "function": "set_count",
-                            "count": 64
+                            "count": 48
                         }
                     ],
                     "weight": 2

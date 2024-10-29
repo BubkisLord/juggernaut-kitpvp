@@ -6,21 +6,25 @@
                 {
                     "type": "loot_table",
                     "value": "survival:chests/common",
+                    "quality": 0,
                     "weight": 30
                 },
                 {
                     "type": "loot_table",
                     "value": "survival:chests/uncommon",
+                    "quality": 1,
                     "weight": 30
                 },
                 {
                     "type": "loot_table",
                     "value": "survival:chests/rare",
+                    "quality": 3,
                     "weight": 20
                 },
                 {
                     "type": "loot_table",
                     "value": "survival:chests/legendary",
+                    "quality": 5,
                     "weight": 2
                 }
             ]

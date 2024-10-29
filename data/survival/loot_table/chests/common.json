@@ -19,7 +19,7 @@
                 {
                     "type": "item",
                     "name": "minecraft:iron_sword",
-                    "quality": 1,
+                    "quality": 2,
                     "functions": [
                         {
                             "function": "enchant_with_levels",
@@ -55,6 +55,7 @@
                 {
                     "type": "item",
                     "name": "cooked_beef",
+                    "quality": 2,
                     "functions": [
                         {
                             "function": "set_count",
