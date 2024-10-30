@@ -33,7 +33,7 @@ item replace entity @a[tag=lobby.player] armor.legs with air
 item replace entity @a[tag=lobby.player] armor.feet with air
 
 #Forcing adventure mode
-# gamemode adventure @a[tag=!spectator,name=!"BubkisLord"]
+gamemode adventure @a[tag=!spectator,name=!"BubkisLord"]
 gamemode spectator @a[tag=spectator]
 
 #Remove old tags
