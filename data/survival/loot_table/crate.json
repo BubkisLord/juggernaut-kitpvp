@@ -5,25 +5,25 @@
             "entries": [
                 {
                     "type": "loot_table",
-                    "value": "survival:chests/common",
+                    "value": "survival:crates/common",
                     "quality": 0,
                     "weight": 30
                 },
                 {
                     "type": "loot_table",
-                    "value": "survival:chests/uncommon",
+                    "value": "survival:crates/uncommon",
                     "quality": 1,
                     "weight": 30
                 },
                 {
                     "type": "loot_table",
-                    "value": "survival:chests/rare",
+                    "value": "survival:crates/rare",
                     "quality": 3,
                     "weight": 20
                 },
                 {
                     "type": "loot_table",
-                    "value": "survival:chests/legendary",
+                    "value": "survival:crates/legendary",
                     "quality": 5,
                     "weight": 3
                 }

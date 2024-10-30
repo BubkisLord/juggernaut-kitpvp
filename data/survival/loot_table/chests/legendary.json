@@ -81,14 +81,7 @@
                     "type": "item",
                     "name": "minecraft:enchanted_golden_apple",
                     "quality": 3,
-                    "functions": [
-                        {
-                            "function": "set_count",
-                            "count": 1,
-                            "add": true
-                        }
-                    ],
-                    "weight": 5
+                    "weight": 2
                 }
             ]
         }

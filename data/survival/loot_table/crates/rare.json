@@ -96,7 +96,8 @@
                 {
                     "type": "loot_table",
                     "quality": 3,
-                    "value": "survival:positive_potions"
+                    "value": "survival:positive_potions",
+                    "weight": 3
                 }
             ]
         }

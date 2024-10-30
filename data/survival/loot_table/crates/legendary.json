@@ -52,6 +52,12 @@
                         }
                     ],
                     "weight": 4
+                },
+                {
+                    "type": "loot_table",
+                    "quality": 2,
+                    "value": "survival:positive_potions",
+                    "weight": 3
                 }
             ]
         }

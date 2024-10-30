@@ -7,7 +7,7 @@
                 {
                     "type": "item",
                     "name": "minecraft:golden_apple",
-                    "quality": 4,
+                    "quality": 5,
                     "functions": [
                         {
                             "function": "set_count",
@@ -40,6 +40,12 @@
                             "count": 48
                         }
                     ],
+                    "weight": 2
+                },
+                {
+                    "type": "loot_table",
+                    "quality": 3,
+                    "value": "survival:positive_potions",
                     "weight": 2
                 }
             ]

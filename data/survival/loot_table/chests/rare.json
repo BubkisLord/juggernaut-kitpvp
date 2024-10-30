@@ -18,7 +18,7 @@
                 },
                 {
                     "type": "item",
-                    "name": "minecraft:iron_leggings",
+                    "name": "minecraft:diamond_helmet",
                     "quality": 1,
                     "functions": [
                         {
@@ -26,11 +26,22 @@
                             "levels": 30
                         }
                     ],
+                    "weight": 5
+                },
+                {
+                    "type": "item",
+                    "name": "minecraft:diamond_chestplate",
+                    "quality": 1,
+                    "functions": [
+                        {
+                            "function": "enchant_randomly"
+                        }
+                    ],
                     "weight": 6
                 },
                 {
                     "type": "item",
-                    "name": "minecraft:iron_helmet",
+                    "name": "minecraft:diamond_leggings",
                     "quality": 1,
                     "functions": [
                         {
@@ -41,7 +52,7 @@
                 },
                 {
                     "type": "item",
-                    "name": "minecraft:iron_boots",
+                    "name": "minecraft:diamond_boots",
                     "quality": 1,
                     "functions": [
                         {

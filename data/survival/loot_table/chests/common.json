@@ -6,6 +6,19 @@
             "entries": [
                 {
                     "type": "item",
+                    "name": "minecraft:golden_apple",
+                    "quality": 100,
+                    "functions": [
+                        {
+                            "function": "set_count",
+                            "count": 6,
+                            "add": true
+                        }
+                    ],
+                    "weight": 1
+                },
+                {
+                    "type": "item",
                     "name": "minecraft:wooden_sword",
                     "quality": 1,
                     "functions": [
@@ -14,7 +27,7 @@
                             "levels": 10
                         }
                     ],
-                    "weight": 5
+                    "weight": 50
                 },
                 {
                     "type": "item",
@@ -26,7 +39,7 @@
                             "levels": 10
                         }
                     ],
-                    "weight": 5
+                    "weight": 50
                 },
                 {
                     "type": "item",
@@ -38,7 +51,7 @@
                             "levels": 30
                         }
                     ],
-                    "weight": 5
+                    "weight": 50
                 },
                 {
                     "type": "item",
@@ -50,7 +63,7 @@
                             "levels": 10
                         }
                     ],
-                    "weight": 5
+                    "weight": 50
                 },
                 {
                     "type": "item",
@@ -63,7 +76,7 @@
                             "add": true
                         }
                     ],
-                    "weight": 5
+                    "weight": 50
                 }
             ]
         }
