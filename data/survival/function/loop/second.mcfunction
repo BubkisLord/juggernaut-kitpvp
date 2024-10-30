@@ -6,7 +6,12 @@ execute as @e[type=armor_stand,tag=crate] at @s if entity @a[distance=..3] run s
 execute if score @n[type=armor_stand,tag=surv_game_manager] grace_period > #0 var run title @a actionbar [{"text": "Grace Period: ","bold": true},{"score":{"name":"@n[type=armor_stand,tag=surv_game_manager]","objective":"grace_period"},"bold": true},{"text": " seconds"}]
 execute as @n[type=armor_stand,tag=surv_game_manager] if score @s grace_period > #0 var run scoreboard players remove @s grace_period 1
 
-execute if score @n[type=armor_stand,tag=surv_game_manager] grace_period <= #0 var run worldborder add -0.33 1
+execute if score @n[type=armor_stand,tag=surv_game_manager] grace_period <= #0 var run worldborder add -0.5 1
+
+# Progress replenish chest timer
+execute if score #replenish_chest_timer var > #0 var run scoreboard players remove #replenish_chest_timer var 1
+execute if score #replenish_chest_timer var = #0 var run function survival:reset_chests
+execute if score #replenish_chest_timer var = #0 var run scoreboard players set #replenish_chest_timer var 120
 
 # Progress seconds until end of game
 scoreboard players set #15 var 15

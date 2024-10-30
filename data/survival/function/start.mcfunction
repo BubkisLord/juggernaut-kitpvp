@@ -39,10 +39,13 @@ function survival:reset_chests
 scoreboard players set #end_game_timer var 15
 
 # Set the worldborder
-worldborder set 200
+worldborder set 270
 
 # Remove any leftover items
 kill @e[type=item]
+
+# Set the replenish chest timer to 120s - 2 mins
+scoreboard players set #replenish_chest_timer var 120
 
 # Start the game
 scoreboard players set @n[type=armor_stand,tag=surv_game_manager] game_state 1

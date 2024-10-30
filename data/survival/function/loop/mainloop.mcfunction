@@ -14,7 +14,7 @@ execute as @a[scores={lives_remaining=1..}] run scoreboard players add #surv_pla
 # If only one player is alive, and time is up then end game.
 execute if score #end_game_timer var < #0 var run function survival:end_game
 
-execute as @a[nbt={Inventory:[{id:"minecraft:red_glazed_terracotta"}]}] at @s anchored eyes run summon fireball ^-0.2 ^ ^1 {Tags:["kill_on_end_game"]}
+execute as @a[nbt={Inventory:[{id:"minecraft:red_glazed_terracotta"}]}] at @s anchored eyes run summon fireball ^-0.2 ^ ^1 {Tags:["kill_on_end_game"],ExplosionPower:4}
 execute as @a[nbt={Inventory:[{id:"minecraft:red_glazed_terracotta"}]}] at @s run clear @s red_glazed_terracotta
 
 # Spawn Crates
@@ -25,10 +25,10 @@ execute as @e[type=armor_stand,tag=crate] run scoreboard players add #crate_coun
 
 
 # Indicate Chests
-execute as @e[tag=survival_chest_indicator,tag=common] at @s run particle dust{color:[0.0,0.6,0.0],scale:1} ~ ~1.3 ~ 0.1 2 0.1 0 8 force
-execute as @e[tag=survival_chest_indicator,tag=uncommon] at @s run particle dust{color:[0.4,1.0,0.4],scale:1} ~ ~1.3 ~ 0.1 2 0.1 0 8 force
-execute as @e[tag=survival_chest_indicator,tag=rare] at @s run particle dust{color:[0,1,1],scale:1} ~ ~1.3 ~ 0.1 2 0.1 0 8 force
-execute as @e[tag=survival_chest_indicator,tag=legendary] at @s run particle dust{color:[1.0,0.8,0.0],scale:1} ~ ~1.3 ~ 0.1 2 0.1 0 8 force
+execute as @e[tag=survival_chest_indicator,tag=common] at @s unless block ~ ~ ~ chest{Items:[]} run particle dust{color:[0.0,0.6,0.0],scale:1} ~ ~1.3 ~ 0.1 2 0.1 0 8 force
+execute as @e[tag=survival_chest_indicator,tag=uncommon] at @s unless block ~ ~ ~ chest{Items:[]} run particle dust{color:[0.4,1.0,0.4],scale:1} ~ ~1.3 ~ 0.1 2 0.1 0 8 force
+execute as @e[tag=survival_chest_indicator,tag=rare] at @s unless block ~ ~ ~ chest{Items:[]} run particle dust{color:[0,1,1],scale:1} ~ ~1.3 ~ 0.1 2 0.1 0 8 force
+execute as @e[tag=survival_chest_indicator,tag=legendary] at @s unless block ~ ~ ~ chest{Items:[]} run particle dust{color:[1.0,0.8,0.0],scale:1} ~ ~1.3 ~ 0.1 2 0.1 0 8 force
 
 
 # Allow Crates to be opened
