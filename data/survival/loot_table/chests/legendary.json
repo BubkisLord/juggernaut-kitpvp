@@ -22,8 +22,7 @@
                     "quality": 3,
                     "functions": [
                         {
-                            "function": "enchant_with_levels",
-                            "levels": 60
+                            "function": "enchant_randomly"
                         }
                     ],
                     "weight": 5
@@ -34,8 +33,7 @@
                     "quality": 2,
                     "functions": [
                         {
-                            "function": "enchant_with_levels",
-                            "levels": 60
+                            "function": "enchant_randomly"
                         }
                     ],
                     "weight": 5
@@ -46,8 +44,7 @@
                     "quality": 2,
                     "functions": [
                         {
-                            "function": "enchant_with_levels",
-                            "levels": 60
+                            "function": "enchant_randomly"
                         }
                     ],
                     "weight": 5
@@ -58,8 +55,7 @@
                     "quality": 2,
                     "functions": [
                         {
-                            "function": "enchant_with_levels",
-                            "levels": 60
+                            "function": "enchant_randomly"
                         }
                     ],
                     "weight": 5
