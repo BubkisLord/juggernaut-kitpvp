@@ -13,7 +13,7 @@ execute as @a[scores={lives_remaining=1..}] run scoreboard players add #surv_pla
 # If only one player is alive, and time is up then end game.
 execute if score #end_game_timer var < #0 var run function survival:end_game
 
-execute as @a[nbt={Inventory:[{id:"minecraft:red_glazed_terracotta"}]}] at @s anchored eyes run summon fireball ^-0.2 ^ ^1 {Tags:["kill_on_end_game"],ExplosionPower:4}
+execute as @a[nbt={Inventory:[{id:"minecraft:red_glazed_terracotta"}]}] at @s anchored eyes run summon fireball ^-0.2 ^ ^1 {Tags:["kill_on_end_game"],ExplosionPower:6}
 execute as @a[nbt={Inventory:[{id:"minecraft:red_glazed_terracotta"}]}] at @s run clear @s red_glazed_terracotta
 
 # Spawn Crates
