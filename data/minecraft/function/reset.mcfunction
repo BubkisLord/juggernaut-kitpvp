@@ -1,0 +1,2 @@
+function juggernaut:end_game
+function survival:end_game
