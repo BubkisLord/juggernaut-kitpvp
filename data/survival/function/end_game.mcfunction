@@ -6,6 +6,7 @@ scoreboard players set #surv_players_alive var 0
 scoreboard players set #max_crate_count var 0
 scoreboard players set #end_game_timer var 15
 scoreboard players set #crate_count var 0
+scoreboard players set #survival_teams var 0
 
 worldborder set 9999
 
