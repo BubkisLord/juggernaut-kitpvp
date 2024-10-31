@@ -51,6 +51,6 @@ scoreboard players set #replenish_chest_timer var 120
 scoreboard players set @n[type=armor_stand,tag=surv_game_manager] game_state 1
 
 # Set the grace period to 40 seconds
-scoreboard players set @n[type=armor_stand,tag=surv_game_manager] grace_period 40
+scoreboard players set #grace_period var 40
 
 spawnpoint @a 0 300 0

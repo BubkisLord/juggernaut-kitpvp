@@ -2,8 +2,8 @@
 execute at @e[tag=respawn_point] as @a[distance=..10] run tp @s @e[tag=arena.spawn,limit=1,sort=random]
 
 # Enforce Grace Period
-execute if score @n[type=armor_stand,tag=surv_game_manager] grace_period > #0 var run effect give @a weakness 1 255 true
-execute if score @n[type=armor_stand,tag=surv_game_manager] grace_period > #0 var run effect give @a resistance 1 255 true
+execute if score #grace_period var > #0 var run effect give @a weakness 1 255 true
+execute if score #grace_period var > #0 var run effect give @a resistance 1 255 true
 
 
 # If only one player is alive, wait 15 seconds and then end the game
