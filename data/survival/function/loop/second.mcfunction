@@ -3,8 +3,8 @@ execute as @e[type=armor_stand,tag=crate] at @s unless entity @a[distance=..3] r
 execute as @e[type=armor_stand,tag=crate] at @s if entity @a[distance=..3] run scoreboard players add @s var 1
 
 # Decrease Grace Period
-execute if score #grace_period var > #0 var run title @a actionbar [{"text": "Grace Period: ","bold": true},{"score":{"name":"@n[type=armor_stand,tag=surv_game_manager]","objective":"grace_period"},"bold": true},{"text": " seconds"}]
-execute as @n[type=armor_stand,tag=surv_game_manager] if score @s grace_period > #0 var run scoreboard players remove @s grace_period 1
+execute if score #grace_period var > #0 var run title @a actionbar [{"text": "Grace Period: ","bold": true},{"score":{"name":"#grace_period","objective":"var"},"bold": true},{"text": " seconds"}]
+execute if score #grace_period var > #0 var run scoreboard players remove #grace_period var 1
 
 # Make the worldborder close faster the more replenishments have occurred. Additionally, limit the minimum space to 5 block radius.
 execute store result score #worldborder_size var run worldborder get
