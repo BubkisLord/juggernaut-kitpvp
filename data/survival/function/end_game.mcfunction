@@ -8,6 +8,8 @@ scoreboard players set #end_game_timer var 15
 scoreboard players set #crate_count var 0
 scoreboard players set #survival_teams var 0
 
+team leave @a
+
 worldborder set 9999
 
 spawnpoint @a 2000 100 0
