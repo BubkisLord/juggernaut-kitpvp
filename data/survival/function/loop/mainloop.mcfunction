@@ -9,7 +9,6 @@ execute if score #grace_period var > #0 var run effect give @a resistance 1 255 
 # If only one player is alive, wait 15 seconds and then end the game
 # Calculate players left.
 scoreboard players set #surv_players_alive var 0
-scoreboard players set #1 var 1
 execute as @a[scores={lives_remaining=1..}] run scoreboard players add #surv_players_alive var 1
 # If only one player is alive, and time is up then end game.
 execute if score #end_game_timer var < #0 var run function survival:end_game
