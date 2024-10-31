@@ -23,6 +23,7 @@ tag @a remove has_hunters_mark
 tag @a remove dragon
 tag @a remove is_floating
 tag @a remove chain_hunter
+tag @a remove blinker
 clear @a
 kill @a
 gamerule showDeathMessages true
