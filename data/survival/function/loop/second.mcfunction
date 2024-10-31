@@ -9,10 +9,10 @@ execute if score #grace_period var > #0 var run scoreboard players remove #grace
 # Make the worldborder close faster the more replenishments have occurred. Additionally, limit the minimum space to 5 block radius.
 execute store result score #worldborder_size var run worldborder get
 
-execute if score #worldborder_size var > #5 var if score #times_replenished var = #0 var if score #grace_period var <= #0 var run worldborder add -0.25 1
-execute if score #worldborder_size var > #5 var if score #times_replenished var = #1 var if score #grace_period var <= #0 var run worldborder add -0.5 1
-execute if score #worldborder_size var > #5 var if score #times_replenished var = #2 var if score #grace_period var <= #0 var run worldborder add -0.75 1
-execute if score #worldborder_size var > #5 var if score #times_replenished var >= #3 var if score #grace_period var <= #0 var run worldborder add -2 1
+execute if score #worldborder_size var matches 11.. if score #times_replenished var = #0 var if score #grace_period var <= #0 var run worldborder add -0.25 1
+execute if score #worldborder_size var matches 11.. if score #times_replenished var = #1 var if score #grace_period var <= #0 var run worldborder add -0.5 1
+execute if score #worldborder_size var matches 11.. if score #times_replenished var = #2 var if score #grace_period var <= #0 var run worldborder add -0.75 1
+execute if score #worldborder_size var matches 11.. if score #times_replenished var >= #3 var if score #grace_period var <= #0 var run worldborder add -2 1
 
 
 # Progress replenish chest timer
@@ -37,7 +37,7 @@ execute if score #replenish_chest_timer var = #0 var run scoreboard players set 
 # Progress seconds until end of game
 scoreboard players set #15 var 15
 execute if score #surv_players_alive var = #1 var if score #end_game_timer var >= #15 var run tellraw @a [{"text": "#==== GAME OVER ====#","color": "dark_red","bold": true}]
-execute if score #survival_teams var matches ..0 if score #surv_players_alive var = #1 var if score #end_game_timer var >= #15 var as @a[scores={lives_remaining=1..}] run tellraw @a [{"selector": "@s","bold": true,"color": "red"},{"text": " Has Won!","color": "white","bold": false}]
-execute if score #survival_teams var matches 1.. if score #surv_players_alive var = #1 var if score #end_game_timer var >= #15 var as @a[scores={lives_remaining=1..}] run tellraw @a [{"text": "Team ","color": "white","bold": false},{"nbt":"team", "entity": "@s","bold": true},{"text": " Has Won!","color": "white","bold": false}]
+execute if score #surv_players_alive var = #1 var if score #end_game_timer var >= #15 var as @a[scores={lives_remaining=1..}] run tellraw @a [{"selector": "@s","bold": true,"color": "red"},{"text": " Has Won!","color": "white","bold": false}]
+# execute if score #survival_teams var matches 1.. if score #surv_players_alive var = #1 var if score #end_game_timer var >= #15 var as @a[scores={lives_remaining=1..}] run tellraw @a [{"text": "Team ","color": "white","bold": false},{"nbt":"team", "entity": "@s","bold": true},{"text": " Has Won!","color": "white","bold": false}]
 # execute if score #surv_players_alive var = #1 var run tellraw @a [{"text": "Game Ends In: "},{"score": {"name": "#end_game_timer","objective": "var"},"bold": true},{"text": " seconds","bold": false}]
 execute if score #surv_players_alive var = #1 var run scoreboard players remove #end_game_timer var 1
