@@ -77,18 +77,39 @@ execute as @a[tag=blinker,scores={jug_kit_cooldown=0}] if items entity @s hotbar
 execute as @a[tag=blinker] at @s if entity @e[type=item,nbt={Item:{id:"minecraft:ender_pearl"}},distance=..3] run item replace entity @s hotbar.2 with barrier[item_name='[{"text": "Teleport to Remnant | ","color": "dark_red","bold": true},{"text": "ON COOLDOWN","color": "red"}]'] 1
 execute as @a[tag=blinker,nbt={SelectedItem:{id:"minecraft:ender_pearl"}}] at @s run function juggernaut:blinker_teleport_raycast
 execute as @a[tag=blinker] at @s if entity @e[type=item,nbt={Item:{id:"minecraft:ender_pearl"}},distance=..3] run tp @s @n[tag=blinker_teleporting]
-execute as @a[tag=blinker,nbt={SelectedItem:{id:"minecraft:barrier"}}] run tag @e[tag=blinker_remnant] remove blinker_teleporting
+execute as @a[tag=blinker,nbt={SelectedItem:{id:"minecraft:barrier"}}] run scoreboard players add @s blinker_tp_timeout 1
 execute as @a[tag=blinker] at @s if entity @e[type=item,nbt={Item:{id:"minecraft:ender_pearl"}},distance=..3] run scoreboard players set @s jug_kit_cooldown 45
 execute as @a[tag=blinker] at @s as @e[type=item,nbt={Item:{id:"minecraft:ender_pearl"}},distance=..3] run kill @s
 
 execute as @a[tag=blinker] at @s unless entity @e[type=armor_stand,tag=blinker_radar] run summon armor_stand ~ ~ ~ {Invisible:true,Invulnerable:true,CustomNameVisible:false,NoGravity:true,Small:true,Tags:["blinker_radar"]}
-execute as @a[tag=blinker] at @s if entity @e[type=armor_stand,tag=blinker_remnant,sort=random,limit=1] run tp @n[type=armor_stand,tag=blinker_radar] ~ ~ ~ facing entity @e[type=armor_stand,tag=blinker_remnant,sort=random,limit=1]
+
+execute as @a[tag=blinker] at @s if entity @e[type=armor_stand,tag=blinker_remnant,sort=random,limit=1] unless entity @e[type=armor_stand,tag=blinker_teleporting] run tp @n[type=armor_stand,tag=blinker_radar] ~ ~ ~ facing entity @e[type=armor_stand,tag=blinker_remnant,sort=random,limit=1]
+
+execute as @a[tag=blinker] at @s if entity @e[type=armor_stand,tag=blinker_remnant,sort=random,limit=1] if entity @e[type=armor_stand,tag=blinker_teleporting] run tp @n[type=armor_stand,tag=blinker_radar] ~ ~ ~ facing entity @n[type=armor_stand,tag=blinker_teleporting]
+
 execute as @a[tag=blinker] at @s unless entity @e[type=armor_stand,tag=blinker_remnant,sort=random,limit=1] run tp @n[type=armor_stand,tag=blinker_radar] ~ ~ ~ facing ~ ~-1 ~
+
 execute as @e[type=armor_stand,tag=blinker_radar] at @s anchored eyes run particle dust{color:[100,0,0],scale:1} ^ ^ ^1 0.1 0.1 0.1 0 2 force @a[tag=blinker]
+execute as @e[type=armor_stand,tag=blinker_radar] at @s anchored eyes run particle dust{color:[0,100,0],scale:1} ^ ^ ^1 0.1 0.1 0.1 0 2 force @a[tag=blinker]
 
-execute as @a[tag=blinker,scores={jug_kit_cooldown_2=0}] at @s run summon armor_stand ~ ~ ~ {Invisible:true,Invulnerable:true,CustomNameVisible:false,NoGravity:true,Small:true,Tags:["blinker_remnant","kill_on_end_game"]}
+execute as @a[tag=blinker,scores={jug_kit_cooldown_2=0}] at @s run summon armor_stand ~ ~ ~ {Invulnerable:true,CustomNameVisible:false,NoGravity:true,Tags:["blinker_remnant","kill_on_end_game"]}
+
 execute as @a[tag=blinker,scores={jug_kit_cooldown_2=0}] run scoreboard players set @s jug_kit_cooldown_2 30
-
+execute as @a[tag=blinker] run scoreboard players set @s max_blinker_cooldown 30
+execute as @a[tag=blinker] run execute store result score @s blinker_cooldown_percent run scoreboard players get @s jug_kit_cooldown_2
+execute as @a[tag=blinker] run scoreboard players operation @s blinker_cooldown_percent *= #100 var
+execute as @a[tag=blinker] run scoreboard players operation @s blinker_cooldown_percent /= @s max_blinker_cooldown
+execute as @a[tag=blinker,scores={blinker_cooldown_percent=0}] run title @s actionbar [{"text":"||||||||||","color": "white","bold": true}]
+execute as @a[tag=blinker,scores={blinker_cooldown_percent=91..100}] run title @s actionbar [{"text":"|","color": "dark_red","bold": true},{"text":"|||||||||","color": "white","bold": true}]
+execute as @a[tag=blinker,scores={blinker_cooldown_percent=81..90}] run title @s actionbar [{"text":"||","color": "dark_red","bold": true},{"text":"||||||||","color": "white","bold": true}]
+execute as @a[tag=blinker,scores={blinker_cooldown_percent=71..80}] run title @s actionbar [{"text":"|||","color": "dark_red","bold": true},{"text":"|||||||","color": "white","bold": true}]
+execute as @a[tag=blinker,scores={blinker_cooldown_percent=61..70}] run title @s actionbar [{"text":"||||","color": "dark_red","bold": true},{"text":"||||||","color": "white","bold": true}]
+execute as @a[tag=blinker,scores={blinker_cooldown_percent=51..60}] run title @s actionbar [{"text":"|||||","color": "dark_red","bold": true},{"text":"|||||","color": "white","bold": true}]
+execute as @a[tag=blinker,scores={blinker_cooldown_percent=41..50}] run title @s actionbar [{"text":"||||||","color": "dark_red","bold": true},{"text":"||||","color": "white","bold": true}]
+execute as @a[tag=blinker,scores={blinker_cooldown_percent=31..40}] run title @s actionbar [{"text":"|||||||","color": "dark_red","bold": true},{"text":"|||","color": "white","bold": true}]
+execute as @a[tag=blinker,scores={blinker_cooldown_percent=21..30}] run title @s actionbar [{"text":"||||||||","color": "dark_red","bold": true},{"text":"||","color": "white","bold": true}]
+execute as @a[tag=blinker,scores={blinker_cooldown_percent=11..20}] run title @s actionbar [{"text":"|||||||||","color": "dark_red","bold": true},{"text":"|","color": "white","bold": true}]
+execute as @a[tag=blinker,scores={blinker_cooldown_percent=1..10}] run title @s actionbar [{"text":"||||||||||","color": "dark_red","bold": true}]
 
 
 # Dragon
@@ -189,9 +210,9 @@ execute at @a[tag=warlock] run execute as @e[type=item,nbt={Item:{id:"minecraft:
 execute at @a[tag=warlock] run execute as @e[type=item,nbt={Item:{id:"minecraft:black_dye"}},distance=..3] unless entity @e[type=armor_stand,tag=withering_surge] run function juggernaut:spawn_withering_surge
 
 #Particle effects
-execute at @e[type=armor_stand,tag=malevolent_aura] run particle dripping_lava ~ ~ ~ 16 8 16 0.00001 30 force @a[distance=..16]
+execute at @e[type=armor_stand,tag=malevolent_aura] run particle dripping_lava ~ ~ ~ 16 8 16 0.00001 20 force @a[distance=..16]
 # execute as @e[type=armor_stand,tag=malevolent_aura] at @s run function juggernaut:malevolent_sphere_recursive
-execute at @e[type=armor_stand,tag=banishment_glyph] run particle falling_dripstone_water ~ ~ ~ 16 8 16 0 80 force @a[distance=..16]
+execute at @e[type=armor_stand,tag=banishment_glyph] run particle dripping_water ~ ~ ~ 16 8 16 0 20 force @a[distance=..16]
 # execute as @e[type=armor_stand,tag=banishment_glyph] at @s run function juggernaut:banishment_sphere_recursive
 execute at @e[type=armor_stand,tag=withering_surge] run particle large_smoke ~ ~ ~ 16 8 16 0.00001 10 force @a[distance=..14]
 # execute as @e[type=armor_stand,tag=withering_surge] at @s run function juggernaut:withering_sphere_recursive
