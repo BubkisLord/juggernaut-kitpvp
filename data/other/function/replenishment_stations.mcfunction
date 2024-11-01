@@ -27,22 +27,16 @@ execute unless entity @e[type=armor_stand,tag=juggernaut_manager,scores={game_st
 # execute unless entity @e[type=armor_stand,tag=juggernaut_manager,scores={game_state=0}] run execute as @e[tag=replenishment.station] at @s if entity @a[tag=runner,limit=1,sort=nearest,distance=..6] if entity @a[tag=juggernaut,distance=24..] run particle minecraft:composter ~ ~2 ~ 0.1 60 0.1 0 60 force @a[tag=juggernaut]
 
 #If the game is juggernaut, allow the runners to progress them.
-execute as @e[tag=replenishment.station] at @s if entity @e[type=armor_stand,tag=juggernaut_manager,scores={game_state=1}] unless entity @e[type=armor_stand,tag=banishment_glyph,distance=..32] as @a[tag=runner,distance=0..3] run scoreboard players add @e[type=armor_stand,tag=juggernaut_manager] replenish_progress 1
-execute as @a[tag=blinker] if score @n[type=armor_stand,tag=juggernaut_manager] replenish_progress matches 10 run tellraw @s [{"text": "Replenishment at "},{"score": {"name": "@n[type=armor_stand,tag=juggernaut_manager]","objective": "replenish_progress"}}]
-execute as @a[tag=blinker] if score @n[type=armor_stand,tag=juggernaut_manager] replenish_progress matches 20 run tellraw @s [{"text": "Replenishment at "},{"score": {"name": "@n[type=armor_stand,tag=juggernaut_manager]","objective": "replenish_progress"}}]
-execute as @a[tag=blinker] if score @n[type=armor_stand,tag=juggernaut_manager] replenish_progress matches 30 run tellraw @s [{"text": "Replenishment at "},{"score": {"name": "@n[type=armor_stand,tag=juggernaut_manager]","objective": "replenish_progress"}}]
-execute as @a[tag=blinker] if score @n[type=armor_stand,tag=juggernaut_manager] replenish_progress matches 40 run tellraw @s [{"text": "Replenishment at "},{"score": {"name": "@n[type=armor_stand,tag=juggernaut_manager]","objective": "replenish_progress"}}]
-execute as @a[tag=blinker] if score @n[type=armor_stand,tag=juggernaut_manager] replenish_progress matches 50 run tellraw @s [{"text": "Replenishment at "},{"score": {"name": "@n[type=armor_stand,tag=juggernaut_manager]","objective": "replenish_progress"}}]
-execute as @a[tag=blinker] if score @n[type=armor_stand,tag=juggernaut_manager] replenish_progress matches 60 run tellraw @s [{"text": "Replenishment at "},{"score": {"name": "@n[type=armor_stand,tag=juggernaut_manager]","objective": "replenish_progress"}}]
-execute as @a[tag=blinker] if score @n[type=armor_stand,tag=juggernaut_manager] replenish_progress matches 70 run tellraw @s [{"text": "Replenishment at "},{"score": {"name": "@n[type=armor_stand,tag=juggernaut_manager]","objective": "replenish_progress"}}]
-execute as @a[tag=blinker] if score @n[type=armor_stand,tag=juggernaut_manager] replenish_progress matches 75 run tellraw @s [{"text": "Replenishment at "},{"score": {"name": "@n[type=armor_stand,tag=juggernaut_manager]","objective": "replenish_progress"}}]
-execute as @a[tag=blinker] if score @n[type=armor_stand,tag=juggernaut_manager] replenish_progress matches 80 run tellraw @s [{"text": "Replenishment at "},{"score": {"name": "@n[type=armor_stand,tag=juggernaut_manager]","objective": "replenish_progress"}}]
-execute as @a[tag=blinker] if score @n[type=armor_stand,tag=juggernaut_manager] replenish_progress matches 85 run tellraw @s [{"text": "Replenishment at "},{"score": {"name": "@n[type=armor_stand,tag=juggernaut_manager]","objective": "replenish_progress"}}]
-execute as @a[tag=blinker] if score @n[type=armor_stand,tag=juggernaut_manager] replenish_progress matches 90 run tellraw @s [{"text": "Replenishment at "},{"score": {"name": "@n[type=armor_stand,tag=juggernaut_manager]","objective": "replenish_progress"}}]
-execute as @a[tag=blinker] if score @n[type=armor_stand,tag=juggernaut_manager] replenish_progress matches 95 run tellraw @s [{"text": "Replenishment at "},{"score": {"name": "@n[type=armor_stand,tag=juggernaut_manager]","objective": "replenish_progress"}}]
-execute as @a[tag=blinker] if score @n[type=armor_stand,tag=juggernaut_manager] replenish_progress matches 100 run tellraw @s [{"text": "Replenishment at "},{"score": {"name": "@n[type=armor_stand,tag=juggernaut_manager]","objective": "replenish_progress"}}]
+execute as @e[tag=replenishment.station] at @s if entity @e[type=armor_stand,tag=juggernaut_manager,scores={game_state=1}] unless entity @e[type=armor_stand,tag=banishment_glyph,distance=..32] as @a[tag=runner,distance=..3] run scoreboard players add @n[type=armor_stand,tag=juggernaut_manager] replenish_progress 1
+execute as @e[tag=replenishment_tower] at @s if entity @e[type=armor_stand,tag=juggernaut_manager,scores={game_state=1}] unless entity @e[type=armor_stand,tag=banishment_glyph,distance=..32] as @a[tag=engineer,distance=..3] run scoreboard players add @n[type=armor_stand,tag=juggernaut_manager] replenish_progress 1
+
+
+#Display replenishment station particles.
 execute as @e[tag=replenishment.station] at @s if entity @e[type=armor_stand,tag=juggernaut_manager,scores={game_state=1}] if entity @e[type=armor_stand,tag=banishment_glyph,distance=..32] as @a[tag=runner,distance=0..3] at @s run particle flame ~ ~ ~ 0.5 1 0.5 0.00001 2 force
+
 execute as @e[tag=replenishment.station] at @s if entity @e[type=armor_stand,tag=juggernaut_manager,scores={game_state=1}] unless entity @e[type=armor_stand,tag=banishment_glyph,distance=..32] as @a[tag=runner,distance=0..3] at @s run particle end_rod ~ ~ ~ 0.5 1 0.5 0.00001 2 force
+
+#Set replenishment timeout
 execute as @e[tag=replenishment.station] at @s unless entity @e[type=armor_stand,tag=banishment_glyph,distance=..32] if entity @a[tag=runner,distance=..6] run scoreboard players set @s replenish_timeout 6
 
 
