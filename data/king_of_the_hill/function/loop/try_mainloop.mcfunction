@@ -1,0 +1,1 @@
+execute if entity @n[type=armor_stand,tag=surv_game_manager,scores={game_state=1}] run function king_of_the_hill:loop/mainloop

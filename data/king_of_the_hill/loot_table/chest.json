@@ -1,0 +1,33 @@
+{
+    "pools": [
+        {
+            "rolls": 1,
+            "entries": [
+                {
+                    "type": "loot_table",
+                    "value": "king_of_the_hill:chests/common",
+                    "quality": 0,
+                    "weight": 30
+                },
+                {
+                    "type": "loot_table",
+                    "value": "king_of_the_hill:chests/uncommon",
+                    "quality": 1,
+                    "weight": 30
+                },
+                {
+                    "type": "loot_table",
+                    "value": "king_of_the_hill:chests/rare",
+                    "quality": 3,
+                    "weight": 20
+                },
+                {
+                    "type": "loot_table",
+                    "value": "king_of_the_hill:chests/legendary",
+                    "quality": 5,
+                    "weight": 2
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,111 @@
+{
+    "type": "minecraft:chest",
+    "pools": [
+        {
+            "rolls": 3,
+            "entries": [
+                {
+                    "type": "item",
+                    "name": "minecraft:diamond_sword",
+                    "quality": 3,
+                    "functions": [
+                        {
+                            "function": "enchant_with_levels",
+                            "levels": 60
+                        }
+                    ],
+                    "weight": 8
+                },
+                {
+                    "type": "item",
+                    "name": "minecraft:diamond_helmet",
+                    "quality": 1,
+                    "functions": [
+                        {
+                            "function": "enchant_with_levels",
+                            "levels": 30
+                        }
+                    ],
+                    "weight": 5
+                },
+                {
+                    "type": "item",
+                    "name": "minecraft:diamond_chestplate",
+                    "quality": 1,
+                    "functions": [
+                        {
+                            "function": "enchant_randomly"
+                        }
+                    ],
+                    "weight": 6
+                },
+                {
+                    "type": "item",
+                    "name": "minecraft:diamond_leggings",
+                    "quality": 1,
+                    "functions": [
+                        {
+                            "function": "enchant_randomly"
+                        }
+                    ],
+                    "weight": 5
+                },
+                {
+                    "type": "item",
+                    "name": "minecraft:diamond_boots",
+                    "quality": 1,
+                    "functions": [
+                        {
+                            "function": "enchant_randomly"
+                        }
+                    ],
+                    "weight": 5
+                },
+                {
+                    "type": "item",
+                    "name": "golden_carrot",
+                    "quality": 1,
+                    "functions": [
+                        {
+                            "function": "set_count",
+                            "count": 6,
+                            "add": true
+                        }
+                    ],
+                    "weight": 5
+                },
+                {
+                    "type": "item",
+                    "name": "golden_apple",
+                    "quality": 3,
+                    "functions": [
+                        {
+                            "function": "set_count",
+                            "count": 2,
+                            "add": true
+                        }
+                    ],
+                    "weight": 2
+                },
+                {
+                    "type": "item",
+                    "name": "bow",
+                    "quality": 3,
+                    "functions": [
+                        {
+                            "function": "enchant_with_levels",
+                            "levels": 30
+                        }
+                    ],
+                    "weight": 2
+                },
+                {
+                    "type": "item",
+                    "name": "fishing_rod",
+                    "quality": 1,
+                    "weight": 1
+                }
+            ]
+        }
+    ]
+}
