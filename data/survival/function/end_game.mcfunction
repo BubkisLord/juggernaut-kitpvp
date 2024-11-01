@@ -1,5 +1,4 @@
-scoreboard players set @n[type=armor_stand,tag=surv_game_manager] game_state 0
-scoreboard players set @n[type=armor_stand,tag=juggernaut_manager] game_state 0
+scoreboard players set #game_state var 0
 scoreboard players set #grace_period var 0
 scoreboard players set @n[type=armor_stand,tag=surv_game_manager] tick_counter 0
 scoreboard players set #surv_players_alive var 0

@@ -3,8 +3,8 @@ scoreboard players set @a lives 1
 scoreboard players set @a lives_remaining 1
 scoreboard players set @a game_deaths 0
 
-# Turn off juggernaut if its running.
-scoreboard players set @n[type=armor_stand,tag=juggernaut_manager] game_state 0
+# Turn off other games if they're running.
+scoreboard players set #game_state var 0
 
 # Reset player attributes
 scoreboard players set @a max_health 20
@@ -27,7 +27,8 @@ scoreboard players set #crate_count var 0
 gamerule keepInventory false
 
 # Set the game state to pregame - Possibly needed if game starting is later changed for some unforseen reason.
-scoreboard players set @n[type=armor_stand,tag=surv_game_manager] game_state 2
+execute if score #survival_teams var matches 0 run scoreboard players set #game_state var 20
+execute if score #survival_teams var matches 1 run scoreboard players set #game_state var 25
 
 # Teleport players into the game
 tp @a 0 101 0
@@ -51,7 +52,11 @@ scoreboard players set #replenish_chest_timer var 120
 scoreboard players set #times_replenished var 0
 
 # Start the game
-scoreboard players set @n[type=armor_stand,tag=surv_game_manager] game_state 1
+execute if score #survival_teams var matches 0 run scoreboard players set #game_state var 21
+execute if score #survival_teams var matches 1 run scoreboard players set #game_state var 26
+
+# Reset - no longer needed.
+scoreboard players set #survival_teams var 0
 
 # Set the grace period to 40 seconds
 scoreboard players set #grace_period var 40

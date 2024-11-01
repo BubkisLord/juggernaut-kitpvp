@@ -41,7 +41,7 @@ scoreboard players operation @n[type=armor_stand,tag=juggernaut_manager] total_r
 
 
 # Set the game state to pregame
-scoreboard players set @n[type=armor_stand,tag=juggernaut_manager] game_state 2
+scoreboard players set #game_state var 10
 scoreboard players set @n[type=armor_stand,tag=juggernaut_manager] replenish_progress 0
 scoreboard players set @n[type=armor_stand,tag=juggernaut_manager] replenish_decimal 0
 scoreboard players set @n[type=armor_stand,tag=juggernaut_manager] replenish_percentage 0

@@ -13,4 +13,4 @@ execute store result score @a[tag=survivor] lives run scoreboard players get #ju
 scoreboard players add @a[tag=survivor] lives 2
 
 # Turns on the game running variable.
-scoreboard players set @n[type=armor_stand,tag=juggernaut_manager] game_state 1
+scoreboard players set #game_state var 11

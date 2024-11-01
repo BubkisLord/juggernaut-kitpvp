@@ -1,4 +1,4 @@
-scoreboard players set @n[type=armor_stand,tag=juggernaut_manager] game_state 0
+scoreboard players set #game_state var 0
 scoreboard players set @a juggernaut_game_time 0
 scoreboard players set @a juggernaut_release_timer 0
 scoreboard players set @a jug_kit_cooldown 0
