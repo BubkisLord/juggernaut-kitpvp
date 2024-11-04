@@ -25,11 +25,11 @@ execute as @e[tag=replenishment.station] if score @s replenish_timeout > #0 var 
 execute if entity @a[tag=juggernaut] run tag @a[tag=juggernaut] remove is_glowing
 
 # General kit cooldowns
-execute as @a unless entity @e[type=armor_stand,tag=juggernaut_manager,scores={game_state=0}] if score @s jug_kit_cooldown > #0 var run scoreboard players remove @s jug_kit_cooldown 1
-execute as @a if entity @e[type=armor_stand,tag=juggernaut_manager,scores={game_state=0}] if score @s jug_kit_cooldown > #0 var run scoreboard players set @s jug_kit_cooldown 0
+execute as @a if score #game_state var matches 10..19 if score @s jug_kit_cooldown > #0 var run scoreboard players remove @s jug_kit_cooldown 1
+execute as @a unless score #game_state var matches 10..19 if score @s jug_kit_cooldown > #0 var run scoreboard players set @s jug_kit_cooldown 0
 
-execute as @a unless entity @e[type=armor_stand,tag=juggernaut_manager,scores={game_state=0}] if score @s jug_kit_cooldown_2 > #0 var run scoreboard players remove @s jug_kit_cooldown_2 1
-execute as @a if entity @e[type=armor_stand,tag=juggernaut_manager,scores={game_state=0}] if score @s jug_kit_cooldown_2 > #0 var run scoreboard players set @s jug_kit_cooldown_2 0
+execute as @a if score #game_state var matches 10..19 if score @s jug_kit_cooldown_2 > #0 var run scoreboard players remove @s jug_kit_cooldown_2 1
+execute as @a unless score #game_state var matches 10..19 if score @s jug_kit_cooldown_2 > #0 var run scoreboard players set @s jug_kit_cooldown_2 0
 
 # Engineer tower cooldowns/duration
 execute as @e[type=armor_stand,tag=engineer_tower] run scoreboard players remove @s var 1
@@ -56,13 +56,13 @@ execute as @a[tag=!borrowing_time,scores={borrowed_damage=1..}] run scoreboard p
 execute as @e[type=armor_stand,tag=portal_tether] at @s run scoreboard players add @s var 1
 
 # Warlock cooldowns
-execute as @e[type=armor_stand,tag=juggernaut_manager] run execute unless entity @s[scores={game_state=0}] if score @s malevolent_aura_cooldown > #0 var run scoreboard players remove @s malevolent_aura_cooldown 1
-execute as @e[type=armor_stand,tag=juggernaut_manager] run execute unless entity @s[scores={game_state=0}] if score @s banishment_glyph_cooldown > #0 var run scoreboard players remove @s banishment_glyph_cooldown 1
-execute as @e[type=armor_stand,tag=juggernaut_manager] run execute unless entity @s[scores={game_state=0}] if score @s withering_surge_cooldown > #0 var run scoreboard players remove @s withering_surge_cooldown 1
+execute as @e[type=armor_stand,tag=juggernaut_manager] if score #game_state var matches 10..19 if score @s malevolent_aura_cooldown > #0 var run scoreboard players remove @s malevolent_aura_cooldown 1
+execute as @e[type=armor_stand,tag=juggernaut_manager] if score #game_state var matches 10..19 if score @s banishment_glyph_cooldown > #0 var run scoreboard players remove @s banishment_glyph_cooldown 1
+execute as @e[type=armor_stand,tag=juggernaut_manager] if score #game_state var matches 10..19 if score @s withering_surge_cooldown > #0 var run scoreboard players remove @s withering_surge_cooldown 1
 
-execute as @e[type=armor_stand,tag=juggernaut_manager] run execute if entity @s[scores={game_state=0}] if score @s malevolent_aura_cooldown > #0 var run scoreboard players set @s malevolent_aura_cooldown 0
-execute as @e[type=armor_stand,tag=juggernaut_manager] run execute if entity @s[scores={game_state=0}] if score @s banishment_glyph_cooldown > #0 var run scoreboard players set @s banishment_glyph_cooldown 0
-execute as @e[type=armor_stand,tag=juggernaut_manager] run execute if entity @s[scores={game_state=0}] if score @s withering_surge_cooldown > #0 var run scoreboard players set @s withering_surge_cooldown 0
+execute as @e[type=armor_stand,tag=juggernaut_manager] unless score #game_state var matches 10..19 if score @s malevolent_aura_cooldown > #0 var run scoreboard players set @s malevolent_aura_cooldown 0
+execute as @e[type=armor_stand,tag=juggernaut_manager] unless score #game_state var matches 10..19 if score @s banishment_glyph_cooldown > #0 var run scoreboard players set @s banishment_glyph_cooldown 0
+execute as @e[type=armor_stand,tag=juggernaut_manager] unless score #game_state var matches 10..19 if score @s withering_surge_cooldown > #0 var run scoreboard players set @s withering_surge_cooldown 0
 
 # Hunter remnant delay
 execute as @e[type=armor_stand,tag=hunter_remnant] if score @s var > #0 var run scoreboard players remove @s var 1
