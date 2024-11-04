@@ -1,1 +1,1 @@
-execute if entity @e[type=armor_stand,tag=juggernaut_manager,scores={game_state=0}] run function juggernaut:start_pregame
+execute if score #game_state var matches 0 run function juggernaut:start_pregame
