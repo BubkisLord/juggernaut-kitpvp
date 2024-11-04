@@ -1,5 +1,7 @@
 tag @a remove lobby.player
-tag @a[limit=1,sort=random] add juggernaut
+execute if score #juggernaut_customisation juggernaut_count matches 1 run tag @a[limit=1,sort=random] add juggernaut
+execute if score #juggernaut_customisation juggernaut_count matches 2 run tag @a[limit=2,sort=random] add juggernaut
+execute if score #juggernaut_customisation juggernaut_count matches 3 run tag @a[limit=3,sort=random] add juggernaut
 # tag cyberduck2 add juggernaut
 tag @a[tag=!juggernaut] add runner
 clear @a
@@ -8,8 +10,12 @@ function survival:remove_chests
 
 tp @a[tag=juggernaut] 2054.5 114 0.5 facing 2054.5 114 1.5
 tp @a[tag=runner] 2054.5 124 0.5 facing 2054.5 124 1.5
-execute as @a[tag=juggernaut] run playsound music_disc.creator master @s ~ ~ ~ 3 0.75
-execute as @a[tag=runner] run playsound music_disc.creator master @s ~ ~ ~ 3 0.75
+team join jug @a[tag=juggernaut]
+team join runner @a[tag=runner]
+
+execute as @a[tag=juggernaut] run playsound music_disc.creator record @s ~ ~ ~ 3 0.75
+execute as @a[tag=runner] run playsound music_disc.precipice record @s ~ ~ ~ 3 1.1
+# execute as @a[tag=runner] run playsound music_disc.precipice record @s ~ ~ ~ 3 0.75
 
 scoreboard players set @a juggernaut_game_time 0
 scoreboard players set @a juggernaut_release_timer 0
