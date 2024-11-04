@@ -24,10 +24,10 @@ execute as @e[type=armor_stand,tag=crate] run scoreboard players add #crate_coun
 
 
 # Indicate Chests
-execute as @e[tag=king_of_the_hill_chest_indicator,tag=common] at @s unless block ~ ~ ~ chest{Items:[]} run particle dust{color:[0.0,0.6,0.0],scale:1} ~ ~1.3 ~ 0.1 2 0.1 0 8 force
-execute as @e[tag=king_of_the_hill_chest_indicator,tag=uncommon] at @s unless block ~ ~ ~ chest{Items:[]} run particle dust{color:[0.4,1.0,0.4],scale:1} ~ ~1.3 ~ 0.1 2 0.1 0 8 force
-execute as @e[tag=king_of_the_hill_chest_indicator,tag=rare] at @s unless block ~ ~ ~ chest{Items:[]} run particle dust{color:[0,1,1],scale:1} ~ ~1.3 ~ 0.1 2 0.1 0 8 force
-execute as @e[tag=king_of_the_hill_chest_indicator,tag=legendary] at @s unless block ~ ~ ~ chest{Items:[]} run particle dust{color:[1.0,0.8,0.0],scale:1} ~ ~1.3 ~ 0.1 2 0.1 0 8 force
+execute as @e[tag=survival_chest_indicator,tag=common] at @s unless block ~ ~ ~ chest{Items:[]} run particle dust{color:[0.0,0.6,0.0],scale:1} ~ ~1.3 ~ 0.1 2 0.1 0 8 force
+execute as @e[tag=survival_chest_indicator,tag=uncommon] at @s unless block ~ ~ ~ chest{Items:[]} run particle dust{color:[0.4,1.0,0.4],scale:1} ~ ~1.3 ~ 0.1 2 0.1 0 8 force
+execute as @e[tag=survival_chest_indicator,tag=rare] at @s unless block ~ ~ ~ chest{Items:[]} run particle dust{color:[0,1,1],scale:1} ~ ~1.3 ~ 0.1 2 0.1 0 8 force
+execute as @e[tag=survival_chest_indicator,tag=legendary] at @s unless block ~ ~ ~ chest{Items:[]} run particle dust{color:[1.0,0.8,0.0],scale:1} ~ ~1.3 ~ 0.1 2 0.1 0 8 force
 
 
 # Allow Crates to be opened
