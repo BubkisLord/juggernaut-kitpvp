@@ -1,9 +1,4 @@
-execute as @p if entity @e[type=armor_stand,tag=juggernaut_manager,scores={game_state=1}] run clear @s
-execute as @p if entity @e[type=armor_stand,tag=juggernaut_manager,scores={game_state=1}] run tag @s add spectator
-execute as @p if entity @e[type=armor_stand,tag=juggernaut_manager,scores={game_state=1}] run tag @s remove lobby.player
-execute as @p if entity @e[type=armor_stand,tag=juggernaut_manager,scores={game_state=1}] run tp @s @e[tag=arena.spawn,limit=1,sort=random]
-
-execute as @p if entity @e[type=armor_stand,tag=surv_game_manager,scores={game_state=1}] run clear @s
-execute as @p if entity @e[type=armor_stand,tag=surv_game_manager,scores={game_state=1}] run tag @s add spectator
-execute as @p if entity @e[type=armor_stand,tag=surv_game_manager,scores={game_state=1}] run tag @s remove lobby.player
-execute as @p if entity @e[type=armor_stand,tag=surv_game_manager,scores={game_state=1}] run tp @s @e[tag=arena.spawn,limit=1,sort=random]
+execute as @s if score #game_state var matches 10..39 run clear @s
+execute as @s if score #game_state var matches 10..39 run tag @s add spectator
+execute as @s if score #game_state var matches 10..39 run tag @s remove lobby.player
+execute as @s if score #game_state var matches 10..39 run tp @s @e[tag=arena.spawn,limit=1,sort=random]
