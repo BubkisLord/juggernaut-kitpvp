@@ -42,4 +42,6 @@ scoreboard players set @a borrowed_damage 0
 kill @e[type=armor_stand,tag=malevolent_aura]
 kill @e[type=armor_stand,tag=banishment_glyph]
 kill @e[type=armor_stand,tag=withering_surge]
+team leave @a
 gamemode adventure @a
+stopsound @a
