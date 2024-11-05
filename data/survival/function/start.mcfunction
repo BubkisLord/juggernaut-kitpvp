@@ -29,6 +29,7 @@ gamerule keepInventory false
 # Set the game state to pregame - Possibly needed if game starting is later changed for some unforseen reason.
 execute if score #survival_teams var matches 0 run scoreboard players set #game_state var 20
 execute if score #survival_teams var matches 1 run scoreboard players set #game_state var 25
+execute if score #survival_teams var matches 1 run function survival:start_with_teams
 
 # Teleport players into the game
 tp @a 0 101 0
@@ -37,7 +38,8 @@ tp @a 0 101 0
 function survival:reset_chests
 
 # Reset end game timer.
-scoreboard players set #end_game_timer var 15
+scoreboard players set #end_game_timer var 10
+scoreboard players set #survival_game_ending var 0
 
 # Set the worldborder
 worldborder set 270

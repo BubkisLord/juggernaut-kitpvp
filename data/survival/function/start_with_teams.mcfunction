@@ -10,5 +10,3 @@ execute if score #playercount var matches 6 as @a run function survival:team_sel
 execute if score #playercount var matches 7..8 as @a run function survival:team_selection/two_teams
 execute if score #playercount var matches 9 as @a run function survival:team_selection/three_teams
 execute if score #playercount var matches 10.. as @a run function survival:team_selection/two_teams
-
-function survival:start
