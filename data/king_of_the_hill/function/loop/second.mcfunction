@@ -19,7 +19,6 @@ execute if score #king_of_the_hill_game_ending var matches 1 if score #end_game_
 execute if score #king_of_the_hill_game_ending var matches 1 if score #end_game_timer var matches 10.. as @a[scores={lives_remaining=1..}] run tellraw @s [{"text": "+","italic": true,"bold": true},{"text": "100","color": "gold","italic": true,"bold": true},{"text": " Points! (Alive at Game End)","color": "white","italic": true,"bold": false}]
 
 execute at @n[type=armor_stand,tag=koth_hill] as @a[distance=..3,scores={lives_remaining=1..}] run scoreboard players add @s points 2
-execute at @n[type=armor_stand,tag=koth_hill] as @a[distance=..3,scores={lives_remaining=1..}] run tellraw @s [{"text": "+","italic": true,"bold": true},{"text": "100","color": "gold","italic": true,"bold": true},{"text": " Points! (Alive at Game End)","color": "white","italic": true,"bold": false}]
 
 
 # Set King of the Hill Bossbar
@@ -70,7 +69,7 @@ execute if score #replenish_chest_timer var = #0 var run scoreboard players oper
 # END GAME SEQUENCE
 scoreboard players set #surv_players_alive var 0
 execute as @a[scores={lives_remaining=1..}] run scoreboard players add #surv_players_alive var 1
-# execute if score #surv_players_alive var matches ..1 run scoreboard players set #king_of_the_hill_game_ending var 1
+execute if score #surv_players_alive var matches ..1 run scoreboard players set #king_of_the_hill_game_ending var 1
 
 scoreboard players set #teams_alive var 0
 execute if score #game_state var matches 36 as @p[team=blue,scores={lives_remaining=1..}] run scoreboard players add #teams_alive var 1
@@ -103,6 +102,4 @@ execute if score #surv_players_alive var matches 2.. if score #game_state var ma
 execute if score #surv_players_alive var matches 2.. if score #game_state var matches 31 if score #king_of_the_hill_game_ending var matches 1 if score #end_game_timer var matches 10.. as @a[scores={lives_remaining=1..}] run execute if score @s king_of_the_hill_points > #highest_hill_points var run scoreboard players operation #highest_hill_points var = @s king_of_the_hill_points
 execute if score #surv_players_alive var matches 2.. if score #game_state var matches 31 if score #king_of_the_hill_game_ending var matches 1 if score #end_game_timer var matches 10.. as @a run execute as @s if score @s king_of_the_hill_points = #highest_hill_points var run tellraw @a [{"selector":"@s","color":"dark_aqua","bold": true},{"text": " Has Won!","color": "white","bold": false}]
 
-# execute if score #king_of_the_hill_teams var matches 1.. if score #king_of_the_hill_game_ending var matches 1 if score #end_game_timer var matches 10.. as @a[scores={lives_remaining=1..}] run tellraw @a [{"text": "Team ","color": "white","bold": false},{"nbt":"team", "entity": "@s","bold": true},{"text": " Has Won!","color": "white","bold": false}]
-# execute if score #king_of_the_hill_game_ending var matches 1 run tellraw @a [{"text": "Game Ends In: "},{"score": {"name": "#end_game_timer","objective": "var"},"bold": true},{"text": " seconds","bold": false}]
 execute if score #king_of_the_hill_game_ending var matches 1 run scoreboard players remove #end_game_timer var 1
