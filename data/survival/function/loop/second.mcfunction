@@ -35,9 +35,24 @@ execute if score #replenish_chest_timer var = #0 var run scoreboard players add 
 execute if score #replenish_chest_timer var = #0 var run scoreboard players set #replenish_chest_timer var 120
 
 # Progress seconds until end of game
-scoreboard players set #15 var 15
-execute if score #surv_players_alive var = #1 var if score #end_game_timer var >= #15 var run tellraw @a [{"text": "#==== GAME OVER ====#","color": "dark_red","bold": true}]
-execute if score #surv_players_alive var = #1 var if score #end_game_timer var >= #15 var as @a[scores={lives_remaining=1..}] run tellraw @a [{"selector": "@s","bold": true,"color": "red"},{"text": " Has Won!","color": "white","bold": false}]
-# execute if score #survival_teams var matches 1.. if score #surv_players_alive var = #1 var if score #end_game_timer var >= #15 var as @a[scores={lives_remaining=1..}] run tellraw @a [{"text": "Team ","color": "white","bold": false},{"nbt":"team", "entity": "@s","bold": true},{"text": " Has Won!","color": "white","bold": false}]
-# execute if score #surv_players_alive var = #1 var run tellraw @a [{"text": "Game Ends In: "},{"score": {"name": "#end_game_timer","objective": "var"},"bold": true},{"text": " seconds","bold": false}]
-execute if score #surv_players_alive var = #1 var run scoreboard players remove #end_game_timer var 1
+scoreboard players set #surv_players_alive var 0
+execute as @a[scores={lives_remaining=1..}] run scoreboard players add #surv_players_alive var 1
+execute if score #surv_players_alive var matches ..1 run scoreboard players set #survival_game_ending var 1
+
+scoreboard players set #teams_alive var 0
+execute if score #game_state var matches 26 as @p[team=blue,scores={lives_remaining=1..}] run scoreboard players add #teams_alive var 1
+execute if score #game_state var matches 26 as @p[team=red,scores={lives_remaining=1..}] run scoreboard players add #teams_alive var 1
+execute if score #game_state var matches 26 as @p[team=green,scores={lives_remaining=1..}] run scoreboard players add #teams_alive var 1
+
+execute if score #game_state var matches 26 if score #teams_alive var matches ..1 run scoreboard players set #survival_game_ending var 1
+
+execute if score #survival_game_ending var matches 1 if score #end_game_timer var matches 10.. run tellraw @a [{"text": "#==== GAME OVER ====#","color": "dark_red","bold": true}]
+execute if score #teams_alive var matches ..1 if score #game_state var matches 26 if score #survival_game_ending var matches 1 if score #end_game_timer var matches 10.. as @p[team=blue,scores={lives_remaining=1..}] run tellraw @a [{"text": "Team ","color": "white","bold": false},{"text":"Blue","color":"blue","bold": true},{"text": " Has Won!","color": "white","bold": false}]
+execute if score #teams_alive var matches ..1 if score #game_state var matches 26 if score #survival_game_ending var matches 1 if score #end_game_timer var matches 10.. as @p[team=red,scores={lives_remaining=1..}] run tellraw @a [{"text": "Team ","color": "white","bold": false},{"text":"Red","color":"red","bold": true},{"text": " Has Won!","color": "white","bold": false}]
+execute if score #teams_alive var matches ..1 if score #game_state var matches 26 if score #survival_game_ending var matches 1 if score #end_game_timer var matches 10.. as @p[team=green,scores={lives_remaining=1..}] run tellraw @a [{"text": "Team ","color": "white","bold": false},{"text":"Green","color":"green","bold": true},{"text": " Has Won!","color": "white","bold": false}]
+
+execute if score #surv_players_alive var matches ..1 if score #game_state var matches 31 if score #survival_game_ending var matches 1 if score #end_game_timer var matches 10.. as @a[scores={lives_remaining=1..}] run tellraw @a [{"selector":"@s","color":"dark_aqua","bold": true},{"text": " Has Won!","color": "white","bold": false}]
+
+# execute if score #survival_teams var matches 1.. if score #survival_game_ending var matches 1 if score #end_game_timer var matches 10.. as @a[scores={lives_remaining=1..}] run tellraw @a [{"text": "Team ","color": "white","bold": false},{"nbt":"team", "entity": "@s","bold": true},{"text": " Has Won!","color": "white","bold": false}]
+# execute if score #survival_game_ending var matches 1 run tellraw @a [{"text": "Game Ends In: "},{"score": {"name": "#end_game_timer","objective": "var"},"bold": true},{"text": " seconds","bold": false}]
+execute if score #survival_game_ending var matches 1 run scoreboard players remove #end_game_timer var 1
