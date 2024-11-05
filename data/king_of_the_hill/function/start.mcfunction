@@ -49,8 +49,13 @@ worldborder set 270
 # Remove any leftover items
 kill @e[type=item]
 
-# Set the replenish chest timer to 120s - 2 mins
-scoreboard players set #replenish_chest_timer var 120
+# Set the replenish chest variables.
+scoreboard players set #koth_max_chest_resets var 4
+scoreboard players set #chest_cooldown var 120
+scoreboard players operation #replenish_chest_timer var = #chest_cooldown var
+
+# Set the current game time
+scoreboard players set #current_game_time var 0
 
 # Set the replenish chest count to 0
 scoreboard players set #times_replenished var 0

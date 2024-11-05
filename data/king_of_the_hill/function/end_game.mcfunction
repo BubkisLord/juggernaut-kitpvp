@@ -6,6 +6,8 @@ scoreboard players set #max_crate_count var 0
 scoreboard players set #end_game_timer var 15
 scoreboard players set #crate_count var 0
 scoreboard players set #king_of_the_hill_teams var 0
+scoreboard players set #max_game_time var 0
+scoreboard players set #current_game_time var 0
 
 execute as @e[type=armor_stand,tag=koth_hill] run tag @s remove koth_hill
 scoreboard players reset @a king_of_the_hill_points

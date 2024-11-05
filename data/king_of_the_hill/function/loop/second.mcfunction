@@ -22,6 +22,16 @@ execute at @n[type=armor_stand,tag=koth_hill] as @a[distance=..3,scores={lives_r
 execute at @n[type=armor_stand,tag=koth_hill] as @a[distance=..3,scores={lives_remaining=1..}] run tellraw @s [{"text": "+","italic": true,"bold": true},{"text": "100","color": "gold","italic": true,"bold": true},{"text": " Points! (Alive at Game End)","color": "white","italic": true,"bold": false}]
 
 
+# Set King of the Hill Bossbar
+scoreboard players set #max_game_time var 0
+scoreboard players operation #max_game_time var = #chest_cooldown var
+scoreboard players operation #max_game_time var *= #koth_max_chest_resets var
+
+scoreboard players add #current_game_time var 1
+
+execute store result bossbar king_of_the_hill_timer max run scoreboard players get #max_game_time var
+execute store result bossbar king_of_the_hill_timer value run scoreboard players get #current_game_time var
+
 # Make Crates be able to be opened
 execute as @e[type=armor_stand,tag=crate] at @s unless entity @a[distance=..3] run particle dust_color_transition{from_color:[0.3,0.2,0.2],to_color:[0.9,0.9,0.9],scale:1} ~ ~-0.25 ~ 0.3 0.3 0.3 0 300 force @a[distance=..16]
 execute as @e[type=armor_stand,tag=crate] at @s if entity @a[distance=..3] run scoreboard players add @s var 1
@@ -54,13 +64,13 @@ execute if score #replenish_chest_timer var matches 0 run tellraw @a {"text":" "
 execute if score #replenish_chest_timer var = #0 var run execute as @e[type=armor_stand,tag=replenishment.station] run tag @s remove koth_hill
 execute if score #replenish_chest_timer var = #0 var run execute as @e[type=armor_stand,tag=replenishment.station,limit=1,sort=random] run tag @s add koth_hill
 execute if score #replenish_chest_timer var = #0 var run scoreboard players add #times_replenished var 1
-execute if score #replenish_chest_timer var = #0 var run scoreboard players set #replenish_chest_timer var 120
+execute if score #replenish_chest_timer var = #0 var run scoreboard players operation #replenish_chest_timer var = #chest_cooldown var
 
 
 # END GAME SEQUENCE
 scoreboard players set #surv_players_alive var 0
 execute as @a[scores={lives_remaining=1..}] run scoreboard players add #surv_players_alive var 1
-execute if score #surv_players_alive var matches ..1 run scoreboard players set #king_of_the_hill_game_ending var 1
+# execute if score #surv_players_alive var matches ..1 run scoreboard players set #king_of_the_hill_game_ending var 1
 
 scoreboard players set #teams_alive var 0
 execute if score #game_state var matches 36 as @p[team=blue,scores={lives_remaining=1..}] run scoreboard players add #teams_alive var 1
@@ -68,7 +78,7 @@ execute if score #game_state var matches 36 as @p[team=red,scores={lives_remaini
 execute if score #game_state var matches 36 as @p[team=green,scores={lives_remaining=1..}] run scoreboard players add #teams_alive var 1
 
 execute if score #game_state var matches 36 if score #teams_alive var matches ..1 run scoreboard players set #king_of_the_hill_game_ending var 1
-execute if score #times_replenished var matches 4.. run scoreboard players set #king_of_the_hill_game_ending var 1
+execute if score #times_replenished var >= #koth_max_chest_resets var run scoreboard players set #king_of_the_hill_game_ending var 1
 
 execute if score #king_of_the_hill_game_ending var matches 1 if score #end_game_timer var matches 10.. run tellraw @a [{"text": "#==== GAME OVER ====#","color": "dark_red","bold": true}]
 execute if score #king_of_the_hill_game_ending var matches 1 if score #end_game_timer var matches 10.. run scoreboard players set #hill_progress_blue var 0
