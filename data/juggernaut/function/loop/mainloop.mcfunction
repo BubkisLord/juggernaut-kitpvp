@@ -75,7 +75,7 @@ execute as @a[tag=blinker] run scoreboard players add @s tick_counter 1
 
 execute as @a[tag=blinker,scores={jug_kit_cooldown=0}] if items entity @s hotbar.2 barrier[item_name='[{"text": "Teleport to Remnant | ","color": "dark_red","bold": true},{"text": "ON COOLDOWN","color": "red"}]'] run item replace entity @s hotbar.2 with ender_pearl[item_name='[{"text": "Teleport to Remnant | ","color": "dark_red","bold": true},{"text": "READY","color": "green"}]',food={nutrition:0,saturation:0,can_always_eat:true,eat_seconds:999999}] 1
 execute as @a[tag=blinker] at @s if entity @e[type=item,nbt={Item:{id:"minecraft:ender_pearl"}},distance=..3] run item replace entity @s hotbar.2 with barrier[item_name='[{"text": "Teleport to Remnant | ","color": "dark_red","bold": true},{"text": "ON COOLDOWN","color": "red"}]'] 1
-execute as @a[tag=blinker,nbt={SelectedItem:{id:"minecraft:ender_pearl"}}] at @s run function juggernaut:blinker_teleport_raycast
+execute as @a[tag=blinker,nbt={SelectedItem:{id:"minecraft:ender_pearl"}}] at @s run function juggernaut:raycasts/blinker_teleport_raycast
 execute as @a[tag=blinker] at @s if entity @e[type=item,nbt={Item:{id:"minecraft:ender_pearl"}},distance=..3] run tp @s @n[tag=blinker_teleporting]
 execute as @a[tag=blinker,nbt={SelectedItem:{id:"minecraft:barrier"}}] run scoreboard players add @s blinker_tp_timeout 1
 execute as @a[tag=blinker] at @s if entity @e[type=item,nbt={Item:{id:"minecraft:ender_pearl"}},distance=..3] run scoreboard players set @s jug_kit_cooldown 45
@@ -126,7 +126,7 @@ execute as @a[tag=dragon] if entity @s[tag=is_floating] run scoreboard players s
 execute as @a[tag=dragon] if entity @s[tag=is_floating] at @s run scoreboard players set @s raycast_limit 40
 execute as @a[tag=dragon] if entity @s[tag=!is_floating] at @s run scoreboard players set @s raycast_limit 10
 
-execute as @a[tag=dragon] at @s run function juggernaut:poison_breath_raycast
+execute as @a[tag=dragon] at @s run function juggernaut:raycasts/dragon_raycast
 
 execute as @a[tag=dragon] if entity @s[tag=is_floating] at @s unless block ~ ~-5 ~ air run effect give @s levitation 1 0 true
 execute as @a[tag=dragon] if entity @s[tag=is_floating] at @s run effect give @s slow_falling 1 255 true
@@ -201,13 +201,13 @@ execute as @e[type=armor_stand,tag=juggernaut_manager] run execute if score #gam
 
 #Spawning warlock auras
 execute at @a[tag=warlock] run execute as @e[type=item,nbt={Item:{id:"minecraft:red_dye"}},distance=..3] run kill @e[type=armor_stand,tag=malevolent_aura]
-execute at @a[tag=warlock] run execute as @e[type=item,nbt={Item:{id:"minecraft:red_dye"}},distance=..3] run function juggernaut:spawn_malevolent_aura
+execute at @a[tag=warlock] run execute as @e[type=item,nbt={Item:{id:"minecraft:red_dye"}},distance=..3] run function juggernaut:spawn/spawn_malevolent_aura
 
 execute at @a[tag=warlock] run execute as @e[type=item,nbt={Item:{id:"minecraft:cyan_dye"}},distance=..3] run kill @e[type=armor_stand,tag=banishment_glyph]
-execute at @a[tag=warlock] run execute as @e[type=item,nbt={Item:{id:"minecraft:cyan_dye"}},distance=..3] unless entity @e[type=armor_stand,tag=banishment_glyph] run function juggernaut:spawn_banishment_glyph
+execute at @a[tag=warlock] run execute as @e[type=item,nbt={Item:{id:"minecraft:cyan_dye"}},distance=..3] unless entity @e[type=armor_stand,tag=banishment_glyph] run function juggernaut:spawn/spawn_banishment_glyph
 
 execute at @a[tag=warlock] run execute as @e[type=item,nbt={Item:{id:"minecraft:black_dye"}},distance=..3] run kill @e[type=armor_stand,tag=withering_surge]
-execute at @a[tag=warlock] run execute as @e[type=item,nbt={Item:{id:"minecraft:black_dye"}},distance=..3] unless entity @e[type=armor_stand,tag=withering_surge] run function juggernaut:spawn_withering_surge
+execute at @a[tag=warlock] run execute as @e[type=item,nbt={Item:{id:"minecraft:black_dye"}},distance=..3] unless entity @e[type=armor_stand,tag=withering_surge] run function juggernaut:spawn/spawn_withering_surge
 
 #Particle effects
 execute at @e[type=armor_stand,tag=malevolent_aura] run particle dripping_lava ~ ~ ~ 16 8 16 0.00001 20 force @a[distance=..16]
@@ -328,7 +328,7 @@ execute as @a[tag=juggernaut_manager,scores={scout_reveal_timer=1200..}] run sco
 execute as @a[tag=scout] at @s as @e[type=item,nbt={Item:{id:"minecraft:glowstone_dust"}},distance=..3] run effect give @a[tag=juggernaut,limit=1,sort=random] glowing 12 0 true
 execute as @a[tag=scout] at @s as @e[type=item,nbt={Item:{id:"minecraft:glowstone_dust"}},distance=..3] run kill @s
 # Scout revealing by maintaining line of sight
-execute as @a[tag=scout] at @s run function juggernaut:juggernaut_raycast
+execute as @a[tag=scout] at @s run function juggernaut:raycasts/scout_raycast
 
 
 
@@ -356,8 +356,8 @@ execute as @e[type=armor_stand,tag=ice_bomb] if score @s var > #ice_bomb_delay v
 execute at @e[type=armor_stand,tag=engineer_tower] run execute as @a[tag=juggernaut,distance=..3] run particle totem_of_undying ~ ~ ~ 0.25 1 0.25 0 20 force
 
 # Engineer borrowed time ability
-execute as @a[tag=engineer] at @s if entity @e[type=item,nbt={Item:{id:"minecraft:raw_gold_block"}},distance=..3] run function juggernaut:spawn_revealing_tower
-execute as @a[tag=engineer] at @s if entity @e[type=item,nbt={Item:{id:"minecraft:lime_dye"}},distance=..3] run function juggernaut:spawn_replenishment_tower
+execute as @a[tag=engineer] at @s if entity @e[type=item,nbt={Item:{id:"minecraft:raw_gold_block"}},distance=..3] run function juggernaut:spawn/spawn_revealing_tower
+execute as @a[tag=engineer] at @s if entity @e[type=item,nbt={Item:{id:"minecraft:lime_dye"}},distance=..3] run function juggernaut:spawn/spawn_replenishment_tower
 execute at @e[type=armor_stand,tag=replenishment_tower_particle_emitter] unless entity @e[type=armor_stand,tag=replenishment_tower,distance=..5] run kill @e[type=armor_stand,tag=replenishment_tower_particle_emitter]
 execute as @e[type=armor_stand,tag=revealing_tower] at @s run execute as @a[tag=juggernaut,distance=..16] run effect give @s glowing 1 0 true
 
@@ -387,5 +387,5 @@ execute as @a[tag=borrowing_time,scores={jug_kit_cooldown=0}] run tag @s remove 
 # Loop per second function.
 execute as @e[type=armor_stand,tag=juggernaut_manager] run scoreboard players add @s tick_counter 1
 scoreboard players set #20 var 20
-execute as @e[type=armor_stand,tag=juggernaut_manager] if score @s tick_counter >= #20 var run function juggernaut:loop_per_second
+execute as @e[type=armor_stand,tag=juggernaut_manager] if score @s tick_counter >= #20 var run function juggernaut:loop/second
 execute as @e[type=armor_stand,tag=juggernaut_manager] if score @s tick_counter >= #20 var run scoreboard players set @s tick_counter 0

@@ -5,4 +5,4 @@ execute as @n[tag=raycast_tracker] at @s anchored eyes positioned ^ ^ ^0.5 if en
 execute as @n[tag=raycast_tracker] at @s anchored eyes positioned ^ ^ ^0.5 if entity @e[distance=..5,tag=juggernaut] run tag @e[distance=..6,tag=juggernaut] add is_glowing
 
 # Check 1 block ahead, continue if air is found
-execute as @n[tag=raycast_tracker] at @s anchored eyes positioned ^ ^ ^0.5 if block ~ ~ ~ air run function juggernaut:juggernaut_raycast
+execute as @n[tag=raycast_tracker] at @s anchored eyes positioned ^ ^ ^0.5 if block ~ ~ ~ air run function juggernaut:raycasts/scout_raycast

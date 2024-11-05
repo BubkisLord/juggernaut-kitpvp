@@ -12,5 +12,5 @@ execute as @n[tag=chain_raycast_tracker_1] at @s anchored eyes positioned ^ ^ ^0
 execute as @n[type=armor_stand,tag=portal_tether_1] at @s if entity @n[tag=runner,distance=..10] run tp @s ~ ~ ~ facing entity @n[tag=runner] feet
 
 # Check 1 block ahead, continue if air is found
-execute if score @n[type=armor_stand,tag=portal_tether_1] current_raycast_depth <= @n[type=armor_stand,tag=portal_tether_1] raycast_limit as @n[tag=chain_raycast_tracker_1] at @s anchored eyes positioned ^ ^ ^0.5 if block ~ ~ ~ air unless entity @n[tag=runner,distance=..1.5] run function juggernaut:chain_raycast1
-execute if score @n[type=armor_stand,tag=portal_tether_1] current_raycast_depth <= @n[type=armor_stand,tag=portal_tether_1] raycast_limit as @n[tag=chain_raycast_tracker_1] at @s anchored eyes positioned ^ ^ ^0.5 if block ~ ~ ~ water unless entity @n[tag=runner,distance=..1.5] run function juggernaut:chain_raycast1
+execute if score @n[type=armor_stand,tag=portal_tether_1] current_raycast_depth <= @n[type=armor_stand,tag=portal_tether_1] raycast_limit as @n[tag=chain_raycast_tracker_1] at @s anchored eyes positioned ^ ^ ^0.5 if block ~ ~ ~ air unless entity @n[tag=runner,distance=..1.5] run function juggernaut:raycasts/chain_raycast1
+execute if score @n[type=armor_stand,tag=portal_tether_1] current_raycast_depth <= @n[type=armor_stand,tag=portal_tether_1] raycast_limit as @n[tag=chain_raycast_tracker_1] at @s anchored eyes positioned ^ ^ ^0.5 if block ~ ~ ~ water unless entity @n[tag=runner,distance=..1.5] run function juggernaut:raycasts/chain_raycast1
