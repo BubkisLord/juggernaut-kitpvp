@@ -1,3 +1,6 @@
-execute if entity @e[type=armor_stand,tag=juggernaut_manager,scores={game_state=1}] run function juggernaut:respawning
-execute if entity @e[type=armor_stand,tag=surv_game_manager,scores={game_state=1}] run function survival:respawning
-execute if entity @e[type=armor_stand,tag=juggernaut_manager,scores={game_state=0}] if entity @e[type=armor_stand,tag=surv_game_manager,scores={game_state=0}] run function scoreboard:kitpvp_respawn
+tag @s add respawning
+execute if score #game_state var matches 10..19 run function juggernaut:respawning
+execute if score #game_state var matches 20..29 run function survival:respawning
+execute if score #game_state var matches 30..39 run function king_of_the_hill:respawning
+execute if score #game_state var matches 0 run function scoreboard:kitpvp_respawn
+tag @s remove respawning
