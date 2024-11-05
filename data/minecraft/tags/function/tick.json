@@ -1,19 +1,5 @@
 {
- "values": [
- "juggernaut:mainloop",
- "survival:loop/try_mainloop",
- "tp:shulker_tp",
- "text:bossbars",
- "abilities:kitabilities",
- "scoreboard:killstreak",
- "other:cleanup",
- "other:nether",
- "other:safelobby",
- "other:autorespawn",
- "other:replenishment_stations",
- "shop:shopbrain",
- "tutorial:tutorial",
- "other:extraitems_removal",
- "tp:exit_item"
- ]
+    "values": [
+        "minecraft:tick"
+    ]
 }
