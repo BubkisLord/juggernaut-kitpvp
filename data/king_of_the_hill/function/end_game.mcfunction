@@ -11,8 +11,10 @@ scoreboard players set #current_game_time var 0
 
 execute as @e[type=armor_stand,tag=koth_hill] run tag @s remove koth_hill
 scoreboard players reset @a king_of_the_hill_points
+scoreboard objectives setdisplay sidebar health
 
 team leave @a
+bossbar remove king_of_the_hill_timer
 
 worldborder set 9999
 
