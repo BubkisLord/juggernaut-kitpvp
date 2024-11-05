@@ -43,3 +43,5 @@ scoreboard objectives add xpbar xp
 team add blue
 team add red
 team add green
+team add jug
+team add runner
