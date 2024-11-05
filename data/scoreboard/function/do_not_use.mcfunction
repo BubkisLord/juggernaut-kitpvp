@@ -39,9 +39,14 @@ scoreboard objectives add hunt_cooldown dummy
 scoreboard objectives add point_kills minecraft.custom:player_kills
 scoreboard objectives add killstreak minecraft.custom:player_kills
 scoreboard objectives add xpbar xp
+scoreboard objectives add seeker_release_timer dummy
+scoreboard objectives add hide_and_seek_game_time dummy
+scoreboard objectives add seeker_count dummy
 
 team add blue
 team add red
 team add green
 team add jug
 team add runner
+team add hider
+team add seeker
