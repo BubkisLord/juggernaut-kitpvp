@@ -8,7 +8,6 @@ scoreboard players set @a game_deaths 0
 scoreboard players set #game_state var 0
 
 # Reset player attributes
-scoreboard players set @a max_health 20
 scoreboard players set @a health 20
 
 # Reset player inventory
