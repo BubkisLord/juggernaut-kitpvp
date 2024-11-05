@@ -6,6 +6,7 @@ spawnpoint @a 2000 100 0
 gamerule showDeathMessages false
 tag @a remove hider
 tag @a remove seeker
+tag @a remove spectator
 clear @a
 kill @a
 gamerule showDeathMessages true
@@ -16,4 +17,3 @@ scoreboard players set @a game_deaths 0
 team leave @a
 gamemode adventure @a
 stopsound @a
-schedule clear hide_and_seek:loop/loop_per_second
