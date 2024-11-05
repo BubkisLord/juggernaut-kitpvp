@@ -1,0 +1,16 @@
+scoreboard players remove @a[tag=seeker] seeker_release_timer 1
+execute as @n[tag=seeker,scores={seeker_release_timer=30}] run tellraw @a [{"text": "Seeker is released in: ","bold": true, "color": "gray"},{"text": "30","bold": true,"color": "dark_red"},{"text": " Seconds","bold": true, "color": "gray"}]
+execute as @n[tag=seeker,scores={seeker_release_timer=10}] run tellraw @a [{"text": "Seeker is released in: ","bold": true, "color": "gray"},{"text": "10","bold": true,"color": "dark_red"},{"text": " Seconds","bold": true, "color": "gray"}]
+execute as @n[tag=seeker,scores={seeker_release_timer=9}] run tellraw @a [{"text": "Seeker is released in: ","bold": true, "color": "gray"},{"text": "9","bold": true,"color": "dark_red"},{"text": " Seconds","bold": true, "color": "gray"}]
+execute as @n[tag=seeker,scores={seeker_release_timer=8}] run tellraw @a [{"text": "Seeker is released in: ","bold": true, "color": "gray"},{"text": "8","bold": true,"color": "dark_red"},{"text": " Seconds","bold": true, "color": "gray"}]
+execute as @n[tag=seeker,scores={seeker_release_timer=7}] run tellraw @a [{"text": "Seeker is released in: ","bold": true, "color": "gray"},{"text": "7","bold": true,"color": "dark_red"},{"text": " Seconds","bold": true, "color": "gray"}]
+execute as @n[tag=seeker,scores={seeker_release_timer=6}] run tellraw @a [{"text": "Seeker is released in: ","bold": true, "color": "gray"},{"text": "6","bold": true,"color": "dark_red"},{"text": " Seconds","bold": true, "color": "gray"}]
+execute as @n[tag=seeker,scores={seeker_release_timer=5}] run tellraw @a [{"text": "Seeker is released in: ","bold": true, "color": "gray"},{"text": "5","bold": true,"color": "dark_red"},{"text": " Seconds","bold": true, "color": "gray"}]
+execute as @n[tag=seeker,scores={seeker_release_timer=4}] run tellraw @a [{"text": "Seeker is released in: ","bold": true, "color": "gray"},{"text": "4","bold": true,"color": "dark_red"},{"text": " Seconds","bold": true, "color": "gray"}]
+execute as @n[tag=seeker,scores={seeker_release_timer=3}] run tellraw @a [{"text": "Seeker is released in: ","bold": true, "color": "gray"},{"text": "3","bold": true,"color": "dark_red"},{"text": " Seconds","bold": true, "color": "gray"}]
+execute as @n[tag=seeker,scores={seeker_release_timer=2}] run tellraw @a [{"text": "Seeker is released in: ","bold": true, "color": "gray"},{"text": "2","bold": true,"color": "dark_red"},{"text": " Seconds","bold": true, "color": "gray"}]
+execute as @n[tag=seeker,scores={seeker_release_timer=1}] run tellraw @a [{"text": "Seeker is released in: ","bold": true, "color": "gray"},{"text": "1","bold": true,"color": "dark_red"},{"text": " Seconds","bold": true, "color": "gray"}]
+execute as @n[tag=seeker,scores={seeker_release_timer=0}] run tellraw @a [{"text": "Seeker","bold": true,"color": "dark_red","underlined": true},{"text": " Released!","bold": true,"color": "gray"}]
+execute as @n[tag=seeker,scores={seeker_release_timer=0}] run title @a title [{"text": "Seeker","bold": true,"color": "dark_red","underlined": true},{"text": " Released!","bold": true,"color": "gray"}]
+tp @a[tag=seeker,scores={seeker_release_timer=0}] @e[tag=arena.spawn,limit=1,sort=random]
+execute if entity @a[tag=seeker,scores={seeker_release_timer=1..}] run schedule function hide_and_seek:loop/release_seeker 1s append
