@@ -1,2 +1,3 @@
 function juggernaut:end_game
 function survival:end_game
+function king_of_the_hill:end_game
