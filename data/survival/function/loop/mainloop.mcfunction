@@ -5,6 +5,21 @@ execute at @e[tag=respawn_point] as @a[distance=..10] run tp @s @e[tag=arena.spa
 execute if score #grace_period var > #0 var run effect give @a weakness 1 255 true
 execute if score #grace_period var > #0 var run effect give @a resistance 1 255 true
 
+execute if score #worldborder_size var matches 280..300 run function survival:loop/check_worldborder {distance:300}
+execute if score #worldborder_size var matches 260..279 run function survival:loop/check_worldborder {distance:279}
+execute if score #worldborder_size var matches 240..259 run function survival:loop/check_worldborder {distance:259}
+execute if score #worldborder_size var matches 220..239 run function survival:loop/check_worldborder {distance:239}
+execute if score #worldborder_size var matches 200..219 run function survival:loop/check_worldborder {distance:219}
+execute if score #worldborder_size var matches 180..199 run function survival:loop/check_worldborder {distance:199}
+execute if score #worldborder_size var matches 160..179 run function survival:loop/check_worldborder {distance:179}
+execute if score #worldborder_size var matches 140..159 run function survival:loop/check_worldborder {distance:159}
+execute if score #worldborder_size var matches 120..139 run function survival:loop/check_worldborder {distance:139}
+execute if score #worldborder_size var matches 100..119 run function survival:loop/check_worldborder {distance:119}
+execute if score #worldborder_size var matches 80..99 run function survival:loop/check_worldborder {distance:99}
+execute if score #worldborder_size var matches 60..79 run function survival:loop/check_worldborder {distance:79}
+execute if score #worldborder_size var matches 40..59 run function survival:loop/check_worldborder {distance:59}
+execute if score #worldborder_size var matches 20..39 run function survival:loop/check_worldborder {distance:39}
+execute if score #worldborder_size var matches 0..19 run function survival:loop/check_worldborder {distance:19}
 
 # If only one player is alive, wait 15 seconds and then end the game
 # Calculate players left.
