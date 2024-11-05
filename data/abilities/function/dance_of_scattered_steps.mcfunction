@@ -1,10 +1,10 @@
 kill @e[type=item,nbt={Item:{id:"minecraft:gunpowder"}},distance=..3]
 execute as @r[distance=2..,sort=random,limit=1] at @s run execute if block ~ ~ ~ air run tp @p ^ ^ ^-2
-execute unless block ~ ~ ~ air unless block ~ ~ ~ grass unless block ~ ~ ~ tall_grass unless block ~ ~ ~ water run tp @s ~ ~1 ~
-execute unless block ~ ~ ~ air unless block ~ ~ ~ grass unless block ~ ~ ~ tall_grass unless block ~ ~ ~ water run tp @s ~ ~1 ~
-execute unless block ~ ~ ~ air unless block ~ ~ ~ grass unless block ~ ~ ~ tall_grass unless block ~ ~ ~ water run tp @s ~ ~1 ~
-execute unless block ~ ~ ~ air unless block ~ ~ ~ grass unless block ~ ~ ~ tall_grass unless block ~ ~ ~ water run tp @s ~ ~1 ~
-execute unless block ~ ~ ~ air unless block ~ ~ ~ grass unless block ~ ~ ~ tall_grass unless block ~ ~ ~ water run tp @s ~ ~1 ~
+execute unless block ~ ~ ~ air unless block ~ ~ ~ short_grass unless block ~ ~ ~ tall_grass unless block ~ ~ ~ water run tp @s ~ ~1 ~
+execute unless block ~ ~ ~ air unless block ~ ~ ~ short_grass unless block ~ ~ ~ tall_grass unless block ~ ~ ~ water run tp @s ~ ~1 ~
+execute unless block ~ ~ ~ air unless block ~ ~ ~ short_grass unless block ~ ~ ~ tall_grass unless block ~ ~ ~ water run tp @s ~ ~1 ~
+execute unless block ~ ~ ~ air unless block ~ ~ ~ short_grass unless block ~ ~ ~ tall_grass unless block ~ ~ ~ water run tp @s ~ ~1 ~
+execute unless block ~ ~ ~ air unless block ~ ~ ~ short_grass unless block ~ ~ ~ tall_grass unless block ~ ~ ~ water run tp @s ~ ~1 ~
 
 # Disappear in an all-engulfing smoke
 particle campfire_cosy_smoke ~ ~0.5 ~ 0.3 0.5 0.3 0.000001 300 force
