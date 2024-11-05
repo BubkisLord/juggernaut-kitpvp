@@ -1,0 +1,1 @@
+$execute at @n[type=armor_stand,tag=worldborder_center] as @e[type=armor_stand,tag=crate,distance=$(distance)..] run kill @s
