@@ -39,3 +39,7 @@ scoreboard objectives add hunt_cooldown dummy
 scoreboard objectives add point_kills minecraft.custom:player_kills
 scoreboard objectives add killstreak minecraft.custom:player_kills
 scoreboard objectives add xpbar xp
+
+team add blue
+team add red
+team add green
