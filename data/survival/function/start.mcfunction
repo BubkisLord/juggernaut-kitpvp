@@ -20,13 +20,14 @@ tag @a remove lobby.player
 effect clear @a
 
 # Reset the crate count
-scoreboard players set #max_crate_count var 6
+scoreboard players operation #max_crate_count var = #survival_customisation crate_count
 scoreboard players set #crate_count var 0
 
 # Allow players to drop items
 gamerule keepInventory false
 
 # Set the game state to pregame - Possibly needed if game starting is later changed for some unforseen reason.
+scoreboard players operation #survival_teams var = #survival_customisation teams_mode
 execute if score #survival_teams var matches 0 run scoreboard players set #game_state var 20
 execute if score #survival_teams var matches 1 run scoreboard players set #game_state var 25
 execute if score #survival_teams var matches 1 run function survival:start_with_teams
