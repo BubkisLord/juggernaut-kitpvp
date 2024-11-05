@@ -10,7 +10,7 @@ execute as @e[tag=survival_chest_indicator,limit=11,sort=random,tag=!common] at 
 execute as @e[tag=survival_chest_indicator] at @s if block ~ ~ ~ chest{LootTable:"survival:chests/uncommon"} run tag @s add uncommon
 execute as @e[tag=survival_chest_indicator,limit=10,sort=random,tag=!common,tag=!uncommon] at @s run setblock ~ ~ ~ chest{LootTable:"survival:chests/rare"} replace
 execute as @e[tag=survival_chest_indicator] at @s if block ~ ~ ~ chest{LootTable:"survival:chests/rare"} run tag @s add rare
-execute as @a run function survival:set_legendary
+execute if score #survival_customisation has_legendaries matches 1 as @a run function survival:set_legendary
 
 
 
