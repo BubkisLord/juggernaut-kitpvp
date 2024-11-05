@@ -19,5 +19,3 @@ execute if score #teams_alive var matches ..1 if score #game_state var matches 5
 
 execute if score #hide_and_seek_game_ending var matches 1 run scoreboard players remove #end_game_timer var 1
 execute if score #game_state var matches 50..59 if score #end_game_timer var matches ..0 run function hide_and_seek:end_game
-
-schedule function hide_and_seek:loop/loop_per_second 1s append

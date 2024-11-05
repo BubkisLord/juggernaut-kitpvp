@@ -10,7 +10,11 @@ effect give @a[tag=seeker] strength 1 9 true
 # Calculate players left.
 scoreboard players set #surv_players_alive var 0
 execute as @a[scores={lives_remaining=1..}] run scoreboard players add #surv_players_alive var 1
-execute if score #surv_players_alive var matches ..1 if score #end_game_timer var matches 10 as @a[scores={lives_remaining=1..}] run tellraw @a [{"selector": "@s","bold": true,"color": "dark_purple","clickEvent": {"action": "open_url","value": "https://www.youtube.com/watch?v=dQw4w9WgXcQ"}},{"text": " Wins!","italic": true,"color":"white"}]
 execute if score #surv_players_alive var matches ..1 run scoreboard players remove #end_game_timer var 1
 # If only one player is alive, and time is up then end game.
 execute if score #end_game_timer var matches ..0 run function hide_and_seek:end_game
+
+execute as @e[type=armor_stand,tag=juggernaut_manager] run scoreboard players add @s tick_counter 1
+scoreboard players set #20 var 20
+execute as @e[type=armor_stand,tag=juggernaut_manager] if score @s tick_counter >= #20 var run function hide_and_seek:loop/loop_per_second
+execute as @e[type=armor_stand,tag=juggernaut_manager] if score @s tick_counter >= #20 var run scoreboard players set @s tick_counter 0

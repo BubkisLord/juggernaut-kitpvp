@@ -13,7 +13,7 @@ tp @a[tag=hider] 0 100 0
 team join seeker @a[tag=seeker]
 team join hider @a[tag=hider]
 
-execute as @a[tag=seeker] run playsound music_disc.pigstep record @s ~ ~ ~ 3 0.75
+execute as @a[tag=seeker] run playsound music_disc.pigstep record @s ~ ~ ~ 3 1.25
 
 scoreboard players set @a seeker_release_timer 0
 
