@@ -14,6 +14,23 @@ execute if score #worldborder_size var matches 11.. if score #times_replenished 
 execute if score #worldborder_size var matches 11.. if score #times_replenished var = #2 var if score #grace_period var <= #0 var run worldborder add -0.75 1
 execute if score #worldborder_size var matches 11.. if score #times_replenished var >= #3 var if score #grace_period var <= #0 var run worldborder add -2 1
 
+# Check World Border
+execute if score #worldborder_size var matches 150..300 run function survival:loop/check_worldborder {distance:300}
+execute if score #worldborder_size var matches 280..300 run function survival:loop/check_worldborder {distance:300}
+execute if score #worldborder_size var matches 260..279 run function survival:loop/check_worldborder {distance:279}
+execute if score #worldborder_size var matches 240..259 run function survival:loop/check_worldborder {distance:259}
+execute if score #worldborder_size var matches 220..239 run function survival:loop/check_worldborder {distance:239}
+execute if score #worldborder_size var matches 200..219 run function survival:loop/check_worldborder {distance:219}
+execute if score #worldborder_size var matches 180..199 run function survival:loop/check_worldborder {distance:199}
+execute if score #worldborder_size var matches 160..179 run function survival:loop/check_worldborder {distance:179}
+execute if score #worldborder_size var matches 140..159 run function survival:loop/check_worldborder {distance:159}
+execute if score #worldborder_size var matches 120..139 run function survival:loop/check_worldborder {distance:139}
+execute if score #worldborder_size var matches 100..119 run function survival:loop/check_worldborder {distance:119}
+execute if score #worldborder_size var matches 80..99 run function survival:loop/check_worldborder {distance:99}
+execute if score #worldborder_size var matches 60..79 run function survival:loop/check_worldborder {distance:79}
+execute if score #worldborder_size var matches 40..59 run function survival:loop/check_worldborder {distance:59}
+execute if score #worldborder_size var matches 20..39 run function survival:loop/check_worldborder {distance:39}
+execute if score #worldborder_size var matches 0..19 run function survival:loop/check_worldborder {distance:19}
 
 # Progress replenish chest timer
 execute if score #replenish_chest_timer var > #0 var run scoreboard players remove #replenish_chest_timer var 1
