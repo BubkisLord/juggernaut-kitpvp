@@ -121,7 +121,7 @@ execute as @a[tag=dragon] at @s if entity @e[type=item,nbt={Item:{id:"minecraft:
 execute as @a[tag=dragon] at @s as @e[type=item,nbt={Item:{id:"minecraft:phantom_membrane"}},distance=..3] run kill @s
 
 
-execute as @a[tag=dragon] if entity @s[tag=is_floating] run scoreboard players set @s current_raycast_depth 0
+execute as @a[tag=dragon] run scoreboard players set @s current_raycast_depth 0
 
 execute as @a[tag=dragon] if entity @s[tag=is_floating] at @s run scoreboard players set @s raycast_limit 40
 execute as @a[tag=dragon] if entity @s[tag=!is_floating] at @s run scoreboard players set @s raycast_limit 10
