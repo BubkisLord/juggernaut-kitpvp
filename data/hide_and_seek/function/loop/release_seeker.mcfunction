@@ -12,5 +12,5 @@ execute as @n[tag=seeker,scores={seeker_release_timer=2}] run tellraw @a [{"text
 execute as @n[tag=seeker,scores={seeker_release_timer=1}] run tellraw @a [{"text": "Seeker is released in: ","bold": true, "color": "gray"},{"text": "1","bold": true,"color": "dark_red"},{"text": " Seconds","bold": true, "color": "gray"}]
 execute as @n[tag=seeker,scores={seeker_release_timer=0}] run tellraw @a [{"text": "Seeker","bold": true,"color": "dark_red","underlined": true},{"text": " Released!","bold": true,"color": "gray"}]
 execute as @n[tag=seeker,scores={seeker_release_timer=0}] run title @a title [{"text": "Seeker","bold": true,"color": "dark_red","underlined": true},{"text": " Released!","bold": true,"color": "gray"}]
-tp @a[tag=seeker,scores={seeker_release_timer=0}] @e[tag=arena.spawn,limit=1,sort=random]
+tp @a[tag=seeker,scores={seeker_release_timer=0}] @e[type=armor_stand,tag=arena.spawn,limit=1,sort=random]
 execute if entity @a[tag=seeker,scores={seeker_release_timer=1..}] run schedule function hide_and_seek:loop/release_seeker 1s append

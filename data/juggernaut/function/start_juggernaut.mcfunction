@@ -7,7 +7,7 @@ scoreboard players set @a[tag=juggernaut] juggernaut_release_timer 25
 # This is for when the game time is capped. (Optional)
 # scoreboard players set @a[tag=juggernaut] juggernaut_game_time 325
 
-tp @a[tag=runner] @e[tag=arena.spawn,limit=1,sort=random]
+tp @a[tag=runner] @e[type=armor_stand,tag=arena.spawn,limit=1,sort=random]
 
 execute store result score @a[tag=survivor] lives run scoreboard players get #juggernaut_count var
 scoreboard players add @a[tag=survivor] lives 2

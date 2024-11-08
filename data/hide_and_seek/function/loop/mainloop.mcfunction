@@ -1,5 +1,5 @@
 # Main Loop
-execute at @e[tag=respawn_point] as @a[distance=..10] run tp @s @e[tag=arena.spawn,limit=1,sort=random]
+execute at @e[tag=respawn_point] as @a[distance=..10] run tp @s @e[type=armor_stand,tag=arena.spawn,limit=1,sort=random]
 
 # Enforce Grace Period
 effect give @a[tag=hider] weakness 1 255 true
