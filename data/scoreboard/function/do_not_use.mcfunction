@@ -42,6 +42,45 @@ scoreboard objectives add xpbar xp
 scoreboard objectives add seeker_release_timer dummy
 scoreboard objectives add hide_and_seek_game_time dummy
 scoreboard objectives add seeker_count dummy
+scoreboard objectives add aura_sound dummy
+scoreboard objectives add ambushDisplay dummy
+scoreboard objectives add scattered_steps_duration dummy
+scoreboard objectives add bushido_flow dummy
+scoreboard objectives add pirateKills dummy
+scoreboard objectives add assassinActivate dummy
+scoreboard objectives add ambushCounter dummy
+scoreboard objectives add kitTokens dummy
+scoreboard objectives add kitPurchase dummy
+scoreboard objectives add fav1trigger dummy
+scoreboard objectives add fav2trigger dummy
+scoreboard objectives add fav3trigger dummy
+scoreboard objectives add second_counter dummy
+scoreboard objectives add blinker_tp_timeout dummy
+scoreboard objectives add max_blinker_cooldown dummy
+scoreboard objectives add blinker_cooldown_percent dummy
+scoreboard objectives add sneak_time minecraft.custom:sneak_time
+scoreboard objectives add jump_time minecraft.custom:jump
+scoreboard objectives add damage_absorbed custom:damage_absorbed
+scoreboard objectives add turret_cooldown dummy
+scoreboard objectives add lobby_clearcount dummy
+scoreboard objectives add replenish_counter dummy
+scoreboard objectives add seconds dummy
+scoreboard objectives add tutorialPurchase dummy
+scoreboard objectives add kitsnotunlocked dummy
+scoreboard objectives add kitsunlocked dummy
+scoreboard objectives add skip_prompt dummy
+scoreboard objectives add dummyKills dummy
+scoreboard objectives add kitSelect dummy
+scoreboard objectives add TokenGain dummy
+scoreboard objectives add TokenGainCounter dummy
+scoreboard objectives add unlockall dummy
+scoreboard objectives add exit_count dummy
+scoreboard objectives add replenish_cd dummy
+scoreboard objectives add kills playerKillCount
+scoreboard objectives add deaths deathCount
+scoreboard objectives add bow minecraft.used:bow
+scoreboard objectives add crossbow minecraft.used:crossbow
+scoreboard objectives add trident minecraft.used:trident
 
 team add blue
 team add red
