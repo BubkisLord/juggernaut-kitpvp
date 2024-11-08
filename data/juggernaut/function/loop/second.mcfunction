@@ -1,4 +1,4 @@
-function juggernaut:recursive_point_gaining
+function juggernaut:loop/recursive_point_gaining
 
 # Juggernaut timeout countdown
 execute as @a[tag=juggernaut,scores={juggernaut_game_time=1..}] run scoreboard players remove @a[tag=juggernaut] juggernaut_game_time 1
@@ -42,6 +42,11 @@ execute as @e[tag=engineer] if score @s replenishment_tower_cooldown > #0 var ru
 execute as @e[tag=engineer] if score @s replenishment_tower_cooldown = #0 var run item replace entity @s hotbar.2 with lime_dye[item_name='[{"text": "Spawn Replenishment Tower","color": "green","bold": true},{"text": " | "},{"text": "READY","color": "green"}]']
 execute as @e[tag=engineer] if score @s replenishment_tower_cooldown = #0 var run scoreboard players remove @s replenishment_tower_cooldown 1
 execute as @e[tag=engineer] if score @s replenishment_tower_cooldown > #0 var run item replace entity @s hotbar.2 with barrier[item_name='[{"text": "Spawn Replenishment Tower","color": "green","bold": true},{"text": " | "},{"text": "ON COOLDOWN","color": "red"}]']
+
+execute as @e[tag=engineer] if score @s turret_cooldown > #0 var run scoreboard players remove @s turret_cooldown 1
+execute as @e[tag=engineer] if score @s turret_cooldown = #0 var run item replace entity @s hotbar.3 with bone[item_name='[{"text": "Spawn Turret","color": "gray","bold": true},{"text": " | "},{"text": "READY","color": "green"}]']
+execute as @e[tag=engineer] if score @s turret_cooldown = #0 var run scoreboard players remove @s turret_cooldown 1
+execute as @e[tag=engineer] if score @s turret_cooldown > #0 var run item replace entity @s hotbar.3 with barrier[item_name='[{"text": "Spawn Turret","color": "gray","bold": true},{"text": " | "},{"text": "ON COOLDOWN","color": "red"}]']
 
 execute at @e[type=armor_stand,tag=engineer_tower] run execute as @a[tag=juggernaut,distance=..3] run scoreboard players add @n[type=armor_stand,tag=engineer_tower] dispel_progress 1
 execute as @e[type=armor_stand,tag=engineer_tower] at @s run execute if score @s dispel_progress >= @s total_dispelling_needed run playsound block.note_block.bell master @a[tag=juggernaut,distance=..16] ~ ~ ~ 2 1.2
