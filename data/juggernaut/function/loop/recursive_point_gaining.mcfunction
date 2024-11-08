@@ -1,5 +1,5 @@
 # All runners gain points for replenishing stations (1/sec)
-execute as @e[tag=replenishment.station] at @s if entity @e[type=armor_stand,tag=juggernaut_manager,scores={game_state=1}] unless entity @e[type=armor_stand,tag=banishment_glyph,distance=..32] as @a[tag=runner,distance=0..3] at @s run scoreboard players add @s points 1
+execute as @e[tag=replenishment.station] at @s if score #game_state var matches 11 unless entity @e[type=armor_stand,tag=banishment_glyph,distance=..32] as @a[tag=runner,distance=0..3] at @s run scoreboard players add @s points 1
 
 execute as @a[tag=runner,scores={damage_absorbed=1..}] run scoreboard players operation @s points += @s damage_absorbed
 execute as @a[tag=runner,scores={damage_absorbed=1..}] run scoreboard players set @s damage_absorbed 0
