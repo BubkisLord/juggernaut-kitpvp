@@ -340,17 +340,9 @@ execute as @a[tag=survivor] at @s if entity @e[type=item,nbt={Item:{id:"minecraf
 execute as @a[tag=survivor] at @s as @e[type=item,nbt={Item:{id:"minecraft:stone"}},distance=..3] run kill @s
 
 # Survivor activated ability
-scoreboard players set #ice_bomb_delay var 40
-execute as @a[tag=survivor] at @s run execute as @e[type=item,nbt={Item:{id:"minecraft:packed_ice"}},distance=..3] at @s run summon armor_stand ~ ~ ~ {Tags:[ice_bomb],Invisible:true,Invulnerable:true,CustomNameVisible:false,NoGravity:true}
-execute as @a[tag=survivor] at @s run execute as @e[type=item,nbt={Item:{id:"minecraft:packed_ice"}},distance=..3] run kill @s
-# Activate ice bomb after 2 seconds
-execute as @e[type=armor_stand,tag=ice_bomb] run scoreboard players add @s var 1
-execute as @e[type=armor_stand,tag=ice_bomb] at @s run particle electric_spark ~ ~ ~ 5 5 5 0.00001 10 force
-execute as @e[type=armor_stand,tag=ice_bomb] at @s if score @s var > #ice_bomb_delay var run effect give @a[distance=..5] slowness 12 255 true
-execute as @e[type=armor_stand,tag=ice_bomb] at @s if score @s var > #ice_bomb_delay var run particle electric_spark ~ ~ ~ 2 2 2 0.00001 120 force
-execute as @e[type=armor_stand,tag=ice_bomb] at @s if score @s var > #ice_bomb_delay var run particle explosion ~ ~ ~ 2 2 2 0.00001 2 force
-execute as @e[type=armor_stand,tag=ice_bomb] at @s if score @s var > #ice_bomb_delay var run playsound entity.generic.explode master @a[distance=..10]
-execute as @e[type=armor_stand,tag=ice_bomb] if score @s var > #ice_bomb_delay var run kill @s
+execute as @a[tag=survivor] at @s as @e[type=snowball,distance=..3] run tag @s add ice_bomb
+execute as @e[type=snowball,tag=ice_bomb] at @s run particle electric_spark ~ ~ ~ 1 1 1 0.00001 60 force
+execute as @e[type=snowball,tag=ice_bomb] at @s run effect give @a[tag=juggernaut,distance=..2] slowness 12 255 true
 
 # Engineer
 execute at @e[type=armor_stand,tag=engineer_tower] run execute as @a[tag=juggernaut,distance=..3] run particle totem_of_undying ~ ~ ~ 0.25 1 0.25 0 20 force
