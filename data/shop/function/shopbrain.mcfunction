@@ -16,4 +16,3 @@ execute at @e[type=armor_stand,tag=market.marker] as @a[distance=0..100] run tag
 execute at @e[type=armor_stand,tag=market.marker] as @a[distance=100..] run tag @s remove market.player
 execute as @a[scores={kitSelect=1..},tag=market.player] run function shop:kitselect
 scoreboard players reset @a[tag=!market.player] kitSelect
-execute as @a[tag=market.player,tag=!receivedWelcomeGift] run function shop:welcome_gift
