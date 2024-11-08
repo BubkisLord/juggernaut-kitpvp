@@ -6,4 +6,4 @@ execute as @n[tag=blinker_raycast_tracker] at @s anchored eyes positioned ^ ^ ^0
 execute as @n[tag=blinker_raycast_tracker] at @s anchored eyes positioned ^ ^ ^0.5 if entity @e[distance=..5,tag=blinker_remnant] run tag @n[distance=..1,tag=blinker_remnant] add blinker_teleporting
 
 # Check 1 block ahead, continue if air is found
-execute as @n[tag=blinker_raycast_tracker] at @s anchored eyes positioned ^ ^ ^0.5 run function juggernaut:blinker_teleport_raycast
+execute as @n[tag=blinker_raycast_tracker] at @s anchored eyes positioned ^ ^ ^0.5 run function juggernaut:raycasts/blinker_teleport_raycast

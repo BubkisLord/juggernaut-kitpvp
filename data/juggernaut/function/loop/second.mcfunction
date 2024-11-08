@@ -71,3 +71,26 @@ execute as @e[type=armor_stand,tag=juggernaut_manager] unless score #game_state 
 
 # Hunter remnant delay
 execute as @e[type=armor_stand,tag=hunter_remnant] if score @s var > #0 var run scoreboard players remove @s var 1
+
+execute as @a[tag=blinker,nbt={SelectedItem:{id:"minecraft:ender_pearl"}}] at @s run function juggernaut:raycasts/raycast {\
+    player_tag:"blinker",\
+    raycast_tag:"blinker_raycast",\
+    target_tag:"blinker_remnant",\
+    hit_distance:8,\
+    raycast_limit:1000,\
+    move_function_id:3,\
+    hit_function_id:3,\
+    collides_with_blocks:0,\
+}
+
+# Scout revealing by maintaining line of sight
+execute as @a[tag=scout] at @s run function juggernaut:raycasts/raycast {\
+    player_tag:"scout",\
+    raycast_tag:"scout_raycast",\
+    target_tag:"juggernaut",\
+    hit_distance:2.5,\
+    raycast_limit:70,\
+    move_function_id:0,\
+    hit_function_id:2,\
+    collides_with_blocks:0,\
+}
