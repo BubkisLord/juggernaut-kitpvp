@@ -66,5 +66,11 @@ execute if score #king_of_the_hill_customisation teams_mode matches 1 run functi
 
 execute as @e[type=armor_stand,tag=replenishment.station,limit=1,sort=random] run tag @s add koth_hill
 
+scoreboard players set @a point_kills 0
+
+bossbar set king_of_the_hill_timer players @a
+
+scoreboard objectives setdisplay sidebar king_of_the_hill_points
+
 # Set the grace period to 40 seconds
 scoreboard players set #grace_period var 40
