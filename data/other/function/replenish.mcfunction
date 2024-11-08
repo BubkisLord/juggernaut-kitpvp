@@ -39,12 +39,12 @@ execute as @s[tag=shaman] run function replenish:shaman
 execute as @s[tag=deflector] run function replenish:deflector
 execute as @s[tag=alchemist] run function replenish:alchemist
 
-execute as @s[tag=escapist] run function juggernaut:replenish_escapist
-execute as @s[tag=medic] run function juggernaut:replenish_medic
-execute as @s[tag=scout] run function juggernaut:replenish_scout
-execute as @s[tag=survivor] run function juggernaut:replenish_survivor
-execute as @s[tag=engineer] run function juggernaut:replenish_engineer
-execute as @s[tag=witchdoctor] run function juggernaut:replenish_witchdoctor
-execute as @s[tag=juggernaut] run function juggernaut:replenish_jug_steak
+execute as @s[tag=escapist] run function juggernaut:kit_replenishes/replenish_escapist
+execute as @s[tag=medic] run function juggernaut:kit_replenishes/replenish_medic
+execute as @s[tag=scout] run function juggernaut:kit_replenishes/replenish_scout
+execute as @s[tag=survivor] run function juggernaut:kit_replenishes/replenish_survivor
+execute as @s[tag=engineer] run function juggernaut:kit_replenishes/replenish_engineer
+execute as @s[tag=witchdoctor] run function juggernaut:kit_replenishes/replenish_witchdoctor
+execute as @s[tag=juggernaut] run function juggernaut:kit_replenishes/replenish_jug_steak
 
 execute as @s[tag=samurai] run function replenish:samurai
