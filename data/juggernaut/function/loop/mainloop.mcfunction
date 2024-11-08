@@ -126,7 +126,24 @@ execute as @a[tag=dragon] run scoreboard players set @s current_raycast_depth 0
 execute as @a[tag=dragon] if entity @s[tag=is_floating] at @s run scoreboard players set @s raycast_limit 40
 execute as @a[tag=dragon] if entity @s[tag=!is_floating] at @s run scoreboard players set @s raycast_limit 10
 
-execute as @a[tag=dragon] at @s run function juggernaut:raycasts/dragon_raycast
+execute as @a[tag=dragon] if entity @s[tag=is_floating] at @s run function juggernaut:raycasts/raycast {\
+    player_tag:"dragon",\
+    raycast_tag:"dragon_breath_raycast",\
+    target_tag:"runner",\
+    hit_distance:1.5,\
+    raycast_limit:20,\
+    move_function_id:1,\
+    hit_function_id:1,\
+}
+execute as @a[tag=dragon] if entity @s[tag=!is_floating] at @s run function juggernaut:raycasts/raycast {\
+    player_tag:"dragon",\
+    raycast_tag:"dragon_breath_raycast",\
+    target_tag:"runner",\
+    hit_distance:1.5,\
+    raycast_limit:5,\
+    move_function_id:1,\
+    hit_function_id:1,\
+}
 
 execute as @a[tag=dragon] if entity @s[tag=is_floating] at @s unless block ~ ~-5 ~ air run effect give @s levitation 1 0 true
 execute as @a[tag=dragon] if entity @s[tag=is_floating] at @s run effect give @s slow_falling 1 255 true
@@ -329,7 +346,15 @@ execute as @a[tag=juggernaut_manager,scores={scout_reveal_timer=1200..}] run sco
 execute as @a[tag=scout] at @s as @e[type=item,nbt={Item:{id:"minecraft:glowstone_dust"}},distance=..3] run effect give @a[tag=juggernaut,limit=1,sort=random] glowing 12 0 true
 execute as @a[tag=scout] at @s as @e[type=item,nbt={Item:{id:"minecraft:glowstone_dust"}},distance=..3] run kill @s
 # Scout revealing by maintaining line of sight
-execute as @a[tag=scout] at @s run function juggernaut:raycasts/scout_raycast
+execute as @a[tag=scout] at @s run function juggernaut:raycasts/raycast {\
+    player_tag:"scout",\
+    raycast_tag:"scout_raycast",\
+    target_tag:"juggernaut",\
+    hit_distance:6,\
+    raycast_limit:1000,\
+    move_function_id:0,\
+    hit_function_id:2,\
+}
 
 
 
