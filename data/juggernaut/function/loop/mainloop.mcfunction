@@ -183,10 +183,12 @@ execute as @e[type=item,nbt={Item:{id:"minecraft:lightning_rod"}}] run execute a
 execute as @e[type=item,nbt={Item:{id:"minecraft:lightning_rod"}}] run kill @s
 
 # Predator Functionality
-execute as @a[tag=predator] at @s run particle white_ash ~ ~0.5 ~ 3 3 3 0.0001 30 force @a[tag=!predator]
-execute as @a[tag=predator] at @s run particle ash ~ ~1 ~ 0.25 0.5 0.25 0.0001 100 force @a[tag=!predator]
-scoreboard players set #1 var 1
-execute at @a[tag=predator] as @a[tag=runner,distance=..6] if score #game_state var matches 11 run effect give @s darkness 4 0 true
+
+execute if entity @a[tag=predator] run effect give @a[tag=runner] darkness infinite 0 true
+execute as @a[tag=predator] at @s unless entity @s[scores={sneak_time=1}] run particle white_ash ~ ~0.5 ~ 3 3 3 0.0001 30 force @a[tag=!predator]
+execute as @a[tag=predator] at @s unless entity @s[scores={sneak_time=1}] run particle ash ~ ~1 ~ 0.25 0.5 0.25 0.0001 100 force @a[tag=!predator]
+# execute as @a[tag=predator] at @s if entity @s[scores={sneak_time=1}] run effect give @s speed 1 0 true
+scoreboard players set @a[scores={sneak_time=1..}] sneak_time 0
 # execute at @a[tag=predator] as @a[tag=runner,distance=..4] if score #game_state var matches 11 var run effect give @s blindness 4 3 true
 
 # Warlock Functionality
