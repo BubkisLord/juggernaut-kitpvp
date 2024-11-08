@@ -318,7 +318,6 @@ execute as @a[tag=medic,tag=teleporting] run tag @s remove teleporting
 execute as @a[tag=medic] run effect clear @s glowing
 
 # Scout passive effect
-execute as @a[tag=scout] run effect give @s speed 1 0 true
 execute as @a[tag=scout] run effect give @s jump_boost 1 1 true
 
 execute as @a[tag=scout] run scoreboard players add @n[tag=juggernaut_manager] scout_reveal_timer 1
