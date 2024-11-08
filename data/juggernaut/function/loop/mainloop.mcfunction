@@ -299,15 +299,15 @@ execute as @a[tag=escapist,scores={jug_kit_cooldown=1..}] run item replace entit
 execute as @a[tag=medic] run effect give @a[tag=runner] regeneration 1 0 true
 
 # If failure
-execute as @a[tag=medic] at @s if entity @e[type=item,nbt={Item:{id:"minecraft:nether_star"}},distance=..3] if entity @a[tag=juggernaut,distance=..10] run item replace entity @s hotbar.3 with minecraft:barrier[item_name='[{"text": "Rescue | ","color": "#A4D1EA"},{"text": "ON COOLDOWN","color": "red"}]']
-execute as @a[tag=medic] at @s if entity @e[type=item,nbt={Item:{id:"minecraft:nether_star"}},distance=..3] if entity @a[tag=juggernaut,distance=..10] run scoreboard players set @s jug_kit_cooldown 4
-execute at @a[tag=medic] as @e[type=item,nbt={Item:{id:"minecraft:nether_star"}},distance=..3] if entity @a[tag=juggernaut,distance=..10] run particle angry_villager ~ ~0.5 ~ 1 1 1 0 80 force
-execute at @a[tag=medic] as @e[type=item,nbt={Item:{id:"minecraft:nether_star"}},distance=..3] if entity @a[tag=juggernaut,distance=..10] run kill @s
+execute as @a[tag=medic] at @s if entity @e[type=item,nbt={Item:{id:"minecraft:nether_star"}},distance=..3] if entity @a[tag=juggernaut,distance=..20] run item replace entity @s hotbar.3 with minecraft:barrier[item_name='[{"text": "Rescue | ","color": "#A4D1EA"},{"text": "ON COOLDOWN","color": "red"}]']
+execute as @a[tag=medic] at @s if entity @e[type=item,nbt={Item:{id:"minecraft:nether_star"}},distance=..3] if entity @a[tag=juggernaut,distance=..20] run scoreboard players set @s jug_kit_cooldown 4
+execute at @a[tag=medic] as @e[type=item,nbt={Item:{id:"minecraft:nether_star"}},distance=..3] if entity @a[tag=juggernaut,distance=..20] run particle angry_villager ~ ~0.5 ~ 1 1 1 0 80 force
+execute at @a[tag=medic] as @e[type=item,nbt={Item:{id:"minecraft:nether_star"}},distance=..3] if entity @a[tag=juggernaut,distance=..20] run kill @s
 # If successful
-execute as @a[tag=medic] at @s if entity @e[type=item,nbt={Item:{id:"minecraft:nether_star"}},distance=..3] unless entity @a[tag=juggernaut,distance=..10] run tag @s add teleporting
-execute as @a[tag=medic] at @s if entity @e[type=item,nbt={Item:{id:"minecraft:nether_star"}},distance=..3] unless entity @a[tag=juggernaut,distance=..10] run scoreboard players set @s jug_kit_cooldown 90
-execute as @a[tag=medic] at @s if entity @e[type=item,nbt={Item:{id:"minecraft:nether_star"}},distance=..3] unless entity @a[tag=juggernaut,distance=..10] run item replace entity @s hotbar.3 with minecraft:barrier[item_name='[{"text": "Rescue | ","color": "#A4D1EA"},{"text": "ON COOLDOWN","color": "red"}]']
-execute at @a[tag=medic] as @e[type=item,nbt={Item:{id:"minecraft:nether_star"}},distance=..3] unless entity @a[tag=juggernaut,distance=..10] run kill @s
+execute as @a[tag=medic] at @s if entity @e[type=item,nbt={Item:{id:"minecraft:nether_star"}},distance=..3] unless entity @a[tag=juggernaut,distance=..20] run tag @s add teleporting
+execute as @a[tag=medic] at @s if entity @e[type=item,nbt={Item:{id:"minecraft:nether_star"}},distance=..3] unless entity @a[tag=juggernaut,distance=..20] run scoreboard players set @s jug_kit_cooldown 120
+execute as @a[tag=medic] at @s if entity @e[type=item,nbt={Item:{id:"minecraft:nether_star"}},distance=..3] unless entity @a[tag=juggernaut,distance=..20] run item replace entity @s hotbar.3 with minecraft:barrier[item_name='[{"text": "Rescue | ","color": "#A4D1EA"},{"text": "ON COOLDOWN","color": "red"}]']
+execute at @a[tag=medic] as @e[type=item,nbt={Item:{id:"minecraft:nether_star"}},distance=..3] unless entity @a[tag=juggernaut,distance=..20] run kill @s
 
 execute as @a[tag=medic,scores={jug_kit_cooldown=0}] if items entity @s hotbar.3 barrier run item replace entity @s hotbar.3 with minecraft:nether_star[item_name='[{"text": "Rescue | ","color": "#A4D1EA"},{"text": "READY","color": "green"}]']
 execute as @a[tag=medic,tag=teleporting] if entity @a[tag=runner,tag=!teleporting] run tp @s @r[tag=runner,tag=!teleporting]
