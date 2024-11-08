@@ -1,6 +1,6 @@
 #Cooldown reset
-execute if entity @e[type=armor_stand,tag=juggernaut_manager,scores={game_state=0}] run scoreboard players set @s seconds 90
-execute unless entity @e[type=armor_stand,tag=juggernaut_manager,scores={game_state=0}] run scoreboard players set @s seconds 120
+execute if score #game_state var matches 0 run scoreboard players set @s seconds 90
+execute unless score #game_state var matches 0 run scoreboard players set @s seconds 120
 
 
 #Replenishment function
