@@ -347,11 +347,17 @@ execute as @e[type=snowball,tag=ice_bomb] at @s run effect give @a[tag=juggernau
 # Engineer
 execute at @e[type=armor_stand,tag=engineer_tower] run execute as @a[tag=juggernaut,distance=..3] run particle totem_of_undying ~ ~ ~ 0.25 1 0.25 0 20 force
 
+execute as @e[type=skeleton,tag=skeleton_turret] unless entity @e[type=armor_stand,tag=turret] run kill @s
+execute as @e[type=skeleton,tag=skeleton_turret] at @s run tp @s @n[type=armor_stand,tag=turret]
+
 # Engineer borrowed time ability
 execute as @a[tag=engineer] at @s if entity @e[type=item,nbt={Item:{id:"minecraft:raw_gold_block"}},distance=..3] run function juggernaut:spawn/spawn_revealing_tower
 execute as @a[tag=engineer] at @s if entity @e[type=item,nbt={Item:{id:"minecraft:lime_dye"}},distance=..3] run function juggernaut:spawn/spawn_replenishment_tower
+execute as @a[tag=engineer] at @s if entity @e[type=item,nbt={Item:{id:"minecraft:bone"}},distance=..3] run function juggernaut:spawn/spawn_turret
 execute at @e[type=armor_stand,tag=replenishment_tower_particle_emitter] unless entity @e[type=armor_stand,tag=replenishment_tower,distance=..5] run kill @e[type=armor_stand,tag=replenishment_tower_particle_emitter]
-execute as @e[type=armor_stand,tag=revealing_tower] at @s run execute as @a[tag=juggernaut,distance=..16] run effect give @s glowing 1 0 true
+execute as @e[type=armor_stand,tag=revealing_tower] at @s run execute as @a[tag=juggernaut,distance=..48] run effect give @s glowing 1 0 true
+execute as @e[type=armor_stand,tag=revealing_tower] at @s if entity @a[tag=juggernaut,distance=..8] run data modify entity @s CustomNameVisible set value true
+execute as @e[type=armor_stand,tag=revealing_tower] at @s unless entity @a[tag=juggernaut,distance=..8] run data modify entity @s CustomNameVisible set value false
 
 execute as @e[type=armor_stand,tag=replenishment_tower_particle_emitter] at @s run particle dust{color:[1,1,0],scale:1} ^0.75 ^ ^0.75 0.1 0.1 0.1 0.4 4 normal
 execute as @e[type=armor_stand,tag=replenishment_tower_particle_emitter] at @s run particle dust{color:[0,1,1],scale:1} ^-0.75 ^1 ^-0.75 0.1 0.1 0.1 0.4 4 normal
