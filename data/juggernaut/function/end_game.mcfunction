@@ -24,13 +24,15 @@ tag @a remove dragon
 tag @a remove is_floating
 tag @a remove chain_hunter
 tag @a remove blinker
+tag @a add lobby.player
 clear @a
 kill @a
 gamerule showDeathMessages true
 kill @e[type=armor_stand,tag=warlock_armor_stand]
 kill @e[tag=kill_on_end_game]
 kill @e[type=armor_stand,tag=hunter_remnant]
-attribute @s generic.max_health base set 20
+execute as @a run attribute @s generic.max_health base set 20
+execute as @a run attribute @s generic.movement_speed base set 0.1
 scoreboard players set @n[type=armor_stand,tag=juggernaut_manager] replenish_progress 0
 scoreboard players set @n[type=armor_stand,tag=juggernaut_manager] replenish_decimal 0
 scoreboard players set @n[type=armor_stand,tag=juggernaut_manager] replenish_percentage 0
