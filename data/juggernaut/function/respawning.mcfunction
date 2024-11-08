@@ -29,6 +29,8 @@ execute if score @s lives_remaining matches ..0 run tag @s remove engineer
 execute if score @s lives_remaining matches ..0 run tag @s remove warlock
 execute if score @s lives_remaining matches ..0 run tag @s remove survivor
 execute if score @s lives_remaining matches ..0 run attribute @s generic.max_health base set 20
+execute if score @s lives_remaining matches ..0 run attribute @s generic.scale base set 1
+execute if score @s lives_remaining matches ..0 run attribute @s generic.gravity base set 0.08
 execute if score @s lives_remaining matches ..0 run spawnpoint @s 2000 100 0
 execute if score @s lives_remaining matches ..0 run tag @s add lobby.player
 execute if score @s lives_remaining matches ..0 run clear @s
