@@ -4,6 +4,10 @@ execute as @e[tag=replenishment.station] at @s if entity @e[type=armor_stand,tag
 execute as @a[tag=runner,scores={damage_absorbed=1..}] run scoreboard players operation @s points += @s damage_absorbed
 execute as @a[tag=runner,scores={damage_absorbed=1..}] run scoreboard players set @s damage_absorbed 0
 
+# Juggernaut gains points for killing runners. (30 points)
+execute as @a[tag=juggernaut,scores={point_kills=1..}] run scoreboard players add @s points 30
+execute as @a[tag=juggernaut,scores={point_kills=1..}] run scoreboard players set @s point_kills 0
+
 # Juggernaut gains points for being close to the runners (4/sec)
 execute as @a[tag=juggernaut] if entity @a[tag=runner,distance=..10] run scoreboard players add @s points 4
 
