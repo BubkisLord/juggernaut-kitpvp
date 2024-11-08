@@ -1,6 +1,9 @@
 execute if score @n[tag=seeker] hide_and_seek_game_time matches ..0 run function hide_and_seek:end_game
 execute if score @n[tag=seeker] hide_and_seek_game_time matches 1.. run scoreboard players remove @a[tag=seeker] hide_and_seek_game_time 1
 
+scoreboard players set #max_game_time var 300
+execute store result bossbar hide_and_seek_timer max run scoreboard players get #max_game_time var
+execute store result bossbar hide_and_seek_timer value run scoreboard players get @p[tag=seeker] hide_and_seek_game_time
 
 # END GAME
 scoreboard players set #hide_and_seek_players_alive var 0
@@ -19,3 +22,6 @@ execute if score #teams_alive var matches ..1 if score #game_state var matches 5
 
 execute if score #hide_and_seek_game_ending var matches 1 run scoreboard players remove #end_game_timer var 1
 execute if score #game_state var matches 50..59 if score #end_game_timer var matches ..0 run function hide_and_seek:end_game
+
+execute as @e[type=armor_stand,tag=juggernaut_manager] run scoreboard players add @s second_counter 1
+execute as @e[type=armor_stand,tag=juggernaut_manager] if score @s second_counter matches 45.. run scoreboard players set @s second_counter 0
