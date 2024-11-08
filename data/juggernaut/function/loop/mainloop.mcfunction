@@ -66,16 +66,21 @@ execute if score #game_state var matches 11 if score @n[type=armor_stand,tag=jug
 
 #Jug Kits
 # Blinker
-execute as @a[tag=blinker] run scoreboard players set @s current_raycast_depth 0
-execute as @a[tag=blinker] run scoreboard players set @s raycast_limit 30
-
 execute as @a[tag=blinker,scores={tick_counter=60..}] run effect give @s invisibility 1 0 true
 execute as @a[tag=blinker,scores={tick_counter=60..}] run scoreboard players set @s tick_counter 0
 execute as @a[tag=blinker] run scoreboard players add @s tick_counter 1
 
 execute as @a[tag=blinker,scores={jug_kit_cooldown=0}] if items entity @s hotbar.2 barrier[item_name='[{"text": "Teleport to Remnant | ","color": "dark_red","bold": true},{"text": "ON COOLDOWN","color": "red"}]'] run item replace entity @s hotbar.2 with ender_pearl[item_name='[{"text": "Teleport to Remnant | ","color": "dark_red","bold": true},{"text": "READY","color": "green"}]',food={nutrition:0,saturation:0,can_always_eat:true,eat_seconds:999999}] 1
 execute as @a[tag=blinker] at @s if entity @e[type=item,nbt={Item:{id:"minecraft:ender_pearl"}},distance=..3] run item replace entity @s hotbar.2 with barrier[item_name='[{"text": "Teleport to Remnant | ","color": "dark_red","bold": true},{"text": "ON COOLDOWN","color": "red"}]'] 1
-execute as @a[tag=blinker,nbt={SelectedItem:{id:"minecraft:ender_pearl"}}] at @s run function juggernaut:raycasts/blinker_teleport_raycast
+execute as @a[tag=blinker,nbt={SelectedItem:{id:"minecraft:ender_pearl"}}] at @s run function juggernaut:raycasts/raycast {\
+    player_tag:"blinker",\
+    raycast_tag:"blinker_raycast",\
+    target_tag:"blinker_remnant",\
+    hit_distance:8,\
+    raycast_limit:1000,\
+    move_function_id:3,\
+    hit_function_id:3,\
+}
 execute as @a[tag=blinker] at @s if entity @e[type=item,nbt={Item:{id:"minecraft:ender_pearl"}},distance=..3] run tp @s @n[tag=blinker_teleporting]
 execute as @a[tag=blinker,nbt={SelectedItem:{id:"minecraft:barrier"}}] run scoreboard players add @s blinker_tp_timeout 1
 execute as @a[tag=blinker] at @s if entity @e[type=item,nbt={Item:{id:"minecraft:ender_pearl"}},distance=..3] run scoreboard players set @s jug_kit_cooldown 45
