@@ -8,7 +8,7 @@ $execute if score @p[tag=$(player_tag)] current_raycast_depth matches ..$(raycas
 $execute if score @p[tag=$(player_tag)] current_raycast_depth matches ..$(raycast_limit) as @s run scoreboard players add @p[tag=$(player_tag)] raycast_depth_counter 1
 $execute if score @p[tag=$(player_tag)] current_raycast_depth matches ..$(raycast_limit) as @s if score @p[tag=$(player_tag)] raycast_depth_counter matches 2 run scoreboard players add @p[tag=$(player_tag)] current_raycast_depth 1
 $execute if score @p[tag=$(player_tag)] current_raycast_depth matches ..$(raycast_limit) as @s if score @p[tag=$(player_tag)] raycast_depth_counter matches 2.. run scoreboard players set @p[tag=$(player_tag)] raycast_depth_counter 0
-$tellraw @a {"score": {"name": "@p[tag=$(player_tag)]","objective": "current_raycast_depth"}}
+# $tellraw @a {"score": {"name": "@p[tag=$(player_tag)]","objective": "current_raycast_depth"}}
 
 $data modify storage juggernaut:raycasts/hit hit_function_id set value $(hit_function_id)
 $execute as @n[type=area_effect_cloud,tag=$(raycast_tag)] at @s anchored eyes positioned ^ ^ ^0.5 if entity @e[distance=..$(hit_distance),tag=$(target_tag)] run execute as @e[distance=..$(hit_distance),tag=$(target_tag)] at @s run function juggernaut:raycasts/hit
