@@ -13,6 +13,7 @@ tp @a[tag=runner] 2054.5 124 0.5 facing 2054.5 124 1.5
 team join jug @a[tag=juggernaut]
 team join runner @a[tag=runner]
 
+stopsound @a
 execute as @a[tag=juggernaut] run playsound music_disc.creator record @s ~ ~ ~ 3 0.75
 execute as @a[tag=runner] run playsound music_disc.precipice record @s ~ ~ ~ 3 1.1
 # execute as @a[tag=runner] run playsound music_disc.precipice record @s ~ ~ ~ 3 0.75
