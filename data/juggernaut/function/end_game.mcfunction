@@ -31,8 +31,16 @@ gamerule showDeathMessages true
 kill @e[type=armor_stand,tag=warlock_armor_stand]
 kill @e[tag=kill_on_end_game]
 kill @e[type=armor_stand,tag=hunter_remnant]
+execute as @a run attribute @s generic.scale base set 1
+execute as @a run attribute @s player.entity_interaction_range base set 3
+execute as @a run attribute @s generic.jump_strength base set 0.41999999
+execute as @a run attribute @s generic.step_height base set 0.6
 execute as @a run attribute @s generic.max_health base set 20
 execute as @a run attribute @s generic.movement_speed base set 0.1
+execute as @a run attribute @s generic.safe_fall_distance base set 3
+execute as @a run attribute @s generic.gravity base set 0.08
+execute as @a run attribute @s player.sneaking_speed base set 0.3
+
 scoreboard players set @n[type=armor_stand,tag=juggernaut_manager] replenish_progress 0
 scoreboard players set @n[type=armor_stand,tag=juggernaut_manager] replenish_decimal 0
 scoreboard players set @n[type=armor_stand,tag=juggernaut_manager] replenish_percentage 0
