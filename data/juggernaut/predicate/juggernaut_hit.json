@@ -1,8 +1,19 @@
 {
-  "condition": "minecraft:damage_source_properties",
-  "predicate": {
-    "source_entity": {
-      "type": "minecraft:player"
+  "condition": "any_of",
+  "terms": [
+    {
+      "condition": "minecraft:entity_properties",
+      "entity": "attacker",
+      "predicate": {
+        "team": "jug"
+      }
+    },
+    {
+      "condition": "entity_properties",
+      "entity": "direct_attacker",
+      "predicate": {
+        "team": "jug"
+      }
     }
-  }
+  ]
 }
