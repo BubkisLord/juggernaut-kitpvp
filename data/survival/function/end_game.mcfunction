@@ -6,6 +6,7 @@ scoreboard players set #max_crate_count var 0
 scoreboard players set #end_game_timer var 15
 scoreboard players set #crate_count var 0
 scoreboard players set #survival_teams var 0
+scoreboard players set @a damage_absorbed 0
 
 team leave @a
 

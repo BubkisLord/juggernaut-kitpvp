@@ -2,6 +2,7 @@
 scoreboard players set @a lives 1
 scoreboard players set @a lives_remaining 1
 scoreboard players set @a game_deaths 0
+scoreboard players set @a damage_absorbed 0
 
 # Turn off other games if they're running.
 scoreboard players set #game_state var 0
