@@ -116,29 +116,25 @@ execute as @a[tag=dragon] at @s if entity @e[type=item,nbt={Item:{id:"minecraft:
 execute as @a[tag=dragon] at @s if entity @e[type=item,nbt={Item:{id:"minecraft:phantom_membrane"}},distance=..3] run item replace entity @s hotbar.0 with feather[item_name='{"text": "Walk","bold": true,"color": "dark_green"}']
 execute as @a[tag=dragon] at @s as @e[type=item,nbt={Item:{id:"minecraft:phantom_membrane"}},distance=..3] run kill @s
 
-execute as @a[tag=dragon] if entity @s[tag=is_floating] at @s run function juggernaut:raycasts/raycast {\
+execute as @a[tag=dragon] at @s if block ~ ~-0.75 ~ #juggernaut:raycast_permeable positioned ^ ^ ^-8 run function juggernaut:raycasts/raycast {\
     player_tag:"dragon",\
     raycast_tag:"dragon_breath_raycast",\
     target_tag:"runner",\
     hit_distance:1.5,\
-    raycast_limit:20,\
-    move_function_id:1,\
-    hit_function_id:1,\
-    collides_with_blocks:1,\
-}
-execute as @a[tag=dragon] if entity @s[tag=!is_floating] at @s run function juggernaut:raycasts/raycast {\
-    player_tag:"dragon",\
-    raycast_tag:"dragon_breath_raycast",\
-    target_tag:"runner",\
-    hit_distance:1.5,\
-    raycast_limit:5,\
+    raycast_limit:24,\
     move_function_id:1,\
     hit_function_id:1,\
     collides_with_blocks:1,\
 }
 
-execute as @a[tag=dragon] if entity @s[tag=is_floating] at @s unless block ~ ~-5 ~ air run effect give @s levitation 1 0 true
-execute as @a[tag=dragon] if entity @s[tag=is_floating] at @s run effect give @s slow_falling 1 255 true
+execute as @a[tag=dragon] run attribute @s generic.safe_fall_distance base set 999
+execute as @a[tag=dragon] at @s if block ~ ~-4 ~ #juggernaut:non-surface_blocks run attribute @s generic.gravity base set 0.005
+execute as @a[tag=dragon] at @s unless block ~ ~-4 ~ #juggernaut:non-surface_blocks run attribute @s generic.gravity base set -0.01
+execute as @a[tag=dragon] at @s if block ~ ~-5 ~ #juggernaut:non-surface_blocks unless block ~ ~-4 ~ #juggernaut:non-surface_blocks run attribute @s generic.gravity base set 0
+execute as @a[tag=dragon] at @s unless block ~ ~-0.75 ~ #juggernaut:non-surface_blocks run attribute @s generic.gravity base set 0.08
+execute as @a[tag=dragon,nbt={Inventory:[{id:"minecraft:feather",count:1}]}] run attribute @s generic.gravity base set -0.01
+execute as @a[tag=dragon] if entity @s[scores={sneak_time=1}] run attribute @s generic.gravity base set 0.05
+
 
 # jug_hunter functionality
 execute at @a[tag=jug_hunter] as @e[type=item,nbt={Item:{id:"minecraft:target"}},distance=..3] if score #game_state var matches 11 run tag @p[tag=runner,distance=..12] add has_hunters_mark
