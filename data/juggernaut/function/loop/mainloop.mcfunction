@@ -335,7 +335,7 @@ execute as @a[tag=scout] run scoreboard players add @n[tag=juggernaut_manager] s
 execute as @a[tag=juggernaut_manager,scores={scout_reveal_timer=1200..}] run effect give @a[tag=juggernaut] glowing 16 0 true
 execute as @a[tag=juggernaut_manager,scores={scout_reveal_timer=1200..}] run scoreboard players set @a[tag=juggernaut_manager] scout_reveal_timer 0
 # Scout activated ability
-execute as @a[tag=scout] at @s as @e[type=item,nbt={Item:{id:"minecraft:glowstone_dust"}},distance=..3] run effect give @a[tag=juggernaut,limit=1,sort=random] glowing 12 0 true
+execute as @a[tag=scout] at @s as @e[type=item,nbt={Item:{id:"minecraft:glowstone_dust"}},distance=..3] run effect give @a[tag=juggernaut] glowing 12 0 true
 execute as @a[tag=scout] at @s as @e[type=item,nbt={Item:{id:"minecraft:glowstone_dust"}},distance=..3] run kill @s
 
 # Survivor effects
