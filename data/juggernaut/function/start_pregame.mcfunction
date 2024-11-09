@@ -27,11 +27,16 @@ execute as @a[tag=juggernaut] run scoreboard players add #juggernaut_count var 1
 scoreboard players set @a[tag=juggernaut] lives 1
 execute store result score @a[tag=runner] lives run scoreboard players get #juggernaut_count var
 scoreboard players add @a[tag=runner] lives 1
+scoreboard players operation @a[tag=runner] lives_remaining = @a[tag=runner] lives
+scoreboard players set @a[tag=juggernaut] lives_remaining 1
 
 scoreboard players set @a game_deaths 0
 
 scoreboard players set @a revealing_tower_cooldown 0
 scoreboard players set @a replenishment_tower_cooldown 0
+
+scoreboard players set @a point_kills 0
+scoreboard players set @a damage_absorbed 0
 
 scoreboard players set @n[type=armor_stand,tag=juggernaut_manager] scout_reveal_timer 0
 
