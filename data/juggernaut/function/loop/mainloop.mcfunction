@@ -322,7 +322,7 @@ execute at @a[tag=medic] as @e[type=item,nbt={Item:{id:"minecraft:nether_star"}}
 
 execute as @a[tag=medic,scores={jug_kit_cooldown=0}] if items entity @s hotbar.3 barrier run item replace entity @s hotbar.3 with minecraft:nether_star[item_name='[{"text": "Rescue | ","color": "#A4D1EA"},{"text": "READY","color": "green"}]']
 execute as @a[tag=medic,tag=teleporting] if entity @a[tag=runner,tag=!teleporting] run tp @s @r[tag=runner,tag=!teleporting]
-execute as @a[tag=medic,tag=teleporting] unless entity @a[tag=runner,tag=!teleporting] run tp @s @e[tag=arena.spawn,limit=1,sort=random]
+execute as @a[tag=medic,tag=teleporting] unless entity @a[tag=runner,tag=!teleporting] run tp @s @e[type=armor_stand,tag=arena.spawn,limit=1,sort=furthest]
 execute as @a[tag=medic,tag=teleporting] run tag @s remove teleporting
 
 # Make medic immune to glowing
