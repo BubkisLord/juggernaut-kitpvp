@@ -340,7 +340,7 @@ execute as @a[tag=scout] at @s as @e[type=item,nbt={Item:{id:"minecraft:glowston
 
 # Survivor effects
 execute as @a[tag=survivor] run effect give @s resistance 1 1 true
-execute as @a[tag=survivor] run attribute @s generic.max_health base set 30
+execute as @a[tag=survivor] run attribute @s generic.max_health base set 40
 execute as @a[tag=survivor] at @s if entity @e[type=item,nbt={Item:{id:"minecraft:stone"}},distance=..3] run effect give @s resistance 3 0 true
 execute as @a[tag=survivor] at @s as @e[type=item,nbt={Item:{id:"minecraft:stone"}},distance=..3] run kill @s
 
