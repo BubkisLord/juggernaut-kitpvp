@@ -17,7 +17,7 @@ execute as @n[tag=juggernaut,scores={juggernaut_release_timer=2}] run tellraw @a
 execute as @n[tag=juggernaut,scores={juggernaut_release_timer=1}] run tellraw @a [{"text": "Juggernaut is released in: ","bold": true, "color": "gray"},{"text": "1","bold": true,"color": "dark_red"},{"text": " Seconds","bold": true, "color": "gray"}]
 execute as @n[tag=juggernaut,scores={juggernaut_release_timer=0}] run tellraw @a [{"text": "Juggernaut","bold": true,"color": "dark_red","underlined": true},{"text": " Released!","bold": true,"color": "gray"}]
 execute as @n[tag=juggernaut,scores={juggernaut_release_timer=0}] run title @a title [{"text": "Juggernaut","bold": true,"color": "dark_red","underlined": true},{"text": " Released!","bold": true,"color": "gray"}]
-tp @a[tag=juggernaut,scores={juggernaut_release_timer=0}] @e[tag=arena.spawn,limit=1,sort=random]
+execute if entity @e[tag=juggernaut,scores={juggernaut_release_timer=0}] as @r[tag=runner] at @s run tp @a[tag=juggernaut,scores={juggernaut_release_timer=0}] @e[tag=arena.spawn,limit=1,sort=furthest]
 
 execute as @e[tag=replenishment.station] if score @s replenish_timeout > #0 var run scoreboard players remove @s replenish_timeout 1
 
@@ -89,8 +89,8 @@ execute as @a[tag=scout] at @s run function juggernaut:raycasts/raycast {\
     raycast_tag:"scout_raycast",\
     target_tag:"juggernaut",\
     hit_distance:2.5,\
-    raycast_limit:70,\
+    raycast_limit:200,\
     move_function_id:0,\
     hit_function_id:2,\
-    collides_with_blocks:0,\
+    collides_with_blocks:1,\
 }
