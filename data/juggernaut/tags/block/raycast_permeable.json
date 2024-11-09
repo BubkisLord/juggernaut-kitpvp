@@ -99,6 +99,7 @@
     "#cave_vines",
     "#crops",
     "#fire",
-    "ladder"
+    "ladder",
+    "#trapdoors"
   ]
 }
