@@ -5,7 +5,7 @@ scoreboard players set #100 var 100
 scoreboard players set #10 var 10
 
 # When runners are hit by the juggernaut (scout does not get this speed boost)
-execute as @a[tag=runner,tag=!scout] at @s if entity @a[tag=juggernaut,distance=..5] if score @s damage_taken > #0 var run effect give @s speed 1 0 true
+execute as @a[tag=runner,tag=!scout,predicate=juggernaut:juggernaut_hit] at @s if score @s damage_taken > #0 var run effect give @s speed 1 0 true
 execute as @a[tag=runner] unless entity @s[tag=borrowing_time] if score @s damage_taken > #0 var run scoreboard players set @s damage_taken 0
 
 execute at @e[tag=respawn_point] as @a[distance=..10] run tp @s @e[tag=arena.spawn,limit=1,sort=random]
