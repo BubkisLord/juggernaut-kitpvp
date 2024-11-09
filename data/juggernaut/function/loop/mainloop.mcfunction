@@ -300,7 +300,7 @@ execute as @a[tag=escapist] run effect give @s speed 1 0 true
 # Escapist activated ability
 execute as @a[tag=escapist] at @s if entity @e[type=item,nbt={Item:{id:"minecraft:gunpowder"}},distance=..3] run effect give @s speed 8 1 true
 execute as @a[tag=escapist] at @s if entity @e[type=item,nbt={Item:{id:"minecraft:gunpowder"}},distance=..3] run effect give @s invisibility 10 0 false
-execute as @a[tag=escapist] at @s if entity @e[type=item,nbt={Item:{id:"minecraft:gunpowder"}},distance=..3] run scoreboard players set @s jug_kit_cooldown 40
+execute as @a[tag=escapist] at @s if entity @e[type=item,nbt={Item:{id:"minecraft:gunpowder"}},distance=..3] run scoreboard players set @s jug_kit_cooldown 60
 execute as @a[tag=escapist] at @s run execute as @e[type=item,nbt={Item:{id:"minecraft:gunpowder"}},distance=..3] run kill @s
 execute as @a[tag=escapist,scores={jug_kit_cooldown=0}] run item replace entity @s hotbar.0 with gunpowder[item_name='[{"text": "Floo","strikethrough": true,"color": "#646464"},{"text": " Flee Powder | ","strikethrough": false,"color": "#646464"},{"text": "READY","color": "green","strikethrough": false}]'] 1
 execute as @a[tag=escapist,scores={jug_kit_cooldown=0}] run scoreboard players remove @s jug_kit_cooldown 1
