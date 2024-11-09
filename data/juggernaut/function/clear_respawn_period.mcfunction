@@ -1,0 +1,1 @@
+scoreboard players set @s has_respawn_time 0

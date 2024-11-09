@@ -180,8 +180,8 @@ execute as @e[type=armor_stand,tag=hunter_remnant] if score @s var = #0 var run 
 
 execute as @a[tag=jug_hunter,scores={jug_kit_cooldown=0}] if items entity @s hotbar.2 barrier[item_name='[{"text": "Mark Prey | ","color": "dark_red"},{"text": "ON COOLDOWN","color": "red"}]'] run item replace entity @s hotbar.2 with target[item_name='[{"text": "Mark Prey | ","color": "dark_red"},{"text": "READY","color": "green"}]'] 1
 
-execute as @a[tag=has_hunters_mark] at @s run particle minecraft:trial_spawner_detection_ominous ~ ~-0.5 ~ 1.5 1.5 1.5 0.0001 4 force @a[tag=has_hunters_mark]
-execute as @a[tag=has_hunters_mark] at @s run particle minecraft:trial_spawner_detection ~ ~-0.5 ~ 1 1.5 1 0 4 force @a[tag=jug_hunter]
+execute as @a[tag=has_hunters_mark,scores={has_respawn_time=0}] at @s run particle minecraft:trial_spawner_detection_ominous ~ ~-0.5 ~ 1.5 1.5 1.5 0.0001 4 force @a[tag=has_hunters_mark]
+execute as @a[tag=has_hunters_mark,scores={has_respawn_time=0}] at @s run particle minecraft:trial_spawner_detection ~ ~-0.5 ~ 1 1.5 1 0 4 force @a[tag=jug_hunter]
 # execute as @a[tag=has_hunters_mark] run playsound minecraft:entity.arrow.hit_player player @s ~ ~ ~ 1 1 1
 execute as @a[tag=jug_hunter,nbt={SelectedItem:{id:"minecraft:wooden_sword"}}] if items entity @s weapon.mainhand minecraft:wooden_sword run effect give @s weakness 1 255 true
 execute as @e[type=arrow,nbt={inGround:true},tag=hunter_arrow] run tag @s remove hunter_arrow

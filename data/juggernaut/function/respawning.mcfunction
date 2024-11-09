@@ -9,7 +9,9 @@ execute if score @s lives_remaining matches 1.. if entity @s[tag=escapist] run f
 execute if score @s lives_remaining matches 1.. if entity @s[tag=medic] run function juggernaut:kit_replenishes/replenish_medic
 execute if score @s lives_remaining matches 1.. if entity @s[tag=scout] run function juggernaut:kit_replenishes/replenish_scout
 execute if score @s lives_remaining matches 1.. if entity @s[tag=survivor] run function juggernaut:kit_replenishes/replenish_survivor
-execute if score @s lives_remaining matches 1.. if entity @s[tag=runner] run effect give @s invisibility 20 0 true
+execute if score @s lives_remaining matches 1.. if entity @s[tag=runner] run effect give @s invisibility 30 0 true
+execute if score @s lives_remaining matches 1.. if entity @s[tag=runner] run scoreboard players set @s has_respawn_time 1
+execute if score @s lives_remaining matches 1.. if entity @s[tag=runner] run schedule function juggernaut:clear_respawn_period 30s replace
 execute if entity @s[tag=has_hunters_mark] if entity @a[tag=runner,tag=!has_hunters_mark] run tag @r[tag=runner,tag=!has_hunters_mark] add has_hunters_mark
 execute if entity @a[tag=runner,tag=!has_hunters_mark] run tag @s remove has_hunters_mark
 
