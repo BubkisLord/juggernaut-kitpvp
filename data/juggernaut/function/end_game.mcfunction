@@ -2,6 +2,10 @@ scoreboard players set #game_state var 0
 scoreboard players set @a juggernaut_game_time 0
 scoreboard players set @a juggernaut_release_timer 0
 scoreboard players set @a jug_kit_cooldown 0
+scoreboard players set @a jug_kit_cooldown_2 0
+scoreboard players set @a revealing_tower_cooldown 0
+scoreboard players set @a replenishment_tower_cooldown 0
+scoreboard players set @a turret_cooldown 0
 spawnpoint @a 2000 100 0
 gamerule showDeathMessages false
 tag @a remove has_jug_kit
@@ -24,6 +28,8 @@ tag @a remove dragon
 tag @a remove is_floating
 tag @a remove chain_hunter
 tag @a remove blinker
+tag @a remove spirit_walker
+tag @a remove guide
 tag @a add lobby.player
 clear @a
 kill @a
