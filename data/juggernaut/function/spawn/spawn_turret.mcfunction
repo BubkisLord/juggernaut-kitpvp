@@ -4,6 +4,4 @@ summon skeleton ~ ~ ~ {Team:"runner",HandItems:[{"id":"bow",components:{enchantm
 scoreboard players set @n[type=armor_stand,tag=turret] var 60
 scoreboard players set @n[type=armor_stand,tag=turret] dispel_progress 0
 scoreboard players set @n[type=armor_stand,tag=turret] total_dispelling_needed 5
-scoreboard players set @s turret_cooldown 90
-execute as @e[type=item,nbt={Item:{id:"minecraft:bone"}},distance=..3] run kill @s
 clear @s bone

@@ -11,5 +11,4 @@ execute as @a[tag=engineer] run scoreboard players add #engineer_count var 1
 
 scoreboard players set @s replenishment_tower_cooldown 60
 scoreboard players operation @s replenishment_tower_cooldown /= #engineer_count var
-execute as @e[type=item,nbt={Item:{id:"minecraft:lime_dye"}},distance=..3] run kill @s
 clear @s lime_dye
