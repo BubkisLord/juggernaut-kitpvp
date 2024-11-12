@@ -39,12 +39,13 @@ execute as @s[tag=shaman] run function replenish:shaman
 execute as @s[tag=deflector] run function replenish:deflector
 execute as @s[tag=alchemist] run function replenish:alchemist
 
-execute as @s[tag=escapist] run function juggernaut:kit_replenishes/replenish_escapist
-execute as @s[tag=medic] run function juggernaut:kit_replenishes/replenish_medic
-execute as @s[tag=scout] run function juggernaut:kit_replenishes/replenish_scout
-execute as @s[tag=survivor] run function juggernaut:kit_replenishes/replenish_survivor
-execute as @s[tag=engineer] run function juggernaut:kit_replenishes/replenish_engineer
-execute as @s[tag=witchdoctor] run function juggernaut:kit_replenishes/replenish_witchdoctor
-execute as @s[tag=juggernaut] run function juggernaut:kit_replenishes/replenish_jug_steak
+execute as @s[tag=escapist] run function juggernaut:kit_replenishes/replenish_kits {player_tag:"escapist"}
+execute as @s[tag=medic] run function juggernaut:kit_replenishes/replenish_kits {player_tag:"medic"}
+execute as @s[tag=scout] run function juggernaut:kit_replenishes/replenish_kits {player_tag:"scout"}
+execute as @s[tag=survivor] run function juggernaut:kit_replenishes/replenish_kits {player_tag:"survivor"}
+execute as @s[tag=engineer] run function juggernaut:kit_replenishes/replenish_kits {player_tag:"engineer"}
+execute as @s[tag=guide] run function juggernaut:kit_replenishes/replenish_kits {player_tag:"guide"}
+execute as @s[tag=witchdoctor] run function juggernaut:kit_replenishes/replenish_kits {player_tag:"witchdoctor"}
+execute as @s[tag=juggernaut] run function juggernaut:kit_replenishes/replenish_kits {player_tag:"juggernaut"}
 
 execute as @s[tag=samurai] run function replenish:samurai
