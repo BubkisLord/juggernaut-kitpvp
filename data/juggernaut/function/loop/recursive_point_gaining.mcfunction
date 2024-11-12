@@ -16,9 +16,9 @@ execute as @a[tag=juggernaut,scores={point_kills=1..}] run scoreboard players se
 execute as @a[tag=juggernaut] if entity @a[tag=runner,distance=..10] run scoreboard players add @s points 4
 
 # Classic Juggernaut gains points for one-shotting runners. (No other kits can deal over 20 damage this way.)
-execute as @a[tag=juggernaut,scores={damage_dealt=20..}] run scoreboard players add @s points 50
-execute as @a[tag=juggernaut,scores={damage_dealt=20..}] run scoreboard players set @s damage_dealt 0
-execute as @a[tag=juggernaut,scores={damage_dealt=20..}] run tellraw @s [{"text":"[","color":"dark_gray","bold":true},{"text":"Juggernaut","color":"#a42929","bold":true},{"text":"] ","color":"dark_gray","bold":true},{"text": "+","color": "white","bold": false},{"text": "50","color": "gold","bold": true},{"text": " Points!","color": "white","bold": false},{"text": " (One-shot runner)","italic": true,"color": "gray","bold": false}]
+execute as @a[tag=juggernaut,scores={damage_dealt=200..}] run scoreboard players add @s points 50
+execute as @a[tag=juggernaut,scores={damage_dealt=200..}] run scoreboard players set @s damage_dealt 0
+execute as @a[tag=juggernaut,scores={damage_dealt=200..}] run tellraw @s [{"text":"[","color":"dark_gray","bold":true},{"text":"Juggernaut","color":"#a42929","bold":true},{"text":"] ","color":"dark_gray","bold":true},{"text": "+","color": "white","bold": false},{"text": "50","color": "gold","bold": true},{"text": " Points!","color": "white","bold": false},{"text": " (One-shot runner)","italic": true,"color": "gray","bold": false}]
 
 # Warlock gains points for having their towers on cooldown (up to 9/sec)
 execute as @a[tag=warlock] if score @s malevolent_aura_cooldown > #0 var run scoreboard players add @s points 3
