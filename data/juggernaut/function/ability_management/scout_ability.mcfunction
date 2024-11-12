@@ -1,0 +1,1 @@
+effect give @a[tag=juggernaut] glowing 12 0 true

@@ -1,0 +1,1 @@
+function juggernaut:spawn/spawn_revealing_tower
