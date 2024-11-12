@@ -34,19 +34,8 @@ execute as @a unless score #game_state var matches 10..19 if score @s jug_kit_co
 # Engineer tower cooldowns/duration
 execute as @e[type=armor_stand,tag=engineer_tower] run scoreboard players remove @s var 1
 execute as @e[tag=engineer] if score @s revealing_tower_cooldown > #0 var run scoreboard players remove @s revealing_tower_cooldown 1
-execute as @e[tag=engineer] if score @s revealing_tower_cooldown = #0 var run item replace entity @s hotbar.1 with raw_gold_block[item_name='[{"text": "Spawn Revealing Tower","color": "gold","bold": true},{"text": " | "},{"text": "READY","color": "green"}]']
-execute as @e[tag=engineer] if score @s revealing_tower_cooldown = #0 var run scoreboard players remove @s revealing_tower_cooldown 1
-execute as @e[tag=engineer] if score @s revealing_tower_cooldown > #0 var run item replace entity @s hotbar.1 with barrier[item_name='[{"text": "Spawn Revealing Tower","color": "gold","bold": true},{"text": " | "},{"text": "ON COOLDOWN","color": "red"}]']
-
 execute as @e[tag=engineer] if score @s replenishment_tower_cooldown > #0 var run scoreboard players remove @s replenishment_tower_cooldown 1
-execute as @e[tag=engineer] if score @s replenishment_tower_cooldown = #0 var run item replace entity @s hotbar.2 with lime_dye[item_name='[{"text": "Spawn Replenishment Tower","color": "green","bold": true},{"text": " | "},{"text": "READY","color": "green"}]']
-execute as @e[tag=engineer] if score @s replenishment_tower_cooldown = #0 var run scoreboard players remove @s replenishment_tower_cooldown 1
-execute as @e[tag=engineer] if score @s replenishment_tower_cooldown > #0 var run item replace entity @s hotbar.2 with barrier[item_name='[{"text": "Spawn Replenishment Tower","color": "green","bold": true},{"text": " | "},{"text": "ON COOLDOWN","color": "red"}]']
-
 execute as @e[tag=engineer] if score @s turret_cooldown > #0 var run scoreboard players remove @s turret_cooldown 1
-execute as @e[tag=engineer] if score @s turret_cooldown = #0 var run item replace entity @s hotbar.3 with bone[item_name='[{"text": "Spawn Turret","color": "gray","bold": true},{"text": " | "},{"text": "READY","color": "green"}]']
-execute as @e[tag=engineer] if score @s turret_cooldown = #0 var run scoreboard players remove @s turret_cooldown 1
-execute as @e[tag=engineer] if score @s turret_cooldown > #0 var run item replace entity @s hotbar.3 with barrier[item_name='[{"text": "Spawn Turret","color": "gray","bold": true},{"text": " | "},{"text": "ON COOLDOWN","color": "red"}]']
 
 execute at @e[type=armor_stand,tag=engineer_tower] run execute as @a[tag=juggernaut,distance=..3] run scoreboard players add @n[type=armor_stand,tag=engineer_tower] dispel_progress 1
 execute as @e[type=armor_stand,tag=engineer_tower] at @s run execute if score @s dispel_progress >= @s total_dispelling_needed run playsound block.note_block.bell master @a[tag=juggernaut,distance=..16] ~ ~ ~ 2 1.2
@@ -56,6 +45,8 @@ execute as @e[type=armor_stand,tag=engineer_tower] at @s run execute if score @s
 # Borrowed time ability
 execute as @a[tag=!borrowing_time,scores={borrowed_damage=1..}] run damage @s 1
 execute as @a[tag=!borrowing_time,scores={borrowed_damage=1..}] run scoreboard players remove @s borrowed_damage 1
+
+execute as @a[tag=borrowing_time] run scoreboard players remove @s borrowed_time_remaining 1
 
 # Chain Tether Removal
 execute as @e[type=armor_stand,tag=portal_tether] at @s run scoreboard players add @s var 1
@@ -92,5 +83,16 @@ execute as @a[tag=scout] at @s run function juggernaut:raycasts/raycast {\
     raycast_limit:200,\
     move_function_id:0,\
     hit_function_id:2,\
+    collides_with_blocks:1,\
+}
+
+execute as @a[tag=dragon] run function juggernaut:raycasts/raycast {\
+    player_tag:"dragon",\
+    raycast_tag:"dragon_breath_raycast",\
+    target_tag:"runner",\
+    hit_distance:1.5,\
+    raycast_limit:24,\
+    move_function_id:1,\
+    hit_function_id:1,\
     collides_with_blocks:1,\
 }
