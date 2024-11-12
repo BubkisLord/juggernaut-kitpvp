@@ -23,7 +23,7 @@ execute if score #game_state var matches 11 run execute as @e[tag=replenishment.
 # execute if score #game_state var matches 11 run execute as @e[tag=replenishment.station] at @s if entity @a[tag=juggernaut,limit=1,sort=nearest,distance=0..12] if entity @s[scores={replenish_timeout=1..}] run particle minecraft:witch ~ ~2.5 ~ 0.2 60 0.2 0 120 force @a[tag=runner]
 
 #If the game is juggernaut, allow the runners to progress them.
-execute as @e[tag=replenishment.station] at @s if score #game_state var matches 11 unless entity @e[type=armor_stand,tag=banishment_glyph,distance=..32] as @a[tag=runner,distance=..3] run scoreboard players add @n[type=armor_stand,tag=juggernaut_manager] replenish_progress 1
+execute as @e[tag=replenishment.station] at @s if score #game_state var matches 11 unless entity @e[type=armor_stand,tag=banishment_glyph,distance=..32] unless entity @a[tag=juggernaut,limit=1,sort=nearest,distance=0..12] as @a[tag=runner,distance=..3] run scoreboard players add @n[type=armor_stand,tag=juggernaut_manager] replenish_progress 1
 #Allow engineer towers to replenish.
 # When the engineer is in range of another replenishment station it goes at half speed.
 execute as @e[type=armor_stand,tag=replenishment_tower] at @s if score #game_state var matches 11 unless entity @e[type=armor_stand,tag=banishment_glyph,distance=..32] if entity @a[tag=engineer,distance=..3] run scoreboard players add @s replenish_counter 1
