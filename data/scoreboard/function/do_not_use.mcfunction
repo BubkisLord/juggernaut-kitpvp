@@ -81,6 +81,7 @@ scoreboard objectives add deaths deathCount
 scoreboard objectives add bow minecraft.used:bow
 scoreboard objectives add crossbow minecraft.used:crossbow
 scoreboard objectives add trident minecraft.used:trident
+scoreboard objectives add has_respawn_time dummy
 
 team add blue
 team add red
