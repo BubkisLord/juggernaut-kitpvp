@@ -6,8 +6,15 @@ execute if score #hit_function_id var matches 2 run tag @s add is_glowing
 execute if score #hit_function_id var matches 2 run particle enchant ~ ~ ~ 2 2 2 0 1 normal @a
 execute if score #hit_function_id var matches 3 run damage @s 10 magic at ^ ^ ^5
 execute if score #hit_function_id var matches 3 run effect give @s slowness 5 1 true
-execute if score #hit_function_id var matches 3 run scoreboard players set @p[tag=chain_hunter,tag=teleporting] jug_kit_cooldown 30
+execute if score #hit_function_id var matches 3 run scoreboard players set @p[tag=chain_hunter] jug_kit_cooldown 30
+execute if score #hit_function_id var matches 4 run scoreboard players set @p[tag=chain_hunter,tag=teleporting] jug_kit_cooldown 30
 execute if score #hit_function_id var matches 4 run execute at @p[tag=chain_hunter,tag=teleporting] run particle witch ~ ~0.5 ~ 1.5 1.5 1.5 0 200 force
 execute if score #hit_function_id var matches 4 run execute positioned ~ ~0.5 ~ run tp @p[tag=chain_hunter,tag=teleporting] @s
 execute if score #hit_function_id var matches 4 run particle flame ~ ~0.5 ~ 1.5 1.5 1.5 0 100 force
 execute if score #hit_function_id var matches 4 run scoreboard players set @p[tag=chain_hunter,tag=teleporting] jug_kit_cooldown_2 30
+execute if score #hit_function_id var matches 5 run tag @s add used_camera
+execute if score #hit_function_id var matches 5 run execute as @p[tag=stalker,tag=finding_camera] run tag @s add using_camera
+execute if score #hit_function_id var matches 5 run execute at @p[tag=stalker,tag=finding_camera] run summon area_effect_cloud ~ ~ ~ {Duration:999999,Tags:["eclipse_return_location","kill_on_end_game"]}
+execute if score #hit_function_id var matches 5 run execute as @p[tag=stalker,tag=finding_camera] run function juggernaut:stalker_enter_camera
+execute if score #hit_function_id var matches 5 run execute as @p[tag=stalker,tag=finding_camera] run tp @s ~ ~ ~ facing ^ ^ ^1000
+# execute if score #hit_function_id var matches 5 run 
