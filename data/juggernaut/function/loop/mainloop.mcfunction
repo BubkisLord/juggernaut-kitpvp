@@ -402,6 +402,16 @@ execute if entity @a[tag=guide] run function juggernaut:ability_management/check
 execute as @a[tag=escapist] run effect give @s speed 1 0 true
 
 # Escapist Ability
+execute if entity @a[tag=rogue] run function juggernaut:ability_management/check_ability {\
+    player_tag:"rogue",\
+    item_id:"minecraft:gunpowder",\
+    item_name:'{"text": "Flee Powder","color": "#646464"}',\
+    ability_id:0,\
+    cooldown:60,\
+    hotbar_slot:"hotbar.0",\
+    cooldown_var:"jug_kit_cooldown",\
+}
+
 execute if entity @a[tag=escapist] run function juggernaut:ability_management/check_ability {\
     player_tag:"escapist",\
     item_id:"minecraft:gunpowder",\

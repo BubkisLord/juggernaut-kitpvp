@@ -18,6 +18,7 @@ tag @a remove witchdoctor
 tag @a remove medic
 tag @a remove survivor
 tag @a remove escapist
+tag @a remove rogue
 tag @a remove scout
 tag @a remove engineer
 tag @a remove witchdoctor
