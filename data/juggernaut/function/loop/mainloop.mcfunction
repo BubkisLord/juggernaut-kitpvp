@@ -527,3 +527,34 @@ execute as @e[type=armor_stand,tag=juggernaut_manager] run scoreboard players ad
 scoreboard players set #20 var 20
 execute as @e[type=armor_stand,tag=juggernaut_manager] if score @s tick_counter >= #20 var run function juggernaut:loop/second
 execute as @e[type=armor_stand,tag=juggernaut_manager] if score @s tick_counter >= #20 var run scoreboard players set @s tick_counter 0
+
+execute as @a[tag=runner] run function juggernaut:healing/set_healing_needed
+
+# Healing mechanic
+execute as @a[tag=runner,tag=!medic,scores={sneak_time=0}] at @s run function juggernaut:healing/try_heal_player {distance:1.5,heal_amount:5}
+# Medic heals at increased speed, so run the function with double the heal amount per second.
+execute as @a[tag=medic,scores={sneak_time=0}] at @s run function juggernaut:healing/try_heal_player {distance:1.5,heal_amount:7}
+
+# Self-heal
+execute as @a[tag=runner,tag=!survivor,scores={sneak_time=1,health=..19}] at @s run function juggernaut:healing/try_self_heal {heal_amount:2}
+
+# Hemorrhaged Mechanic
+execute as @a[tag=is_hemorrhaged,tag=!is_being_healed] at @s run function juggernaut:healing/force_unheal_player {amount:3}
+
+# Mangled Mechanic
+execute as @a[tag=is_mangled,tag=is_being_healed,tag=!self_healing] at @s run function juggernaut:healing/force_unheal_player {amount:4}
+execute as @a[tag=is_mangled,tag=is_being_healed,tag=self_healing] at @s run function juggernaut:healing/force_unheal_player {amount:1}
+
+# Remove tags to keep all data current
+execute as @a[tag=runner,tag=is_healing] run tag @s remove is_healing
+execute as @a[tag=runner,tag=self_healing] run tag @s remove self_healing
+execute as @a[tag=runner,tag=is_being_healed] run tag @s remove is_being_healed
+
+scoreboard players set @a[scores={sneak_time=1..}] sneak_time 0
+scoreboard players set @a[scores={is_sprinting=1..}] is_sprinting 0
+
+
+execute as @a[tag=using_camera] at @s as @n[type=armor_stand,tag=used_camera] at @s run tp @p[tag=using_camera] ~ ~ ~
+execute as @a[tag=shadow_marked] at @s run particle flame ~ ~0.5 ~ 1.5 1.5 1.5 0 1 force @a[tag=juggernaut]
+
+execute as @a[tag=has_respawn_time] run effect give @s invisibility 1 0 true
