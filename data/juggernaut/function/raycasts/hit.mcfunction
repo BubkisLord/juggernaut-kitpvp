@@ -17,4 +17,12 @@ execute if score #hit_function_id var matches 5 run execute as @p[tag=stalker,ta
 execute if score #hit_function_id var matches 5 run execute at @p[tag=stalker,tag=finding_camera] run summon area_effect_cloud ~ ~ ~ {Duration:999999,Tags:["eclipse_return_location","kill_on_end_game"]}
 execute if score #hit_function_id var matches 5 run execute as @p[tag=stalker,tag=finding_camera] run function juggernaut:stalker_enter_camera
 execute if score #hit_function_id var matches 5 run execute as @p[tag=stalker,tag=finding_camera] run tp @s ~ ~ ~ facing ^ ^ ^1000
+execute if score #hit_function_id var matches 7 run tag @s add shadow_marked
+execute if score #hit_function_id var matches 8 run execute if entity @s[tag=shadow_marked] run kill @e[tag=eclipse_return_location]
+execute if score #hit_function_id var matches 8 run execute if entity @s[tag=shadow_marked] run tag @p[tag=eclipse_stalker] remove using_camera
+execute if score #hit_function_id var matches 8 run execute if entity @s[tag=shadow_marked] run tag @n[tag=used_camera] remove used_camera
+execute if score #hit_function_id var matches 8 run execute if entity @s[tag=shadow_marked] as @p[tag=eclipse_stalker] at @s run function juggernaut:stalker_leave_camera
+execute if score #hit_function_id var matches 8 run execute if entity @s[tag=shadow_marked] run kill @n[tag=eclipse_return_location]
+execute if score #hit_function_id var matches 8 run execute if entity @s[tag=shadow_marked] run tp @p[tag=eclipse_stalker] ^ ^1 ^1 facing ^ ^ ^1000
+execute if score #hit_function_id var matches 8 run execute unless entity @s[tag=shadow_marked] run tellraw @p[tag=eclipse_stalker] [{"text": "Target must be shadow marked.","italic": true,"color": "gray"}]
 # execute if score #hit_function_id var matches 5 run 

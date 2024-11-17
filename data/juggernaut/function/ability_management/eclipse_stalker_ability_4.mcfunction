@@ -1,4 +1,5 @@
-tellraw @s "NOT CURRENTLY WORKING"
-# kill @e[type=item]
-# function juggernaut:ability_management/eclipse_stalker_ability_3
-# execute positioned ^ ^ ^6 run function juggernaut:ability_management/eclipse_stalker_ability_2
+kill @e[type=item]
+tag @s remove using_camera
+tag @e[tag=used_camera] remove used_camera
+execute as @e[tag=camera,distance=3..,limit=1,sort=random] run tag @s add used_camera
+tag @s add using_camera

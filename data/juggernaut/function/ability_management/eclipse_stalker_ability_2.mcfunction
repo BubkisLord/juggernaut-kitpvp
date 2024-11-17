@@ -1,6 +1,5 @@
 tag @s add finding_camera
-tag @n[tag=used_camera] remove used_camera
-execute at @s anchored eyes positioned ^ ^ ^6 run function juggernaut:raycasts/raycast {\
+execute at @s anchored eyes run function juggernaut:raycasts/raycast {\
     player_tag:"eclipse_stalker",\
     raycast_tag:"eclipse_stalker_raycast",\
     target_tag:"camera",\
