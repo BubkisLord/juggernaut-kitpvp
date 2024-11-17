@@ -20,6 +20,6 @@ $execute if entity @a[tag=runner,tag=!survivor,scores={sneak_time=1,health=..19}
 $execute if entity @a[tag=runner,tag=survivor,scores={sneak_time=1,health=..39},distance=..$(distance)] as @p[tag=runner,tag=survivor,scores={sneak_time=1,health=..39},distance=..$(distance)] run title @s actionbar [{"text": "Healed: ","color": "#439697"},{"score": {"name": "@s","objective": "healing_percent"},"color": "#56dbde"},{"text": "%"}]
 $execute if entity @a[tag=runner,tag=survivor,scores={sneak_time=1,health=..39},distance=..$(distance)] run title @s actionbar [{"text": "Healing: ","color": "#439697"},{"score": {"name": "@p[tag=runner,tag=survivor,scores={sneak_time=1,health=..39},distance=..$(distance)]","objective": "healing_percent"},"color": "#56dbde"},{"text": "%"}]
 
-$execute as @a[tag=runner,distance=..$(distance)] if score @s healing_progress >= @s healing_needed run tag @p[tag=is_healing,tag=blood_pact_active,distance=..$(distance)] remove blood_pact_active
+# $execute as @a[tag=runner,distance=..$(distance)] if score @s healing_progress >= @s healing_needed run tag @p[tag=is_healing,tag=blood_pact_active,distance=..$(distance)] remove blood_pact_active
 $execute as @a[tag=runner,distance=..$(distance)] if score @s healing_progress >= @s healing_needed run effect give @s instant_health 1 252 true
 $execute as @a[tag=runner,distance=..$(distance)] if score @s healing_progress >= @s healing_needed run scoreboard players set @s healing_progress 0
