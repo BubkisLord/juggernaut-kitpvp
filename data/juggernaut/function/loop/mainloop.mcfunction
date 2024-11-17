@@ -403,8 +403,7 @@ execute if entity @a[tag=escapist] run function juggernaut:ability_management/ch
     cooldown_var:"jug_kit_cooldown",\
 }
 
-# Medic passive effects
-execute as @a[tag=medic] run effect give @a[tag=runner] regeneration 1 0 true
+# Medic Ability
 execute if entity @a[tag=medic] run function juggernaut:ability_management/check_ability {\
     player_tag:"medic",\
     item_id:"minecraft:nether_star",\
