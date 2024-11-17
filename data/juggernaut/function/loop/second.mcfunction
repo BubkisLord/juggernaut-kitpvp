@@ -4,27 +4,10 @@ function juggernaut:loop/recursive_point_gaining
 # Progress and clear old effects.
 execute as @a run function juggernaut:effects/check_effects {effect:"bleeding"}
 execute as @a run function juggernaut:effects/check_effects {effect:"hindered"}
+execute as @a run function juggernaut:effects/check_effects {effect:"exposed"}
+execute as @a run function juggernaut:effects/check_effects {effect:"undetectable"}
 
-execute as @a[tag=runner,nbt={Inventory:[{id:"minecraft:danger_pottery_sherd",Slot:9b}]}] run tag @s add using_sentinel
-execute as @a[tag=runner,nbt={Inventory:[{id:"minecraft:danger_pottery_sherd",Slot:9b}]}] run clear @s #minecraft:decorated_pot_sherds
-execute as @a[tag=runner,nbt={Inventory:[{id:"minecraft:heart_pottery_sherd",Slot:9b}]}] run tag @s add using_self_preservation
-execute as @a[tag=runner,nbt={Inventory:[{id:"minecraft:heart_pottery_sherd",Slot:9b}]}] run clear @s #minecraft:decorated_pot_sherds
-execute as @a[tag=runner,nbt={Inventory:[{id:"minecraft:heartbreak_pottery_sherd",Slot:9b}]}] run tag @s add using_fractured_aid
-execute as @a[tag=runner,nbt={Inventory:[{id:"minecraft:heartbreak_pottery_sherd",Slot:9b}]}] run clear @s #minecraft:decorated_pot_sherds
-execute as @a[tag=runner,nbt={Inventory:[{id:"minecraft:scrape_pottery_sherd",Slot:9b}]}] run tag @s add using_blood_pact
-execute as @a[tag=runner,nbt={Inventory:[{id:"minecraft:scrape_pottery_sherd",Slot:9b}]}] run clear @s #minecraft:decorated_pot_sherds
-execute as @a[tag=runner,nbt={Inventory:[{id:"minecraft:burn_pottery_sherd",Slot:9b}]}] run tag @s add using_flame_ward
-execute as @a[tag=runner,nbt={Inventory:[{id:"minecraft:burn_pottery_sherd",Slot:9b}]}] run clear @s #minecraft:decorated_pot_sherds
-execute as @a[tag=runner,nbt={Inventory:[{id:"minecraft:flow_pottery_sherd",Slot:9b}]}] run tag @s add using_quickened_stealth
-execute as @a[tag=runner,nbt={Inventory:[{id:"minecraft:flow_pottery_sherd",Slot:9b}]}] run clear @s #minecraft:decorated_pot_sherds
-execute as @a[tag=runner,nbt={Inventory:[{id:"minecraft:brewer_pottery_sherd",Slot:9b}]}] run give @s splash_potion[potion_contents={potion:"strong_healing"},max_stack_size=8] 8
-execute as @a[tag=runner,nbt={Inventory:[{id:"minecraft:brewer_pottery_sherd",Slot:9b}]}] run clear @s #minecraft:decorated_pot_sherds
-execute as @a[tag=runner,nbt={Inventory:[{id:"minecraft:skull_pottery_sherd",Slot:9b}]}] run tag @s add using_undying_ties
-execute as @a[tag=runner,nbt={Inventory:[{id:"minecraft:skull_pottery_sherd",Slot:9b}]}] run clear @s #minecraft:decorated_pot_sherds
-execute as @a[tag=runner,nbt={Inventory:[{id:"minecraft:prize_pottery_sherd",Slot:9b}]}] run tag @s add using_unwavering_strength
-execute as @a[tag=runner,nbt={Inventory:[{id:"minecraft:prize_pottery_sherd",Slot:9b}]}] run clear @s #minecraft:decorated_pot_sherds
-execute as @a[tag=runner,nbt={Inventory:[{id:"minecraft:friend_pottery_sherd",Slot:9b}]}] run tag @s add using_shared_resolve
-execute as @a[tag=runner,nbt={Inventory:[{id:"minecraft:friend_pottery_sherd",Slot:9b}]}] run clear @s #minecraft:decorated_pot_sherds
+execute if score #game_state var matches 11 run function juggernaut:check_perks
 
 # Juggernaut timeout countdown
 execute as @a[tag=juggernaut,scores={juggernaut_game_time=1..}] run scoreboard players remove @a[tag=juggernaut] juggernaut_game_time 1
@@ -81,13 +64,13 @@ execute as @a[tag=borrowing_time] run scoreboard players remove @s borrowed_time
 execute as @e[type=armor_stand,tag=portal_tether] at @s run scoreboard players add @s var 1
 
 # Warlock cooldowns
-execute as @e[type=armor_stand,tag=juggernaut_manager] if score #game_state var matches 10..19 if score @s malevolent_aura_cooldown > #0 var run scoreboard players remove @s malevolent_aura_cooldown 1
-execute as @e[type=armor_stand,tag=juggernaut_manager] if score #game_state var matches 10..19 if score @s banishment_glyph_cooldown > #0 var run scoreboard players remove @s banishment_glyph_cooldown 1
-execute as @e[type=armor_stand,tag=juggernaut_manager] if score #game_state var matches 10..19 if score @s withering_surge_cooldown > #0 var run scoreboard players remove @s withering_surge_cooldown 1
+execute as @a[tag=warlock] if score #game_state var matches 10..19 if score @s malevolent_aura_cooldown > #0 var run scoreboard players remove @s malevolent_aura_cooldown 1
+execute as @a[tag=warlock] if score #game_state var matches 10..19 if score @s banishment_glyph_cooldown > #0 var run scoreboard players remove @s banishment_glyph_cooldown 1
+execute as @a[tag=warlock] if score #game_state var matches 10..19 if score @s withering_surge_cooldown > #0 var run scoreboard players remove @s withering_surge_cooldown 1
 
-execute as @e[type=armor_stand,tag=juggernaut_manager] unless score #game_state var matches 10..19 if score @s malevolent_aura_cooldown > #0 var run scoreboard players set @s malevolent_aura_cooldown 0
-execute as @e[type=armor_stand,tag=juggernaut_manager] unless score #game_state var matches 10..19 if score @s banishment_glyph_cooldown > #0 var run scoreboard players set @s banishment_glyph_cooldown 0
-execute as @e[type=armor_stand,tag=juggernaut_manager] unless score #game_state var matches 10..19 if score @s withering_surge_cooldown > #0 var run scoreboard players set @s withering_surge_cooldown 0
+execute as @a[tag=warlock] unless score #game_state var matches 10..19 if score @s malevolent_aura_cooldown > #0 var run scoreboard players set @s malevolent_aura_cooldown 0
+execute as @a[tag=warlock] unless score #game_state var matches 10..19 if score @s banishment_glyph_cooldown > #0 var run scoreboard players set @s banishment_glyph_cooldown 0
+execute as @a[tag=warlock] unless score #game_state var matches 10..19 if score @s withering_surge_cooldown > #0 var run scoreboard players set @s withering_surge_cooldown 0
 
 # Hunter remnant delay
 execute as @e[type=armor_stand,tag=hunter_remnant] if score @s var > #0 var run scoreboard players remove @s var 1
