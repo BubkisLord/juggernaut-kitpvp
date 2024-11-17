@@ -16,7 +16,7 @@ execute as @a[tag=runner] unless entity @s[tag=borrowing_time] if score @s damag
 
 execute at @e[tag=respawn_point] as @a[distance=..10] run tp @s @e[tag=arena.spawn,limit=1,sort=random]
 
-function juggernaut:chase/check_in_chase
+execute if score #game_state var matches 11 run function juggernaut:chase/check_in_chase
 
 execute as @e[type=armor_stand,tag=jug_spawn] at @s run tp @a[distance=..8] @e[tag=arena.spawn,limit=1,sort=random]
 
@@ -163,7 +163,7 @@ execute as @a[tag=dragon] at @s unless block ~ ~-5 ~ #juggernaut:non-surface_blo
 execute as @a[tag=dragon] at @s if block ~ ~-6 ~ #juggernaut:non-surface_blocks unless block ~ ~-5 ~ #juggernaut:non-surface_blocks run attribute @s generic.gravity base set 0
 execute as @a[tag=dragon] at @s unless block ~ ~-0.75 ~ #juggernaut:non-surface_blocks run attribute @s generic.gravity base set 0.08
 execute as @a[tag=dragon,nbt={Inventory:[{id:"minecraft:feather",count:1}]}] run attribute @s generic.gravity base set -0.01
-execute as @a[tag=dragon] if entity @s[scores={sneak_time=1}] run attribute @s generic.gravity base set 0.01
+execute as @a[tag=dragon] if entity @s[scores={is_sneaking=1}] run attribute @s generic.gravity base set 0.01
 
 
 # Hunter
@@ -208,9 +208,9 @@ execute as @e[type=item,nbt={Item:{id:"minecraft:lightning_rod"}}] run kill @s
 # Predator Functionality
 
 execute if entity @a[tag=predator] run effect give @a[tag=runner] darkness infinite 0 true
-execute as @a[tag=predator] at @s unless entity @s[scores={sneak_time=1}] run particle white_ash ~ ~0.5 ~ 3 3 3 0.0001 30 force @a[tag=!predator]
-execute as @a[tag=predator] at @s unless entity @s[scores={sneak_time=1}] run particle ash ~ ~1 ~ 0.25 0.5 0.25 0.0001 100 force @a[tag=!predator]
-# execute as @a[tag=predator] at @s if entity @s[scores={sneak_time=1}] run effect give @s speed 1 0 true
+execute as @a[tag=predator] at @s unless entity @s[scores={is_sneaking=1}] run particle white_ash ~ ~0.5 ~ 3 3 3 0.0001 30 force @a[tag=!predator]
+execute as @a[tag=predator] at @s unless entity @s[scores={is_sneaking=1}] run particle ash ~ ~1 ~ 0.25 0.5 0.25 0.0001 100 force @a[tag=!predator]
+# execute as @a[tag=predator] at @s if entity @s[scores={is_sneaking=1}] run effect give @s speed 1 0 true
 # execute at @a[tag=predator] as @a[tag=runner,distance=..4] if score #game_state var matches 11 var run effect give @s blindness 4 3 true
 
 # Warlock Functionality
@@ -413,6 +413,10 @@ execute if entity @a[tag=escapist] run function juggernaut:ability_management/ch
     cooldown_var:"jug_kit_cooldown",\
 }
 
+# Rogue Passive Effect
+execute as @a[tag=rogue,scores={is_sneaking=1}] run attribute @s generic.step_height base set 1
+execute as @a[tag=rogue,scores={is_sneaking=0}] run attribute @s generic.step_height base set 0.6
+
 # Rogue Ability
 execute if entity @a[tag=rogue] run function juggernaut:ability_management/check_ability {\
     player_tag:"rogue",\
@@ -553,12 +557,12 @@ execute as @e[type=armor_stand,tag=juggernaut_manager] if score @s tick_counter 
 execute as @a[tag=runner] run function juggernaut:healing/set_healing_needed
 
 # Healing mechanic
-execute as @a[tag=runner,tag=!medic,scores={sneak_time=0}] at @s run function juggernaut:healing/try_heal_player {distance:1.5,heal_amount:5}
+execute as @a[tag=runner,tag=!medic,scores={is_sneaking=0}] at @s run function juggernaut:healing/try_heal_player {distance:1.5,heal_amount:5}
 # Medic heals at increased speed, so run the function with double the heal amount per second.
-execute as @a[tag=medic,scores={sneak_time=0}] at @s run function juggernaut:healing/try_heal_player {distance:1.5,heal_amount:7}
+execute as @a[tag=medic,scores={is_sneaking=0}] at @s run function juggernaut:healing/try_heal_player {distance:1.5,heal_amount:7}
 
 # Self-heal
-execute as @a[tag=runner,tag=!survivor,scores={sneak_time=1,health=..19}] at @s run function juggernaut:healing/try_self_heal {heal_amount:2}
+execute as @a[tag=runner,tag=!survivor,scores={is_sneaking=1,health=..19}] at @s run function juggernaut:healing/try_self_heal {heal_amount:2}
 
 # Hemorrhaged Mechanic
 execute as @a[tag=is_hemorrhaged,tag=!is_being_healed] at @s run function juggernaut:healing/force_unheal_player {amount:3}
@@ -572,7 +576,7 @@ execute as @a[tag=runner,tag=is_healing] run tag @s remove is_healing
 execute as @a[tag=runner,tag=self_healing] run tag @s remove self_healing
 execute as @a[tag=runner,tag=is_being_healed] run tag @s remove is_being_healed
 
-scoreboard players set @a[scores={sneak_time=1..}] sneak_time 0
+scoreboard players set @a[scores={is_sneaking=1..}] is_sneaking 0
 scoreboard players set @a[scores={is_sprinting=1..}] is_sprinting 0
 
 
