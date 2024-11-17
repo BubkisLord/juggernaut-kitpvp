@@ -1,4 +1,4 @@
-# TOTAL = ( 3000 * (PLAYERS + 1) ) / JUGGERNAUTS
+# TOTAL = ( 2500 * (PLAYERS + 1) ) / JUGGERNAUTS
 # ONE PERCENT = TOTAL / 100
 # X PERCENT = ONE PERCENT * X
 scoreboard players set #added_amount var 0

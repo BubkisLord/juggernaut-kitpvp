@@ -59,7 +59,7 @@ scoreboard players set #playercount var 0
 execute as @a[tag=runner] run scoreboard players add #playercount var 1
 scoreboard players set #juggernaut_multiplier var 0
 execute as @a[tag=juggernaut] run scoreboard players add #juggernaut_multiplier var 1
-scoreboard players set #beginning_time var 3000
+scoreboard players set #beginning_time var 2500
 scoreboard players operation @n[type=armor_stand,tag=juggernaut_manager] total_replenishment_needed = #beginning_time var
 scoreboard players operation @n[type=armor_stand,tag=juggernaut_manager] total_replenishment_needed *= #playercount var
 scoreboard players operation @n[type=armor_stand,tag=juggernaut_manager] total_replenishment_needed += #beginning_time var
