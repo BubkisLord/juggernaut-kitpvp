@@ -391,11 +391,20 @@ execute as @a[tag=guide,scores={is_sprinting=1..}] at @s if entity @a[tag=runner
 execute if entity @a[tag=guide] run function juggernaut:ability_management/check_ability {\
     player_tag:"guide",\
     item_id:"minecraft:ender_eye",\
-    item_name:'{"text": "Ender Eye","color": "#FFD700"}',\
-    ability_id:0,\
+    item_name:'{"text": "Replenish Boost","color": "#FFD700"}',\
+    ability_id:1,\
     cooldown:50,\
     hotbar_slot:"hotbar.0",\
     cooldown_var:"jug_kit_cooldown",\
+}
+execute if entity @a[tag=guide] run function juggernaut:ability_management/check_ability {\
+    player_tag:"guide",\
+    item_id:"minecraft:rabbit_foot",\
+    item_name:'{"text": "Nimble Escape","color": "#FFD700"}',\
+    ability_id:2,\
+    cooldown:40,\
+    hotbar_slot:"hotbar.1",\
+    cooldown_var:"jug_kit_cooldown_2",\
 }
 
 # Escapist passive effects
