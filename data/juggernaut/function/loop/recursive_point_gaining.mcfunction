@@ -37,6 +37,9 @@ execute as @a[tag=scout] if entity @a[tag=juggernaut,tag=is_glowing] run scorebo
 # Escapist gains points for being close to the juggernaut (10/sec)
 execute as @a[tag=escapist] at @s if entity @a[tag=juggernaut,distance=..10] run scoreboard players add @s points 10
 
+# Rogue gains points for being near jug while sneaking
+execute as @a[tag=rogue] at @s if entity @a[tag=juggernaut,distance=..10] if entity @s[scores={is_sneaking=1}] run scoreboard players add @s points 10
+
 # Engineer gains points for having their towers on cooldown (up to 2/sec)
 execute as @a[tag=engineer] if score @s replenishment_tower_cooldown > #0 var run scoreboard players add @s points 1
 execute as @a[tag=engineer] if score @s revealing_tower_cooldown > #0 var run scoreboard players add @s points 1
