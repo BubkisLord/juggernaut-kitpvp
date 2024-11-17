@@ -45,6 +45,15 @@ scoreboard players set @a damage_absorbed 0
 
 scoreboard players set @n[type=armor_stand,tag=juggernaut_manager] scout_reveal_timer 0
 
+
+# Pick the replenishment stations & set the number of stations needed.
+data modify storage juggernaut:pick_replenishment_stations total_stations set value 7
+
+execute store result score #total_stations var run data get storage juggernaut:pick_replenishment_stations total_stations
+scoreboard players operation #stations_needed var = #total_stations var
+scoreboard players operation #stations_needed var -= #2 var
+function juggernaut:pick_replenishment_stations
+
 # Calculate the total needed replenishing time for the runners to win.
 scoreboard players set #playercount var 0
 execute as @a[tag=runner] run scoreboard players add #playercount var 1
@@ -55,6 +64,9 @@ scoreboard players operation @n[type=armor_stand,tag=juggernaut_manager] total_r
 scoreboard players operation @n[type=armor_stand,tag=juggernaut_manager] total_replenishment_needed *= #playercount var
 scoreboard players operation @n[type=armor_stand,tag=juggernaut_manager] total_replenishment_needed += #beginning_time var
 scoreboard players operation @n[type=armor_stand,tag=juggernaut_manager] total_replenishment_needed /= #juggernaut_multiplier var
+
+scoreboard players operation #total_replenishment_per_station var = @n[type=armor_stand,tag=juggernaut_manager] total_replenishment_needed
+scoreboard players operation #total_replenishment_per_station var /= #stations_needed var
 
 
 # Set the game state to pregame

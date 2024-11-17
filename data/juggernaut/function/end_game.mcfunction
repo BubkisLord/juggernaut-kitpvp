@@ -50,6 +50,10 @@ tag @a remove using_unwavering_strength
 
 tag @a remove has_respawn_time
 
+execute as @e[tag=replenishment.station_deactivated] run tag @s add replenishment.station
+execute as @e[tag=replenishment.station_deactivated] run tag @s remove replenishment.station_deactivated
+execute as @e[tag=replenishment.station] run tag @s remove station_completed
+
 clear @a
 kill @a
 gamerule showDeathMessages true
