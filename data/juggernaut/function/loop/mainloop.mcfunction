@@ -138,18 +138,7 @@ execute as @a[tag=blinker] run scoreboard players set @s max_blinker_cooldown 30
 execute as @a[tag=blinker] run execute store result score @s blinker_cooldown_percent run scoreboard players get @s jug_kit_cooldown_2
 execute as @a[tag=blinker] run scoreboard players operation @s blinker_cooldown_percent *= #100 var
 execute as @a[tag=blinker] run scoreboard players operation @s blinker_cooldown_percent /= @s max_blinker_cooldown
-execute as @a[tag=blinker,scores={blinker_cooldown_percent=0}] run title @s actionbar [{"text":"||||||||||","color": "white","bold": true}]
-execute as @a[tag=blinker,scores={blinker_cooldown_percent=91..100}] run title @s actionbar [{"text":"|","color": "dark_red","bold": true},{"text":"|||||||||","color": "white","bold": true}]
-execute as @a[tag=blinker,scores={blinker_cooldown_percent=81..90}] run title @s actionbar [{"text":"||","color": "dark_red","bold": true},{"text":"||||||||","color": "white","bold": true}]
-execute as @a[tag=blinker,scores={blinker_cooldown_percent=71..80}] run title @s actionbar [{"text":"|||","color": "dark_red","bold": true},{"text":"|||||||","color": "white","bold": true}]
-execute as @a[tag=blinker,scores={blinker_cooldown_percent=61..70}] run title @s actionbar [{"text":"||||","color": "dark_red","bold": true},{"text":"||||||","color": "white","bold": true}]
-execute as @a[tag=blinker,scores={blinker_cooldown_percent=51..60}] run title @s actionbar [{"text":"|||||","color": "dark_red","bold": true},{"text":"|||||","color": "white","bold": true}]
-execute as @a[tag=blinker,scores={blinker_cooldown_percent=41..50}] run title @s actionbar [{"text":"||||||","color": "dark_red","bold": true},{"text":"||||","color": "white","bold": true}]
-execute as @a[tag=blinker,scores={blinker_cooldown_percent=31..40}] run title @s actionbar [{"text":"|||||||","color": "dark_red","bold": true},{"text":"|||","color": "white","bold": true}]
-execute as @a[tag=blinker,scores={blinker_cooldown_percent=21..30}] run title @s actionbar [{"text":"||||||||","color": "dark_red","bold": true},{"text":"||","color": "white","bold": true}]
-execute as @a[tag=blinker,scores={blinker_cooldown_percent=11..20}] run title @s actionbar [{"text":"|||||||||","color": "dark_red","bold": true},{"text":"|","color": "white","bold": true}]
-execute as @a[tag=blinker,scores={blinker_cooldown_percent=1..10}] run title @s actionbar [{"text":"||||||||||","color": "dark_red","bold": true}]
-
+execute as @a[tag=blinker] run title @s actionbar [{"text":"Blinker Cooldown: ","color": "dark_red","bold": true},{"score":{"name":"@s","objective":"blinker_cooldown_percent"},"bold": true,"color": "dark_red"},{"text": "%"}]
 
 # Dragon
 execute as @a[tag=dragon] at @s if entity @e[type=item,nbt={Item:{id:"minecraft:feather"}},distance=..3] run tag @s remove is_floating
