@@ -100,7 +100,7 @@ execute if entity @a[tag=chain_hunter] run function juggernaut:ability_managemen
     item_id:"minecraft:ghast_tear",\
     item_name:'{"text": "Chain Pull","color": "gray"}',\
     ability_id:2,\
-    cooldown:50,\
+    cooldown:20,\
     hotbar_slot:"hotbar.2",\
     cooldown_var:"jug_kit_cooldown_2",\
 }

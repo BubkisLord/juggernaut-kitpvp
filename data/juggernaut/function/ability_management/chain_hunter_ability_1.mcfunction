@@ -1,4 +1,3 @@
-scoreboard players set @s jug_kit_cooldown 4
 function juggernaut:raycasts/raycast {\
     player_tag:"chain_hunter",\
     raycast_tag:"chain_hunter_raycast",\
