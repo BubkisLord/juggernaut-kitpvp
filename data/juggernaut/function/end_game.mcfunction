@@ -6,6 +6,7 @@ scoreboard players set @a jug_kit_cooldown_2 0
 scoreboard players set @a revealing_tower_cooldown 0
 scoreboard players set @a replenishment_tower_cooldown 0
 scoreboard players set @a turret_cooldown 0
+scoreboard players set @a shadow_mark_cooldown 0
 spawnpoint @a 2000 100 0
 gamerule showDeathMessages false
 tag @a remove has_jug_kit
@@ -30,6 +31,11 @@ tag @a remove chain_hunter
 tag @a remove blinker
 tag @a remove spirit_walker
 tag @a remove guide
+tag @a remove using_camera
+tag @a remove stalker
+tag @a remove eclipse_stalker
+tag @e remove used_camera
+tag @a remove shadow_marked
 tag @a add lobby.player
 clear @a
 kill @a
