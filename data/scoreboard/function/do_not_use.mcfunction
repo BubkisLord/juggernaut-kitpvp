@@ -58,7 +58,7 @@ scoreboard objectives add second_counter dummy
 scoreboard objectives add blinker_tp_timeout dummy
 scoreboard objectives add max_blinker_cooldown dummy
 scoreboard objectives add blinker_cooldown_percent dummy
-scoreboard objectives add sneak_time minecraft.custom:sneak_time
+scoreboard objectives add is_sneaking minecraft.custom:sneak_time
 scoreboard objectives add jump_time minecraft.custom:jump
 scoreboard objectives add damage_absorbed custom:damage_absorbed
 scoreboard objectives add turret_cooldown dummy
