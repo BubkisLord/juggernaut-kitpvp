@@ -1,1 +1,2 @@
-scoreboard players set @s has_respawn_time 0
+effect clear @s invisibility
+tag @s remove has_respawn_time
