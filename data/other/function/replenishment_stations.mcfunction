@@ -37,6 +37,9 @@ execute as @e[type=armor_stand,tag=replenishment.station,tag=sentinel_tower] at 
 
 # Effects when a station is completed.
 execute as @e[type=armor_stand,tag=replenishment.station] at @s if score @s replenish_amount >= #total_replenishment_per_station var run tag @s add station_completed
+execute as @e[type=armor_stand,tag=replenishment.station] at @s if score @s replenish_amount >= #total_replenishment_per_station var if entity @a[tag=using_shared_resolve,distance=..3] as @a[tag=runner,distance=..3] run function juggernaut:effects/apply_effect {effect:"undetectable",duration:20,color:"gray"}
+execute as @e[type=armor_stand,tag=replenishment.station] at @s if score @s replenish_amount >= #total_replenishment_per_station var if entity @a[tag=using_shared_resolve,distance=..3] as @a[tag=runner,distance=..3] run effect give @s resistance 4 1 true
+execute as @e[type=armor_stand,tag=replenishment.station] at @s if score @s replenish_amount >= #total_replenishment_per_station var if entity @a[tag=using_shared_resolve,distance=..3] as @a[tag=runner,distance=..3] run effect give @s speed 4 1 true
 execute as @e[type=armor_stand,tag=replenishment.station] at @s if score @s replenish_amount >= #total_replenishment_per_station var as @a[tag=runner] at @s run particle firework ~ ~ ~ 3 3 3 0 200 force @a[tag=runner]
 execute as @e[type=armor_stand,tag=replenishment.station] at @s if score @s replenish_amount >= #total_replenishment_per_station var as @a[tag=runner] at @s run particle firework ~ ~ ~ 0 100 0 0 300 force @a[tag=juggernaut]
 execute as @e[type=armor_stand,tag=replenishment.station] at @s if score @s replenish_amount >= #total_replenishment_per_station var as @a[tag=runner] at @s run playsound block.end_portal_frame.fill master @s ~ ~ ~ 3 0.4

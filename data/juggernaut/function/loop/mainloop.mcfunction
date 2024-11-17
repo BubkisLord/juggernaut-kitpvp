@@ -11,6 +11,7 @@ execute as @a[tag=runner,tag=using_blood_pact] at @s if entity @a[tag=juggernaut
 execute as @a[tag=runner] at @s if entity @a[tag=chain_hunter,distance=..5] if score @s damage_taken > #0 var run function juggernaut:effects/apply_effect {effect:"hindered",duration:4,color:"dark_gray"}
 # execute as @a[tag=runner] at @s if entity @a[tag=predator,distance=..5] if score @s damage_taken > #0 var run function juggernaut:effects/apply_effect {effect:"hemorrhaged",duration:30,color:"dark_red"}
 execute as @a[tag=is_exposed] run function juggernaut:damage_player
+execute as @a[tag=is_undetectable] run effect clear @s glowing
 execute as @a[tag=runner] unless entity @s[tag=borrowing_time] if score @s damage_taken > #0 var run scoreboard players set @s damage_taken 0
 
 execute at @e[tag=respawn_point] as @a[distance=..10] run tp @s @e[tag=arena.spawn,limit=1,sort=random]

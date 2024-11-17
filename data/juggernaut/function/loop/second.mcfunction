@@ -23,6 +23,8 @@ execute as @a[tag=runner,nbt={Inventory:[{id:"minecraft:skull_pottery_sherd",Slo
 execute as @a[tag=runner,nbt={Inventory:[{id:"minecraft:skull_pottery_sherd",Slot:9b}]}] run clear @s #minecraft:decorated_pot_sherds
 execute as @a[tag=runner,nbt={Inventory:[{id:"minecraft:prize_pottery_sherd",Slot:9b}]}] run tag @s add using_unwavering_strength
 execute as @a[tag=runner,nbt={Inventory:[{id:"minecraft:prize_pottery_sherd",Slot:9b}]}] run clear @s #minecraft:decorated_pot_sherds
+execute as @a[tag=runner,nbt={Inventory:[{id:"minecraft:friend_pottery_sherd",Slot:9b}]}] run tag @s add using_shared_resolve
+execute as @a[tag=runner,nbt={Inventory:[{id:"minecraft:friend_pottery_sherd",Slot:9b}]}] run clear @s #minecraft:decorated_pot_sherds
 
 # Juggernaut timeout countdown
 execute as @a[tag=juggernaut,scores={juggernaut_game_time=1..}] run scoreboard players remove @a[tag=juggernaut] juggernaut_game_time 1
