@@ -90,6 +90,7 @@ scoreboard objectives add chase_time dummy
 scoreboard objectives add sentinel_progress dummy
 scoreboard objectives add shadow_mark_cooldown dummy
 scoreboard objectives add borrowed_time_remaining dummy
+scoreboard objectives add replenish_amount dummy
 
 team add blue
 team add red
