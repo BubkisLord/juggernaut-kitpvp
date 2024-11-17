@@ -4,8 +4,8 @@ execute unless entity @s[tag=using_fractured_aid] store result storage juggernau
 # If using self-preservation, heal 20% slower.
 execute unless entity @s[tag=using_self_preservation] store result storage juggernaut:healing/try_heal_player heal_amount int 0.8 run data get storage juggernaut:healing/try_heal_player heal_amount
 
-# If blood pact is active, heal 20% faster.
-execute unless entity @s[tag=using_fractured_aid] store result storage juggernaut:healing/try_heal_player heal_amount int 1.2 run data get storage juggernaut:healing/try_heal_player heal_amount
+# If blood pact is active, heal 50% faster.
+execute unless entity @s[tag=blood_pact_active] store result storage juggernaut:healing/try_heal_player heal_amount int 1.5 run data get storage juggernaut:healing/try_heal_player heal_amount
 $execute if entity @a[tag=runner,tag=!survivor,scores={sneak_time=1,health=..19},distance=..$(distance)] run scoreboard players add @p[tag=runner,tag=!survivor,scores={sneak_time=1,health=..19},distance=..$(distance)] healing_progress $(heal_amount)
 $execute if entity @a[tag=runner,tag=survivor,scores={sneak_time=1,health=..39},distance=..$(distance)] run scoreboard players add @p[tag=runner,tag=survivor,scores={sneak_time=1,health=..39},distance=..$(distance)] healing_progress $(heal_amount)
 $execute if entity @a[tag=runner,tag=!survivor,scores={sneak_time=1,health=..19},distance=..$(distance)] run particle cherry_leaves ~ ~0.5 ~ 0.15 1 0.15 0 10 force @a[tag=runner]
