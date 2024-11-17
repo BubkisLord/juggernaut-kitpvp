@@ -163,7 +163,7 @@ execute if entity @a[tag=jug_hunter] run function juggernaut:ability_management/
     item_id:"minecraft:target",\
     item_name:'{"text": "Mark Prey","color": "dark_red"}',\
     ability_id:1,\
-    cooldown:40,\
+    cooldown:5,\
     hotbar_slot:"hotbar.2",\
     cooldown_var:"jug_kit_cooldown",\
 }
@@ -172,9 +172,9 @@ execute if entity @a[tag=jug_hunter] run function juggernaut:ability_management/
     item_id:"minecraft:vault",\
     item_name:'{"text": "Pursue Prey","color": "dark_red"}',\
     ability_id:2,\
-    cooldown:40,\
+    cooldown:35,\
     hotbar_slot:"hotbar.3",\
-    cooldown_var:"jug_kit_cooldown_2",\
+    cooldown_var:"jug_kit_cooldown",\
 }
 
 execute as @a[tag=jug_hunter,tag=is_hunting] at @s run particle witch ~ ~0.5 ~ 1 1 1 0.00001 3 force
