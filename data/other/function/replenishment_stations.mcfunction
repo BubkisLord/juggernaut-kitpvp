@@ -12,11 +12,11 @@ execute if score #game_state var matches 0 as @e[scores={aura_sound=20..},tag=re
 
 # Juggernaut
 # Display a blocked replenishment station to the juggernauts.
-execute as @e[tag=replenishment.station_emitter] at @s if score #game_state var matches 11 unless entity @e[type=armor_stand,tag=banishment_glyph,distance=..32] run particle minecraft:totem_of_undying ~ ~2.5 ~ 0.2 60 0.2 0 120 force @a[tag=!runner]
-execute as @e[tag=replenishment.station_emitter] at @s if score #game_state var matches 11 if entity @e[type=armor_stand,tag=banishment_glyph,distance=..32] run particle minecraft:white_smoke ~ ~2.5 ~ 0.2 60 0.2 0 120 force @a[tag=!runner]
+execute as @e[tag=replenishment.station] at @s if score #game_state var matches 11 unless entity @e[type=armor_stand,tag=banishment_glyph,distance=..32] run particle minecraft:totem_of_undying ~ ~2.5 ~ 0.2 60 0.2 0 120 force @a[tag=!runner]
+execute as @e[tag=replenishment.station] at @s if score #game_state var matches 11 if entity @e[type=armor_stand,tag=banishment_glyph,distance=..32] run particle minecraft:white_smoke ~ ~2.5 ~ 0.2 60 0.2 0 120 force @a[tag=!runner]
 
 # Display replenishment stations to the runners.
-execute if score #game_state var matches 11 run execute as @e[tag=replenishment.station_emitter] at @s run particle minecraft:totem_of_undying ~ ~2.5 ~ 0.2 60 0.2 0 120 force @a[tag=runner]
+execute if score #game_state var matches 11 run execute as @e[tag=replenishment.station] at @s run particle minecraft:totem_of_undying ~ ~2.5 ~ 0.2 60 0.2 0 120 force @a[tag=runner]
 
 execute if score #game_state var matches 11 run execute as @e[tag=replenishment.station] at @s if entity @a[tag=juggernaut,limit=1,sort=nearest,distance=0..24] if entity @s[scores={replenish_timeout=1..}] run particle minecraft:witch ~ ~2.5 ~ 0.2 60 0.2 0 120 force @a[tag=!runner]
 execute if score #game_state var matches 11 run execute as @e[tag=replenishment.station] at @s if entity @a[tag=juggernaut,limit=1,sort=nearest,distance=0..12] unless entity @a[tag=predator,scores={sneak_time=1}] if entity @s[scores={replenish_timeout=1..}] run particle minecraft:witch ~ ~2.5 ~ 0.2 60 0.2 0 120 force @a[tag=runner]
@@ -24,16 +24,16 @@ execute if score #game_state var matches 11 run execute as @e[tag=replenishment.
 
 #If the game is juggernaut, allow the runners to progress them.
 execute as @e[type=armor_stand,tag=replenishment.station] at @s if score #game_state var matches 11 unless entity @e[type=armor_stand,tag=banishment_glyph,distance=..32] unless entity @a[tag=juggernaut,limit=1,sort=nearest,distance=0..12] as @a[tag=runner,distance=..3] run scoreboard players add @n[type=armor_stand,tag=juggernaut_manager] replenish_progress 1
-execute as @e[type=armor_stand,tag=replenishment.station] at @s if score #game_state var matches 11 unless entity @e[type=armor_stand,tag=banishment_glyph,distance=..32] unless entity @a[tag=juggernaut,limit=1,sort=nearest,distance=0..12] as @a[tag=runner,distance=..3] run scoreboard players add @s replenish_amount 1
+execute as @e[type=armor_stand,tag=replenishment.station] at @s if score #game_state var matches 11 unless entity @e[type=armor_stand,tag=banishment_glyph,distance=..32] unless entity @a[tag=juggernaut,limit=1,sort=nearest,distance=0..12] as @a[tag=runner,distance=..3] run scoreboard players add @n[type=armor_stand,tag=replenishment.station] replenish_amount 1
 execute as @e[type=armor_stand,tag=replenishment.station] at @s if score #game_state var matches 11 unless entity @e[type=armor_stand,tag=banishment_glyph,distance=..32] if entity @a[tag=juggernaut,limit=1,sort=nearest,distance=0..12] as @a[tag=runner,distance=..3,tag=using_unwavering_strength] run scoreboard players add @n[type=armor_stand,tag=juggernaut_manager] replenish_progress 1
-execute as @e[type=armor_stand,tag=replenishment.station] at @s if score #game_state var matches 11 unless entity @e[type=armor_stand,tag=banishment_glyph,distance=..32] if entity @a[tag=juggernaut,limit=1,sort=nearest,distance=0..12] as @a[tag=runner,distance=..3,tag=using_unwavering_strength] run scoreboard players add @s replenish_amount 1
+execute as @e[type=armor_stand,tag=replenishment.station] at @s if score #game_state var matches 11 unless entity @e[type=armor_stand,tag=banishment_glyph,distance=..32] if entity @a[tag=juggernaut,limit=1,sort=nearest,distance=0..12] as @a[tag=runner,distance=..3,tag=using_unwavering_strength] run scoreboard players add @n[type=armor_stand,tag=replenishment.station] replenish_amount 1
 
 execute as @e[type=armor_stand,tag=replenishment.station] at @s if score #game_state var matches 11 unless entity @e[type=armor_stand,tag=banishment_glyph,distance=..32] unless entity @a[tag=juggernaut,limit=1,sort=nearest,distance=0..12] as @a[tag=runner,distance=..3,tag=has_respawn_time] run function juggernaut:clear_respawn_period
 execute as @e[type=armor_stand,tag=replenishment.station] at @s if score #game_state var matches 11 unless entity @e[type=armor_stand,tag=banishment_glyph,distance=..32] unless entity @a[tag=juggernaut,limit=1,sort=nearest,distance=0..12] as @a[tag=runner,distance=..3,tag=has_respawn_time] if entity @s[tag=using_sentinel] run scoreboard players add @n[type=armor_stand,tag=replenishment.station] sentinel_progress 1
 execute as @e[type=armor_stand,tag=replenishment.station] at @s if score #game_state var matches 11 if score @s sentinel_progress matches 160.. run tag @e[tag=sentinel_tower] remove sentinel_tower
 execute as @e[type=armor_stand,tag=replenishment.station] at @s if score #game_state var matches 11 if score @s sentinel_progress matches 160.. run tag @s add sentinel_tower
 execute as @e[type=armor_stand,tag=replenishment.station,tag=sentinel_tower,scores={sentinel_progress=1..}] run scoreboard players set @s sentinel_progress 0
-execute as @e[type=armor_stand,tag=sentinel_tower] at @s as @a[tag=juggernaut,distance=..8] run effect give @s glowing 1 0 true
+execute as @e[type=armor_stand,tag=replenishment.station,tag=sentinel_tower] at @s as @a[tag=juggernaut,distance=..8] run effect give @s glowing 1 0 true
 
 # Effects when a station is completed.
 execute as @e[type=armor_stand,tag=replenishment.station] at @s if score @s replenish_amount >= #total_replenishment_per_station var run tag @s add station_completed
