@@ -47,12 +47,12 @@ scoreboard players set @n[type=armor_stand,tag=juggernaut_manager] scout_reveal_
 
 
 # Pick the replenishment stations & set the number of stations needed.
-data modify storage juggernaut:pick_replenishment_stations total_stations set value 7
+data modify storage juggernaut:pick_replenishment_stations total_stations set value 8
 
 execute store result score #total_stations var run data get storage juggernaut:pick_replenishment_stations total_stations
 scoreboard players operation #stations_needed var = #total_stations var
-scoreboard players operation #stations_needed var -= #2 var
-function juggernaut:pick_replenishment_stations
+scoreboard players operation #stations_needed var -= #3 var
+function juggernaut:pick_replenishment_stations with storage juggernaut:pick_replenishment_stations
 
 # Calculate the total needed replenishing time for the runners to win.
 scoreboard players set #playercount var 0
