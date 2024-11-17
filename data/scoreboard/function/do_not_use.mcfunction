@@ -82,6 +82,11 @@ scoreboard objectives add bow minecraft.used:bow
 scoreboard objectives add crossbow minecraft.used:crossbow
 scoreboard objectives add trident minecraft.used:trident
 scoreboard objectives add has_respawn_time dummy
+scoreboard objectives add healing_progress dummy
+scoreboard objectives add healing_needed dummy
+scoreboard objectives add healing_percent dummy
+scoreboard objectives add is_sprinting minecraft.custom:minecraft.sprint_one_cm
+scoreboard objectives add chase_time dummy
 
 team add blue
 team add red
