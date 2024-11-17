@@ -8,6 +8,5 @@ execute as @s[tag=!has_jug_kit] run item replace entity @s hotbar.2 with splash_
 execute as @s[tag=!has_jug_kit] run item replace entity @s hotbar.3 with splash_potion[potion_contents={potion:"fire_resistance"},max_stack_size=2] 2
 execute as @s[tag=!has_jug_kit] run item replace entity @s hotbar.4 with splash_potion[potion_contents={potion:"strength"},max_stack_size=2] 2
 execute as @s[tag=!has_jug_kit] run item replace entity @s hotbar.5 with splash_potion[potion_contents={potion:"strong_harming"},max_stack_size=3] 3
-execute as @s[tag=!has_jug_kit] run item replace entity @s hotbar.6 with cooked_beef 64
 execute as @s[tag=!has_jug_kit] run tag @s add witchdoctor
 tag @s add has_jug_kit

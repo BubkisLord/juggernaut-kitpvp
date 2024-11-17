@@ -6,6 +6,5 @@ execute as @s[tag=!has_jug_kit] run give @s diamond_sword[enchantments={sharpnes
 execute as @s[tag=!has_jug_kit] run item replace entity @s hotbar.1 with red_dye[item_name='[{"text": "Spawn Malevolent Aura","color": "dark_red"},{"text": " | "},{"text": "READY","color": "green"}]'] 1
 execute as @s[tag=!has_jug_kit] run item replace entity @s hotbar.2 with cyan_dye[item_name='[{"text": "Spawn Banishment Glyph","color": "dark_blue"},{"text": " | "},{"text": "READY","color": "green"}]'] 1
 execute as @s[tag=!has_jug_kit] run item replace entity @s hotbar.3 with black_dye[item_name='[{"text": "Spawn Withering Surge","color": "black"},{"text": " | "},{"text": "READY","color": "green"}]'] 1
-execute as @s[tag=!has_jug_kit] run give @s cooked_beef 64
 execute as @s[tag=!has_jug_kit] run tag @s add warlock
 tag @s add has_jug_kit
