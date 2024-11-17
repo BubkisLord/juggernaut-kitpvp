@@ -41,9 +41,8 @@ execute as @a[tag=escapist] at @s if entity @a[tag=juggernaut,distance=..10] run
 execute as @a[tag=engineer] if score @s replenishment_tower_cooldown > #0 var run scoreboard players add @s points 1
 execute as @a[tag=engineer] if score @s revealing_tower_cooldown > #0 var run scoreboard players add @s points 1
 
-# Medic gains points for healing other players. (1/sec per player)
-execute as @a[tag=!medic,tag=!survivor,scores={health=1..19}] if entity @a[tag=medic] run scoreboard players add @a[tag=medic] points 1
-execute as @a[tag=survivor,scores={health=1..39}] if entity @a[tag=medic] run scoreboard players add @a[tag=medic] points 1
+# Players gain points for healing (2/sec)
+execute as @a[tag=runner,tag=is_healing] run scoreboard players add @s points 2
 
 # Survivor gains points for being close to the juggernaut (15/sec)
 execute as @a[tag=survivor] if entity @a[tag=juggernaut,distance=..10] run scoreboard players add @s points 15
