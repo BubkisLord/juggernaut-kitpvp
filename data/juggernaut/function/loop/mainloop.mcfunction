@@ -202,7 +202,6 @@ execute if entity @a[tag=predator] run effect give @a[tag=runner] darkness infin
 execute as @a[tag=predator] at @s unless entity @s[scores={sneak_time=1}] run particle white_ash ~ ~0.5 ~ 3 3 3 0.0001 30 force @a[tag=!predator]
 execute as @a[tag=predator] at @s unless entity @s[scores={sneak_time=1}] run particle ash ~ ~1 ~ 0.25 0.5 0.25 0.0001 100 force @a[tag=!predator]
 # execute as @a[tag=predator] at @s if entity @s[scores={sneak_time=1}] run effect give @s speed 1 0 true
-scoreboard players set @a[scores={sneak_time=1..}] sneak_time 0
 # execute at @a[tag=predator] as @a[tag=runner,distance=..4] if score #game_state var matches 11 var run effect give @s blindness 4 3 true
 
 # Warlock Functionality
@@ -386,13 +385,15 @@ execute if entity @a[tag=guide] run function juggernaut:ability_management/check
     item_id:"minecraft:ender_eye",\
     item_name:'{"text": "Ender Eye","color": "#FFD700"}',\
     ability_id:0,\
-    cooldown:60,\
+    cooldown:50,\
     hotbar_slot:"hotbar.0",\
     cooldown_var:"jug_kit_cooldown",\
 }
 
 # Escapist passive effects
 execute as @a[tag=escapist] run effect give @s speed 1 0 true
+
+# Escapist Ability
 execute if entity @a[tag=escapist] run function juggernaut:ability_management/check_ability {\
     player_tag:"escapist",\
     item_id:"minecraft:gunpowder",\
@@ -521,11 +522,12 @@ execute as @a[tag=borrowing_time,scores={borrowed_time_remaining=..0}] run score
 execute as @a[tag=borrowing_time,scores={borrowed_time_remaining=..0}] run scoreboard players operation @s borrowed_damage /= #100 var
 execute as @a[tag=borrowing_time,scores={borrowed_time_remaining=..0}] run tag @s remove borrowing_time
 
-
 # Loop per second function.
 execute as @e[type=armor_stand,tag=juggernaut_manager] run scoreboard players add @s tick_counter 1
 scoreboard players set #20 var 20
 execute as @e[type=armor_stand,tag=juggernaut_manager] if score @s tick_counter >= #20 var run function juggernaut:loop/second
+execute as @e[type=armor_stand,tag=juggernaut_manager] if score @s tick_counter = #20 var run function juggernaut:loop/half_second
+execute as @e[type=armor_stand,tag=juggernaut_manager] if score @s tick_counter = #10 var run function juggernaut:loop/half_second
 execute as @e[type=armor_stand,tag=juggernaut_manager] if score @s tick_counter >= #20 var run scoreboard players set @s tick_counter 0
 
 execute as @a[tag=runner] run function juggernaut:healing/set_healing_needed
