@@ -10,6 +10,7 @@ execute as @a[tag=runner] unless entity @s[tag=borrowing_time] if score @s damag
 
 execute at @e[tag=respawn_point] as @a[distance=..10] run tp @s @e[tag=arena.spawn,limit=1,sort=random]
 
+function juggernaut:chase/check_in_chase
 
 execute as @e[type=armor_stand,tag=jug_spawn] at @s run tp @a[distance=..8] @e[tag=arena.spawn,limit=1,sort=random]
 
