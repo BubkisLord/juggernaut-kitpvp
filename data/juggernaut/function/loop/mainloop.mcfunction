@@ -65,6 +65,13 @@ execute if score #game_state var matches 11 if score @n[type=armor_stand,tag=jug
 execute if score #game_state var matches 11 if score @n[type=armor_stand,tag=juggernaut_manager] replenish_decimal > #75 var if entity @n[type=armor_stand,tag=juggernaut_manager] run title @a actionbar [{"text":"Replenishment Percentage: ","color": "dark_red","bold": true},{"score":{"name":"@n[type=armor_stand,tag=juggernaut_manager]","objective":"replenish_decimal"},"bold": true,"color": "dark_red"},{"text": "%"}]
 
 
+# Effect mechanics
+# This doesn't change the attributes as this could potentially mess with the player's stats. (and kit effects)
+execute as @a[tag=is_hindered] run effect give @s slowness 1 4 true
+execute as @a[tag=is_hindered] run effect give @s speed 1 11 true
+
+scoreboard players set #runners_left var 0
+execute as @a[tag=runner] run scoreboard players add #runners_left var 1
 
 # Jug Kits
 # Chain Hunter

@@ -1,4 +1,9 @@
+# Point gaining
 function juggernaut:loop/recursive_point_gaining
+
+# Progress and clear old effects.
+execute as @a run function juggernaut:effects/check_effects {effect:"bleeding"}
+execute as @a run function juggernaut:effects/check_effects {effect:"hindered"}
 
 # Juggernaut timeout countdown
 execute as @a[tag=juggernaut,scores={juggernaut_game_time=1..}] run scoreboard players remove @a[tag=juggernaut] juggernaut_game_time 1
@@ -102,3 +107,11 @@ execute as @a[tag=dragon] run function juggernaut:raycasts/raycast {\
     hit_function_id:1,\
     collides_with_blocks:1,\
 }
+
+scoreboard players operation #second_counter var += #1 var
+scoreboard players operation #x_seconds var = #second_counter var
+scoreboard players operation #x_seconds var %= #5 var
+execute if score #x_seconds var matches 0 run function juggernaut:loop/5_seconds
+
+
+execute if score #second_counter var matches 100.. run scoreboard players set #second_counter var 0
