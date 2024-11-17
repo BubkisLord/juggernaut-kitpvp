@@ -65,6 +65,7 @@ item replace entity @a enderchest.5 with flow_pottery_sherd[item_name='{"text": 
 item replace entity @a enderchest.6 with brewer_pottery_sherd[item_name='{"text": "Healthy Preparation","color": "aqua"}',lore=['{"text": "At the start of the match, you gain","color": "dark_gray","italic": true}','{"text": "8 splash potions of healing.","color": "dark_gray","italic": true}']]
 item replace entity @a enderchest.7 with skull_pottery_sherd[item_name='{"text": "Undying Ties","color": "aqua"}',lore=['{"text": "Upon death of any means, you respawn","color": "dark_gray","italic": true}','{"text": "at the location of another player.","color": "dark_gray","italic": true}']]
 item replace entity @a enderchest.8 with prize_pottery_sherd[item_name='{"text": "Unwavering Strength","color": "aqua"}',lore=['{"text": "You can replenish even when the juggernaut is close by.","color": "dark_gray","italic": true}','{"text": "This perk is permanently active.","color": "dark_gray","italic": true}']]
+item replace entity @a enderchest.9 with friend_pottery_sherd[item_name='{"text": "Shared Resolve","color": "aqua"}',lore=['{"text": "When completing a station, all players working on it","color": "dark_gray","italic": true}','{"text": "receive resistance and speed 2 for 4 seconds,","color": "dark_gray","italic": true}','{"text": "as well as the undetectable status effect for 20 seconds.","color": "dark_gray","italic": true}','{"text": "Afterwards, this perk deactivates until next reactivation.","color": "dark_gray","italic": true}']]
 
 clear @a
 kill @a
