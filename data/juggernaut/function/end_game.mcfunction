@@ -34,6 +34,7 @@ tag @a add lobby.player
 clear @a
 kill @a
 gamerule showDeathMessages true
+gamerule naturalRegeneration true
 kill @e[type=armor_stand,tag=warlock_armor_stand]
 kill @e[tag=kill_on_end_game]
 kill @e[type=armor_stand,tag=hunter_remnant]
