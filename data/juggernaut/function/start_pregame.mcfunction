@@ -8,10 +8,15 @@ clear @a
 
 function survival:remove_chests
 
+# Teleport everyone to kit selection rooms.
 tp @a[tag=juggernaut] 2054.5 114 0.5 facing 2054.5 114 1.5
 tp @a[tag=runner] 2054.5 124 0.5 facing 2054.5 124 1.5
 team join jug @a[tag=juggernaut]
 team join runner @a[tag=runner]
+
+# Give everyone infinite saturation so they never lose hunger.
+effect give @a saturation infinite 255 true
+effect give @a[tag=juggernaut] regeneration infinite 0 true
 
 stopsound @a
 execute as @a[tag=juggernaut] run playsound music_disc.creator record @s ~ ~ ~ 3 0.75
@@ -57,3 +62,6 @@ scoreboard players set #game_state var 10
 scoreboard players set @n[type=armor_stand,tag=juggernaut_manager] replenish_progress 0
 scoreboard players set @n[type=armor_stand,tag=juggernaut_manager] replenish_decimal 0
 scoreboard players set @n[type=armor_stand,tag=juggernaut_manager] replenish_percentage 0
+
+# Turn off natural regeneration.
+gamerule naturalRegeneration false

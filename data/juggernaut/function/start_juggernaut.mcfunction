@@ -12,5 +12,8 @@ tp @a[tag=runner] @e[type=armor_stand,tag=arena.spawn,limit=1,sort=random]
 execute store result score @a[tag=survivor] lives run scoreboard players get #juggernaut_count var
 scoreboard players add @a[tag=survivor] lives 2
 
+# Set all healing progress to 0
+scoreboard players set @a healing_progress 0
+
 # Turns on the game running variable.
 scoreboard players set #game_state var 11
