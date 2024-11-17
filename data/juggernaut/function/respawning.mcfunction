@@ -5,8 +5,10 @@ scoreboard players set #1 var 1
 scoreboard players set @s borrowed_damage 0
 
 effect give @s saturation infinite 255 true
+tag @s remove blood_pact_active
 
-execute if score @s lives_remaining matches 1.. run spawnpoint @s 0 101 0
+execute if score @s lives_remaining matches 1.. if entity @s[tag=!using_undying_ties] run spawnpoint @s 0 101 0
+execute if score @s lives_remaining matches 1.. if entity @s[tag=using_undying_ties] at @r[tag=runner] run spawnpoint @s ~ ~ ~
 execute if score @s lives_remaining matches 1.. if entity @s[tag=escapist] run function juggernaut:kit_replenishes/replenish_escapist
 execute if score @s lives_remaining matches 1.. if entity @s[tag=medic] run function juggernaut:kit_replenishes/replenish_medic
 execute if score @s lives_remaining matches 1.. if entity @s[tag=scout] run function juggernaut:kit_replenishes/replenish_scout

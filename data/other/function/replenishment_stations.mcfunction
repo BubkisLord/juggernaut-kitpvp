@@ -23,8 +23,14 @@ execute if score #game_state var matches 11 run execute as @e[tag=replenishment.
 # execute if score #game_state var matches 11 run execute as @e[tag=replenishment.station] at @s if entity @a[tag=juggernaut,limit=1,sort=nearest,distance=0..12] if entity @s[scores={replenish_timeout=1..}] run particle minecraft:witch ~ ~2.5 ~ 0.2 60 0.2 0 120 force @a[tag=runner]
 
 #If the game is juggernaut, allow the runners to progress them.
-execute as @e[tag=replenishment.station] at @s if score #game_state var matches 11 unless entity @e[type=armor_stand,tag=banishment_glyph,distance=..32] unless entity @a[tag=juggernaut,limit=1,sort=nearest,distance=0..12] as @a[tag=runner,distance=..3] run scoreboard players add @n[type=armor_stand,tag=juggernaut_manager] replenish_progress 1
-execute as @e[tag=replenishment.station] at @s if score #game_state var matches 11 unless entity @e[type=armor_stand,tag=banishment_glyph,distance=..32] unless entity @a[tag=juggernaut,limit=1,sort=nearest,distance=0..12] as @a[tag=runner,distance=..3,tag=has_respawn_time] run function juggernaut:clear_respawn_period
+execute as @e[type=armor_stand,tag=replenishment.station] at @s if score #game_state var matches 11 unless entity @e[type=armor_stand,tag=banishment_glyph,distance=..32] unless entity @a[tag=juggernaut,limit=1,sort=nearest,distance=0..12] as @a[tag=runner,distance=..3] run scoreboard players add @n[type=armor_stand,tag=juggernaut_manager] replenish_progress 1
+execute as @e[type=armor_stand,tag=replenishment.station] at @s if score #game_state var matches 11 unless entity @e[type=armor_stand,tag=banishment_glyph,distance=..32] if entity @a[tag=juggernaut,limit=1,sort=nearest,distance=0..12] as @a[tag=runner,distance=..3,tag=using_unwavering_strength] run scoreboard players add @n[type=armor_stand,tag=juggernaut_manager] replenish_progress 1
+execute as @e[type=armor_stand,tag=replenishment.station] at @s if score #game_state var matches 11 unless entity @e[type=armor_stand,tag=banishment_glyph,distance=..32] unless entity @a[tag=juggernaut,limit=1,sort=nearest,distance=0..12] as @a[tag=runner,distance=..3,tag=has_respawn_time] run function juggernaut:clear_respawn_period
+execute as @e[type=armor_stand,tag=replenishment.station] at @s if score #game_state var matches 11 unless entity @e[type=armor_stand,tag=banishment_glyph,distance=..32] unless entity @a[tag=juggernaut,limit=1,sort=nearest,distance=0..12] as @a[tag=runner,distance=..3,tag=has_respawn_time] if entity @s[tag=using_sentinel] run scoreboard players add @n[type=armor_stand,tag=replenishment.station] sentinel_progress 1
+execute as @e[type=armor_stand,tag=replenishment.station] at @s if score #game_state var matches 11 if score @s sentinel_progress matches 160.. run tag @e[tag=sentinel_tower] remove sentinel_tower
+execute as @e[type=armor_stand,tag=replenishment.station] at @s if score #game_state var matches 11 if score @s sentinel_progress matches 160.. run tag @s add sentinel_tower
+execute as @e[type=armor_stand,tag=replenishment.station,tag=sentinel_tower,scores={sentinel_progress=1..}] run scoreboard players set @s sentinel_progress 0
+execute as @e[type=armor_stand,tag=sentinel_tower] at @s as @a[tag=juggernaut,distance=..8] run effect give @s glowing 1 0 true
 #Allow engineer towers to replenish.
 # When the engineer is in range of another replenishment station it goes at half speed.
 execute as @e[type=armor_stand,tag=replenishment_tower] at @s if score #game_state var matches 11 unless entity @e[type=armor_stand,tag=banishment_glyph,distance=..32] if entity @a[tag=engineer,distance=..3] run scoreboard players add @s replenish_counter 1
@@ -34,13 +40,13 @@ execute as @e[type=armor_stand,tag=replenishment_tower] at @s if score #game_sta
 execute as @e[type=armor_stand,tag=replenishment_tower] at @s if score #game_state var matches 11 unless entity @e[type=armor_stand,tag=banishment_glyph,distance=..32] as @a[tag=engineer,distance=..3] at @s unless entity @e[type=armor_stand,tag=replenishment.station,distance=..3] run scoreboard players add @n[type=armor_stand,tag=juggernaut_manager] replenish_progress 1
 
 # Engineer towers have a beacon to show that they are replenishing.
-execute as @e[tag=replenishment_tower] at @s if score #game_state var matches 11 unless entity @e[type=armor_stand,tag=banishment_glyph,distance=..32] run particle minecraft:trial_omen ~ ~2.5 ~ 0.2 60 0.2 0 120 force @a
+execute as @e[type=armor_stand,tag=replenishment_tower] at @s if score #game_state var matches 11 unless entity @e[type=armor_stand,tag=banishment_glyph,distance=..32] run particle minecraft:trial_omen ~ ~2.5 ~ 0.2 60 0.2 0 120 force @a
 
 #Display replenishment station particles.
-execute as @e[tag=replenishment.station] at @s if score #game_state var matches 11 if entity @e[type=armor_stand,tag=banishment_glyph,distance=..32] as @a[tag=runner,distance=..3] at @s run particle flame ~ ~ ~ 0.5 1 0.5 0.00001 2 force
+execute as @e[type=armor_stand,tag=replenishment.station] at @s if score #game_state var matches 11 if entity @e[type=armor_stand,tag=banishment_glyph,distance=..32] as @a[tag=runner,distance=..3] at @s run particle flame ~ ~ ~ 0.5 1 0.5 0.00001 2 force
 
 execute as @e[tag=replenishment.station] at @s if score #game_state var matches 11 unless entity @e[type=armor_stand,tag=banishment_glyph,distance=..32] unless entity @a[tag=juggernaut,limit=1,sort=nearest,distance=0..12] as @a[tag=runner,distance=..3] at @s run particle end_rod ~ ~ ~ 0.5 1 0.5 0.00001 1 force
-execute as @e[tag=replenishment.station] at @s if score #game_state var matches 11 unless entity @e[type=armor_stand,tag=banishment_glyph,distance=..32] if entity @a[tag=juggernaut,limit=1,sort=nearest,distance=0..12] as @a[tag=runner,distance=..3] at @s run particle flame ~ ~ ~ 0.5 1 0.5 0.00001 2 force
+execute as @e[tag=replenishment.station] at @s if score #game_state var matches 11 unless entity @e[type=armor_stand,tag=banishment_glyph,distance=..32] if entity @a[tag=juggernaut,limit=1,sort=nearest,distance=0..12] as @a[tag=runner,distance=..3,tag=using_unwavering_strength] at @s run particle end_rod ~ ~ ~ 0.5 1 0.5 0.00001 2 force
 
 #Set replenishment timeout
 execute if score #game_state var matches 11 as @e[type=armor_stand,tag=replenishment.station] at @s unless entity @e[type=armor_stand,tag=banishment_glyph,distance=..32] if entity @a[tag=runner,distance=..6] run scoreboard players set @s replenish_timeout 6

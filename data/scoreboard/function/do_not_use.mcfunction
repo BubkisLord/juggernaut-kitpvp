@@ -87,6 +87,9 @@ scoreboard objectives add healing_needed dummy
 scoreboard objectives add healing_percent dummy
 scoreboard objectives add is_sprinting minecraft.custom:minecraft.sprint_one_cm
 scoreboard objectives add chase_time dummy
+scoreboard objectives add sentinel_progress dummy
+scoreboard objectives add shadow_mark_cooldown dummy
+scoreboard objectives add borrowed_time_remaining dummy
 
 team add blue
 team add red

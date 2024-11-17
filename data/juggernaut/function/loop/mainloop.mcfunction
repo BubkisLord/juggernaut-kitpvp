@@ -6,8 +6,10 @@ scoreboard players set #10 var 10
 
 # When runners are hit by the juggernaut (scout does not get this speed boost)
 execute as @a[tag=runner,tag=!scout] at @s if entity @a[tag=juggernaut,distance=..5] if score @s damage_taken > #0 var run effect give @s speed 1 0 true
-execute as @a[tag=runner,tag=!scout] at @s if entity @a[tag=chain_hunter,distance=..5] if score @s damage_taken > #0 var run function juggernaut:effects/apply_effect {effect:"hindered",duration:4,color:"dark_gray"}
-execute as @a[tag=runner,tag=!scout] at @s if entity @a[tag=predator,distance=..5] if score @s damage_taken > #0 var run function juggernaut:effects/apply_effect {effect:"hemorrhaged",duration:30,color:"dark_red"}
+execute as @a[tag=runner,tag=using_blood_pact] at @s if entity @a[tag=juggernaut,distance=..5] if score @s damage_taken > #0 var run tag @s add blood_pact_active
+execute as @a[tag=runner,tag=using_blood_pact] at @s if entity @a[tag=juggernaut,distance=..5] if score @s damage_taken > #0 var run tag @s remove using_blood_pact
+execute as @a[tag=runner] at @s if entity @a[tag=chain_hunter,distance=..5] if score @s damage_taken > #0 var run function juggernaut:effects/apply_effect {effect:"hindered",duration:4,color:"dark_gray"}
+execute as @a[tag=runner] at @s if entity @a[tag=predator,distance=..5] if score @s damage_taken > #0 var run function juggernaut:effects/apply_effect {effect:"hemorrhaged",duration:30,color:"dark_red"}
 execute as @a[tag=is_exposed] run function juggernaut:damage_player
 execute as @a[tag=runner] unless entity @s[tag=borrowing_time] if score @s damage_taken > #0 var run scoreboard players set @s damage_taken 0
 
@@ -526,8 +528,8 @@ execute as @a[tag=borrowing_time,scores={borrowed_time_remaining=..0}] run tag @
 execute as @e[type=armor_stand,tag=juggernaut_manager] run scoreboard players add @s tick_counter 1
 scoreboard players set #20 var 20
 execute as @e[type=armor_stand,tag=juggernaut_manager] if score @s tick_counter >= #20 var run function juggernaut:loop/second
-execute as @e[type=armor_stand,tag=juggernaut_manager] if score @s tick_counter = #20 var run function juggernaut:loop/half_second
-execute as @e[type=armor_stand,tag=juggernaut_manager] if score @s tick_counter = #10 var run function juggernaut:loop/half_second
+# execute as @e[type=armor_stand,tag=juggernaut_manager] if score @s tick_counter = #20 var run function juggernaut:loop/half_second
+# execute as @e[type=armor_stand,tag=juggernaut_manager] if score @s tick_counter = #10 var run function juggernaut:loop/half_second
 execute as @e[type=armor_stand,tag=juggernaut_manager] if score @s tick_counter >= #20 var run scoreboard players set @s tick_counter 0
 
 execute as @a[tag=runner] run function juggernaut:healing/set_healing_needed
@@ -560,3 +562,5 @@ execute as @a[tag=using_camera] at @s as @n[type=armor_stand,tag=used_camera] at
 execute as @a[tag=shadow_marked] at @s run particle flame ~ ~0.5 ~ 1.5 1.5 1.5 0 1 force @a[tag=juggernaut]
 
 execute as @a[tag=has_respawn_time] run effect give @s invisibility 1 0 true
+effect give @a[tag=using_flame_ward] fire_resistance 1 0 true
+execute as @a[tag=using_quickened_stealth] run attribute @s player.sneaking_speed base set 2

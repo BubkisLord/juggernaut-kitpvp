@@ -35,8 +35,21 @@ tag @a remove using_camera
 tag @a remove stalker
 tag @a remove eclipse_stalker
 tag @e remove used_camera
+tag @e remove sentinel_tower
 tag @a remove shadow_marked
 tag @a add lobby.player
+
+tag @a remove using_blood_pact
+tag @a remove using_flame_ward
+tag @a remove using_fractured_aid
+tag @a remove using_self_preservation
+tag @a remove using_sentinel
+tag @a remove using_quickened_stealth
+tag @a remove using_undying_ties
+tag @a remove using_unwavering_strength
+
+tag @a remove has_respawn_time
+
 clear @a
 kill @a
 gamerule showDeathMessages true
@@ -59,6 +72,9 @@ scoreboard players set @n[type=armor_stand,tag=juggernaut_manager] replenish_dec
 scoreboard players set @n[type=armor_stand,tag=juggernaut_manager] replenish_percentage 0
 scoreboard players set @n[type=armor_stand,tag=juggernaut_manager] total_replenishment_needed 0
 scoreboard players set @n[type=armor_stand,tag=juggernaut_manager] scout_reveal_timer 0
+
+scoreboard players set @e[type=armor_stand,tag=replenishment.station] sentinel_progress 0
+
 scoreboard players set @a lives 0
 scoreboard players set @a game_deaths 0
 scoreboard players set @a borrowed_damage 0
