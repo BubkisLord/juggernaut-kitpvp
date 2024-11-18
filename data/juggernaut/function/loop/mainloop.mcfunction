@@ -8,8 +8,8 @@ scoreboard players set #10 var 10
 execute as @a[tag=runner,tag=!scout] at @s if entity @a[tag=juggernaut,distance=..5] if score @s damage_taken > #0 var run effect give @s speed 1 0 true
 execute as @a[tag=runner,tag=using_blood_pact] at @s if entity @a[tag=juggernaut,distance=..5] if score @s damage_taken > #0 var run tag @s add blood_pact_active
 execute as @a[tag=runner,tag=using_blood_pact] at @s if entity @a[tag=juggernaut,distance=..5] if score @s damage_taken > #0 var run tag @s remove using_blood_pact
-execute as @a[tag=runner] at @s if entity @a[tag=chain_hunter,distance=..5] if score @s damage_taken > #0 var run function juggernaut:effects/apply_effect {effect:"hindered",duration:4,color:"dark_gray"}
-# execute as @a[tag=runner] at @s if entity @a[tag=predator,distance=..5] if score @s damage_taken > #0 var run function juggernaut:effects/apply_effect {effect:"hemorrhaged",duration:30,color:"dark_red"}
+# execute as @a[tag=runner] at @s if entity @a[tag=chain_hunter,distance=..5] if score @s damage_taken > #0 var run function juggernaut:effects/apply_effect {effect:"hindered",duration:4,color:"dark_gray"}
+execute as @a[tag=runner] at @s if entity @a[tag=predator,distance=..5] if score @s damage_taken > #0 var run function juggernaut:effects/apply_effect {effect:"hemorrhaged",duration:20,color:"dark_red"}
 execute as @a[tag=is_exposed] run function juggernaut:damage_player
 execute as @a[tag=is_undetectable] run effect clear @s glowing
 execute as @a[tag=runner] unless entity @s[tag=borrowing_time] if score @s damage_taken > #0 var run scoreboard players set @s damage_taken 0
@@ -565,7 +565,7 @@ execute as @a[tag=medic,scores={is_sneaking=0}] at @s run function juggernaut:he
 execute as @a[tag=runner,tag=!survivor,scores={is_sneaking=1,health=..19}] at @s run function juggernaut:healing/try_self_heal {heal_amount:2}
 
 # Hemorrhaged Mechanic
-execute as @a[tag=is_hemorrhaged,tag=!is_being_healed,tag=!self_healing] at @s run function juggernaut:healing/force_unheal_player {amount:3}
+execute as @a[tag=is_hemorrhaged,tag=!is_being_healed,tag=!self_healing] at @s run function juggernaut:healing/force_unheal_player {amount:1}
 
 # Mangled Mechanic
 execute as @a[tag=is_mangled,tag=is_being_healed,tag=!self_healing] at @s run function juggernaut:healing/force_unheal_player {amount:4}
