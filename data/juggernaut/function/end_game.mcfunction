@@ -33,7 +33,6 @@ tag @a remove blinker
 tag @a remove spirit_walker
 tag @a remove guide
 tag @a remove using_camera
-tag @a remove stalker
 tag @a remove eclipse_stalker
 tag @e remove used_camera
 tag @e remove sentinel_tower
