@@ -10,4 +10,4 @@ execute if score @s healing_needed matches 0 run scoreboard players set @s heali
 scoreboard players operation @s healing_percent = @s healing_progress
 scoreboard players operation @s healing_percent *= #100 var
 scoreboard players operation @s healing_percent /= @s healing_needed
-execute if score @s healing_percent >= #100 var run scoreboard players set @s healing_percent 100
+execute if score @s healing_percent > #100 var run scoreboard players set @s healing_percent 100

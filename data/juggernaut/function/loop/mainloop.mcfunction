@@ -565,7 +565,7 @@ execute as @a[tag=medic,scores={is_sneaking=0}] at @s run function juggernaut:he
 execute as @a[tag=runner,tag=!survivor,scores={is_sneaking=1,health=..19}] at @s run function juggernaut:healing/try_self_heal {heal_amount:2}
 
 # Hemorrhaged Mechanic
-execute as @a[tag=is_hemorrhaged,tag=!is_being_healed] at @s run function juggernaut:healing/force_unheal_player {amount:3}
+execute as @a[tag=is_hemorrhaged,tag=!is_being_healed,tag=!self_healing] at @s run function juggernaut:healing/force_unheal_player {amount:3}
 
 # Mangled Mechanic
 execute as @a[tag=is_mangled,tag=is_being_healed,tag=!self_healing] at @s run function juggernaut:healing/force_unheal_player {amount:4}
