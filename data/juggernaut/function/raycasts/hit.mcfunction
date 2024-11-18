@@ -13,10 +13,10 @@ execute if score #hit_function_id var matches 4 run execute positioned ~ ~0.5 ~ 
 execute if score #hit_function_id var matches 4 run particle flame ~ ~0.5 ~ 1.5 1.5 1.5 0 100 force
 execute if score #hit_function_id var matches 4 run scoreboard players set @p[tag=chain_hunter,tag=teleporting] jug_kit_cooldown_2 30
 execute if score #hit_function_id var matches 5 run tag @s add used_camera
-execute if score #hit_function_id var matches 5 run execute as @p[tag=stalker,tag=finding_camera] run tag @s add using_camera
-execute if score #hit_function_id var matches 5 run execute at @p[tag=stalker,tag=finding_camera] run summon area_effect_cloud ~ ~ ~ {Duration:999999,Tags:["eclipse_return_location","kill_on_end_game"]}
-execute if score #hit_function_id var matches 5 run execute as @p[tag=stalker,tag=finding_camera] run function juggernaut:stalker_enter_camera
-execute if score #hit_function_id var matches 5 run execute as @p[tag=stalker,tag=finding_camera] run tp @s ~ ~ ~ facing ^ ^ ^1000
+execute if score #hit_function_id var matches 5 run execute as @p[tag=eclipse_stalker,tag=finding_camera] run tag @s add using_camera
+execute if score #hit_function_id var matches 5 run execute at @p[tag=eclipse_stalker,tag=finding_camera] run summon area_effect_cloud ~ ~ ~ {Duration:999999,Tags:["eclipse_return_location","kill_on_end_game"]}
+execute if score #hit_function_id var matches 5 run execute as @p[tag=eclipse_stalker,tag=finding_camera] run function juggernaut:stalker_enter_camera
+execute if score #hit_function_id var matches 5 run execute as @p[tag=eclipse_stalker,tag=finding_camera] run tp @s ~ ~ ~ facing ^ ^ ^1000
 execute if score #hit_function_id var matches 7 run tag @s add shadow_marked
 execute if score #hit_function_id var matches 8 run execute if entity @s[tag=shadow_marked] run kill @e[tag=eclipse_return_location]
 execute if score #hit_function_id var matches 8 run execute if entity @s[tag=shadow_marked] run tag @p[tag=eclipse_stalker] remove using_camera
