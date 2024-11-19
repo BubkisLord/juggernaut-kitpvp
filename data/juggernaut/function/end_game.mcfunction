@@ -7,6 +7,7 @@ scoreboard players set @a revealing_tower_cooldown 0
 scoreboard players set @a replenishment_tower_cooldown 0
 scoreboard players set @a turret_cooldown 0
 scoreboard players set @a shadow_mark_cooldown 0
+scoreboard players set @a brutal_efficiency_cooldown 0
 spawnpoint @a 2000 100 0
 gamerule showDeathMessages false
 tag @a remove has_jug_kit
