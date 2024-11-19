@@ -10,6 +10,14 @@ scoreboard players set @a shadow_mark_cooldown 0
 scoreboard players set @a brutal_efficiency_cooldown 0
 scoreboard players set @a unyielding_wrath_stacks 0
 scoreboard players set @a unyielding_wrath_time 0
+scoreboard players set @a domination_kills 0
+scoreboard players set @a ticks_spent_buffing 0
+scoreboard players set @a ticks_spent_debuffing 0
+scoreboard players set @a ticks_spent_replenishing 0
+scoreboard players set @a ticks_till_decrement 0
+scoreboard players set @a ticks_till_increment 0
+scoreboard players set @a replenish_debuff 0
+scoreboard players set @a replenish_buff 0
 spawnpoint @a 2000 100 0
 gamerule showDeathMessages false
 tag @a remove has_jug_kit
