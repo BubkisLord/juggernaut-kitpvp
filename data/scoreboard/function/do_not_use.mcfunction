@@ -91,6 +91,8 @@ scoreboard objectives add sentinel_progress dummy
 scoreboard objectives add shadow_mark_cooldown dummy
 scoreboard objectives add borrowed_time_remaining dummy
 scoreboard objectives add replenish_amount dummy
+scoreboard objectives add chase_timeout dummy
+scoreboard objectives add brutal_efficiency_cooldown dummy
 
 team add blue
 team add red
