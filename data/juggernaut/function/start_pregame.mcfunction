@@ -77,3 +77,8 @@ scoreboard players set @n[type=armor_stand,tag=juggernaut_manager] replenish_per
 
 # Turn off natural regeneration.
 gamerule naturalRegeneration false
+
+# Juggernaut and Runner Perks
+function juggernaut:perk_management/clear_prev_perks
+function juggernaut:perk_management/give_runner_perks
+function juggernaut:perk_management/give_juggernaut_perks
