@@ -244,7 +244,6 @@ execute as @a[tag=runner,tag=self_healing] run tag @s remove self_healing
 execute as @a[tag=runner,tag=is_being_healed] run tag @s remove is_being_healed
 
 scoreboard players set @a[scores={is_sneaking=1..}] is_sneaking 0
-scoreboard players set @a[scores={is_sprinting=1..}] is_sprinting 0
 
 
 execute as @a[tag=using_camera] at @s as @n[type=armor_stand,tag=used_camera] at @s run tp @p[tag=using_camera] ~ ~ ~
