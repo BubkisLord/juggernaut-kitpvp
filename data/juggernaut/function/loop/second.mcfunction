@@ -138,5 +138,7 @@ execute as @a[tag=juggernaut,tag=!in_chase,tag=using_unyielding_wrath] run attri
 execute as @a[tag=juggernaut,tag=!in_chase,tag=using_unyielding_wrath] run attribute @s generic.movement_speed modifier remove unyielding_wrath_5
 execute as @a[tag=juggernaut,tag=!in_chase,tag=using_unyielding_wrath] run scoreboard players set @s unyielding_wrath_stacks 0
 
+execute as @a[tag=juggernaut,tag=using_domination] run function juggernaut:perk_management/perk_functions/set_domination_speed
+
 
 execute if score #second_counter var matches 100.. run scoreboard players set #second_counter var 0
