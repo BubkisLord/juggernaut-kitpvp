@@ -219,6 +219,10 @@ execute as @e[type=armor_stand,tag=juggernaut_manager] if score @s tick_counter 
 # execute as @e[type=armor_stand,tag=juggernaut_manager] if score @s tick_counter = #10 var run function juggernaut:loop/half_second
 execute as @e[type=armor_stand,tag=juggernaut_manager] if score @s tick_counter >= #20 var run scoreboard players set @s tick_counter 0
 
+# Juggernaut Perks
+execute as @a[tag=juggernaut,tag=using_predatory_senses,scores={is_sprinting=0}] at @s as @a[tag=runner,scores={is_sprinting=1},tag=!is_undetectable,distance=..15] run effect give @s glowing 1 0 true
+
+# Set healing needed
 execute as @a[tag=runner] run function juggernaut:healing/set_healing_needed
 
 # Healing mechanic
