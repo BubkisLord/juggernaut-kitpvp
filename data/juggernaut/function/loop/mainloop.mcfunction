@@ -5,12 +5,9 @@ scoreboard players set #100 var 100
 scoreboard players set #10 var 10
 
 # When runners are hit by the juggernaut (scout does not get this speed boost)
-execute as @a[tag=runner,tag=!scout] at @s if entity @a[tag=juggernaut,distance=..5] if score @s damage_taken > #0 var run effect give @s speed 1 0 true
-execute as @a[tag=runner,tag=using_blood_pact] at @s if entity @a[tag=juggernaut,distance=..5] if score @s damage_taken > #0 var run tag @s add blood_pact_active
-execute as @a[tag=runner,tag=using_blood_pact] at @s if entity @a[tag=juggernaut,distance=..5] if score @s damage_taken > #0 var run tag @s remove using_blood_pact
-# execute as @a[tag=runner] at @s if entity @a[tag=chain_hunter,distance=..5] if score @s damage_taken > #0 var run function juggernaut:effects/apply_effect {effect:"hindered",duration:4,color:"dark_gray"}
-execute as @a[tag=runner] at @s if entity @a[tag=predator,distance=..5] if score @s damage_taken > #0 var run function juggernaut:effects/apply_effect {effect:"hemorrhaged",duration:20,color:"#de5656"}
-execute as @a[tag=is_exposed] run function juggernaut:damage_player
+execute as @a[tag=runner,scores={damage_taken=1..}] at @s if entity @a[tag=juggernaut,distance=..5] run function juggernaut:hooks/hit_by_juggernaut
+execute as @a[tag=runner,scores={damage_taken=1..}] run scoreboard players set @s damage_taken 0
+
 execute as @a[tag=is_undetectable] run effect clear @s glowing
 execute as @a[tag=runner] unless entity @s[tag=borrowing_time] if score @s damage_taken > #0 var run scoreboard players set @s damage_taken 0
 
