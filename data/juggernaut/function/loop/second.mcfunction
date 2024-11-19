@@ -7,7 +7,7 @@ execute as @a run function juggernaut:effects/check_effects {effect:"hindered"}
 execute as @a run function juggernaut:effects/check_effects {effect:"exposed"}
 execute as @a run function juggernaut:effects/check_effects {effect:"undetectable"}
 
-execute if score #game_state var matches 11 run function juggernaut:check_perks
+execute as @a run function juggernaut:attribute_management/check {attribute_namespace:"generic",attribute_name:"movementSpeed",default_value:0.1}
 
 # Juggernaut timeout countdown
 execute as @a[tag=juggernaut,scores={juggernaut_game_time=1..}] run scoreboard players remove @a[tag=juggernaut] juggernaut_game_time 1

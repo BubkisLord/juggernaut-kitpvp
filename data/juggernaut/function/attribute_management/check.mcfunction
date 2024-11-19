@@ -1,0 +1,2 @@
+$scoreboard players remove @s $(attribute_name)_duration_left 1
+$execute if score @s $(attribute_name)_duration_left matches ..0 run attribute @s $(attribute_namespace).$(attribute_name) base set $(default_value)
