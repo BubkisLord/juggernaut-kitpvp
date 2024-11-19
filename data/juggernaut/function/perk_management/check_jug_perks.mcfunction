@@ -12,7 +12,7 @@
 # When in chase, this perk activates. While active, every 15 seconds, gain a stacking speed boost of 3%. When the chase ends, this perk deactivates and you lose all stacks of speed.
 
 # Domination - Snout
-# Each runner death increases your movement speed by 5% but also increases ability cooldowns by 2%.
+# Each runner death increases your movement speed by 4%.
 
 # Floods of Rage - Ward
 # When a station is completed, this perk activates for 5 seconds. While active, all runners are revealed. Players with undetectable cannot be revealed in this way.
@@ -24,7 +24,7 @@
 # This perk is constantly active. While active, runners within a 15 block radius suffer from 15% slower replenishing and healing.
 
 # Bane of Solidarity - Silence
-# This perk is constantly active. While active, replenishment stations progress 5% slower when there is less than or equal to 50% of runners actively working on it. Rounds down.
+# This perk is constantly active. While active, replenishment stations progress 10% slower when there is only one runner progressing it.
 
 
 
@@ -42,7 +42,7 @@ execute as @s[nbt={Inventory:[{id:"minecraft:ward_armor_trim_smithing_template",
 execute as @s[nbt={Inventory:[{id:"minecraft:ward_armor_trim_smithing_template",Slot:9b}]}] run clear @s #minecraft:trim_templates
 execute as @s[nbt={Inventory:[{id:"minecraft:wayfinder_armor_trim_smithing_template",Slot:9b}]}] run tag @s add using_pressure_point
 execute as @s[nbt={Inventory:[{id:"minecraft:wayfinder_armor_trim_smithing_template",Slot:9b}]}] run clear @s #minecraft:trim_templates
-execute as @s[nbt={Inventory:[{id:"minecraft:rib_armor_trim_smithing_template",Slot:9b}]}] run tag @s add using_overwhelimg_presence
+execute as @s[nbt={Inventory:[{id:"minecraft:rib_armor_trim_smithing_template",Slot:9b}]}] run tag @s add using_overwhelming_presence
 execute as @s[nbt={Inventory:[{id:"minecraft:rib_armor_trim_smithing_template",Slot:9b}]}] run clear @s #minecraft:trim_templates
 execute as @s[nbt={Inventory:[{id:"minecraft:silence_armor_trim_smithing_template",Slot:9b}]}] run tag @s add using_bane_of_solidarity
 execute as @s[nbt={Inventory:[{id:"minecraft:silence_armor_trim_smithing_template",Slot:9b}]}] run clear @s #minecraft:trim_templates
