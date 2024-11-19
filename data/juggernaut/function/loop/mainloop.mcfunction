@@ -9,13 +9,10 @@ execute as @a[tag=runner,scores={damage_taken=1..}] at @s if entity @a[tag=jugge
 execute as @a[tag=runner,scores={damage_taken=1..}] run scoreboard players set @s damage_taken 0
 
 execute as @a[tag=is_undetectable] run effect clear @s glowing
-execute as @a[tag=runner] unless entity @s[tag=borrowing_time] if score @s damage_taken > #0 var run scoreboard players set @s damage_taken 0
 
-execute at @e[tag=respawn_point] as @a[distance=..10] run tp @s @e[tag=arena.spawn,limit=1,sort=random]
+execute at @e[tag=respawn_point] as @a[distance=..10] at @r[tag=juggernaut] run tp @s @e[type=armor_stand,tag=arena.spawn,limit=1,sort=random,distance=30..]
 
 execute if score #game_state var matches 11 run function juggernaut:chase/check_in_chase
-
-execute as @e[type=armor_stand,tag=jug_spawn] at @s run tp @a[distance=..8] @e[tag=arena.spawn,limit=1,sort=random]
 
 execute if score #game_state var matches 10 as @n[type=armor_stand,tag=runner_kit_selection_room] at @s run particle campfire_cosy_smoke ~ ~1 ~ 7 1 7 0.00001 1 force
 execute if score #game_state var matches 10 as @n[type=armor_stand,tag=runner_kit_selection_room] at @s run effect give @a[distance=..30] weakness 1 255 true
