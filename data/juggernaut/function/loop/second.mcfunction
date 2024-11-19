@@ -44,6 +44,9 @@ execute as @a unless score #game_state var matches 10..19 if score @s jug_kit_co
 execute as @a if score #game_state var matches 10..19 if score @s shadow_mark_cooldown > #0 var run scoreboard players remove @s shadow_mark_cooldown 1
 execute as @a unless score #game_state var matches 10..19 if score @s shadow_mark_cooldown > #0 var run scoreboard players set @s shadow_mark_cooldown 0
 
+execute as @a if score #game_state var matches 10..19 if score @s brutal_efficiency_cooldown > #0 var run scoreboard players remove @s brutal_efficiency_cooldown 1
+execute as @a unless score #game_state var matches 10..19 if score @s brutal_efficiency_cooldown > #0 var run scoreboard players set @s brutal_efficiency_cooldown 0
+
 # Engineer tower cooldowns/duration
 execute as @e[type=armor_stand,tag=engineer_tower] run scoreboard players remove @s var 1
 execute as @e[tag=engineer] if score @s revealing_tower_cooldown > #0 var run scoreboard players remove @s revealing_tower_cooldown 1
