@@ -14,6 +14,9 @@ execute at @e[tag=respawn_point] as @a[distance=..10] at @r[tag=juggernaut] run 
 
 execute if score #game_state var matches 11 run function juggernaut:chase/check_in_chase
 
+execute if score #game_state var matches 11 as @a[tag=runner] at @s if entity @e[type=armor_stand,tag=replenishment.station,distance=..3] run function juggernaut:replenishment_management/calculate_replenishment_modifier
+execute if score #game_state var matches 11 run function juggernaut:replenishment_management/replenishment_stations
+
 execute if score #game_state var matches 10 as @n[type=armor_stand,tag=runner_kit_selection_room] at @s run particle campfire_cosy_smoke ~ ~1 ~ 7 1 7 0.00001 1 force
 execute if score #game_state var matches 10 as @n[type=armor_stand,tag=runner_kit_selection_room] at @s run effect give @a[distance=..30] weakness 1 255 true
 
