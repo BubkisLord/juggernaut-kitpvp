@@ -119,10 +119,24 @@ execute as @a[tag=dragon] run function juggernaut:raycasts/raycast {\
 # Update sprinting score
 scoreboard players set @a[scores={is_sprinting=1..}] is_sprinting 0
 
-scoreboard players operation #second_counter var += #1 var
-scoreboard players operation #x_seconds var = #second_counter var
-scoreboard players operation #x_seconds var %= #5 var
-execute if score #x_seconds var matches 0 run function juggernaut:loop/5_seconds
+execute as @a[tag=in_chase] run scoreboard players add @s chase_time 1
+execute as @a[tag=!in_chase] run scoreboard players set @s chase_time 0
+
+execute as @a[tag=juggernaut,tag=in_chase,tag=using_unyielding_wrath] run scoreboard players operation @s unyielding_wrath_time = @s chase_time
+execute as @a[tag=juggernaut,tag=in_chase,tag=using_unyielding_wrath] run scoreboard players operation @s unyielding_wrath_time %= #15 var
+execute as @a[tag=juggernaut,tag=in_chase,tag=using_unyielding_wrath,scores={unyielding_wrath_time=0}] run scoreboard players add @s unyielding_wrath_stacks 1
+execute as @a[tag=juggernaut,tag=in_chase,tag=using_unyielding_wrath,scores={unyielding_wrath_time=0,unyielding_wrath_stacks=1}] run attribute @s generic.movement_speed modifier add unyielding_wrath_1 0.003 add_value
+execute as @a[tag=juggernaut,tag=in_chase,tag=using_unyielding_wrath,scores={unyielding_wrath_time=0,unyielding_wrath_stacks=2}] run attribute @s generic.movement_speed modifier add unyielding_wrath_2 0.003 add_value
+execute as @a[tag=juggernaut,tag=in_chase,tag=using_unyielding_wrath,scores={unyielding_wrath_time=0,unyielding_wrath_stacks=3}] run attribute @s generic.movement_speed modifier add unyielding_wrath_3 0.003 add_value
+execute as @a[tag=juggernaut,tag=in_chase,tag=using_unyielding_wrath,scores={unyielding_wrath_time=0,unyielding_wrath_stacks=4}] run attribute @s generic.movement_speed modifier add unyielding_wrath_4 0.003 add_value
+execute as @a[tag=juggernaut,tag=in_chase,tag=using_unyielding_wrath,scores={unyielding_wrath_time=0,unyielding_wrath_stacks=5}] run attribute @s generic.movement_speed modifier add unyielding_wrath_5 0.003 add_value
+
+execute as @a[tag=juggernaut,tag=!in_chase,tag=using_unyielding_wrath] run attribute @s generic.movement_speed modifier remove unyielding_wrath_1
+execute as @a[tag=juggernaut,tag=!in_chase,tag=using_unyielding_wrath] run attribute @s generic.movement_speed modifier remove unyielding_wrath_2
+execute as @a[tag=juggernaut,tag=!in_chase,tag=using_unyielding_wrath] run attribute @s generic.movement_speed modifier remove unyielding_wrath_3
+execute as @a[tag=juggernaut,tag=!in_chase,tag=using_unyielding_wrath] run attribute @s generic.movement_speed modifier remove unyielding_wrath_4
+execute as @a[tag=juggernaut,tag=!in_chase,tag=using_unyielding_wrath] run attribute @s generic.movement_speed modifier remove unyielding_wrath_5
+execute as @a[tag=juggernaut,tag=!in_chase,tag=using_unyielding_wrath] run scoreboard players set @s unyielding_wrath_stacks 0
 
 
 execute if score #second_counter var matches 100.. run scoreboard players set #second_counter var 0

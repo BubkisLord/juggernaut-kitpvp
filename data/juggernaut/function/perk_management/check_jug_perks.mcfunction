@@ -9,7 +9,7 @@
 # Replenishment station progress regresses by 10% if a runner is hit within 5 blocks of a station. This ability has a cooldown of 30 seconds.
 
 # Unyielding Wrath - Coast
-# When in chase, this perk activates. While active, every 15 seconds, gain a stacking speed boost of 3%. This speed boost is capped at 15%. When the chase ends, this perk deactivates and you lose all stacks of speed.
+# When in chase, this perk activates. While active, every 15 seconds, gain a stacking speed boost of 3%. When the chase ends, this perk deactivates and you lose all stacks of speed.
 
 # Domination - Snout
 # Each runner death increases your movement speed by 5% but also increases ability cooldowns by 2%.

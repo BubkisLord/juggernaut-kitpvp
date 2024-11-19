@@ -11,6 +11,14 @@ execute as @n[type=armor_stand,tag=replenishment.station,distance=..5] if entity
 execute if entity @e[type=armor_stand,tag=replenishment.station,distance=..5] as @p[tag=juggernaut,distance=..5,tag=using_brutal_efficiency] run scoreboard players set @s brutal_efficiency_cooldown 30
 
 
+# Unyielding wrath perk
+# execute if entity @s[tag=using_unyielding_wrath] run attribute @s generic.movement_speed modifier remove unyielding_wrath_1
+# execute if entity @s[tag=using_unyielding_wrath] run attribute @s generic.movement_speed modifier remove unyielding_wrath_2
+# execute if entity @s[tag=using_unyielding_wrath] run attribute @s generic.movement_speed modifier remove unyielding_wrath_3
+# execute if entity @s[tag=using_unyielding_wrath] run attribute @s generic.movement_speed modifier remove unyielding_wrath_4
+# execute if entity @s[tag=using_unyielding_wrath] run attribute @s generic.movement_speed modifier remove unyielding_wrath_5
+
+
 # Blood pact perk
 execute if entity @s[tag=using_blood_pact] run tag @s add blood_pact_active
 execute if entity @s[tag=using_blood_pact] run tag @s remove using_blood_pact

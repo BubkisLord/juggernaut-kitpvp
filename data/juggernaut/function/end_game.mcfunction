@@ -8,6 +8,8 @@ scoreboard players set @a replenishment_tower_cooldown 0
 scoreboard players set @a turret_cooldown 0
 scoreboard players set @a shadow_mark_cooldown 0
 scoreboard players set @a brutal_efficiency_cooldown 0
+scoreboard players set @a unyielding_wrath_stacks 0
+scoreboard players set @a unyielding_wrath_time 0
 spawnpoint @a 2000 100 0
 gamerule showDeathMessages false
 tag @a remove has_jug_kit
@@ -73,6 +75,12 @@ execute as @a run attribute @s generic.movement_speed base set 0.1
 execute as @a run attribute @s generic.safe_fall_distance base set 3
 execute as @a run attribute @s generic.gravity base set 0.08
 execute as @a run attribute @s player.sneaking_speed base set 0.3
+
+execute as @a run attribute @s generic.movement_speed modifier remove unyielding_wrath_1
+execute as @a run attribute @s generic.movement_speed modifier remove unyielding_wrath_2
+execute as @a run attribute @s generic.movement_speed modifier remove unyielding_wrath_3
+execute as @a run attribute @s generic.movement_speed modifier remove unyielding_wrath_4
+execute as @a run attribute @s generic.movement_speed modifier remove unyielding_wrath_5
 
 scoreboard players set @n[type=armor_stand,tag=juggernaut_manager] replenish_progress 0
 scoreboard players set @n[type=armor_stand,tag=juggernaut_manager] replenish_decimal 0

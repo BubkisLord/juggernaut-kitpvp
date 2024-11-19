@@ -93,6 +93,8 @@ scoreboard objectives add borrowed_time_remaining dummy
 scoreboard objectives add replenish_amount dummy
 scoreboard objectives add chase_timeout dummy
 scoreboard objectives add brutal_efficiency_cooldown dummy
+scoreboard objectives add unyielding_wrath_time dummy
+scoreboard objectives add unyielding_wrath_stacks dummy
 
 team add blue
 team add red
