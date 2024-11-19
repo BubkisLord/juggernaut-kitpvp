@@ -86,36 +86,7 @@ scoreboard players set #runners_left var 0
 execute as @a[tag=runner] run scoreboard players add #runners_left var 1
 
 # Jug Kits
-# Chain Hunter
-execute if entity @a[tag=chain_hunter] run function juggernaut:ability_management/check_ability {\
-    player_tag:"chain_hunter",\
-    item_id:"minecraft:chain",\
-    item_name:'{"text": "Summon Chain Shot","color": "gray"}',\
-    ability_id:1,\
-    cooldown:20,\
-    hotbar_slot:"hotbar.1",\
-    cooldown_var:"jug_kit_cooldown",\
-}
-execute if entity @a[tag=chain_hunter] run function juggernaut:ability_management/check_ability {\
-    player_tag:"chain_hunter",\
-    item_id:"minecraft:ghast_tear",\
-    item_name:'{"text": "Chain Pull","color": "gray"}',\
-    ability_id:2,\
-    cooldown:20,\
-    hotbar_slot:"hotbar.2",\
-    cooldown_var:"jug_kit_cooldown_2",\
-}
-
-# Spirit Walker
-execute if entity @a[tag=spirit_walker] run function juggernaut:ability_management/check_ability {\
-    player_tag:"spirit_walker",\
-    item_id:"minecraft:amethyst_shard",\
-    item_name:'{"text": "Phase Shift","color": "#577ebe"}',\
-    ability_id:0,\
-    cooldown:30,\
-    hotbar_slot:"hotbar.1",\
-    cooldown_var:"jug_kit_cooldown",\
-}
+execute if score #game_state var matches 11 run function juggernaut:ability_management/juggernaut_kits
 
 # Blinker
 execute as @a[tag=blinker,scores={tick_counter=60..}] run effect give @s invisibility 1 0 true
@@ -167,25 +138,6 @@ execute as @a[tag=dragon] if entity @s[scores={is_sneaking=1}] run attribute @s 
 
 
 # Hunter
-execute if entity @a[tag=jug_hunter] run function juggernaut:ability_management/check_ability {\
-    player_tag:"jug_hunter",\
-    item_id:"minecraft:target",\
-    item_name:'{"text": "Mark Prey","color": "dark_red"}',\
-    ability_id:1,\
-    cooldown:5,\
-    hotbar_slot:"hotbar.2",\
-    cooldown_var:"jug_kit_cooldown",\
-}
-execute if entity @a[tag=jug_hunter] run function juggernaut:ability_management/check_ability {\
-    player_tag:"jug_hunter",\
-    item_id:"minecraft:vault",\
-    item_name:'{"text": "Pursue Prey","color": "dark_red"}',\
-    ability_id:2,\
-    cooldown:35,\
-    hotbar_slot:"hotbar.3",\
-    cooldown_var:"jug_kit_cooldown",\
-}
-
 execute as @a[tag=jug_hunter,tag=is_hunting] at @s run particle witch ~ ~0.5 ~ 1 1 1 0.00001 3 force
 
 execute as @e[type=armor_stand,tag=hunter_remnant] if score @s var = #0 var run tp @r[tag=jug_hunter,tag=is_hunting] @s
@@ -200,48 +152,18 @@ execute as @e[type=armor_stand,tag=hunter_remnant] if score @s var = #0 var run 
 # execute as @a[tag=has_hunters_mark] at @s run particle minecraft:trial_spawner_detection_ominous ~ ~-0.5 ~ 1.5 1.5 1.5 0.0001 4 force @a[tag=has_hunters_mark]
 execute as @a[tag=has_hunters_mark] at @s run particle minecraft:trial_spawner_detection ~ ~-0.5 ~ 1 1.5 1 0 4 force @a[tag=jug_hunter]
 
-
 # Lightning rod
 execute as @e[type=item,nbt={Item:{id:"minecraft:lightning_rod"}}] run execute as @r[tag=runner] run effect give @s glowing 4 0 true
 execute as @e[type=item,nbt={Item:{id:"minecraft:lightning_rod"}}] run kill @s
 
 # Predator Functionality
-
 execute if entity @a[tag=predator] run effect give @a[tag=runner] darkness infinite 0 true
 execute as @a[tag=predator] at @s unless entity @s[scores={is_sneaking=1}] run particle white_ash ~ ~0.5 ~ 3 3 3 0.0001 30 force @a[tag=!predator]
 execute as @a[tag=predator] at @s unless entity @s[scores={is_sneaking=1}] run particle ash ~ ~1 ~ 0.25 0.5 0.25 0.0001 100 force @a[tag=!predator]
 # execute as @a[tag=predator] at @s if entity @s[scores={is_sneaking=1}] run effect give @s speed 1 0 true
 # execute at @a[tag=predator] as @a[tag=runner,distance=..4] if score #game_state var matches 11 var run effect give @s blindness 4 3 true
 
-# Warlock Functionality
-execute if entity @a[tag=warlock] run function juggernaut:ability_management/check_ability {\
-    player_tag:"warlock",\
-    item_id:"minecraft:red_dye",\
-    item_name:'{"text": "Spawn Malevolent Aura","color": "dark_red"}',\
-    ability_id:1,\
-    cooldown:20,\
-    hotbar_slot:"hotbar.1",\
-    cooldown_var:"malevolent_aura_cooldown",\
-}
-execute if entity @a[tag=warlock] run function juggernaut:ability_management/check_ability {\
-    player_tag:"warlock",\
-    item_id:"minecraft:cyan_dye",\
-    item_name:'{"text": "Spawn Banishment Glyph","color": "dark_aqua"}',\
-    ability_id:2,\
-    cooldown:30,\
-    hotbar_slot:"hotbar.2",\
-    cooldown_var:"banishment_glyph_cooldown",\
-}
-execute if entity @a[tag=warlock] run function juggernaut:ability_management/check_ability {\
-    player_tag:"warlock",\
-    item_id:"minecraft:black_dye",\
-    item_name:'{"text": "Spawn Withering Surge","color": "dark_gray"}',\
-    ability_id:3,\
-    cooldown:40,\
-    hotbar_slot:"hotbar.3",\
-    cooldown_var:"withering_surge_cooldown",\
-}
-
+# Warlock
 #Particle effects
 execute at @e[type=armor_stand,tag=malevolent_aura] run particle dripping_lava ~ ~ ~ 16 8 16 0.00001 20 force @a[distance=..16]
 # execute as @e[type=armor_stand,tag=malevolent_aura] at @s run function juggernaut:malevolent_sphere_recursive
@@ -317,168 +239,35 @@ execute as @e[type=armor_stand,tag=warlock_armor_stand] at @s run execute if sco
 
 
 # Eclipse Stalker
-execute if entity @a[tag=eclipse_stalker,tag=!using_camera] run function juggernaut:ability_management/check_ability {\
-    player_tag:"eclipse_stalker",\
-    item_id:"minecraft:ender_eye",\
-    item_name:'{"text": "Place Camera","color": "#FFD700"}',\
-    ability_id:1,\
-    cooldown:4,\
-    hotbar_slot:"hotbar.1",\
-    cooldown_var:"jug_kit_cooldown",\
-}
-execute if entity @a[tag=eclipse_stalker,tag=!using_camera] run function juggernaut:ability_management/check_ability {\
-    player_tag:"eclipse_stalker",\
-    item_id:"minecraft:ender_eye",\
-    item_name:'{"text": "Use Camera","color": "#FFD700"}',\
-    ability_id:2,\
-    cooldown:2,\
-    hotbar_slot:"hotbar.2",\
-    cooldown_var:"jug_kit_cooldown_2",\
-}
-execute if entity @a[tag=eclipse_stalker,tag=using_camera] run function juggernaut:ability_management/check_ability {\
-    player_tag:"eclipse_stalker",\
-    item_id:"minecraft:ender_eye",\
-    item_name:'{"text": "Change Camera","color": "#FFD700"}',\
-    ability_id:4,\
-    cooldown:2,\
-    hotbar_slot:"hotbar.1",\
-    cooldown_var:"jug_kit_cooldown_2",\
-}
-execute if entity @a[tag=eclipse_stalker,tag=using_camera] run function juggernaut:ability_management/check_ability {\
-    player_tag:"eclipse_stalker",\
-    item_id:"minecraft:ender_eye",\
-    item_name:'{"text": "Leave Camera","color": "#FFD700"}',\
-    ability_id:3,\
-    cooldown:30,\
-    hotbar_slot:"hotbar.2",\
-    cooldown_var:"jug_kit_cooldown_2",\
-}
-execute if entity @a[tag=eclipse_stalker,tag=using_camera] run function juggernaut:ability_management/check_ability {\
-    player_tag:"eclipse_stalker",\
-    item_id:"minecraft:ender_eye",\
-    item_name:'{"text": "Kill Camera","color": "#FFD700"}',\
-    ability_id:5,\
-    cooldown:25,\
-    hotbar_slot:"hotbar.3",\
-    cooldown_var:"jug_kit_cooldown_2",\
-}
-execute if entity @a[tag=eclipse_stalker,tag=using_camera] run function juggernaut:ability_management/check_ability {\
-    player_tag:"eclipse_stalker",\
-    item_id:"minecraft:magma_cream",\
-    item_name:'{"text": "Shadow Mark","color": "#cc3c3c"}',\
-    ability_id:6,\
-    cooldown:5,\
-    hotbar_slot:"hotbar.5",\
-    cooldown_var:"shadow_mark_cooldown",\
-}
-execute if entity @a[tag=eclipse_stalker,tag=using_camera] run function juggernaut:ability_management/check_ability {\
-    player_tag:"eclipse_stalker",\
-    item_id:"minecraft:fire_charge",\
-    item_name:'{"text": "Materialise","color": "#aa0000"}',\
-    ability_id:7,\
-    cooldown:10,\
-    hotbar_slot:"hotbar.6",\
-    cooldown_var:"shadow_mark_cooldown",\
-}
-
 execute as @e[type=armor_stand,tag=camera] at @s run particle white_smoke ~ ~ ~ 0.25 0.25 0.25 0 10 force @a
 
 
 #Runner Kits
+execute if score #game_state var matches 11 run function juggernaut:ability_management/runner_kits
+
 # Guide passive effects
 execute as @a[tag=guide,scores={is_sprinting=1..}] at @s if entity @a[tag=runner,distance=1..8,scores={is_sprinting=1..}] run effect give @a[tag=runner,distance=..8] speed 1 0 true
 
-# Guide
-execute if entity @a[tag=guide] run function juggernaut:ability_management/check_ability {\
-    player_tag:"guide",\
-    item_id:"minecraft:ender_eye",\
-    item_name:'{"text": "Replenish Boost","color": "#FFD700"}',\
-    ability_id:1,\
-    cooldown:50,\
-    hotbar_slot:"hotbar.0",\
-    cooldown_var:"jug_kit_cooldown",\
-}
-
 # Escapist passive effects
 execute as @a[tag=escapist] run effect give @s speed 1 0 true
-
-# Escapist Ability
-execute if entity @a[tag=escapist] run function juggernaut:ability_management/check_ability {\
-    player_tag:"escapist",\
-    item_id:"minecraft:gunpowder",\
-    item_name:'{"text": "Flee Powder","color": "#646464"}',\
-    ability_id:0,\
-    cooldown:60,\
-    hotbar_slot:"hotbar.0",\
-    cooldown_var:"jug_kit_cooldown",\
-}
 
 # Rogue Passive Effect
 execute as @a[tag=rogue,scores={is_sneaking=1}] run attribute @s generic.step_height base set 1
 execute as @a[tag=rogue,scores={is_sneaking=0}] run attribute @s generic.step_height base set 0.6
 
-# Rogue Ability
-execute if entity @a[tag=rogue] run function juggernaut:ability_management/check_ability {\
-    player_tag:"rogue",\
-    item_id:"minecraft:firework_star",\
-    item_name:'{"text": "Smoke Bomb","color": "#646464"}',\
-    ability_id:0,\
-    cooldown:60,\
-    hotbar_slot:"hotbar.0",\
-    cooldown_var:"jug_kit_cooldown",\
-}
-
-# Medic Ability
-execute if entity @a[tag=medic] run function juggernaut:ability_management/check_ability {\
-    player_tag:"medic",\
-    item_id:"minecraft:nether_star",\
-    item_name:'{"text": "Rescue","color": "#A4D1EA"}',\
-    ability_id:1,\
-    cooldown:120,\
-    hotbar_slot:"hotbar.3",\
-    cooldown_var:"jug_kit_cooldown",\
-}
-
-execute if entity @a[tag=medic] run function juggernaut:ability_management/check_ability {\
-    player_tag:"medic",\
-    item_id:"minecraft:glistering_melon_slice",\
-    item_name:'{"text": "Heal","color": "#dbbe2d"}',\
-    ability_id:2,\
-    cooldown:120,\
-    hotbar_slot:"hotbar.4",\
-    cooldown_var:"jug_kit_cooldown_2",\
-}
-
 # Make medic immune to glowing
 execute as @a[tag=medic] run effect clear @s glowing
 
+# Scout passive effects
 execute as @a[tag=scout] run scoreboard players add @n[tag=juggernaut_manager] scout_reveal_timer 1
 execute as @a[tag=juggernaut_manager,scores={scout_reveal_timer=1200..}] run effect give @a[tag=juggernaut] glowing 16 0 true
 execute as @a[tag=juggernaut_manager,scores={scout_reveal_timer=1200..}] run scoreboard players set @a[tag=juggernaut_manager] scout_reveal_timer 0
 
-execute if entity @a[tag=scout] run function juggernaut:ability_management/check_ability {\
-    player_tag:"scout",\
-    item_id:"minecraft:glowstone_dust",\
-    item_name:'{"text": "Revealing Powder","color": "gold"}',\
-    ability_id:0,\
-    cooldown:25,\
-    hotbar_slot:"hotbar.1",\
-    cooldown_var:"jug_kit_cooldown",\
-}
 
 # Survivor effects
 execute as @a[tag=survivor] run effect give @s resistance 1 0 true
 execute as @a[tag=survivor] run attribute @s generic.max_health base set 40
 
-# execute if entity @a[tag=survivor] run function juggernaut:ability_management/check_ability {\
-#     player_tag:"survivor",\
-#     item_id:"minecraft:stone",\
-#     item_name:'{"text": "Resistance Stone","color": "#A4D1EA"}',\
-#     ability_id:0,\
-#     cooldown:60,\
-#     hotbar_slot:"hotbar.1",\
-#     cooldown_var:"jug_kit_cooldown",\
-# }
 
 execute as @a[tag=survivor] at @s as @e[type=snowball,distance=..3] run tag @s add ice_bomb
 execute as @e[type=snowball,tag=ice_bomb] at @s run particle electric_spark ~ ~ ~ 1 1 1 0.00001 60 force
@@ -489,44 +278,6 @@ execute at @e[type=armor_stand,tag=engineer_tower] run execute as @a[tag=juggern
 
 execute as @e[type=skeleton,tag=skeleton_turret] unless entity @e[type=armor_stand,tag=turret] run kill @s
 execute as @e[type=skeleton,tag=skeleton_turret] at @s run tp @s @n[type=armor_stand,tag=turret]
-
-# Engineer borrowed time ability
-execute if entity @a[tag=engineer] run function juggernaut:ability_management/check_ability {\
-    player_tag:"engineer",\
-    item_id:"minecraft:gold_block",\
-    item_name:'{"text": "Spawn Revealing Tower","color": "gold"}',\
-    ability_id:4,\
-    cooldown:90,\
-    hotbar_slot:"hotbar.0",\
-    cooldown_var:"revealing_tower_cooldown",\
-}
-execute if entity @a[tag=engineer] run function juggernaut:ability_management/check_ability {\
-    player_tag:"engineer",\
-    item_id:"minecraft:lime_dye",\
-    item_name:'{"text": "Spawn Replenishment Tower","color": "green"}',\
-    ability_id:2,\
-    cooldown:60,\
-    hotbar_slot:"hotbar.1",\
-    cooldown_var:"replenishment_tower_cooldown",\
-}
-execute if entity @a[tag=engineer] run function juggernaut:ability_management/check_ability {\
-    player_tag:"engineer",\
-    item_id:"minecraft:bone",\
-    item_name:'{"text": "Spawn Turret","color": "gray"}',\
-    ability_id:3,\
-    cooldown:90,\
-    hotbar_slot:"hotbar.2",\
-    cooldown_var:"turret_cooldown",\
-}
-execute if entity @a[tag=engineer] run function juggernaut:ability_management/check_ability {\
-    player_tag:"engineer",\
-    item_id:"minecraft:clock",\
-    item_name:'{"text": "Borrowed Time","color": "gold"}',\
-    ability_id:0,\
-    cooldown:120,\
-    hotbar_slot:"hotbar.3",\
-    cooldown_var:"jug_kit_cooldown",\
-}
 
 execute at @e[type=armor_stand,tag=replenishment_tower_particle_emitter] unless entity @e[type=armor_stand,tag=replenishment_tower,distance=..5] run kill @e[type=armor_stand,tag=replenishment_tower_particle_emitter]
 

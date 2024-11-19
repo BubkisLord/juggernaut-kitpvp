@@ -9,4 +9,4 @@ item replace entity @s armor.chest with air
 item replace entity @s armor.legs with air
 item replace entity @s armor.feet with air
 item replace entity @s hotbar.0 with air
-execute as @s run schedule function juggernaut:ability_management/disable_spirit_walker_ability 10s append
+execute as @s run schedule function juggernaut:abilities/spirit_walker/disable_phase_shift 10s append
