@@ -226,12 +226,10 @@ execute as @a[tag=juggernaut,tag=using_predatory_senses,scores={is_sprinting=0}]
 execute as @a[tag=runner] run function juggernaut:healing/set_healing_needed
 
 # Healing mechanic
-execute as @a[tag=runner,tag=!medic,scores={is_sneaking=0}] at @s run function juggernaut:healing/try_heal_player {distance:1.5,heal_amount:5}
-# Medic heals at increased speed, so run the function with double the heal amount per second.
-execute as @a[tag=medic,scores={is_sneaking=0}] at @s run function juggernaut:healing/try_heal_player {distance:1.5,heal_amount:7}
+execute as @a[tag=runner,scores={is_sneaking=0,is_sprinting=0}] at @s if entity @a[tag=runner,distance=..1.5] run function juggernaut:healing/check_heal_player
 
 # Self-heal
-execute as @a[tag=runner,tag=!survivor,scores={is_sneaking=1,health=..19}] at @s run function juggernaut:healing/try_self_heal {heal_amount:2}
+execute as @a[tag=runner,tag=!survivor,scores={is_sneaking=1,health=..19}] at @s run function juggernaut:healing/check_self_heal
 
 # Hemorrhaged Mechanic
 execute as @a[tag=is_hemorrhaged,tag=!is_being_healed,tag=!self_healing] at @s run function juggernaut:healing/force_unheal_player {amount:1}
