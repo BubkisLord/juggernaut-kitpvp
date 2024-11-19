@@ -1,0 +1,1 @@
+execute if entity @s[tag=using_pressure_point] as @p[tag=runner,tag=!is_undetectable] run effect give @s glowing 5 0 true
