@@ -11,4 +11,8 @@ execute if entity @s[tag=using_self_preservation] store result storage juggernau
 # If blood pact is active, heal 70% faster.
 execute if entity @s[tag=blood_pact_active] store result storage juggernaut:healing/try_heal_player heal_amount int 1.7 run data get storage juggernaut:healing/try_heal_player heal_amount
 
-function juggernaut:healing/try_heal_player with storage juggernaut:healing/try_heal_player
+# If overwhelming presence is in effect, heal 15% slower.
+execute if entity @a[tag=using_overwhelming_presence,distance=..15] store result storage juggernaut:healing/try_heal_player heal_amount int 0.85 run data get storage juggernaut:healing/try_heal_player heal_amount
+
+# Run healing function
+execute as @s at @s run function juggernaut:healing/try_heal_player with storage juggernaut:healing/try_heal_player
