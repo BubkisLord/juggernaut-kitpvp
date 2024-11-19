@@ -113,6 +113,9 @@ execute as @a[tag=dragon] run function juggernaut:raycasts/raycast {\
     collides_with_blocks:1,\
 }
 
+# Update sprinting score
+scoreboard players set @a[scores={is_sprinting=1..}] is_sprinting 0
+
 scoreboard players operation #second_counter var += #1 var
 scoreboard players operation #x_seconds var = #second_counter var
 scoreboard players operation #x_seconds var %= #5 var
