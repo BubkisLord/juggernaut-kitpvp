@@ -53,28 +53,7 @@ execute if score #game_state var matches 10..19 unless entity @a[tag=runner] run
 # execute if score #game_state var matches 10..19 if entity @a[tag=juggernaut,scores={juggernaut_game_time=0}] run scoreboard players add @a[tag=runner] kills 5
 # execute if score #game_state var matches 10..19 if entity @a[tag=juggernaut,scores={juggernaut_game_time=0}] run function juggernaut:end_game
 
-
-#Code to calculate the percentage of replenishment progress and display it...
-#...never look through this code again.
-scoreboard players operation @n[type=armor_stand,tag=juggernaut_manager] temp_progress = @n[type=armor_stand,tag=juggernaut_manager] replenish_progress
-scoreboard players operation @n[type=armor_stand,tag=juggernaut_manager] temp_progress *= #100 var
-
-scoreboard players operation @n[type=armor_stand,tag=juggernaut_manager] temp_max_progress = @n[type=armor_stand,tag=juggernaut_manager] total_replenishment_needed
-scoreboard players operation @n[type=armor_stand,tag=juggernaut_manager] temp_max_progress *= #100 var
-
-execute store result score @n[type=armor_stand,tag=juggernaut_manager] replenish_decimal run scoreboard players operation @n[type=armor_stand,tag=juggernaut_manager] temp_progress /= @n[type=armor_stand,tag=juggernaut_manager] total_replenishment_needed
-
-# execute if score #game_state var matches 11 if score @n[type=armor_stand,tag=juggernaut_manager] replenish_decimal <= #33 var if entity @n[type=armor_stand,tag=juggernaut_manager] run title @a actionbar [{"text":"Replenishment Percentage: ","color": "dark_green","bold": true},{"score":{"name":"@n[type=armor_stand,tag=juggernaut_manager]","objective":"replenish_decimal"},"bold": true,"color": "dark_green"},{"text": "%"}]
-
-# execute if score #game_state var matches 11 if score @n[type=armor_stand,tag=juggernaut_manager] replenish_decimal > #33 var if score @n[type=armor_stand,tag=juggernaut_manager] replenish_decimal <= #75 var if entity @n[type=armor_stand,tag=juggernaut_manager] run title @a actionbar [{"text":"Replenishment Percentage: ","color": "gold","bold": true},{"score":{"name":"@n[type=armor_stand,tag=juggernaut_manager]","objective":"replenish_decimal"},"bold": true,"color": "gold"},{"text": "%"}]
-
-# execute if score #game_state var matches 11 if score @n[type=armor_stand,tag=juggernaut_manager] replenish_decimal > #75 var if entity @n[type=armor_stand,tag=juggernaut_manager] run title @a actionbar [{"text":"Replenishment Percentage: ","color": "dark_red","bold": true},{"score":{"name":"@n[type=armor_stand,tag=juggernaut_manager]","objective":"replenish_decimal"},"bold": true,"color": "dark_red"},{"text": "%"}]
-
-execute if score #game_state var matches 11 if score @n[type=armor_stand,tag=juggernaut_manager] replenish_decimal <= #33 var if entity @n[type=armor_stand,tag=juggernaut_manager] run title @a actionbar [{"text":"Replenishment Percentage: ","color": "dark_green","bold": true},{"score":{"name":"@n[type=armor_stand,tag=juggernaut_manager]","objective":"replenish_decimal"},"bold": true,"color": "dark_green"},{"text": "%"},{"text": " [","color": "dark_green","bold":true},{"score":{"name":"#stations_completed","objective":"var"},"color": "dark_green","bold":true},{"text": "/","color": "dark_green","bold":true},{"score":{"name":"#stations_needed","objective":"var"},"color": "dark_green","bold":true},{"text": "]","color": "dark_green","bold":true}]
-
-execute if score #game_state var matches 11 if score @n[type=armor_stand,tag=juggernaut_manager] replenish_decimal > #33 var if score @n[type=armor_stand,tag=juggernaut_manager] replenish_decimal <= #75 var if entity @n[type=armor_stand,tag=juggernaut_manager] run title @a actionbar [{"text":"Replenishment Percentage: ","color": "gold","bold": true},{"score":{"name":"@n[type=armor_stand,tag=juggernaut_manager]","objective":"replenish_decimal"},"bold": true,"color": "gold"},{"text": "%"},{"text": " [","color": "gold","bold":true},{"score":{"name":"#stations_completed","objective":"var"},"color": "gold","bold":true},{"text": "/","color": "gold","bold":true},{"score":{"name":"#stations_needed","objective":"var"},"color": "gold","bold":true},{"text": "]","color": "gold","bold":true}]
-
-execute if score #game_state var matches 11 if score @n[type=armor_stand,tag=juggernaut_manager] replenish_decimal > #75 var if entity @n[type=armor_stand,tag=juggernaut_manager] run title @a actionbar [{"text":"Replenishment Percentage: ","color": "dark_red","bold": true},{"score":{"name":"@n[type=armor_stand,tag=juggernaut_manager]","objective":"replenish_decimal"},"bold": true,"color": "dark_red"},{"text": "%"},{"text": " [","color": "dark_red","bold":true},{"score":{"name":"#stations_completed","objective":"var"},"color": "dark_red","bold":true},{"text": "/","color": "dark_red","bold":true},{"score":{"name":"#stations_needed","objective":"var"},"color": "dark_red","bold":true},{"text": "]","color": "dark_red","bold":true}]
+execute if score #game_state var matches 11 run function juggernaut:replenishment_management/display_replenishment_progress
 
 
 # Effect mechanics

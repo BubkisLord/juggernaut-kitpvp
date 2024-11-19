@@ -1,0 +1,1 @@
+execute if score @s replenish_amount > #highest_station var run scoreboard players operation #highest_station var = @s replenish_amount
