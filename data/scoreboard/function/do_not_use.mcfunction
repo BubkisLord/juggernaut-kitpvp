@@ -95,6 +95,15 @@ scoreboard objectives add chase_timeout dummy
 scoreboard objectives add brutal_efficiency_cooldown dummy
 scoreboard objectives add unyielding_wrath_time dummy
 scoreboard objectives add unyielding_wrath_stacks dummy
+scoreboard objectives add domination_kills minecraft.custom:player_kills
+scoreboard objectives add domination_movement_speed dummy
+scoreboard objectives add ticks_spent_replenishing dummy
+scoreboard objectives add ticks_spent_buffing dummy
+scoreboard objectives add ticks_spent_debuffing dummy
+scoreboard objectives add ticks_till_increment dummy
+scoreboard objectives add ticks_till_decrement dummy
+scoreboard objectives add replenish_buff dummy
+scoreboard objectives add replenish_debuff dummy
 
 team add blue
 team add red
