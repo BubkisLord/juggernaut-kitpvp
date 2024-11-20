@@ -1,7 +1,7 @@
 tag @a remove lobby.player
-execute if score #juggernaut_customisation juggernaut_count matches 1 run tag @a[limit=1,sort=random] add juggernaut
-execute if score #juggernaut_customisation juggernaut_count matches 2 run tag @a[limit=2,sort=random] add juggernaut
-execute if score #juggernaut_customisation juggernaut_count matches 3 run tag @a[limit=3,sort=random] add juggernaut
+execute if score #juggernaut_customisation juggernaut_count matches 0 run tag @a[limit=1,sort=random] add juggernaut
+execute if score #juggernaut_customisation juggernaut_count matches 1 run tag @a[limit=2,sort=random] add juggernaut
+execute if score #juggernaut_customisation juggernaut_count matches 2 run tag @a[limit=3,sort=random] add juggernaut
 # tag cyberduck2 add juggernaut
 tag @a[tag=!juggernaut] add runner
 clear @a
