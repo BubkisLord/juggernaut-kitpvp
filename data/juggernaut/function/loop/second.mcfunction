@@ -147,5 +147,8 @@ execute as @a[tag=juggernaut,tag=using_domination] run function juggernaut:perk_
 execute as @a[tag=beacon_of_hope_active,scores={beacon_of_hope_duration=1..}] run scoreboard players remove @s beacon_of_hope_duration 1
 execute as @a[tag=beacon_of_hope_active,scores={beacon_of_hope_duration=0}] run tag @s remove beacon_of_hope_active
 
+# Flame Ward
+effect give @a[tag=using_flame_ward] fire_resistance 1 0 true
+
 # Reset second counter periodically
 execute if score #second_counter var matches 100.. run scoreboard players set #second_counter var 0

@@ -252,7 +252,6 @@ scoreboard players set @a[scores={is_sneaking=1..}] is_sneaking 0
 execute as @a[tag=using_camera] at @s as @n[type=armor_stand,tag=used_camera] at @s run tp @p[tag=using_camera] ~ ~ ~
 execute as @a[tag=shadow_marked] at @s run particle flame ~ ~0.5 ~ 1.5 1.5 1.5 0 1 force @a[tag=juggernaut]
 
-execute as @a[tag=has_respawn_time] run effect give @s invisibility 1 0 true
-effect give @a[tag=using_flame_ward] fire_resistance 1 0 true
+# Quickened Stealth
 execute as @a[tag=using_quickened_stealth] run attribute @s player.sneaking_speed base set 0.4
 execute as @a[tag=using_quickened_stealth,tag=rogue] run attribute @s player.sneaking_speed base set 0.9
