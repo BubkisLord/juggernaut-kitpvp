@@ -21,7 +21,7 @@ execute as @a[tag=runner,tag=!in_chase] if score @s chase_timeout matches 1.. ru
 execute as @a[tag=runner] if score @s chase_timeout matches 1.. run tag @s add in_chase
 execute as @a[tag=runner] if score @s chase_timeout matches 1.. run scoreboard players remove @s chase_timeout 1
 
-# execute as @a[tag=in_chase] at @s run particle soul_fire_flame ~ ~0.2 ~ 0.2 0.07 0.2 0 3 force
+execute as @a[tag=in_chase] at @s run particle soul_fire_flame ~ ~0.2 ~ 0.2 0.07 0.2 0 3 force @s
 
 execute as @a[tag=runner,tag=in_chase] run scoreboard players add @n[type=armor_stand,tag=juggernaut_manager] replenish_progress 1
 
