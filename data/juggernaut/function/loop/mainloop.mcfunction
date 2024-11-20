@@ -58,7 +58,7 @@ scoreboard players set #runners_left var 0
 execute as @a[tag=runner] run scoreboard players add #runners_left var 1
 
 # Jug Kits
-execute if score #game_state var matches 11 run function juggernaut:ability_management/juggernaut_kits
+function juggernaut:ability_management/juggernaut_kits
 
 # Blinker
 execute as @a[tag=blinker,scores={tick_counter=60..}] run effect give @s invisibility 1 0 true
@@ -158,7 +158,7 @@ execute as @e[type=armor_stand,tag=camera] at @s run particle white_smoke ~ ~ ~ 
 
 
 #Runner Kits
-execute if score #game_state var matches 11 run function juggernaut:ability_management/runner_kits
+function juggernaut:ability_management/runner_kits
 
 # Guide passive effects
 execute as @a[tag=guide,scores={is_sprinting=1..}] at @s if entity @a[tag=runner,distance=1..8,scores={is_sprinting=1..}] run effect give @a[tag=runner,distance=..8] speed 1 0 true
