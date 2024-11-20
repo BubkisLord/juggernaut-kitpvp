@@ -80,5 +80,5 @@ gamerule naturalRegeneration false
 
 # Juggernaut and Runner Perks
 function juggernaut:perk_management/clear_prev_perks
-function juggernaut:perk_management/give_runner_perks
-function juggernaut:perk_management/give_juggernaut_perks
+execute if score #juggernaut_customisation perks_enabled matches 1 run function juggernaut:perk_management/give_runner_perks
+execute if score #juggernaut_customisation perks_enabled matches 1 run function juggernaut:perk_management/give_juggernaut_perks
