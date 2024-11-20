@@ -119,9 +119,11 @@ execute as @a[tag=dragon] run function juggernaut:raycasts/raycast {\
 # Update sprinting score
 scoreboard players set @a[scores={is_sprinting=1..}] is_sprinting 0
 
+# Update chase time
 execute as @a[tag=in_chase] run scoreboard players add @s chase_time 1
 execute as @a[tag=!in_chase] run scoreboard players set @s chase_time 0
 
+# Update unyielding wrath stacks
 execute as @a[tag=juggernaut,tag=in_chase,tag=using_unyielding_wrath] run scoreboard players operation @s unyielding_wrath_time = @s chase_time
 execute as @a[tag=juggernaut,tag=in_chase,tag=using_unyielding_wrath] run scoreboard players operation @s unyielding_wrath_time %= #15 var
 execute as @a[tag=juggernaut,tag=in_chase,tag=using_unyielding_wrath,scores={unyielding_wrath_time=0}] run scoreboard players add @s unyielding_wrath_stacks 1
@@ -138,7 +140,12 @@ execute as @a[tag=juggernaut,tag=!in_chase,tag=using_unyielding_wrath] run attri
 execute as @a[tag=juggernaut,tag=!in_chase,tag=using_unyielding_wrath] run attribute @s generic.movement_speed modifier remove unyielding_wrath_5
 execute as @a[tag=juggernaut,tag=!in_chase,tag=using_unyielding_wrath] run scoreboard players set @s unyielding_wrath_stacks 0
 
+# Update domination speed
 execute as @a[tag=juggernaut,tag=using_domination] run function juggernaut:perk_management/perk_functions/set_domination_speed
 
+# Update beacon of hope duration
+execute as @a[tag=beacon_of_hope_active,scores={beacon_of_hope_duration=1..}] run scoreboard players remove @s beacon_of_hope_duration 1
+execute as @a[tag=beacon_of_hope_active,scores={beacon_of_hope_duration=0}] run tag @s remove beacon_of_hope_active
 
+# Reset second counter periodically
 execute if score #second_counter var matches 100.. run scoreboard players set #second_counter var 0
