@@ -31,6 +31,7 @@ execute as @n[tag=juggernaut,scores={juggernaut_release_timer=0}] run tellraw @a
 execute as @n[tag=juggernaut,scores={juggernaut_release_timer=0}] run title @a title [{"text": "Juggernaut","bold": true,"color": "dark_red","underlined": true},{"text": " Released!","bold": true,"color": "gray"}]
 execute if entity @a[tag=juggernaut,scores={juggernaut_release_timer=0}] as @r[tag=runner] at @s run tp @a[tag=juggernaut,scores={juggernaut_release_timer=0}] @e[tag=arena.spawn,limit=1,sort=furthest]
 execute if entity @a[tag=juggernaut,scores={juggernaut_release_timer=0}] as @a[tag=runner] at @s run playsound minecraft:block.end_portal.spawn master @s ~ ~ ~ 0.4 0.1
+execute as @n[tag=juggernaut,scores={juggernaut_release_timer=0}] run scoreboard players set #game_state var 11
 
 execute as @e[tag=replenishment.station] if score @s replenish_timeout > #0 var run scoreboard players remove @s replenish_timeout 1
 
