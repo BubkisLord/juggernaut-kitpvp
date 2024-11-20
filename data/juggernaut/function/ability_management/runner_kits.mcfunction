@@ -126,3 +126,16 @@ execute if entity @a[tag=engineer] run function juggernaut:ability_management/ch
     hotbar_slot:"hotbar.3",\
     cooldown_var:"jug_kit_cooldown",\
 }
+
+
+
+# Beacon of Hope
+execute if entity @a[tag=beacon_of_hope] run function juggernaut:ability_management/check_ability {\
+    player_tag:"using_beacon_of_hope",\
+    item_id:"minecraft:beacon",\
+    item_name:'{"text": "Beacon of Hope","color": "aqua"}',\
+    ability_id:"beacon_of_hope",\
+    cooldown:999999,\
+    hotbar_slot:"hotbar.8",\
+    cooldown_var:"beacon_of_hope_cooldown",\
+}
