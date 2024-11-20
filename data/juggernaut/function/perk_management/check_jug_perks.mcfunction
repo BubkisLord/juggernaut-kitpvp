@@ -28,21 +28,21 @@
 
 
 
-execute as @s[nbt={Inventory:[{id:"minecraft:raiser_armor_trim_smithing_template",Slot:9b}]}] run tag @s add using_predatory_senses
-execute as @s[nbt={Inventory:[{id:"minecraft:raiser_armor_trim_smithing_template",Slot:9b}]}] run clear @s #minecraft:trim_templates
-execute as @s[nbt={Inventory:[{id:"minecraft:vex_armor_trim_smithing_template",Slot:9b}]}] run tag @s add using_rapid_brutality
-execute as @s[nbt={Inventory:[{id:"minecraft:vex_armor_trim_smithing_template",Slot:9b}]}] run clear @s #minecraft:trim_templates
-execute as @s[nbt={Inventory:[{id:"minecraft:wild_armor_trim_smithing_template",Slot:9b}]}] run tag @s add using_brutal_efficiency
-execute as @s[nbt={Inventory:[{id:"minecraft:wild_armor_trim_smithing_template",Slot:9b}]}] run clear @s #minecraft:trim_templates
-execute as @s[nbt={Inventory:[{id:"minecraft:coast_armor_trim_smithing_template",Slot:9b}]}] run tag @s add using_unyielding_wrath
-execute as @s[nbt={Inventory:[{id:"minecraft:coast_armor_trim_smithing_template",Slot:9b}]}] run clear @s #minecraft:trim_templates
-execute as @s[nbt={Inventory:[{id:"minecraft:snout_armor_trim_smithing_template",Slot:9b}]}] run tag @s add using_domination
-execute as @s[nbt={Inventory:[{id:"minecraft:snout_armor_trim_smithing_template",Slot:9b}]}] run clear @s #minecraft:trim_templates
-execute as @s[nbt={Inventory:[{id:"minecraft:ward_armor_trim_smithing_template",Slot:9b}]}] run tag @s add using_floods_of_rage
-execute as @s[nbt={Inventory:[{id:"minecraft:ward_armor_trim_smithing_template",Slot:9b}]}] run clear @s #minecraft:trim_templates
-execute as @s[nbt={Inventory:[{id:"minecraft:wayfinder_armor_trim_smithing_template",Slot:9b}]}] run tag @s add using_pressure_point
-execute as @s[nbt={Inventory:[{id:"minecraft:wayfinder_armor_trim_smithing_template",Slot:9b}]}] run clear @s #minecraft:trim_templates
-execute as @s[nbt={Inventory:[{id:"minecraft:rib_armor_trim_smithing_template",Slot:9b}]}] run tag @s add using_overwhelming_presence
-execute as @s[nbt={Inventory:[{id:"minecraft:rib_armor_trim_smithing_template",Slot:9b}]}] run clear @s #minecraft:trim_templates
-execute as @s[nbt={Inventory:[{id:"minecraft:silence_armor_trim_smithing_template",Slot:9b}]}] run tag @s add using_bane_of_solidarity
-execute as @s[nbt={Inventory:[{id:"minecraft:silence_armor_trim_smithing_template",Slot:9b}]}] run clear @s #minecraft:trim_templates
+execute as @s[nbt={Inventory:[{id:"minecraft:raiser_armor_trim_smithing_template"}]}] run tag @s add using_predatory_senses
+execute as @s[nbt={Inventory:[{id:"minecraft:raiser_armor_trim_smithing_template"}]}] run clear @s #minecraft:trim_templates
+execute as @s[nbt={Inventory:[{id:"minecraft:vex_armor_trim_smithing_template"}]}] run tag @s add using_rapid_brutality
+execute as @s[nbt={Inventory:[{id:"minecraft:vex_armor_trim_smithing_template"}]}] run clear @s #minecraft:trim_templates
+execute as @s[nbt={Inventory:[{id:"minecraft:wild_armor_trim_smithing_template"}]}] run tag @s add using_brutal_efficiency
+execute as @s[nbt={Inventory:[{id:"minecraft:wild_armor_trim_smithing_template"}]}] run clear @s #minecraft:trim_templates
+execute as @s[nbt={Inventory:[{id:"minecraft:coast_armor_trim_smithing_template"}]}] run tag @s add using_unyielding_wrath
+execute as @s[nbt={Inventory:[{id:"minecraft:coast_armor_trim_smithing_template"}]}] run clear @s #minecraft:trim_templates
+execute as @s[nbt={Inventory:[{id:"minecraft:snout_armor_trim_smithing_template"}]}] run tag @s add using_domination
+execute as @s[nbt={Inventory:[{id:"minecraft:snout_armor_trim_smithing_template"}]}] run clear @s #minecraft:trim_templates
+execute as @s[nbt={Inventory:[{id:"minecraft:ward_armor_trim_smithing_template"}]}] run tag @s add using_floods_of_rage
+execute as @s[nbt={Inventory:[{id:"minecraft:ward_armor_trim_smithing_template"}]}] run clear @s #minecraft:trim_templates
+execute as @s[nbt={Inventory:[{id:"minecraft:wayfinder_armor_trim_smithing_template"}]}] run tag @s add using_pressure_point
+execute as @s[nbt={Inventory:[{id:"minecraft:wayfinder_armor_trim_smithing_template"}]}] run clear @s #minecraft:trim_templates
+execute as @s[nbt={Inventory:[{id:"minecraft:rib_armor_trim_smithing_template"}]}] run tag @s add using_overwhelming_presence
+execute as @s[nbt={Inventory:[{id:"minecraft:rib_armor_trim_smithing_template"}]}] run clear @s #minecraft:trim_templates
+execute as @s[nbt={Inventory:[{id:"minecraft:silence_armor_trim_smithing_template"}]}] run tag @s add using_bane_of_solidarity
+execute as @s[nbt={Inventory:[{id:"minecraft:silence_armor_trim_smithing_template"}]}] run clear @s #minecraft:trim_templates
