@@ -106,6 +106,13 @@ scoreboard objectives add replenish_buff dummy
 scoreboard objectives add replenish_debuff dummy
 scoreboard objectives add beacon_of_hope_cooldown dummy
 scoreboard objectives add beacon_of_hope_duration dummy
+scoreboard objectives add ticks_spent_on_ability_buff dummy
+scoreboard objectives add ticks_spent_on_ability_debuff dummy
+scoreboard objectives add ticks_spent_on_ability dummy
+scoreboard objectives add ticks_till_decrement_ability dummy
+scoreboard objectives add ticks_till_increment_ability dummy
+scoreboard objectives add ability_debuff dummy
+scoreboard objectives add ability_buff dummy
 
 team add blue
 team add red
