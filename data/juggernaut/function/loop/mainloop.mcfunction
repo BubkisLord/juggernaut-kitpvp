@@ -120,8 +120,6 @@ execute as @e[type=armor_stand,tag=hunter_remnant] if score @s var = #0 var run 
 execute as @e[type=armor_stand,tag=hunter_remnant] if score @s var = #0 var run execute as @a[tag=jug_hunter,tag=is_hunting] at @s run playsound entity.enderman.teleport master @a[distance=..20] ~ ~ ~
 execute as @e[type=armor_stand,tag=hunter_remnant] if score @s var = #0 var run kill @s
 
-
-# execute as @a[tag=has_hunters_mark] at @s run particle minecraft:trial_spawner_detection_ominous ~ ~-0.5 ~ 1.5 1.5 1.5 0.0001 4 force @a[tag=has_hunters_mark]
 execute as @a[tag=has_hunters_mark] at @s run particle minecraft:trial_spawner_detection ~ ~-0.5 ~ 1 1.5 1 0 4 force @a[tag=jug_hunter]
 
 # Lightning rod
