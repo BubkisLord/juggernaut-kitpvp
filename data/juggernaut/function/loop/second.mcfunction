@@ -38,6 +38,8 @@ execute as @e[tag=replenishment.station] if score @s replenish_timeout > #0 var 
 execute if entity @a[tag=juggernaut] run tag @a[tag=juggernaut] remove is_glowing
 
 # General kit cooldowns
+execute as @a if score #game_state var matches 10..19 if score @s jug_kit_cooldown > #0 var run function juggernaut:ability_management/apply_ability_modifiers
+
 execute as @a if score #game_state var matches 10..19 if score @s jug_kit_cooldown > #0 var run scoreboard players remove @s jug_kit_cooldown 1
 execute as @a unless score #game_state var matches 10..19 if score @s jug_kit_cooldown > #0 var run scoreboard players set @s jug_kit_cooldown 0
 
