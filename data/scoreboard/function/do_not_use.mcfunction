@@ -104,6 +104,8 @@ scoreboard objectives add ticks_till_increment dummy
 scoreboard objectives add ticks_till_decrement dummy
 scoreboard objectives add replenish_buff dummy
 scoreboard objectives add replenish_debuff dummy
+scoreboard objectives add beacon_of_hope_cooldown dummy
+scoreboard objectives add beacon_of_hope_duration dummy
 
 team add blue
 team add red
