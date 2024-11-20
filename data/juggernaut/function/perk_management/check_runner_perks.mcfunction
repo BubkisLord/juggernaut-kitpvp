@@ -20,3 +20,5 @@ execute as @s[nbt={Inventory:[{id:"minecraft:friend_pottery_sherd",Slot:9b}]}] r
 execute as @s[nbt={Inventory:[{id:"minecraft:friend_pottery_sherd",Slot:9b}]}] run clear @s #minecraft:decorated_pot_sherds
 execute as @s[nbt={Inventory:[{id:"minecraft:guster_pottery_sherd",Slot:9b}]}] run tag @s add using_beacon_of_hope
 execute as @s[nbt={Inventory:[{id:"minecraft:guster_pottery_sherd",Slot:9b}]}] run clear @s #minecraft:decorated_pot_sherds
+execute as @s[nbt={Inventory:[{id:"minecraft:blade_pottery_sherd",Slot:9b}]}] run tag @s add using_hopeful_sprint
+execute as @s[nbt={Inventory:[{id:"minecraft:blade_pottery_sherd",Slot:9b}]}] run clear @s #minecraft:decorated_pot_sherds
