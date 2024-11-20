@@ -18,6 +18,13 @@ scoreboard players set @a ticks_till_decrement 0
 scoreboard players set @a ticks_till_increment 0
 scoreboard players set @a replenish_debuff 0
 scoreboard players set @a replenish_buff 0
+scoreboard players set @a ticks_spent_on_ability_buff 0
+scoreboard players set @a ticks_spent_on_ability_debuff 0
+scoreboard players set @a ticks_spent_on_ability 0
+scoreboard players set @a ticks_till_decrement_ability 0
+scoreboard players set @a ticks_till_increment_ability 0
+scoreboard players set @a ability_debuff 0
+scoreboard players set @a ability_buff 0
 scoreboard players set @a beacon_of_hope_cooldown 0
 spawnpoint @a 2000 100 0
 gamerule showDeathMessages false
