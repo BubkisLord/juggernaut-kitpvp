@@ -74,10 +74,12 @@ tag @a remove using_bane_of_solidarity
 
 tag @a remove has_respawn_time
 
+scoreboard players set #stations_completed var 0
+
+execute as @e[tag=station_completed] run tag @s add replenishment.station
+execute as @e[tag=station_completed] run tag @s remove station_completed
 execute as @e[tag=replenishment.station_deactivated] run tag @s add replenishment.station
 execute as @e[tag=replenishment.station_deactivated] run tag @s remove replenishment.station_deactivated
-tag @e remove station_completed
-scoreboard players set #stations_completed var 0
 scoreboard players set @e[tag=replenishment.station] replenish_amount 0
 
 clear @a
