@@ -139,7 +139,7 @@ execute if entity @a[tag=eclipse_stalker,tag=using_camera] run function juggerna
     item_id:"minecraft:ender_eye",\
     item_name:'{"text": "Change Camera","color": "#FFD700"}',\
     ability_id:"switch_cam",\
-    cooldown:2,\
+    cooldown:1,\
     hotbar_slot:"hotbar.1",\
     cooldown_var:"jug_kit_cooldown_2",\
 }
@@ -159,7 +159,7 @@ execute if entity @a[tag=eclipse_stalker,tag=using_camera] run function juggerna
     item_id:"minecraft:ender_eye",\
     item_name:'{"text": "Kill Camera","color": "#FFD700"}',\
     ability_id:"kill_cam",\
-    cooldown:25,\
+    cooldown:2,\
     hotbar_slot:"hotbar.3",\
     cooldown_var:"jug_kit_cooldown_2",\
 }
@@ -179,7 +179,7 @@ execute if entity @a[tag=eclipse_stalker,tag=using_camera] run function juggerna
     item_id:"minecraft:fire_charge",\
     item_name:'{"text": "Materialise","color": "#aa0000"}',\
     ability_id:"materialise",\
-    cooldown:10,\
+    cooldown:5,\
     hotbar_slot:"hotbar.6",\
     cooldown_var:"shadow_mark_cooldown",\
 }
