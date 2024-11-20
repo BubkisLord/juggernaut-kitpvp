@@ -3,7 +3,7 @@ execute if entity @s[tag=!scout] run effect give @s speed 1 0 true
 
 
 # Rapid brutality perk
-execute as @p[tag=juggernaut,distance=..5,tag=using_rapid_brutality] run function juggernaut:attribute_management/apply {attribute_namespace:"generic",attribute_name:"movementSpeed",value:0.11,duration:4}
+execute as @p[tag=juggernaut,distance=..5,tag=using_rapid_brutality] run function juggernaut:attribute_management/apply {attribute_namespace:"generic",attribute_name:"movement_speed",value:0.11,duration:4}
 
 
 # Brutal efficiency perk
@@ -12,6 +12,7 @@ execute if entity @e[type=armor_stand,tag=replenishment.station,distance=..5] as
 
 
 # Unyielding wrath perk
+# Remove unyielding wrath upon getting a hit.
 # execute if entity @s[tag=using_unyielding_wrath] run attribute @s generic.movement_speed modifier remove unyielding_wrath_1
 # execute if entity @s[tag=using_unyielding_wrath] run attribute @s generic.movement_speed modifier remove unyielding_wrath_2
 # execute if entity @s[tag=using_unyielding_wrath] run attribute @s generic.movement_speed modifier remove unyielding_wrath_3
