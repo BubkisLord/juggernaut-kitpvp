@@ -18,6 +18,7 @@ scoreboard players set @a ticks_till_decrement 0
 scoreboard players set @a ticks_till_increment 0
 scoreboard players set @a replenish_debuff 0
 scoreboard players set @a replenish_buff 0
+scoreboard players set @a beacon_of_hope_cooldown 0
 spawnpoint @a 2000 100 0
 gamerule showDeathMessages false
 tag @a remove has_jug_kit
@@ -48,6 +49,7 @@ tag @a remove eclipse_stalker
 tag @e remove used_camera
 tag @e remove sentinel_tower
 tag @a remove shadow_marked
+tag @a remove beacon_of_hope_active
 tag @a add lobby.player
 
 tag @a remove using_blood_pact
@@ -58,6 +60,17 @@ tag @a remove using_sentinel
 tag @a remove using_quickened_stealth
 tag @a remove using_undying_ties
 tag @a remove using_unwavering_strength
+tag @a remove using_beacon_of_hope
+
+tag @a remove using_predatory_senses
+tag @a remove using_rapid_brutality
+tag @a remove using_brutal_efficiency
+tag @a remove using_unyielding_wrath
+tag @a remove using_domination
+tag @a remove using_floods_of_rage
+tag @a remove using_pressure_point
+tag @a remove using_overwhelming_presence
+tag @a remove using_bane_of_solidarity
 
 tag @a remove has_respawn_time
 
