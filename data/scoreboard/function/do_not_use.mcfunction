@@ -113,6 +113,8 @@ scoreboard objectives add ticks_till_decrement_ability dummy
 scoreboard objectives add ticks_till_increment_ability dummy
 scoreboard objectives add ability_debuff dummy
 scoreboard objectives add ability_buff dummy
+scoreboard objectives add grim_determination_speed dummy
+scoreboard objectives add max_health dummy
 
 team add blue
 team add red
