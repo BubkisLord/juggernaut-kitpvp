@@ -130,7 +130,7 @@ execute if entity @a[tag=engineer] run function juggernaut:ability_management/ch
 
 
 # Beacon of Hope
-execute if entity @a[tag=beacon_of_hope] run function juggernaut:ability_management/check_ability {\
+execute if entity @a[tag=using_beacon_of_hope] run function juggernaut:ability_management/check_ability {\
     player_tag:"using_beacon_of_hope",\
     item_id:"minecraft:beacon",\
     item_name:'{"text": "Beacon of Hope","color": "aqua"}',\
