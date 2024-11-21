@@ -16,6 +16,8 @@ execute if score #game_state var matches 11 run function juggernaut:chase/check_
 
 execute if score #game_state var matches 11 as @a[tag=runner] at @s if entity @e[type=armor_stand,tag=replenishment.station,distance=..3] run function juggernaut:replenishment_management/calculate_replenishment_modifier
 execute if score #game_state var matches 11 run function juggernaut:replenishment_management/replenishment_stations
+# While juggernaut is not released, disallow all interactions with replenishment stations but allow for runners to see them.
+execute if score #game_state var matches 12 as @e[tag=replenishment.station] at @s run particle minecraft:end_rod ~ ~2.5 ~ 0.2 60 0.2 0 120 force @a[tag=runner]
 
 execute if score #game_state var matches 10 as @n[type=armor_stand,tag=runner_kit_selection_room] at @s run particle campfire_cosy_smoke ~ ~1 ~ 7 1 7 0.00001 1 force
 execute if score #game_state var matches 10 as @n[type=armor_stand,tag=runner_kit_selection_room] at @s run effect give @a[distance=..30] weakness 1 255 true
