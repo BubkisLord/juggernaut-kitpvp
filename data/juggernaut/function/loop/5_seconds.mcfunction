@@ -1,13 +1,13 @@
 # Give more replenishment when a runner has been in chase for a long time.
-scoreboard players set #600 var 600
-scoreboard players set #20 var 20
+# scoreboard players set #600 var 600
+# scoreboard players set #20 var 20
 
-scoreboard players set #chase_time_multiplier var 0
-execute as @a[tag=runner,scores={chase_time=600..}] run scoreboard players operation #chase_time_multiplier var += @s chase_time
-execute as @a[tag=runner,scores={chase_time=600..}] run scoreboard players operation #chase_time_multiplier var -= #600 var
-scoreboard players operation #chase_time_multiplier var /= #20 var
+# scoreboard players set #chase_time_multiplier var 0
+# execute as @a[tag=runner,scores={chase_time=600..}] run scoreboard players operation #chase_time_multiplier var += @s chase_time
+# execute as @a[tag=runner,scores={chase_time=600..}] run scoreboard players operation #chase_time_multiplier var -= #600 var
+# scoreboard players operation #chase_time_multiplier var /= #20 var
 
-execute as @e[tag=replenishment.station] at @s if score #game_state var matches 11 unless entity @e[type=armor_stand,tag=banishment_glyph,distance=..32] unless entity @a[tag=juggernaut,limit=1,sort=nearest,distance=0..12] as @a[tag=runner,distance=..3] run scoreboard players operation @n[type=armor_stand,tag=juggernaut_manager] replenish_progress += #chase_time_multiplier var
+# execute as @e[tag=replenishment.station] at @s if score #game_state var matches 11 unless entity @e[type=armor_stand,tag=banishment_glyph,distance=..32] unless entity @a[tag=juggernaut,limit=1,sort=nearest,distance=0..12] as @a[tag=runner,distance=..3] run scoreboard players operation @n[type=armor_stand,tag=juggernaut_manager] replenish_progress += #chase_time_multiplier var
 
 # EXAMPLE VALUES:
 # Duration of chase = 1m = 600t
