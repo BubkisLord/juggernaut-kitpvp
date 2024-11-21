@@ -5,6 +5,8 @@ function juggernaut:loop/recursive_point_gaining
 execute as @a run function juggernaut:effects/check_effects {effect:"bleeding"}
 execute as @a run function juggernaut:effects/check_effects {effect:"hindered"}
 execute as @a run function juggernaut:effects/check_effects {effect:"exposed"}
+execute as @a run function juggernaut:effects/check_effects {effect:"hemorrhaged"}
+execute as @a run function juggernaut:effects/check_effects {effect:"not_replenishing"}
 execute as @a run function juggernaut:effects/check_effects {effect:"undetectable"}
 
 execute as @a run function juggernaut:attribute_management/check {attribute_namespace:"generic",attribute_name:"movement_speed",default_value:0.1}
