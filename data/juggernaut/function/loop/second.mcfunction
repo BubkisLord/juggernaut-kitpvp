@@ -9,7 +9,7 @@ execute as @a run function juggernaut:effects/check_effects {effect:"undetectabl
 
 execute as @a run function juggernaut:attribute_management/check {attribute_namespace:"generic",attribute_name:"movement_speed",default_value:0.1}
 
-execute if score #game_state var matches 11 as @a[tag=runner] run function juggernaut:perk_management/check_runner_perks
+execute if score #game_state var matches 11..12 as @a[tag=runner] run function juggernaut:perk_management/check_runner_perks
 execute if score #game_state var matches 11 as @a[tag=juggernaut] run function juggernaut:perk_management/check_jug_perks
 
 # Juggernaut timeout countdown
