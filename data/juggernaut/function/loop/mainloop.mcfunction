@@ -246,7 +246,7 @@ execute as @a[tag=runner] run function juggernaut:healing/set_healing_needed
 execute as @a[tag=runner,scores={is_sneaking=0,is_sprinting=0}] at @s if entity @a[tag=runner,distance=..1.5] run function juggernaut:healing/check_heal_player
 
 # Self-heal
-execute as @a[tag=runner,tag=!survivor,scores={is_sneaking=1,health=..19}] at @s run function juggernaut:healing/check_self_heal
+execute as @a[tag=runner,scores={is_sneaking=1}] at @s if score @s health < @s max_health run function juggernaut:healing/check_self_heal
 
 # Hemorrhaged Mechanic
 execute as @a[tag=is_hemorrhaged,tag=!is_being_healed,tag=!self_healing] at @s run function juggernaut:healing/force_unheal_player {amount:1}
