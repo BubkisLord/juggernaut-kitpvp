@@ -57,6 +57,8 @@ tag @e remove used_camera
 tag @e remove sentinel_tower
 tag @a remove shadow_marked
 tag @a remove beacon_of_hope_active
+tag @a remove jug_ghost
+tag @a remove harbinger
 tag @a add lobby.player
 
 tag @a remove using_blood_pact
@@ -80,6 +82,7 @@ tag @a remove using_floods_of_rage
 tag @a remove using_pressure_point
 tag @a remove using_overwhelming_presence
 tag @a remove using_bane_of_solidarity
+tag @a remove using_crippling_defeat
 
 tag @a remove has_respawn_time
 tag @a remove see_malevolent_aura_bar
