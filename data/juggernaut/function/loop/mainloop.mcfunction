@@ -67,37 +67,6 @@ execute as @a[tag=runner] run scoreboard players add #runners_left var 1
 # Jug Kits
 function juggernaut:ability_management/juggernaut_kits
 
-# Blinker
-execute as @a[tag=blinker,scores={tick_counter=60..}] run effect give @s invisibility 1 0 true
-execute as @a[tag=blinker,scores={tick_counter=60..}] run scoreboard players set @s tick_counter 0
-execute as @a[tag=blinker] run scoreboard players add @s tick_counter 1
-
-execute as @a[tag=blinker,scores={jug_kit_cooldown=0}] if items entity @s hotbar.2 barrier[item_name='[{"text": "Teleport to Remnant | ","color": "dark_red","bold": true},{"text": "ON COOLDOWN","color": "red"}]'] run item replace entity @s hotbar.2 with ender_pearl[item_name='[{"text": "Teleport to Remnant | ","color": "dark_red","bold": true},{"text": "READY","color": "green"}]',food={nutrition:0,saturation:0,can_always_eat:true,eat_seconds:999999}] 1
-execute as @a[tag=blinker] at @s if entity @e[type=item,nbt={Item:{id:"minecraft:ender_pearl"}},distance=..3] run item replace entity @s hotbar.2 with barrier[item_name='[{"text": "Teleport to Remnant | ","color": "dark_red","bold": true},{"text": "ON COOLDOWN","color": "red"}]'] 1
-execute as @a[tag=blinker] at @s if entity @e[type=item,nbt={Item:{id:"minecraft:ender_pearl"}},distance=..3] run tp @s @n[tag=blinker_teleporting]
-execute as @a[tag=blinker,nbt={SelectedItem:{id:"minecraft:barrier"}}] run scoreboard players add @s blinker_tp_timeout 1
-execute as @a[tag=blinker] at @s if entity @e[type=item,nbt={Item:{id:"minecraft:ender_pearl"}},distance=..3] run scoreboard players set @s jug_kit_cooldown 45
-execute as @a[tag=blinker] at @s as @e[type=item,nbt={Item:{id:"minecraft:ender_pearl"}},distance=..3] run kill @s
-
-execute as @a[tag=blinker] at @s unless entity @e[type=armor_stand,tag=blinker_radar] run summon armor_stand ~ ~ ~ {Invisible:true,Invulnerable:true,CustomNameVisible:false,NoGravity:true,Small:true,Tags:["blinker_radar"]}
-
-execute as @a[tag=blinker] at @s if entity @e[type=armor_stand,tag=blinker_remnant,sort=random,limit=1] unless entity @e[type=armor_stand,tag=blinker_teleporting] run tp @n[type=armor_stand,tag=blinker_radar] ~ ~ ~ facing entity @e[type=armor_stand,tag=blinker_remnant,sort=random,limit=1]
-
-execute as @a[tag=blinker] at @s if entity @e[type=armor_stand,tag=blinker_remnant,sort=random,limit=1] if entity @e[type=armor_stand,tag=blinker_teleporting] run tp @n[type=armor_stand,tag=blinker_radar] ~ ~ ~ facing entity @n[type=armor_stand,tag=blinker_teleporting]
-
-execute as @a[tag=blinker] at @s unless entity @e[type=armor_stand,tag=blinker_remnant,sort=random,limit=1] run tp @n[type=armor_stand,tag=blinker_radar] ~ ~ ~ facing ~ ~-1 ~
-
-execute as @e[type=armor_stand,tag=blinker_radar] at @s anchored eyes run particle dust{color:[100,0,0],scale:1} ^ ^ ^1 0.1 0.1 0.1 0 2 force @a[tag=blinker]
-execute as @e[type=armor_stand,tag=blinker_radar] at @s anchored eyes run particle dust{color:[0,100,0],scale:1} ^ ^ ^1 0.1 0.1 0.1 0 2 force @a[tag=blinker]
-
-execute as @a[tag=blinker,scores={jug_kit_cooldown_2=0}] at @s run summon armor_stand ~ ~ ~ {Invulnerable:true,CustomNameVisible:false,NoGravity:true,Tags:["blinker_remnant","kill_on_end_game"]}
-
-execute as @a[tag=blinker,scores={jug_kit_cooldown_2=0}] run scoreboard players set @s jug_kit_cooldown_2 30
-execute as @a[tag=blinker] run scoreboard players set @s max_blinker_cooldown 30
-execute as @a[tag=blinker] run execute store result score @s blinker_cooldown_percent run scoreboard players get @s jug_kit_cooldown_2
-execute as @a[tag=blinker] run scoreboard players operation @s blinker_cooldown_percent *= #100 var
-execute as @a[tag=blinker] run scoreboard players operation @s blinker_cooldown_percent /= @s max_blinker_cooldown
-execute as @a[tag=blinker] run title @s actionbar [{"text":"Blinker Cooldown: ","color": "dark_red","bold": true},{"score":{"name":"@s","objective":"blinker_cooldown_percent"},"bold": true,"color": "dark_red"},{"text": "%"}]
 
 # Dragon
 execute as @a[tag=dragon] at @s if entity @e[type=item,nbt={Item:{id:"minecraft:feather"}},distance=..3] run tag @s remove is_floating
