@@ -122,6 +122,9 @@ execute as @a[tag=dragon] run function juggernaut:raycasts/raycast {\
 # Update sprinting score
 scoreboard players set @a[scores={is_sprinting=1..}] is_sprinting 0
 
+# Update max health score
+execute as @a store result score @s max_health run attribute @s generic.max_health get
+
 # Update chase time
 execute as @a[tag=in_chase] run scoreboard players add @s chase_time 1
 execute as @a[tag=!in_chase] run scoreboard players set @s chase_time 0
