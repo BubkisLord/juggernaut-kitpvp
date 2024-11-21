@@ -14,3 +14,5 @@ scoreboard players add @a[tag=survivor] lives 2
 
 # Set all healing progress to 0
 scoreboard players set @a healing_progress 0
+
+scoreboard players set #game_state var 12
