@@ -1,0 +1,1 @@
+effect give @s speed 45 0 true
