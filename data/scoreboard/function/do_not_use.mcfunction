@@ -115,6 +115,9 @@ scoreboard objectives add ability_debuff dummy
 scoreboard objectives add ability_buff dummy
 scoreboard objectives add grim_determination_speed dummy
 scoreboard objectives add max_health dummy
+scoreboard objectives add speed_pot_cooldown dummy
+scoreboard objectives add fire_pot_cooldown dummy
+scoreboard objectives add strength_pot_cooldown dummy
 
 team add blue
 team add red
