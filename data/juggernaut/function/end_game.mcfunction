@@ -83,6 +83,7 @@ tag @a remove using_pressure_point
 tag @a remove using_overwhelming_presence
 tag @a remove using_bane_of_solidarity
 tag @a remove using_crippling_defeat
+tag @a remove using_waiting_game
 
 tag @a remove has_respawn_time
 tag @a remove see_malevolent_aura_bar
