@@ -198,6 +198,7 @@ execute as @a[tag=survivor] at @s as @e[type=snowball,distance=..3] run tag @s a
 execute as @e[type=snowball,tag=ice_bomb] at @s run particle electric_spark ~ ~ ~ 1 1 1 0.00001 60 force
 execute as @e[type=snowball,tag=ice_bomb] at @s run effect give @a[tag=juggernaut,distance=..2] slowness 8 255 true
 
+
 # Ghost
 execute as @a[tag=jug_ghost,scores={is_sneaking=1}] at @s if entity @a[distance=0.5..8] run effect give @a[tag=runner,distance=..8] invisibility 1 0 false
 execute as @a[tag=jug_ghost,scores={is_sneaking=1}] at @s if entity @a[distance=0.5..8] as @a[tag=runner,distance=..8] run function juggernaut:effects/apply_effect_silent {effect:"undetectable",duration:1}
