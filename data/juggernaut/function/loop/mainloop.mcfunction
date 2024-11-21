@@ -33,6 +33,7 @@ execute unless entity @a[tag=!has_jug_kit] if score #game_state var matches 10 r
 # Get the highest replenished station.
 execute if score #juggernaut_customisation completable_stations matches 1 run scoreboard players set #highest_station var 0
 execute if score #juggernaut_customisation completable_stations matches 1 as @e[type=armor_stand,tag=replenishment.station] run function juggernaut:replenishment_management/update_highest_station
+execute unless entity @e[type=armor_stand,tag=replenishment.station,tag=highest_station] run tag @e[type=armor_stand,tag=replenishment.station,limit=1,sort=random] add highest_station
 
 # If there are no runners or juggernauts then the game will end.
 execute if score #game_state var matches 10..19 unless entity @a[tag=juggernaut] run tellraw @a {"text": "Runners win! (Juggernaut Dead/Not Found)","bold": true}
