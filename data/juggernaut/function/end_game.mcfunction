@@ -80,6 +80,9 @@ tag @a remove using_overwhelming_presence
 tag @a remove using_bane_of_solidarity
 
 tag @a remove has_respawn_time
+tag @a remove see_malevolent_aura_bar
+tag @a remove see_banishment_glyph_bar
+tag @a remove see_withering_surge_bar
 
 scoreboard players set #stations_completed var 0
 
