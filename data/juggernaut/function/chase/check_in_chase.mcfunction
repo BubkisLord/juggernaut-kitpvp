@@ -25,6 +25,4 @@ execute as @a[tag=in_chase] at @s run particle soul_fire_flame ~ ~0.2 ~ 0.2 0.07
 
 execute as @a[tag=runner,tag=in_chase] run scoreboard players add @n[type=armor_stand,tag=juggernaut_manager] replenish_progress 1
 
-# scoreboard players set #highest_station var 0
-# execute as @e[type=armor_stand,tag=replenishment.station] run function juggernaut:update_highest_station
-# execute as @a[tag=runner,tag=in_chase] at @s run execute as @e[type=armor_stand,tag=replenishment.station] if score @s replenish_amount = #highest_station var run function juggernaut:progress_highest_replenishment_station
+execute if score #juggernaut_customisation completable_stations matches 1 as @a[tag=runner,tag=in_chase] at @s run execute as @e[type=armor_stand,tag=replenishment.station,tag=highest_station] run scoreboard players add @s replenish_amount 1

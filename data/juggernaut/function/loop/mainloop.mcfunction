@@ -30,6 +30,10 @@ execute if score #game_state var matches 10 as @n[type=armor_stand,tag=juggernau
 
 execute unless entity @a[tag=!has_jug_kit] if score #game_state var matches 10 run function juggernaut:start_juggernaut
 
+# Get the highest replenished station.
+execute if score #juggernaut_customisation completable_stations matches 1 run scoreboard players set #highest_station var 0
+execute if score #juggernaut_customisation completable_stations matches 1 as @e[type=armor_stand,tag=replenishment.station] run function juggernaut:replenishment_management/update_highest_station
+
 # If there are no runners or juggernauts then the game will end.
 execute if score #game_state var matches 10..19 unless entity @a[tag=juggernaut] run tellraw @a {"text": "Runners win! (Juggernaut Dead/Not Found)","bold": true}
 execute if score #game_state var matches 10..19 unless entity @a[tag=juggernaut] run scoreboard players add @a[tag=runner] points 100
@@ -193,6 +197,11 @@ execute as @a[tag=survivor] run attribute @s generic.max_health base set 40
 execute as @a[tag=survivor] at @s as @e[type=snowball,distance=..3] run tag @s add ice_bomb
 execute as @e[type=snowball,tag=ice_bomb] at @s run particle electric_spark ~ ~ ~ 1 1 1 0.00001 60 force
 execute as @e[type=snowball,tag=ice_bomb] at @s run effect give @a[tag=juggernaut,distance=..2] slowness 8 255 true
+
+# Ghost
+execute as @a[tag=jug_ghost,scores={is_sneaking=1}] at @s if entity @a[distance=0.5..8] run effect give @a[tag=runner,distance=..8] invisibility 1 0 false
+execute as @a[tag=jug_ghost,scores={is_sneaking=1}] at @s if entity @a[distance=0.5..8] as @a[tag=runner,distance=..8] run function juggernaut:effects/apply_effect_silent {effect:"undetectable",duration:1}
+
 
 # Engineer
 execute at @e[type=armor_stand,tag=engineer_tower] run execute as @a[tag=juggernaut,distance=..3] run particle totem_of_undying ~ ~ ~ 0.25 1 0.25 0 20 force
