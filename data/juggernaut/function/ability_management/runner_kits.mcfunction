@@ -129,6 +129,19 @@ execute if entity @a[tag=engineer] run function juggernaut:ability_management/ch
 
 
 
+# Ghost
+execute if entity @a[tag=jug_ghost] run function juggernaut:ability_management/check_ability {\
+    player_tag:"jug_ghost",\
+    item_id:"minecraft:echo_shard",\
+    item_name:'{"text": "Spectral Cloak","color": "gray"}',\
+    ability_id:"spectral_cloak",\
+    cooldown:50,\
+    hotbar_slot:"hotbar.0",\
+    cooldown_var:"jug_kit_cooldown",\
+}
+
+
+
 # Beacon of Hope
 execute if entity @a[tag=using_beacon_of_hope] run function juggernaut:ability_management/check_ability {\
     player_tag:"using_beacon_of_hope",\
