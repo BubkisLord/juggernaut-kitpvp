@@ -8,9 +8,9 @@ execute as @a[tag=runner,scores={damage_absorbed=1..}] run tellraw @s [{"text":"
 execute as @a[tag=runner,scores={damage_absorbed=1..}] run scoreboard players set @s damage_absorbed 0
 
 # Juggernaut gains points for killing runners. (30 points)
-execute as @a[tag=juggernaut,scores={point_kills=1..}] run function juggernaut:hooks/jug_killed_player
 execute as @a[tag=juggernaut,scores={point_kills=1..}] run scoreboard players add @s points 30
 execute as @a[tag=juggernaut,scores={point_kills=1..}] run tellraw @s [{"text":"[","color":"dark_gray","bold":true},{"text":"Juggernaut","color":"#a42929","bold":true},{"text":"] ","color":"dark_gray","bold":true},{"text": "+","color": "white","bold": false},{"text": "30","color": "gold","bold": true},{"text": " Points!","color": "white","bold": false},{"text": " (Killed runner)","italic": true,"color": "gray","bold": false}]
+execute as @a[tag=juggernaut,scores={point_kills=1..}] run function juggernaut:hooks/jug_killed_player
 execute as @a[tag=juggernaut,scores={point_kills=1..}] run scoreboard players set @s point_kills 0
 
 # Juggernaut gains points for being close to the runners (4/sec)
