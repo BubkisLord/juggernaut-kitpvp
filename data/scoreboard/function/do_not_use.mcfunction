@@ -86,6 +86,8 @@ scoreboard objectives add healing_progress dummy
 scoreboard objectives add healing_needed dummy
 scoreboard objectives add healing_percent dummy
 scoreboard objectives add is_sprinting minecraft.custom:minecraft.sprint_one_cm
+scoreboard objectives add is_walking minecraft.custom:minecraft.walk_one_cm
+scoreboard objectives add is_crouch_walking minecraft.custom:minecraft.crouch_one_cm
 scoreboard objectives add chase_time dummy
 scoreboard objectives add sentinel_progress dummy
 scoreboard objectives add shadow_mark_cooldown dummy
@@ -118,6 +120,7 @@ scoreboard objectives add max_health dummy
 scoreboard objectives add speed_pot_cooldown dummy
 scoreboard objectives add fire_pot_cooldown dummy
 scoreboard objectives add strength_pot_cooldown dummy
+scoreboard objectives add quit minecraft.custom:minecraft.leave_game
 
 team add blue
 team add red
