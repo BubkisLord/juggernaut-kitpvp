@@ -17,7 +17,7 @@ execute if score #game_state var matches 11 run function juggernaut:chase/check_
 execute if score #game_state var matches 11 as @a[tag=runner] at @s if entity @e[type=armor_stand,tag=replenishment.station,distance=..3] run function juggernaut:replenishment_management/calculate_replenishment_modifier
 execute if score #game_state var matches 11 run function juggernaut:replenishment_management/replenishment_stations
 # While juggernaut is not released, disallow all interactions with replenishment stations but allow for runners to see them.
-execute if score #game_state var matches 12 as @e[tag=replenishment.station] at @s run particle minecraft:end_rod ~ ~2.5 ~ 0.2 60 0.2 0 120 force @a[tag=runner]
+execute if score #game_state var matches 12 as @e[tag=replenishment.station] at @s run particle minecraft:end_rod ~ ~2.5 ~ 0.2 60 0.2 0 60 force @a[tag=runner]
 
 execute if score #game_state var matches 10 as @n[type=armor_stand,tag=runner_kit_selection_room] at @s run particle campfire_cosy_smoke ~ ~1 ~ 7 1 7 0.00001 1 force
 execute if score #game_state var matches 10 as @n[type=armor_stand,tag=runner_kit_selection_room] at @s run effect give @a[distance=..30] weakness 1 255 true
@@ -170,8 +170,12 @@ execute as @e[type=snowball,tag=ice_bomb] at @s run effect give @a[tag=juggernau
 
 
 # Ghost
-execute as @a[tag=jug_ghost,scores={is_sneaking=1}] at @s if entity @a[distance=0.5..8] run effect give @a[tag=runner,distance=..8] invisibility 1 0 false
-execute as @a[tag=jug_ghost,scores={is_sneaking=1}] at @s if entity @a[distance=0.5..8] as @a[tag=runner,distance=..8] run function juggernaut:effects/apply_effect_silent {effect:"undetectable",duration:1}
+execute as @a[tag=jug_ghost,scores={is_sneaking=1}] at @s run effect give @s invisibility 1 0 false
+execute as @a[tag=jug_ghost,scores={is_sneaking=1}] at @s run function juggernaut:effects/apply_effect_silent {effect:"undetectable",duration:1}
+
+execute as @a[tag=jug_ghost,scores={is_sneaking=1}] at @s run attribute @s player.sneaking_speed base set 0
+execute as @a[tag=jug_ghost,scores={is_sneaking=0},tag=!is_not_replenishing] at @s run effect clear @s invisibility
+execute as @a[tag=jug_ghost,scores={is_sneaking=0}] at @s run attribute @s player.sneaking_speed base set 0.3
 
 
 # Engineer
@@ -200,10 +204,9 @@ execute as @a[tag=borrowing_time,scores={borrowed_time_remaining=..0}] run tag @
 
 # Loop per second function.
 execute as @e[type=armor_stand,tag=juggernaut_manager] run scoreboard players add @s tick_counter 1
-scoreboard players set #20 var 20
 execute as @e[type=armor_stand,tag=juggernaut_manager] if score @s tick_counter >= #20 var run function juggernaut:loop/second
-# execute as @e[type=armor_stand,tag=juggernaut_manager] if score @s tick_counter = #20 var run function juggernaut:loop/half_second
-# execute as @e[type=armor_stand,tag=juggernaut_manager] if score @s tick_counter = #10 var run function juggernaut:loop/half_second
+execute as @e[type=armor_stand,tag=juggernaut_manager] if score @s tick_counter = #20 var run function juggernaut:loop/half_second
+execute as @e[type=armor_stand,tag=juggernaut_manager] if score @s tick_counter = #10 var run function juggernaut:loop/half_second
 execute as @e[type=armor_stand,tag=juggernaut_manager] if score @s tick_counter >= #20 var run scoreboard players set @s tick_counter 0
 
 # Juggernaut Perks
@@ -237,5 +240,4 @@ execute as @a[tag=using_camera] at @s as @n[type=armor_stand,tag=used_camera] at
 execute as @a[tag=shadow_marked] at @s run particle flame ~ ~0.5 ~ 1.5 1.5 1.5 0 1 force @a[tag=juggernaut]
 
 # Quickened Stealth
-execute as @a[tag=using_quickened_stealth] run attribute @s player.sneaking_speed base set 0.4
-execute as @a[tag=using_quickened_stealth,tag=rogue] run attribute @s player.sneaking_speed base set 0.9
+execute as @a[tag=using_quickened_stealth] run attribute @s player.sneaking_speed modifier add juggernaut:quickened_stealth_speed 1.2 add_multiplied_base

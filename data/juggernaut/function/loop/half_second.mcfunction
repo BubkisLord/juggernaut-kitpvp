@@ -1,0 +1,1 @@
+execute as @a[tag=is_healing,tag=is_being_healed] at @s run particle heart ~ ~0.5 ~ 0.3 1.5 0.3 0 1 force @s

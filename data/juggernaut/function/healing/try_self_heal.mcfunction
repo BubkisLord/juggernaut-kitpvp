@@ -1,7 +1,6 @@
 # Healing and Particle Effect
 
 $scoreboard players add @s healing_progress $(heal_amount)
-particle heart ~ ~0.5 ~ 0.3 1.5 0.3 0 10 force @s
 tag @s add self_healing
 tag @s add is_being_healed
 

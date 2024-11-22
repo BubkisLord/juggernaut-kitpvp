@@ -1,7 +1,5 @@
 $execute if entity @a[tag=runner,tag=!survivor,scores={is_sneaking=1,health=..19},distance=..$(distance)] run scoreboard players add @p[tag=runner,tag=!survivor,scores={is_sneaking=1,health=..19},distance=..$(distance)] healing_progress $(heal_amount)
 $execute if entity @a[tag=runner,tag=survivor,scores={is_sneaking=1,health=..39},distance=..$(distance)] run scoreboard players add @p[tag=runner,tag=survivor,scores={is_sneaking=1,health=..39},distance=..$(distance)] healing_progress $(heal_amount)
-$execute if entity @a[tag=runner,tag=!survivor,scores={is_sneaking=1,health=..19},distance=..$(distance)] run particle particle heart ~ ~0.5 ~ 0.3 1.5 0.3 0 10 force @a[tag=runner]
-$execute if entity @a[tag=runner,tag=survivor,scores={is_sneaking=1,health=..39},distance=..$(distance)] run particle particle heart ~ ~0.5 ~ 0.3 1.5 0.3 0 10 force @a[tag=runner]
 $execute if entity @a[tag=runner,tag=!survivor,scores={is_sneaking=1,health=..19},distance=..$(distance)] run tag @s add is_healing
 $execute if entity @a[tag=runner,tag=survivor,scores={is_sneaking=1,health=..39},distance=..$(distance)] run tag @s add is_healing
 $execute as @p[tag=runner,tag=!survivor,scores={is_sneaking=1,health=..19},distance=..$(distance)] run tag @s add is_being_healed
