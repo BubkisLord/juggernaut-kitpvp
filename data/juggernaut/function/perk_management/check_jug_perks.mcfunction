@@ -50,3 +50,5 @@ execute as @s[nbt={Inventory:[{id:"minecraft:spire_armor_trim_smithing_template"
 execute as @s[nbt={Inventory:[{id:"minecraft:spire_armor_trim_smithing_template"}]}] run clear @s #minecraft:trim_templates
 execute as @s[nbt={Inventory:[{id:"minecraft:dune_armor_trim_smithing_template"}]}] run tag @s add using_waiting_game
 execute as @s[nbt={Inventory:[{id:"minecraft:dune_armor_trim_smithing_template"}]}] run clear @s #minecraft:trim_templates
+execute as @s[nbt={Inventory:[{id:"minecraft:tide_armor_trim_smithing_template"}]}] run tag @s add using_quickened_stealth
+execute as @s[nbt={Inventory:[{id:"minecraft:tide_armor_trim_smithing_template"}]}] run clear @s #minecraft:trim_templates
