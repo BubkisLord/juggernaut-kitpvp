@@ -76,7 +76,7 @@ tag @a remove using_beacon_of_hope
 tag @a remove using_hopeful_sprint
 tag @a remove using_shared_resolve
 
-tag @a remove using_predatory_senses
+tag @a remove using_predatory_instincts
 tag @a remove using_rapid_brutality
 tag @a remove using_brutal_efficiency
 tag @a remove using_unyielding_wrath

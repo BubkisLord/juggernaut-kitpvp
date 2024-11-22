@@ -1,5 +1,5 @@
 # Perks:
-# Predatory Senses - Raiser
+# Predatory Instincts - Raiser
 # While stationary or walking, this perk activates. While active, any runner sprinting within a 15 block radius is revealed. Players with undetectable cannot be revealed in this way.
 
 # Rapid Brutality - Vex
@@ -28,7 +28,7 @@
 
 
 
-execute as @s[nbt={Inventory:[{id:"minecraft:raiser_armor_trim_smithing_template"}]}] run tag @s add using_predatory_senses
+execute as @s[nbt={Inventory:[{id:"minecraft:raiser_armor_trim_smithing_template"}]}] run tag @s add using_predatory_instincts
 execute as @s[nbt={Inventory:[{id:"minecraft:raiser_armor_trim_smithing_template"}]}] run clear @s #minecraft:trim_templates
 execute as @s[nbt={Inventory:[{id:"minecraft:vex_armor_trim_smithing_template"}]}] run tag @s add using_rapid_brutality
 execute as @s[nbt={Inventory:[{id:"minecraft:vex_armor_trim_smithing_template"}]}] run clear @s #minecraft:trim_templates
