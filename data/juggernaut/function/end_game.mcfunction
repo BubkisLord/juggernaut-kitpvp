@@ -26,6 +26,9 @@ scoreboard players set @a ticks_till_increment_ability 0
 scoreboard players set @a ability_debuff 0
 scoreboard players set @a ability_buff 0
 scoreboard players set @a beacon_of_hope_cooldown 0
+scoreboard players set @a speed_pot_cooldown 0
+scoreboard players set @a fire_pot_cooldown 0
+scoreboard players set @a strength_pot_cooldown 0
 spawnpoint @a 2000 100 0
 gamerule showDeathMessages false
 tag @a remove has_jug_kit
@@ -114,6 +117,7 @@ execute as @a run attribute @s generic.movement_speed base set 0.1
 execute as @a run attribute @s generic.safe_fall_distance base set 3
 execute as @a run attribute @s generic.gravity base set 0.08
 execute as @a run attribute @s player.sneaking_speed base set 0.3
+execute as @a run attribute @s player.sneaking_speed modifier remove juggernaut:quickened_stealth_speed
 
 execute as @a run attribute @s generic.movement_speed modifier remove unyielding_wrath_1
 execute as @a run attribute @s generic.movement_speed modifier remove unyielding_wrath_2
