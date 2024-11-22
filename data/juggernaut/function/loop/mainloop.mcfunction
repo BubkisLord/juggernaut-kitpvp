@@ -209,9 +209,6 @@ execute as @e[type=armor_stand,tag=juggernaut_manager] if score @s tick_counter 
 execute as @e[type=armor_stand,tag=juggernaut_manager] if score @s tick_counter = #10 var run function juggernaut:loop/half_second
 execute as @e[type=armor_stand,tag=juggernaut_manager] if score @s tick_counter >= #20 var run scoreboard players set @s tick_counter 0
 
-# Juggernaut Perks
-execute as @a[tag=juggernaut,tag=using_predatory_instincts,scores={is_sprinting=0}] at @s as @a[tag=runner,scores={is_sprinting=1},tag=!is_undetectable,distance=..15] run effect give @s glowing 1 0 true
-
 # Set healing needed
 execute as @a[tag=runner] run function juggernaut:healing/set_healing_needed
 
@@ -241,3 +238,9 @@ execute as @a[tag=shadow_marked] at @s run particle flame ~ ~0.5 ~ 1.5 1.5 1.5 0
 
 # Quickened Stealth
 execute as @a[tag=using_quickened_stealth] run attribute @s player.sneaking_speed modifier add juggernaut:quickened_stealth_speed 1.2 add_multiplied_base
+
+scoreboard players reset @a[scores={quit=1}] health
+scoreboard players reset @a[scores={quit=1}] lives_remaining
+
+# Reset quit score
+scoreboard players set @a[scores={quit=1..}] quit 0

@@ -121,8 +121,13 @@ execute as @a[tag=dragon] run function juggernaut:raycasts/raycast {\
     collides_with_blocks:1,\
 }
 
-# Update sprinting score
+# Predatory Instincts Perk
+execute as @a[tag=juggernaut,tag=using_predatory_instincts,scores={is_walking=0,is_sprinting=0,is_crouch_walking=0}] at @s as @a[tag=runner,tag=!is_undetectable,distance=..8] run effect give @s glowing 1 0 true
+
+# Update scores
 scoreboard players set @a[scores={is_sprinting=1..}] is_sprinting 0
+scoreboard players set @a[scores={is_walking=1..}] is_walking 0
+scoreboard players set @a[scores={is_crouch_walking=1..}] is_crouch_walking 0
 
 # Update max health score
 execute as @a store result score @s max_health run attribute @s generic.max_health get
