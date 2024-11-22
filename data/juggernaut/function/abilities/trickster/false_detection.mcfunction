@@ -1,0 +1,2 @@
+execute as @e[type=armor_stand,tag=replenishment.station] run scoreboard players set @s replenish_timeout 10
+execute as @e[type=armor_stand,tag=replenishment_tower] run scoreboard players set @s replenish_timeout 10
