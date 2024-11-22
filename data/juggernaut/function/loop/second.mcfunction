@@ -162,5 +162,8 @@ execute as @a[tag=beacon_of_hope_active,scores={beacon_of_hope_duration=0}] run 
 # Flame Ward
 effect give @a[tag=using_flame_ward] fire_resistance 1 0 true
 
+# Spectator
+execute as @a[tag=spectator] run tag @s remove in_chase
+
 # Reset second counter periodically
 execute if score #second_counter var matches 100.. run scoreboard players set #second_counter var 0
