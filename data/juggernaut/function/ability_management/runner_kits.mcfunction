@@ -158,7 +158,7 @@ execute if entity @a[tag=trickster] run function juggernaut:ability_management/c
     item_id:"minecraft:echo_shard",\
     item_name:'{"text": "False Detection","color": "dark_purple"}',\
     ability_id:"false_detection",\
-    cooldown:50,\
+    cooldown:120,\
     hotbar_slot:"hotbar.1",\
     cooldown_var:"jug_kit_cooldown_2",\
 }
