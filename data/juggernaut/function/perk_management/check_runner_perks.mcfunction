@@ -10,7 +10,7 @@ execute as @s[nbt={Inventory:[{id:"minecraft:burn_pottery_sherd"}]}] run tag @s 
 execute as @s[nbt={Inventory:[{id:"minecraft:burn_pottery_sherd"}]}] run clear @s #minecraft:decorated_pot_sherds
 execute as @s[nbt={Inventory:[{id:"minecraft:flow_pottery_sherd"}]}] run tag @s add using_quickened_stealth
 execute as @s[nbt={Inventory:[{id:"minecraft:flow_pottery_sherd"}]}] run clear @s #minecraft:decorated_pot_sherds
-execute as @s[nbt={Inventory:[{id:"minecraft:brewer_pottery_sherd"}]}] run give @s splash_potion[potion_contents={potion:"strong_healing"},max_stack_size=8] 8
+execute as @s[nbt={Inventory:[{id:"minecraft:brewer_pottery_sherd"}]}] run item replace entity @s hotbar.8 with splash_potion[potion_contents={potion:"strong_healing"},max_stack_size=8] 8
 execute as @s[nbt={Inventory:[{id:"minecraft:brewer_pottery_sherd"}]}] run clear @s #minecraft:decorated_pot_sherds
 execute as @s[nbt={Inventory:[{id:"minecraft:skull_pottery_sherd"}]}] run tag @s add using_undying_ties
 execute as @s[nbt={Inventory:[{id:"minecraft:skull_pottery_sherd"}]}] run clear @s #minecraft:decorated_pot_sherds
