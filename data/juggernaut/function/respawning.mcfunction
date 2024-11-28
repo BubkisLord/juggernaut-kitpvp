@@ -39,9 +39,9 @@ execute if score @s lives_remaining matches ..0 run tag @s remove chain_hunter
 execute if score @s lives_remaining matches ..0 run tag @s remove blinker
 execute if score @s lives_remaining matches ..0 run tag @s remove spirit_walker
 execute if score @s lives_remaining matches ..0 run tag @s remove guide
-execute if score @s lives_remaining matches ..0 run attribute @s generic.max_health base set 20
-execute if score @s lives_remaining matches ..0 run attribute @s generic.scale base set 1
-execute if score @s lives_remaining matches ..0 run attribute @s generic.gravity base set 0.08
+execute if score @s lives_remaining matches ..0 run attribute @s max_health base set 20
+execute if score @s lives_remaining matches ..0 run attribute @s scale base set 1
+execute if score @s lives_remaining matches ..0 run attribute @s gravity base set 0.08
 execute if score @s lives_remaining matches ..0 run spawnpoint @s 2000 100 0
 execute if score @s lives_remaining matches ..0 run tag @s add lobby.player
 execute if score @s lives_remaining matches ..0 run clear @s

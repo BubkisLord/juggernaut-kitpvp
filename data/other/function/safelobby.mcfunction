@@ -5,9 +5,9 @@ effect give @a[tag=tutorial.player,tag=!autorespawn] resistance 2 100 true
 effect give @a[tag=tutorial.player,tag=!autorespawn] saturation 2 100 true
 
 #Anti-Knockback
-execute as @a[tag=lobby.player] run attribute @s minecraft:generic.knockback_resistance base set 1
-execute as @a[tag=tutorial.player] run attribute @s minecraft:generic.knockback_resistance base set 1
-execute as @a[tag=!lobby.player,tag=!tutorial.player] run attribute @s minecraft:generic.knockback_resistance base set 0
+execute as @a[tag=lobby.player] run attribute @s minecraft:knockback_resistance base set 1
+execute as @a[tag=tutorial.player] run attribute @s minecraft:knockback_resistance base set 1
+execute as @a[tag=!lobby.player,tag=!tutorial.player] run attribute @s minecraft:knockback_resistance base set 0
 
 #Teleport and Stats
 item replace entity @a[tag=lobby.player,tag=!autorespawn] hotbar.5 with minecraft:globe_banner_pattern[item_name='{"text":"Your Statistics","color":"green","italic":false}', lore=['{"text":"Drop this item to view","color":"dark_gray"}','{"text":"your statistics.","color":"dark_gray"}'],hide_additional_tooltip={}] 1
@@ -35,7 +35,7 @@ gamemode adventure @a[tag=!spectator,name=!"BubkisLord"]
 gamemode spectator @a[tag=spectator]
 
 #Max Health
-attribute @a[tag=lobby.player,limit=1,sort=random] generic.max_health base set 20
+attribute @a[tag=lobby.player,limit=1,sort=random] max_health base set 20
 
 #Unlockall trigger
 execute as @a[tag=lobby.player] run scoreboard players enable @s unlockall

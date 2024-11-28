@@ -9,5 +9,5 @@ execute if score @s lives_remaining matches ..0 run tag @s remove hider
 execute if score @s lives_remaining matches ..0 run tag @s remove seeker
 execute if score @s lives_remaining matches ..0 run tag @s add spectator
 execute if score @s lives_remaining matches ..0 run spawnpoint @s 0 101 0
-execute if score @s lives_remaining matches ..0 run attribute @s generic.max_health base set 20
+execute if score @s lives_remaining matches ..0 run attribute @s max_health base set 20
 execute if score @s lives_remaining matches ..0 run clear @s

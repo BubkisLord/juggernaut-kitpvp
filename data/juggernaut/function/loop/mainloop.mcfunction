@@ -76,13 +76,13 @@ execute as @a[tag=dragon] at @s if entity @e[type=item,nbt={Item:{id:"minecraft:
 execute as @a[tag=dragon] at @s if entity @e[type=item,nbt={Item:{id:"minecraft:phantom_membrane"}},distance=..3] run item replace entity @s hotbar.0 with feather[item_name='{"text": "Walk","bold": true,"color": "dark_green"}']
 execute as @a[tag=dragon] at @s as @e[type=item,nbt={Item:{id:"minecraft:phantom_membrane"}},distance=..3] run kill @s
 
-execute as @a[tag=dragon] run attribute @s generic.safe_fall_distance base set 999
-execute as @a[tag=dragon] at @s if block ~ ~-5 ~ #juggernaut:non-surface_blocks run attribute @s generic.gravity base set 0.005
-execute as @a[tag=dragon] at @s unless block ~ ~-5 ~ #juggernaut:non-surface_blocks run attribute @s generic.gravity base set -0.015
-execute as @a[tag=dragon] at @s if block ~ ~-6 ~ #juggernaut:non-surface_blocks unless block ~ ~-5 ~ #juggernaut:non-surface_blocks run attribute @s generic.gravity base set 0
-execute as @a[tag=dragon] at @s unless block ~ ~-0.75 ~ #juggernaut:non-surface_blocks run attribute @s generic.gravity base set 0.08
-execute as @a[tag=dragon,nbt={Inventory:[{id:"minecraft:feather",count:1}]}] run attribute @s generic.gravity base set -0.01
-execute as @a[tag=dragon] if entity @s[scores={is_sneaking=1}] run attribute @s generic.gravity base set 0.01
+execute as @a[tag=dragon] run attribute @s safe_fall_distance base set 999
+execute as @a[tag=dragon] at @s if block ~ ~-5 ~ #juggernaut:non-surface_blocks run attribute @s gravity base set 0.005
+execute as @a[tag=dragon] at @s unless block ~ ~-5 ~ #juggernaut:non-surface_blocks run attribute @s gravity base set -0.015
+execute as @a[tag=dragon] at @s if block ~ ~-6 ~ #juggernaut:non-surface_blocks unless block ~ ~-5 ~ #juggernaut:non-surface_blocks run attribute @s gravity base set 0
+execute as @a[tag=dragon] at @s unless block ~ ~-0.75 ~ #juggernaut:non-surface_blocks run attribute @s gravity base set 0.08
+execute as @a[tag=dragon,nbt={Inventory:[{id:"minecraft:feather",count:1}]}] run attribute @s gravity base set -0.01
+execute as @a[tag=dragon] if entity @s[scores={is_sneaking=1}] run attribute @s gravity base set 0.01
 
 
 # Hunter
@@ -147,8 +147,8 @@ execute as @a[tag=guide,scores={is_sprinting=1..}] at @s if entity @a[tag=runner
 execute as @a[tag=escapist] run effect give @s speed 1 0 true
 
 # Rogue Passive Effect
-execute as @a[tag=rogue,scores={is_sneaking=1}] run attribute @s generic.step_height base set 1
-execute as @a[tag=rogue,scores={is_sneaking=0}] run attribute @s generic.step_height base set 0.6
+execute as @a[tag=rogue,scores={is_sneaking=1}] run attribute @s step_height base set 1
+execute as @a[tag=rogue,scores={is_sneaking=0}] run attribute @s step_height base set 0.6
 
 # Make medic immune to glowing
 execute as @a[tag=medic] run effect clear @s glowing
@@ -161,7 +161,7 @@ execute as @a[tag=juggernaut_manager,scores={scout_reveal_timer=1200..}] run sco
 
 # Survivor effects
 execute as @a[tag=survivor] run effect give @s resistance 1 0 true
-execute as @a[tag=survivor] run attribute @s generic.max_health base set 40
+execute as @a[tag=survivor] run attribute @s max_health base set 40
 
 
 execute as @a[tag=survivor] at @s as @e[type=snowball,distance=..3] run tag @s add ice_bomb

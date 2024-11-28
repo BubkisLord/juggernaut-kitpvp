@@ -9,7 +9,7 @@ execute as @a run function juggernaut:effects/check_effects {effect:"hemorrhaged
 execute as @a run function juggernaut:effects/check_effects {effect:"not_replenishing"}
 execute as @a run function juggernaut:effects/check_effects {effect:"undetectable"}
 
-execute as @a run function juggernaut:attribute_management/check {attribute_namespace:"generic",attribute_name:"movement_speed",default_value:0.1}
+execute as @a run function juggernaut:attribute_management/check {attribute_namespace:",attribute_name:"movement_speed",default_value:0.1}
 
 execute if score #game_state var matches 11..12 as @a[tag=runner] run function juggernaut:perk_management/check_runner_perks
 execute if score #game_state var matches 11 as @a[tag=juggernaut] run function juggernaut:perk_management/check_jug_perks
@@ -137,7 +137,7 @@ scoreboard players set @a[scores={is_walking=1..}] is_walking 0
 scoreboard players set @a[scores={is_crouch_walking=1..}] is_crouch_walking 0
 
 # Update max health score
-execute as @a store result score @s max_health run attribute @s generic.max_health get
+execute as @a store result score @s max_health run attribute @s max_health get
 
 # Update chase time
 execute as @a[tag=in_chase] run scoreboard players add @s chase_time 1
@@ -147,17 +147,17 @@ execute as @a[tag=!in_chase] run scoreboard players set @s chase_time 0
 execute as @a[tag=juggernaut,tag=in_chase,tag=using_unyielding_wrath] run scoreboard players operation @s unyielding_wrath_time = @s chase_time
 execute as @a[tag=juggernaut,tag=in_chase,tag=using_unyielding_wrath] run scoreboard players operation @s unyielding_wrath_time %= #10 var
 execute as @a[tag=juggernaut,tag=in_chase,tag=using_unyielding_wrath,scores={unyielding_wrath_time=0}] run scoreboard players add @s unyielding_wrath_stacks 1
-execute as @a[tag=juggernaut,tag=in_chase,tag=using_unyielding_wrath,scores={unyielding_wrath_time=0,unyielding_wrath_stacks=1}] run attribute @s generic.movement_speed modifier add unyielding_wrath_1 0.003 add_value
-execute as @a[tag=juggernaut,tag=in_chase,tag=using_unyielding_wrath,scores={unyielding_wrath_time=0,unyielding_wrath_stacks=2}] run attribute @s generic.movement_speed modifier add unyielding_wrath_2 0.003 add_value
-execute as @a[tag=juggernaut,tag=in_chase,tag=using_unyielding_wrath,scores={unyielding_wrath_time=0,unyielding_wrath_stacks=3}] run attribute @s generic.movement_speed modifier add unyielding_wrath_3 0.003 add_value
-execute as @a[tag=juggernaut,tag=in_chase,tag=using_unyielding_wrath,scores={unyielding_wrath_time=0,unyielding_wrath_stacks=4}] run attribute @s generic.movement_speed modifier add unyielding_wrath_4 0.003 add_value
-execute as @a[tag=juggernaut,tag=in_chase,tag=using_unyielding_wrath,scores={unyielding_wrath_time=0,unyielding_wrath_stacks=5}] run attribute @s generic.movement_speed modifier add unyielding_wrath_5 0.003 add_value
+execute as @a[tag=juggernaut,tag=in_chase,tag=using_unyielding_wrath,scores={unyielding_wrath_time=0,unyielding_wrath_stacks=1}] run attribute @s movement_speed modifier add unyielding_wrath_1 0.003 add_value
+execute as @a[tag=juggernaut,tag=in_chase,tag=using_unyielding_wrath,scores={unyielding_wrath_time=0,unyielding_wrath_stacks=2}] run attribute @s movement_speed modifier add unyielding_wrath_2 0.003 add_value
+execute as @a[tag=juggernaut,tag=in_chase,tag=using_unyielding_wrath,scores={unyielding_wrath_time=0,unyielding_wrath_stacks=3}] run attribute @s movement_speed modifier add unyielding_wrath_3 0.003 add_value
+execute as @a[tag=juggernaut,tag=in_chase,tag=using_unyielding_wrath,scores={unyielding_wrath_time=0,unyielding_wrath_stacks=4}] run attribute @s movement_speed modifier add unyielding_wrath_4 0.003 add_value
+execute as @a[tag=juggernaut,tag=in_chase,tag=using_unyielding_wrath,scores={unyielding_wrath_time=0,unyielding_wrath_stacks=5}] run attribute @s movement_speed modifier add unyielding_wrath_5 0.003 add_value
 
-execute as @a[tag=juggernaut,tag=!in_chase,tag=using_unyielding_wrath] run attribute @s generic.movement_speed modifier remove unyielding_wrath_1
-execute as @a[tag=juggernaut,tag=!in_chase,tag=using_unyielding_wrath] run attribute @s generic.movement_speed modifier remove unyielding_wrath_2
-execute as @a[tag=juggernaut,tag=!in_chase,tag=using_unyielding_wrath] run attribute @s generic.movement_speed modifier remove unyielding_wrath_3
-execute as @a[tag=juggernaut,tag=!in_chase,tag=using_unyielding_wrath] run attribute @s generic.movement_speed modifier remove unyielding_wrath_4
-execute as @a[tag=juggernaut,tag=!in_chase,tag=using_unyielding_wrath] run attribute @s generic.movement_speed modifier remove unyielding_wrath_5
+execute as @a[tag=juggernaut,tag=!in_chase,tag=using_unyielding_wrath] run attribute @s movement_speed modifier remove unyielding_wrath_1
+execute as @a[tag=juggernaut,tag=!in_chase,tag=using_unyielding_wrath] run attribute @s movement_speed modifier remove unyielding_wrath_2
+execute as @a[tag=juggernaut,tag=!in_chase,tag=using_unyielding_wrath] run attribute @s movement_speed modifier remove unyielding_wrath_3
+execute as @a[tag=juggernaut,tag=!in_chase,tag=using_unyielding_wrath] run attribute @s movement_speed modifier remove unyielding_wrath_4
+execute as @a[tag=juggernaut,tag=!in_chase,tag=using_unyielding_wrath] run attribute @s movement_speed modifier remove unyielding_wrath_5
 execute as @a[tag=juggernaut,tag=!in_chase,tag=using_unyielding_wrath] run scoreboard players set @s unyielding_wrath_stacks 0
 
 # Update domination speed
@@ -165,7 +165,7 @@ execute as @a[tag=juggernaut,tag=using_domination] run function juggernaut:perk_
 
 # Update Grim Determination speed
 execute as @a[tag=runner,tag=in_chase,tag=harbinger] run function juggernaut:set_grim_determination_speed
-execute as @a[tag=runner,tag=!in_chase,tag=harbinger] run attribute @s generic.movement_speed modifier remove grim_determination
+execute as @a[tag=runner,tag=!in_chase,tag=harbinger] run attribute @s movement_speed modifier remove grim_determination
 
 # Update beacon of hope duration
 execute as @a[tag=beacon_of_hope_active,scores={beacon_of_hope_duration=1..}] run scoreboard players remove @s beacon_of_hope_duration 1

@@ -1,5 +1,5 @@
 clear @s
-give @s jungle_sapling[item_name='{"text":"Nature\'s Wrath","color":"dark_purple","italic":false}',lore=['{"text":"A sapling? What do you mean?","color":"dark_gray"}'],enchantments={sharpness:6},attribute_modifiers=[{id:"minecraft:generic.attack_speed",amount:-2.0,operation:"add_value",type:"generic.attack_speed"}],hide_additional_tooltip={}] 1
+give @s jungle_sapling[item_name='{"text":"Nature\'s Wrath","color":"dark_purple","italic":false}',lore=['{"text":"A sapling? What do you mean?","color":"dark_gray"}'],enchantments={sharpness:6},attribute_modifiers=[{id:"minecraft:attack_speed",amount:-2.0,operation:"add_value",type:"attack_speed"}],hide_additional_tooltip={}] 1
 give @s blaze_powder[item_name='{"text":"Eternal Flame","color":"dark_purple","italic":false}',lore=['{"text":"They better hope there\'s water nearby.","color":"dark_gray"}'],enchantments={fire_aspect:255},hide_additional_tooltip={}] 1
 give @s cooked_beef[item_name='{"text":"Steak","color":"dark_purple","italic":false}',lore=['{"text":"Eat to regenerate.","color":"dark_gray"}']] 16
 item replace entity @s weapon.offhand with totem_of_undying[item_name='{"text":"Totemic Safeguard","color":"dark_purple","italic":false}',lore=['{"text":"Watch that Assassin fail to kill you!","color":"dark_gray"}'],unbreakable={},hide_additional_tooltip={}]

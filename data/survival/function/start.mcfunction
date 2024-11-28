@@ -8,7 +8,7 @@ scoreboard players set @a damage_absorbed 0
 scoreboard players set #game_state var 0
 
 # Reset player attributes
-execute as @a run attribute @s generic.max_health base set 20
+execute as @a run attribute @s max_health base set 20
 
 # Reset player inventory
 clear @a

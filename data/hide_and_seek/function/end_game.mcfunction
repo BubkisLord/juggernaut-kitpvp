@@ -11,7 +11,7 @@ clear @a
 kill @a
 gamerule showDeathMessages true
 kill @e[tag=kill_on_end_game]
-attribute @s generic.max_health base set 20
+attribute @s max_health base set 20
 scoreboard players set @a lives 0
 scoreboard players set @a game_deaths 0
 team leave @a

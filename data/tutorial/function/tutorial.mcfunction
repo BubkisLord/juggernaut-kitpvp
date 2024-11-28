@@ -2,7 +2,7 @@ execute at @e[type=armor_stand,tag=tutorial_ability.ast] run item replace entity
 execute at @a[tag=tutorial.player] run execute as @e[type=item,nbt={Item:{id:"minecraft:enchanted_book"}},distance=..3] run function tutorial:tutorial_ability
 execute at @e[type=armor_stand,tag=tutorial_ability.ast] run clear @a[tag=tutorial.player,distance=8..] enchanted_book
 
-execute as @e[tag=dummy.spawner,limit=1] unless entity @e[type=zombie,name="Dummy"] run summon zombie -4 101 -2038 {Silent:1b,CustomNameVisible:1b,DeathLootTable:"empty",PersistenceRequired:1b,NoAI:1b,CanPickUpLoot:0b,Rotation:[-90F,0F],CustomName:'{"text":"Dummy","color":"gold"}',ArmorItems:[{},{},{},{id:"minecraft:stone_button",count:1b}],ArmorDropChances:[0.085F,0.085F,0.085F,-327.670F],Attributes:[{id:generic.max_health,base:1}]}
+execute as @e[tag=dummy.spawner,limit=1] unless entity @e[type=zombie,name="Dummy"] run summon zombie -4 101 -2038 {Silent:1b,CustomNameVisible:1b,DeathLootTable:"empty",PersistenceRequired:1b,NoAI:1b,CanPickUpLoot:0b,Rotation:[-90F,0F],CustomName:'{"text":"Dummy","color":"gold"}',ArmorItems:[{},{},{},{id:"minecraft:stone_button",count:1b}],ArmorDropChances:[0.085F,0.085F,0.085F,-327.670F],Attributes:[{id:max_health,base:1}]}
 execute at @e[type=zombie,name="Dummy"] run effect give @a[distance=0..5] strength 2 100 true
 xp set @a[tag=tutorial.player] 0 points
 execute as @a[tag=tutorial.player,scores={dummyKills=1..}] run xp add @s 1 levels

@@ -1,5 +1,5 @@
 clear @s
-give @s stick[item_name='{"text":"Giant Club","color":"gold","italic":false}',lore=['{"text":"Only the strongest can use it effectively.","color":"dark_gray"}'],unbreakable={},enchantments={sharpness:10,knockback:2},attribute_modifiers=[{id:"minecraft:generic.attack_speed",amount:-3.4,operation:"add_value",type:"generic.attack_speed"}],hide_additional_tooltip={}]
+give @s stick[item_name='{"text":"Giant Club","color":"gold","italic":false}',lore=['{"text":"Only the strongest can use it effectively.","color":"dark_gray"}'],unbreakable={},enchantments={sharpness:10,knockback:2},attribute_modifiers=[{id:"minecraft:attack_speed",amount:-3.4,operation:"add_value",type:"attack_speed"}],hide_additional_tooltip={}]
 item replace entity @s hotbar.1 with snow_block[item_name='{"text":"Frost Breath","color":"gold","italic":false}',lore=['{"text":"Drop to breathe ice and stun your enemies.","color":"dark_gray"}']] 5
 give @s cooked_beef[item_name='{"text":"Steak","color":"gold","italic":false}',lore=['{"text":"Eat to regenerate.","color":"dark_gray"}']] 16
 item replace entity @s armor.chest with iron_chestplate[item_name='{"text":"Yeti\'s Breastplate","color":"gold","italic":false}',lore=['{"text":"A magnificent piece of armour.","color":"dark_gray"}'],unbreakable={},hide_additional_tooltip={}]

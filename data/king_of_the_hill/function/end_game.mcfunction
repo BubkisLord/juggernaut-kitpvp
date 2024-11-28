@@ -29,7 +29,7 @@ gamerule keepInventory true
 gamerule showDeathMessages true
 function king_of_the_hill:remove_chests
 kill @e[tag=kill_on_end_game]
-attribute @s generic.max_health base set 20
+attribute @s max_health base set 20
 scoreboard players set @a lives 0
 scoreboard players set @a game_deaths 0
 gamemode adventure @a

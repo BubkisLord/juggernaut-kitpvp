@@ -1,1 +1,1 @@
-attribute @s generic.jump_strength base set 0.42
+attribute @s jump_strength base set 0.42
