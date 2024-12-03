@@ -173,9 +173,9 @@ execute as @e[type=snowball,tag=ice_bomb] at @s run effect give @a[tag=juggernau
 execute as @a[tag=jug_ghost,scores={is_sneaking=1}] at @s run effect give @s invisibility 1 0 false
 execute as @a[tag=jug_ghost,scores={is_sneaking=1}] at @s run function juggernaut:effects/apply_effect_silent {effect:"undetectable",duration:1}
 
-execute as @a[tag=jug_ghost,scores={is_sneaking=1}] at @s run attribute @s player.sneaking_speed base set 0
-execute as @a[tag=jug_ghost,scores={is_sneaking=0},tag=!is_not_replenishing] at @s run effect clear @s invisibility
-execute as @a[tag=jug_ghost,scores={is_sneaking=0}] at @s run attribute @s player.sneaking_speed base set 0.3
+execute as @a[tag=jug_ghost,scores={is_sneaking=1}] at @s run attribute @s sneaking_speed base set 0
+execute as @a[tag=jug_ghost,scores={is_sneaking=0},tag=!is_not_replenishing,tag=!has_respawn_time] at @s run effect clear @s invisibility
+execute as @a[tag=jug_ghost,scores={is_sneaking=0}] at @s run attribute @s sneaking_speed base set 0.3
 
 
 # Engineer
@@ -237,10 +237,13 @@ execute as @a[tag=using_camera] at @s as @n[type=armor_stand,tag=used_camera] at
 execute as @a[tag=shadow_marked] at @s run particle flame ~ ~0.5 ~ 1.5 1.5 1.5 0 1 force @a[tag=juggernaut]
 
 # Quickened Stealth
-execute as @a[tag=using_quickened_stealth] run attribute @s player.sneaking_speed modifier add juggernaut:quickened_stealth_speed 1.2 add_multiplied_base
+execute as @a[tag=using_quickened_stealth] run attribute @s sneaking_speed modifier add juggernaut:quickened_stealth_speed 1.2 add_multiplied_base
 
 scoreboard players reset @a[scores={quit=1}] health
 scoreboard players reset @a[scores={quit=1}] lives_remaining
 
 # Reset quit score
 scoreboard players set @a[scores={quit=1..}] quit 0
+
+execute as @a[tag=has_respawn_time] run effect give @s weakness infinite 255 true
+execute as @a[tag=has_respawn_time] run tag @s remove in_chase

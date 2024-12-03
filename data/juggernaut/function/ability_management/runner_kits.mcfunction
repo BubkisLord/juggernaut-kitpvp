@@ -145,7 +145,7 @@ execute if entity @a[tag=jug_ghost] run function juggernaut:ability_management/c
 # Trickster
 execute if entity @a[tag=trickster] run function juggernaut:ability_management/check_ability {\
     player_tag:"trickster",\
-    item_id:"minecraft:echo_shard",\
+    item_id:"minecraft:amethyst_shard",\
     item_name:'{"text": "Misty Step","color": "dark_aqua"}',\
     ability_id:"misty_step",\
     cooldown:25,\
@@ -155,7 +155,7 @@ execute if entity @a[tag=trickster] run function juggernaut:ability_management/c
 
 execute if entity @a[tag=trickster] run function juggernaut:ability_management/check_ability {\
     player_tag:"trickster",\
-    item_id:"minecraft:echo_shard",\
+    item_id:"minecraft:prismarine_crystals",\
     item_name:'{"text": "False Detection","color": "dark_purple"}',\
     ability_id:"false_detection",\
     cooldown:120,\

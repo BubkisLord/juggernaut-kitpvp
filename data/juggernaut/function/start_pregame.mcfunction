@@ -45,6 +45,8 @@ scoreboard players set @a damage_absorbed 0
 
 scoreboard players set @n[type=armor_stand,tag=juggernaut_manager] scout_reveal_timer 0
 
+tag @a remove in_chase
+
 
 # Pick the replenishment stations & set the number of stations needed.
 execute if score #juggernaut_customisation completable_stations matches 1 run data modify storage juggernaut:replenishment_management/pick_replenishment_stations total_stations set value 8

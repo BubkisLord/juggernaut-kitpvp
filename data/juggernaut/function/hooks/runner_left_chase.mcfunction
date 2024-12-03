@@ -1,1 +1,1 @@
-execute if entity @s[tag=using_hopeful_sprint] run function juggernaut:attribute_management/apply {"attribute_name": "movement_speed", "attribute_namespace": ", "value": 0.135,"duration":5}
+execute if entity @s[tag=using_hopeful_sprint] run function juggernaut:attribute_management/apply {"attribute_name": "movement_speed", "value": 0.135,"duration":5}

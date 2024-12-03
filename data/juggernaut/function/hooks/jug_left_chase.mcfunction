@@ -1,1 +1,1 @@
-execute if entity @s[tag=using_waiting_game] run function juggernaut:attribute_management/apply {attribute_namespace:",attribute_name:"movement_speed",value:0.140,duration:4}
+execute if entity @s[tag=using_waiting_game] run function juggernaut:attribute_management/apply {attribute_name:"movement_speed",value:0.140,duration:4}

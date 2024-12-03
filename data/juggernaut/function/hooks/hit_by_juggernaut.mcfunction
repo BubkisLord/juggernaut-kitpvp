@@ -3,7 +3,7 @@ execute if entity @s[tag=!scout] run effect give @s speed 1 0 true
 
 
 # Rapid brutality perk
-execute as @p[tag=juggernaut,distance=..5,tag=using_rapid_brutality] run function juggernaut:attribute_management/apply {attribute_namespace:",attribute_name:"movement_speed",value:0.11,duration:4}
+execute as @p[tag=juggernaut,distance=..5,tag=using_rapid_brutality] run function juggernaut:attribute_management/apply {attribute_name:"movement_speed",value:0.11,duration:4}
 
 
 # Brutal efficiency perk
