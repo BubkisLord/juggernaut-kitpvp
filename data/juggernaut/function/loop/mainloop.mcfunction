@@ -86,6 +86,7 @@ execute as @a[tag=dragon] if entity @s[scores={is_sneaking=1}] run attribute @s 
 
 
 # Hunter
+# Ambush Ability
 execute as @a[tag=jug_hunter,tag=is_hunting] at @s run particle witch ~ ~0.5 ~ 1 1 1 0.00001 3 force
 
 execute as @e[type=armor_stand,tag=hunter_remnant] if score @s var = #0 var run tp @r[tag=jug_hunter,tag=is_hunting] @s
@@ -140,17 +141,21 @@ execute as @e[type=armor_stand,tag=camera] at @s run particle white_smoke ~ ~ ~ 
 #Runner Kits
 function juggernaut:ability_management/runner_kits
 
-# Guide passive effects
+# Guide
+# Guidance Passive
 execute as @a[tag=guide,scores={is_sprinting=1..}] at @s if entity @a[tag=runner,distance=1..8,scores={is_sprinting=1..}] run effect give @a[tag=runner,distance=..8] speed 1 0 true
 
-# Escapist passive effects
-execute as @a[tag=escapist] run effect give @s speed 1 0 true
+# Escapist
+# Escape Artist Passive
+execute as @a[tag=escapist,tag=in_chase] run effect give @s speed 1 0 true
 
-# Rogue Passive Effect
+# Rogue
+# Stealth Expertise Passive
 execute as @a[tag=rogue,scores={is_sneaking=1}] run attribute @s step_height base set 1
 execute as @a[tag=rogue,scores={is_sneaking=0}] run attribute @s step_height base set 0.6
 
-# Make medic immune to glowing
+# Medic
+# Silent Support Passive
 execute as @a[tag=medic] run effect clear @s glowing
 
 # Scout passive effects
