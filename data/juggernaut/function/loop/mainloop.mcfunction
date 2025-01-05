@@ -177,6 +177,9 @@ execute as @a[tag=jug_ghost,scores={is_sneaking=1},tag=in_chase] at @s run attri
 execute as @a[tag=jug_ghost,scores={is_sneaking=0},tag=!is_not_replenishing,tag=!has_respawn_time,tag=in_chase] at @s run effect clear @s invisibility
 execute as @a[tag=jug_ghost,scores={is_sneaking=0}] at @s run attribute @s sneaking_speed base set 0.3
 
+# Cloak
+# Veil of Shadows
+execute as @a[tag=cloak,scores={is_sneaking=1},tag=!in_chase] at @s as @a[tag=runner,distance=..8] at @s run function juggernaut:effects/apply_effect_silent {effect:"undetectable",duration:1}
 
 # Engineer
 execute at @e[type=armor_stand,tag=engineer_tower] run execute as @a[tag=juggernaut,distance=..3] run particle totem_of_undying ~ ~ ~ 0.25 1 0.25 0 20 force
