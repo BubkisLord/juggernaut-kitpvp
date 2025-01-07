@@ -55,12 +55,6 @@ execute if score #juggernaut_customisation completable_stations matches 0 if sco
 
 execute if score #game_state var matches 11 run function juggernaut:replenishment_management/display_replenishment_progress
 
-
-# Effect mechanics
-# This doesn't change the attributes as this could potentially mess with the player's stats. (and kit effects)
-execute as @a[tag=is_hindered] run effect give @s slowness 1 4 true
-execute as @a[tag=is_hindered] run effect give @s speed 1 11 true
-
 scoreboard players set #runners_left var 0
 execute as @a[tag=runner] run scoreboard players add #runners_left var 1
 
