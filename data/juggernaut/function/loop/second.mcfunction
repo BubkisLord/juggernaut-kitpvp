@@ -2,7 +2,7 @@
 function juggernaut:loop/recursive_point_gaining
 
 # Progress and clear old effects.
-execute as @a run function juggernaut:effects/check_effects {effect:"bleeding"}
+execute as @a run function juggernaut:effects/check_effects {effect:"mangled"}
 execute as @a run function juggernaut:effects/check_effects {effect:"hindered"}
 execute as @a run function juggernaut:effects/check_effects {effect:"exposed"}
 execute as @a run function juggernaut:effects/check_effects {effect:"hemorrhaged"}

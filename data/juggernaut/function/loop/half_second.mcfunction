@@ -6,4 +6,9 @@ execute as @a[tag=is_healing,tag=is_being_healed] at @s run particle heart ~ ~0.
 execute as @a[tag=is_hindered] run effect give @s slowness 1 4 true
 execute as @a[tag=is_hindered] run effect give @s speed 1 11 true
 
-execute as @a[tag=is_undetectable] at @s run particle smoke ~ ~0.5 ~ 0.3 1 0.3 0 3 force @s
+# Effect particles
+execute as @a[tag=is_undetectable] at @s run particle dust{color:[0,0,0],scale:1} ~ ~0.5 ~ 0.3 1 0.3 0 10 force @s
+execute as @a[tag=is_hindered] at @s run particle dust{color:[0.6,0.6,1.0],scale:1} ~ ~0.5 ~ 0.3 1 0.3 0 10 force @s
+execute as @a[tag=is_hemorrhaged] at @s run particle dust{color:[0.4,0.0,0.0],scale:1} ~ ~0.5 ~ 0.3 1 0.3 0 10 force @s
+execute as @a[tag=is_mangled] at @s run particle dust{color:[1.0,0.4,0.4],scale:1} ~ ~0.5 ~ 0.3 1 0.3 0 10 force @s
+execute as @a[tag=is_exposed] at @s run particle dust{color:[0.8,0.0,0.0],scale:1} ~ ~0.5 ~ 0.3 1 0.3 0 10 force @s
