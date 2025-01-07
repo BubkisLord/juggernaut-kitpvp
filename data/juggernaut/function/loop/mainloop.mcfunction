@@ -35,19 +35,7 @@ execute if score #juggernaut_customisation completable_stations matches 1 run sc
 execute if score #juggernaut_customisation completable_stations matches 1 as @e[type=armor_stand,tag=replenishment.station] run function juggernaut:replenishment_management/update_highest_station
 execute unless entity @e[type=armor_stand,tag=replenishment.station,tag=highest_station] run tag @e[type=armor_stand,tag=replenishment.station,limit=1,sort=random] add highest_station
 
-# If there are no runners or juggernauts then the game will end.
-execute if score #game_state var matches 10..19 unless entity @a[tag=juggernaut] run tellraw @a {"text": "Runners win! (Juggernaut Dead/Not Found)","bold": true}
-execute if score #game_state var matches 10..19 unless entity @a[tag=juggernaut] run scoreboard players add @a[tag=runner] points 100
-execute if score #game_state var matches 10..19 unless entity @a[tag=juggernaut] run function juggernaut:end_game
-
-execute if score #game_state var matches 10..19 unless entity @a[tag=runner] run tellraw @a {"text": "Juggernaut wins! (Runners Dead/Not Found)","bold": true}
-execute if score #game_state var matches 10..19 unless entity @a[tag=runner] run scoreboard players add @a[tag=juggernaut] points 100
-execute if score #game_state var matches 10..19 unless entity @a[tag=runner] run function juggernaut:end_game
-
-#The replenish progress mode for winning the game.
-execute if score #juggernaut_customisation completable_stations matches 0 if score #game_state var matches 10..19 if score @n[type=armor_stand,tag=juggernaut_manager] replenish_progress >= @n[type=armor_stand,tag=juggernaut_manager] total_replenishment_needed run tellraw @a {"text": "Runners win! (Replenishment Complete)","bold": true}
-execute if score #juggernaut_customisation completable_stations matches 0 if score #game_state var matches 10..19 unless entity @a[tag=juggernaut] run scoreboard players add @a[tag=runner] points 100
-execute if score #juggernaut_customisation completable_stations matches 0 if score #game_state var matches 10..19 if score @n[type=armor_stand,tag=juggernaut_manager] replenish_progress >= @n[type=armor_stand,tag=juggernaut_manager] total_replenishment_needed run function juggernaut:end_game
+execute if score #juggernaut_customisation debug_mode matches 0 run function juggernaut:check_end_game
 
 # If the 5 minutes runs out, then the game ends.
 # execute if score #game_state var matches 10..19 if entity @a[tag=juggernaut,scores={juggernaut_game_time=0}] run scoreboard players add @a[tag=runner] kills 5

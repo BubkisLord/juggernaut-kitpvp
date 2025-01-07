@@ -85,3 +85,7 @@ gamerule naturalRegeneration false
 function juggernaut:perk_management/clear_prev_perks
 execute if score #juggernaut_customisation perks_enabled matches 1 run function juggernaut:perk_management/give_runner_perks
 execute if score #juggernaut_customisation perks_enabled matches 1 run function juggernaut:perk_management/give_juggernaut_perks
+
+
+# Check if debug mode should be off
+execute if score #juggernaut_customisation debug_mode matches 1 run tellraw @a [{"text": "[","bold": true,"color": "dark_gray"},{"text": "WARNING","bold": true,"color": "yellow"},{"text": "]","bold": true,"color": "dark_gray"},{"text": " Debug mode is enabled. This could cause instability and issues.","color": "yellow"},{"text": " Click here to disable it.","color": "aqua","clickEvent": {"action": "run_command","value": "/scoreboard players set #juggernaut_customisation debug_mode 0"}}]
