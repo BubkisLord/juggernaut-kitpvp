@@ -11,20 +11,10 @@ execute if score #game_state var matches 0 run function other:autorespawn
 execute if score #game_state var matches 0 run function shop:shopbrain
 execute if score #game_state var matches 0 run function tp:exit_item
 
-kill @e[type=end_crystal]
-kill @e[type=tnt_minecart]
-kill @e[type=tnt]
-kill @e[type=ghast]
-kill @e[type=creeper]
-kill @e[type=wither]
-kill @e[type=ender_dragon]
-kill @e[type=wither_skull]
-execute as @e[type=armadillo] run damage @s 1 magic
-
 # Always run
-function scoreboard:killstreak
+execute if entity @a[scores={health=..0}] as @a[scores={health=..0}] run function scoreboard:respawning
 function other:cleanup
 function text:bossbar
 function other:nether
 function other:safelobby
-function other:replenishment_stations
+execute unless score #game_state var matches 10..12 run function other:replenishment_stations

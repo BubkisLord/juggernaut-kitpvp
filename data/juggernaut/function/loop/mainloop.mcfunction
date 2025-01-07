@@ -1,17 +1,13 @@
-scoreboard players set #0 var 0
-scoreboard players set #75 var 75
-scoreboard players set #33 var 33
-scoreboard players set #100 var 100
-scoreboard players set #10 var 10
-
-# When runners are hit by the juggernaut (scout does not get this speed boost)
+# When a runner is hit by the juggernaut, run the respective hook to trigger effects.
 execute as @a[tag=runner,scores={damage_taken=1..}] at @s if entity @a[tag=juggernaut,distance=..5] run function juggernaut:hooks/hit_by_juggernaut
 execute as @a[tag=runner,scores={damage_taken=1..}] run scoreboard players set @s damage_taken 0
 
+# If a player is undetectable, remove glowing.
 execute as @a[tag=is_undetectable] run effect clear @s glowing
 
-execute at @e[tag=respawn_point] as @a[distance=..10] at @r[tag=juggernaut] run tp @s @e[type=armor_stand,tag=arena.spawn,limit=1,sort=random,distance=30..]
+execute at @e[tag=respawn_point] as @a[distance=..10] at @r[tag=juggernaut] if entity @e[type=armor_stand,tag=arena.spawn,distance=30..] run tp @s @e[type=armor_stand,tag=arena.spawn,limit=1,sort=random,distance=30..]
 
+# Check if players are in chase.
 execute if score #game_state var matches 11 run function juggernaut:chase/check_in_chase
 
 execute if score #game_state var matches 11 as @a[tag=runner] at @s if entity @e[type=armor_stand,tag=replenishment.station,distance=..3] run function juggernaut:replenishment_management/calculate_replenishment_modifier
@@ -19,29 +15,14 @@ execute if score #game_state var matches 11 run function juggernaut:replenishmen
 # While juggernaut is not released, disallow all interactions with replenishment stations but allow for runners to see them.
 execute if score #game_state var matches 12 as @e[tag=replenishment.station] at @s run particle minecraft:end_rod ~ ~2.5 ~ 0.2 60 0.2 0 60 force @a[tag=runner]
 
-execute if score #game_state var matches 10 as @n[type=armor_stand,tag=runner_kit_selection_room] at @s run particle campfire_cosy_smoke ~ ~1 ~ 7 1 7 0.00001 1 force
-execute if score #game_state var matches 10 as @n[type=armor_stand,tag=runner_kit_selection_room] at @s run effect give @a[distance=..30] weakness 1 255 true
-
-execute if score #game_state var matches 10 as @n[type=armor_stand,tag=juggernaut_kit_selection_room] at @s run particle ash ~ ~1 ~ 7 1 7 0.00001 5 force
-execute if score #game_state var matches 10 as @n[type=armor_stand,tag=juggernaut_kit_selection_room] at @s run particle white_ash ~ ~1 ~ 7 1 7 0.00001 5 force
-execute if score #game_state var matches 10 as @n[type=armor_stand,tag=juggernaut_kit_selection_room] at @s run particle crimson_spore ~ ~1 ~ 7 1 7 0.00001 5 force
-
-execute if score #game_state var matches 10 as @n[type=armor_stand,tag=juggernaut_kit_selection_room] at @s run effect give @a[distance=..30] weakness 1 255 true
-
-execute unless entity @a[tag=!has_jug_kit] if score #game_state var matches 10 run function juggernaut:start_juggernaut
+execute if score #game_state var matches 10 run function juggernaut:loop/display_lobby_particles
 
 # Get the highest replenished station.
 execute if score #juggernaut_customisation completable_stations matches 1 run scoreboard players set #highest_station var 0
 execute if score #juggernaut_customisation completable_stations matches 1 as @e[type=armor_stand,tag=replenishment.station] run function juggernaut:replenishment_management/update_highest_station
-execute unless entity @e[type=armor_stand,tag=replenishment.station,tag=highest_station] run tag @e[type=armor_stand,tag=replenishment.station,limit=1,sort=random] add highest_station
+execute if score #juggernaut_customisation completable_stations matches 1 unless entity @e[type=armor_stand,tag=highest_station] run tag @e[type=armor_stand,tag=replenishment.station,limit=1,sort=random] add highest_station
 
 execute if score #juggernaut_customisation debug_mode matches 0 run function juggernaut:check_end_game
-
-# If the 5 minutes runs out, then the game ends.
-# execute if score #game_state var matches 10..19 if entity @a[tag=juggernaut,scores={juggernaut_game_time=0}] run scoreboard players add @a[tag=runner] kills 5
-# execute if score #game_state var matches 10..19 if entity @a[tag=juggernaut,scores={juggernaut_game_time=0}] run function juggernaut:end_game
-
-execute if score #game_state var matches 11 run function juggernaut:replenishment_management/display_replenishment_progress
 
 scoreboard players set #runners_left var 0
 execute as @a[tag=runner] run scoreboard players add #runners_left var 1
@@ -49,155 +30,29 @@ execute as @a[tag=runner] run scoreboard players add #runners_left var 1
 # Jug Kits
 function juggernaut:ability_management/juggernaut_kits
 
-
-# Dragon
-execute as @a[tag=dragon] at @s if entity @e[type=item,nbt={Item:{id:"minecraft:feather"}},distance=..3] run tag @s remove is_floating
-execute as @a[tag=dragon] at @s if entity @e[type=item,nbt={Item:{id:"minecraft:feather"}},distance=..3] run item replace entity @s hotbar.0 with phantom_membrane[item_name='{"text": "Flight","bold": true,"color": "green"}']
-execute as @a[tag=dragon] at @s as @e[type=item,nbt={Item:{id:"minecraft:feather"}},distance=..3] run kill @s
-execute as @a[tag=dragon] at @s if entity @e[type=item,nbt={Item:{id:"minecraft:phantom_membrane"}},distance=..3] run tag @s add is_floating
-execute as @a[tag=dragon] at @s if entity @e[type=item,nbt={Item:{id:"minecraft:phantom_membrane"}},distance=..3] run item replace entity @s hotbar.0 with feather[item_name='{"text": "Walk","bold": true,"color": "dark_green"}']
-execute as @a[tag=dragon] at @s as @e[type=item,nbt={Item:{id:"minecraft:phantom_membrane"}},distance=..3] run kill @s
-
-execute as @a[tag=dragon] run attribute @s safe_fall_distance base set 999
-execute as @a[tag=dragon] at @s if block ~ ~-5 ~ #juggernaut:non-surface_blocks run attribute @s gravity base set 0.005
-execute as @a[tag=dragon] at @s unless block ~ ~-5 ~ #juggernaut:non-surface_blocks run attribute @s gravity base set -0.015
-execute as @a[tag=dragon] at @s if block ~ ~-6 ~ #juggernaut:non-surface_blocks unless block ~ ~-5 ~ #juggernaut:non-surface_blocks run attribute @s gravity base set 0
-execute as @a[tag=dragon] at @s unless block ~ ~-0.75 ~ #juggernaut:non-surface_blocks run attribute @s gravity base set 0.08
-execute as @a[tag=dragon,nbt={Inventory:[{id:"minecraft:feather",count:1}]}] run attribute @s gravity base set -0.01
-execute as @a[tag=dragon] if entity @s[scores={is_sneaking=1}] run attribute @s gravity base set 0.01
-
-
-# Hunter
-# Ambush Ability
-execute as @a[tag=jug_hunter,tag=is_hunting] at @s run particle witch ~ ~0.5 ~ 1 1 1 0.00001 3 force
-
-execute as @e[type=armor_stand,tag=hunter_remnant] if score @s var = #0 var run tp @r[tag=jug_hunter,tag=is_hunting] @s
-
-execute as @e[type=armor_stand,tag=hunter_remnant] if score @s var = #0 var run tag @a[tag=jug_hunter,tag=is_hunting] remove is_hunting
-execute as @e[type=armor_stand,tag=hunter_remnant] if score @s var = #0 var run tag @a[tag=has_hunters_mark] remove has_hunters_mark
-execute as @e[type=armor_stand,tag=hunter_remnant] if score @s var = #0 var run execute as @a[tag=jug_hunter,tag=is_hunting] at @s run particle campfire_cosy_smoke ~ ~0.5 ~ 1 1 1 0.00001 100 force
-execute as @e[type=armor_stand,tag=hunter_remnant] if score @s var = #0 var run execute as @a[tag=jug_hunter,tag=is_hunting] at @s run playsound entity.enderman.teleport master @a[distance=..20] ~ ~ ~
-execute as @e[type=armor_stand,tag=hunter_remnant] if score @s var = #0 var run kill @s
-
-execute as @a[tag=has_hunters_mark,tag=!has_respawn_time,tag=!is_undetectable] at @s run particle minecraft:trial_spawner_detection ~ ~-0.5 ~ 1 1.5 1 0 4 force @a[tag=jug_hunter]
-
-# Lightning rod
-execute as @e[type=item,nbt={Item:{id:"minecraft:lightning_rod"}}] run execute as @r[tag=runner] run effect give @s glowing 4 0 true
-execute as @e[type=item,nbt={Item:{id:"minecraft:lightning_rod"}}] run kill @s
-
-# Predator Functionality
-execute if entity @a[tag=predator] run effect give @a[tag=runner] darkness infinite 0 true
-execute as @a[tag=predator] at @s unless entity @s[scores={is_sneaking=1}] run particle white_ash ~ ~0.5 ~ 3 3 3 0.0001 30 force @a[tag=!predator]
-execute as @a[tag=predator] at @s unless entity @s[scores={is_sneaking=1}] run particle ash ~ ~1 ~ 0.25 0.5 0.25 0.0001 100 force @a[tag=!predator]
-# execute as @a[tag=predator] at @s if entity @s[scores={is_sneaking=1}] run effect give @s speed 1 0 true
-# execute at @a[tag=predator] as @a[tag=runner,distance=..4] if score #game_state var matches 11 var run effect give @s blindness 4 3 true
-
-# Warlock
-execute unless entity @e[type=armor_stand,tag=warlock_armor_stand,tag=malevolent_aura] run bossbar set warlock:malevolent_aura visible false
-execute unless entity @e[type=armor_stand,tag=warlock_armor_stand,tag=banishment_glyph] run bossbar set warlock:banishment_glyph visible false
-execute unless entity @e[type=armor_stand,tag=warlock_armor_stand,tag=withering_surge] run bossbar set warlock:withering_surge visible false
-
-#Particle effects
-execute at @e[type=armor_stand,tag=malevolent_aura] run particle dripping_lava ~ ~ ~ 16 8 16 0.00001 20 force @a[distance=..16]
-# execute as @e[type=armor_stand,tag=malevolent_aura] at @s run function juggernaut:malevolent_sphere_recursive
-execute at @e[type=armor_stand,tag=banishment_glyph] run particle dripping_water ~ ~ ~ 16 8 16 0 20 force @a[distance=..16]
-# execute as @e[type=armor_stand,tag=banishment_glyph] at @s run function juggernaut:banishment_sphere_recursive
-execute at @e[type=armor_stand,tag=withering_surge] run particle large_smoke ~ ~ ~ 16 8 16 0.00001 10 force @a[distance=..14]
-# execute as @e[type=armor_stand,tag=withering_surge] at @s run function juggernaut:withering_sphere_recursive
-
-execute at @e[type=armor_stand,tag=warlock_armor_stand] if entity @a[tag=runner,distance=..3] run particle totem_of_undying ~ ~0.75 ~ 0.25 0.5 0.25 0 10 force
-
-#Sound effects
-execute at @e[tag=warlock_armor_stand] as @a[distance=..16] run function abilities:aura_sound
-
-#Warlock aura effects
-execute if entity @e[type=armor_stand,tag=malevolent_aura] run function juggernaut:abilities/warlock/tower_effects/malevolent_aura
-execute if entity @e[type=armor_stand,tag=withering_surge] run function juggernaut:abilities/warlock/tower_effects/withering_surge
-
-execute if entity @e[type=armor_stand,tag=warlock_armor_stand] run function juggernaut:abilities/warlock/warlock_towers
-
-# Eclipse Stalker
-execute as @e[type=armor_stand,tag=camera] at @s run particle white_smoke ~ ~ ~ 0.25 0.25 0.25 0 10 force @a
-
-
 #Runner Kits
 function juggernaut:ability_management/runner_kits
 
-# Guide
-# Guidance Passive
-execute as @a[tag=guide,scores={is_sprinting=1..}] at @s if entity @a[tag=runner,distance=1..8,scores={is_sprinting=1..}] run effect give @a[tag=runner,distance=..8] speed 1 0 true
-
-# Escapist
-# Escape Artist Passive
-execute as @a[tag=escapist,tag=in_chase] run effect give @s speed 1 0 true
-
-# Rogue
-# Stealth Expertise Passive
-execute as @a[tag=rogue,scores={is_sneaking=1}] run attribute @s step_height base set 1
-execute as @a[tag=rogue,scores={is_sneaking=0}] run attribute @s step_height base set 0.6
-
-# Medic
-# Silent Support Passive
-execute as @a[tag=medic] run effect clear @s glowing
-
-# Scout passive effects
-execute as @a[tag=scout] run scoreboard players add @n[tag=juggernaut_manager] scout_reveal_timer 1
-execute as @a[tag=juggernaut_manager,scores={scout_reveal_timer=1200..}] run effect give @a[tag=juggernaut] glowing 16 0 true
-execute as @a[tag=juggernaut_manager,scores={scout_reveal_timer=1200..}] run scoreboard players set @a[tag=juggernaut_manager] scout_reveal_timer 0
-
-
-# Survivor effects
-execute as @a[tag=survivor] run effect give @s resistance 1 0 true
-execute as @a[tag=survivor] run attribute @s max_health base set 40
-
-
-execute as @a[tag=survivor] at @s as @e[type=snowball,distance=..3] run tag @s add ice_bomb
-execute as @e[type=snowball,tag=ice_bomb] at @s run particle electric_spark ~ ~ ~ 1 1 1 0.00001 60 force
-execute as @e[type=snowball,tag=ice_bomb] at @s run effect give @a[tag=juggernaut,distance=..2] slowness 8 255 true
-
-
-# Ghost
-execute as @a[tag=jug_ghost,scores={is_sneaking=1},tag=in_chase] at @s run effect give @s invisibility 1 0 false
-execute as @a[tag=jug_ghost,scores={is_sneaking=1},tag=in_chase] at @s run function juggernaut:effects/apply_effect_silent {effect:"undetectable",duration:1}
-
-execute as @a[tag=jug_ghost,scores={is_sneaking=1},tag=in_chase] at @s run attribute @s sneaking_speed base set 0
-execute as @a[tag=jug_ghost,scores={is_sneaking=0},tag=!is_not_replenishing,tag=!has_respawn_time,tag=in_chase] at @s run effect clear @s invisibility
-execute as @a[tag=jug_ghost,scores={is_sneaking=0}] at @s run attribute @s sneaking_speed base set 0.3
-
-# Cloak
-# Veil of Shadows
-execute as @a[tag=cloak,scores={is_sneaking=1},tag=!in_chase] at @s as @a[tag=runner,distance=..8] at @s run function juggernaut:effects/apply_effect_silent {effect:"undetectable",duration:1}
-
-# Engineer
-execute at @e[type=armor_stand,tag=engineer_tower] run execute as @a[tag=juggernaut,distance=..3] run particle totem_of_undying ~ ~ ~ 0.25 1 0.25 0 20 force
-
-execute as @e[type=skeleton,tag=skeleton_turret] unless entity @e[type=armor_stand,tag=turret] run kill @s
-execute as @e[type=skeleton,tag=skeleton_turret] at @s run tp @s @n[type=armor_stand,tag=turret]
-
-execute at @e[type=armor_stand,tag=replenishment_tower_particle_emitter] unless entity @e[type=armor_stand,tag=replenishment_tower,distance=..5] run kill @e[type=armor_stand,tag=replenishment_tower_particle_emitter]
-
-execute as @e[type=armor_stand,tag=revealing_tower] at @s if entity @a[tag=juggernaut,distance=..8] run data modify entity @s CustomNameVisible set value true
-execute as @e[type=armor_stand,tag=revealing_tower] at @s unless entity @a[tag=juggernaut,distance=..8] run data modify entity @s CustomNameVisible set value false
-
-execute as @e[type=armor_stand,tag=replenishment_tower_particle_emitter] at @s run particle dust{color:[1,1,0],scale:1} ^0.75 ^ ^0.75 0.1 0.1 0.1 0.4 4 normal
-execute as @e[type=armor_stand,tag=replenishment_tower_particle_emitter] at @s run particle dust{color:[0,1,1],scale:1} ^-0.75 ^1 ^-0.75 0.1 0.1 0.1 0.4 4 normal
-execute as @e[type=armor_stand,tag=replenishment_tower] at @s positioned ~ ~-1 ~ run execute as @e[type=armor_stand,tag=replenishment_tower_particle_emitter,distance=..2] unless entity @s[distance=..1] run tp @s ~ ~-0.5 ~
-execute as @e[type=armor_stand,tag=replenishment_tower_particle_emitter] at @s run tp @s ~ ~0.005 ~ ~10 ~
-
-execute as @a[tag=borrowing_time] run effect give @s resistance 1 255 true
-execute as @a[tag=borrowing_time] run scoreboard players operation @s borrowed_damage_taken /= #10 var
-execute as @a[tag=borrowing_time] run scoreboard players operation @s borrowed_damage += @s borrowed_damage_taken
-execute as @a[tag=borrowing_time] run scoreboard players set @s borrowed_damage_taken 0
-execute as @a[tag=borrowing_time,scores={borrowed_time_remaining=..0}] run scoreboard players operation @s borrowed_damage *= #75 var
-execute as @a[tag=borrowing_time,scores={borrowed_time_remaining=..0}] run scoreboard players operation @s borrowed_damage /= #100 var
-execute as @a[tag=borrowing_time,scores={borrowed_time_remaining=..0}] run tag @s remove borrowing_time
+execute if entity @a[tag=guide] run function juggernaut:loop/kits_loop/guide
+execute if entity @a[tag=escapist] run function juggernaut:loop/kits_loop/escapist
+execute if entity @a[tag=rogue] run function juggernaut:loop/kits_loop/rogue
+execute if entity @a[tag=medic] run function juggernaut:loop/kits_loop/medic
+execute if entity @a[tag=scout] run function juggernaut:loop/kits_loop/scout
+execute if entity @a[tag=survivor] run function juggernaut:loop/kits_loop/survivor
+execute if entity @a[tag=dragon] run function juggernaut:loop/kits_loop/dragon
+execute if entity @a[tag=jug_hunter] run function juggernaut:loop/kits_loop/hunter
+execute if entity @a[tag=warlock] run function juggernaut:loop/kits_loop/warlock
+execute if entity @a[tag=jug_ghost] run function juggernaut:loop/kits_loop/ghost
+execute if entity @a[tag=cloak] run function juggernaut:loop/kits_loop/cloak
+execute if entity @a[tag=engineer] run function juggernaut:loop/kits_loop/engineer
+execute if entity @a[tag=predator] run function juggernaut:loop/kits_loop/predator
 
 # Loop per second function.
-execute as @e[type=armor_stand,tag=juggernaut_manager] run scoreboard players add @s tick_counter 1
-execute as @e[type=armor_stand,tag=juggernaut_manager] if score @s tick_counter >= #20 var run function juggernaut:loop/second
-execute as @e[type=armor_stand,tag=juggernaut_manager] if score @s tick_counter = #20 var run function juggernaut:loop/half_second
-execute as @e[type=armor_stand,tag=juggernaut_manager] if score @s tick_counter = #10 var run function juggernaut:loop/half_second
-execute as @e[type=armor_stand,tag=juggernaut_manager] if score @s tick_counter >= #20 var run scoreboard players set @s tick_counter 0
+scoreboard players add #tick_counter var 1
+execute if score #tick_counter var >= #20 var run function juggernaut:loop/second
+execute if score #tick_counter var = #20 var run function juggernaut:loop/half_second
+execute if score #tick_counter var = #10 var run function juggernaut:loop/half_second
+execute if score #tick_counter var >= #20 var run scoreboard players set #tick_counter var 0
 
 # Set healing needed
 execute as @a[tag=runner] run function juggernaut:healing/set_healing_needed
@@ -209,31 +64,15 @@ execute as @a[tag=runner,scores={is_sneaking=0,is_sprinting=0}] at @s if entity 
 execute as @a[tag=runner,scores={is_sneaking=1}] at @s if score @s health < @s max_health run function juggernaut:healing/check_self_heal
 
 # Hemorrhaged Mechanic
-execute as @a[tag=is_hemorrhaged,tag=!is_being_healed,tag=!self_healing] at @s run function juggernaut:healing/force_unheal_player {amount:1}
+execute if entity @a[tag=is_hemorrhaged] as @a[tag=is_hemorrhaged,tag=!is_being_healed,tag=!self_healing] at @s run function juggernaut:healing/force_unheal_player {amount:1}
 
 # Mangled Mechanic
-execute as @a[tag=is_mangled,tag=is_being_healed,tag=!self_healing] at @s run function juggernaut:healing/force_unheal_player {amount:4}
-execute as @a[tag=is_mangled,tag=is_being_healed,tag=self_healing] at @s run function juggernaut:healing/force_unheal_player {amount:1}
+execute if entity @a[tag=is_mangled] as @a[tag=is_mangled,tag=is_being_healed,tag=!self_healing] at @s run function juggernaut:healing/force_unheal_player {amount:4}
+execute if entity @a[tag=is_mangled] as @a[tag=is_mangled,tag=is_being_healed,tag=self_healing] at @s run function juggernaut:healing/force_unheal_player {amount:1}
 
 # Remove tags to keep all data current
-execute as @a[tag=runner,tag=is_healing] run tag @s remove is_healing
-execute as @a[tag=runner,tag=self_healing] run tag @s remove self_healing
-execute as @a[tag=runner,tag=is_being_healed] run tag @s remove is_being_healed
+execute if entity @a[tag=runner,tag=is_healing] as @a[tag=runner,tag=is_healing] run tag @s remove is_healing
+execute if entity @a[tag=runner,tag=is_healing] as @a[tag=runner,tag=self_healing] run tag @s remove self_healing
+execute if entity @a[tag=runner,tag=is_healing] as @a[tag=runner,tag=is_being_healed] run tag @s remove is_being_healed
 
 scoreboard players set @a[scores={is_sneaking=1..}] is_sneaking 0
-
-
-execute as @a[tag=using_camera] at @s as @n[type=armor_stand,tag=used_camera] at @s run tp @p[tag=using_camera] ~ ~ ~
-execute as @a[tag=shadow_marked] at @s run particle flame ~ ~0.5 ~ 1.5 1.5 1.5 0 1 force @a[tag=juggernaut]
-
-# Quickened Stealth
-execute as @a[tag=using_quickened_stealth] run attribute @s sneaking_speed modifier add juggernaut:quickened_stealth_speed 1.2 add_multiplied_base
-
-scoreboard players reset @a[scores={quit=1}] health
-scoreboard players reset @a[scores={quit=1}] lives_remaining
-
-# Reset quit score
-scoreboard players set @a[scores={quit=1..}] quit 0
-
-execute as @a[tag=has_respawn_time] run effect give @s weakness infinite 255 true
-execute as @a[tag=has_respawn_time] run tag @s remove in_chase

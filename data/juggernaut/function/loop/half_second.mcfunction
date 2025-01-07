@@ -12,3 +12,10 @@ execute as @a[tag=is_hindered] at @s run particle dust{color:[0.6,0.6,1.0],scale
 execute as @a[tag=is_hemorrhaged] at @s run particle dust{color:[0.4,0.0,0.0],scale:1} ~ ~0.5 ~ 0.3 1 0.3 0 10 force @s
 execute as @a[tag=is_mangled] at @s run particle dust{color:[1.0,0.4,0.4],scale:1} ~ ~0.5 ~ 0.3 1 0.3 0 10 force @s
 execute as @a[tag=is_exposed] at @s run particle dust{color:[0.8,0.0,0.0],scale:1} ~ ~0.5 ~ 0.3 1 0.3 0 10 force @s
+
+# Display replenishment progress.
+execute if score #game_state var matches 11 run function juggernaut:replenishment_management/display_replenishment_progress
+
+# Give respawn time effect
+execute as @a[tag=has_respawn_time] run effect give @s weakness infinite 255 true
+execute as @a[tag=has_respawn_time] run tag @s remove in_chase

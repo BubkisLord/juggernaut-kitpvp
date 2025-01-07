@@ -1,6 +1,15 @@
 # Point gaining
 function juggernaut:loop/recursive_point_gaining
 
+# Start game when ready.
+execute if score #game_state var matches 10 unless entity @a[tag=!has_jug_kit] run function juggernaut:start_juggernaut
+
+# Stop players from doing damage to each other.
+execute if score #game_state var matches 10 run effect give @a weakness 1 255 true
+
+# Quickened Stealth
+execute if entity @a[tag=using_quickened_stealth] as @a[tag=using_quickened_stealth] run attribute @s sneaking_speed modifier add juggernaut:quickened_stealth_speed 1.2 add_multiplied_base
+
 # Progress and clear old effects.
 execute as @a run function juggernaut:effects/check_effects {effect:"mangled"}
 execute as @a run function juggernaut:effects/check_effects {effect:"hindered"}
