@@ -1,3 +1,5 @@
+execute as @a[tag=spirit_walker] run effect clear @a invisibility
+execute as @a[tag=spirit_walker] run effect clear @s speed
 execute as @a[tag=spirit_walker] run attribute @s step_height base set 0.6
 execute as @a[tag=spirit_walker] run attribute @s jump_strength base set 0.4199999
 execute as @a[tag=spirit_walker] run item replace entity @s armor.head with diamond_helmet[unbreakable={}]
