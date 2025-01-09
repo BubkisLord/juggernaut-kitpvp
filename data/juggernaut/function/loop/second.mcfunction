@@ -137,6 +137,12 @@ execute as @a[tag=dragon] run function juggernaut:raycasts/raycast {\
     collides_with_blocks:1,\
 }
 
+# Predator Sound Addition
+execute if entity @a[tag=predator] store result score #predator_rand_val var run random value 0..99
+execute if entity @a[tag=predator] if score #predator_rand_val var matches 0 as @a at @s run playsound block.bell.resonate master @s ~ ~ ~ 2 0.3
+execute if entity @a[tag=predator] if score #predator_rand_val var matches 1 as @a at @s run playsound entity.player.attack.crit master @s ^ ^ ^-1 1 1
+execute if entity @a[tag=predator] if score #predator_rand_val var matches 1 as @a at @s run playsound entity.player.hurt master @s ~ ~ ~ 1.5 1
+
 # Predatory Instincts Perk
 execute as @a[tag=juggernaut,tag=using_predatory_instincts,scores={is_walking=0,is_sprinting=0,is_crouch_walking=0}] at @s as @a[tag=runner,tag=!is_undetectable,distance=..8] run effect give @s glowing 1 0 true
 
