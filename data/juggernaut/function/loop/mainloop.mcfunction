@@ -27,25 +27,37 @@ execute if score #juggernaut_customisation debug_mode matches 0 run function jug
 scoreboard players set #runners_left var 0
 execute as @a[tag=runner] run scoreboard players add #runners_left var 1
 
-# Jug Kits
-function juggernaut:ability_management/juggernaut_kits
-
-#Runner Kits
-function juggernaut:ability_management/runner_kits
-
+# Runner Kits
 execute if entity @a[tag=guide] run function juggernaut:loop/kits_loop/guide
 execute if entity @a[tag=escapist] run function juggernaut:loop/kits_loop/escapist
 execute if entity @a[tag=rogue] run function juggernaut:loop/kits_loop/rogue
 execute if entity @a[tag=medic] run function juggernaut:loop/kits_loop/medic
 execute if entity @a[tag=scout] run function juggernaut:loop/kits_loop/scout
 execute if entity @a[tag=survivor] run function juggernaut:loop/kits_loop/survivor
-execute if entity @a[tag=dragon] run function juggernaut:loop/kits_loop/dragon
-execute if entity @a[tag=jug_hunter] run function juggernaut:loop/kits_loop/hunter
-execute if entity @a[tag=warlock] run function juggernaut:loop/kits_loop/warlock
 execute if entity @a[tag=jug_ghost] run function juggernaut:loop/kits_loop/ghost
 execute if entity @a[tag=cloak] run function juggernaut:loop/kits_loop/cloak
 execute if entity @a[tag=engineer] run function juggernaut:loop/kits_loop/engineer
+execute if entity @a[tag=trickster] run function juggernaut:loop/kits_loop/trickster
+execute if entity @a[tag=harbinger] run function juggernaut:loop/kits_loop/harbinger
+
+# Juggernaut Kits
+execute if entity @a[tag=dragon] run function juggernaut:loop/kits_loop/dragon
+execute if entity @a[tag=jug_hunter] run function juggernaut:loop/kits_loop/hunter
+execute if entity @a[tag=warlock] run function juggernaut:loop/kits_loop/warlock
 execute if entity @a[tag=predator] run function juggernaut:loop/kits_loop/predator
+execute if entity @a[tag=chain_hunter] run function juggernaut:loop/kits_loop/chain_hunter
+execute if entity @a[tag=spirit_walker] run function juggernaut:loop/kits_loop/spirit_walker
+execute if entity @a[tag=witchdoctor] run function juggernaut:loop/kits_loop/witchdoctor
+
+execute if entity @a[tag=using_beacon_of_hope] run function juggernaut:ability_management/check_ability {\
+    player_tag:"using_beacon_of_hope",\
+    item_id:"minecraft:beacon",\
+    item_name:'{"text": "Beacon of Hope","color": "aqua"}',\
+    ability_id:"beacon_of_hope",\
+    cooldown:999999,\
+    hotbar_slot:"hotbar.8",\
+    cooldown_var:"beacon_of_hope_cooldown",\
+}
 
 # Loop per second function.
 scoreboard players add #tick_counter var 1

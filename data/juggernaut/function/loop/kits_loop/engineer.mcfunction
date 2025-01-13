@@ -15,9 +15,54 @@ execute as @e[type=armor_stand,tag=replenishment_tower] at @s positioned ~ ~-1 ~
 execute as @e[type=armor_stand,tag=replenishment_tower_particle_emitter] at @s run tp @s ~ ~0.005 ~ ~10 ~
 
 execute as @a[tag=borrowing_time] run effect give @s resistance 1 255 true
-execute as @a[tag=borrowing_time] run scoreboard players operation @s borrowed_damage_taken /= #10 var
+execute as @a[tag=borrowing_time,scores={borrowed_damage_taken=1..}] run scoreboard players operation @s borrowed_damage_taken /= #10 var
 execute as @a[tag=borrowing_time] run scoreboard players operation @s borrowed_damage += @s borrowed_damage_taken
 execute as @a[tag=borrowing_time] run scoreboard players set @s borrowed_damage_taken 0
 execute as @a[tag=borrowing_time,scores={borrowed_time_remaining=..0}] run scoreboard players operation @s borrowed_damage *= #75 var
 execute as @a[tag=borrowing_time,scores={borrowed_time_remaining=..0}] run scoreboard players operation @s borrowed_damage /= #100 var
 execute as @a[tag=borrowing_time,scores={borrowed_time_remaining=..0}] run tag @s remove borrowing_time
+
+
+# Spawn Revealing Tower (Active)
+execute if entity @a[tag=engineer] run function juggernaut:ability_management/check_ability {\
+    player_tag:"engineer",\
+    item_id:"minecraft:gold_block",\
+    item_name:'{"text": "Spawn Revealing Tower","color": "gold"}',\
+    ability_id:"revealing_tower",\
+    cooldown:90,\
+    hotbar_slot:"hotbar.0",\
+    cooldown_var:"revealing_tower_cooldown",\
+}
+
+# Spawn Replenishment Tower (Active)
+execute if entity @a[tag=engineer] run function juggernaut:ability_management/check_ability {\
+    player_tag:"engineer",\
+    item_id:"minecraft:lime_dye",\
+    item_name:'{"text": "Spawn Replenishment Tower","color": "green"}',\
+    ability_id:"replenishment_tower",\
+    cooldown:60,\
+    hotbar_slot:"hotbar.1",\
+    cooldown_var:"replenishment_tower_cooldown",\
+}
+
+# Spawn Turret (Active)
+execute if entity @a[tag=engineer] run function juggernaut:ability_management/check_ability {\
+    player_tag:"engineer",\
+    item_id:"minecraft:bone",\
+    item_name:'{"text": "Spawn Turret","color": "gray"}',\
+    ability_id:"turret_tower",\
+    cooldown:90,\
+    hotbar_slot:"hotbar.2",\
+    cooldown_var:"turret_cooldown",\
+}
+
+# Borrowed Time (Active)
+execute if entity @a[tag=engineer] run function juggernaut:ability_management/check_ability {\
+    player_tag:"engineer",\
+    item_id:"minecraft:clock",\
+    item_name:'{"text": "Borrowed Time","color": "gold"}',\
+    ability_id:"borrowed_time",\
+    cooldown:120,\
+    hotbar_slot:"hotbar.3",\
+    cooldown_var:"jug_kit_cooldown",\
+}
