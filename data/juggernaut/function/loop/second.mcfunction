@@ -44,6 +44,7 @@ execute if score #juggernaut_customisation debug_mode matches 0 if entity @a[tag
 execute if score #juggernaut_customisation debug_mode matches 0 if entity @a[tag=juggernaut,scores={juggernaut_release_timer=0}] as @a[tag=runner] at @s run playsound minecraft:block.end_portal.spawn master @s ~ ~ ~ 0.4 0.1
 execute as @p[tag=juggernaut,scores={juggernaut_release_timer=0}] run scoreboard players set #game_state var 11
 
+execute as @e[type=armor_stand,tag=replenishment.station] at @s if entity @a[tag=runner,distance=..6,tag=!is_undetectable] if score @s replenish_timeout = #6 var run tag @s remove apply_undetectable
 execute as @e[type=armor_stand,tag=replenishment.station] if score @s replenish_timeout >= #0 var run scoreboard players remove @s replenish_timeout 1
 execute as @e[type=armor_stand,tag=replenishment.station] if score @s replenish_timeout = #0 var run tag @s remove apply_undetectable
 
