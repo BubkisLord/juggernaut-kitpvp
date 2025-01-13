@@ -9,7 +9,8 @@ scoreboard players set @a[tag=juggernaut] juggernaut_release_timer 25
 
 tag @a remove in_chase
 
-tp @a[tag=runner] @e[type=armor_stand,tag=arena.spawn,limit=1,sort=random]
+execute if entity @a[tag=runner] run tp @a[tag=runner] @e[type=armor_stand,tag=arena.spawn,limit=1,sort=random]
+execute if score #juggernaut_customisation debug_mode matches 1 run tp @a[tag=juggernaut] @e[type=armor_stand,tag=arena.spawn,limit=1,sort=random]
 
 execute store result score @a[tag=survivor] lives run scoreboard players get #juggernaut_count var
 scoreboard players add @a[tag=survivor] lives 2
