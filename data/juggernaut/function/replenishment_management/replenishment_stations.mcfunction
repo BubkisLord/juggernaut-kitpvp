@@ -6,7 +6,7 @@ execute as @e[type=armor_stand,tag=replenishment.station] at @s if score #game_s
 # Display replenishment stations to the runners.
 execute as @e[type=armor_stand,tag=replenishment.station] at @s run particle minecraft:totem_of_undying ~ ~2.5 ~ 0.2 60 0.2 0 120 force @a[tag=runner]
 
-execute as @a[tag=is_undetectable] run tag @e[type=armor_stand,tag=replenishment.station,distance=..6] add apply_undetectable
+execute as @a[tag=is_undetectable] at @s run tag @e[type=armor_stand,tag=replenishment.station,distance=..6] add apply_undetectable
 
 # display purple particles for jugs
 execute as @e[type=armor_stand,tag=replenishment.station,tag=!apply_undetectable] at @s if entity @a[tag=juggernaut,limit=1,sort=nearest,distance=0..24] if entity @s[scores={replenish_timeout=1..}] run particle minecraft:witch ~ ~2.5 ~ 0.2 60 0.2 0 120 force @a[tag=!runner]
