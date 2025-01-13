@@ -10,7 +10,7 @@ execute as @a[tag=is_undetectable] at @s run tag @e[type=armor_stand,tag=repleni
 
 # display purple particles for jugs
 execute as @e[type=armor_stand,tag=replenishment.station,tag=!apply_undetectable] at @s if entity @a[tag=juggernaut,limit=1,sort=nearest,distance=0..24] if entity @s[scores={replenish_timeout=1..}] run particle minecraft:witch ~ ~2.5 ~ 0.2 60 0.2 0 120 force @a[tag=!runner]
-execute as @e[type=armor_stand,tag=replenishment.station,tag=apply_undetectable] at @s if entity @a[tag=juggernaut,limit=1,sort=nearest,distance=0..8] if entity @s[scores={replenish_timeout=1..}] run particle minecraft:witch ~ ~2.5 ~ 0.2 60 0.2 0 120 force @a[tag=!runner]
+execute as @e[type=armor_stand,tag=replenishment.station,tag=apply_undetectable] at @s if entity @a[tag=juggernaut,limit=1,sort=nearest,distance=0..6] if entity @s[scores={replenish_timeout=1..}] run particle minecraft:witch ~ ~2.5 ~ 0.2 60 0.2 0 120 force @a[tag=!runner]
 # display purple particles for rogues (because they alone have a radius of 24 blocks)
 execute as @e[type=armor_stand,tag=replenishment.station] at @s if entity @a[tag=juggernaut,limit=1,sort=nearest,distance=0..24] unless entity @a[tag=predator,scores={is_sneaking=1}] if entity @s[scores={replenish_timeout=1..}] run particle minecraft:witch ~ ~2.5 ~ 0.2 60 0.2 0 120 force @a[tag=rogue]
 # display purple particles for all other runners
