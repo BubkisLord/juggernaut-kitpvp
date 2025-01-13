@@ -9,7 +9,7 @@ item replace entity @s armor.head with light_blue_stained_glass[item_name='{"tex
 item replace entity @s armor.chest with leather_chestplate[item_name='{"text":"Tunic of Wind","color":"dark_purple","italic":false}',lore=['{"text":"Made from breathable leather.","color":"dark_gray"}'],dyed_color=3912173,unbreakable={},hide_additional_tooltip={}]
 item replace entity @s armor.legs with leather_leggings[item_name='{"text":"Fireproof Pants","color":"dark_purple","italic":false}',lore=['{"text":"Stay strong, even in lava!","color":"dark_gray"}'],dyed_color=3912173,unbreakable={},hide_additional_tooltip={}]
 item replace entity @s armor.feet with diamond_boots[item_name='{"text":"Waterproof Boots","color":"dark_purple","italic":false}',lore=['{"text":"Swim faster than a shark!","color":"dark_gray"}'],unbreakable={},hide_additional_tooltip={}]
-tp @s @e[tag=arena.spawn,limit=1,sort=random]
+tp @s @e[type=armor_stand,tag=arena.spawn,limit=1,sort=random]
 execute at @s run particle witch ~ ~1 ~ 0.5 1 0.5 1 100 force
 execute at @s run playsound minecraft:entity.enderman.teleport master @a ~ ~ ~ 1.2 1
 tellraw @s {"text":" "}

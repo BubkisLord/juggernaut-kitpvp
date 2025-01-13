@@ -40,11 +40,12 @@ execute as @n[tag=juggernaut,scores={juggernaut_release_timer=2}] run tellraw @a
 execute as @n[tag=juggernaut,scores={juggernaut_release_timer=1}] run tellraw @a [{"text": "Juggernaut is released in: ","bold": true, "color": "gray"},{"text": "1","bold": true,"color": "dark_red"},{"text": " Seconds","bold": true, "color": "gray"}]
 execute as @n[tag=juggernaut,scores={juggernaut_release_timer=0}] run tellraw @a [{"text": "Juggernaut","bold": true,"color": "dark_red","underlined": true},{"text": " Released!","bold": true,"color": "gray"}]
 execute as @n[tag=juggernaut,scores={juggernaut_release_timer=0}] run title @a title [{"text": "Juggernaut","bold": true,"color": "dark_red","underlined": true},{"text": " Released!","bold": true,"color": "gray"}]
-execute if entity @a[tag=juggernaut,scores={juggernaut_release_timer=0}] as @r[tag=runner] at @s run tp @a[tag=juggernaut,scores={juggernaut_release_timer=0}] @e[tag=arena.spawn,limit=1,sort=furthest]
+execute if entity @a[tag=juggernaut,scores={juggernaut_release_timer=0}] as @r[tag=runner] at @s run tp @a[tag=juggernaut,scores={juggernaut_release_timer=0}] @e[type=armor_stand,tag=arena.spawn,limit=1,sort=furthest]
 execute if entity @a[tag=juggernaut,scores={juggernaut_release_timer=0}] as @a[tag=runner] at @s run playsound minecraft:block.end_portal.spawn master @s ~ ~ ~ 0.4 0.1
 execute as @n[tag=juggernaut,scores={juggernaut_release_timer=0}] run scoreboard players set #game_state var 11
 
-execute as @e[tag=replenishment.station] if score @s replenish_timeout > #0 var run scoreboard players remove @s replenish_timeout 1
+execute as @e[type=armor_stand,tag=replenishment.station] if score @s replenish_timeout >= #0 var run scoreboard players remove @s replenish_timeout 1
+execute as @e[type=armor_stand,tag=replenishment.station] if score @s replenish_timeout = #0 var run tag @s remove apply_undetectable
 
 # Remove is_glowing tag from juggernaut every second.
 execute if entity @a[tag=juggernaut] run tag @a[tag=juggernaut] remove is_glowing
@@ -73,6 +74,7 @@ execute as @a unless score #game_state var matches 10..19 if score @s strength_p
 
 # Engineer tower cooldowns/duration
 execute as @e[type=armor_stand,tag=engineer_tower] run scoreboard players remove @s var 1
+# TODO - Check if the @e selector is necessary (instead of @a)
 execute as @e[tag=engineer] if score @s revealing_tower_cooldown > #0 var run scoreboard players remove @s revealing_tower_cooldown 1
 execute as @e[tag=engineer] if score @s replenishment_tower_cooldown > #0 var run scoreboard players remove @s replenishment_tower_cooldown 1
 execute as @e[tag=engineer] if score @s turret_cooldown > #0 var run scoreboard players remove @s turret_cooldown 1

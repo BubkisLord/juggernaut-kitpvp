@@ -1,5 +1,5 @@
 # All runners gain points for replenishing stations (1/sec)
-execute as @e[tag=replenishment.station] at @s if score #game_state var matches 11 unless entity @e[type=armor_stand,tag=banishment_glyph,distance=..32] as @a[tag=runner,distance=0..3] at @s run scoreboard players add @s points 1
+execute as @e[type=armor_stand,tag=replenishment.station] at @s if score #game_state var matches 11 unless entity @e[type=armor_stand,tag=banishment_glyph,distance=..32] as @a[tag=runner,distance=0..3] at @s run scoreboard players add @s points 1
 
 # Runner gains points for tanking damage from the juggernaut with absorption (1/sec)
 execute as @a[tag=runner,scores={damage_absorbed=1..}] run scoreboard players operation @s damage_absorbed /= #10 var
@@ -30,7 +30,7 @@ execute as @a[tag=warlock] if score @s withering_surge_cooldown > #0 var run sco
 execute as @a[tag=hunter] if entity @a[tag=has_hunters_mark] run scoreboard players add @s points 4
 
 # Witchdoctor gains points for being close to replenishment stations. (15/sec)
-execute as @a[tag=witchdoctor] at @s if entity @e[tag=replenishment.station,distance=..6] run scoreboard players add @s points 15
+execute as @a[tag=witchdoctor] at @s if entity @e[type=armor_stand,tag=replenishment.station,distance=..6] run scoreboard players add @s points 15
 
 # Scout gains points for making the juggernaut glow (via raycast) (2/sec)
 execute as @a[tag=scout] if entity @a[tag=juggernaut,tag=is_glowing] run scoreboard players add @s points 2

@@ -8,7 +8,7 @@ give @s ender_pearl[item_name='{"text":"Orb of Teleportation","color":"dark_purp
 item replace entity @s armor.chest with leather_chestplate[item_name='{"text":"Teleporter\'s Chestpiece","color":"dark_purple","italic":false}',lore=['{"text":"The sleeves got stuck in a portal once.","color":"dark_gray"}'],dyed_color=1907483,unbreakable={},hide_additional_tooltip={}]
 item replace entity @s armor.legs with leather_leggings[item_name='{"text":"Teleporter\'s Pants","color":"dark_purple","italic":false}',lore=['{"text":"These must\'ve been expensive.","color":"dark_gray"}'],dyed_color=1907483,unbreakable={},hide_additional_tooltip={}]
 item replace entity @s armor.feet with leather_boots[item_name='{"text":"Teleporter\'s Boots","color":"dark_purple","italic":false}',lore=['{"text":"Not waterproof, sadly.","color":"dark_gray"}'],dyed_color=1907483,unbreakable={},enchantments={feather_falling:10},hide_additional_tooltip={}]
-tp @s @e[tag=arena.spawn,limit=1,sort=random]
+tp @s @e[type=armor_stand,tag=arena.spawn,limit=1,sort=random]
 execute at @s run particle witch ~ ~1 ~ 0.5 1 0.5 1 100 force
 execute at @s run playsound minecraft:entity.enderman.teleport master @a ~ ~ ~ 1.2 1
 tellraw @s {"text":" "}

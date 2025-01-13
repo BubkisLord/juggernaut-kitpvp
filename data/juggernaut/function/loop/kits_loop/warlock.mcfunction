@@ -14,7 +14,7 @@ execute at @e[type=armor_stand,tag=withering_surge] run particle large_smoke ~ ~
 execute at @e[type=armor_stand,tag=warlock_armor_stand] if entity @a[tag=runner,distance=..3] run particle totem_of_undying ~ ~0.75 ~ 0.25 0.5 0.25 0 10 force
 
 #Sound effects
-execute at @e[tag=warlock_armor_stand] as @a[distance=..16] run function abilities:aura_sound
+execute at @e[type=armor_stand,tag=warlock_armor_stand] as @a[distance=..16] run function abilities:aura_sound
 
 #Warlock aura effects
 execute if entity @e[type=armor_stand,tag=malevolent_aura] run function juggernaut:abilities/warlock/tower_effects/malevolent_aura

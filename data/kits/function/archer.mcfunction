@@ -17,7 +17,7 @@ item replace entity @s armor.legs with leather_leggings[item_name='{"text":"Fanc
 
 item replace entity @s armor.feet with leather_boots[item_name='{"text":"Archer\'s Boots","color":"dark_aqua","italic":false}',lore=['{"text":"Genuine leather.","color":"dark_gray"}'],dyed_color=4598560,unbreakable={},hide_additional_tooltip={}]
 
-tp @s @e[tag=arena.spawn,limit=1,sort=random]
+tp @s @e[type=armor_stand,tag=arena.spawn,limit=1,sort=random]
 execute at @s run particle witch ~ ~1 ~ 0.5 1 0.5 1 100 force
 execute at @s run playsound minecraft:entity.enderman.teleport master @a ~ ~ ~ 1.2 1
 tellraw @s {"text":" "}

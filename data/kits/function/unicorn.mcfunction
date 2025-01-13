@@ -7,7 +7,7 @@ item replace entity @s armor.head with end_rod[item_name='{"text":"Unicorn\'s Ho
 item replace entity @s armor.chest with elytra[item_name='{"text":"Elegant Wings","color":"gold","italic":false}',lore=['{"text":"Glide gracefully through the skies.","color":"dark_gray"}'],unbreakable={},hide_additional_tooltip={}]
 item replace entity @s armor.legs with leather_leggings[item_name='{"text":"Unicorn\'s Trousers","color":"gold","italic":false}',lore=['{"text":"Everyone needs some protection.","color":"dark_gray"}'],dyed_color=16777215,unbreakable={},hide_additional_tooltip={}]
 item replace entity @s armor.feet with leather_boots[item_name='{"text":"Unicorn\'s Shoes","color":"gold","italic":false}',lore=['{"text":"Try to keep them clean.","color":"dark_gray"}'],dyed_color=16777215,unbreakable={},hide_additional_tooltip={}]
-tp @s @e[tag=arena.spawn,limit=1,sort=random]
+tp @s @e[type=armor_stand,tag=arena.spawn,limit=1,sort=random]
 execute at @s run particle witch ~ ~1 ~ 0.5 1 0.5 1 100 force
 execute at @s run playsound minecraft:entity.enderman.teleport master @a ~ ~ ~ 1.2 1
 tellraw @s {"text":" "}

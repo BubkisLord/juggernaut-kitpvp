@@ -8,7 +8,7 @@ item replace entity @s armor.head with leather_helmet[item_name='{"text":"Cheeta
 item replace entity @s armor.chest with leather_chestplate[item_name='{"text":"Cheetah\'s Chestpiece","color":"gold","italic":false}',lore=['{"text":"Breathable leather. If that\'s a thing.","color":"dark_gray"}'],dyed_color=13812827,unbreakable={},hide_additional_tooltip={}]
 item replace entity @s armor.legs with leather_leggings[item_name='{"text":"Pants for Running","color":"gold","italic":false}',lore=['{"text":"Great for sprinting around.","color":"dark_gray"}'],dyed_color=13812827,unbreakable={},hide_additional_tooltip={}]
 item replace entity @s armor.feet with leather_boots[item_name='{"text":"Fancy Sneakers","color":"gold","italic":false}',lore=['{"text":"Outrun them!","color":"dark_gray"}'],dyed_color=13812827,unbreakable={},hide_additional_tooltip={}]
-tp @s @e[tag=arena.spawn,limit=1,sort=random]
+tp @s @e[type=armor_stand,tag=arena.spawn,limit=1,sort=random]
 execute at @s run particle witch ~ ~1 ~ 0.5 1 0.5 1 100 force
 execute at @s run playsound minecraft:entity.enderman.teleport master @a ~ ~ ~ 1.2 1
 tellraw @s {"text":" "}

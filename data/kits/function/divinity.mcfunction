@@ -10,7 +10,7 @@ item replace entity @s armor.head with white_banner[item_name='{"text":"Banner o
 item replace entity @s armor.chest with leather_chestplate[item_name='{"text":"Armour of Righteousness","color":"dark_aqua","italic":false}',lore=['{"text":"Pretentious? Not at all!","color":"dark_gray"}'],dyed_color=15789178,unbreakable={},hide_additional_tooltip={}]
 item replace entity @s armor.legs with leather_leggings[item_name='{"text":"Terrific Trousers","color":"dark_aqua","italic":false}',lore=['{"text":"Worthy of a Divinity.","color":"dark_gray"}'],dyed_color=16777215,unbreakable={},hide_additional_tooltip={}]
 item replace entity @s armor.feet with leather_boots[item_name='{"text":"Blindingly Bright Boots","color":"dark_aqua","italic":false}',lore=['{"text":"Keeping these clean will be hard.","color":"dark_gray"}'],dyed_color=16777215,unbreakable={},hide_additional_tooltip={}]
-tp @s @e[tag=arena.spawn,limit=1,sort=random]
+tp @s @e[type=armor_stand,tag=arena.spawn,limit=1,sort=random]
 execute at @s run particle witch ~ ~1 ~ 0.5 1 0.5 1 100 force
 execute at @s run playsound minecraft:entity.enderman.teleport master @a ~ ~ ~ 1.2 1
 tellraw @s {"text":" "}

@@ -8,7 +8,7 @@ give @s wither_rose[item_name='{"text":"Aura of Despair","color":"dark_purple","
 give @s bell[item_name='{"text":"Aura of Vision","color":"dark_purple","italic":false}',lore=['{"text":"Hold in off-hand to reveal nearby enemies.","color":"dark_gray"}']] 1
 give @s cooked_beef[item_name='{"text":"Steak","color":"dark_purple","italic":false}',lore=['{"text":"Eat to regenerate.","color":"dark_gray"}']] 16
 item replace entity @s armor.head with leather_helmet[item_name='{"text":"Auramancer\'s Hat","color":"dark_purple","italic":false}',lore=['{"text":"Makes the bearer immune to enemy auras.","color":"dark_gray"}'],dyed_color=5317223,unbreakable={},hide_additional_tooltip={}]
-tp @s @e[tag=arena.spawn,limit=1,sort=random]
+tp @s @e[type=armor_stand,tag=arena.spawn,limit=1,sort=random]
 execute at @s run particle witch ~ ~1 ~ 0.5 1 0.5 1 100 force
 execute at @s run playsound minecraft:entity.enderman.teleport master @a ~ ~ ~ 1.2 1
 tellraw @s {"text":" "}

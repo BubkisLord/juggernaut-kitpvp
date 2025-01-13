@@ -96,11 +96,11 @@ tag @a remove see_withering_surge_bar
 
 scoreboard players set #stations_completed var 0
 
-execute as @e[tag=station_completed] run tag @s add replenishment.station
-execute as @e[tag=station_completed] run tag @s remove station_completed
-execute as @e[tag=replenishment.station_deactivated] run tag @s add replenishment.station
-execute as @e[tag=replenishment.station_deactivated] run tag @s remove replenishment.station_deactivated
-scoreboard players set @e[tag=replenishment.station] replenish_amount 0
+execute as @e[type=armor_stand,tag=station_completed] run tag @s add replenishment.station
+execute as @e[type=armor_stand,tag=station_completed] run tag @s remove station_completed
+execute as @e[type=armor_stand,tag=replenishment.station_deactivated] run tag @s add replenishment.station
+execute as @e[type=armor_stand,tag=replenishment.station_deactivated] run tag @s remove replenishment.station_deactivated
+scoreboard players set @e[type=armor_stand,tag=replenishment.station] replenish_amount 0
 
 clear @a
 kill @a

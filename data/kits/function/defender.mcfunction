@@ -8,7 +8,7 @@ item replace entity @s armor.head with iron_helmet[item_name='{"text":"Defender\
 item replace entity @s armor.chest with chainmail_chestplate[item_name='{"text":"Defender\'s Chainmail","color":"dark_green","italic":false}',lore=['{"text":"We were out of iron armour.","color":"dark_gray"}'],unbreakable={},hide_additional_tooltip={}]
 item replace entity @s armor.legs with iron_leggings[item_name='{"text":"Steel Leggings","color":"dark_green","italic":false}',lore=['{"text":"Steel is all you need.","color":"dark_gray"}'],unbreakable={},hide_additional_tooltip={}]
 item replace entity @s armor.feet with iron_boots[item_name='{"text":"Steel Boots","color":"dark_green","italic":false}',lore=['{"text":"Very heavy but pretty cool.","color":"dark_gray"}'],unbreakable={},hide_additional_tooltip={}]
-tp @s @e[tag=arena.spawn,limit=1,sort=random]
+tp @s @e[type=armor_stand,tag=arena.spawn,limit=1,sort=random]
 execute at @s run particle witch ~ ~1 ~ 0.5 1 0.5 1 100 force
 execute at @s run playsound minecraft:entity.enderman.teleport master @a ~ ~ ~ 1.2 1
 tellraw @s {"text":" "}

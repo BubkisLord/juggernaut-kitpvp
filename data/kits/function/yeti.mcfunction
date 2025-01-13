@@ -7,7 +7,7 @@ give @s cooked_beef[item_name='{"text":"Steak","color":"gold","italic":false}',l
 item replace entity @s armor.chest with iron_chestplate[item_name='{"text":"Yeti\'s Breastplate","color":"gold","italic":false}',lore=['{"text":"A magnificent piece of armour.","color":"dark_gray"}'],unbreakable={},hide_additional_tooltip={}]
 item replace entity @s armor.legs with leather_leggings[item_name='{"text":"Yeti\'s Pants","color":"gold","italic":false}',lore=['{"text":"Not what you\'d wear during the summer.","color":"dark_gray"}'],dyed_color=10529733,unbreakable={},hide_additional_tooltip={}]
 item replace entity @s armor.feet with leather_boots[item_name='{"text":"Yeti\'s Boots","color":"gold","italic":false}',lore=['{"text":"Good for keeping the cold away.","color":"dark_gray"}'],dyed_color=10529733,unbreakable={},hide_additional_tooltip={}]
-tp @s @e[tag=arena.spawn,limit=1,sort=random]
+tp @s @e[type=armor_stand,tag=arena.spawn,limit=1,sort=random]
 execute at @s run particle witch ~ ~1 ~ 0.5 1 0.5 1 100 force
 execute at @s run playsound minecraft:entity.enderman.teleport master @a ~ ~ ~ 1.2 1
 tellraw @s {"text":" "}

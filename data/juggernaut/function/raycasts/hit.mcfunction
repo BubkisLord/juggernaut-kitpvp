@@ -18,7 +18,7 @@ execute if score #hit_function_id var matches 5 run execute at @p[tag=eclipse_st
 execute if score #hit_function_id var matches 5 run execute as @p[tag=eclipse_stalker,tag=finding_camera] run function juggernaut:abilities/eclipse_stalker/enter_cam_attributes
 execute if score #hit_function_id var matches 5 run execute as @p[tag=eclipse_stalker,tag=finding_camera] run tp @s ~ ~ ~ facing ^ ^ ^1000
 execute if score #hit_function_id var matches 7 run tag @s add shadow_marked
-execute if score #hit_function_id var matches 8 run execute if entity @s[tag=shadow_marked] run kill @e[tag=eclipse_return_location]
+execute if score #hit_function_id var matches 8 run execute if entity @s[tag=shadow_marked] run kill @e[type=armor_stand,tag=eclipse_return_location]
 execute if score #hit_function_id var matches 8 run execute if entity @s[tag=shadow_marked] run tag @p[tag=eclipse_stalker] remove using_camera
 execute if score #hit_function_id var matches 8 run execute if entity @s[tag=shadow_marked] run tag @n[tag=used_camera] remove used_camera
 execute if score #hit_function_id var matches 8 run execute if entity @s[tag=shadow_marked] as @p[tag=eclipse_stalker] at @s run function juggernaut:abilities/eclipse_stalker/reset_cam_attributes
