@@ -63,6 +63,8 @@ tag @a remove beacon_of_hope_active
 tag @a remove jug_ghost
 tag @a remove harbinger
 tag @a remove trickster
+tag @a remove is_hemorrhaged
+tag @a remove is_mangled
 tag @a add lobby.player
 
 tag @a remove using_blood_pact
