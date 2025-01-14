@@ -1,4 +1,3 @@
-$execute if score #1 var matches $(clear_trims) run clear @s #minecraft:trim_templates
 $item replace entity @s $(container_slot) with written_book[written_book_content={pages:['{"text": "§l§4Predatory Instincts\\n\\n§r§0While stationary, this perk activates. While active, any runner within an 8 block radius is revealed. Players with undetectable cannot be revealed in this way."}',\
 '{"text": "§l§4Rapid Brutality\\n\\n§r§0Gain an 10% speed boost after hitting a runner, lasting for 4 seconds."}',\
 '{"text": "§l§4Brutal Efficiency\\n\\n§r§0Replenishment station progress regresses by 10% if a runner is hit within 5 blocks of a station. This ability has a cooldown of 30 seconds."}',\

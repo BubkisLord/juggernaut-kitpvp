@@ -29,26 +29,28 @@
 
 
 execute as @s[nbt={Inventory:[{id:"minecraft:raiser_armor_trim_smithing_template"}]}] run tag @s add using_predatory_instincts
-execute as @s[nbt={Inventory:[{id:"minecraft:raiser_armor_trim_smithing_template"}]}] run function juggernaut:descriptions/mechanics/juggernaut_perks {clear_trims:1,container_slot:"container.0"}
+
+execute as @s[nbt={Inventory:[{id:"minecraft:raiser_armor_trim_smithing_template"}]}] run clear @s raiser_armor_trim_smithing_template
 execute as @s[nbt={Inventory:[{id:"minecraft:vex_armor_trim_smithing_template"}]}] run tag @s add using_rapid_brutality
-execute as @s[nbt={Inventory:[{id:"minecraft:vex_armor_trim_smithing_template"}]}] run function juggernaut:descriptions/mechanics/juggernaut_perks {clear_trims:1,container_slot:"container.0"}
+execute as @s[nbt={Inventory:[{id:"minecraft:vex_armor_trim_smithing_template"}]}] run clear @s vex_armor_trim_smithing_template
 execute as @s[nbt={Inventory:[{id:"minecraft:wild_armor_trim_smithing_template"}]}] run tag @s add using_brutal_efficiency
-execute as @s[nbt={Inventory:[{id:"minecraft:wild_armor_trim_smithing_template"}]}] run function juggernaut:descriptions/mechanics/juggernaut_perks {clear_trims:1,container_slot:"container.0"}
+execute as @s[nbt={Inventory:[{id:"minecraft:wild_armor_trim_smithing_template"}]}] run clear @s wild_armor_trim_smithing_template
 execute as @s[nbt={Inventory:[{id:"minecraft:coast_armor_trim_smithing_template"}]}] run tag @s add using_unyielding_wrath
-execute as @s[nbt={Inventory:[{id:"minecraft:coast_armor_trim_smithing_template"}]}] run function juggernaut:descriptions/mechanics/juggernaut_perks {clear_trims:1,container_slot:"container.0"}
+execute as @s[nbt={Inventory:[{id:"minecraft:coast_armor_trim_smithing_template"}]}] run clear @s coast_armor_trim_smithing_template
 execute as @s[nbt={Inventory:[{id:"minecraft:snout_armor_trim_smithing_template"}]}] run tag @s add using_domination
-execute as @s[nbt={Inventory:[{id:"minecraft:snout_armor_trim_smithing_template"}]}] run function juggernaut:descriptions/mechanics/juggernaut_perks {clear_trims:1,container_slot:"container.0"}
+execute as @s[nbt={Inventory:[{id:"minecraft:snout_armor_trim_smithing_template"}]}] run clear @s snout_armor_trim_smithing_template
 execute as @s[nbt={Inventory:[{id:"minecraft:ward_armor_trim_smithing_template"}]}] run tag @s add using_floods_of_rage
-execute as @s[nbt={Inventory:[{id:"minecraft:ward_armor_trim_smithing_template"}]}] run function juggernaut:descriptions/mechanics/juggernaut_perks {clear_trims:1,container_slot:"container.0"}
+execute as @s[nbt={Inventory:[{id:"minecraft:ward_armor_trim_smithing_template"}]}] run clear @s ward_armor_trim_smithing_template
 execute as @s[nbt={Inventory:[{id:"minecraft:wayfinder_armor_trim_smithing_template"}]}] run tag @s add using_pressure_point
-execute as @s[nbt={Inventory:[{id:"minecraft:wayfinder_armor_trim_smithing_template"}]}] run function juggernaut:descriptions/mechanics/juggernaut_perks {clear_trims:1,container_slot:"container.0"}
+execute as @s[nbt={Inventory:[{id:"minecraft:wayfinder_armor_trim_smithing_template"}]}] run clear @s wayfinder_armor_trim_smithing_template
 execute as @s[nbt={Inventory:[{id:"minecraft:rib_armor_trim_smithing_template"}]}] run tag @s add using_overwhelming_presence
-execute as @s[nbt={Inventory:[{id:"minecraft:rib_armor_trim_smithing_template"}]}] run function juggernaut:descriptions/mechanics/juggernaut_perks {clear_trims:1,container_slot:"container.0"}
+execute as @s[nbt={Inventory:[{id:"minecraft:rib_armor_trim_smithing_template"}]}] run clear @s rib_armor_trim_smithing_template
 execute as @s[nbt={Inventory:[{id:"minecraft:silence_armor_trim_smithing_template"}]}] run tag @s add using_bane_of_solidarity
-execute as @s[nbt={Inventory:[{id:"minecraft:silence_armor_trim_smithing_template"}]}] run function juggernaut:descriptions/mechanics/juggernaut_perks {clear_trims:1,container_slot:"container.0"}
+execute as @s[nbt={Inventory:[{id:"minecraft:silence_armor_trim_smithing_template"}]}] run clear @s silence_armor_trim_smithing_template
 execute as @s[nbt={Inventory:[{id:"minecraft:spire_armor_trim_smithing_template"}]}] run tag @s add using_crippling_defeat
-execute as @s[nbt={Inventory:[{id:"minecraft:spire_armor_trim_smithing_template"}]}] run function juggernaut:descriptions/mechanics/juggernaut_perks {clear_trims:1,container_slot:"container.0"}
+execute as @s[nbt={Inventory:[{id:"minecraft:spire_armor_trim_smithing_template"}]}] run clear @s spire_armor_trim_smithing_template
 execute as @s[nbt={Inventory:[{id:"minecraft:dune_armor_trim_smithing_template"}]}] run tag @s add using_waiting_game
-execute as @s[nbt={Inventory:[{id:"minecraft:dune_armor_trim_smithing_template"}]}] run function juggernaut:descriptions/mechanics/juggernaut_perks {clear_trims:1,container_slot:"container.0"}
+execute as @s[nbt={Inventory:[{id:"minecraft:dune_armor_trim_smithing_template"}]}] run clear @s dune_armor_trim_smithing_template
 execute as @s[nbt={Inventory:[{id:"minecraft:tide_armor_trim_smithing_template"}]}] run tag @s add using_quickened_stealth
-execute as @s[nbt={Inventory:[{id:"minecraft:tide_armor_trim_smithing_template"}]}] run function juggernaut:descriptions/mechanics/juggernaut_perks {clear_trims:1,container_slot:"container.0"}
+execute as @s[nbt={Inventory:[{id:"minecraft:tide_armor_trim_smithing_template"}]}] run clear @s tide_armor_trim_smithing_template
+function juggernaut:descriptions/mechanics/juggernaut_perks {container_slot:"container.9"}
