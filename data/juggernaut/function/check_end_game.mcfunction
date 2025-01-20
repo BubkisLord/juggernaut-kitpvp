@@ -8,6 +8,6 @@ execute if score #game_state var matches 10..19 unless entity @a[tag=runner] run
 execute if score #game_state var matches 10..19 unless entity @a[tag=runner] run function juggernaut:end_game
 
 #The replenish progress mode for winning the game.
-execute if score #juggernaut_customisation completable_stations matches 0 if score #game_state var matches 10..19 if score @n[type=armor_stand,tag=juggernaut_manager] replenish_progress >= @n[type=armor_stand,tag=juggernaut_manager] total_replenishment_needed run tellraw @a {"text": "Runners win! (Replenishment Complete)","bold": true}
+execute if score #juggernaut_customisation completable_stations matches 0 if score #game_state var matches 10..19 if score #juggernaut_manager replenish_progress >= #juggernaut_manager total_replenishment_needed run tellraw @a {"text": "Runners win! (Replenishment Complete)","bold": true}
 execute if score #juggernaut_customisation completable_stations matches 0 if score #game_state var matches 10..19 unless entity @a[tag=juggernaut] run scoreboard players add @a[tag=runner] points 100
-execute if score #juggernaut_customisation completable_stations matches 0 if score #game_state var matches 10..19 if score @n[type=armor_stand,tag=juggernaut_manager] replenish_progress >= @n[type=armor_stand,tag=juggernaut_manager] total_replenishment_needed run function juggernaut:end_game
+execute if score #juggernaut_customisation completable_stations matches 0 if score #game_state var matches 10..19 if score #juggernaut_manager replenish_progress >= #juggernaut_manager total_replenishment_needed run function juggernaut:end_game

@@ -1,7 +1,7 @@
-scoreboard players operation @n[type=armor_stand,tag=juggernaut_manager] temp_progress = @n[type=armor_stand,tag=juggernaut_manager] replenish_progress
-scoreboard players operation @n[type=armor_stand,tag=juggernaut_manager] temp_progress *= #100 var
+scoreboard players operation #juggernaut_manager temp_progress = #juggernaut_manager replenish_progress
+scoreboard players operation #juggernaut_manager temp_progress *= #100 var
 
-execute store result score @n[type=armor_stand,tag=juggernaut_manager] replenish_decimal run scoreboard players operation @n[type=armor_stand,tag=juggernaut_manager] temp_progress /= @n[type=armor_stand,tag=juggernaut_manager] total_replenishment_needed
+execute store result score #juggernaut_manager replenish_decimal run scoreboard players operation #juggernaut_manager temp_progress /= #juggernaut_manager total_replenishment_needed
 
 execute if score #game_state var matches 11 as @e[type=armor_stand,tag=replenishment.station] run scoreboard players operation @s temp_progress = @s replenish_amount
 execute if score #game_state var matches 11 as @e[type=armor_stand,tag=replenishment.station] run scoreboard players operation @s temp_progress *= #100 var

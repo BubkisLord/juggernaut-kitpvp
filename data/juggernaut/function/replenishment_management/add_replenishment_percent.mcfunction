@@ -9,5 +9,5 @@ scoreboard players operation #added_amount var /= #juggernaut_multiplier var
 scoreboard players operation #added_amount var /= #100 var
 $scoreboard players operation #added_amount var *= $(percentage)
 
-scoreboard players operation @n[type=armor_stand,tag=juggernaut_manager] replenish_progress += #added_amount var
+scoreboard players operation #juggernaut_manager replenish_progress += #added_amount var
 scoreboard players operation @n[type=armor_stand,tag=replenishment.station] replenish_amount += #added_amount var

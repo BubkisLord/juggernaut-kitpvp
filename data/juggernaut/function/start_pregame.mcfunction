@@ -43,7 +43,7 @@ scoreboard players set @a replenishment_tower_cooldown 0
 scoreboard players set @a point_kills 0
 scoreboard players set @a damage_absorbed 0
 
-scoreboard players set @n[type=armor_stand,tag=juggernaut_manager] scout_reveal_timer 0
+scoreboard players set #juggernaut_manager scout_reveal_timer 0
 
 tag @a remove in_chase
 
@@ -63,20 +63,20 @@ scoreboard players set #juggernaut_multiplier var 0
 execute as @a[tag=juggernaut] run scoreboard players add #juggernaut_multiplier var 1
 execute if score #juggernaut_customisation completable_stations matches 1 run scoreboard players set #beginning_time var 2500
 execute if score #juggernaut_customisation completable_stations matches 1 run scoreboard players set #beginning_time var 4500
-scoreboard players operation @n[type=armor_stand,tag=juggernaut_manager] total_replenishment_needed = #beginning_time var
-scoreboard players operation @n[type=armor_stand,tag=juggernaut_manager] total_replenishment_needed *= #playercount var
-scoreboard players operation @n[type=armor_stand,tag=juggernaut_manager] total_replenishment_needed += #beginning_time var
-scoreboard players operation @n[type=armor_stand,tag=juggernaut_manager] total_replenishment_needed /= #juggernaut_multiplier var
+scoreboard players operation #juggernaut_manager total_replenishment_needed = #beginning_time var
+scoreboard players operation #juggernaut_manager total_replenishment_needed *= #playercount var
+scoreboard players operation #juggernaut_manager total_replenishment_needed += #beginning_time var
+scoreboard players operation #juggernaut_manager total_replenishment_needed /= #juggernaut_multiplier var
 
-scoreboard players operation #total_replenishment_per_station var = @n[type=armor_stand,tag=juggernaut_manager] total_replenishment_needed
+scoreboard players operation #total_replenishment_per_station var = #juggernaut_manager total_replenishment_needed
 scoreboard players operation #total_replenishment_per_station var /= #stations_needed var
 
 
 # Set the game state to pregame
 scoreboard players set #game_state var 10
-scoreboard players set @n[type=armor_stand,tag=juggernaut_manager] replenish_progress 0
-scoreboard players set @n[type=armor_stand,tag=juggernaut_manager] replenish_decimal 0
-scoreboard players set @n[type=armor_stand,tag=juggernaut_manager] replenish_percentage 0
+scoreboard players set #juggernaut_manager replenish_progress 0
+scoreboard players set #juggernaut_manager replenish_decimal 0
+scoreboard players set #juggernaut_manager replenish_percentage 0
 
 # Turn off natural regeneration.
 gamerule naturalRegeneration false

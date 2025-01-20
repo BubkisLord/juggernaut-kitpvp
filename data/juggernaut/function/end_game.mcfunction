@@ -128,11 +128,11 @@ execute as @a run attribute @s movement_speed modifier remove unyielding_wrath_3
 execute as @a run attribute @s movement_speed modifier remove unyielding_wrath_4
 execute as @a run attribute @s movement_speed modifier remove unyielding_wrath_5
 
-scoreboard players set @n[type=armor_stand,tag=juggernaut_manager] replenish_progress 0
-scoreboard players set @n[type=armor_stand,tag=juggernaut_manager] replenish_decimal 0
-scoreboard players set @n[type=armor_stand,tag=juggernaut_manager] replenish_percentage 0
-scoreboard players set @n[type=armor_stand,tag=juggernaut_manager] total_replenishment_needed 0
-scoreboard players set @n[type=armor_stand,tag=juggernaut_manager] scout_reveal_timer 0
+scoreboard players set #juggernaut_manager replenish_progress 0
+scoreboard players set #juggernaut_manager replenish_decimal 0
+scoreboard players set #juggernaut_manager replenish_percentage 0
+scoreboard players set #juggernaut_manager total_replenishment_needed 0
+scoreboard players set #juggernaut_manager scout_reveal_timer 0
 
 scoreboard players set @e[type=armor_stand,tag=replenishment.station] sentinel_progress 0
 

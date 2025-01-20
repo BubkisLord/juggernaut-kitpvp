@@ -25,6 +25,6 @@ execute as @a[tag=runner] if score @s chase_timeout matches 1.. run scoreboard p
 
 execute if score #juggernaut_customisation debug_mode matches 1 as @a[tag=in_chase] at @s run particle soul_fire_flame ~ ~0.2 ~ 0.2 0.07 0.2 0 3 force @s
 
-execute as @a[tag=runner,tag=in_chase] run scoreboard players add @n[type=armor_stand,tag=juggernaut_manager] replenish_progress 1
+execute as @a[tag=runner,tag=in_chase] run scoreboard players add #juggernaut_manager replenish_progress 1
 
 execute if score #juggernaut_customisation completable_stations matches 1 as @a[tag=runner,tag=in_chase] at @s as @n[type=armor_stand,tag=replenishment.station,tag=highest_station] run scoreboard players add @s replenish_amount 1
