@@ -1,0 +1,2 @@
+scoreboard players add @s replenish_amount 1
+function juggernaut:replenishment_management/update_highest_station

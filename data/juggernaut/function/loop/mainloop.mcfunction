@@ -20,7 +20,7 @@ execute if score #game_state var matches 10 run function juggernaut:loop/display
 # Get the highest replenished station.
 execute if score #juggernaut_customisation completable_stations matches 1 run scoreboard players set #highest_station var 0
 execute if score #juggernaut_customisation completable_stations matches 1 as @e[type=armor_stand,tag=replenishment.station] run function juggernaut:replenishment_management/update_highest_station
-execute if score #juggernaut_customisation completable_stations matches 1 unless entity @e[type=armor_stand,tag=highest_station] run tag @e[type=armor_stand,tag=replenishment.station,limit=1,sort=random] add highest_station
+execute if score #juggernaut_customisation completable_stations matches 1 unless entity @e[type=armor_stand,tag=highest_station] as @e[type=armor_stand,tag=replenishment.station,limit=1,sort=random] run function juggernaut:replenishment_management/set_highest_station
 
 execute if score #juggernaut_customisation debug_mode matches 0 run function juggernaut:check_end_game
 
