@@ -41,11 +41,27 @@
                                 "food": {
                                     "nutrition": 0,
                                     "saturation": 0,
-                                    "can_always_eat": true,
-                                    "eat_seconds": 0.1,
-                                    "using_converts_to": {
-                                        "id": "red_glazed_terracotta"
-                                    }
+                                    "can_always_eat": true
+                                },
+                                "consumable": {
+                                    "consume_seconds": 0,
+                                    "animation": "spear",
+                                    "on_consume_effects": [
+                                        {
+                                            "type": "minecraft:play_sound",
+                                            "sound": "block.fire.ambient"
+                                        }
+                                    ],
+                                    "sound": "minecraft:item.firecharge.use",
+                                    "has_consume_particles": false
+                                },
+                                "use_cooldown": {
+                                    "seconds": 1,
+                                    "cooldown_group": "minecraft:fireball"
+                                },
+                                "use_remainder": {
+                                    "id": "red_glazed_terracotta",
+                                    "count": 1
                                 },
                                 "max_stack_size": 1
                             }

@@ -29,8 +29,8 @@ execute as @a[tag=warlock] if score @s withering_surge_cooldown > #0 var run sco
 # Hunter gains points for having a player marked. (4/sec)
 execute as @a[tag=hunter] if entity @a[tag=has_hunters_mark] run scoreboard players add @s points 4
 
-# Witchdoctor gains points for being close to replenishment stations. (15/sec)
-execute as @a[tag=witchdoctor] at @s if entity @e[type=armor_stand,tag=replenishment.station,distance=..6] run scoreboard players add @s points 15
+# Witch Doctor gains points for being close to replenishment stations. (15/sec)
+execute as @a[tag=witch_doctor] at @s if entity @e[type=armor_stand,tag=replenishment.station,distance=..6] run scoreboard players add @s points 15
 
 # Scout gains points for making the juggernaut glow (via raycast) (2/sec)
 execute as @a[tag=scout] if entity @a[tag=juggernaut,tag=is_glowing] run scoreboard players add @s points 2

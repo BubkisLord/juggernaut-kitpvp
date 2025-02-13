@@ -42,6 +42,6 @@ execute as @s[tag=alchemist] run function replenish:alchemist
 execute as @s[tag=medic] run function juggernaut:kit_replenishes/replenish_kits {player_tag:"medic"}
 execute as @s[tag=survivor] run function juggernaut:kit_replenishes/replenish_kits {player_tag:"survivor"}
 execute as @s[tag=engineer] run function juggernaut:kit_replenishes/replenish_kits {player_tag:"engineer"}
-execute as @s[tag=witchdoctor] run function juggernaut:kit_replenishes/replenish_kits {player_tag:"witchdoctor"}
+execute as @s[tag=witch_doctor] run function juggernaut:kit_replenishes/replenish_kits {player_tag:"witch_doctor"}
 
 execute as @s[tag=samurai] run function replenish:samurai

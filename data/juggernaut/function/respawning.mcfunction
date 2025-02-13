@@ -22,13 +22,13 @@ execute if score @s lives_remaining matches ..0 run tag @s remove juggernaut
 execute if score @s lives_remaining matches ..0 run tag @s remove runner
 execute if score @s lives_remaining matches ..0 run tag @s remove spectator
 execute if score @s lives_remaining matches ..0 run tag @s remove predator
-execute if score @s lives_remaining matches ..0 run tag @s remove witchdoctor
+execute if score @s lives_remaining matches ..0 run tag @s remove witch_doctor
 execute if score @s lives_remaining matches ..0 run tag @s remove medic
 execute if score @s lives_remaining matches ..0 run tag @s remove survivor
 execute if score @s lives_remaining matches ..0 run tag @s remove escapist
 execute if score @s lives_remaining matches ..0 run tag @s remove scout
 execute if score @s lives_remaining matches ..0 run tag @s remove engineer
-execute if score @s lives_remaining matches ..0 run tag @s remove witchdoctor
+execute if score @s lives_remaining matches ..0 run tag @s remove witch_doctor
 execute if score @s lives_remaining matches ..0 run tag @s remove warlock
 execute if score @s lives_remaining matches ..0 run tag @s remove jug_hunter
 execute if score @s lives_remaining matches ..0 run tag @s remove is_hunting

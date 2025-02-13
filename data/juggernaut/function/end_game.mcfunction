@@ -36,14 +36,14 @@ tag @a remove juggernaut
 tag @a remove runner
 tag @a remove spectator
 tag @a remove predator
-tag @a remove witchdoctor
+tag @a remove witch_doctor
 tag @a remove medic
 tag @a remove survivor
 tag @a remove escapist
 tag @a remove rogue
 tag @a remove scout
 tag @a remove engineer
-tag @a remove witchdoctor
+tag @a remove witch_doctor
 tag @a remove warlock
 tag @a remove jug_hunter
 tag @a remove is_hunting
