@@ -16,12 +16,14 @@ execute at @e[type=armor_stand,tag=warlock_armor_stand] if entity @a[tag=runner,
 #Sound effects
 execute at @e[type=armor_stand,tag=warlock_armor_stand] as @a[distance=..16] run function abilities:aura_sound
 
-#Warlock aura effects
+#Warlock tower aura effects
 execute if entity @e[type=armor_stand,tag=malevolent_aura] run function juggernaut:abilities/warlock/tower_effects/malevolent_aura
 execute if entity @e[type=armor_stand,tag=withering_surge] run function juggernaut:abilities/warlock/tower_effects/withering_surge
 
 execute if entity @e[type=armor_stand,tag=warlock_armor_stand] run function juggernaut:abilities/warlock/warlock_towers
 
+# Warlock aura effect
+execute as @s at @s run function juggernaut:kit_auras/warlock
 
 execute if entity @a[tag=warlock] run function juggernaut:ability_management/check_ability {\
     player_tag:"warlock",\
