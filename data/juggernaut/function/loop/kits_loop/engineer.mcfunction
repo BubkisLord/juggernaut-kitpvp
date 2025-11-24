@@ -27,7 +27,7 @@ execute as @a[tag=borrowing_time,scores={borrowed_time_remaining=..0}] run tag @
 execute if entity @a[tag=engineer] run function juggernaut:ability_management/check_ability {\
     player_tag:"engineer",\
     item_id:"minecraft:gold_block",\
-    item_name:'{"text": "Spawn Revealing Tower","color": "gold"}',\
+    item_name:{"text": "Spawn Revealing Tower","color": "gold"},\
     ability_id:"revealing_tower",\
     cooldown:90,\
     hotbar_slot:"hotbar.0",\
@@ -38,7 +38,7 @@ execute if entity @a[tag=engineer] run function juggernaut:ability_management/ch
 execute if entity @a[tag=engineer] run function juggernaut:ability_management/check_ability {\
     player_tag:"engineer",\
     item_id:"minecraft:lime_dye",\
-    item_name:'{"text": "Spawn Replenishment Tower","color": "green"}',\
+    item_name:{"text": "Spawn Replenishment Tower","color": "green"},\
     ability_id:"replenishment_tower",\
     cooldown:60,\
     hotbar_slot:"hotbar.1",\
@@ -49,7 +49,7 @@ execute if entity @a[tag=engineer] run function juggernaut:ability_management/ch
 execute if entity @a[tag=engineer] run function juggernaut:ability_management/check_ability {\
     player_tag:"engineer",\
     item_id:"minecraft:bone",\
-    item_name:'{"text": "Spawn Turret","color": "gray"}',\
+    item_name:{"text": "Spawn Turret","color": "gray"},\
     ability_id:"turret_tower",\
     cooldown:90,\
     hotbar_slot:"hotbar.2",\
@@ -60,7 +60,7 @@ execute if entity @a[tag=engineer] run function juggernaut:ability_management/ch
 execute if entity @a[tag=engineer] run function juggernaut:ability_management/check_ability {\
     player_tag:"engineer",\
     item_id:"minecraft:clock",\
-    item_name:'{"text": "Borrowed Time","color": "gold"}',\
+    item_name:{"text": "Borrowed Time","color": "gold"},\
     ability_id:"borrowed_time",\
     cooldown:120,\
     hotbar_slot:"hotbar.3",\

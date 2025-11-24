@@ -17,7 +17,7 @@ execute as @a[tag=tutorial.player,scores={tutorialPurchase=999}] run function tu
 
 execute at @e[type=armor_stand,tag=replenishment.station,nbt={Small:0b}] as @a[distance=0..1] run function tutorial:tutorial_replenish
 
-execute as @a[tag=tutorial.player] run item replace entity @s hotbar.8 with minecraft:book[item_name='{"text":"Skip Tutorial","color":"gold","italic":false}',lore=['{"text":"Drop to exit the tutorial.","color":"dark_gray"}'],hide_additional_tooltip={}]
+execute as @a[tag=tutorial.player] run item replace entity @s hotbar.8 with minecraft:book[item_name='{"text":"Skip Tutorial","color":"gold","italic":false}',lore=['{"text":"Drop to exit the tutorial.","color":"dark_gray"}']]
 execute at @a[tag=tutorial.player] run execute as @e[type=item,nbt={Item:{id:"minecraft:book"}},distance=..3] at @s as @p[scores={skip_prompt=..0}] run function tutorial:skip_prompt
 execute at @a[tag=tutorial.player] run execute as @e[type=item,nbt={Item:{id:"minecraft:book"}},distance=..3] at @s as @p[scores={skip_prompt=0..}] run function tutorial:skip_tutorial
 execute as @a[tag=tutorial.player,scores={skip_prompt=1..}] run scoreboard players remove @s skip_prompt 1

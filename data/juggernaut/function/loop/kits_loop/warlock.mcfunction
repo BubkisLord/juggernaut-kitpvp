@@ -26,7 +26,7 @@ execute if entity @e[type=armor_stand,tag=warlock_armor_stand] run function jugg
 execute if entity @a[tag=warlock] run function juggernaut:ability_management/check_ability {\
     player_tag:"warlock",\
     item_id:"minecraft:red_dye",\
-    item_name:'{"text": "Spawn Malevolent Aura","color": "dark_red"}',\
+    item_name:{"text": "Spawn Malevolent Aura","color": "dark_red"},\
     ability_id:"malevolent_aura",\
     cooldown:20,\
     hotbar_slot:"hotbar.1",\
@@ -36,7 +36,7 @@ execute if entity @a[tag=warlock] run function juggernaut:ability_management/che
 execute if entity @a[tag=warlock] run function juggernaut:ability_management/check_ability {\
     player_tag:"warlock",\
     item_id:"minecraft:cyan_dye",\
-    item_name:'{"text": "Spawn Banishment Glyph","color": "dark_aqua"}',\
+    item_name:{"text": "Spawn Banishment Glyph","color": "dark_aqua"},\
     ability_id:"banishment_glyph",\
     cooldown:30,\
     hotbar_slot:"hotbar.2",\
@@ -46,7 +46,7 @@ execute if entity @a[tag=warlock] run function juggernaut:ability_management/che
 execute if entity @a[tag=warlock] run function juggernaut:ability_management/check_ability {\
     player_tag:"warlock",\
     item_id:"minecraft:black_dye",\
-    item_name:'{"text": "Spawn Withering Surge","color": "dark_gray"}',\
+    item_name:{"text": "Spawn Withering Surge","color": "dark_gray"},\
     ability_id:"withering_surge",\
     cooldown:40,\
     hotbar_slot:"hotbar.3",\

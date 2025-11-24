@@ -1,8 +1,8 @@
 clear @s
-give @s iron_sword[item_name='{"text":"Teleporter\'s Sword","color":"dark_purple","italic":false}',lore=['{"text":"A weapon of decent quality.","color":"dark_gray"}'],unbreakable={},hide_additional_tooltip={}]
+give @s iron_sword[item_name='{"text":"Teleporter\'s Sword","color":"dark_purple","italic":false}',lore=['{"text":"A weapon of decent quality.","color":"dark_gray"}'],unbreakable={}]
 give @s cooked_beef[item_name='{"text":"Steak","color":"dark_purple","italic":false}',lore=['{"text":"Eat to regenerate.","color":"dark_gray"}']] 16
 give @s ender_pearl[item_name='{"text":"Orb of Teleportation","color":"dark_purple","italic":false}',lore=['{"text":"The best way to get around.","color":"dark_gray"}']] 16
 give @s ender_pearl[item_name='{"text":"Orb of Teleportation","color":"dark_purple","italic":false}',lore=['{"text":"The more the merrier.","color":"dark_gray"}']] 16
-item replace entity @s armor.chest with leather_chestplate[item_name='{"text":"Teleporter\'s Chestpiece","color":"dark_purple","italic":false}',lore=['{"text":"The sleeves got stuck in a portal once.","color":"dark_gray"}'],dyed_color=1907483,unbreakable={},hide_additional_tooltip={}]
-item replace entity @s armor.legs with leather_leggings[item_name='{"text":"Teleporter\'s Pants","color":"dark_purple","italic":false}',lore=['{"text":"These must\'ve been expensive.","color":"dark_gray"}'],dyed_color=1907483,unbreakable={},hide_additional_tooltip={}]
-item replace entity @s armor.feet with leather_boots[item_name='{"text":"Teleporter\'s Boots","color":"dark_purple","italic":false}',lore=['{"text":"Not waterproof, sadly.","color":"dark_gray"}'],dyed_color=1907483,unbreakable={},enchantments={feather_falling:10},hide_additional_tooltip={}]
+item replace entity @s armor.chest with leather_chestplate[item_name='{"text":"Teleporter\'s Chestpiece","color":"dark_purple","italic":false}',lore=['{"text":"The sleeves got stuck in a portal once.","color":"dark_gray"}'],dyed_color=1907483,unbreakable={}]
+item replace entity @s armor.legs with leather_leggings[item_name='{"text":"Teleporter\'s Pants","color":"dark_purple","italic":false}',lore=['{"text":"These must\'ve been expensive.","color":"dark_gray"}'],dyed_color=1907483,unbreakable={}]
+item replace entity @s armor.feet with leather_boots[item_name='{"text":"Teleporter\'s Boots","color":"dark_purple","italic":false}',lore=['{"text":"Not waterproof, sadly.","color":"dark_gray"}'],dyed_color=1907483,unbreakable={},enchantments={feather_falling:10}]

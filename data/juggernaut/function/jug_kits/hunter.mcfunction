@@ -3,7 +3,7 @@ execute as @s[tag=!has_jug_kit] run item replace entity @s armor.chest with iron
 execute as @s[tag=!has_jug_kit] run item replace entity @s armor.legs with iron_leggings[unbreakable={}]
 execute as @s[tag=!has_jug_kit] run item replace entity @s armor.feet with iron_boots[unbreakable={}]
 execute as @s[tag=!has_jug_kit] run give @s iron_sword[item_name='{"text": "Iron Spear"}',enchantments={sharpness:3}]
-execute as @s[tag=!has_jug_kit] run give @s bow[enchantments={flame:1,infinity:1},hide_additional_tooltip={},item_name='{"text": "Hunter\'s Bow","color": "dark_red"}',enchantment_glint_override=true,lore=['{"text": "Weapon crafted from the bones of the hunter\'s victims.","color": "dark_gray"}'],unbreakable={}]
+execute as @s[tag=!has_jug_kit] run give @s bow[enchantments={flame:1,infinity:1},tooltip_display={hidden_components:["unbreakable","enchantments"]},item_name='{"text": "Hunter\'s Bow","color": "dark_red"}',enchantment_glint_override=true,lore=['{"text": "Weapon crafted from the bones of the hunter\'s victims.","color": "dark_gray"}'],unbreakable={}]
 execute as @s[tag=!has_jug_kit] run item replace entity @s hotbar.6 with arrow
 execute as @s[tag=!has_jug_kit] run function juggernaut:descriptions/kits/juggernaut/hunter
 execute as @s[tag=!has_jug_kit] run tag @s add jug_hunter

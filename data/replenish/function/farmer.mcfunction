@@ -1,7 +1,7 @@
 clear @s
-give @s iron_hoe[item_name='{"text":"Steel Hoe","color":"dark_green","italic":false}',lore=['{"text":"The sharpest tool in the shed.","color":"dark_gray"}'],unbreakable={},enchantments={sharpness:1},hide_additional_tooltip={}]
+give @s iron_hoe[item_name='{"text":"Steel Hoe","color":"dark_green","italic":false}',lore=['{"text":"The sharpest tool in the shed.","color":"dark_gray"}'],unbreakable={},enchantments={sharpness:1}]
 give @s cooked_beef[item_name='{"text":"Steak","color":"dark_green","italic":false}',lore=['{"text":"Eat to regenerate.","color":"dark_gray"}']] 16
-item replace entity @s armor.head with leather_helmet[item_name='{"text":"Straw Hat","color":"dark_green","italic":false}',lore=['{"text":"Stereotypical? You think?","color":"dark_gray"}'],unbreakable={},hide_additional_tooltip={}]
-item replace entity @s armor.chest with leather_chestplate[item_name='{"text":"Farmer\'s Shirt","color":"dark_green","italic":false}',lore=['{"text":"Pretty bland, but better than nothing.","color":"dark_gray"}'],unbreakable={},hide_additional_tooltip={}]
-item replace entity @s armor.legs with leather_leggings[item_name='{"text":"Farmer\'s Pants","color":"dark_green","italic":false}',lore=['{"text":"Standard jeans, a bit old.","color":"dark_gray"}'],unbreakable={},hide_additional_tooltip={}]
-item replace entity @s armor.feet with leather_boots[item_name='{"text":"Farmer\'s Boots","color":"dark_green","italic":false}',lore=['{"text":"What an unpleasant smell!","color":"dark_gray"}'],unbreakable={},hide_additional_tooltip={}]
+item replace entity @s armor.head with leather_helmet[item_name='{"text":"Straw Hat","color":"dark_green","italic":false}',lore=['{"text":"Stereotypical? You think?","color":"dark_gray"}'],unbreakable={}]
+item replace entity @s armor.chest with leather_chestplate[item_name='{"text":"Farmer\'s Shirt","color":"dark_green","italic":false}',lore=['{"text":"Pretty bland, but better than nothing.","color":"dark_gray"}'],unbreakable={}]
+item replace entity @s armor.legs with leather_leggings[item_name='{"text":"Farmer\'s Pants","color":"dark_green","italic":false}',lore=['{"text":"Standard jeans, a bit old.","color":"dark_gray"}'],unbreakable={}]
+item replace entity @s armor.feet with leather_boots[item_name='{"text":"Farmer\'s Boots","color":"dark_green","italic":false}',lore=['{"text":"What an unpleasant smell!","color":"dark_gray"}'],unbreakable={}]

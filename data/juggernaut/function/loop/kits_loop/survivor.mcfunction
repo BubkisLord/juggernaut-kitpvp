@@ -11,7 +11,7 @@ execute as @e[type=snowball,tag=ice_bomb] at @s run effect give @a[tag=juggernau
 # execute if entity @a[tag=survivor] run function juggernaut:ability_management/check_ability {\
 #     player_tag:"survivor",\
 #     item_id:"minecraft:stone",\
-#     item_name:'{"text": "Resistance Stone","color": "#A4D1EA"}',\
+#     item_name:{"text": "Resistance Stone","color": "#A4D1EA"},\
 #     ability_id:0,\
 #     cooldown:60,\
 #     hotbar_slot:"hotbar.1",\

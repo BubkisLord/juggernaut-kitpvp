@@ -17,7 +17,7 @@ execute as @a[tag=has_hunters_mark,tag=!has_respawn_time,tag=!is_undetectable] a
 execute if entity @a[tag=jug_hunter] run function juggernaut:ability_management/check_ability {\
     player_tag:"jug_hunter",\
     item_id:"minecraft:target",\
-    item_name:'{"text": "Mark Prey","color": "dark_red"}',\
+    item_name:{"text": "Mark Prey","color": "dark_red"},\
     ability_id:"mark_prey",\
     cooldown:5,\
     hotbar_slot:"hotbar.2",\
@@ -27,7 +27,7 @@ execute if entity @a[tag=jug_hunter] run function juggernaut:ability_management/
 execute if entity @a[tag=jug_hunter] run function juggernaut:ability_management/check_ability {\
     player_tag:"jug_hunter",\
     item_id:"minecraft:vault",\
-    item_name:'{"text": "Pursue Prey","color": "dark_red"}',\
+    item_name:{"text": "Pursue Prey","color": "dark_red"},\
     ability_id:"pursue_prey",\
     cooldown:35,\
     hotbar_slot:"hotbar.3",\
