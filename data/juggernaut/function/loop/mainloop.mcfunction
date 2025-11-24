@@ -52,7 +52,7 @@ execute if entity @a[tag=witch_doctor] run function juggernaut:loop/kits_loop/wi
 execute if entity @a[tag=using_beacon_of_hope] run function juggernaut:ability_management/check_ability {\
     player_tag:"using_beacon_of_hope",\
     item_id:"minecraft:beacon",\
-    item_name:'{"text": "Beacon of Hope","color": "aqua"}',\
+    item_name:{"text": "Beacon of Hope","color": "aqua"},\
     ability_id:"beacon_of_hope",\
     cooldown:999999,\
     hotbar_slot:"hotbar.8",\

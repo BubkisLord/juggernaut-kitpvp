@@ -1,6 +1,4 @@
 #Samurai
-execute as @a[tag=samurai,scores={damage_dealt=1..},nbt={Inventory:[{id:"minecraft:red_dye",Slot:-106b}]}] run scoreboard players add @s ryujins_wrath 1
-execute as @a[tag=samurai,scores={damage_dealt=1..},nbt={Inventory:[{id:"minecraft:cyan_dye",Slot:-106b}]}] run scoreboard players add @s bushido_flow 1
 execute as @a[tag=samurai,scores={damage_dealt=1..}] run scoreboard players remove @s damage_dealt 1
 
 # The more ryujins wrath, the more strength and recovery the samurai gains
@@ -104,13 +102,6 @@ execute as @a[tag=divinity,nbt={SelectedItem:{id:"minecraft:phantom_membrane"}}]
 execute as @a[tag=divinity,nbt={SelectedItem:{id:"minecraft:phantom_membrane"}}] at @s run scoreboard players add @s aura_sound 1
 execute as @a[scores={aura_sound=20..},tag=divinity,nbt={SelectedItem:{id:"minecraft:phantom_membrane",}}] at @s run function abilities:aura_sound
 
-#Auramancer
-execute as @a[nbt={Inventory:[{id:"minecraft:turtle_scute",Slot:-106b}]},tag=auramancer] run function abilities:aura_protection
-execute as @a[nbt={Inventory:[{id:"minecraft:cobweb",Slot:-106b}]},tag=auramancer] run function abilities:aura_confusion
-execute as @a[nbt={Inventory:[{id:"minecraft:wither_rose",Slot:-106b}]},tag=auramancer] run function abilities:aura_despair
-execute as @a[nbt={Inventory:[{id:"minecraft:bell",Slot:-106b}]},tag=auramancer] run function abilities:aura_vision
-execute as @a[scores={aura_sound=20..},tag=auramancer] run function abilities:aura_sound
-
 #Levitator
 effect give @a[tag=levitator,nbt={SelectedItem:{id:"minecraft:firework_rocket"}}] levitation 1 2 false
 execute as @a[tag=levitator,nbt={SelectedItem:{id:"minecraft:firework_rocket"}}] at @s run particle firework ~ ~ ~ 0.4 0.0001 0.4 0 10 force
@@ -136,6 +127,3 @@ effect give @a[tag=shaman] speed 1000000 0 true
 execute at @a[tag=ninja] run execute as @e[type=item,nbt={Item:{id:"minecraft:firework_star"}}] run function abilities:ninja_ability
 effect give @a[tag=ninja] speed 1000000 2 true
 effect give @a[tag=ninja] jump_boost 1000000 1 true
-
-#Sharpshooter
-execute as @e[nbt={crit:1b,Potion:"minecraft:luck"}] at @s at @p run function abilities:sharpshooter_ability
