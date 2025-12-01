@@ -7,7 +7,7 @@ effect give @a[tag=seeker] strength 1 9 true
 
 execute as @a[tag=seeker] at @s unless entity @e[type=armor_stand,tag=seeker_radar] run summon armor_stand ~ ~ ~ {Invisible:true,Invulnerable:true,CustomNameVisible:false,NoGravity:true,Small:true,Tags:["seeker_radar","kill_on_end_game"]}
 
-execute if score #juggernaut_manager second_counter matches 40.. run execute as @a[tag=seeker] at @s run execute as @a[tag=hider] run function hide_and_seek:loop/seeker_radar
+execute if score #juggernaut_manager second_counter matches 20.. run execute as @a[tag=seeker] at @s run execute as @a[tag=hider] run function hide_and_seek:loop/seeker_radar
 
 # If only one player is alive, wait 15 seconds and then end the game
 # Calculate players left.
