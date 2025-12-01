@@ -17,7 +17,7 @@ execute as @a[nbt={Inventory:[{id:"minecraft:red_glazed_terracotta"}]}] at @s an
 execute as @a[nbt={Inventory:[{id:"minecraft:red_glazed_terracotta"}]}] at @s run clear @s red_glazed_terracotta
 
 # Spawn Crates
-execute if score #crate_count var < #max_crate_count var run summon armor_stand 0 100 0 {Tags:["crate","kill_on_end_game"],Invisible:true,Invulnerable:true,Small:true,NoGravity:true,CustomName:'{"text": "Survival Crate","bold": true}',CustomNameVisible:true}
+execute if score #crate_count var < #max_crate_count var run summon armor_stand 0 100 0 {Tags:["crate","kill_on_end_game"],Invisible:true,Invulnerable:true,Small:true,NoGravity:true,CustomName:{"text": "Survival Crate","bold": true},CustomNameVisible:true}
 execute positioned 0 100 0 as @e[type=armor_stand,tag=crate,distance=..3] if score #crate_count var < #max_crate_count var run spreadplayers ~ ~ 30 60 under 200 false @s
 scoreboard players set #crate_count var 0
 execute as @e[type=armor_stand,tag=crate] run scoreboard players add #crate_count var 1

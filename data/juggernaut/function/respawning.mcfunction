@@ -34,6 +34,7 @@ execute if score @s lives_remaining matches ..0 run tag @s remove jug_hunter
 execute if score @s lives_remaining matches ..0 run tag @s remove is_hunting
 execute if score @s lives_remaining matches ..0 run tag @s remove has_hunters_mark
 execute if score @s lives_remaining matches ..0 run tag @s remove dragon
+execute if score @s lives_remaining matches ..0 run tag @s remove eclipse_stalker
 execute if score @s lives_remaining matches ..0 run tag @s remove is_floating
 execute if score @s lives_remaining matches ..0 run tag @s remove chain_hunter
 execute if score @s lives_remaining matches ..0 run tag @s remove blinker
@@ -42,6 +43,6 @@ execute if score @s lives_remaining matches ..0 run tag @s remove guide
 execute if score @s lives_remaining matches ..0 run attribute @s max_health base set 20
 execute if score @s lives_remaining matches ..0 run attribute @s scale base set 1
 execute if score @s lives_remaining matches ..0 run attribute @s gravity base set 0.08
-execute if score @s lives_remaining matches ..0 run spawnpoint @s 2000 100 0
+execute if score @s lives_remaining matches ..0 run spawnpoint @s 2000 100 0 ~ ~
 execute if score @s lives_remaining matches ..0 run tag @s add lobby.player
 execute if score @s lives_remaining matches ..0 run clear @s

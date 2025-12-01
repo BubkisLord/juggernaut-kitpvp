@@ -29,6 +29,9 @@ scoreboard players set @a beacon_of_hope_cooldown 0
 scoreboard players set @a speed_pot_cooldown 0
 scoreboard players set @a fire_pot_cooldown 0
 scoreboard players set @a strength_pot_cooldown 0
+scoreboard players set @a malevolent_aura_cooldown 0
+scoreboard players set @a banishment_glyph_cooldown 0
+scoreboard players set @a withering_surge_cooldown 0
 spawnpoint @a 2000 100 0
 gamerule showDeathMessages false
 tag @a remove has_jug_kit
@@ -139,6 +142,11 @@ scoreboard players set @e[type=armor_stand,tag=replenishment.station] sentinel_p
 scoreboard players set @a lives 0
 scoreboard players set @a game_deaths 0
 scoreboard players set @a borrowed_damage 0
+
+bossbar remove warlock:malevolent_aura
+bossbar remove warlock:banishment_glyph
+bossbar remove warlock:withering_surge
+
 kill @e[type=armor_stand,tag=malevolent_aura]
 kill @e[type=armor_stand,tag=banishment_glyph]
 kill @e[type=armor_stand,tag=withering_surge]

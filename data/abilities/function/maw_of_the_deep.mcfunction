@@ -14,4 +14,4 @@ playsound ambient.underwater.loop.additions.ultra_rare master @s ~ ~ ~ 3 1 1
 playsound ambient.underwater.loop.additions.ultra_rare master @s ~ ~ ~ 3 1 1
 
 execute as @a[tag=pirate] at @s run kill @e[type=item,nbt={Item:{id:"minecraft:iron_sword"}},distance=..3]
-give @s iron_sword[item_name='{"text":"Maw of the Deep","color":"dark_aqua","italic":false,"bold":false}',lore=['{"text":"A great weapon with all power lost to the sea...","color":"dark_gray"}'],unbreakable={},enchantments={sharpness:4}]
+give @s iron_sword[item_name={"text":"Maw of the Deep","color":"dark_aqua","italic":false,"bold":false},lore=[{"text":"A great weapon with all power lost to the sea...","color":"dark_gray"}],unbreakable={},enchantments={sharpness:4}]

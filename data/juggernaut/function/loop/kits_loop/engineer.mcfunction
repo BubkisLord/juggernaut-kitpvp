@@ -4,7 +4,8 @@ execute at @e[type=armor_stand,tag=engineer_tower] run execute as @a[tag=juggern
 execute as @e[type=skeleton,tag=skeleton_turret] unless entity @e[type=armor_stand,tag=turret] run kill @s
 execute as @e[type=skeleton,tag=skeleton_turret] at @s run tp @s @n[type=armor_stand,tag=turret]
 
-execute at @e[type=armor_stand,tag=replenishment_tower_particle_emitter] unless entity @e[type=armor_stand,tag=replenishment_tower,distance=..5] run kill @e[type=armor_stand,tag=replenishment_tower_particle_emitter]
+execute as @e[type=armor_stand,tag=revealing_tower] unless entity @e[type=armor_stand,tag=revealing_tower_particle_emitter] run summon armor_stand ~ ~ ~ {Invisible:true,Invulnerable:true,CustomNameVisible:false,NoGravity:true,Small:true,Tags:["revealing_tower_particle_emitter","kill_on_end_game"]}
+execute at @e[type=armor_stand,tag=replenishment_tower_particle_emitter] run kill @e[type=armor_stand,tag=replenishment_tower_particle_emitter]
 
 execute as @e[type=armor_stand,tag=revealing_tower] at @s if entity @a[tag=juggernaut,distance=..8] run data modify entity @s CustomNameVisible set value true
 execute as @e[type=armor_stand,tag=revealing_tower] at @s unless entity @a[tag=juggernaut,distance=..8] run data modify entity @s CustomNameVisible set value false

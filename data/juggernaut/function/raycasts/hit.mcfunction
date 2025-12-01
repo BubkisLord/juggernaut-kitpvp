@@ -25,4 +25,10 @@ execute if score #hit_function_id var matches 8 run execute if entity @s[tag=sha
 execute if score #hit_function_id var matches 8 run execute if entity @s[tag=shadow_marked] run kill @n[tag=eclipse_return_location]
 execute if score #hit_function_id var matches 8 run execute if entity @s[tag=shadow_marked] run tp @p[tag=eclipse_stalker] ^ ^1 ^1 facing ^ ^ ^1000
 execute if score #hit_function_id var matches 8 run execute unless entity @s[tag=shadow_marked] run tellraw @p[tag=eclipse_stalker] [{"text": "Target must be shadow marked.","italic": true,"color": "gray"}]
+execute if score #hit_function_id var matches 9 run execute if entity @s[tag=camera] run particle explosion_emitter ~ ~ ~ 0.5 0.5 0.5 0 1 force @a
+execute if score #hit_function_id var matches 9 run kill @s
+execute if score #hit_function_id var matches 10 run scoreboard players set @p[tag=eclipse_stalker,tag=teleporting] shadow_mark_cooldown 30
+execute if score #hit_function_id var matches 10 run execute at @p[tag=eclipse_stalker,tag=teleporting] run particle witch ~ ~0.5 ~ 1.5 1.5 1.5 0 200 force
+execute if score #hit_function_id var matches 10 run execute positioned ~ ~0.5 ~ run tp @p[tag=eclipse_stalker,tag=teleporting] @s
+execute if score #hit_function_id var matches 10 run particle flame ~ ~0.5 ~ 1.5 1.5 1.5 0 100 force
 # execute if score #hit_function_id var matches 5 run 

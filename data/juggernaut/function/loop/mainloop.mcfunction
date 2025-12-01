@@ -42,6 +42,7 @@ execute if entity @a[tag=harbinger] run function juggernaut:loop/kits_loop/harbi
 
 # Juggernaut Kits
 execute if entity @a[tag=dragon] run function juggernaut:loop/kits_loop/dragon
+execute if entity @a[tag=eclipse_stalker] run function juggernaut:loop/kits_loop/eclipse_stalker
 execute if entity @a[tag=jug_hunter] run function juggernaut:loop/kits_loop/hunter
 execute if entity @a[tag=warlock] run function juggernaut:loop/kits_loop/warlock
 execute if entity @a[tag=predator] run function juggernaut:loop/kits_loop/predator

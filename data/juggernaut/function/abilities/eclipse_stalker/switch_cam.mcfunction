@@ -1,7 +1,4 @@
 execute if entity @s[tag=!using_camera] run return fail
 
-tag @s remove using_camera
+tag @e[type=armor_stand,tag=camera,tag=!used_camera,limit=1,sort=random] add used_camera
 tag @n[type=armor_stand] remove used_camera
-function juggernaut:stalker_leave_camera
-tp @s @n[type=area_effect_cloud,tag=eclipse_return_location]
-kill @n[type=area_effect_cloud,tag=eclipse_return_location]

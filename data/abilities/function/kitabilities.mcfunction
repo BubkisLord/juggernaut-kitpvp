@@ -85,8 +85,8 @@ execute as @a[tag=assassin,scores={assassinActivate=1},nbt={Inventory:[{"id":"mi
 scoreboard players add @a[tag=ambusher,tag=ambush_cooldown] ambushCounter 1
 scoreboard players remove @a[tag=ambusher,tag=ambush_cooldown,scores={ambushCounter=20..}] ambushDisplay 1
 scoreboard players set @a[tag=ambusher,tag=ambush_cooldown,scores={ambushCounter=20..}] ambushCounter 0
-execute as @a[tag=ambusher,tag=ambush_cooldown,scores={ambushDisplay=..0}] run clear @s popped_chorus_fruit[item_name='{"text":"Drained Star","color":"dark_purple","italic":false}',lore=['{"text":"Ambush Enemy is on cooldown.","color":"dark_gray"}']]
-execute as @a[tag=ambusher,tag=ambush_cooldown,scores={ambushDisplay=..0}] run item replace entity @s hotbar.1 with nether_star[item_name='{"text":"Ambush Enemy","color":"dark_purple","italic":false}',lore=['{"text":"Drop to be teleported to a random enemy.","color":"dark_gray"}']]
+execute as @a[tag=ambusher,tag=ambush_cooldown,scores={ambushDisplay=..0}] run clear @s popped_chorus_fruit[item_name={"text":"Drained Star","color":"dark_purple","italic":false},lore=[{"text":"Ambush Enemy is on cooldown.","color":"dark_gray"}]]
+execute as @a[tag=ambusher,tag=ambush_cooldown,scores={ambushDisplay=..0}] run item replace entity @s hotbar.1 with nether_star[item_name={"text":"Ambush Enemy","color":"dark_purple","italic":false},lore=[{"text":"Drop to be teleported to a random enemy.","color":"dark_gray"}]]
 execute as @a[tag=ambusher,tag=ambush_cooldown,scores={ambushDisplay=..0}] run tag @s remove ambush_cooldown
 execute at @a[tag=ambusher] run execute as @e[type=item,nbt={Item:{id:"minecraft:popped_chorus_fruit"}},distance=..3] run function abilities:ambush_on_cooldown
 execute at @a[tag=ambusher] run execute as @e[type=item,nbt={Item:{id:"minecraft:nether_star"}},distance=..3] run function abilities:ambush

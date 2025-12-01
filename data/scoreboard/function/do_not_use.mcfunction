@@ -123,6 +123,7 @@ scoreboard objectives add strength_pot_cooldown dummy
 scoreboard objectives add quit minecraft.custom:minecraft.leave_game
 scoreboard objectives add replenish_modifier dummy
 scoreboard objectives add debug_mode dummy
+scoreboard objectives add replenish_speed dummy
 
 team add blue
 team add red

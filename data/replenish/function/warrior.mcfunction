@@ -1,7 +1,7 @@
 clear @s
-give @s stone_sword[item_name='{"text":"Warrior\'s Sword","color":"dark_green","italic":false}',lore=['{"text":"A sturdy blade.","color":"dark_gray"}'],unbreakable={},enchantments={sharpness:2}]
-give @s cooked_beef[item_name='{"text":"Steak","color":"dark_green","italic":false}',lore=['{"text":"Eat to regenerate.","color":"dark_gray"}']] 16
-item replace entity @s armor.head with leather_helmet[item_name='{"text":"Warrior\'s Helmet","color":"dark_green","italic":false}',lore=['{"text":"Yields decent protection.","color":"dark_gray"}'],dyed_color=15660787,unbreakable={}]
-item replace entity @s armor.chest with leather_chestplate[item_name='{"text":"Warrior\'s Chestpiece","color":"dark_green","italic":false}',lore=['{"text":"Keep yourself covered.","color":"dark_gray"}'],dyed_color=15660787,unbreakable={}]
-item replace entity @s armor.legs with iron_leggings[item_name='{"text":"Warrior\'s Pants","color":"dark_green","italic":false}',lore=['{"text":"Look, it\'s iron!","color":"dark_gray"}'],unbreakable={}]
-item replace entity @s armor.feet with iron_boots[item_name='{"text":"Warrior\'s Boots","color":"dark_green","italic":false}',lore=['{"text":"Yikes, they smell!","color":"dark_gray"}'],unbreakable={}]
+give @s stone_sword[item_name={"text":"Warrior's Sword","color":"dark_green","italic":false},lore=[{"text":"A sturdy blade.","color":"dark_gray"}],unbreakable={},enchantments={sharpness:2}]
+give @s cooked_beef[item_name={"text":"Steak","color":"dark_green","italic":false},lore=[{"text":"Eat to regenerate.","color":"dark_gray"}]] 16
+item replace entity @s armor.head with leather_helmet[item_name={"text":"Warrior's Helmet","color":"dark_green","italic":false},lore=[{"text":"Yields decent protection.","color":"dark_gray"}],dyed_color=15660787,unbreakable={}]
+item replace entity @s armor.chest with leather_chestplate[item_name={"text":"Warrior's Chestpiece","color":"dark_green","italic":false},lore=[{"text":"Keep yourself covered.","color":"dark_gray"}],dyed_color=15660787,unbreakable={}]
+item replace entity @s armor.legs with iron_leggings[item_name={"text":"Warrior's Pants","color":"dark_green","italic":false},lore=[{"text":"Look, it's iron!","color":"dark_gray"}],unbreakable={}]
+item replace entity @s armor.feet with iron_boots[item_name={"text":"Warrior's Boots","color":"dark_green","italic":false},lore=[{"text":"Yikes, they smell!","color":"dark_gray"}],unbreakable={}]

@@ -10,9 +10,9 @@ execute as @a[tag=tutorial.player] run attribute @s minecraft:knockback_resistan
 execute as @a[tag=!lobby.player,tag=!tutorial.player] run attribute @s minecraft:knockback_resistance base set 0
 
 #Teleport and Stats
-item replace entity @a[tag=lobby.player,tag=!autorespawn] hotbar.5 with minecraft:globe_banner_pattern[item_name='{"text":"Your Statistics","color":"green","italic":false}', lore=['{"text":"Drop this item to view","color":"dark_gray"}','{"text":"your statistics.","color":"dark_gray"}']] 1
-item replace entity @a[tag=lobby.player,tag=!autorespawn] hotbar.7 with minecraft:chest[item_name='{"text":"Kit Selection","color":"gold","italic":false}',lore=['{"text":"Select kits in the Kit Selection room.","color":"dark_gray"}','{"text":"Drop this item to go.","color":"dark_gray"}']]
-item replace entity @a[tag=lobby.player,tag=!autorespawn] hotbar.8 with minecraft:dark_oak_door[item_name='{"text":"Back to Lobby","color":"gold","italic":false}',lore=['{"text":"Drop this item to go back","color":"dark_gray"}','{"text":"to the Main Lobby.","color":"dark_gray"}']]
+item replace entity @a[tag=lobby.player,tag=!autorespawn] hotbar.5 with minecraft:globe_banner_pattern[item_name={"text":"Your Statistics","color":"green","italic":false}, lore=[{"text":"Drop this item to view","color":"dark_gray"},{"text":"your statistics.","color":"dark_gray"}]] 1
+item replace entity @a[tag=lobby.player,tag=!autorespawn] hotbar.7 with minecraft:chest[item_name={"text":"Kit Selection","color":"gold","italic":false},lore=[{"text":"Select kits in the Kit Selection room.","color":"dark_gray"},{"text":"Drop this item to go.","color":"dark_gray"}]]
+item replace entity @a[tag=lobby.player,tag=!autorespawn] hotbar.8 with minecraft:dark_oak_door[item_name={"text":"Back to Lobby","color":"gold","italic":false},lore=[{"text":"Drop this item to go back","color":"dark_gray"},{"text":"to the Main Lobby.","color":"dark_gray"}]]
 
 #Stats
 execute as @e[type=item,nbt={Item:{id:"minecraft:globe_banner_pattern"}}] at @s as @p run function scoreboard:stats
