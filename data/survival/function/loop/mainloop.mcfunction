@@ -31,9 +31,9 @@ execute as @e[type=armor_stand,tag=survival_chest_indicator,tag=legendary] at @s
 
 
 # Allow Crates to be opened
-execute as @e[type=armor_stand,tag=crate] at @s if entity @a[distance=..3] run particle totem_of_undying ~ ~ ~ 0.3 0.3 0.3 0 10 force @a[distance=..3]
+execute as @e[type=armor_stand,tag=crate] at @s if entity @a[distance=..3,tag=!spectator] run particle totem_of_undying ~ ~ ~ 0.3 0.3 0.3 0 10 force @a[distance=..3]
 # Open after 3 seconds
-execute as @e[type=armor_stand,tag=crate,scores={var=3..}] at @s run loot give @p[distance=..3] loot survival:crate
+execute as @e[type=armor_stand,tag=crate,scores={var=3..}] at @s run loot give @p[distance=..3,tag=!spectator] loot survival:crate
 execute as @e[type=armor_stand,tag=crate,scores={var=3..}] at @s run playsound block.note_block.cow_bell master @a[distance=..3] ~ ~ ~ 1 1
 execute as @e[type=armor_stand,tag=crate,scores={var=3..}] at @s run playsound entity.item.pickup master @a[distance=..3] ~ ~ ~ 1 1
 execute as @e[type=armor_stand,tag=crate,scores={var=3..}] run kill @s

@@ -56,20 +56,46 @@ execute if score #juggernaut_customisation completable_stations matches 1 run sc
 execute if score #juggernaut_customisation completable_stations matches 1 run scoreboard players operation #stations_needed var -= #3 var
 execute if score #juggernaut_customisation completable_stations matches 1 run function juggernaut:replenishment_management/pick_replenishment_stations with storage juggernaut:replenishment_management/pick_replenishment_stations
 
-# Calculate the total needed replenishing time for the runners to win.
 scoreboard players set #playercount var 0
-execute as @a[tag=runner] run scoreboard players add #playercount var 1
+execute as @a[tag=runner] run scoreboard players add #playercount var 2
+scoreboard players remove #playercount var 2
+
 scoreboard players set #juggernaut_multiplier var 0
 execute as @a[tag=juggernaut] run scoreboard players add #juggernaut_multiplier var 1
+
 execute if score #juggernaut_customisation completable_stations matches 1 run scoreboard players set #beginning_time var 2500
 execute if score #juggernaut_customisation completable_stations matches 1 run scoreboard players set #beginning_time var 4500
+
 scoreboard players operation #juggernaut_manager total_replenishment_needed = #beginning_time var
 scoreboard players operation #juggernaut_manager total_replenishment_needed *= #playercount var
 scoreboard players operation #juggernaut_manager total_replenishment_needed += #beginning_time var
 scoreboard players operation #juggernaut_manager total_replenishment_needed /= #juggernaut_multiplier var
 
-scoreboard players operation #total_replenishment_per_station var = #juggernaut_manager total_replenishment_needed
-scoreboard players operation #total_replenishment_per_station var /= #stations_needed var
+# -------------------------
+# EXTRA SCALING FOR 3+ RUNNERS
+# -------------------------
+
+# temp = playercount - 2
+scoreboard players set #extra_scale var 0
+scoreboard players operation #extra_scale var = #playercount var
+scoreboard players remove #extra_scale var 2
+
+# if playercount <= 2, clamp extra_scale to 0
+execute if score #extra_scale var matches ..0 run scoreboard players set #extra_scale var 0
+
+# scale increment per runner above 2 (example: 10% per runner)
+# scale_value = extra_scale * 10
+scoreboard players set #scale_value var 10
+scoreboard players operation #scale_value var *= #extra_scale var
+
+# convert to multiplier: multiplier = 100 + scale_value
+scoreboard players set #multiplier var 100
+scoreboard players operation #multiplier var += #scale_value var
+
+# apply percentage multiplier
+scoreboard players operation #juggernaut_manager total_replenishment_needed *= #multiplier var
+scoreboard players operation #juggernaut_manager total_replenishment_needed /= #100 var
+
 
 
 # Set the game state to pregame

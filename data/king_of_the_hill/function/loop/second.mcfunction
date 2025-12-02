@@ -32,8 +32,8 @@ execute store result bossbar king_of_the_hill_timer max run scoreboard players g
 execute store result bossbar king_of_the_hill_timer value run scoreboard players get #current_game_time var
 
 # Make Crates be able to be opened
-execute as @e[type=armor_stand,tag=crate] at @s unless entity @a[distance=..3] run particle dust_color_transition{from_color:[0.3,0.2,0.2],to_color:[0.9,0.9,0.9],scale:1} ~ ~-0.25 ~ 0.3 0.3 0.3 0 300 force @a[distance=..16]
-execute as @e[type=armor_stand,tag=crate] at @s if entity @a[distance=..3] run scoreboard players add @s var 1
+execute as @e[type=armor_stand,tag=crate] at @s unless entity @a[distance=..3,tag=!spectator] run particle dust_color_transition{from_color:[0.3,0.2,0.2],to_color:[0.9,0.9,0.9],scale:1} ~ ~-0.25 ~ 0.3 0.3 0.3 0 300 force @a[distance=..16]
+execute as @e[type=armor_stand,tag=crate] at @s if entity @a[distance=..3,tag=!spectator] run scoreboard players add @s var 1
 
 # Decrease Grace Period
 execute if score #grace_period var > #0 var run title @a actionbar [{"text": "Grace Period: ","bold": true},{"score":{"name":"#grace_period","objective":"var"},"bold": true},{"text": " seconds"}]
