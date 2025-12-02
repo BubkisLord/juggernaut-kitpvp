@@ -59,7 +59,6 @@ execute if score #juggernaut_customisation completable_stations matches 1 run fu
 
 scoreboard players set #runner_lives_count var 0
 execute as @a[tag=runner] run scoreboard players operation #runner_lives_count var += @s lives
-scoreboard players remove #runner_lives_count var 4
 
 scoreboard players set #juggernaut_multiplier var 0
 execute as @a[tag=juggernaut] run scoreboard players add #juggernaut_multiplier var 1
