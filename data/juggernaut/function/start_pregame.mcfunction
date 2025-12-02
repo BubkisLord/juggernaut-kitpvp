@@ -29,6 +29,7 @@ scoreboard players set @a juggernaut_release_timer 0
 scoreboard players set #juggernaut_count var 0
 execute as @a[tag=juggernaut] run scoreboard players add #juggernaut_count var 1
 
+# runner lives = total juggernauts + 1
 scoreboard players set @a[tag=juggernaut] lives 1
 execute store result score @a[tag=runner] lives run scoreboard players get #juggernaut_count var
 scoreboard players add @a[tag=runner] lives 1
@@ -56,9 +57,9 @@ execute if score #juggernaut_customisation completable_stations matches 1 run sc
 execute if score #juggernaut_customisation completable_stations matches 1 run scoreboard players operation #stations_needed var -= #3 var
 execute if score #juggernaut_customisation completable_stations matches 1 run function juggernaut:replenishment_management/pick_replenishment_stations with storage juggernaut:replenishment_management/pick_replenishment_stations
 
-scoreboard players set #playercount var 0
-execute as @a[tag=runner] run scoreboard players add #playercount var 2
-scoreboard players remove #playercount var 2
+scoreboard players set #runner_lives_count var 0
+execute as @a[tag=runner] run scoreboard players operation #runner_lives_count var += @s lives
+scoreboard players remove #runner_lives_count var 4
 
 scoreboard players set #juggernaut_multiplier var 0
 execute as @a[tag=juggernaut] run scoreboard players add #juggernaut_multiplier var 1
@@ -67,7 +68,7 @@ execute if score #juggernaut_customisation completable_stations matches 1 run sc
 execute if score #juggernaut_customisation completable_stations matches 1 run scoreboard players set #beginning_time var 4500
 
 scoreboard players operation #juggernaut_manager total_replenishment_needed = #beginning_time var
-scoreboard players operation #juggernaut_manager total_replenishment_needed *= #playercount var
+scoreboard players operation #juggernaut_manager total_replenishment_needed *= #runner_lives_count var
 scoreboard players operation #juggernaut_manager total_replenishment_needed += #beginning_time var
 scoreboard players operation #juggernaut_manager total_replenishment_needed /= #juggernaut_multiplier var
 
@@ -75,15 +76,15 @@ scoreboard players operation #juggernaut_manager total_replenishment_needed /= #
 # EXTRA SCALING FOR 3+ RUNNERS
 # -------------------------
 
-# temp = playercount - 2
+# temp = runner_lives_count - 2
 scoreboard players set #extra_scale var 0
-scoreboard players operation #extra_scale var = #playercount var
+scoreboard players operation #extra_scale var = #runner_lives_count var
 scoreboard players remove #extra_scale var 2
 
-# if playercount <= 2, clamp extra_scale to 0
+# if runner_lives_count <= 2, clamp extra_scale to 0
 execute if score #extra_scale var matches ..0 run scoreboard players set #extra_scale var 0
 
-# scale increment per runner above 2 (example: 10% per runner)
+# scale increment per runner above 4 (example: 10% per runner life)
 # scale_value = extra_scale * 10
 scoreboard players set #scale_value var 10
 scoreboard players operation #scale_value var *= #extra_scale var
