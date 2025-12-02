@@ -40,5 +40,5 @@ summon armor_stand 0 102.1 -2106 {CustomNameVisible:1b,NoGravity:1b,Marker:1b,In
 
 summon armor_stand -4 102.5 -2065 {CustomNameVisible:1b,NoGravity:1b,Marker:1b,Invisible:1b,CustomName:{"text":"Warrior","color":"dark_green"}}
 summon armor_stand 4 102.5 -2065 {CustomNameVisible:1b,NoGravity:1b,Marker:1b,Invisible:1b,CustomName:{"text":"Warrior","color":"dark_green"}}
-summon item -4 102 -2065 {Age:-32768,PickupDelay:32767,Tags:["DisplayItem"],Item:{id:"minecraft:stone_sword",Count:1b}}
-summon item 4 102 -2065 {Age:-32768,PickupDelay:32767,Tags:["DisplayItem"],Item:{id:"minecraft:stone_sword",Count:1b}}
+summon item -4 102 -2065 {Age:-32768,PickupDelay:32767,Tags:["DisplayItem"],Item:{id:"minecraft:stone_sword",count:1b}}
+summon item 4 102 -2065 {Age:-32768,PickupDelay:32767,Tags:["DisplayItem"],Item:{id:"minecraft:stone_sword",count:1b}}
