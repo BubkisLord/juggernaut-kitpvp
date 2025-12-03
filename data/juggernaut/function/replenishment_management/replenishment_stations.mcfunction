@@ -48,7 +48,7 @@ execute as @e[type=armor_stand,tag=replenishment.station] at @s if score #game_s
 # execute as @e[type=armor_stand,tag=replenishment.station] at @s if score #game_state var matches 11 if score @s sentinel_progress matches 160.. run tag @e[type=armor_stand,tag=sentinel_tower] remove sentinel_tower
 execute as @e[type=armor_stand,tag=replenishment.station] at @s if score #game_state var matches 11 if score @s sentinel_progress matches 160.. run tag @s add sentinel_tower
 execute as @e[type=armor_stand,tag=replenishment.station,tag=sentinel_tower,scores={sentinel_progress=1..}] run scoreboard players set @s sentinel_progress 0
-execute as @e[type=armor_stand,tag=replenishment.station,tag=sentinel_tower] at @s as @a[tag=juggernaut,distance=..8] run effect give @s glowing 1 0 true
+execute as @e[type=armor_stand,tag=replenishment.station,tag=sentinel_tower] at @s as @a[tag=juggernaut,distance=..8,tag=!is_undetectable] run effect give @s glowing 1 0 true
 
 # Effects when a station is completed.
 execute as @e[type=armor_stand,tag=replenishment.station] at @s if score @s replenish_amount >= #total_replenishment_per_station var if score #juggernaut_customisation completable_stations matches 1 run function juggernaut:replenishment_management/check_station_completed
