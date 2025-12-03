@@ -190,7 +190,7 @@ execute as @a[tag=beacon_of_hope_active,scores={beacon_of_hope_duration=1..}] ru
 execute as @a[tag=beacon_of_hope_active,scores={beacon_of_hope_duration=0}] run tag @s remove beacon_of_hope_active
 
 # Flame Ward
-effect give @a[tag=using_flame_ward] fire_resistance 1 0 true
+effect give @a[tag=using_flame_ward] fire_resistance infinite 0 true
 
 # Spectator
 execute as @a[tag=spectator] run tag @s remove in_chase
