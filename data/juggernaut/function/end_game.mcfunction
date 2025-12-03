@@ -111,6 +111,7 @@ execute as @e[type=armor_stand,tag=replenishment.station_deactivated] run tag @s
 scoreboard players set @e[type=armor_stand,tag=replenishment.station] replenish_amount 0
 
 execute as @a run scoreboard players set @s chase_timeout 0
+execute as @a run tag @s remove in_chase
 
 clear @a
 kill @a
