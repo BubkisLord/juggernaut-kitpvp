@@ -1,6 +1,6 @@
 kill @e[tag=turret]
 summon armor_stand ~ ~ ~ {Invisible:true,Invulnerable:true,NoGravity:true,Tags:["turret","engineer_tower","kill_on_end_game"],Small:true}
-summon skeleton ~ ~ ~ {Team:"runner",active_effects:[{id:"resistance",duration:9999999,amplifier:0,show_particles:false}],DeathLootTable:"",attributes:[{id:"max_health",base:30}],Tags:["kill_on_end_game","skeleton_turret"],Invulnerable:true}
+summon skeleton ~ ~ ~ {Team:"runner",active_effects:[{id:"resistance",duration:9999999,amplifier:0,show_particles:false}],DeathLootTable:"",attributes:[{id:"max_health",base:30}],Tags:["kill_on_end_game","skeleton_turret"],Invulnerable:true,equipment:{chest:{id:"diamond_chestplate",count:1,components:{enchantments:{protection:5,thorns:5,vanishing_curse:1}}},feet:{id:"diamond_boots",count:1,components:{enchantments:{protection:5,thorns:5,vanishing_curse:1}}},legs:{id:"diamond_leggings",count:1,components:{enchantments:{protection:5,thorns:5,vanishing_curse:1}}},head:{id:"diamond_helmet",count:1,components:{enchantments:{protection:5,thorns:5,vanishing_curse:1}}},mainhand:{id:"bow",count:1,components:{enchantments:{power:6,punch:1,vanishing_curse:1}}}},drop_chances:{chest:0,feet:0,head:0,legs:0,mainhand:0}}
 scoreboard players set @n[type=armor_stand,tag=turret] var 60
 scoreboard players set @n[type=armor_stand,tag=turret] dispel_progress 0
 scoreboard players set @n[type=armor_stand,tag=turret] total_dispelling_needed 5

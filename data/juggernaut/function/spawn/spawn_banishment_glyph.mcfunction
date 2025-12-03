@@ -1,2 +1,9 @@
 execute at @a[tag=warlock] run execute as @e[type=item,nbt={Item:{id:"minecraft:cyan_dye"}},distance=..3] run summon armor_stand ~ ~0.5 ~ {NoGravity:true,Invulnerable:true,Invisible:true,CustomName:{"text": "Banishment Glyph","color": "blue","bold": true},CustomNameVisible:true,Tags:["banishment_glyph","warlock_armor_stand"]}
 execute at @a[tag=warlock] run scoreboard players set @n[type=armor_stand,tag=banishment_glyph] total_dispelling_needed 40
+bossbar add warlock:banishment_glyph "Banishment Glyph"
+bossbar set warlock:banishment_glyph value 0
+bossbar set warlock:banishment_glyph max 40
+bossbar set warlock:banishment_glyph color blue
+bossbar set warlock:banishment_glyph players @a
+bossbar set warlock:banishment_glyph style notched_10
+bossbar set warlock:banishment_glyph visible true
