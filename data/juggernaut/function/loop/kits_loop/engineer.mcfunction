@@ -34,6 +34,7 @@ execute if entity @a[tag=engineer] run function juggernaut:ability_management/ch
     player_tag:"engineer",\
     item_id:"minecraft:gold_block",\
     item_name:{"text": "Spawn Revealing Tower","color": "gold"},\
+    description:[{"text": "Summon a tower that is invisible until the Juggernaut is close.","color": "gray"},{"text": "Reveals the Juggernaut when they are within 8 blocks.","color": "gray"},{"text": "The Juggernaut may stand near it to dispel/remove it.","color": "gray"},{"text": "Cooldown: 1m 30s","color": "dark_gray"}],\
     ability_id:"revealing_tower",\
     cooldown:90,\
     hotbar_slot:"hotbar.0",\
@@ -45,6 +46,7 @@ execute if entity @a[tag=engineer] run function juggernaut:ability_management/ch
     player_tag:"engineer",\
     item_id:"minecraft:lime_dye",\
     item_name:{"text": "Spawn Replenishment Tower","color": "green"},\
+    description:[{"text": "Summon a tower with a visible nametag.","color": "gray"},{"text": "Acts as an additional, mobile replenishment station.","color": "gray"},{"text": "Only engineers can use it.","color": "gray"},{"text": "The Juggernaut may stand near it to dispel/remove it.","color": "gray"},{"text": "Cooldown: 1m","color": "dark_gray"}],\
     ability_id:"replenishment_tower",\
     cooldown:60,\
     hotbar_slot:"hotbar.1",\
@@ -56,6 +58,7 @@ execute if entity @a[tag=engineer] run function juggernaut:ability_management/ch
     player_tag:"engineer",\
     item_id:"minecraft:bone",\
     item_name:{"text": "Spawn Turret","color": "gray"},\
+    description:[{"text": "Summon a turret that shoots the Juggernaut.","color": "gray"},{"text": "The Juggernaut may stand near it to dispel/remove it.","color": "gray"},{"text": "Cooldown: 1m 30s","color": "dark_gray"}],\
     ability_id:"turret_tower",\
     cooldown:90,\
     hotbar_slot:"hotbar.2",\
@@ -67,6 +70,7 @@ execute if entity @a[tag=engineer] run function juggernaut:ability_management/ch
     player_tag:"engineer",\
     item_id:"minecraft:clock",\
     item_name:{"text": "Borrowed Time","color": "gold"},\
+    description:[{"text": "Temporarily become invulnerable, but later take","color":"gray"},{"text": "damage equal to what you avoided as damage over time.","color": "gray"},{"text": "Cooldown: 2m","color": "dark_gray"}],\
     ability_id:"borrowed_time",\
     cooldown:120,\
     hotbar_slot:"hotbar.3",\

@@ -29,6 +29,7 @@ execute if entity @a[tag=warlock] run function juggernaut:ability_management/che
     player_tag:"warlock",\
     item_id:"minecraft:red_dye",\
     item_name:{"text": "Spawn Malevolent Aura","color": "dark_red"},\
+    description:[{"text": "Summon a tower with a visible nametag.","color": "gray"},{"text": "Within 16 blocks you gain strength and speed, while","color": "gray"},{"text": "runners get slowness and poison.","color": "gray"},{"text": "Runners may stand near it to dispel/remove it.","color": "gray"},{"text": "Cooldown: 20s","color": "dark_gray"}],\
     ability_id:"malevolent_aura",\
     cooldown:20,\
     hotbar_slot:"hotbar.1",\
@@ -39,6 +40,7 @@ execute if entity @a[tag=warlock] run function juggernaut:ability_management/che
     player_tag:"warlock",\
     item_id:"minecraft:cyan_dye",\
     item_name:{"text": "Spawn Banishment Glyph","color": "dark_aqua"},\
+    description:[{"text": "Summon a tower with a visible nametag.","color": "gray"},{"text": "Within 32 blocks replenishment stations cannot be used.","color": "gray"},{"text": "Runners may stand near it to dispel/remove it.","color": "gray"},{"text": "Cooldown: 30s","color": "dark_gray"}],\
     ability_id:"banishment_glyph",\
     cooldown:30,\
     hotbar_slot:"hotbar.2",\
@@ -49,6 +51,7 @@ execute if entity @a[tag=warlock] run function juggernaut:ability_management/che
     player_tag:"warlock",\
     item_id:"minecraft:black_dye",\
     item_name:{"text": "Spawn Withering Surge","color": "dark_gray"},\
+    description:[{"text": "Summon a tower with a visible nametag.","color": "gray"},{"text": "Within 14 blocks runners get withered.","color": "gray"},{"text": "Runners may stand near it to dispel/remove it.","color": "gray"},{"text": "Cooldown: 40s","color": "dark_gray"}],\
     ability_id:"withering_surge",\
     cooldown:40,\
     hotbar_slot:"hotbar.3",\

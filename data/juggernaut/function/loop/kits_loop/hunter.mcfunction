@@ -18,6 +18,7 @@ execute if entity @a[tag=jug_hunter] unless entity @a[tag=has_hunters_mark] run 
     player_tag:"jug_hunter",\
     item_id:"minecraft:target",\
     item_name:{"text": "Mark Prey","color": "dark_red"},\
+    description:[{"text": "Mark the closest runner within 12 blocks.","color": "gray"},{"text": "Marked runners will emit orange particles to you.","color": "gray"},{"text": "Cooldown: 5s","color": "dark_gray"}],\
     ability_id:"mark_prey",\
     cooldown:5,\
     hotbar_slot:"hotbar.2",\
@@ -28,6 +29,7 @@ execute if entity @a[tag=jug_hunter] if entity @a[tag=has_hunters_mark] run func
     player_tag:"jug_hunter",\
     item_id:"minecraft:vault",\
     item_name:{"text": "Pursue Prey","color": "dark_red"},\
+    description:[{"text": "Teleport to the runner that you have marked,","color": "gray"},{"text": "but takes 3 seconds to activate.","color": "gray"},{"text": "(When teleporting you will be where they were 3 seconds ago)","color": "gray"},{"text": "Removes hunter's mark from the target.","color": "gray"},{"text": "Cooldown: 35s","color": "dark_gray"}],\
     ability_id:"pursue_prey",\
     cooldown:35,\
     hotbar_slot:"hotbar.2",\
@@ -38,6 +40,7 @@ execute if entity @a[tag=jug_hunter] if entity @a[tag=has_hunters_mark] run func
     player_tag:"jug_hunter",\
     item_id:"minecraft:bone",\
     item_name:{"text": "Wolf Hunt","color": "dark_red"},\
+    description:[{"text": "Summon a bloodhound to seek out the marked runner.","color": "gray"},{"text": "The bloodhound will die after 45 seconds.","color": "gray"},{"text": "Cooldown: 35s","color": "dark_gray"}],\
     ability_id:"summon_wolf",\
     cooldown:35,\
     hotbar_slot:"hotbar.3",\
@@ -48,6 +51,7 @@ execute if entity @a[tag=jug_hunter] if entity @a[tag=!has_hunters_mark] run fun
     player_tag:"jug_hunter",\
     item_id:"minecraft:bone",\
     item_name:{"text": "Wolf Hunt","color": "dark_red"},\
+    description:[{"text": "Summon a bloodhound to seek out a random player.","color": "gray"},{"text": "The bloodhound will die after 45 seconds.","color": "gray"},{"text": "Cooldown: 35s","color": "dark_gray"}],\
     ability_id:"summon_wolf",\
     cooldown:35,\
     hotbar_slot:"hotbar.3",\

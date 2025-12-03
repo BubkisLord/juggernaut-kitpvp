@@ -3,6 +3,7 @@ execute if entity @a[tag=witch_doctor] run function juggernaut:ability_managemen
     player_tag:"witch_doctor",\
     item_id:"minecraft:cyan_dye",\
     item_name:{"text": "Speed","color": "dark_aqua"},\
+    description:[{"text": "Grants a speed boost for a short duration.","color": "gray"},{"text": "Cooldown: 60s","color": "dark_gray"}],\
     ability_id:"speed_pot",\
     cooldown:60,\
     hotbar_slot:"hotbar.2",\
@@ -13,6 +14,7 @@ execute if entity @a[tag=witch_doctor] run function juggernaut:ability_managemen
     player_tag:"witch_doctor",\
     item_id:"minecraft:red_dye",\
     item_name:{"text": "Fire Resistance","color": "red"},\
+    description:[{"text": "Grants fire resistance for a short duration.","color": "gray"},{"text": "Cooldown: 60s","color": "dark_gray"}],\
     ability_id:"fire_pot",\
     cooldown:60,\
     hotbar_slot:"hotbar.3",\
@@ -23,6 +25,7 @@ execute if entity @a[tag=witch_doctor] run function juggernaut:ability_managemen
     player_tag:"witch_doctor",\
     item_id:"minecraft:orange_dye",\
     item_name:{"text": "Strength","color": "gold"},\
+    description:[{"text": "Grants a strength boost for a short duration.","color": "gray"},{"text": "Cooldown: 60s","color": "dark_gray"}],\
     ability_id:"strength_pot",\
     cooldown:60,\
     hotbar_slot:"hotbar.4",\
@@ -33,6 +36,7 @@ execute if entity @a[tag=witch_doctor] run function juggernaut:ability_managemen
     player_tag:"witch_doctor",\
     item_id:"minecraft:ghast_tear",\
     item_name:{"text": "Enlarge","color": "dark_purple"},\
+    description:[{"text": "Increases size of all runners within 8 blocks.","color": "gray"},{"text": "They are given:","color": "gray"},{"text": "  - Increased Step Height (+1 block)","color": "gray"},{"text": "  - Decreased Movement Speed (-30%)","color": "gray"},{"text": "  - Increased Jump Height (+31%)","color": "gray"},{"text": "  - Increased Safe Fall Distance (+1 block)","color": "gray"},{"text": "","color": "gray"},{"text": "Lasts for 10 seconds.","color": "gray"},{"text": "Cooldown: 30s","color": "dark_gray"}],\
     ability_id:"enlarge",\
     cooldown:30,\
     hotbar_slot:"hotbar.6",\
@@ -43,6 +47,7 @@ execute if entity @a[tag=witch_doctor] run function juggernaut:ability_managemen
     player_tag:"witch_doctor",\
     item_id:"minecraft:ghast_tear",\
     item_name:{"text": "Reduce","color": "dark_purple"},\
+    description:[{"text": "Decreases your size.","color": "gray"},{"text": "You are given:","color": "gray"},{"text": "  - Increased Movement Speed (+10%)","color": "gray"},{"text": "  - Decreased Step Height (-0.1 block)","color": "gray"},{"text": "","color": "gray"},{"text": "Lasts for 10 seconds.","color": "gray"},{"text": "Cooldown: 20s","color": "dark_gray"}],\
     ability_id:"reduce",\
     cooldown:20,\
     hotbar_slot:"hotbar.7",\

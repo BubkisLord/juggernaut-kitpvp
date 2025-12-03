@@ -15,6 +15,7 @@ execute if entity @a[tag=jug_ghost] run function juggernaut:ability_management/c
     player_tag:"jug_ghost",\
     item_id:"minecraft:echo_shard",\
     item_name:{"text": "Spectral Cloak","color": "gray"},\
+    description:[{"text": "Gain invisibility, become undetectable, and stop being able to replenish for 5 seconds","color": "gray"},{"text": "Cooldown: 50s","color": "dark_gray"}],\
     ability_id:"spectral_cloak",\
     cooldown:50,\
     hotbar_slot:"hotbar.0",\
