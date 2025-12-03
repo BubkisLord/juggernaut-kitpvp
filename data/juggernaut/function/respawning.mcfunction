@@ -22,6 +22,7 @@ execute if score @s lives_remaining matches 1.. if entity @s[tag=runner] run sch
 tag @s remove has_hunters_mark
 tag @s remove in_chase
 tag @s remove hunted
+scoreboard players set @s chase_timeout 0
 
 execute if score @s lives_remaining matches ..0 run tag @s remove has_jug_kit
 execute if score @s lives_remaining matches ..0 run tag @s remove juggernaut
