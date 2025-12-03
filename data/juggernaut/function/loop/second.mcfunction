@@ -147,7 +147,7 @@ execute if entity @a[tag=predator] if score #predator_rand_val var matches 1 as 
 execute if entity @a[tag=predator] if score #predator_rand_val var matches 1 as @a at @s run playsound entity.player.hurt master @s ~ ~ ~ 1.5 1
 
 # Predatory Instincts Perk
-execute as @a[tag=juggernaut,tag=using_predatory_instincts,scores={is_walking=0,is_sprinting=0,is_crouch_walking=0}] at @s as @a[tag=runner,tag=!is_undetectable,distance=..8] run effect give @s glowing 1 0 true
+execute as @a[tag=juggernaut,tag=using_predatory_instincts,scores={is_walking=0,is_sprinting=0,is_crouch_walking=0}] at @s as @a[tag=runner,tag=!is_undetectable,distance=..8] run effect give @s glowing 2 0 true
 
 # Update scores
 scoreboard players set @a[scores={is_sprinting=1..}] is_sprinting 0
