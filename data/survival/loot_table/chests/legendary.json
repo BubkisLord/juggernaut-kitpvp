@@ -11,7 +11,7 @@
                     "functions": [
                         {
                             "function": "enchant_with_levels",
-                            "levels": 60
+                            "levels": 50
                         }
                     ],
                     "weight": 7
