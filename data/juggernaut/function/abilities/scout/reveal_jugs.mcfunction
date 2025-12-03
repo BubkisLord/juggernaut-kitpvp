@@ -1,1 +1,1 @@
-effect give @a[tag=juggernaut] glowing 12 0 true
+effect give @a[tag=juggernaut,tag=!is_undetectable] glowing 12 0 true
