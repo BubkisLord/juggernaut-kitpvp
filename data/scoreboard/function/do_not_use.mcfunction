@@ -124,6 +124,24 @@ scoreboard objectives add quit minecraft.custom:minecraft.leave_game
 scoreboard objectives add replenish_modifier dummy
 scoreboard objectives add debug_mode dummy
 scoreboard objectives add replenish_speed dummy
+scoreboard objectives add healing_base dummy
+scoreboard objectives add healing_modifier dummy
+scoreboard objectives add healing_per_tick dummy
+scoreboard objectives add healing_display_speed dummy
+scoreboard objectives add self_healing_base dummy
+scoreboard objectives add self_healing_modifier dummy
+scoreboard objectives add self_healing_per_tick dummy
+scoreboard objectives add self_healing_display_speed dummy
+scoreboard objectives add current_cooldown dummy
+scoreboard objectives add tmp dummy
+
+scoreboard objectives add kills_persistent minecraft.custom:player_kills
+scoreboard objectives add deaths_persistent minecraft.custom:deaths
+scoreboard objectives add damage_absorbed_persistent minecraft.custom:damage_absorbed
+scoreboard objectives add damage_dealt_persistent minecraft.custom:damage_dealt
+scoreboard objectives add damage_taken_persistent minecraft.custom:damage_taken
+scoreboard objectives add bow_uses_persistent minecraft.used:bow
+
 
 team add blue
 team add red
