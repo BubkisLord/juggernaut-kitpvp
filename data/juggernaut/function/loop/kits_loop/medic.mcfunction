@@ -1,6 +1,4 @@
 # Medic
-# Silent Support Passive
-execute as @a[tag=medic] run effect clear @s glowing
 
 # Rescue (Active)
 execute if entity @a[tag=medic] run function juggernaut:ability_management/check_ability {\
