@@ -80,7 +80,7 @@ tag @a remove using_undying_ties
 tag @a remove using_unwavering_strength
 tag @a remove using_beacon_of_hope
 tag @a remove using_hopeful_sprint
-tag @a remove using_shared_resolve
+tag @a remove using_durable
 
 tag @a remove using_predatory_instincts
 tag @a remove using_rapid_brutality
