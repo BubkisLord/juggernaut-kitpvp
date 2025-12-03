@@ -124,6 +124,7 @@ execute as @a run attribute @s safe_fall_distance base set 3
 execute as @a run attribute @s gravity base set 0.08
 execute as @a run attribute @s sneaking_speed base set 0.3
 execute as @a run attribute @s sneaking_speed modifier remove juggernaut:quickened_stealth_speed
+execute as @a run attribute @s attack_damage base set 1
 
 execute as @a run attribute @s movement_speed modifier remove unyielding_wrath_1
 execute as @a run attribute @s movement_speed modifier remove unyielding_wrath_2
