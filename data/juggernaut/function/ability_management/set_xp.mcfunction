@@ -1,0 +1,2 @@
+$execute as @a[tag=$(player_tag)] at @s if entity @s[nbt={SelectedItem:{id:"minecraft:barrier",components:{"minecraft:custom_data":{kit:"$(player_tag)",ability_id:"$(ability_id)"}}}}] run xp set @s $(current_cooldown_percentage) points
+$execute as @a[tag=$(player_tag)] at @s unless entity @s[nbt={SelectedItem:{id:"minecraft:barrier"}}] run xp set @s 0 points
