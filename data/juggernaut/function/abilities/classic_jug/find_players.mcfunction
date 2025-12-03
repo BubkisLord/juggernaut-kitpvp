@@ -1,0 +1,1 @@
+execute as @a[tag=runner] at @s anchored eyes positioned ~ ~3 ~ run summon lightning_bolt ~ ~ ~

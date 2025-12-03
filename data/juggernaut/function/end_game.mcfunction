@@ -38,6 +38,7 @@ tag @a remove has_jug_kit
 tag @a remove juggernaut
 tag @a remove runner
 tag @a remove spectator
+tag @a remove classic_jug
 tag @a remove predator
 tag @a remove witch_doctor
 tag @a remove medic
