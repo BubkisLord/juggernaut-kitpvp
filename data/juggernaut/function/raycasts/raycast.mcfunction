@@ -1,6 +1,6 @@
-$execute as @s at @s anchored eyes positioned ~ ~ ~ unless entity @e[type=armor_stand,tag=$(raycast_tag)] run scoreboard players set @p[tag=$(player_tag)] current_raycast_depth 0
-$execute as @s at @s anchored eyes positioned ~ ~ ~ unless entity @e[type=armor_stand,tag=$(raycast_tag)] run scoreboard players set @p[tag=$(player_tag)] raycast_depth_counter 0
-$execute as @s at @s anchored eyes positioned ~ ~ ~ unless entity @e[type=armor_stand,tag=$(raycast_tag)] run summon armor_stand ~ ~ ~ {Invisible:true,Small:true,Invulnerable:true,CustomNameVisible:false,NoGravity:true,Tags:[$(raycast_tag),"kill_on_end_game"]}
+$execute unless entity @e[type=armor_stand,tag=$(raycast_tag)] run scoreboard players set @p[tag=$(player_tag)] current_raycast_depth 0
+$execute unless entity @e[type=armor_stand,tag=$(raycast_tag)] run scoreboard players set @p[tag=$(player_tag)] raycast_depth_counter 0
+$execute unless entity @e[type=armor_stand,tag=$(raycast_tag)] run summon armor_stand ~ ~ ~ {Invisible:true,Small:true,Invulnerable:true,CustomNameVisible:false,NoGravity:true,Tags:[$(raycast_tag),"kill_on_end_game"]}
 
 $execute if score @p[tag=$(player_tag)] current_raycast_depth matches ..$(raycast_limit) as @s at @s anchored eyes positioned ~ ~ ~ run tp @n[type=armor_stand,tag=$(raycast_tag)] ^ ^ ^0.5 facing ^ ^ ^1
 $data modify storage juggernaut:raycasts/move move_function_id set value $(move_function_id)

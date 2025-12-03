@@ -5,25 +5,25 @@
             "entries": [
                 {
                     "type": "loot_table",
-                    "value": "king_of_the_hill:crates/common",
+                    "command": "king_of_the_hill:crates/common",
                     "quality": 0,
                     "weight": 30
                 },
                 {
                     "type": "loot_table",
-                    "value": "king_of_the_hill:crates/uncommon",
+                    "command": "king_of_the_hill:crates/uncommon",
                     "quality": 1,
                     "weight": 30
                 },
                 {
                     "type": "loot_table",
-                    "value": "king_of_the_hill:crates/rare",
+                    "command": "king_of_the_hill:crates/rare",
                     "quality": 3,
                     "weight": 20
                 },
                 {
                     "type": "loot_table",
-                    "value": "king_of_the_hill:crates/legendary",
+                    "command": "king_of_the_hill:crates/legendary",
                     "quality": 5,
                     "weight": 3
                 }
