@@ -9,10 +9,10 @@ execute if score #grace_period var > #0 var run scoreboard players remove #grace
 # Make the worldborder close faster the more replenishments have occurred. Additionally, limit the minimum space to 5 block radius.
 execute store result score #worldborder_size var run worldborder get
 
-execute if score #worldborder_size var matches 11.. if score #times_replenished var = #0 var if score #grace_period var <= #0 var run worldborder add -0.25 1
-execute if score #worldborder_size var matches 11.. if score #times_replenished var = #1 var if score #grace_period var <= #0 var run worldborder add -0.5 1
-execute if score #worldborder_size var matches 11.. if score #times_replenished var = #2 var if score #grace_period var <= #0 var run worldborder add -0.75 1
-execute if score #worldborder_size var matches 11.. if score #times_replenished var >= #3 var if score #grace_period var <= #0 var run worldborder add -2 1
+execute if score #worldborder_size var matches 11.. if score #times_replenished var = #0 var if score #grace_period var <= #0 var run worldborder add -1 1
+execute if score #worldborder_size var matches 11.. if score #times_replenished var = #1 var if score #grace_period var <= #0 var run worldborder add -1.5 1
+execute if score #worldborder_size var matches 11.. if score #times_replenished var = #2 var if score #grace_period var <= #0 var run worldborder add -1.75 1
+execute if score #worldborder_size var matches 11.. if score #times_replenished var >= #3 var if score #grace_period var <= #0 var run worldborder add -2.25 1
 
 # Check World Border
 execute if score #worldborder_size var matches 150..300 run function survival:loop/check_worldborder {distance:300}
