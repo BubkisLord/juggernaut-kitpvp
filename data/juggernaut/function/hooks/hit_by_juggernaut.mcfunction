@@ -7,8 +7,8 @@ execute as @p[tag=juggernaut,distance=..5,tag=using_rapid_brutality] run functio
 
 
 # Brutal efficiency perk
-execute as @n[type=armor_stand,tag=replenishment.station,distance=..5] if entity @a[tag=juggernaut,distance=..5,tag=using_brutal_efficiency,scores={brutal_efficiency_cooldown=0}] run function juggernaut:replenishment_management/regress_station {percentage:10}
-execute if entity @e[type=armor_stand,tag=replenishment.station,distance=..5] as @p[tag=juggernaut,distance=..5,tag=using_brutal_efficiency] run scoreboard players set @s brutal_efficiency_cooldown 30
+execute as @n[type=armor_stand,tag=replenishment.station,distance=..12] if entity @a[tag=juggernaut,distance=..6,tag=using_brutal_efficiency,scores={brutal_efficiency_cooldown=0}] run function juggernaut:replenishment_management/regress_station {percentage:10}
+execute if entity @e[type=armor_stand,tag=replenishment.station,distance=..12] as @p[tag=juggernaut,distance=..6,tag=using_brutal_efficiency] run scoreboard players set @s brutal_efficiency_cooldown 15
 
 
 # Unyielding wrath perk

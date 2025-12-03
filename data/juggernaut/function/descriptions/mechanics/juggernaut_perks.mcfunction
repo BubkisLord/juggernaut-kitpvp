@@ -1,6 +1,6 @@
 $item replace entity @s $(container_slot) with written_book[written_book_content={pages:[{"text": "§l§4Predatory Instincts\\n\\n§r§0While stationary, this perk activates. While active, any runner within an 8 block radius is revealed. Players with undetectable cannot be revealed in this way."},\
 {"text": "§l§4Rapid Brutality\\n\\n§r§0Gain an 10% speed boost after hitting a runner, lasting for 4 seconds."},\
-{"text": "§l§4Brutal Efficiency\\n\\n§r§0Replenishment station progress regresses by 10% if a runner is hit within 5 blocks of a station. This ability has a cooldown of 30 seconds."},\
+{"text": "§l§4Brutal Efficiency\\n\\n§r§0Replenishment station progress regresses by 10% if a runner is hit within 12 blocks of a station. This ability has a cooldown of 15 seconds."},\
 {"text": "§l§4Unyielding Wrath\\n\\n§r§0When in chase, this perk activates. While active, every 10 seconds, gain a 3% increase in speed, capped at 15%. When the chase ends this perk deactivates. With this perk, chase leniency is doubled."},\
 {"text": "§l§4Domination\\n\\n§r§0Each runner death increases your movement speed by 4%."},\
 {"text": "§l§4Floods of Rage\\n\\n§r§0When a station is completed, this perk activates for 5 seconds. While active, all runners are revealed. Players with undetectable cannot be revealed in this way."},\
