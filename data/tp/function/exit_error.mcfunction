@@ -1,4 +1,4 @@
 execute at @s run playsound minecraft:block.note_block.didgeridoo master @s ~ ~ ~ 1 1.2
-tellraw @s [{"text":"\n"},{"text":"[","color":"dark_gray","bold":true},{"text":"KitPvP","color":"gold","bold":true},{"text":"]","color":"dark_gray","bold":true},{"text":" Error: You can only exit the Arena while you're at ","color":"yellow","bold":false},{"text":"full health","color":"dark_green"},{"text":" and you aren't within ","color":"yellow"},{"text":"3 blocks","color":"dark_green"},{"text":" of other players.","color":"yellow"},{"text":"\n"}]
+tellraw @s [{"text":"\n"},{"text":"[","color":"dark_gray","bold":true},{"text":"SYSTEM","color":"#30add3","bold":true},{"text":"]","color":"dark_gray","bold":true},{"text":" Error: You can only exit the Arena while you're at ","color":"yellow","bold":false},{"text":"full health","color":"dark_green"},{"text":" and you aren't within ","color":"yellow"},{"text":"3 blocks","color":"dark_green"},{"text":" of other players.","color":"yellow"},{"text":"\n"}]
 scoreboard players set @s exit_count 0
 execute at @s run kill @n[type=item,nbt={Item:{id:"minecraft:dark_oak_door"}}]
