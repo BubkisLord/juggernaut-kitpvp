@@ -18,6 +18,7 @@ execute if score @s lives_remaining matches 1.. if entity @s[tag=runner] run tag
 execute if score @s lives_remaining matches 1.. if entity @s[tag=runner] run schedule function juggernaut:clear_respawn_period 30s append
 # execute if entity @s[tag=has_hunters_mark] if entity @a[tag=runner,tag=!has_hunters_mark] run tag @r[tag=runner,tag=!has_hunters_mark] add has_hunters_mark
 tag @s remove has_hunters_mark
+tag @s remove hunted
 
 execute if score @s lives_remaining matches ..0 run tag @s remove has_jug_kit
 execute if score @s lives_remaining matches ..0 run tag @s remove juggernaut

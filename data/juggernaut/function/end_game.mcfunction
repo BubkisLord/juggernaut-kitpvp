@@ -100,6 +100,8 @@ tag @a remove see_malevolent_aura_bar
 tag @a remove see_banishment_glyph_bar
 tag @a remove see_withering_surge_bar
 
+tag @a remove hunted
+
 scoreboard players set #stations_completed var 0
 
 execute as @e[type=armor_stand,tag=station_completed] run tag @s add replenishment.station

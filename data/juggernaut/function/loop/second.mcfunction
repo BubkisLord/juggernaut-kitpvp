@@ -197,3 +197,6 @@ execute as @a[tag=spectator] run tag @s remove in_chase
 
 # Reset second counter periodically
 execute if score #second_counter var matches 100.. run scoreboard players set #second_counter var 0
+
+damage @n[type=minecraft:wolf,tag=hunter_wolf] 1 magic by @p[tag=hunted]
+execute unless entity @a[tag=hunted] run kill @n[type=minecraft:wolf,tag=hunter_wolf]
