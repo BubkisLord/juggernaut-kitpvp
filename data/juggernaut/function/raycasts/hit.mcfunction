@@ -14,7 +14,7 @@ execute if score #hit_function_id var matches 4 run particle flame ~ ~0.5 ~ 1.5 
 execute if score #hit_function_id var matches 4 run scoreboard players set @p[tag=chain_hunter,tag=teleporting] jug_kit_cooldown_2 30
 execute if score #hit_function_id var matches 5 run tag @s add used_camera
 execute if score #hit_function_id var matches 5 run execute as @p[tag=eclipse_stalker,tag=finding_camera] run tag @s add using_camera
-execute if score #hit_function_id var matches 5 run execute at @p[tag=eclipse_stalker,tag=finding_camera] run summon area_effect_cloud ~ ~ ~ {Duration:999999,Tags:["eclipse_return_location","kill_on_end_game"]}
+execute if score #hit_function_id var matches 5 run execute at @p[tag=eclipse_stalker,tag=finding_camera] run summon area_effect_cloud ~ ~ ~ {Duration:999999,Tags:["eclipse_return_location","kill_on_end_game"],Color:0,Radius:0f,NoGravity:false}
 execute if score #hit_function_id var matches 5 run execute as @p[tag=eclipse_stalker,tag=finding_camera] run function juggernaut:abilities/eclipse_stalker/enter_cam_attributes
 execute if score #hit_function_id var matches 5 run execute as @p[tag=eclipse_stalker,tag=finding_camera] run tp @s ~ ~ ~ facing ^ ^ ^1000
 execute if score #hit_function_id var matches 7 run tag @s add shadow_marked
@@ -31,4 +31,7 @@ execute if score #hit_function_id var matches 10 run scoreboard players set @p[t
 execute if score #hit_function_id var matches 10 run execute at @p[tag=eclipse_stalker,tag=teleporting] run particle witch ~ ~0.5 ~ 1.5 1.5 1.5 0 200 force
 execute if score #hit_function_id var matches 10 run execute positioned ~ ~0.5 ~ run tp @p[tag=eclipse_stalker,tag=teleporting] @s
 execute if score #hit_function_id var matches 10 run particle flame ~ ~0.5 ~ 1.5 1.5 1.5 0 100 force
+execute if score #hit_function_id var matches 11 run tag @e remove used_camera
+execute if score #hit_function_id var matches 11 run tag @s add used_camera
+execute if score #hit_function_id var matches 11 run execute as @p[tag=eclipse_stalker,tag=finding_camera] run tp @s ~ ~ ~ facing ^ ^ ^1000
 # execute if score #hit_function_id var matches 5 run 

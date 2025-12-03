@@ -1,6 +1,6 @@
 scoreboard players set #stalker_cameras var 0
 execute as @e[type=armor_stand,tag=camera] run scoreboard players add #stalker_cameras var 1
-execute if score #stalker_cameras var matches ..5 at @s anchored eyes run function juggernaut:raycasts/raycast {\
+execute if score #stalker_cameras var matches ..6 at @s anchored eyes run function juggernaut:raycasts/raycast {\
     player_tag:"eclipse_stalker",\
     raycast_tag:"eclipse_stalker_raycast",\
     target_tag:"runner",\
