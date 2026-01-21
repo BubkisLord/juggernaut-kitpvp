@@ -1,0 +1,1 @@
+execute as @s at @s positioned ^ ^ ^3 anchored eyes as @n[type=area_effect_cloud,tag=timekeeper_trail,distance=..3] run tag @s add poisoned_strand

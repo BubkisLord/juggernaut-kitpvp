@@ -6,8 +6,10 @@ execute as @s[tag=!has_jug_kit] run item replace entity @s hotbar.0 with snowbal
 # execute as @s[tag=!has_jug_kit] run attribute @s step_height base set 1
 # execute as @s[tag=!has_jug_kit] run attribute @s safe_fall_distance base set 4.5
 # execute as @s[tag=!has_jug_kit] run item replace entity @s hotbar.1 with stone[item_name={"text": "Resistance Stone","color": "gray"},lore=[{"text": "Protects the user for a second from all incoming damage."}]] 1
-execute as @s[tag=!has_jug_kit] run effect give @s regeneration 4 255 true
-execute as @s[tag=!has_jug_kit] run give @s golden_apple 4
-# execute as @s[tag=!has_jug_kit] run function juggernaut:descriptions/kits/runner/survivor
+execute as @s[tag=!has_jug_kit] run item replace entity @s armor.head with iron_helmet[unbreakable={}] 1
+execute as @s[tag=!has_jug_kit] run item replace entity @s armor.chest with iron_chestplate[unbreakable={}] 1
+execute as @s[tag=!has_jug_kit] run item replace entity @s armor.legs with iron_leggings[unbreakable={}] 1
+execute as @s[tag=!has_jug_kit] run item replace entity @s armor.feet with iron_boots[unbreakable={}] 1
+execute as @s[tag=!has_jug_kit] run give @s golden_apple 2
 execute as @s[tag=!has_jug_kit] run tag @s add survivor
 tag @s add has_jug_kit

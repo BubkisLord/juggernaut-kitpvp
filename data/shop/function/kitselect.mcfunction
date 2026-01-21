@@ -1,38 +1,38 @@
 #Run kit function
-execute as @s[scores={kitSelect=1},tag=ul.Warrior] run function kits:warrior
-execute as @s[scores={kitSelect=2},tag=ul.Cactus] run function kits:cactus
-execute as @s[scores={kitSelect=4},tag=ul.Farmer] run function kits:farmer
-execute as @s[scores={kitSelect=5},tag=ul.Viking] run function kits:viking
-execute as @s[scores={kitSelect=6},tag=ul.Zombie] run function kits:zombie
-execute as @s[scores={kitSelect=7},tag=ul.Defender] run function kits:defender
-execute as @s[scores={kitSelect=8},tag=ul.Assassin] run function kits:assassin
+execute as @s[scores={kitSelect=1}] run function kits:warrior
+execute as @s[scores={kitSelect=2}] run function kits:cactus
+execute as @s[scores={kitSelect=4}] run function kits:farmer
+execute as @s[scores={kitSelect=5}] run function kits:viking
+execute as @s[scores={kitSelect=6}] run function kits:zombie
+execute as @s[scores={kitSelect=7}] run function kits:defender
+execute as @s[scores={kitSelect=8}] run function kits:assassin
 
-execute as @s[scores={kitSelect=9},tag=ul.Archer] run function kits:archer
-execute as @s[scores={kitSelect=10},tag=ul.Flame] run function kits:flame
-execute as @s[scores={kitSelect=11},tag=ul.Quickcharger] run function kits:quickcharger
-execute as @s[scores={kitSelect=12},tag=ul.Hunter] run function kits:hunter
-execute as @s[scores={kitSelect=13},tag=ul.Poseidon] run function kits:poseidon
-execute as @s[scores={kitSelect=14},tag=ul.Sharpshooter] run function kits:sharpshooter
-execute as @s[scores={kitSelect=15},tag=ul.Pirate] run function kits:pirate
-execute as @s[scores={kitSelect=16},tag=ul.Divinity] run function kits:divinity
+execute as @s[scores={kitSelect=9}] run function kits:archer
+execute as @s[scores={kitSelect=10}] run function kits:flame
+execute as @s[scores={kitSelect=11}] run function kits:quickcharger
+execute as @s[scores={kitSelect=12}] run function kits:hunter
+execute as @s[scores={kitSelect=13}] run function kits:poseidon
+execute as @s[scores={kitSelect=14}] run function kits:sharpshooter
+execute as @s[scores={kitSelect=15}] run function kits:pirate
+execute as @s[scores={kitSelect=16}] run function kits:divinity
 
-execute as @s[scores={kitSelect=17},tag=ul.Rabbit] run function kits:rabbit
-execute as @s[scores={kitSelect=18},tag=ul.Cheetah] run function kits:cheetah
-execute as @s[scores={kitSelect=19},tag=ul.Dolphin] run function kits:dolphin
-execute as @s[scores={kitSelect=20},tag=ul.Jouster] run function kits:jouster
-execute as @s[scores={kitSelect=21},tag=ul.Yeti] run function kits:yeti
-execute as @s[scores={kitSelect=22},tag=ul.Unicorn] run function kits:unicorn
-execute as @s[scores={kitSelect=23},tag=ul.Ninja] run function kits:ninja
-execute as @s[scores={kitSelect=24},tag=ul.Shark] run function kits:shark
+execute as @s[scores={kitSelect=17}] run function kits:rabbit
+execute as @s[scores={kitSelect=18}] run function kits:cheetah
+execute as @s[scores={kitSelect=19}] run function kits:dolphin
+execute as @s[scores={kitSelect=20}] run function kits:jouster
+execute as @s[scores={kitSelect=21}] run function kits:yeti
+execute as @s[scores={kitSelect=22}] run function kits:unicorn
+execute as @s[scores={kitSelect=23}] run function kits:ninja
+execute as @s[scores={kitSelect=24}] run function kits:shark
 
-execute as @s[scores={kitSelect=25},tag=ul.Ambusher] run function kits:ambusher
-execute as @s[scores={kitSelect=26},tag=ul.Auramancer] run function kits:auramancer
-execute as @s[scores={kitSelect=27},tag=ul.Levitator] run function kits:levitator
-execute as @s[scores={kitSelect=28},tag=ul.Teleporter] run function kits:teleporter
-execute as @s[scores={kitSelect=29},tag=ul.Ghost] run function kits:ghost
-execute as @s[scores={kitSelect=30},tag=ul.Shaman] run function kits:shaman
-execute as @s[scores={kitSelect=31},tag=ul.Deflector] run function kits:deflector
-execute as @s[scores={kitSelect=32},tag=ul.Alchemist] run function kits:alchemist
+execute as @s[scores={kitSelect=25}] run function kits:ambusher
+execute as @s[scores={kitSelect=26}] run function kits:auramancer
+execute as @s[scores={kitSelect=27}] run function kits:levitator
+execute as @s[scores={kitSelect=28}] run function kits:teleporter
+execute as @s[scores={kitSelect=29}] run function kits:ghost
+execute as @s[scores={kitSelect=30}] run function kits:shaman
+execute as @s[scores={kitSelect=31}] run function kits:deflector
+execute as @s[scores={kitSelect=32}] run function kits:alchemist
 
 
 #Error message: Typing commands

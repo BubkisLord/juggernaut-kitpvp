@@ -1,9 +1,9 @@
 tag @s remove lobby.player
 clear @s
 tag @s add ghost
-effect give @s minecraft:invisibility 1000000 100 true
+effect give @s minecraft:invisibility infinite 0 false
 give @s diamond_sword[item_name={"text":"Diamond Blade","color":"dark_purple","italic":false},lore=[{"text":"Dual-edged and razor sharp.","color":"dark_gray"}],unbreakable={}]
-give @s cooked_beef[item_name={"text":"Steak","color":"dark_purple","italic":false},lore=[{"text":"Eat to regenerate.","color":"dark_gray"}]]
+give @s cooked_beef[item_name={"text":"Steak","color":"dark_purple","italic":false},lore=[{"text":"Eat to regenerate.","color":"dark_gray"}]] 64
 tp @s @e[type=armor_stand,tag=arena.spawn,limit=1,sort=random]
 execute at @s run particle witch ~ ~1 ~ 0.5 1 0.5 1 100 force
 execute at @s run playsound minecraft:entity.enderman.teleport master @a ~ ~ ~ 1.2 1

@@ -43,3 +43,5 @@ execute as @e[type=armor_stand,tag=crate,scores={var=3..}] run kill @s
 execute as @e[type=armor_stand,tag=surv_game_manager] run scoreboard players add @s tick_counter 1
 execute as @e[type=armor_stand,tag=surv_game_manager,scores={tick_counter=20..}] run function survival:loop/second
 execute as @e[type=armor_stand,tag=surv_game_manager,scores={tick_counter=20..}] run scoreboard players set @s tick_counter 0
+
+execute as @a[tag=spectator] at @s run function survival:loop/clone_inventory

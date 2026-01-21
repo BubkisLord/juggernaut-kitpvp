@@ -11,10 +11,22 @@
                     "functions": [
                         {
                             "function": "enchant_with_levels",
-                            "levels": 60
+                            "levels": 35
                         }
                     ],
                     "weight": 8
+                },
+                {
+                    "type": "item",
+                    "name": "minecraft:diamond_axe",
+                    "quality": 3,
+                    "functions": [
+                        {
+                            "function": "enchant_with_levels",
+                            "levels": 40
+                        }
+                    ],
+                    "weight": 4
                 },
                 {
                     "type": "item",
@@ -104,6 +116,24 @@
                     "name": "fishing_rod",
                     "quality": 1,
                     "weight": 1
+                },
+                {
+                    "type": "item",
+                    "name": "shield",
+                    "quality": 2,
+                    "weight": 3
+                },
+                {
+                    "type": "item",
+                    "name": "crossbow",
+                    "functions": [
+                        {
+                            "function": "enchant_with_levels",
+                            "levels": 50
+                        }
+                    ],
+                    "quality": 3,
+                    "weight": 2
                 }
             ]
         }

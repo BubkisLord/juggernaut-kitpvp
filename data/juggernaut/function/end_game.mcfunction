@@ -3,6 +3,7 @@ scoreboard players set @a juggernaut_game_time 0
 scoreboard players set @a juggernaut_release_timer 0
 scoreboard players set @a jug_kit_cooldown 0
 scoreboard players set @a jug_kit_cooldown_2 0
+scoreboard players set @a jug_kit_cooldown_3 0
 scoreboard players set @a revealing_tower_cooldown 0
 scoreboard players set @a replenishment_tower_cooldown 0
 scoreboard players set @a turret_cooldown 0
@@ -33,7 +34,7 @@ scoreboard players set @a malevolent_aura_cooldown 0
 scoreboard players set @a banishment_glyph_cooldown 0
 scoreboard players set @a withering_surge_cooldown 0
 spawnpoint @a 2000 100 0
-gamerule showDeathMessages false
+gamerule show_death_messages false
 tag @a remove has_jug_kit
 tag @a remove juggernaut
 tag @a remove runner
@@ -47,7 +48,6 @@ tag @a remove escapist
 tag @a remove rogue
 tag @a remove scout
 tag @a remove engineer
-tag @a remove witch_doctor
 tag @a remove warlock
 tag @a remove jug_hunter
 tag @a remove is_hunting
@@ -69,6 +69,7 @@ tag @a remove harbinger
 tag @a remove trickster
 tag @a remove is_hemorrhaged
 tag @a remove is_mangled
+tag @a remove fishmonger
 tag @a add lobby.player
 
 tag @a remove using_blood_pact
@@ -94,6 +95,7 @@ tag @a remove using_overwhelming_presence
 tag @a remove using_bane_of_solidarity
 tag @a remove using_crippling_defeat
 tag @a remove using_waiting_game
+tag @a remove using_insidious
 
 tag @a remove has_respawn_time
 tag @a remove see_malevolent_aura_bar
@@ -101,6 +103,22 @@ tag @a remove see_banishment_glyph_bar
 tag @a remove see_withering_surge_bar
 
 tag @a remove hunted
+tag @a remove timekeeper
+
+tag @a remove shapeshift_target
+tag @a remove saved_skin
+tag @a remove chameleon
+tag @a remove shapeshifting
+tag @a remove not_phasing
+tag @a remove is_phasing
+tag @a remove is_being_healed
+tag @a remove self_healing
+tag @a remove pouncing_incompetee
+
+tag @a remove rewinding
+execute as @a run attribute @s movement_speed modifier remove juggernaut:abilities/timekeeper/tick_speed
+
+setblock -62 71 -29 brown_carpet replace
 
 scoreboard players set #stations_completed var 0
 
@@ -114,11 +132,12 @@ execute as @a run scoreboard players set @s chase_timeout 0
 execute as @a run tag @s remove in_chase
 execute as @a run tag @s remove undying_ties_target
 
+time set noon
 
 clear @a
 kill @a
-gamerule showDeathMessages true
-gamerule naturalRegeneration true
+gamerule show_death_messages true
+gamerule natural_health_regeneration true
 kill @e[type=armor_stand,tag=warlock_armor_stand]
 kill @e[tag=kill_on_end_game]
 kill @e[type=armor_stand,tag=hunter_remnant]
@@ -133,6 +152,7 @@ execute as @a run attribute @s gravity base set 0.08
 execute as @a run attribute @s sneaking_speed base set 0.3
 execute as @a run attribute @s sneaking_speed modifier remove juggernaut:quickened_stealth_speed
 execute as @a run attribute @s attack_damage base set 1
+execute as @a run attribute @s water_movement_efficiency base set 0
 
 execute as @a run attribute @s movement_speed modifier remove unyielding_wrath_1
 execute as @a run attribute @s movement_speed modifier remove unyielding_wrath_2
@@ -156,9 +176,12 @@ bossbar remove warlock:malevolent_aura
 bossbar remove warlock:banishment_glyph
 bossbar remove warlock:withering_surge
 
+stopwatch remove replenishment_minigame_timer
+
 kill @e[type=armor_stand,tag=malevolent_aura]
 kill @e[type=armor_stand,tag=banishment_glyph]
 kill @e[type=armor_stand,tag=withering_surge]
+weather clear 9999999
 team leave @a
 gamemode adventure @a
 stopsound @a

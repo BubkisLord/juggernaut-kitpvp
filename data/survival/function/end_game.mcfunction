@@ -13,14 +13,14 @@ team leave @a
 worldborder set 9999
 
 spawnpoint @a 2000 100 0
-gamerule showDeathMessages false
+gamerule show_death_messages false
 clear @a
 gamemode adventure @a
 tag @a remove spectator
 kill @e[type=item]
 kill @a
-gamerule keepInventory true
-gamerule showDeathMessages true
+gamerule keep_inventory true
+gamerule show_death_messages true
 function survival:remove_chests
 kill @e[tag=kill_on_end_game]
 attribute @s max_health base set 20

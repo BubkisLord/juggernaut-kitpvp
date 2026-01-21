@@ -5,7 +5,7 @@ execute as @a[tag=juggernaut_manager,scores={scout_reveal_timer=1200..}] run eff
 execute as @a[tag=juggernaut_manager,scores={scout_reveal_timer=1200..}] run scoreboard players set @a[tag=juggernaut_manager] scout_reveal_timer 0
 
 # Revealing Powder (Active)
-execute if entity @a[tag=scout] run function juggernaut:ability_management/check_ability {\
+function juggernaut:ability_management/check_ability {\
     player_tag:"scout",\
     item_id:"minecraft:glowstone_dust",\
     item_name:{"text": "Revealing Powder","color": "gold"},\

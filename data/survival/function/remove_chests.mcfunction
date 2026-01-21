@@ -30,3 +30,10 @@ setblock -13 60 17 air replace
 setblock -23 67 -3 air replace
 setblock 80 78 -46 air replace
 setblock 94 80 31 air replace
+setblock 48 67 -8 air replace
+setblock 47 87 -7 air replace
+setblock 50 85 -7 air replace
+setblock -65 74 -22 air replace
+setblock -70 78 -28 air replace
+setblock -70 78 -28 air replace
+setblock 25 72 45 air replace

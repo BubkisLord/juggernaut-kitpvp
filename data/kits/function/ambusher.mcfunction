@@ -5,7 +5,7 @@ give @s iron_sword[item_name={"text":"Steel Dagger","color":"dark_purple","itali
 
 item replace entity @s hotbar.1 with nether_star[item_name={"text":"Ambush Enemy","color":"dark_purple","italic":false},lore=[{"text":"Drop to be teleported to a random enemy.","color":"dark_gray"}]]
 
-give @s cooked_beef[item_name={"text":"Steak","color":"dark_purple","italic":false},lore=[{"text":"Eat to regenerate.","color":"dark_gray"}]] 16
+give @s cooked_beef[item_name={"text":"Steak","color":"dark_purple","italic":false},lore=[{"text":"Eat to regenerate.","color":"dark_gray"}]] 64
 
 item replace entity @s armor.chest with leather_chestplate[item_name={"text":"Ambusher's Cloak","color":"dark_purple","italic":false},lore=[{"text":"Allows for easy concealment.","color":"dark_gray"}],dyed_color=2168370,unbreakable={}]
 

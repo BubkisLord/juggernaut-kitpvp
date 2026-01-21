@@ -30,7 +30,7 @@ execute as @a[tag=borrowing_time,scores={borrowed_time_remaining=..0}] run score
 execute as @a[tag=borrowing_time,scores={borrowed_time_remaining=..0}] run tag @s remove borrowing_time
 
 # Spawn Revealing Tower (Active)
-execute if entity @a[tag=engineer] run function juggernaut:ability_management/check_ability {\
+function juggernaut:ability_management/check_ability {\
     player_tag:"engineer",\
     item_id:"minecraft:gold_block",\
     item_name:{"text": "Spawn Revealing Tower","color": "gold"},\
@@ -42,7 +42,7 @@ execute if entity @a[tag=engineer] run function juggernaut:ability_management/ch
 }
 
 # Spawn Replenishment Tower (Active)
-execute if entity @a[tag=engineer] run function juggernaut:ability_management/check_ability {\
+function juggernaut:ability_management/check_ability {\
     player_tag:"engineer",\
     item_id:"minecraft:lime_dye",\
     item_name:{"text": "Spawn Replenishment Tower","color": "green"},\
@@ -54,7 +54,7 @@ execute if entity @a[tag=engineer] run function juggernaut:ability_management/ch
 }
 
 # Spawn Turret (Active)
-execute if entity @a[tag=engineer] run function juggernaut:ability_management/check_ability {\
+function juggernaut:ability_management/check_ability {\
     player_tag:"engineer",\
     item_id:"minecraft:bone",\
     item_name:{"text": "Spawn Turret","color": "gray"},\
@@ -66,7 +66,7 @@ execute if entity @a[tag=engineer] run function juggernaut:ability_management/ch
 }
 
 # Borrowed Time (Active)
-execute if entity @a[tag=engineer] run function juggernaut:ability_management/check_ability {\
+function juggernaut:ability_management/check_ability {\
     player_tag:"engineer",\
     item_id:"minecraft:clock",\
     item_name:{"text": "Borrowed Time","color": "gold"},\

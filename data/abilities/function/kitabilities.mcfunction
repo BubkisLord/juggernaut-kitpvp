@@ -115,7 +115,7 @@ execute as @a[scores={aura_sound=20..},tag=levitator,nbt={SelectedItem:{id:"mine
 execute at @a[tag=levitator] run execute as @e[type=item,nbt={Item:{id:"minecraft:flower_banner_pattern"}},distance=..3] run function abilities:levitation_spell
 
 #Ghost
-execute as @a[tag=ghost,scores={health=0..12}] at @s run particle minecraft:effect ~ ~1 ~ 0.2 0.2 0.2 1 3 force
+execute as @a[tag=ghost,scores={health=0..18}] at @s run particle minecraft:effect ~ ~1 ~ 0.2 0.2 0.2 1 3 force
 
 #Shaman
 effect give @a[tag=shaman] water_breathing 1000000 100 true

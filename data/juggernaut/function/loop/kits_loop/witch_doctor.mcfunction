@@ -1,5 +1,7 @@
+execute as @a[tag=runner,tag=!spectator] unless entity @s[nbt={active_effects:[{id:"minecraft:invisibility"}]}] if score @s health matches 1.. if score @s lives_remaining matches 1.. at @s run summon area_effect_cloud ~ ~ ~ {Duration:20,Tags:["kill_on_end_game"],custom_particle:{type:"minecraft:dust",color:[1.0,0.0,0.0],scale:1.0},Radius:0.5f}
 
-execute if entity @a[tag=witch_doctor] run function juggernaut:ability_management/check_ability {\
+
+function juggernaut:ability_management/check_ability {\
     player_tag:"witch_doctor",\
     item_id:"minecraft:cyan_dye",\
     item_name:{"text": "Speed","color": "dark_aqua"},\
@@ -10,7 +12,7 @@ execute if entity @a[tag=witch_doctor] run function juggernaut:ability_managemen
     cooldown_var:"speed_pot_cooldown",\
 }
 
-execute if entity @a[tag=witch_doctor] run function juggernaut:ability_management/check_ability {\
+function juggernaut:ability_management/check_ability {\
     player_tag:"witch_doctor",\
     item_id:"minecraft:red_dye",\
     item_name:{"text": "Fire Resistance","color": "red"},\
@@ -21,7 +23,7 @@ execute if entity @a[tag=witch_doctor] run function juggernaut:ability_managemen
     cooldown_var:"fire_pot_cooldown",\
 }
 
-execute if entity @a[tag=witch_doctor] run function juggernaut:ability_management/check_ability {\
+function juggernaut:ability_management/check_ability {\
     player_tag:"witch_doctor",\
     item_id:"minecraft:orange_dye",\
     item_name:{"text": "Strength","color": "gold"},\
@@ -32,7 +34,7 @@ execute if entity @a[tag=witch_doctor] run function juggernaut:ability_managemen
     cooldown_var:"strength_pot_cooldown",\
 }
 
-execute if entity @a[tag=witch_doctor] run function juggernaut:ability_management/check_ability {\
+function juggernaut:ability_management/check_ability {\
     player_tag:"witch_doctor",\
     item_id:"minecraft:ghast_tear",\
     item_name:{"text": "Enlarge","color": "dark_purple"},\
@@ -43,7 +45,7 @@ execute if entity @a[tag=witch_doctor] run function juggernaut:ability_managemen
     cooldown_var:"jug_kit_cooldown",\
 }
 
-execute if entity @a[tag=witch_doctor] run function juggernaut:ability_management/check_ability {\
+function juggernaut:ability_management/check_ability {\
     player_tag:"witch_doctor",\
     item_id:"minecraft:ghast_tear",\
     item_name:{"text": "Reduce","color": "dark_purple"},\

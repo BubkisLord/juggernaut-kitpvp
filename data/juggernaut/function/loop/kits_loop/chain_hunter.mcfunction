@@ -1,5 +1,4 @@
-
-execute if entity @a[tag=chain_hunter] run function juggernaut:ability_management/check_ability {\
+function juggernaut:ability_management/check_ability {\
     player_tag:"chain_hunter",\
     item_id:"minecraft:chain",\
     item_name:{"text": "Summon Chain Shot","color": "gray"},\
@@ -10,7 +9,7 @@ execute if entity @a[tag=chain_hunter] run function juggernaut:ability_managemen
     cooldown_var:"jug_kit_cooldown",\
 }
 
-execute if entity @a[tag=chain_hunter] run function juggernaut:ability_management/check_ability {\
+function juggernaut:ability_management/check_ability {\
     player_tag:"chain_hunter",\
     item_id:"minecraft:ghast_tear",\
     item_name:{"text": "Chain Pull","color": "gray"},\

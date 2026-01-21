@@ -1,0 +1,22 @@
+execute as @a[tag=chameleon] run scoreboard players add #juggernaut_manager global_chameleon_losses 1
+execute as @a[tag=dragon] run scoreboard players add #juggernaut_manager global_dragon_losses 1
+execute as @a[tag=eclipse_stalker] run scoreboard players add #juggernaut_manager global_eclipse_stalker_losses 1
+execute as @a[tag=fishmonger] run scoreboard players add #juggernaut_manager global_fishmonger_losses 1
+execute as @a[tag=hunter] run scoreboard players add #juggernaut_manager global_hunter_losses 1
+execute as @a[tag=classic_jug] run scoreboard players add #juggernaut_manager global_classic_juggernaut_losses 1
+execute as @a[tag=knight] run scoreboard players add #juggernaut_manager global_knight_losses 1
+execute as @a[tag=predator] run scoreboard players add #juggernaut_manager global_predator_losses 1
+execute as @a[tag=spirit_walker] run scoreboard players add #juggernaut_manager global_spirit_walker_losses 1
+execute as @a[tag=timekeeper] run scoreboard players add #juggernaut_manager global_timekeeper_losses 1
+execute as @a[tag=warlock] run scoreboard players add #juggernaut_manager global_warlock_losses 1
+execute as @a[tag=witch_doctor] run scoreboard players add #juggernaut_manager global_witch_doctor_losses 1
+
+execute as @a[tag=engineer] run scoreboard players add #juggernaut_manager global_engineer_wins 1
+execute as @a[tag=escapist] run scoreboard players add #juggernaut_manager global_escapist_wins 1
+execute as @a[tag=ghost] run scoreboard players add #juggernaut_manager global_ghost_wins 1
+execute as @a[tag=guide] run scoreboard players add #juggernaut_manager global_guide_wins 1
+execute as @a[tag=medic] run scoreboard players add #juggernaut_manager global_medic_wins 1
+execute as @a[tag=rogue] run scoreboard players add #juggernaut_manager global_rogue_wins 1
+execute as @a[tag=scout] run scoreboard players add #juggernaut_manager global_scout_wins 1
+execute as @a[tag=survivor] run scoreboard players add #juggernaut_manager global_survivor_wins 1
+execute as @a[tag=trickster] run scoreboard players add #juggernaut_manager global_trickster_wins 1

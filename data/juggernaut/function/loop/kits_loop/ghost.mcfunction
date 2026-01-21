@@ -11,7 +11,7 @@ execute as @a[tag=jug_ghost,scores={is_sneaking=0}] at @s run attribute @s sneak
 execute as @a[tag=jug_ghost,scores={is_sneaking=1}] at @s run particle minecraft:ash ~ ~1 ~ 0.3 0.2 0.3 1 1 force @a
 
 # Spectral Cloak (Active)
-execute if entity @a[tag=jug_ghost] run function juggernaut:ability_management/check_ability {\
+function juggernaut:ability_management/check_ability {\
     player_tag:"jug_ghost",\
     item_id:"minecraft:echo_shard",\
     item_name:{"text": "Spectral Cloak","color": "gray"},\

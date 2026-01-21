@@ -1,5 +1,6 @@
 # All runners gain points for replenishing stations (1/sec)
 execute as @e[type=armor_stand,tag=replenishment.station] at @s if score #game_state var matches 11 unless entity @e[type=armor_stand,tag=banishment_glyph,distance=..32] as @a[tag=runner,distance=0..3] at @s run scoreboard players add @s points 1
+execute as @e[type=armor_stand,tag=replenishment.station] at @s if score #game_state var matches 11 unless entity @e[type=armor_stand,tag=banishment_glyph,distance=..32] as @a[tag=shapeshifting,distance=0..3] at @s run scoreboard players add @s points 1
 
 # Runner gains points for tanking damage from the juggernaut with absorption (1/sec)
 execute as @a[tag=runner,scores={damage_absorbed=1..}] run scoreboard players operation @s damage_absorbed /= #10 var
@@ -48,5 +49,5 @@ execute as @a[tag=engineer] if score @s revealing_tower_cooldown > #0 var run sc
 # Players gain points for healing (2/sec)
 execute as @a[tag=runner,tag=is_healing] run scoreboard players add @s points 2
 
-# Survivor gains points for being close to the juggernaut (15/sec)
-execute as @a[tag=survivor] if entity @a[tag=juggernaut,distance=..10] run scoreboard players add @s points 15
+# Survivor gains points for being close to the juggernaut (5/sec)
+execute as @a[tag=survivor] if entity @a[tag=juggernaut,distance=..10] run scoreboard players add @s points 5

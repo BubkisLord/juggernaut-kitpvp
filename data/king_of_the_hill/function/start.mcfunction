@@ -27,7 +27,7 @@ scoreboard players set #king_of_the_hill_game_ending var 0
 scoreboard players set @a king_of_the_hill_points 0
 
 # Allow players to drop items
-gamerule keepInventory false
+gamerule keep_inventory false
 
 # Set the game state to pregame - Possibly needed if game starting is later changed for some unforseen reason.
 execute if score #king_of_the_hill_customisation teams_mode matches 0 run scoreboard players set #game_state var 30

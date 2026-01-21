@@ -9,7 +9,7 @@ give @s splash_potion[item_name={"text":"Vial of Mercury","color":"dark_purple",
 
 give @s splash_potion[item_name={"text":"Vial of Mercury","color":"dark_purple","italic":false},lore=[{"text":"Careful with that stuff; it's toxic!","color":"dark_gray"}],potion_contents={custom_effects:[{id:"minecraft:instant_damage",amplifier:1}],custom_color:10930638}]
 
-give @s cooked_beef[item_name={"text":"Steak","color":"dark_purple","italic":false},lore=[{"text":"Eat to regenerate.","color":"dark_gray"}]] 16
+give @s cooked_beef[item_name={"text":"Steak","color":"dark_purple","italic":false},lore=[{"text":"Eat to regenerate.","color":"dark_gray"}]] 64
 item replace entity @s armor.head with leather_helmet[item_name={"text":"Alchemist's Hat","color":"dark_purple","italic":false},lore=[{"text":"Almost looks like gold.","color":"dark_gray"}],dyed_color=16764175,unbreakable={}]
 item replace entity @s armor.chest with golden_chestplate[item_name={"text":"Shiny Chestplate","color":"dark_purple","italic":false},lore=[{"text":"It's heavier than it looks!","color":"dark_gray"}],unbreakable={}]
 item replace entity @s armor.legs with leather_leggings[item_name={"text":"Yellow Pants","color":"dark_purple","italic":false},lore=[{"text":"To do: Turn these into gold.","color":"dark_gray"}],dyed_color=16764175,unbreakable={}]

@@ -1,0 +1,1 @@
+execute as @s at @s anchored eyes positioned ^ ^ ^3 as @n[type=area_effect_cloud,tag=timekeeper_trail,distance=..3] run tag @s add mid_rupture

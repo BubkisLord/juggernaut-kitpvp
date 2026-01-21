@@ -1,9 +1,10 @@
 tag @s remove lobby.player
 clear @s
 tag @s add hunter
-give @s bow[item_name={"text":"Hunting Bow","color":"dark_aqua","italic":false},lore=[{"text":"Requires extraordinary power to pull.","color":"dark_gray"}],unbreakable={}]
-give @s cooked_beef[item_name={"text":"Steak","color":"dark_aqua","italic":false},lore=[{"text":"Eat to regenerate.","color":"dark_gray"}]]
-give @s spectral_arrow[item_name={"text":"Arrow of Sight","color":"dark_aqua","italic":false},lore=[{"text":"You will never lose a target with these.","color":"dark_gray"}]]
+give @s bow[item_name={"text":"Hunting Bow","color":"dark_aqua","italic":false},lore=[{"text":"Requires extraordinary power to pull.","color":"dark_gray"}],unbreakable={},enchantments={infinity:1,power:1}]
+give @s cooked_beef[item_name={"text":"Steak","color":"dark_aqua","italic":false},lore=[{"text":"Eat to regenerate.","color":"dark_gray"}]] 64
+give @s spectral_arrow[item_name={"text":"Arrow of Sight","color":"dark_aqua","italic":false},lore=[{"text":"You will never lose a target with these.","color":"dark_gray"}]] 128
+give @s arrow[item_name={"text":"Plain Arrow","color":"dark_aqua","italic":false},lore=[{"text":"You won't run out of arrows this way.","color":"dark_gray"}]] 1
 item replace entity @s armor.head with leather_helmet[item_name={"text":"Hunter's Hat","color":"dark_aqua","italic":false},lore=[{"text":"Even has an alliteration.","color":"dark_gray"}],dyed_color=1930517,unbreakable={}]
 item replace entity @s armor.chest with leather_chestplate[item_name={"text":"Stinky Tunic","color":"dark_aqua","italic":false},lore=[{"text":"Yuck! Disgusting!","color":"dark_gray"}],dyed_color=1930517,unbreakable={}]
 item replace entity @s armor.legs with leather_leggings[item_name={"text":"Bear Hide Trousers","color":"dark_aqua","italic":false},lore=[{"text":"These weren't easy to make.","color":"dark_gray"}],dyed_color=1930517,unbreakable={}]

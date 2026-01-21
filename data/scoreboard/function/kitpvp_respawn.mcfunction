@@ -7,6 +7,8 @@ scoreboard players set @s ambushDisplay 0
 xp set @s 0 points
 xp set @s 0 levels
 tag @s remove ambush_cooldown
+attribute @s safe_fall_distance modifier remove max_pirate_fall_distance
+execute if entity @s[scores={pirateKills=14..}] run weather clear 9999999
 tag @s[tag=!autorespawn] remove warrior
 tag @s[tag=!autorespawn] remove archer
 tag @s[tag=!autorespawn] remove defender

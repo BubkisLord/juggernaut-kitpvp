@@ -1,0 +1,3 @@
+kill @e[type=nautilus,tag=fishmonger_nautilus]
+kill @e[type=drowned,tag=fishmonger_drowned]
+execute as @a[tag=runner] at @e[type=armor_stand,tag=nautilus_spawn,limit=1,sort=random] run summon nautilus ~ ~ ~ {Invulnerable:true,Tags:["kill_on_end_game","fishmonger_nautilus"],CustomName:{"text":"Mark McBahon"},CustomNameVisible:true,Team:jug,Passengers:[{id:"drowned",Invulnerable:true,Tags:["kill_on_end_game","fishmonger_drowned"],CustomName:{"text":"Geniusmcbee"},CustomNameVisible:true,Team:jug,equipment:{mainhand:{id:"trident"}},active_effects:[{id:"weakness",ambient:true,amplifier:0,duration:999999999,show_particles:false}],drop_chances:{mainhand:0}}],equipment:{body:{id:"netherite_chestplate"}},DeathLootTable:""}

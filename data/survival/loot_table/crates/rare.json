@@ -98,14 +98,14 @@
                                     "has_consume_particles": false
                                 },
                                 "use_cooldown": {
-                                    "seconds": 1,
+                                    "seconds": 0.01,
                                     "cooldown_group": "minecraft:fireball"
                                 },
                                 "use_remainder": {
                                     "id": "red_glazed_terracotta",
                                     "count": 1
                                 },
-                                "max_stack_size": 1
+                                "max_stack_size": 8
                             }
                         }
                     ],
@@ -118,7 +118,7 @@
                     "functions": [
                         {
                             "function": "set_count",
-                            "count": 48
+                            "count": 8
                         }
                     ],
                     "weight": 2
@@ -128,6 +128,197 @@
                     "quality": 3,
                     "value": "survival:positive_potions",
                     "weight": 3
+                },
+                {
+                    "type": "item",
+                    "quality": 4,
+                    "name": "wind_charge",
+                    "functions": [
+                        {
+                            "function": "set_count",
+                            "count": 8,
+                            "add": true
+                        }
+                    ],
+                    "weight": 2
+                },
+                {
+                    "type": "item",
+                    "quality": 3,
+                    "name": "firework_rocket",
+                    "functions": [
+                        {
+                            "function": "set_count",
+                            "count": 32,
+                            "add": true
+                        },
+                        {
+                            "function": "set_fireworks",
+                            "flight_duration": 2,
+                            "explosions": {
+                                "mode": "append",
+                                "values": [
+                                    {
+                                        "shape": "burst",
+                                        "colors": [
+                                            16711680,
+                                            16737792
+                                        ],
+                                        "fade_colors": [
+                                            8126464,
+                                            0
+                                        ],
+                                        "has_trail": true,
+                                        "has_twinkle": false
+                                    },
+                                    {
+                                        "shape": "burst",
+                                        "colors": [
+                                            16711680,
+                                            16737792
+                                        ],
+                                        "fade_colors": [
+                                            8126464,
+                                            0
+                                        ],
+                                        "has_trail": true,
+                                        "has_twinkle": false
+                                    },
+                                    {
+                                        "shape": "burst",
+                                        "colors": [
+                                            16711680,
+                                            16737792
+                                        ],
+                                        "fade_colors": [
+                                            8126464,
+                                            0
+                                        ],
+                                        "has_trail": true,
+                                        "has_twinkle": false
+                                    },
+                                    {
+                                        "shape": "burst",
+                                        "colors": [
+                                            16711680,
+                                            16737792
+                                        ],
+                                        "fade_colors": [
+                                            8126464,
+                                            0
+                                        ],
+                                        "has_trail": true,
+                                        "has_twinkle": false
+                                    },
+                                    {
+                                        "shape": "burst",
+                                        "colors": [
+                                            16711680,
+                                            16737792
+                                        ],
+                                        "fade_colors": [
+                                            8126464,
+                                            0
+                                        ],
+                                        "has_trail": true,
+                                        "has_twinkle": false
+                                    },
+                                    {
+                                        "shape": "burst",
+                                        "colors": [
+                                            16711680,
+                                            16737792
+                                        ],
+                                        "fade_colors": [
+                                            8126464,
+                                            0
+                                        ],
+                                        "has_trail": true,
+                                        "has_twinkle": false
+                                    },
+                                    {
+                                        "shape": "burst",
+                                        "colors": [
+                                            16711680,
+                                            16737792
+                                        ],
+                                        "fade_colors": [
+                                            8126464,
+                                            0
+                                        ],
+                                        "has_trail": true,
+                                        "has_twinkle": false
+                                    },
+                                    {
+                                        "shape": "burst",
+                                        "colors": [
+                                            16711680,
+                                            16737792
+                                        ],
+                                        "fade_colors": [
+                                            8126464,
+                                            0
+                                        ],
+                                        "has_trail": true,
+                                        "has_twinkle": false
+                                    },
+                                    {
+                                        "shape": "burst",
+                                        "colors": [
+                                            16711680,
+                                            16737792
+                                        ],
+                                        "fade_colors": [
+                                            8126464,
+                                            0
+                                        ],
+                                        "has_trail": true,
+                                        "has_twinkle": false
+                                    },
+                                    {
+                                        "shape": "burst",
+                                        "colors": [
+                                            16711680,
+                                            16737792
+                                        ],
+                                        "fade_colors": [
+                                            8126464,
+                                            0
+                                        ],
+                                        "has_trail": true,
+                                        "has_twinkle": false
+                                    },
+                                    {
+                                        "shape": "burst",
+                                        "colors": [
+                                            16711680,
+                                            16737792
+                                        ],
+                                        "fade_colors": [
+                                            8126464,
+                                            0
+                                        ],
+                                        "has_trail": true,
+                                        "has_twinkle": false
+                                    },
+                                    {
+                                        "shape": "burst",
+                                        "colors": [
+                                            16711680,
+                                            16737792
+                                        ],
+                                        "fade_colors": [
+                                            8126464,
+                                            0
+                                        ],
+                                        "has_trail": true,
+                                        "has_twinkle": false
+                                    }
+                                ]
+                            }
+                        }
+                    ],
+                    "weight": 1
                 }
             ]
         }

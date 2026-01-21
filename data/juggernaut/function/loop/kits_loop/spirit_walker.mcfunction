@@ -1,4 +1,4 @@
-execute if entity @a[tag=spirit_walker] run function juggernaut:ability_management/check_ability {\
+function juggernaut:ability_management/check_ability {\
     player_tag:"spirit_walker",\
     item_id:"minecraft:amethyst_shard",\
     item_name:{"text": "Phase Shift","color": "#577ebe"},\

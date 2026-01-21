@@ -22,7 +22,6 @@ execute if entity @e[type=armor_stand,tag=replenishment.station,distance=..12] a
 
 # Blood pact perk
 execute if entity @s[tag=using_blood_pact] run tag @s add blood_pact_active
-execute if entity @s[tag=using_blood_pact] run tag @s remove using_blood_pact
 
 
 # Predator hemorrhage

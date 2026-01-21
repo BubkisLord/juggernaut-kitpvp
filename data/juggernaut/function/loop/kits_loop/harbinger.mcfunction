@@ -1,5 +1,5 @@
 
-execute if entity @a[tag=harbinger] run function juggernaut:ability_management/check_ability {\
+function juggernaut:ability_management/check_ability {\
     player_tag:"harbinger",\
     item_id:"minecraft:glistering_melon_slice",\
     item_name:{"text": "Martyrs Blessing","color": "gold"},\

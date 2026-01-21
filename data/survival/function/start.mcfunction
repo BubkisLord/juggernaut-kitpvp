@@ -24,7 +24,7 @@ scoreboard players operation #max_crate_count var = #survival_customisation crat
 scoreboard players set #crate_count var 0
 
 # Allow players to drop items
-gamerule keepInventory false
+gamerule keep_inventory false
 
 # Set the game state to pregame - Possibly needed if game starting is later changed for some unforseen reason.
 scoreboard players operation #survival_teams var = #survival_customisation teams_mode
@@ -34,6 +34,11 @@ execute if score #survival_teams var matches 1 run function survival:start_with_
 
 # Teleport players into the game
 tp @a 0 101 0
+
+execute as @a[team=blue] run tp @s @a[team=blue,limit=1,sort=furthest]
+execute as @a[team=red] run tp @s @a[team=red,limit=1,sort=furthest]
+execute as @a[team=green] run tp @s @a[team=green,limit=1,sort=furthest]
+execute as @a[team=yellow] run tp @s @a[team=yellow,limit=1,sort=furthest]
 
 # Reset the chests
 function survival:reset_chests

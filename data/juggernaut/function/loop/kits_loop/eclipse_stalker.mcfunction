@@ -122,9 +122,9 @@ execute if entity @a[tag=eclipse_stalker] if entity @a[tag=shadow_marked] as @a[
     player_tag:"eclipse_stalker",\
     item_id:"minecraft:ender_eye",\
     item_name:{"text": "Teleport to Player","color": "#FFD700"},\
-    description:[{"text": "Teleport to the runner you are currently looking at.","color": "gray"},{"text": "A runner must already be marked to be teleported to.","color": "gray"},{"text": "Cooldown: 40s","color": "dark_gray"}],\
+    description:[{"text": "Teleport to the runner you are currently looking at.","color": "gray"},{"text": "A runner must already be marked to be teleported to.","color": "gray"},{"text": "Cooldown: 6s","color": "dark_gray"}],\
     ability_id:"materialise",\
-    cooldown:40,\
+    cooldown:6,\
     hotbar_slot:"hotbar.6",\
     cooldown_var:"shadow_mark_cooldown",\
 }

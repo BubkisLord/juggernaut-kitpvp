@@ -1,9 +1,9 @@
 scoreboard players set @s self_healing_base 2
 scoreboard players set @s self_healing_modifier 100
 
-execute if entity @s[tag=using_fractured_aid] run scoreboard players remove @s self_healing_modifier 20
-execute if entity @s[tag=using_self_preservation] run scoreboard players add @s self_healing_modifier 15
-execute if entity @s[tag=blood_pact_active] run scoreboard players add @s self_healing_modifier 120
+execute if entity @s[tag=using_fractured_aid] run scoreboard players remove @s self_healing_modifier 90
+execute if entity @s[tag=using_self_preservation] run scoreboard players add @s self_healing_modifier 90
+execute if entity @s[tag=blood_pact_active] run scoreboard players add @s self_healing_modifier 300
 execute at @s if entity @a[tag=harbinger,distance=..8] as @a[tag=harbinger,distance=..8] if score @s health < @s max_health as @p run scoreboard players add @s self_healing_modifier 15
 execute at @s if entity @a[tag=using_overwhelming_presence,distance=..15] run scoreboard players remove @s self_healing_modifier 15
 

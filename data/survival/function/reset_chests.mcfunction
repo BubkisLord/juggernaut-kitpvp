@@ -6,9 +6,9 @@ execute as @e[type=armor_stand,tag=survival_chest_indicator] run tag @s remove r
 execute as @e[type=armor_stand,tag=survival_chest_indicator] run tag @s remove legendary
 execute as @e[type=armor_stand,tag=survival_chest_indicator,limit=12,sort=random] at @s run setblock ~ ~ ~ chest{LootTable:"survival:chests/common"} replace
 execute as @e[type=armor_stand,tag=survival_chest_indicator] at @s if block ~ ~ ~ chest{LootTable:"survival:chests/common"} run tag @s add common
-execute as @e[type=armor_stand,tag=survival_chest_indicator,limit=11,sort=random,tag=!common] at @s run setblock ~ ~ ~ chest{LootTable:"survival:chests/uncommon"} replace
+execute as @e[type=armor_stand,tag=survival_chest_indicator,limit=14,sort=random,tag=!common] at @s run setblock ~ ~ ~ chest{LootTable:"survival:chests/uncommon"} replace
 execute as @e[type=armor_stand,tag=survival_chest_indicator] at @s if block ~ ~ ~ chest{LootTable:"survival:chests/uncommon"} run tag @s add uncommon
-execute as @e[type=armor_stand,tag=survival_chest_indicator,limit=10,sort=random,tag=!common,tag=!uncommon] at @s run setblock ~ ~ ~ chest{LootTable:"survival:chests/rare"} replace
+execute as @e[type=armor_stand,tag=survival_chest_indicator,limit=13,sort=random,tag=!common,tag=!uncommon] at @s run setblock ~ ~ ~ chest{LootTable:"survival:chests/rare"} replace
 execute as @e[type=armor_stand,tag=survival_chest_indicator] at @s if block ~ ~ ~ chest{LootTable:"survival:chests/rare"} run tag @s add rare
 execute if score #survival_customisation has_legendaries matches 1 as @a run function survival:set_legendary
 

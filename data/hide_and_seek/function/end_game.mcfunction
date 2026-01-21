@@ -3,13 +3,13 @@ scoreboard players set #hide_and_seek_game_ending var 0
 scoreboard players set @a hide_and_seek_game_time 0
 scoreboard players set @a seeker_release_timer 0
 spawnpoint @a 2000 100 0
-gamerule showDeathMessages false
+gamerule show_death_messages false
 tag @a remove hider
 tag @a remove seeker
 tag @a remove spectator
 clear @a
 kill @a
-gamerule showDeathMessages true
+gamerule show_death_messages true
 kill @e[tag=kill_on_end_game]
 attribute @s max_health base set 20
 scoreboard players set @a lives 0

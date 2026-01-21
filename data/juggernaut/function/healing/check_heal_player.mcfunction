@@ -2,12 +2,12 @@ execute if entity @s[tag=!medic] run scoreboard players set @s healing_base 5
 execute if entity @s[tag=medic] run scoreboard players set @s healing_base 7
 scoreboard players set @s healing_modifier 100
 
-execute if entity @s[tag=using_self_preservation] run scoreboard players remove @s healing_modifier 20
+execute if entity @s[tag=using_self_preservation] run scoreboard players remove @s healing_modifier 90
 execute at @s if entity @a[tag=using_overwhelming_presence,distance=..15] run scoreboard players remove @s healing_modifier 15
 
-execute if entity @s[tag=using_fractured_aid] run scoreboard players add @s healing_modifier 15
+execute if entity @s[tag=using_fractured_aid] run scoreboard players add @s healing_modifier 90
 execute at @s if entity @a[tag=harbinger,distance=..8] run scoreboard players add @s healing_modifier 15
-execute if entity @s[tag=blood_pact_active] run scoreboard players add @s healing_modifier 120
+execute if entity @s[tag=blood_pact_active] run scoreboard players add @s healing_modifier 300
 
 scoreboard players operation @s healing_per_tick = @s healing_base
 scoreboard players operation @s healing_per_tick *= @s healing_modifier

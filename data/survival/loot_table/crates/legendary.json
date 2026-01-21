@@ -56,14 +56,14 @@
                                     "has_consume_particles": false
                                 },
                                 "use_cooldown": {
-                                    "seconds": 1,
+                                    "seconds": 0.01,
                                     "cooldown_group": "minecraft:fireball"
                                 },
                                 "use_remainder": {
                                     "id": "red_glazed_terracotta",
                                     "count": 1
                                 },
-                                "max_stack_size": 1
+                                "max_stack_size": 8
                             }
                         }
                     ],
@@ -74,6 +74,12 @@
                     "quality": 2,
                     "value": "survival:positive_potions",
                     "weight": 3
+                },
+                {
+                    "type": "item",
+                    "quality": 8,
+                    "name": "totem_of_undying",
+                    "weight": 1
                 }
             ]
         }

@@ -1,7 +1,9 @@
 scoreboard players set @s pirateKills 14
 clear @s bow
 clear @s arrow
-give @s trident[item_name={"text":"Speartooth Trident","color":"dark_aqua","italic":false},lore=[{"text":"A true pirate's treasure.","color":"dark_gray"}],unbreakable={},enchantments={loyalty:7}]
+give @s trident[item_name={"text":"Speartooth Trident","color":"dark_aqua","italic":false},lore=[{"text":"A true pirate's treasure.","color":"dark_gray"}],unbreakable={},enchantments={riptide:6}]
+attribute @s safe_fall_distance modifier add max_pirate_fall_distance 999 add_value
+weather thunder 1000000
 clear @s iron_sword
 give @s iron_sword[item_name={"text":"Maw of the Deep","color":"dark_blue","italic":true,"bold":true},lore=[{"text":"Use to return to the sea.","color":"dark_gray"}],unbreakable={},enchantments={sharpness:4}]
 tellraw @s {"text":" "}

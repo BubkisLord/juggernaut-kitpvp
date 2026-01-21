@@ -1,7 +1,7 @@
 tag @s remove lobby.player
 clear @s
 tag @s add archer
-give @s golden_sword[item_name={"text":"Shiny Dagger","color":"dark_aqua","italic":false},lore=[{"text":"Better than nothing.","color":"dark_gray"}],unbreakable={}]
+give @s golden_sword[item_name={"text":"Shiny Dagger","color":"dark_aqua","italic":false},lore=[{"text":"Better than nothing.","color":"dark_gray"}],unbreakable={},enchantments={sharpness:2,fire_aspect:1}]
 
 give @s bow[item_name={"text":"Archer's Longbow","color":"dark_aqua","italic":false},lore=[{"text":"Try not to shoot yourself.","color":"dark_gray"}],unbreakable={}]
 

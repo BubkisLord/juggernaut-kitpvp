@@ -11,7 +11,7 @@ scoreboard players set #current_game_time var 0
 
 execute as @e[type=armor_stand,tag=koth_hill] run tag @s remove koth_hill
 scoreboard players reset @a king_of_the_hill_points
-scoreboard objectives setdisplay sidebar health
+scoreboard objectives setdisplay below_name health
 
 team leave @a
 bossbar remove king_of_the_hill_timer
@@ -19,14 +19,14 @@ bossbar remove king_of_the_hill_timer
 worldborder set 9999
 
 spawnpoint @a 2000 100 0
-gamerule showDeathMessages false
+gamerule show_death_messages false
 clear @a
 gamemode adventure @a
 tag @a remove spectator
 kill @e[type=item]
 kill @a
-gamerule keepInventory true
-gamerule showDeathMessages true
+gamerule keep_inventory true
+gamerule show_death_messages true
 function king_of_the_hill:remove_chests
 kill @e[tag=kill_on_end_game]
 attribute @s max_health base set 20

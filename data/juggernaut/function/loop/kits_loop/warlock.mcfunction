@@ -14,18 +14,17 @@ execute at @e[type=armor_stand,tag=withering_surge] run particle large_smoke ~ ~
 execute at @e[type=armor_stand,tag=warlock_armor_stand] if entity @a[tag=runner,distance=..3] run particle totem_of_undying ~ ~0.75 ~ 0.25 0.5 0.25 0 10 force
 
 #Sound effects
-execute at @e[type=armor_stand,tag=warlock_armor_stand] as @a[distance=..16] run function abilities:aura_sound
+# execute at @e[type=armor_stand,tag=warlock_armor_stand] as @a[distance=..16] run function abilities:aura_sound
 
 #Warlock tower aura effects
 execute if entity @e[type=armor_stand,tag=malevolent_aura] run function juggernaut:abilities/warlock/tower_effects/malevolent_aura
-execute if entity @e[type=armor_stand,tag=withering_surge] run function juggernaut:abilities/warlock/tower_effects/withering_surge
 
 execute if entity @e[type=armor_stand,tag=warlock_armor_stand] run function juggernaut:abilities/warlock/warlock_towers
 
 # Warlock aura effect
 execute as @s at @s run function juggernaut:kit_auras/warlock
 
-execute if entity @a[tag=warlock] run function juggernaut:ability_management/check_ability {\
+function juggernaut:ability_management/check_ability {\
     player_tag:"warlock",\
     item_id:"minecraft:red_dye",\
     item_name:{"text": "Spawn Malevolent Aura","color": "dark_red"},\
@@ -36,7 +35,7 @@ execute if entity @a[tag=warlock] run function juggernaut:ability_management/che
     cooldown_var:"malevolent_aura_cooldown",\
 }
 
-execute if entity @a[tag=warlock] run function juggernaut:ability_management/check_ability {\
+function juggernaut:ability_management/check_ability {\
     player_tag:"warlock",\
     item_id:"minecraft:cyan_dye",\
     item_name:{"text": "Spawn Banishment Glyph","color": "dark_aqua"},\
@@ -47,7 +46,7 @@ execute if entity @a[tag=warlock] run function juggernaut:ability_management/che
     cooldown_var:"banishment_glyph_cooldown",\
 }
 
-execute if entity @a[tag=warlock] run function juggernaut:ability_management/check_ability {\
+function juggernaut:ability_management/check_ability {\
     player_tag:"warlock",\
     item_id:"minecraft:black_dye",\
     item_name:{"text": "Spawn Withering Surge","color": "dark_gray"},\

@@ -2,14 +2,14 @@ execute as @a[tag=juggernaut,tag=in_chase,scores={chase_timeout=..0}] run functi
 execute as @a[tag=runner,tag=in_chase,scores={chase_timeout=..0}] run function juggernaut:hooks/runner_left_chase
 execute as @a[tag=in_chase,scores={chase_timeout=..0}] run tag @s remove in_chase
 
-execute as @a[tag=juggernaut,scores={is_sneaking=0}] at @s positioned ^ ^ ^3 if entity @a[tag=runner,distance=..10,scores={is_sneaking=1}] run tag @s add continue_chase
-execute as @a[tag=juggernaut,scores={is_sneaking=0}] at @s positioned ^ ^ ^3 as @a[tag=runner,distance=..10,scores={is_sneaking=1}] run tag @s add continue_chase
+execute as @a[tag=juggernaut,scores={is_sneaking=0},tag=!shapeshifting] at @s positioned ^ ^ ^3 if entity @a[tag=runner,distance=..10,scores={is_sneaking=1}] run tag @s add continue_chase
+execute as @a[tag=juggernaut,scores={is_sneaking=0},tag=!shapeshifting] at @s positioned ^ ^ ^3 as @a[tag=runner,distance=..10,scores={is_sneaking=1}] run tag @s add continue_chase
 
-execute as @a[tag=juggernaut,scores={is_sneaking=0}] at @s positioned ^ ^ ^4 if entity @a[tag=runner,distance=..20,scores={is_sneaking=0}] run tag @s add continue_chase
-execute as @a[tag=juggernaut,scores={is_sneaking=0}] at @s positioned ^ ^ ^4 as @a[tag=runner,distance=..20,scores={is_sneaking=0}] run tag @s add continue_chase
+execute as @a[tag=juggernaut,scores={is_sneaking=0},tag=!shapeshifting] at @s positioned ^ ^ ^4 if entity @a[tag=runner,distance=..20,scores={is_sneaking=0}] run tag @s add continue_chase
+execute as @a[tag=juggernaut,scores={is_sneaking=0},tag=!shapeshifting] at @s positioned ^ ^ ^4 as @a[tag=runner,distance=..20,scores={is_sneaking=0}] run tag @s add continue_chase
 
-execute as @a[tag=juggernaut,scores={is_sneaking=0}] at @s positioned ^ ^ ^5 if entity @a[tag=runner,distance=..30,scores={is_sprinting=1}] run tag @s add continue_chase
-execute as @a[tag=juggernaut,scores={is_sneaking=0}] at @s positioned ^ ^ ^5 as @a[tag=runner,distance=..30,scores={is_sprinting=1}] run tag @s add continue_chase
+execute as @a[tag=juggernaut,scores={is_sneaking=0},tag=!shapeshifting] at @s positioned ^ ^ ^5 if entity @a[tag=runner,distance=..30,scores={is_sprinting=1}] run tag @s add continue_chase
+execute as @a[tag=juggernaut,scores={is_sneaking=0},tag=!shapeshifting] at @s positioned ^ ^ ^5 as @a[tag=runner,distance=..30,scores={is_sprinting=1}] run tag @s add continue_chase
 
 execute as @a[tag=continue_chase,tag=!using_unyielding_wrath] run scoreboard players set @s chase_timeout 60
 execute as @a[tag=continue_chase,tag=using_unyielding_wrath] run scoreboard players set @s chase_timeout 120

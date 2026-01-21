@@ -1,9 +1,17 @@
+#------------------------------------- RUNNER COUNT MAXIMUM -------------------------------------------------
+scoreboard players set #juggernaut_manager runner_count 0
+execute as @a[scores={health=1..}] run scoreboard players add #juggernaut_manager runner_count 1
+scoreboard players operation #juggernaut_manager runner_count -= #juggernaut_customisation juggernaut_count
+execute if score #juggernaut_manager runner_count matches 7.. run tellraw @a [{"text": "[","bold": true,"color": "dark_gray"},{"text": "ERROR","bold": true,"color": "red"},{"text": "]","bold": true,"color": "dark_gray"},{"text": " There can only be a max of 6 runners. Allocate more juggernauts or play seperate games in seperate worlds.","color": "red"},{"text": " Click here to increase the juggernaut count to 4. (Experimental)","color": "aqua","click_event": {"action": "run_command","command": "/scoreboard players set #juggernaut_customisation juggernaut_count 3"}}]
+execute if score #juggernaut_manager runner_count matches 7.. run return fail
+#------------------------------------------------------------------------------------------------------------
+
 tag @a remove lobby.player
-execute if score #juggernaut_customisation juggernaut_count matches 0 run tag @a[limit=1,sort=random] add juggernaut
-execute if score #juggernaut_customisation juggernaut_count matches 1 run tag @a[limit=2,sort=random] add juggernaut
-execute if score #juggernaut_customisation juggernaut_count matches 2 run tag @a[limit=3,sort=random] add juggernaut
-# tag cyberduck2 add juggernaut
-tag @a[tag=!juggernaut] add runner
+execute if score #juggernaut_customisation juggernaut_count matches 0 run tag @a[limit=1,sort=random,scores={health=1..}] add juggernaut
+execute if score #juggernaut_customisation juggernaut_count matches 1 run tag @a[limit=2,sort=random,scores={health=1..}] add juggernaut
+execute if score #juggernaut_customisation juggernaut_count matches 2 run tag @a[limit=3,sort=random,scores={health=1..}] add juggernaut
+tag @a[tag=!juggernaut,scores={health=1..}] add runner
+execute as @a[scores={health=..0}] run function juggernaut:spectate
 clear @a
 
 function survival:remove_chests
@@ -64,7 +72,8 @@ scoreboard players remove #runner_lives_count var 2
 scoreboard players set #juggernaut_multiplier var 0
 execute as @a[tag=juggernaut] run scoreboard players add #juggernaut_multiplier var 1
 
-execute if score #juggernaut_customisation completable_stations matches 1 run scoreboard players set #beginning_time var 4500
+execute if score #juggernaut_customisation completable_stations matches 1 run scoreboard players set #beginning_time var 3500
+execute if score #juggernaut_customisation completable_stations matches 0 run scoreboard players set #beginning_time var 4500
 
 scoreboard players operation #juggernaut_manager total_replenishment_needed = #beginning_time var
 scoreboard players operation #juggernaut_manager total_replenishment_needed *= #runner_lives_count var
@@ -76,6 +85,9 @@ scoreboard players operation #juggernaut_manager tmp /= #100 var
 scoreboard players operation #juggernaut_manager tmp *= #5 var
 scoreboard players operation #juggernaut_manager total_replenishment_needed -= #juggernaut_manager tmp
 
+execute if score #juggernaut_customisation completable_stations matches 1 run scoreboard players operation #total_replenishment_per_station var = #juggernaut_manager total_replenishment_needed
+execute if score #juggernaut_customisation completable_stations matches 1 run scoreboard players operation #total_replenishment_per_station var /= #5 var
+
 # For the above code, the formula is:
 # replenishment = 0.95((4500(total_runner_lives - 2) + 4500) / juggernauts)
 
@@ -86,13 +98,14 @@ scoreboard players set #juggernaut_manager replenish_decimal 0
 scoreboard players set #juggernaut_manager replenish_percentage 0
 
 # Turn off natural regeneration.
-gamerule naturalRegeneration false
+gamerule natural_health_regeneration false
 
 # Juggernaut and Runner Perks
 function juggernaut:perk_management/clear_prev_perks
 execute if score #juggernaut_customisation perks_enabled matches 1 run function juggernaut:perk_management/give_runner_perks
 execute if score #juggernaut_customisation perks_enabled matches 1 run function juggernaut:perk_management/give_juggernaut_perks
 
+tag @a remove saved_skin
 
 # Check if debug mode should be off
-execute if score #juggernaut_customisation debug_mode matches 1 run tellraw @a [{"text": "[","bold": true,"color": "dark_gray"},{"text": "WARNING","bold": true,"color": "yellow"},{"text": "]","bold": true,"color": "dark_gray"},{"text": " Debug mode is enabled. This could cause instability and issues.","color": "yellow"},{"text": " Click here to disable it.","color": "aqua","click_event": {"action": "run_command","command": "/scoreboard players set #juggernaut_customisation debug_mode 0"}}]
+execute if score #juggernaut_customisation debug_mode matches 1 run tellraw @a [{"text": "[","bold": true,"color": "dark_gray"},{"text": "WARNING","bold": true,"color": "yellow"},{"text": "]","bold": true,"color": "dark_gray"},{"text": " Debug mode is enabled. This could cause instability and issues.","color": "yellow",bold:false},{"text": " Click here to disable it.","color": "aqua","click_event": {"action": "run_command","command": "/scoreboard players set #juggernaut_customisation debug_mode 0"},bold:false}]

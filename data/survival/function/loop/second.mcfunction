@@ -9,10 +9,10 @@ execute if score #grace_period var > #0 var run scoreboard players remove #grace
 # Make the worldborder close faster the more replenishments have occurred. Additionally, limit the minimum space to 5 block radius.
 execute store result score #worldborder_size var run worldborder get
 
-execute if score #worldborder_size var matches 11.. if score #times_replenished var = #0 var if score #grace_period var <= #0 var run worldborder add -1 1
-execute if score #worldborder_size var matches 11.. if score #times_replenished var = #1 var if score #grace_period var <= #0 var run worldborder add -1.5 1
-execute if score #worldborder_size var matches 11.. if score #times_replenished var = #2 var if score #grace_period var <= #0 var run worldborder add -1.75 1
-execute if score #worldborder_size var matches 11.. if score #times_replenished var >= #3 var if score #grace_period var <= #0 var run worldborder add -2.25 1
+execute if score #worldborder_size var matches 11.. if score #times_replenished var = #0 var if score #grace_period var <= #0 var run worldborder add -1 1s
+execute if score #worldborder_size var matches 11.. if score #times_replenished var = #1 var if score #grace_period var <= #0 var run worldborder add -1.5 1s
+execute if score #worldborder_size var matches 11.. if score #times_replenished var = #2 var if score #grace_period var <= #0 var run worldborder add -1.75 1s
+execute if score #worldborder_size var matches 11.. if score #times_replenished var >= #3 var if score #grace_period var <= #0 var run worldborder add -2.25 1s
 
 # Check World Border
 execute if score #worldborder_size var matches 150..300 run function survival:loop/check_worldborder {distance:300}
@@ -60,6 +60,7 @@ scoreboard players set #teams_alive var 0
 execute if score #game_state var matches 26 as @p[team=blue,scores={lives_remaining=1..}] run scoreboard players add #teams_alive var 1
 execute if score #game_state var matches 26 as @p[team=red,scores={lives_remaining=1..}] run scoreboard players add #teams_alive var 1
 execute if score #game_state var matches 26 as @p[team=green,scores={lives_remaining=1..}] run scoreboard players add #teams_alive var 1
+execute if score #game_state var matches 26 as @p[team=yellow,scores={lives_remaining=1..}] run scoreboard players add #teams_alive var 1
 
 execute if score #game_state var matches 26 if score #teams_alive var matches ..1 run scoreboard players set #survival_game_ending var 1
 
@@ -67,6 +68,7 @@ execute if score #survival_game_ending var matches 1 if score #end_game_timer va
 execute if score #teams_alive var matches ..1 if score #game_state var matches 26 if score #survival_game_ending var matches 1 if score #end_game_timer var matches 10.. as @p[team=blue,scores={lives_remaining=1..}] run tellraw @a [{"text": "Team ","color": "white","bold": false},{"text":"Blue","color":"blue","bold": true},{"text": " Has Won!","color": "white","bold": false}]
 execute if score #teams_alive var matches ..1 if score #game_state var matches 26 if score #survival_game_ending var matches 1 if score #end_game_timer var matches 10.. as @p[team=red,scores={lives_remaining=1..}] run tellraw @a [{"text": "Team ","color": "white","bold": false},{"text":"Red","color":"red","bold": true},{"text": " Has Won!","color": "white","bold": false}]
 execute if score #teams_alive var matches ..1 if score #game_state var matches 26 if score #survival_game_ending var matches 1 if score #end_game_timer var matches 10.. as @p[team=green,scores={lives_remaining=1..}] run tellraw @a [{"text": "Team ","color": "white","bold": false},{"text":"Green","color":"green","bold": true},{"text": " Has Won!","color": "white","bold": false}]
+execute if score #teams_alive var matches ..1 if score #game_state var matches 26 if score #survival_game_ending var matches 1 if score #end_game_timer var matches 10.. as @p[team=yellow,scores={lives_remaining=1..}] run tellraw @a [{"text": "Team ","color": "white","bold": false},{"text":"Yellow","color":"yellow","bold": true},{"text": " Has Won!","color": "white","bold": false}]
 
 execute if score #surv_players_alive var matches ..1 if score #game_state var matches 31 if score #survival_game_ending var matches 1 if score #end_game_timer var matches 10.. as @a[scores={lives_remaining=1..}] run tellraw @a [{"selector":"@s","color":"dark_aqua","bold": true},{"text": " Has Won!","color": "white","bold": false}]
 

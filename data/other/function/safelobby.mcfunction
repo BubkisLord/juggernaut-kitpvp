@@ -31,7 +31,7 @@ item replace entity @a[tag=lobby.player] armor.legs with air
 item replace entity @a[tag=lobby.player] armor.feet with air
 
 #Forcing adventure mode
-gamemode adventure @a[tag=!spectator,name=!"BubkisLord"]
+# gamemode adventure @a[tag=!spectator,name=!"BubkisLord"]
 gamemode spectator @a[tag=spectator]
 
 #Max Health
@@ -43,3 +43,5 @@ execute as @a[tag=!lobby.player,scores={unlockall=0}] run scoreboard players res
 execute as @a[tag=lobby.player,scores={unlockall=1}] run function shop:unlockall_prompt
 execute as @a[tag=lobby.player,scores={unlockall=2}] run function shop:unlockall_confirmed
 execute as @a[tag=lobby.player,scores={unlockall=3}] run function shop:unlockall_declined
+
+data merge block ~ ~ ~ {lock:{predicates:{"jukebox_playable":{song:"11"}}}}

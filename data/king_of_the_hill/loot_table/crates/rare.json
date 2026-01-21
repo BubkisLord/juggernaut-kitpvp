@@ -91,7 +91,7 @@
                                     "id": "red_glazed_terracotta",
                                     "count": 1
                                 },
-                                "max_stack_size": 1
+                                "max_stack_size": 8
                             }
                         }
                     ],
@@ -112,7 +112,7 @@
                 {
                     "type": "loot_table",
                     "quality": 3,
-                    "command": "king_of_the_hill:positive_potions",
+                    "value": "king_of_the_hill:positive_potions",
                     "weight": 3
                 }
             ]

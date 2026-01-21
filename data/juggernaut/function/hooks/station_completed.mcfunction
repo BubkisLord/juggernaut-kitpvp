@@ -1,1 +1,1 @@
-execute if entity @a[tag=using_floods_of_rage] as @a[tag=runner,tag=!is_undetectable] run effect give @s glowing 5 0 true
+execute if entity @a[tag=using_floods_of_rage] as @a[tag=runner,tag=!is_undetectable] run effect give @s glowing 8 0 true

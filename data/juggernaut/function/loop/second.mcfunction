@@ -1,6 +1,3 @@
-# Point gaining
-function juggernaut:loop/recursive_point_gaining
-
 # Start game when ready.
 execute if score #game_state var matches 10 unless entity @a[tag=!has_jug_kit] run function juggernaut:start_juggernaut
 
@@ -60,6 +57,9 @@ execute as @a unless score #game_state var matches 10..19 if score @s jug_kit_co
 execute as @a if score #game_state var matches 10..19 if score @s jug_kit_cooldown_2 > #0 var run scoreboard players remove @s jug_kit_cooldown_2 1
 execute as @a unless score #game_state var matches 10..19 if score @s jug_kit_cooldown_2 > #0 var run scoreboard players set @s jug_kit_cooldown_2 0
 
+execute as @a if score #game_state var matches 10..19 if score @s jug_kit_cooldown_3 > #0 var run scoreboard players remove @s jug_kit_cooldown_3 1
+execute as @a unless score #game_state var matches 10..19 if score @s jug_kit_cooldown_3 > #0 var run scoreboard players set @s jug_kit_cooldown_3 0
+
 execute as @a if score #game_state var matches 10..19 if score @s shadow_mark_cooldown > #0 var run scoreboard players remove @s shadow_mark_cooldown 1
 execute as @a unless score #game_state var matches 10..19 if score @s shadow_mark_cooldown > #0 var run scoreboard players set @s shadow_mark_cooldown 0
 
@@ -106,37 +106,24 @@ execute as @a[tag=warlock] unless score #game_state var matches 10..19 if score 
 # Hunter remnant delay
 execute as @e[type=armor_stand,tag=hunter_remnant] if score @s var > #0 var run scoreboard players remove @s var 1
 
-execute as @a[tag=blinker,nbt={SelectedItem:{id:"minecraft:ender_pearl"}}] at @s run function juggernaut:raycasts/raycast {\
-    player_tag:"blinker",\
-    raycast_tag:"blinker_raycast",\
-    target_tag:"blinker_remnant",\
-    hit_distance:8,\
-    raycast_limit:1000,\
-    move_function_id:3,\
-    hit_function_id:3,\
-    collides_with_blocks:0,\
-}
-
 # Scout revealing by maintaining line of sight
 execute as @a[tag=scout] at @s run function juggernaut:raycasts/raycast {\
     player_tag:"scout",\
-    raycast_tag:"scout_raycast",\
+    raycast_id:"scout_los_reveal",\
     target_tag:"juggernaut",\
     hit_distance:2.5,\
     raycast_limit:200,\
     move_function_id:0,\
-    hit_function_id:2,\
     collides_with_blocks:1,\
 }
 
 execute as @a[tag=dragon] run function juggernaut:raycasts/raycast {\
     player_tag:"dragon",\
-    raycast_tag:"dragon_breath_raycast",\
+    raycast_id:"dragon_breath",\
     target_tag:"runner",\
     hit_distance:1.5,\
     raycast_limit:24,\
     move_function_id:1,\
-    hit_function_id:1,\
     collides_with_blocks:1,\
 }
 
@@ -163,7 +150,7 @@ execute as @a[tag=!in_chase] run scoreboard players set @s chase_time 0
 
 # Update unyielding wrath stacks
 execute as @a[tag=juggernaut,tag=in_chase,tag=using_unyielding_wrath] run scoreboard players operation @s unyielding_wrath_time = @s chase_time
-execute as @a[tag=juggernaut,tag=in_chase,tag=using_unyielding_wrath] run scoreboard players operation @s unyielding_wrath_time %= #10 var
+execute as @a[tag=juggernaut,tag=in_chase,tag=using_unyielding_wrath] run scoreboard players operation @s unyielding_wrath_time %= #5 var
 execute as @a[tag=juggernaut,tag=in_chase,tag=using_unyielding_wrath,scores={unyielding_wrath_time=0}] run scoreboard players add @s unyielding_wrath_stacks 1
 execute as @a[tag=juggernaut,tag=in_chase,tag=using_unyielding_wrath,scores={unyielding_wrath_time=0,unyielding_wrath_stacks=1}] run attribute @s movement_speed modifier add unyielding_wrath_1 0.003 add_value
 execute as @a[tag=juggernaut,tag=in_chase,tag=using_unyielding_wrath,scores={unyielding_wrath_time=0,unyielding_wrath_stacks=2}] run attribute @s movement_speed modifier add unyielding_wrath_2 0.003 add_value
@@ -198,5 +185,17 @@ execute as @a[tag=spectator] run tag @s remove in_chase
 # Reset second counter periodically
 execute if score #second_counter var matches 100.. run scoreboard players set #second_counter var 0
 
-damage @n[type=minecraft:wolf,tag=hunter_wolf] 1 magic by @p[tag=hunted]
+# damage @n[type=minecraft:wolf,tag=hunter_wolf] 1 magic by @p[tag=hunted]
 execute unless entity @a[tag=hunted] run kill @n[type=minecraft:wolf,tag=hunter_wolf]
+
+execute as @a[tag=juggernaut] at @s if block ~ ~-1 ~ white_glazed_terracotta run tp @s ^ ^ ^3
+
+# Withering Surge
+execute if entity @a[tag=warlock] if entity @e[type=armor_stand,tag=withering_surge] run function juggernaut:abilities/warlock/tower_effects/withering_surge
+
+execute as @a[tag=chameleon] run item replace entity @s container.11 with tipped_arrow[potion_contents={custom_effects:[{id:"slowness",duration:1800,amplifier:0},{id:"poison",duration:1800,amplifier:0}],custom_name:"Acid",custom_color:12713016},item_name={"text":"Acid Arrow",color:"#b5ee4a"},custom_name={"text":"Acid Arrow",color:"#b5ee4a"}] 64
+
+# Replenishment Minigame
+# stopwatch create replenishment_minigame_timer
+# execute if stopwatch replenishment_minigame_timer 3.. run execute as @e[type=armor_stand,tag=replenishment.station] at @s if score #game_state var matches 11 unless entity @e[type=armor_stand,tag=banishment_glyph,distance=..32] unless entity @a[tag=juggernaut,limit=1,sort=nearest,distance=0..12,tag=!shapeshifting] as @a[tag=runner,distance=..3,tag=!is_not_replenishing] at @s run function juggernaut:replenishment_management/minigame
+# execute if stopwatch replenishment_minigame_timer 3.. run stopwatch restart replenishment_minigame_timer

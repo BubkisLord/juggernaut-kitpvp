@@ -17,9 +17,8 @@ execute as @a[tag=is_exposed] at @s run particle dust{color:[0.8,0.0,0.0],scale:
 execute if score #game_state var matches 11 run function juggernaut:replenishment_management/display_replenishment_progress
 
 # Give respawn time effect
-execute as @a[tag=has_respawn_time] run effect give @s weakness infinite 255 true
+execute as @a[tag=has_respawn_time] run effect give @s weakness 1 255 true
 execute as @a[tag=has_respawn_time] run tag @s remove in_chase
 
 # Predator footsteps sound effect
-execute at @a[tag=predator] unless entity @n[type=armor_stand,tag=predator_footstep_sound,distance=..1] run summon armor_stand ~ ~ ~ {Tags:["predator_footstep_sound","kill_on_end_game"],Invisible:1b,Marker:1b,NoGravity:1b,Silent:1b}
-execute as @a[tag=predator] at @s run playsound block.grass.step master @s ~-1 ~ ~ 0.1 1
+execute as @a[tag=predator] at @s unless entity @s[tag=in_chase] as @n[type=armor_stand,tag=predator_footstep_sound] at @s at @s run playsound block.grass.step master @p[tag=predator] ^ ^ ^1 3 1 1

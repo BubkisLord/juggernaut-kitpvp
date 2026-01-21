@@ -1,0 +1,2 @@
+execute store result storage juggernaut:abilities/timekeeper/try_temporal_mark_rewind player_uuid int 1 run data get entity @n[type=armor_stand,tag=timekeeper_mark_point] last_hurt_by_player
+execute as @a run function juggernaut:abilities/timekeeper/try_temporal_mark_rewind with storage juggernaut:abilities/timekeeper/try_temporal_mark_rewind player_uuid

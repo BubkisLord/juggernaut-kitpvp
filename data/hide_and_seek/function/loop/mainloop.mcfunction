@@ -17,7 +17,7 @@ execute if score #surv_players_alive var matches ..1 run scoreboard players remo
 # If only one player is alive, and time is up then end game.
 execute if score #end_game_timer var matches ..0 run function hide_and_seek:end_game
 
-execute run scoreboard players add #juggernaut_manager tick_counter 1
+scoreboard players add #juggernaut_manager tick_counter 1
 scoreboard players set #20 var 20
 execute if score #juggernaut_manager tick_counter >= #20 var run function hide_and_seek:loop/loop_per_second
 execute if score #juggernaut_manager tick_counter >= #20 var run scoreboard players set #juggernaut_manager tick_counter 0

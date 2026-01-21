@@ -50,6 +50,10 @@ execute if entity @a[tag=predator] run function juggernaut:loop/kits_loop/predat
 execute if entity @a[tag=chain_hunter] run function juggernaut:loop/kits_loop/chain_hunter
 execute if entity @a[tag=spirit_walker] run function juggernaut:loop/kits_loop/spirit_walker
 execute if entity @a[tag=witch_doctor] run function juggernaut:loop/kits_loop/witch_doctor
+execute if entity @a[tag=timekeeper] run function juggernaut:loop/kits_loop/timekeeper
+execute if entity @a[tag=chameleon] run function juggernaut:loop/kits_loop/chameleon
+execute if entity @a[tag=fishmonger] run function juggernaut:loop/kits_loop/fishmonger
+execute if entity @a[tag=pouncing_incompetee] run function juggernaut:loop/kits_loop/pouncing_incompetee
 
 execute if entity @a[tag=using_beacon_of_hope] run function juggernaut:ability_management/check_ability {\
     player_tag:"using_beacon_of_hope",\
@@ -91,3 +95,26 @@ execute if entity @a[tag=runner,tag=is_healing] as @a[tag=runner,tag=self_healin
 execute if entity @a[tag=runner,tag=is_healing] as @a[tag=runner,tag=is_being_healed] run tag @s remove is_being_healed
 
 scoreboard players set @a[scores={is_sneaking=1..}] is_sneaking 0
+
+# TEST THIS
+execute as @e[type=armor_stand,tag=replenishment.station] run function juggernaut:replenishment_management/below_name_percentage
+
+execute as @a[tag=juggernaut,tag=using_insidious,nbt={active_effects:[{id:"minecraft:invisibility"}]}] run function juggernaut:effects/apply_effect_silent {effect:"undetectable",duration:1,color:"gray"}
+execute as @a[tag=juggernaut,tag=using_insidious,nbt=!{active_effects:[{id:"minecraft:invisibility"}]}] run tag @s remove is_undetectable
+execute as @a[tag=juggernaut,tag=using_insidious,nbt=!{active_effects:[{id:"minecraft:invisibility"}]}] run scoreboard players set @s undetectable_duration_left 0
+
+# execute as @a at @s run tp @n[type=wolf] ~ ~ ~ ~ ~
+# execute as @a at @s unless entity @n[type=wolf,distance=..20,tag=juggernaut_wolf] run summon wolf ~ ~ ~ {CustomName:{"text":"Juggernaut Wolf","color":"red","bold":true},CustomNameVisible:true,Invulnerable:true,Health:20.0f,Tags:["juggernaut_wolf","kill_on_end_game"]}
+# attribute @n[type=wolf,tag=juggernaut_wolf] scale base set 1.4
+# attribute @p scale base set 0.9
+
+
+execute as @e[type=armor_stand,tag=replenish_minigame_target] at @s run particle minecraft:witch ~ ~0.1 ~ 0.11 0.1 0.11 0 70 force
+execute as @e[type=armor_stand,tag=replenish_minigame_target] at @s run scoreboard players add @s tick_counter 1
+execute as @e[type=armor_stand,tag=replenish_minigame_target,scores={tick_counter=60..}] at @s as @n[type=armor_stand,tag=replenishment.station] run tag @s add failed_minigame
+execute as @e[type=armor_stand,tag=replenish_minigame_target,scores={tick_counter=60..}] at @s as @a run playsound minecraft:block.note_block.pling master @a[tag=runner,distance=..4] ~ ~ ~ 0.5 0.1
+execute as @e[type=armor_stand,tag=replenish_minigame_target,scores={tick_counter=60..}] run kill @s
+execute as @e[type=armor_stand,tag=replenish_minigame_target] at @s at @n[type=armor_stand,tag=replenishment.station] unless entity @p[tag=runner,distance=..3] run kill @s
+
+execute as @e[type=armor_stand,tag=replenishment.station] at @s if score #game_state var matches 11 unless entity @e[type=armor_stand,tag=banishment_glyph,distance=..32] unless entity @a[tag=juggernaut,limit=1,sort=nearest,distance=0..12,tag=!shapeshifting] as @a[tag=runner,distance=..3,tag=!is_not_replenishing] unless entity @e[type=armor_stand,tag=replenish_minigame_target,distance=..5] run function juggernaut:replenishment_management/minigame
+execute as @e[type=armor_stand,tag=failed_minigame] run tag @s remove failed_minigame
