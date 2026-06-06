@@ -45,7 +45,7 @@
                 {
                     "type": "loot_table",
                     "quality": 3,
-                    "command": "king_of_the_hill:positive_potions",
+                    "value": "king_of_the_hill:positive_potions",
                     "weight": 2
                 }
             ]
