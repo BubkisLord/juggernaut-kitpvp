@@ -1,9 +1,10 @@
-execute as @s[tag=!has_jug_kit] run item replace entity @s armor.head with leather_helmet[enchantments={protection:2},unbreakable={}]
-execute as @s[tag=!has_jug_kit] run item replace entity @s armor.chest with leather_chestplate[enchantments={protection:2},unbreakable={}]
-execute as @s[tag=!has_jug_kit] run item replace entity @s armor.legs with leather_leggings[enchantments={protection:2},unbreakable={}]
-execute as @s[tag=!has_jug_kit] run item replace entity @s armor.feet with leather_boots[enchantments={protection:2},unbreakable={}]
-execute as @s[tag=!has_jug_kit] run give @s blackstone[attribute_modifiers=[{type:"minecraft:attack_damage",id:"minecraft:attack_damage",amount:6.5,operation:"add_value"}]]
-execute as @s[tag=!has_jug_kit] run item replace entity @s hotbar.1 with splash_potion[potion_contents={potion:"healing"},max_stack_size=32] 32
-execute as @s[tag=!has_jug_kit] run item replace entity @s hotbar.5 with splash_potion[potion_contents={potion:"strong_harming"},max_stack_size=3] 3
-execute as @s[tag=!has_jug_kit] run tag @s add witch_doctor
+execute if entity @a[tag=witch_doctor] run return fail
+execute if entity @s[tag=has_jug_kit] run return fail
+item replace entity @s armor.head with leather_helmet[enchantments={protection:2},unbreakable={}]
+item replace entity @s armor.chest with leather_chestplate[enchantments={protection:2},unbreakable={}]
+item replace entity @s armor.legs with leather_leggings[enchantments={protection:2},unbreakable={}]
+item replace entity @s armor.feet with leather_boots[enchantments={protection:2},unbreakable={}]
+give @s blackstone[attribute_modifiers=[{type:"minecraft:attack_damage",id:"minecraft:attack_damage",amount:6.5,operation:"add_value"}]]
+function juggernaut:descriptions/kits/juggernaut/witch_doctor
+tag @s add witch_doctor
 tag @s add has_jug_kit

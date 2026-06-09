@@ -3,6 +3,17 @@ execute as @a[tag=runner,tag=!spectator] unless entity @s[nbt={active_effects:[{
 
 function juggernaut:ability_management/check_ability {\
     player_tag:"witch_doctor",\
+    item_id:"minecraft:black_dye",\
+    item_name:{"text": "Damage Potions","color": "dark_aqua"},\
+    description:[{"text": "Gives you 3 splash potions of instant damage.","color": "gray"},{"text": "Cooldown: 60s","color": "dark_gray"}],\
+    ability_id:"damage_pot",\
+    cooldown:60,\
+    hotbar_slot:"hotbar.1",\
+    cooldown_var:"jug_kit_cooldown_4",\
+}
+
+function juggernaut:ability_management/check_ability {\
+    player_tag:"witch_doctor",\
     item_id:"minecraft:cyan_dye",\
     item_name:{"text": "Speed","color": "dark_aqua"},\
     description:[{"text": "Grants a speed boost for a short duration.","color": "gray"},{"text": "Cooldown: 60s","color": "dark_gray"}],\

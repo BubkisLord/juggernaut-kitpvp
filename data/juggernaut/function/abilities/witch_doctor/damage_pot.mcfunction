@@ -1,0 +1,1 @@
+item replace entity @s hotbar.5 with splash_potion[potion_contents={potion:"strong_harming"},max_stack_size=3] 3
