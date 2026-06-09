@@ -82,3 +82,14 @@ execute as @a[tag=chameleon,tag=!shapeshifting] run function juggernaut:ability_
     hotbar_slot:"hotbar.5",\
     cooldown_var:"jug_kit_cooldown_3",\
 }
+
+execute as @a[tag=chameleon] run function juggernaut:ability_management/check_ability {\
+    player_tag:"chameleon",\
+    item_id:"minecraft:clock",\
+    item_name:{"text": "Swap with Runner","color": "gray"},\
+    description:[{"text": "Swap positions with your current shapeshift target.","color": "gray"},{"text": "Cooldown: 30s","color": "dark_gray"}],\
+    ability_id:"swap_player",\
+    cooldown:30,\
+    hotbar_slot:"hotbar.6",\
+    cooldown_var:"jug_kit_cooldown_4",\
+}

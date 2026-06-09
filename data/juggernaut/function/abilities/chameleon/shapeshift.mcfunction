@@ -1,3 +1,4 @@
+execute unless entity @a[tag=saved_skin] run tag @r[tag=runner] add saved_skin
 kill @e[type=mannequin,tag=chameleon_mannequin,distance=..6]
 kill @e[type=text_display,tag=chameleon_name_tag,distance=..6]
 kill @e[type=text_display,tag=chameleon_health_tag,distance=..6]
