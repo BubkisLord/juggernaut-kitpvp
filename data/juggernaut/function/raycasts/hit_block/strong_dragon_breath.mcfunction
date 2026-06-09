@@ -1,0 +1,1 @@
+summon area_effect_cloud ~ ~ ~ {Duration:200,WaitTime:0,Tags:["kill_on_end_game"],custom_particle:{type:"minecraft:dust",color:10037155,scale:2},Radius:2f,RadiusPerTick:-0.01f,Age:0,potion_contents:{"custom_effects":[{id:"instant_damage",amplifier:1,duration:1,show_particles:0b}]}}

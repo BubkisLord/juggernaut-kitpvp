@@ -1,0 +1,3 @@
+damage @s 14 dragon_breath by @p[tag=dragon]
+particle dust_color_transition{from_color:[0.7,0.0,0.7],to_color:[0.0,0.0,0.0],scale:3.2} ^ ^1 ^ 4 4 4 1 120 force @a
+summon area_effect_cloud ~ ~ ~ {Duration:400,WaitTime:0,Tags:["kill_on_end_game"],custom_particle:{type:"minecraft:dust",color:10037155,scale:2},Radius:3f,RadiusPerTick:0f,Age:0,potion_contents:{"custom_effects":[{id:"instant_damage",amplifier:1,duration:1,show_particles:0b}]}}
