@@ -1,1 +1,2 @@
-execute as @a[tag=runner] at @s anchored eyes positioned ~ ~5 ~ run summon lightning_bolt ~ ~ ~
+execute if score #game_state var matches 10..19 as @a[tag=runner] at @s anchored eyes positioned ~ ~5 ~ run summon lightning_bolt ~ ~ ~
+execute if score #game_state var matches 40..49 as @a[distance=0.5..] at @s anchored eyes positioned ~ ~5 ~ run summon lightning_bolt ~ ~ ~
