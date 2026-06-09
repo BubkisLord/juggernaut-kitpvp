@@ -172,6 +172,29 @@ scoreboard players set @a lives 0
 scoreboard players set @a game_deaths 0
 scoreboard players set @a borrowed_damage 0
 
+scoreboard players set #engineer_count var 0
+scoreboard players set #escapist_count var 0
+scoreboard players set #ghost_count var 0
+scoreboard players set #guide_count var 0
+scoreboard players set #medic_count var 0
+scoreboard players set #rogue_count var 0
+scoreboard players set #scout_count var 0
+scoreboard players set #survivor_count var 0
+scoreboard players set #trickster_count var 0
+scoreboard players set #windrunner_count var 0
+scoreboard players set #chameleon_count var 0
+scoreboard players set #dragon_count var 0
+scoreboard players set #eclipse_stalker_count var 0
+scoreboard players set #fishmonger_count var 0
+scoreboard players set #hunter_count var 0
+scoreboard players set #classic_juggernaut_count var 0
+scoreboard players set #knight_count var 0
+scoreboard players set #predator_count var 0
+scoreboard players set #spirit_walker_count var 0
+scoreboard players set #timekeeper_count var 0
+scoreboard players set #warlock_count var 0
+scoreboard players set #witch_doctor_count var 0
+
 bossbar remove warlock:malevolent_aura
 bossbar remove warlock:banishment_glyph
 bossbar remove warlock:withering_surge

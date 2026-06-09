@@ -1,0 +1,1 @@
+$scoreboard players operation #juggernaut_manager $(kit)_wins += #$(kit)_count var

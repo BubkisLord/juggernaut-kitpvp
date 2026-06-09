@@ -1,22 +1,24 @@
-execute as @a[tag=chameleon] run scoreboard players add #juggernaut_manager global_chameleon_losses 1
-execute as @a[tag=dragon] run scoreboard players add #juggernaut_manager global_dragon_losses 1
-execute as @a[tag=eclipse_stalker] run scoreboard players add #juggernaut_manager global_eclipse_stalker_losses 1
-execute as @a[tag=fishmonger] run scoreboard players add #juggernaut_manager global_fishmonger_losses 1
-execute as @a[tag=hunter] run scoreboard players add #juggernaut_manager global_hunter_losses 1
-execute as @a[tag=classic_jug] run scoreboard players add #juggernaut_manager global_classic_juggernaut_losses 1
-execute as @a[tag=knight] run scoreboard players add #juggernaut_manager global_knight_losses 1
-execute as @a[tag=predator] run scoreboard players add #juggernaut_manager global_predator_losses 1
-execute as @a[tag=spirit_walker] run scoreboard players add #juggernaut_manager global_spirit_walker_losses 1
-execute as @a[tag=timekeeper] run scoreboard players add #juggernaut_manager global_timekeeper_losses 1
-execute as @a[tag=warlock] run scoreboard players add #juggernaut_manager global_warlock_losses 1
-execute as @a[tag=witch_doctor] run scoreboard players add #juggernaut_manager global_witch_doctor_losses 1
+execute if score #juggernaut_customisation debug_mode matches 1 run return fail
+function juggernaut:update_stats_loss {"kit":"chameleon"}
+function juggernaut:update_stats_loss {"kit":"dragon"}
+function juggernaut:update_stats_loss {"kit":"eclipse_stalker"}
+function juggernaut:update_stats_loss {"kit":"fishmonger"}
+function juggernaut:update_stats_loss {"kit":"hunter"}
+function juggernaut:update_stats_loss {"kit":"classic_juggernaut"}
+function juggernaut:update_stats_loss {"kit":"knight"}
+function juggernaut:update_stats_loss {"kit":"predator"}
+function juggernaut:update_stats_loss {"kit":"spirit_walker"}
+function juggernaut:update_stats_loss {"kit":"timekeeper"}
+function juggernaut:update_stats_loss {"kit":"warlock"}
+function juggernaut:update_stats_loss {"kit":"witch_doctor"}
 
-execute as @a[tag=engineer] run scoreboard players add #juggernaut_manager global_engineer_wins 1
-execute as @a[tag=escapist] run scoreboard players add #juggernaut_manager global_escapist_wins 1
-execute as @a[tag=ghost] run scoreboard players add #juggernaut_manager global_ghost_wins 1
-execute as @a[tag=guide] run scoreboard players add #juggernaut_manager global_guide_wins 1
-execute as @a[tag=medic] run scoreboard players add #juggernaut_manager global_medic_wins 1
-execute as @a[tag=rogue] run scoreboard players add #juggernaut_manager global_rogue_wins 1
-execute as @a[tag=scout] run scoreboard players add #juggernaut_manager global_scout_wins 1
-execute as @a[tag=survivor] run scoreboard players add #juggernaut_manager global_survivor_wins 1
-execute as @a[tag=trickster] run scoreboard players add #juggernaut_manager global_trickster_wins 1
+function juggernaut:update_stats_win {"kit":"engineer"}
+function juggernaut:update_stats_win {"kit":"escapist"}
+function juggernaut:update_stats_win {"kit":"ghost"}
+function juggernaut:update_stats_win {"kit":"guide"}
+function juggernaut:update_stats_win {"kit":"medic"}
+function juggernaut:update_stats_win {"kit":"rogue"}
+function juggernaut:update_stats_win {"kit":"scout"}
+function juggernaut:update_stats_win {"kit":"survivor"}
+function juggernaut:update_stats_win {"kit":"trickster"}
+function juggernaut:update_stats_win {"kit":"windrunner"}

@@ -1,5 +1,28 @@
 tellraw @a [{"text": "Juggernaut","color": "dark_red"},{"text": " is starting!","color": "gray"}]
 
+execute as @a[tag=chameleon] run function juggernaut:handle_kit_picked {"kit": "chameleon"}
+execute as @a[tag=dragon] run function juggernaut:handle_kit_picked {"kit": "dragon"}
+execute as @a[tag=eclipse_stalker] run function juggernaut:handle_kit_picked {"kit": "eclipse_stalker"}
+execute as @a[tag=fishmonger] run function juggernaut:handle_kit_picked {"kit": "fishmonger"}
+execute as @a[tag=jug_hunter] run function juggernaut:handle_kit_picked {"kit": "hunter"}
+execute as @a[tag=classic_jug] run function juggernaut:handle_kit_picked {"kit": "classic_juggernaut"}
+execute as @a[tag=jug_knight] run function juggernaut:handle_kit_picked {"kit": "knight"}
+execute as @a[tag=predator] run function juggernaut:handle_kit_picked {"kit": "predator"}
+execute as @a[tag=spirit_walker] run function juggernaut:handle_kit_picked {"kit": "spirit_walker"}
+execute as @a[tag=timekeeper] run function juggernaut:handle_kit_picked {"kit": "timekeeper"}
+execute as @a[tag=warlock] run function juggernaut:handle_kit_picked {"kit": "warlock"}
+execute as @a[tag=witch_doctor] run function juggernaut:handle_kit_picked {"kit": "witch_doctor"}
+execute as @a[tag=engineer] run function juggernaut:handle_kit_picked {"kit": "engineer"}
+execute as @a[tag=escapist] run function juggernaut:handle_kit_picked {"kit": "escapist"}
+execute as @a[tag=jug_ghost] run function juggernaut:handle_kit_picked {"kit": "ghost"}
+execute as @a[tag=guide] run function juggernaut:handle_kit_picked {"kit": "guide"}
+execute as @a[tag=medic] run function juggernaut:handle_kit_picked {"kit": "medic"}
+execute as @a[tag=rogue] run function juggernaut:handle_kit_picked {"kit": "rogue"}
+execute as @a[tag=scout] run function juggernaut:handle_kit_picked {"kit": "scout"}
+execute as @a[tag=survivor] run function juggernaut:handle_kit_picked {"kit": "survivor"}
+execute as @a[tag=trickster] run function juggernaut:handle_kit_picked {"kit": "trickster"}
+execute as @a[tag=windrunner] run function juggernaut:handle_kit_picked {"kit": "windrunner"}
+
 # Sets the timer to be 25 seconds.
 execute if score #juggernaut_customisation debug_mode matches 0 run scoreboard players set @a[tag=juggernaut] juggernaut_release_timer 25
 execute if score #juggernaut_customisation debug_mode matches 1 run scoreboard players set @a[tag=juggernaut] juggernaut_release_timer 1
@@ -13,8 +36,8 @@ tag @a remove in_chase
 execute if entity @a[tag=runner] run tp @a[tag=runner] @e[type=armor_stand,tag=arena.spawn,limit=1,sort=random]
 execute if score #juggernaut_customisation debug_mode matches 1 run tp @a[tag=juggernaut] @e[type=armor_stand,tag=arena.spawn,limit=1,sort=random]
 
-execute store result score @a[tag=survivor] lives run scoreboard players get #juggernaut_count var
-scoreboard players add @a[tag=survivor] lives 2
+scoreboard players add @a[tag=survivor] lives 1
+scoreboard players add @a[tag=survivor] lives_remaining 1
 
 # Set all healing progress to 0
 scoreboard players set @a healing_progress 0
