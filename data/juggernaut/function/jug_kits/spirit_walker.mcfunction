@@ -1,8 +1,10 @@
-execute as @s[tag=!has_jug_kit] run item replace entity @s armor.head with diamond_helmet[unbreakable={}]
-execute as @s[tag=!has_jug_kit] run item replace entity @s armor.chest with diamond_chestplate[unbreakable={}]
-execute as @s[tag=!has_jug_kit] run item replace entity @s armor.legs with diamond_leggings[unbreakable={}]
-execute as @s[tag=!has_jug_kit] run item replace entity @s armor.feet with diamond_boots[unbreakable={}]
-execute as @s[tag=!has_jug_kit] run item replace entity @s hotbar.0 with diamond_sword[unbreakable={},enchantments={sharpness:4}]
-execute as @s[tag=!has_jug_kit] run function juggernaut:descriptions/kits/juggernaut/spirit_walker
-execute as @s[tag=!has_jug_kit] run tag @s add spirit_walker
+execute if entity @a[tag=spirit_walker] run return fail
+execute if entity @s[tag=has_jug_kit] run return fail
+item replace entity @s armor.head with diamond_helmet[unbreakable={}]
+item replace entity @s armor.chest with diamond_chestplate[unbreakable={}]
+item replace entity @s armor.legs with diamond_leggings[unbreakable={}]
+item replace entity @s armor.feet with diamond_boots[unbreakable={}]
+item replace entity @s hotbar.0 with diamond_sword[unbreakable={},enchantments={sharpness:4}]
+function juggernaut:descriptions/kits/juggernaut/spirit_walker
+tag @s add spirit_walker
 tag @s add has_jug_kit
