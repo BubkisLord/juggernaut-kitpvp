@@ -1,1 +1,1 @@
-$attribute @s $(attribute) modifier add $(modifier_id) $(value) add_value
+$attribute @s minecraft:$(attribute) modifier add juggernaut:$(modifier_id) $(value) $(operation)
