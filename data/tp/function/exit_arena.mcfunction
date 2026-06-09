@@ -1,47 +1,10 @@
 clear @s
 effect clear @s
 effect give @s minecraft:instant_health 1 100 true
-scoreboard players set @s killstreak 0
-scoreboard players set @s pirateKills 0
-scoreboard players set @s assassinActivate 0
-scoreboard players set @s ambushDisplay 0
 xp set @s 0 points
 xp set @s 0 levels
 tag @s add lobby.player
 tag @s remove autorespawn
-tag @s remove ambush_cooldown
-tag @s remove warrior
-tag @s remove archer
-tag @s remove defender
-tag @s remove divinity
-tag @s remove shark
-tag @s remove cactus
-tag @s remove flame
-tag @s remove rabbit
-tag @s remove assassin
-tag @s remove deflector
-tag @s remove cheetah
-tag @s remove viking
-tag @s remove ghost
-tag @s remove quickcharger
-tag @s remove teleporter
-tag @s remove unicorn
-tag @s remove dolphin
-tag @s remove alchemist
-tag @s remove sharpshooter
-tag @s remove jouster
-tag @s remove farmer
-tag @s remove ninja
-tag @s remove poseidon
-tag @s remove auramancer
-tag @s remove zombie
-tag @s remove yeti
-tag @s remove levitator
-tag @s remove pirate
-tag @s remove ambusher
-tag @s remove hunter
-tag @s remove shaman
-tag @s remove samurai
 scoreboard players set @s seconds 90
 scoreboard players set @s exit_count 0
 

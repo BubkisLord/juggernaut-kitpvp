@@ -1,6 +1,5 @@
 {
     "values": [
-        "minecraft:tick",
-        "old_kitpvp:tick"
+        "minecraft:tick"
     ]
 }
