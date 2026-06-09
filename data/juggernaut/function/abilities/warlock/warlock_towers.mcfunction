@@ -46,5 +46,4 @@ execute unless entity @e[type=armor_stand,tag=warlock_armor_stand,tag=withering_
 execute at @e[type=armor_stand,tag=warlock_armor_stand] run execute as @a[tag=runner,distance=..3] run scoreboard players add @n[type=armor_stand,tag=warlock_armor_stand] dispel_progress 1
 execute as @e[type=armor_stand,tag=warlock_armor_stand] at @s run execute if score @s dispel_progress >= @s total_dispelling_needed run playsound block.note_block.bell master @a[tag=runner,distance=..16] ~ ~ ~ 2 1.2
 execute as @e[type=armor_stand,tag=warlock_armor_stand] at @s run execute if score @s dispel_progress >= @s total_dispelling_needed run playsound entity.ender_dragon.growl master @a[tag=warlock] ~ ~ ~ 3 0.2 1
-execute as @e[type=armor_stand,tag=warlock_armor_stand] at @s run execute if score @s dispel_progress >= @s total_dispelling_needed run effect give @a[tag=runner,distance=..3] glowing 3 0 true
 execute as @e[type=armor_stand,tag=warlock_armor_stand] at @s run execute if score @s dispel_progress >= @s total_dispelling_needed run kill @s
