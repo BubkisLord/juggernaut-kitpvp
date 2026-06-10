@@ -55,7 +55,7 @@ execute as @a[tag=chameleon] run function juggernaut:loop/kits_loop/chameleon
 execute as @a[tag=fishmonger] run function juggernaut:loop/kits_loop/fishmonger
 execute as @a[tag=jug_knight] run function juggernaut:loop/kits_loop/knight
 
-execute if entity @a[tag=using_beacon_of_hope] run function juggernaut:ability_management/check_ability {\
+execute as @a[tag=using_beacon_of_hope] run function juggernaut:ability_management/check_ability {\
     player_tag:"using_beacon_of_hope",\
     item_id:"minecraft:beacon",\
     item_name:{"text": "Beacon of Hope","color": "aqua"},\
