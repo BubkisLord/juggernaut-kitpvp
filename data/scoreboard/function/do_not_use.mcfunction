@@ -1,0 +1,23 @@
+function scoreboard:reset_kit_stats {"kit":"chameleon"}
+function scoreboard:reset_kit_stats {"kit":"dragon"}
+function scoreboard:reset_kit_stats {"kit":"eclipse_stalker"}
+function scoreboard:reset_kit_stats {"kit":"fishmonger"}
+function scoreboard:reset_kit_stats {"kit":"hunter"}
+function scoreboard:reset_kit_stats {"kit":"classic_juggernaut"}
+function scoreboard:reset_kit_stats {"kit":"knight"}
+function scoreboard:reset_kit_stats {"kit":"predator"}
+function scoreboard:reset_kit_stats {"kit":"spirit_walker"}
+function scoreboard:reset_kit_stats {"kit":"timekeeper"}
+function scoreboard:reset_kit_stats {"kit":"warlock"}
+function scoreboard:reset_kit_stats {"kit":"witch_doctor"}
+
+function scoreboard:reset_kit_stats {"kit":"engineer"}
+function scoreboard:reset_kit_stats {"kit":"escapist"}
+function scoreboard:reset_kit_stats {"kit":"ghost"}
+function scoreboard:reset_kit_stats {"kit":"guide"}
+function scoreboard:reset_kit_stats {"kit":"medic"}
+function scoreboard:reset_kit_stats {"kit":"rogue"}
+function scoreboard:reset_kit_stats {"kit":"scout"}
+function scoreboard:reset_kit_stats {"kit":"survivor"}
+function scoreboard:reset_kit_stats {"kit":"trickster"}
+function scoreboard:reset_kit_stats {"kit":"windrunner"}

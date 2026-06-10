@@ -1,0 +1,2 @@
+tellraw @s [{"text":"[WARNING]: ", bold:true, color:"yellow"},{"text":"Are you sure that you would like to reset all statistics for juggernaut?","bold":false,"color":"white"}]
+tellraw @s [{"text": "This cannot be undone. ","color":"white"},{"text": "Press here to continue.","color":"dark_aqua","underlined":true,"click_event":{action:"run_command",command:"function scoreboard:do_not_use"}}]
