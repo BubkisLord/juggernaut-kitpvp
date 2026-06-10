@@ -14,7 +14,7 @@ function juggernaut:ability_management/check_ability {\
 
 function juggernaut:ability_management/check_ability {\
     player_tag:"timekeeper",\
-    item_id:"minecraft:ender_pearl",\
+    item_id:"minecraft:slime_ball",\
     item_name:{"text": "Place Temporal Marker","color": "gold"},\
     description:[{"text": "Mark all player's space in time,","color": "gray"},\
                  {"text": "then after 10 seconds they are all","color": "gray"},\
@@ -32,8 +32,8 @@ function juggernaut:ability_management/check_ability {\
     item_name:{"text": "Poison Time Strand","color": "gold"},\
     description:[{"text": "Purge a strand of time, a trail of your whereabouts from the world.","color": "gray"},{"text": "Cooldown: 1s","color": "dark_gray"}],\
     ability_id:"kill_strand",\
-    cooldown:1,\
-    hotbar_slot:"hotbar.5",\
+    cooldown:4,\
+    hotbar_slot:"hotbar.3",\
     cooldown_var:"jug_kit_cooldown_3",\
 }
 
@@ -46,9 +46,9 @@ function juggernaut:ability_management/check_ability {\
                  {"text": "45 seconds. Turns strands red for all players.","color": "gray"},\
                  {"text": "Cooldown: 1m 10s (45s duration, 25s cooldown)","color": "dark_gray"}],\
     ability_id:"timestream_rupture",\
-    cooldown:25,\
-    hotbar_slot:"hotbar.6",\
-    cooldown_var:"jug_kit_cooldown_3",\
+    cooldown:35,\
+    hotbar_slot:"hotbar.4",\
+    cooldown_var:"jug_kit_cooldown_4",\
 }
 
 execute as @a[tag=timekeeper,tag=!spectator,tag=!rewinding] if score #game_state var matches 11 if score @s health matches 1.. if score @s lives_remaining matches 1.. at @s run summon area_effect_cloud ~ ~ ~ {Duration:1200,Tags:["timekeeper_trail","kill_on_end_game"],custom_particle:{type:"minecraft:dust",color:14064170,scale:1},Radius:0.3f}
@@ -79,9 +79,9 @@ execute as @e[type=area_effect_cloud,tag=poisoned_strand] if score @s tick_count
 
 # Optional: visual pulse on all strands
 execute as @e[type=area_effect_cloud,tag=mid_rupture] run scoreboard players add @s var 1
-execute as @e[type=area_effect_cloud,tag=mid_rupture] if score @s var matches 5..899 at @s run tag @e[type=area_effect_cloud,tag=timekeeper_trail,distance=..3] add mid_rupture
-execute as @e[type=area_effect_cloud,tag=mid_rupture] if score @s var matches 900.. at @s run tag @s remove mid_rupture
+execute as @e[type=area_effect_cloud,tag=mid_rupture] if score @s var matches 5..399 at @s run tag @e[type=area_effect_cloud,tag=timekeeper_trail,distance=..3] add mid_rupture
 execute as @e[type=area_effect_cloud,tag=mid_rupture] at @s run data modify entity @s custom_particle set value {type:"minecraft:dust",color:14817047,scale:3}
+execute as @e[type=area_effect_cloud,tag=mid_rupture,scores={var=400}] run kill @s
 execute as @e[type=area_effect_cloud,tag=dying_strand] run kill @s
 
 
@@ -89,12 +89,7 @@ execute as @e[type=area_effect_cloud,tag=!mid_rupture,tag=!poisoned_strand,tag=t
 execute as @e[type=area_effect_cloud,tag=!mid_rupture,tag=!poisoned_strand,tag=timekeeper_trail] at @s run scoreboard players set @s tick_counter 0
 execute as @e[type=area_effect_cloud,tag=!mid_rupture,tag=!poisoned_strand,tag=timekeeper_trail] at @s run scoreboard players set @s var 0
 
-# Damage calculation
-#  • radius = 4 blocks around each strand
-#  • damage = 6 (3 hearts) per strand the runner is within
-#  • stacks if multiple strands overlap
 execute as @e[type=area_effect_cloud,tag=mid_rupture] at @s run \
-    execute as @a[tag=runner,distance=..3] run damage @s 3
-
-execute if stopwatch temporal_mark_timer 10 as @a run function juggernaut:abilities/timekeeper/temporal_mark_end
-execute if stopwatch temporal_mark_timer 10 run stopwatch remove temporal_mark_timer
+    execute as @a[tag=runner,distance=..1] run damage @s 2
+execute as @e[type=area_effect_cloud,tag=mid_rupture] at @s run \
+    execute as @a[tag=runner,distance=..2] run damage @s 1
