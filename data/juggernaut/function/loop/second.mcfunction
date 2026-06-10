@@ -117,16 +117,6 @@ execute as @a[tag=scout] at @s run function juggernaut:raycasts/raycast {\
     collides_with_blocks:1,\
 }
 
-execute as @a[tag=dragon] run function juggernaut:raycasts/raycast {\
-    player_tag:"dragon",\
-    raycast_id:"dragon_breath",\
-    target_tag:"runner",\
-    hit_distance:1.5,\
-    raycast_limit:24,\
-    move_function_id:1,\
-    collides_with_blocks:1,\
-}
-
 # Predator Sound Addition
 execute if entity @a[tag=predator] store result score #predator_rand_val var run random value 0..99
 execute if entity @a[tag=predator] if score #predator_rand_val var matches 0 as @a at @s run playsound block.bell.resonate master @s ~ ~ ~ 2 0.3
