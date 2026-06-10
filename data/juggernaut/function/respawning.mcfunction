@@ -23,6 +23,8 @@ execute if score @s lives_remaining matches 1.. if entity @s[tag=runner] run sch
 tag @s remove has_hunters_mark
 tag @s remove in_chase
 tag @s remove hunted
+tag @s remove is_mangled
+tag @s remove is_hemorrhaged
 scoreboard players set @s chase_timeout 0
 
 execute if score @s lives_remaining matches ..0 run tag @s remove has_jug_kit
@@ -50,6 +52,9 @@ execute if score @s lives_remaining matches ..0 run tag @s remove spirit_walker
 execute if score @s lives_remaining matches ..0 run tag @s remove guide
 execute if score @s lives_remaining matches ..0 run tag @s remove trickster
 execute if score @s lives_remaining matches ..0 run tag @s remove jug_ghost
+
+execute if score @s lives_remaining matches ..0 run tag @s remove windrunner
+execute if score @s lives_remaining matches ..0 run tag @s remove saved_skin
 
 execute if score @s lives_remaining matches ..0 run attribute @s max_health base set 20
 execute if score @s lives_remaining matches ..0 run attribute @s scale base set 1
