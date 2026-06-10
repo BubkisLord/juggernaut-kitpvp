@@ -101,7 +101,7 @@ execute as @e[type=armor_stand,tag=replenishment.station] run function juggernau
 
 execute as @a[tag=juggernaut,tag=using_insidious,nbt={active_effects:[{id:"minecraft:invisibility"}]}] run function juggernaut:effects/apply_effect_silent {effect:"undetectable",duration:1,color:"gray"}
 execute as @a[tag=juggernaut,tag=using_insidious,nbt=!{active_effects:[{id:"minecraft:invisibility"}]}] run tag @s remove is_undetectable
-execute as @a[tag=juggernaut,tag=using_insidious,nbt=!{active_effects:[{id:"minecraft:invisibility"}]}] run scoreboard players set @s undetectable_duration_left 0
+# execute as @a[tag=juggernaut,tag=using_insidious,nbt=!{active_effects:[{id:"minecraft:invisibility"}]}] run scoreboard players set @s undetectable_duration_left 0
 
 # execute as @a at @s run tp @n[type=wolf] ~ ~ ~ ~ ~
 # execute as @a at @s unless entity @n[type=wolf,distance=..20,tag=juggernaut_wolf] run summon wolf ~ ~ ~ {CustomName:{"text":"Juggernaut Wolf","color":"red","bold":true},CustomNameVisible:true,Invulnerable:true,Health:20.0f,Tags:["juggernaut_wolf","kill_on_end_game"]}
