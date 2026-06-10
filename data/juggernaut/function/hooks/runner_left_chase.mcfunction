@@ -1,1 +1,1 @@
-execute if entity @s[tag=using_hopeful_sprint] run function juggernaut:attribute_management/apply {"attribute_name": "movement_speed", "command": 0.135,"duration":5}
+execute if entity @a[tag=juggernaut,tag=using_hunters_instinct] unless entity @s[tag=is_undetectable] run effect give @s glowing 4 0 true
