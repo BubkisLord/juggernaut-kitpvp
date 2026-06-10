@@ -138,22 +138,14 @@ execute as @a store result score @s max_health run attribute @s max_health get
 execute as @a[tag=in_chase] run scoreboard players add @s chase_time 1
 execute as @a[tag=!in_chase] run scoreboard players set @s chase_time 0
 
-# Update unyielding wrath stacks
-execute as @a[tag=juggernaut,tag=in_chase,tag=using_unyielding_wrath] run scoreboard players operation @s unyielding_wrath_time = @s chase_time
-execute as @a[tag=juggernaut,tag=in_chase,tag=using_unyielding_wrath] run scoreboard players operation @s unyielding_wrath_time %= #5 var
-execute as @a[tag=juggernaut,tag=in_chase,tag=using_unyielding_wrath,scores={unyielding_wrath_time=0}] run scoreboard players add @s unyielding_wrath_stacks 1
-execute as @a[tag=juggernaut,tag=in_chase,tag=using_unyielding_wrath,scores={unyielding_wrath_time=0,unyielding_wrath_stacks=1}] run attribute @s movement_speed modifier add unyielding_wrath_1 0.003 add_value
-execute as @a[tag=juggernaut,tag=in_chase,tag=using_unyielding_wrath,scores={unyielding_wrath_time=0,unyielding_wrath_stacks=2}] run attribute @s movement_speed modifier add unyielding_wrath_2 0.003 add_value
-execute as @a[tag=juggernaut,tag=in_chase,tag=using_unyielding_wrath,scores={unyielding_wrath_time=0,unyielding_wrath_stacks=3}] run attribute @s movement_speed modifier add unyielding_wrath_3 0.003 add_value
-execute as @a[tag=juggernaut,tag=in_chase,tag=using_unyielding_wrath,scores={unyielding_wrath_time=0,unyielding_wrath_stacks=4}] run attribute @s movement_speed modifier add unyielding_wrath_4 0.003 add_value
-execute as @a[tag=juggernaut,tag=in_chase,tag=using_unyielding_wrath,scores={unyielding_wrath_time=0,unyielding_wrath_stacks=5}] run attribute @s movement_speed modifier add unyielding_wrath_5 0.003 add_value
-
-execute as @a[tag=juggernaut,tag=!in_chase,tag=using_unyielding_wrath] run attribute @s movement_speed modifier remove unyielding_wrath_1
-execute as @a[tag=juggernaut,tag=!in_chase,tag=using_unyielding_wrath] run attribute @s movement_speed modifier remove unyielding_wrath_2
-execute as @a[tag=juggernaut,tag=!in_chase,tag=using_unyielding_wrath] run attribute @s movement_speed modifier remove unyielding_wrath_3
-execute as @a[tag=juggernaut,tag=!in_chase,tag=using_unyielding_wrath] run attribute @s movement_speed modifier remove unyielding_wrath_4
-execute as @a[tag=juggernaut,tag=!in_chase,tag=using_unyielding_wrath] run attribute @s movement_speed modifier remove unyielding_wrath_5
-execute as @a[tag=juggernaut,tag=!in_chase,tag=using_unyielding_wrath] run scoreboard players set @s unyielding_wrath_stacks 0
+execute as @a[tag=in_chase] run scoreboard players operation @s unyielding_wrath_time = @s chase_time
+execute as @a[tag=in_chase] if score @s unyielding_wrath_time matches 45.. run scoreboard players set @s unyielding_wrath_time 45
+execute as @a[tag=using_unyielding_wrath] run attribute @s movement_speed modifier remove juggernaut:unyielding_wrath
+execute as @a[tag=using_unyielding_wrath,tag=in_chase] store result storage juggernaut:unyielding_wrath value float 0.001 run scoreboard players get @s unyielding_wrath_time
+execute as @a[tag=using_unyielding_wrath,tag=in_chase] run data modify storage juggernaut:unyielding_wrath attribute set value movement_speed
+execute as @a[tag=using_unyielding_wrath,tag=in_chase] run data modify storage juggernaut:unyielding_wrath modifier_id set value unyielding_wrath
+execute as @a[tag=using_unyielding_wrath,tag=in_chase] run data modify storage juggernaut:unyielding_wrath operation set value add_value
+execute as @a[tag=using_unyielding_wrath,tag=in_chase] run function juggernaut:attribute_management/apply_modifier with storage juggernaut:unyielding_wrath
 
 # Update domination speed
 execute as @a[tag=juggernaut,tag=using_domination] run function juggernaut:perk_management/perk_functions/set_domination_speed
