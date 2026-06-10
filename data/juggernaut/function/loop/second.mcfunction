@@ -62,6 +62,9 @@ execute as @a unless score #game_state var matches 10..19 if score @s jug_kit_co
 execute as @a if score #game_state var matches 10..19 if score @s jug_kit_cooldown_3 > #0 var run scoreboard players remove @s jug_kit_cooldown_3 1
 execute as @a unless score #game_state var matches 10..19 if score @s jug_kit_cooldown_3 > #0 var run scoreboard players set @s jug_kit_cooldown_3 0
 
+execute as @a if score #game_state var matches 10..19 if score @s jug_kit_cooldown_4 > #0 var run scoreboard players remove @s jug_kit_cooldown_4 1
+execute as @a unless score #game_state var matches 10..19 if score @s jug_kit_cooldown_4 > #0 var run scoreboard players set @s jug_kit_cooldown_4 0
+
 execute as @a if score #game_state var matches 10..19 if score @s shadow_mark_cooldown > #0 var run scoreboard players remove @s shadow_mark_cooldown 1
 execute as @a unless score #game_state var matches 10..19 if score @s shadow_mark_cooldown > #0 var run scoreboard players set @s shadow_mark_cooldown 0
 
@@ -172,8 +175,6 @@ execute if score #second_counter var matches 100.. run scoreboard players set #s
 # damage @n[type=minecraft:wolf,tag=hunter_wolf] 1 magic by @p[tag=hunted]
 execute unless entity @a[tag=hunted] run kill @n[type=minecraft:wolf,tag=hunter_wolf]
 
-execute as @a[tag=juggernaut] at @s if block ~ ~-1 ~ white_glazed_terracotta run tp @s ^ ^ ^3
-
 # Withering Surge
 execute if entity @a[tag=warlock] if entity @e[type=armor_stand,tag=withering_surge] run function juggernaut:abilities/warlock/tower_effects/withering_surge
 
@@ -183,3 +184,4 @@ execute as @a[tag=chameleon] run item replace entity @s container.11 with tipped
 # stopwatch create replenishment_minigame_timer
 # execute if stopwatch replenishment_minigame_timer 3.. run execute as @e[type=armor_stand,tag=replenishment.station] at @s if score #game_state var matches 11 unless entity @e[type=armor_stand,tag=banishment_glyph,distance=..32] unless entity @a[tag=juggernaut,limit=1,sort=nearest,distance=0..12,tag=!shapeshifting] as @a[tag=runner,distance=..3,tag=!is_not_replenishing] at @s run function juggernaut:replenishment_management/minigame
 # execute if stopwatch replenishment_minigame_timer 3.. run stopwatch restart replenishment_minigame_timer
+execute as @a[tag=spectator] at @s run function survival:loop/clone_inventory
