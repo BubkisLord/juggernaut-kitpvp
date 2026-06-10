@@ -1,2 +1,3 @@
 scoreboard players set #juggernaut_customisation debug_mode 1
 tellraw @a {"text": "Debug mode enabled.","color": "green"}
+# tellraw @a [{"text": "Click ","bold": false, "color": "green",underlined:false}, {"text": "here",bold:false,color:"aqua",underlined:true,click_event:{action:"run_command",command:"scoreboard players set #juggernaut_customisation debug_mode 0"}}, {"text": " to deactivate debug mode.",bold:false,color:green,underlined:false}]
