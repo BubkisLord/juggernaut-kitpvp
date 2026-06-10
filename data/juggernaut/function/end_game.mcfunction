@@ -4,6 +4,7 @@ scoreboard players set @a juggernaut_release_timer 0
 scoreboard players set @a jug_kit_cooldown 0
 scoreboard players set @a jug_kit_cooldown_2 0
 scoreboard players set @a jug_kit_cooldown_3 0
+scoreboard players set @a jug_kit_cooldown_4 0
 scoreboard players set @a revealing_tower_cooldown 0
 scoreboard players set @a replenishment_tower_cooldown 0
 scoreboard players set @a turret_cooldown 0
@@ -33,6 +34,8 @@ scoreboard players set @a strength_pot_cooldown 0
 scoreboard players set @a malevolent_aura_cooldown 0
 scoreboard players set @a banishment_glyph_cooldown 0
 scoreboard players set @a withering_surge_cooldown 0
+scoreboard players set @a sprint_time 0
+scoreboard players set @a sprint_timeout 0
 spawnpoint @a 2000 100 0
 gamerule show_death_messages false
 tag @a remove has_jug_kit
@@ -67,11 +70,19 @@ tag @a remove beacon_of_hope_active
 tag @a remove jug_ghost
 tag @a remove harbinger
 tag @a remove trickster
+tag @a remove fishmonger
+tag @a remove timekeeper
+tag @a remove jug_knight
+tag @a remove chameleon
 tag @a remove is_hemorrhaged
 tag @a remove is_mangled
-tag @a remove fishmonger
+tag @a remove using_horse
+tag @a remove on_horse
+tag @a remove windrunner
+tag @a remove double_chase_progress
 tag @a add lobby.player
 
+tag @a remove using_hunters_instinct
 tag @a remove using_blood_pact
 tag @a remove using_flame_ward
 tag @a remove using_fractured_aid
@@ -103,20 +114,18 @@ tag @a remove see_banishment_glyph_bar
 tag @a remove see_withering_surge_bar
 
 tag @a remove hunted
-tag @a remove timekeeper
 
 tag @a remove shapeshift_target
 tag @a remove saved_skin
-tag @a remove chameleon
 tag @a remove shapeshifting
 tag @a remove not_phasing
 tag @a remove is_phasing
 tag @a remove is_being_healed
 tag @a remove self_healing
-tag @a remove pouncing_incompetee
 
 tag @a remove rewinding
 execute as @a run attribute @s movement_speed modifier remove juggernaut:abilities/timekeeper/tick_speed
+execute as @a run attribute @s movement_speed modifier remove juggernaut:predator_move_spd
 
 setblock -62 71 -29 brown_carpet replace
 
@@ -153,6 +162,7 @@ execute as @a run attribute @s sneaking_speed base set 0.3
 execute as @a run attribute @s sneaking_speed modifier remove juggernaut:quickened_stealth_speed
 execute as @a run attribute @s attack_damage base set 1
 execute as @a run attribute @s water_movement_efficiency base set 0
+execute as @a run attribute @s movement_speed modifier remove juggernaut:windrunner_sprint
 
 execute as @a run attribute @s movement_speed modifier remove unyielding_wrath_1
 execute as @a run attribute @s movement_speed modifier remove unyielding_wrath_2
@@ -199,7 +209,7 @@ bossbar remove warlock:malevolent_aura
 bossbar remove warlock:banishment_glyph
 bossbar remove warlock:withering_surge
 
-stopwatch remove replenishment_minigame_timer
+# stopwatch remove replenishment_minigame_timer
 
 kill @e[type=armor_stand,tag=malevolent_aura]
 kill @e[type=armor_stand,tag=banishment_glyph]
@@ -208,3 +218,5 @@ weather clear 9999999
 team leave @a
 gamemode adventure @a
 stopsound @a
+
+stopsound @a master entity.enderman.teleport
