@@ -28,32 +28,32 @@ scoreboard players set #runners_left var 0
 execute as @a[tag=runner] run scoreboard players add #runners_left var 1
 
 # Runner Kits
-execute if entity @a[tag=guide] run function juggernaut:loop/kits_loop/guide
-execute if entity @a[tag=escapist] run function juggernaut:loop/kits_loop/escapist
-execute if entity @a[tag=rogue] run function juggernaut:loop/kits_loop/rogue
-execute if entity @a[tag=medic] run function juggernaut:loop/kits_loop/medic
-execute if entity @a[tag=scout] run function juggernaut:loop/kits_loop/scout
-execute if entity @a[tag=survivor] run function juggernaut:loop/kits_loop/survivor
-execute if entity @a[tag=jug_ghost] run function juggernaut:loop/kits_loop/ghost
-execute if entity @a[tag=cloak] run function juggernaut:loop/kits_loop/cloak
-execute if entity @a[tag=engineer] run function juggernaut:loop/kits_loop/engineer
-execute if entity @a[tag=trickster] run function juggernaut:loop/kits_loop/trickster
-execute if entity @a[tag=harbinger] run function juggernaut:loop/kits_loop/harbinger
+execute as @a[tag=guide] run function juggernaut:loop/kits_loop/guide
+execute as @a[tag=escapist] run function juggernaut:loop/kits_loop/escapist
+execute as @a[tag=rogue] run function juggernaut:loop/kits_loop/rogue
+execute as @a[tag=medic] run function juggernaut:loop/kits_loop/medic
+execute as @a[tag=scout] run function juggernaut:loop/kits_loop/scout
+execute as @a[tag=survivor] run function juggernaut:loop/kits_loop/survivor
+execute as @a[tag=jug_ghost] run function juggernaut:loop/kits_loop/ghost
+execute as @a[tag=cloak] run function juggernaut:loop/kits_loop/cloak
+execute as @a[tag=engineer] run function juggernaut:loop/kits_loop/engineer
+execute as @a[tag=trickster] run function juggernaut:loop/kits_loop/trickster
+execute as @a[tag=windrunner] run function juggernaut:loop/kits_loop/windrunner
 
 # Juggernaut Kits
-execute if entity @a[tag=classic_jug] run function juggernaut:loop/kits_loop/classic_jug
-execute if entity @a[tag=dragon] run function juggernaut:loop/kits_loop/dragon
-execute if entity @a[tag=eclipse_stalker] run function juggernaut:loop/kits_loop/eclipse_stalker
-execute if entity @a[tag=jug_hunter] run function juggernaut:loop/kits_loop/hunter
-execute if entity @a[tag=warlock] run function juggernaut:loop/kits_loop/warlock
-execute if entity @a[tag=predator] run function juggernaut:loop/kits_loop/predator
-execute if entity @a[tag=chain_hunter] run function juggernaut:loop/kits_loop/chain_hunter
-execute if entity @a[tag=spirit_walker] run function juggernaut:loop/kits_loop/spirit_walker
-execute if entity @a[tag=witch_doctor] run function juggernaut:loop/kits_loop/witch_doctor
-execute if entity @a[tag=timekeeper] run function juggernaut:loop/kits_loop/timekeeper
-execute if entity @a[tag=chameleon] run function juggernaut:loop/kits_loop/chameleon
-execute if entity @a[tag=fishmonger] run function juggernaut:loop/kits_loop/fishmonger
-execute if entity @a[tag=pouncing_incompetee] run function juggernaut:loop/kits_loop/pouncing_incompetee
+execute as @a[tag=classic_jug] run function juggernaut:loop/kits_loop/classic_jug
+execute as @a[tag=dragon] run function juggernaut:loop/kits_loop/dragon
+execute as @a[tag=eclipse_stalker] run function juggernaut:loop/kits_loop/eclipse_stalker
+execute as @a[tag=jug_hunter] run function juggernaut:loop/kits_loop/hunter
+execute as @a[tag=warlock] run function juggernaut:loop/kits_loop/warlock
+execute as @a[tag=predator] run function juggernaut:loop/kits_loop/predator
+execute as @a[tag=chain_hunter] run function juggernaut:loop/kits_loop/chain_hunter
+execute as @a[tag=spirit_walker] run function juggernaut:loop/kits_loop/spirit_walker
+execute as @a[tag=witch_doctor] run function juggernaut:loop/kits_loop/witch_doctor
+execute as @a[tag=timekeeper] run function juggernaut:loop/kits_loop/timekeeper
+execute as @a[tag=chameleon] run function juggernaut:loop/kits_loop/chameleon
+execute as @a[tag=fishmonger] run function juggernaut:loop/kits_loop/fishmonger
+execute as @a[tag=jug_knight] run function juggernaut:loop/kits_loop/knight
 
 execute if entity @a[tag=using_beacon_of_hope] run function juggernaut:ability_management/check_ability {\
     player_tag:"using_beacon_of_hope",\
