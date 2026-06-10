@@ -1,4 +1,5 @@
-execute as @s[tag=!has_jug_kit] run attribute @s sneaking_speed base set 0
-execute as @s[tag=!has_jug_kit] run function juggernaut:descriptions/kits/runner/ghost
-execute as @s[tag=!has_jug_kit] run tag @s add jug_ghost
+execute if entity @s[tag=has_jug_kit] run return fail
+attribute @s sneaking_speed base set 0
+function juggernaut:descriptions/kits/runner/ghost
+tag @s add jug_ghost
 tag @s add has_jug_kit
