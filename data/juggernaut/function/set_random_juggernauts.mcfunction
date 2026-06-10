@@ -1,0 +1,1 @@
+$tag @a[limit=$(count),sort=random,scores={health=1..}] add juggernaut

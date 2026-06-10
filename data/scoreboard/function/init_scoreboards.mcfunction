@@ -1,5 +1,3 @@
-execute as @a[tag=juggernaut_manager] run tag @s add juggernaut_manager
-execute as @a[tag=surv_game_manager] run tag @s add surv_game_manager
 scoreboard objectives add var dummy
 scoreboard objectives add king_of_the_hill_points dummy
 scoreboard objectives add juggernaut_game_time dummy
@@ -138,6 +136,12 @@ scoreboard objectives add tick_speed dummy
 scoreboard objectives add runner_count dummy
 scoreboard objectives add jug_kit_cooldown_3 dummy
 scoreboard objectives add medic_heal_amount dummy
+scoreboard objectives add jug_dmg minecraft.custom:damage_dealt
+scoreboard objectives add jug_kit_cooldown_4 dummy
+scoreboard objectives add sprint_timeout dummy
+scoreboard objectives add sprint_time dummy
+scoreboard objectives add jug_ticker dummy
+scoreboard objectives add round_robin dummy
 
 # Juggernaut Kit Statistics
 scoreboard objectives add picked_kit_chameleon dummy "Picked Kit - Chameleon"
