@@ -8,8 +8,14 @@ tag @s remove spirit_walker
 tag @s remove hunter
 tag @s remove warlock
 tag @s remove witch_doctor
+tag @s remove chameleon
+tag @s remove fishmonger
+tag @s remove classic_jug
+tag @s remove jug_knight
+tag @s remove timekeeper
 effect clear @s
 clear @s
+time set noon
 attribute @s sneaking_speed base set 0.2
 attribute @s attack_damage base set 1
 attribute @s max_health base set 20
