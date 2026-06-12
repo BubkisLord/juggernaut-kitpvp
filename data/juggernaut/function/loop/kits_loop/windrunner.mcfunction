@@ -1,7 +1,7 @@
 execute as @a[tag=windrunner] if score @s is_sprinting matches 0 run scoreboard players add @s sprint_timeout 1
 execute as @a[tag=windrunner] if score @s sprint_timeout matches 14 run scoreboard players set @s sprint_time 0
 execute as @a[tag=windrunner] if score @s is_sprinting matches 1.. run scoreboard players add @s sprint_time 1
-execute as @a[tag=windrunner] if score @s sprint_time matches 450.. run scoreboard players set @s sprint_time 450
+execute as @a[tag=windrunner] if score @s sprint_time matches 80.. run scoreboard players set @s sprint_time 80
 execute as @a[tag=windrunner] if score @s is_sprinting matches 1.. run scoreboard players set @s sprint_timeout 0
 execute as @a[tag=windrunner] run attribute @s movement_speed modifier remove juggernaut:windrunner_sprint
 execute as @a[tag=windrunner] if score @s is_sprinting matches 1.. store result storage juggernaut:loop/kits_loop/windrunner value float 0.025 run scoreboard players get @s sprint_time
