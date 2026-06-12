@@ -1,17 +1,17 @@
-execute as @a[tag=chameleon] at @s run tp @n[type=mannequin,tag=chameleon_mannequin,distance=..6] ~ ~ ~ facing ^ ^ ^999999999999999
-execute as @a[tag=chameleon] at @s if entity @s[scores={is_sneaking=0}] run data modify entity @n[type=mannequin,tag=chameleon_mannequin,distance=..6] pose set value "standing"
-execute as @a[tag=chameleon] at @s if entity @s[scores={is_sneaking=1..}] run data modify entity @n[type=mannequin,tag=chameleon_mannequin,distance=..6] pose set value "crouching"
-execute as @a[tag=chameleon] at @s if block ~ ~ ~ water if entity @s[scores={is_sneaking=0}] run data modify entity @n[type=mannequin,tag=chameleon_mannequin,distance=..6] pose set value "swimming"
-execute as @a[tag=chameleon] at @s run item replace entity @n[type=mannequin,tag=chameleon_mannequin] weapon.mainhand from entity @p[tag=saved_skin] weapon.mainhand
-execute as @a[tag=chameleon] at @s run item replace entity @n[type=mannequin,tag=chameleon_mannequin] weapon.offhand from entity @p[tag=saved_skin] weapon.offhand
-execute as @a[tag=chameleon] at @s run item replace entity @n[type=mannequin,tag=chameleon_mannequin] armor.head from entity @p[tag=saved_skin] armor.head
-execute as @a[tag=chameleon] at @s run item replace entity @n[type=mannequin,tag=chameleon_mannequin] armor.chest from entity @p[tag=saved_skin] armor.chest
-execute as @a[tag=chameleon] at @s run item replace entity @n[type=mannequin,tag=chameleon_mannequin] armor.legs from entity @p[tag=saved_skin] armor.legs
-execute as @a[tag=chameleon] at @s run item replace entity @n[type=mannequin,tag=chameleon_mannequin] armor.feet from entity @p[tag=saved_skin] armor.feet
-execute as @a[tag=chameleon] at @s run tp @n[type=text_display,tag=chameleon_name_tag,distance=..6] ~ ~2.35 ~
-execute as @a[tag=chameleon] at @s run tp @n[type=text_display,tag=chameleon_health_tag,distance=..6] ~ ~2.1 ~
+execute run tp @n[type=mannequin,tag=chameleon_mannequin,distance=..6] ~ ~ ~ facing ^ ^ ^999999999999999
+execute if entity @s[scores={is_sneaking=0}] run data modify entity @n[type=mannequin,tag=chameleon_mannequin,distance=..6] pose set value "standing"
+execute if entity @s[scores={is_sneaking=1..}] run data modify entity @n[type=mannequin,tag=chameleon_mannequin,distance=..6] pose set value "crouching"
+execute if block ~ ~ ~ water if entity @s[scores={is_sneaking=0}] run data modify entity @n[type=mannequin,tag=chameleon_mannequin,distance=..6] pose set value "swimming"
+execute run item replace entity @n[type=mannequin,tag=chameleon_mannequin] weapon.mainhand from entity @p[tag=saved_skin] weapon.mainhand
+execute run item replace entity @n[type=mannequin,tag=chameleon_mannequin] weapon.offhand from entity @p[tag=saved_skin] weapon.offhand
+execute run item replace entity @n[type=mannequin,tag=chameleon_mannequin] armor.head from entity @p[tag=saved_skin] armor.head
+execute run item replace entity @n[type=mannequin,tag=chameleon_mannequin] armor.chest from entity @p[tag=saved_skin] armor.chest
+execute run item replace entity @n[type=mannequin,tag=chameleon_mannequin] armor.legs from entity @p[tag=saved_skin] armor.legs
+execute run item replace entity @n[type=mannequin,tag=chameleon_mannequin] armor.feet from entity @p[tag=saved_skin] armor.feet
+execute run tp @n[type=text_display,tag=chameleon_name_tag,distance=..6] ~ ~2.35 ~
+execute run tp @n[type=text_display,tag=chameleon_health_tag,distance=..6] ~ ~2.1 ~
 
-execute as @a[tag=chameleon] at @s unless entity @e[type=mannequin,tag=chameleon_mannequin,distance=..6] run function juggernaut:abilities/chameleon/exit_shapeshift
+execute unless entity @e[type=mannequin,tag=chameleon_mannequin,distance=..6] run function juggernaut:abilities/chameleon/exit_shapeshift
 execute as @a[tag=shapeshifting] run function juggernaut:effects/apply_effect_silent {effect:"undetectable",duration:1,color:"gray"}
 execute as @e[type=text_display,tag=chameleon_health_tag] at @s run data modify entity @s text set value [\
   {\
@@ -26,6 +26,8 @@ execute as @e[type=text_display,tag=chameleon_health_tag] at @s run data modify 
     "color":"green"\
   }\
 ]
+
+effect give @s resistance 1 0 true
 
 
 function juggernaut:ability_management/check_ability {\

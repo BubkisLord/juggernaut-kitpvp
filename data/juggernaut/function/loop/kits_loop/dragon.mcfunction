@@ -6,6 +6,8 @@ execute as @a[tag=dragon,tag=is_floating] if entity @s[scores={is_sneaking=1}] r
 execute as @a[tag=dragon,tag=!is_floating] run attribute @s gravity base set -0.01
 execute as @a[tag=dragon,tag=!is_floating] if entity @s[scores={is_sneaking=1}] run attribute @s gravity base set 0.02
 
+execute as @a[tag=dragon] run effect give @s resistance 1 0 true
+
 execute as @a[tag=dragon] if entity @s[tag=is_floating] run function juggernaut:ability_management/check_ability {\
     player_tag:"dragon",\
     item_id:"minecraft:feather",\

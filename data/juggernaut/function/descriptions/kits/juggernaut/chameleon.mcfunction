@@ -16,6 +16,8 @@ item replace entity @s hotbar.8 with written_book[written_book_content={title:"C
 \
 [{"text": "Swap with Runner\n","bold": true,"color": "#b5ee4a"},{"text": "Active Ability\n\n","bold": true,"color": "gray","italic": true},{"text": "Instantly swap positions with your cloned target. If no target is cloned, swaps with a random runner.","bold": false,"color": "black"}],\
 \
+[{"text": "Thick Hide\n","bold": true,"color": "#b5ee4a"},{"text": "Passive Effect\n\n","bold": true,"color": "gray","italic": true},{"text": "You have constant resistance one.","bold": false,"color": "black"}],\
+\
 [{"text": "Counterplay\n","bold": true,"color": "#b5ee4a"},{"text": "Counterplay for chameleon is primarily good communication between runners. As chameleon is undetectable in shapeshift, scout may actually utilise this by looking for the absence of the glowing effect to know when chameleon is shapeshifting.","bold": false,"color": "black"}]\
 ]\
 }]

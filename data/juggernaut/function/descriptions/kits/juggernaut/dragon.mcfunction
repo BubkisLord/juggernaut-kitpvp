@@ -16,5 +16,7 @@ item replace entity @s hotbar.8 with written_book[written_book_content={title:"D
 \
 [{"text": "Charged Breath Attack\n","bold": true,"color": "#5c2787"},{"text": "Active Ability\n\n","bold": true,"color": "gray","italic": true},{"text": "Charge for 4 seconds, then release a powerful burst of dragon breath. Deals heavy damage on a direct hit and leaves a lingering dragon's breath cloud at the point of impact.","bold": false,"color": "black"},{"text": "\nCooldown: 30s","bold": false,"color": "dark_gray"}],\
 \
+[{"text": "Thick Hide\n","bold": true,"color": "#5c2787"},{"text": "Passive Effect\n\n","bold": true,"color": "gray","italic": true},{"text": "You have constant resistance one.","bold": false,"color": "black"}],\
+\
 [{"text": "Counterplay\n","bold": true,"color": "#5c2787"},{"text": "Tips for Runners\n\n","bold": true,"color": "gray","italic": true},{"text": "Fighting the Dragon is primarily about using cover. Indoors or under overhangs, the Dragon cannot easily angle breath attacks and cannot maintain flight height. Dense indoor areas heavily limit their mobility advantage.","bold": false,"color": "black"}]\
 ]}]
