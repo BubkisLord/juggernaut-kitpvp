@@ -1,6 +1,4 @@
 # Guide
-# Guidance (Passive)
-execute as @a[tag=guide,scores={is_sprinting=1..}] at @s if entity @a[tag=runner,distance=..10,scores={is_sprinting=1..},tag=in_chase] run effect give @a[tag=runner,distance=..8,tag=in_chase] speed 1 0 true
 
 # Replenish Boost (Active)
 function juggernaut:ability_management/check_ability {\
