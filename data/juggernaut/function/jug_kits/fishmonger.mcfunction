@@ -1,9 +1,9 @@
 execute if entity @a[tag=fishmonger] run return fail
 execute if entity @s[tag=has_jug_kit] run return fail
-item replace entity @s armor.head with leather_helmet[unbreakable={},lore=[{"text":"Keeps the ticking sound out. Mostly.","color":"dark_gray"}]]
-item replace entity @s armor.chest with leather_chestplate[unbreakable={},lore=[{"text":"Time-resistant fabric.","color":"dark_gray"},{"text":"Not spill-resistant, sadly.","color":"dark_gray"}]]
-item replace entity @s armor.legs with leather_leggings[unbreakable={},lore=[{"text":"Crafted to stride through different time speeds.","color":"dark_gray"},{"text":"Mind the temporal drag.","color":"dark_gray"}]]
-item replace entity @s armor.feet with leather_boots[unbreakable={},lore=[{"text":"Try not to trip on your own timestream.","color":"dark_gray"},{"text":"(Otherwise they get muddled up sometimes)","color":"dark_gray"}],enchantments={depth_strider:3}]
+item replace entity @s armor.head with leather_helmet[unbreakable={}]
+item replace entity @s armor.chest with leather_chestplate[unbreakable={}]
+item replace entity @s armor.legs with leather_leggings[unbreakable={}]
+item replace entity @s armor.feet with leather_boots[unbreakable={},enchantments={depth_strider:3}]
 give @s trident[item_name={"text": "Speartooth Trident"},enchantments={riptide:3},damage=248,lore=[{"text":"","color":"dark_gray"}]] 1
 attribute @s safe_fall_distance modifier add max_fishmonger_fall_distance 999 add_value
 attribute @s water_movement_efficiency base set 999999
