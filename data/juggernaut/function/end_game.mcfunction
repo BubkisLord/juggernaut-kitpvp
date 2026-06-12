@@ -140,6 +140,7 @@ scoreboard players set @e[type=armor_stand,tag=replenishment.station] replenish_
 execute as @a run scoreboard players set @s chase_timeout 0
 execute as @a run tag @s remove in_chase
 execute as @a run tag @s remove undying_ties_target
+tag @e[type=armor_stand] remove highest_station
 
 time set noon
 
