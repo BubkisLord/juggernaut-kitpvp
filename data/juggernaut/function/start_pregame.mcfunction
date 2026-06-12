@@ -8,11 +8,11 @@ execute if score #juggernaut_manager runner_count matches 7.. run return fail
 
 tag @a remove lobby.player
 
-execute if score #juggernaut_count round_robin matches 0 store result storage juggernaut:juggernaut_count count int 1 run scoreboard players get #juggernaut_customisation juggernaut_count
-execute if score #juggernaut_count round_robin matches 0 run function juggernaut:set_random_juggernauts with storage juggernaut:juggernaut_count
+execute if score #juggernaut_customisation round_robin matches 0 store result storage juggernaut:juggernaut_count count int 1 run scoreboard players get #juggernaut_customisation juggernaut_count
+execute if score #juggernaut_customisation round_robin matches 0 run function juggernaut:set_random_juggernauts with storage juggernaut:juggernaut_count
 
-execute if score #juggernaut_count round_robin matches 1 run scoreboard players set #round_robin_iterations var 0
-execute if score #juggernaut_count round_robin matches 1 run function juggernaut:perform_round_robin
+execute if score #juggernaut_customisation round_robin matches 1 run scoreboard players set #round_robin_iterations var 0
+execute if score #juggernaut_customisation round_robin matches 1 run function juggernaut:perform_round_robin
 
 tag @a[tag=!juggernaut,scores={health=1..}] add runner
 execute as @a[scores={health=..0}] run function juggernaut:spectate
