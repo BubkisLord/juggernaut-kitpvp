@@ -1,3 +1,3 @@
 execute if entity @s[tag=using_waiting_game] run function juggernaut:attribute_management/apply {attribute_name:"movement_speed",value:0.140,duration:4,modifier_name:"waiting_game"}
 execute if entity @s[tag=fishmonger] run clear @s trident
-execute if entity @s[tag=fishmonger] run item replace entity @s hotbar.0 with trident[item_name={"text": "Speartooth Trident"},enchantments={riptide:3},damage=249,lore=[{"text":"","color":"dark_gray"}]]
+execute if entity @s[tag=fishmonger] run item replace entity @s hotbar.0 with trident[item_name={"text": "Speartooth Trident"},enchantments={riptide:2},damage=249,lore=[{"text":"","color":"dark_gray"}]]
