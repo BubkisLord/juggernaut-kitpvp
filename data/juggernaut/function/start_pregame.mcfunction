@@ -90,7 +90,7 @@ scoreboard players operation #juggernaut_manager tmp *= #5 var
 scoreboard players operation #juggernaut_manager total_replenishment_needed -= #juggernaut_manager tmp
 
 execute if score #juggernaut_customisation completable_stations matches 1 run scoreboard players operation #total_replenishment_per_station var = #juggernaut_manager total_replenishment_needed
-execute if score #juggernaut_customisation completable_stations matches 1 run scoreboard players operation #total_replenishment_per_station var /= #5 var
+execute if score #juggernaut_customisation completable_stations matches 1 run scoreboard players operation #total_replenishment_per_station var /= #stations_needed var
 
 # For the above code, the formula is:
 # replenishment = 0.95((4500(total_runner_lives - 2) + 4500) / juggernauts)
