@@ -33,3 +33,4 @@ gamemode spectator @a[tag=spectator]
 
 execute as @a[tag=lobby.player] at @s if block ~ ~-2 ~ orange_shulker_box run function juggernaut:try_start_jug
 execute as @a[tag=lobby.player] at @s if block ~ ~-2 ~ cyan_shulker_box run function survival:start
+execute as @a[tag=lobby.player] at @s if block ~ ~-2 ~ purple_shulker_box run function tp:exit_arena
