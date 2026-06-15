@@ -16,7 +16,6 @@ execute as @a[tag=juggernaut,tag=!in_chase] if score @s chase_timeout matches 1.
 execute as @a[tag=juggernaut] if score @s chase_timeout matches 1.. run tag @s add in_chase
 execute as @a[tag=juggernaut] if score @s chase_timeout matches 1.. run scoreboard players remove @s chase_timeout 1
 
-execute as @a[tag=runner,tag=!in_chase] if score @s chase_timeout matches 1.. run function juggernaut:hooks/runner_entered_chase
 execute as @a[tag=runner] if score @s chase_timeout matches 1.. run tag @s add in_chase
 execute as @a[tag=runner] if score @s chase_timeout matches 1.. run scoreboard players remove @s chase_timeout 1
 
