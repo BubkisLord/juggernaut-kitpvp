@@ -37,7 +37,7 @@ execute as @a[tag=rogue] at @s run function juggernaut:loop/kits_loop/rogue
 execute as @a[tag=medic] at @s run function juggernaut:loop/kits_loop/medic
 execute as @a[tag=scout] at @s run function juggernaut:loop/kits_loop/scout
 execute as @a[tag=survivor] at @s run function juggernaut:loop/kits_loop/survivor
-execute as @a[tag=jug_ghost] at @s run function juggernaut:loop/kits_loop/ghost
+execute as @a[tag=ghost] at @s run function juggernaut:loop/kits_loop/ghost
 execute as @a[tag=engineer] at @s run function juggernaut:loop/kits_loop/engineer
 execute as @a[tag=trickster] at @s run function juggernaut:loop/kits_loop/trickster
 execute as @a[tag=windrunner] at @s run function juggernaut:loop/kits_loop/windrunner
@@ -45,7 +45,7 @@ execute as @a[tag=windrunner] at @s run function juggernaut:loop/kits_loop/windr
 # Juggernaut Kits
 execute as @a[tag=classic_jug] at @s run function juggernaut:loop/kits_loop/classic_jug
 execute as @a[tag=dragon] at @s run function juggernaut:loop/kits_loop/dragon
-execute as @a[tag=jug_hunter] at @s run function juggernaut:loop/kits_loop/hunter
+execute as @a[tag=hunter] at @s run function juggernaut:loop/kits_loop/hunter
 execute as @a[tag=warlock] at @s run function juggernaut:loop/kits_loop/warlock
 execute as @a[tag=predator] at @s run function juggernaut:loop/kits_loop/predator
 execute as @a[tag=spirit_walker] at @s run function juggernaut:loop/kits_loop/spirit_walker

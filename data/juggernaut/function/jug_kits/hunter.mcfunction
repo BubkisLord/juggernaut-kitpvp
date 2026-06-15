@@ -8,5 +8,5 @@ give @s iron_sword[item_name={"text": "Iron Spear"},enchantments={sharpness:1},u
 give @s bow[enchantments={infinity:1,power:1},tooltip_display={hidden_components:["unbreakable","enchantments"]},item_name={"text": "Hunter's Bow","color": "dark_red"},enchantment_glint_override=true,unbreakable={}]
 item replace entity @s hotbar.6 with arrow
 function juggernaut:descriptions/kits/juggernaut/hunter
-tag @s add jug_hunter
+tag @s add hunter
 tag @s add has_jug_kit

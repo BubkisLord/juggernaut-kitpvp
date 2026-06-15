@@ -2,7 +2,7 @@
 execute as @e[type=armor_stand,tag=crate] at @s unless entity @a[distance=..3,tag=!spectator] run particle dust_color_transition{from_color:[0.3,0.2,0.2],to_color:[0.9,0.9,0.9],scale:1} ~ ~-0.25 ~ 0.3 0.3 0.3 0 300 force @a[distance=..16]
 execute as @e[type=armor_stand,tag=crate] at @s if entity @a[distance=..3,tag=!spectator] run scoreboard players add @s var 1
 
-execute if score #jug_pvp_setup_worldborder var matches 0 run function jug_pvp:setup_worldborder
+execute if score #juggernaut_pvp_setup_worldborder var matches 0 run function juggernaut_pvp:setup_worldborder
 
 # Decrease Grace Period
 execute if score #grace_period var > #0 var run title @a actionbar [{"text": "Grace Period: ","bold": true},{"score":{"name":"#grace_period","objective":"var"},"bold": true},{"text": " seconds"}]
@@ -37,14 +37,14 @@ execute if score #worldborder_size var matches 20..39 run function survival:loop
 execute if score #worldborder_size var matches 0..19 run function survival:loop/check_worldborder {distance:19}
 
 
-execute as @a if score #game_state var matches 40..49 if score @s jug_kit_cooldown > #0 var run scoreboard players remove @s jug_kit_cooldown 1
-execute as @a unless score #game_state var matches 40..49 if score @s jug_kit_cooldown > #0 var run scoreboard players set @s jug_kit_cooldown 0
+execute as @a if score #game_state var matches 40..49 if score @s ability_cooldown0 > #0 var run scoreboard players remove @s ability_cooldown0 1
+execute as @a unless score #game_state var matches 40..49 if score @s ability_cooldown0 > #0 var run scoreboard players set @s ability_cooldown0 0
 
-execute as @a if score #game_state var matches 40..49 if score @s jug_kit_cooldown_2 > #0 var run scoreboard players remove @s jug_kit_cooldown_2 1
-execute as @a unless score #game_state var matches 40..49 if score @s jug_kit_cooldown_2 > #0 var run scoreboard players set @s jug_kit_cooldown_2 0
+execute as @a if score #game_state var matches 40..49 if score @s ability_cooldown1 > #0 var run scoreboard players remove @s ability_cooldown1 1
+execute as @a unless score #game_state var matches 40..49 if score @s ability_cooldown1 > #0 var run scoreboard players set @s ability_cooldown1 0
 
-execute as @a if score #game_state var matches 40..49 if score @s jug_kit_cooldown_3 > #0 var run scoreboard players remove @s jug_kit_cooldown_3 1
-execute as @a unless score #game_state var matches 40..49 if score @s jug_kit_cooldown_3 > #0 var run scoreboard players set @s jug_kit_cooldown_3 0
+execute as @a if score #game_state var matches 40..49 if score @s ability_cooldown2 > #0 var run scoreboard players remove @s ability_cooldown2 1
+execute as @a unless score #game_state var matches 40..49 if score @s ability_cooldown2 > #0 var run scoreboard players set @s ability_cooldown2 0
 
 execute as @a if score #game_state var matches 40..49 if score @s shadow_mark_cooldown > #0 var run scoreboard players remove @s shadow_mark_cooldown 1
 execute as @a unless score #game_state var matches 40..49 if score @s shadow_mark_cooldown > #0 var run scoreboard players set @s shadow_mark_cooldown 0

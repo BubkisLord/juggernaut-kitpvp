@@ -38,7 +38,7 @@ function juggernaut:ability_management/check_ability {\
     ability_id:"clone_player",\
     cooldown:10,\
     hotbar_slot:"hotbar.2",\
-    cooldown_var:"jug_kit_cooldown",\
+    cooldown_var:"ability_cooldown0",\
 }
 
 function juggernaut:ability_management/check_ability {\
@@ -49,7 +49,7 @@ function juggernaut:ability_management/check_ability {\
     ability_id:"shapeshift",\
     cooldown:60,\
     hotbar_slot:"hotbar.3",\
-    cooldown_var:"jug_kit_cooldown_2",\
+    cooldown_var:"ability_cooldown1",\
 }
 
 function juggernaut:ability_management/check_ability {\
@@ -60,7 +60,7 @@ function juggernaut:ability_management/check_ability {\
     ability_id:"shapeshift_random",\
     cooldown:45,\
     hotbar_slot:"hotbar.4",\
-    cooldown_var:"jug_kit_cooldown_2",\
+    cooldown_var:"ability_cooldown1",\
 }
 
 execute as @a[tag=chameleon,tag=shapeshifting] run function juggernaut:ability_management/check_ability {\
@@ -71,7 +71,7 @@ execute as @a[tag=chameleon,tag=shapeshifting] run function juggernaut:ability_m
     ability_id:"exit_shapeshift",\
     cooldown:1,\
     hotbar_slot:"hotbar.5",\
-    cooldown_var:"jug_kit_cooldown_3",\
+    cooldown_var:"ability_cooldown2",\
 }
 
 execute as @a[tag=chameleon,tag=!shapeshifting] run function juggernaut:ability_management/check_ability {\
@@ -82,7 +82,7 @@ execute as @a[tag=chameleon,tag=!shapeshifting] run function juggernaut:ability_
     ability_id:"",\
     cooldown:1,\
     hotbar_slot:"hotbar.5",\
-    cooldown_var:"jug_kit_cooldown_3",\
+    cooldown_var:"ability_cooldown2",\
 }
 
 execute as @a[tag=chameleon] run function juggernaut:ability_management/check_ability {\
@@ -93,5 +93,5 @@ execute as @a[tag=chameleon] run function juggernaut:ability_management/check_ab
     ability_id:"swap_player",\
     cooldown:30,\
     hotbar_slot:"hotbar.6",\
-    cooldown_var:"jug_kit_cooldown_4",\
+    cooldown_var:"ability_cooldown3",\
 }

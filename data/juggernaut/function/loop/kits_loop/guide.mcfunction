@@ -9,5 +9,5 @@ function juggernaut:ability_management/check_ability {\
     ability_id:"replenish_boost",\
     cooldown:20,\
     hotbar_slot:"hotbar.0",\
-    cooldown_var:"jug_kit_cooldown",\
+    cooldown_var:"ability_cooldown0",\
 }

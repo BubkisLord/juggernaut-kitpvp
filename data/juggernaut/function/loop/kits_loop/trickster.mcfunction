@@ -6,7 +6,7 @@ function juggernaut:ability_management/check_ability {\
     ability_id:"misty_step",\
     cooldown:25,\
     hotbar_slot:"hotbar.0",\
-    cooldown_var:"jug_kit_cooldown",\
+    cooldown_var:"ability_cooldown0",\
 }
 
 function juggernaut:ability_management/check_ability {\
@@ -17,5 +17,5 @@ function juggernaut:ability_management/check_ability {\
     ability_id:"false_detection",\
     cooldown:120,\
     hotbar_slot:"hotbar.1",\
-    cooldown_var:"jug_kit_cooldown_2",\
+    cooldown_var:"ability_cooldown1",\
 }

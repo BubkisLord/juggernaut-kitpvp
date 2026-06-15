@@ -2,10 +2,10 @@
 execute if score #game_state var matches 10..19 run function juggernaut:loop/mainloop
 execute if score #game_state var matches 20..29 run function survival:loop/mainloop
 execute if score #game_state var matches 30..39 run function king_of_the_hill:loop/mainloop
-execute if score #game_state var matches 40 run function jug_pvp:loop/check_all_players_ready
-execute if score #game_state var matches 45 run function jug_pvp:loop/check_all_players_ready
-execute if score #game_state var matches 41 run function jug_pvp:loop/mainloop
-execute if score #game_state var matches 46 run function jug_pvp:loop/mainloop
+execute if score #game_state var matches 40 run function juggernaut_pvp:loop/check_all_players_ready
+execute if score #game_state var matches 45 run function juggernaut_pvp:loop/check_all_players_ready
+execute if score #game_state var matches 41 run function juggernaut_pvp:loop/mainloop
+execute if score #game_state var matches 46 run function juggernaut_pvp:loop/mainloop
 
 # Always run
 execute if entity @a[scores={health=..0}] as @a[scores={health=..0}] run function scoreboard:respawning

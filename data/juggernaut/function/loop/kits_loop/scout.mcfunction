@@ -13,5 +13,5 @@ function juggernaut:ability_management/check_ability {\
     ability_id:"reveal_jugs",\
     cooldown:25,\
     hotbar_slot:"hotbar.1",\
-    cooldown_var:"jug_kit_cooldown",\
+    cooldown_var:"ability_cooldown0",\
 }

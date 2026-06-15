@@ -69,7 +69,7 @@ execute as @e[type=armor_stand,tag=replenishment.station] at @s if score #game_s
 execute as @e[type=armor_stand,tag=replenishment.station] at @s if score #game_state var matches 11 unless entity @e[type=armor_stand,tag=banishment_glyph,distance=..32] unless entity @a[tag=juggernaut,limit=1,sort=nearest,distance=0..12,tag=!shapeshifting] as @a[tag=shapeshifting,distance=..3] at @s run particle end_rod ~ ~ ~ 0.5 1 0.5 0.00001 1 force
 
 #Set replenishment timeout
-execute if score #game_state var matches 11 as @e[type=armor_stand,tag=replenishment.station] at @s unless entity @e[type=armor_stand,tag=banishment_glyph,distance=..32] if entity @a[tag=runner,distance=..6] unless entity @s[tag=jug_ghost,tag=is_not_replenishing] run scoreboard players set @s replenish_timeout 6
+execute if score #game_state var matches 11 as @e[type=armor_stand,tag=replenishment.station] at @s unless entity @e[type=armor_stand,tag=banishment_glyph,distance=..32] if entity @a[tag=runner,distance=..6] unless entity @s[tag=ghost,tag=is_not_replenishing] run scoreboard players set @s replenish_timeout 6
 
 scoreboard players set #stations_completed var 0
 execute if score #juggernaut_customisation completable_stations matches 1 run function juggernaut:replenishment_management/check_needed_stations_completed

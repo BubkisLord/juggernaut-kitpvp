@@ -9,7 +9,7 @@ function juggernaut:ability_management/check_ability {\
     ability_id:"damage_pot",\
     cooldown:60,\
     hotbar_slot:"hotbar.1",\
-    cooldown_var:"jug_kit_cooldown_4",\
+    cooldown_var:"ability_cooldown3",\
 }
 
 function juggernaut:ability_management/check_ability {\
@@ -53,7 +53,7 @@ function juggernaut:ability_management/check_ability {\
     ability_id:"enlarge",\
     cooldown:30,\
     hotbar_slot:"hotbar.6",\
-    cooldown_var:"jug_kit_cooldown",\
+    cooldown_var:"ability_cooldown0",\
 }
 
 function juggernaut:ability_management/check_ability {\
@@ -64,5 +64,5 @@ function juggernaut:ability_management/check_ability {\
     ability_id:"reduce",\
     cooldown:20,\
     hotbar_slot:"hotbar.7",\
-    cooldown_var:"jug_kit_cooldown_2",\
+    cooldown_var:"ability_cooldown1",\
 }

@@ -51,19 +51,19 @@ execute as @e[type=armor_stand,tag=replenishment.station] if score @s replenish_
 execute if entity @a[tag=juggernaut] run tag @a[tag=juggernaut] remove is_glowing
 
 # General kit cooldowns
-execute as @a if score #game_state var matches 10..19 if score @s jug_kit_cooldown > #0 var run function juggernaut:ability_management/apply_ability_modifiers
+execute as @a if score #game_state var matches 10..19 if score @s ability_cooldown0 > #0 var run function juggernaut:ability_management/apply_ability_modifiers
 
-execute as @a if score #game_state var matches 10..19 if score @s jug_kit_cooldown > #0 var run scoreboard players remove @s jug_kit_cooldown 1
-execute as @a unless score #game_state var matches 10..19 if score @s jug_kit_cooldown > #0 var run scoreboard players set @s jug_kit_cooldown 0
+execute as @a if score #game_state var matches 10..19 if score @s ability_cooldown0 > #0 var run scoreboard players remove @s ability_cooldown0 1
+execute as @a unless score #game_state var matches 10..19 if score @s ability_cooldown0 > #0 var run scoreboard players set @s ability_cooldown0 0
 
-execute as @a if score #game_state var matches 10..19 if score @s jug_kit_cooldown_2 > #0 var run scoreboard players remove @s jug_kit_cooldown_2 1
-execute as @a unless score #game_state var matches 10..19 if score @s jug_kit_cooldown_2 > #0 var run scoreboard players set @s jug_kit_cooldown_2 0
+execute as @a if score #game_state var matches 10..19 if score @s ability_cooldown1 > #0 var run scoreboard players remove @s ability_cooldown1 1
+execute as @a unless score #game_state var matches 10..19 if score @s ability_cooldown1 > #0 var run scoreboard players set @s ability_cooldown1 0
 
-execute as @a if score #game_state var matches 10..19 if score @s jug_kit_cooldown_3 > #0 var run scoreboard players remove @s jug_kit_cooldown_3 1
-execute as @a unless score #game_state var matches 10..19 if score @s jug_kit_cooldown_3 > #0 var run scoreboard players set @s jug_kit_cooldown_3 0
+execute as @a if score #game_state var matches 10..19 if score @s ability_cooldown2 > #0 var run scoreboard players remove @s ability_cooldown2 1
+execute as @a unless score #game_state var matches 10..19 if score @s ability_cooldown2 > #0 var run scoreboard players set @s ability_cooldown2 0
 
-execute as @a if score #game_state var matches 10..19 if score @s jug_kit_cooldown_4 > #0 var run scoreboard players remove @s jug_kit_cooldown_4 1
-execute as @a unless score #game_state var matches 10..19 if score @s jug_kit_cooldown_4 > #0 var run scoreboard players set @s jug_kit_cooldown_4 0
+execute as @a if score #game_state var matches 10..19 if score @s ability_cooldown3 > #0 var run scoreboard players remove @s ability_cooldown3 1
+execute as @a unless score #game_state var matches 10..19 if score @s ability_cooldown3 > #0 var run scoreboard players set @s ability_cooldown3 0
 
 execute as @a if score #game_state var matches 10..19 if score @s shadow_mark_cooldown > #0 var run scoreboard players remove @s shadow_mark_cooldown 1
 execute as @a unless score #game_state var matches 10..19 if score @s shadow_mark_cooldown > #0 var run scoreboard players set @s shadow_mark_cooldown 0

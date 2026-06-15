@@ -1,10 +1,10 @@
 scoreboard players set #game_state var 0
 scoreboard players set @a juggernaut_game_time 0
 scoreboard players set @a juggernaut_release_timer 0
-scoreboard players set @a jug_kit_cooldown 0
-scoreboard players set @a jug_kit_cooldown_2 0
-scoreboard players set @a jug_kit_cooldown_3 0
-scoreboard players set @a jug_kit_cooldown_4 0
+scoreboard players set @a ability_cooldown0 0
+scoreboard players set @a ability_cooldown1 0
+scoreboard players set @a ability_cooldown2 0
+scoreboard players set @a ability_cooldown3 0
 scoreboard players set @a revealing_tower_cooldown 0
 scoreboard players set @a replenishment_tower_cooldown 0
 scoreboard players set @a turret_cooldown 0
@@ -52,7 +52,7 @@ tag @a remove rogue
 tag @a remove scout
 tag @a remove engineer
 tag @a remove warlock
-tag @a remove jug_hunter
+tag @a remove hunter
 tag @a remove is_hunting
 tag @a remove has_hunters_mark
 tag @a remove dragon
@@ -63,7 +63,7 @@ tag @a remove guide
 tag @e remove sentinel_tower
 tag @a remove shadow_marked
 tag @a remove beacon_of_hope_active
-tag @a remove jug_ghost
+tag @a remove ghost
 tag @a remove trickster
 tag @a remove fishmonger
 tag @a remove timekeeper

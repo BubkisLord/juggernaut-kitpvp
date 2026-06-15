@@ -6,7 +6,7 @@
 #     ability_id:"phase_shift",\
 #     cooldown:5,\
 #     hotbar_slot:"hotbar.1",\
-#     cooldown_var:"jug_kit_cooldown",\
+#     cooldown_var:"ability_cooldown0",\
 # }
 
 execute as @a[tag=spirit_walker] run function juggernaut:ability_management/check_ability {\
@@ -17,7 +17,7 @@ execute as @a[tag=spirit_walker] run function juggernaut:ability_management/chec
     ability_id:"phase_shift",\
     cooldown:3,\
     hotbar_slot:"hotbar.1",\
-    cooldown_var:"jug_kit_cooldown",\
+    cooldown_var:"ability_cooldown0",\
 }
 
 execute if stopwatch minecraft:phase_time 0.85.. run tag @a[tag=spirit_walker,tag=is_phasing] add teleporting

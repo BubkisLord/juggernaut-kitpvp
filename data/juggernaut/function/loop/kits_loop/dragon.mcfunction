@@ -16,7 +16,7 @@ execute as @a[tag=dragon] if entity @s[tag=is_floating] run function juggernaut:
     ability_id:"start_flight",\
     cooldown:0,\
     hotbar_slot:"hotbar.0",\
-    cooldown_var:"jug_kit_cooldown",\
+    cooldown_var:"ability_cooldown0",\
 }
 
 execute as @a[tag=dragon] unless entity @s[tag=is_floating] run function juggernaut:ability_management/check_ability {\
@@ -27,7 +27,7 @@ execute as @a[tag=dragon] unless entity @s[tag=is_floating] run function juggern
     ability_id:"start_floating",\
     cooldown:0,\
     hotbar_slot:"hotbar.0",\
-    cooldown_var:"jug_kit_cooldown",\
+    cooldown_var:"ability_cooldown0",\
 }
 
 execute as @a[tag=dragon] run function juggernaut:ability_management/check_ability {\
@@ -38,7 +38,7 @@ execute as @a[tag=dragon] run function juggernaut:ability_management/check_abili
     ability_id:"dragon_breath",\
     cooldown:2,\
     hotbar_slot:"hotbar.1",\
-    cooldown_var:"jug_kit_cooldown_2",\
+    cooldown_var:"ability_cooldown1",\
 }
 
 execute as @a[tag=dragon] run function juggernaut:ability_management/check_ability {\
@@ -49,5 +49,5 @@ execute as @a[tag=dragon] run function juggernaut:ability_management/check_abili
     ability_id:"strong_dragon_breath",\
     cooldown:30,\
     hotbar_slot:"hotbar.2",\
-    cooldown_var:"jug_kit_cooldown_3",\
+    cooldown_var:"ability_cooldown2",\
 }

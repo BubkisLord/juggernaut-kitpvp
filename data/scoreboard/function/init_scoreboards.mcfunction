@@ -14,8 +14,8 @@ scoreboard objectives add game_deaths dummy
 scoreboard objectives add lives dummy
 scoreboard objectives add grace_period dummy
 scoreboard objectives add banishment_glyph_cooldown dummy
-scoreboard objectives add jug_kit_cooldown dummy
-scoreboard objectives add jug_kit_cooldown_2 dummy
+scoreboard objectives add ability_cooldown0 dummy
+scoreboard objectives add ability_cooldown1 dummy
 scoreboard objectives add replenish_timeout dummy
 scoreboard objectives add juggernaut_release_timer dummy
 scoreboard objectives add total_replenishment_needed dummy
@@ -134,10 +134,10 @@ scoreboard objectives add current_cooldown dummy
 scoreboard objectives add tmp dummy
 scoreboard objectives add tick_speed dummy
 scoreboard objectives add runner_count dummy
-scoreboard objectives add jug_kit_cooldown_3 dummy
+scoreboard objectives add ability_cooldown2 dummy
 scoreboard objectives add medic_heal_amount dummy
 scoreboard objectives add jug_dmg minecraft.custom:damage_dealt
-scoreboard objectives add jug_kit_cooldown_4 dummy
+scoreboard objectives add ability_cooldown3 dummy
 scoreboard objectives add sprint_timeout dummy
 scoreboard objectives add sprint_time dummy
 scoreboard objectives add jug_ticker dummy

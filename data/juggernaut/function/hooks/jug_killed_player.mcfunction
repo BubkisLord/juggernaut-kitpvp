@@ -5,7 +5,7 @@ execute if entity @s[tag=using_crippling_defeat] as @n[type=armor_stand,tag=repl
 execute if entity @s[tag=chameleon] run scoreboard players add @s kills_kit_chameleon 1
 execute if entity @s[tag=dragon] run scoreboard players add @s kills_kit_dragon 1
 execute if entity @s[tag=fishmonger] run scoreboard players add @s kills_kit_fishmonger 1
-execute if entity @s[tag=jug_hunter] run scoreboard players add @s kills_kit_hunter 1
+execute if entity @s[tag=hunter] run scoreboard players add @s kills_kit_hunter 1
 execute if entity @s[tag=classic_jug] run scoreboard players add @s kills_kit_classic_juggernaut 1
 execute if entity @s[tag=jug_knight] run scoreboard players add @s kills_kit_knight 1
 execute if entity @s[tag=predator] run scoreboard players add @s kills_kit_predator 1
@@ -17,7 +17,7 @@ execute if entity @s[tag=witch_doctor] run scoreboard players add @s kills_kit_w
 execute if entity @s[tag=chameleon] run scoreboard players add #juggernaut_manager kills_kit_chameleon 1
 execute if entity @s[tag=dragon] run scoreboard players add #juggernaut_manager kills_kit_dragon 1
 execute if entity @s[tag=fishmonger] run scoreboard players add #juggernaut_manager kills_kit_fishmonger 1
-execute if entity @s[tag=jug_hunter] run scoreboard players add #juggernaut_manager kills_kit_hunter 1
+execute if entity @s[tag=hunter] run scoreboard players add #juggernaut_manager kills_kit_hunter 1
 execute if entity @s[tag=classic_jug] run scoreboard players add #juggernaut_manager kills_kit_classic_juggernaut 1
 execute if entity @s[tag=jug_knight] run scoreboard players add #juggernaut_manager kills_kit_knight 1
 execute if entity @s[tag=predator] run scoreboard players add #juggernaut_manager kills_kit_predator 1

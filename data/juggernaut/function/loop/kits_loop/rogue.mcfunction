@@ -12,7 +12,7 @@ function juggernaut:ability_management/check_ability {\
     ability_id:"smoke_bomb",\
     cooldown:30,\
     hotbar_slot:"hotbar.0",\
-    cooldown_var:"jug_kit_cooldown",\
+    cooldown_var:"ability_cooldown0",\
 }
 
 # Backstep (active)
@@ -24,5 +24,5 @@ function juggernaut:ability_management/check_ability {\
     ability_id:"backstep",\
     cooldown:30,\
     hotbar_slot:"hotbar.1",\
-    cooldown_var:"jug_kit_cooldown_2",\
+    cooldown_var:"ability_cooldown1",\
 }

@@ -40,7 +40,7 @@ execute if score @s lives_remaining matches ..0 run tag @s remove scout
 execute if score @s lives_remaining matches ..0 run tag @s remove engineer
 execute if score @s lives_remaining matches ..0 run tag @s remove witch_doctor
 execute if score @s lives_remaining matches ..0 run tag @s remove warlock
-execute if score @s lives_remaining matches ..0 run tag @s remove jug_hunter
+execute if score @s lives_remaining matches ..0 run tag @s remove hunter
 execute if score @s lives_remaining matches ..0 run tag @s remove is_hunting
 execute if score @s lives_remaining matches ..0 run tag @s remove has_hunters_mark
 execute if score @s lives_remaining matches ..0 run tag @s remove dragon
@@ -49,7 +49,7 @@ execute if score @s lives_remaining matches ..0 run tag @s remove blinker
 execute if score @s lives_remaining matches ..0 run tag @s remove spirit_walker
 execute if score @s lives_remaining matches ..0 run tag @s remove guide
 execute if score @s lives_remaining matches ..0 run tag @s remove trickster
-execute if score @s lives_remaining matches ..0 run tag @s remove jug_ghost
+execute if score @s lives_remaining matches ..0 run tag @s remove ghost
 
 execute if score @s lives_remaining matches ..0 run tag @s remove windrunner
 execute if score @s lives_remaining matches ..0 run tag @s remove saved_skin

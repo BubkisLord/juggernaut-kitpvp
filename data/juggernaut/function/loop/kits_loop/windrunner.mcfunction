@@ -11,7 +11,7 @@ execute as @a[tag=windrunner] if score @s is_sprinting matches 1.. run data modi
 execute as @a[tag=windrunner] if score @s is_sprinting matches 1.. run function juggernaut:attribute_management/apply_modifier with storage juggernaut:loop/kits_loop/windrunner
 execute as @a[tag=windrunner,tag=in_chase,tag=double_chase_progress] run scoreboard players add #juggernaut_manager replenish_progress 1
 execute as @a[tag=windrunner,tag=in_chase,tag=double_chase_progress] at @s if score #juggernaut_customisation completable_stations matches 1 as @n[type=armor_stand,tag=replenishment.station,tag=highest_station] run scoreboard players add @s replenish_amount 1
-execute as @a[tag=windrunner,tag=double_chase_progress] if score @s jug_kit_cooldown matches 0..30 run tag @s remove double_chase_progress
+execute as @a[tag=windrunner,tag=double_chase_progress] if score @s ability_cooldown0 matches 0..30 run tag @s remove double_chase_progress
 
 function juggernaut:ability_management/check_ability {\
     player_tag:"windrunner",\
@@ -21,5 +21,5 @@ function juggernaut:ability_management/check_ability {\
     ability_id:"risky_business",\
     cooldown:40,\
     hotbar_slot:"hotbar.0",\
-    cooldown_var:"jug_kit_cooldown",\
+    cooldown_var:"ability_cooldown0",\
 }

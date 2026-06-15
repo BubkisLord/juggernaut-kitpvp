@@ -9,7 +9,7 @@ function juggernaut:ability_management/check_ability {\
     ability_id:"rewind",\
     cooldown:30,\
     hotbar_slot:"hotbar.1",\
-    cooldown_var:"jug_kit_cooldown",\
+    cooldown_var:"ability_cooldown0",\
 }
 
 function juggernaut:ability_management/check_ability {\
@@ -20,7 +20,7 @@ function juggernaut:ability_management/check_ability {\
     ability_id:"kill_strand",\
     cooldown:4,\
     hotbar_slot:"hotbar.3",\
-    cooldown_var:"jug_kit_cooldown_3",\
+    cooldown_var:"ability_cooldown2",\
 }
 
 function juggernaut:ability_management/check_ability {\
@@ -34,7 +34,7 @@ function juggernaut:ability_management/check_ability {\
     ability_id:"timestream_rupture",\
     cooldown:35,\
     hotbar_slot:"hotbar.2",\
-    cooldown_var:"jug_kit_cooldown_4",\
+    cooldown_var:"ability_cooldown3",\
 }
 
 execute as @a[tag=timekeeper,tag=!spectator,tag=!rewinding] if score #game_state var matches 11 if score @s health matches 1.. if score @s lives_remaining matches 1.. at @s run summon area_effect_cloud ~ ~ ~ {Duration:1200,Tags:["timekeeper_trail","kill_on_end_game"],custom_particle:{type:"minecraft:dust",color:14064170,scale:1},Radius:0.3f}

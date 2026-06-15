@@ -6,5 +6,5 @@ function juggernaut:ability_management/check_ability {\
     ability_id:"find_runners",\
     cooldown:60,\
     hotbar_slot:"hotbar.2",\
-    cooldown_var:"jug_kit_cooldown",\
+    cooldown_var:"ability_cooldown0",\
 }

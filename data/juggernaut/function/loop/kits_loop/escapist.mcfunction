@@ -11,5 +11,5 @@ function juggernaut:ability_management/check_ability {\
     ability_id:"escapist_ability",\
     cooldown:60,\
     hotbar_slot:"hotbar.0",\
-    cooldown_var:"jug_kit_cooldown",\
+    cooldown_var:"ability_cooldown0",\
 }

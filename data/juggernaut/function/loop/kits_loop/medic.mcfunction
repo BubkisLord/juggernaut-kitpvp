@@ -9,7 +9,7 @@ function juggernaut:ability_management/check_ability {\
     ability_id:"rescue",\
     cooldown:60,\
     hotbar_slot:"hotbar.1",\
-    cooldown_var:"jug_kit_cooldown",\
+    cooldown_var:"ability_cooldown0",\
 }
 
 # Heal (Active)
@@ -21,5 +21,5 @@ function juggernaut:ability_management/check_ability {\
     ability_id:"heal",\
     cooldown:60,\
     hotbar_slot:"hotbar.2",\
-    cooldown_var:"jug_kit_cooldown_2",\
+    cooldown_var:"ability_cooldown1",\
 }
