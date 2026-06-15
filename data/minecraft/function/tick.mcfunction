@@ -7,10 +7,6 @@ execute if score #game_state var matches 45 run function jug_pvp:loop/check_all_
 execute if score #game_state var matches 41 run function jug_pvp:loop/mainloop
 execute if score #game_state var matches 46 run function jug_pvp:loop/mainloop
 
-# When all games are off / When playing KitPVP
-execute if score #game_state var matches 0 run function abilities:kitabilities
-execute if score #game_state var matches 0 run function tp:exit_item
-
 # Always run
 execute if entity @a[scores={health=..0}] as @a[scores={health=..0}] run function scoreboard:respawning
 function other:cleanup

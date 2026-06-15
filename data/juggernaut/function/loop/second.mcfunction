@@ -155,10 +155,6 @@ execute as @a[tag=using_unyielding_wrath,tag=in_chase] run function juggernaut:a
 # Update domination speed
 execute as @a[tag=juggernaut,tag=using_domination] run function juggernaut:perk_management/perk_functions/set_domination_speed
 
-# Update Grim Determination speed
-execute as @a[tag=runner,tag=in_chase,tag=harbinger] run function juggernaut:set_grim_determination_speed
-execute as @a[tag=runner,tag=!in_chase,tag=harbinger] run attribute @s movement_speed modifier remove grim_determination
-
 # Update beacon of hope duration
 execute as @a[tag=beacon_of_hope_active,scores={beacon_of_hope_duration=1..}] run scoreboard players remove @s beacon_of_hope_duration 1
 execute as @a[tag=beacon_of_hope_active,scores={beacon_of_hope_duration=0}] run tag @s remove beacon_of_hope_active

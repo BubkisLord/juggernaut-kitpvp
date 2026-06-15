@@ -65,7 +65,6 @@ tag @e remove sentinel_tower
 tag @a remove shadow_marked
 tag @a remove beacon_of_hope_active
 tag @a remove jug_ghost
-tag @a remove harbinger
 tag @a remove trickster
 tag @a remove fishmonger
 tag @a remove timekeeper

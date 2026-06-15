@@ -38,7 +38,6 @@ execute as @a[tag=medic] at @s run function juggernaut:loop/kits_loop/medic
 execute as @a[tag=scout] at @s run function juggernaut:loop/kits_loop/scout
 execute as @a[tag=survivor] at @s run function juggernaut:loop/kits_loop/survivor
 execute as @a[tag=jug_ghost] at @s run function juggernaut:loop/kits_loop/ghost
-execute as @a[tag=cloak] at @s run function juggernaut:loop/kits_loop/cloak
 execute as @a[tag=engineer] at @s run function juggernaut:loop/kits_loop/engineer
 execute as @a[tag=trickster] at @s run function juggernaut:loop/kits_loop/trickster
 execute as @a[tag=windrunner] at @s run function juggernaut:loop/kits_loop/windrunner
