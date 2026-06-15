@@ -127,15 +127,14 @@ Where:
 - `replenish_buff` increases the rate of progress as a percentage.
 - `replenish_debuff` decreases the rate of progress as a percentage.
 
-A **Replenishment Minigame** may trigger when a Runner begins interacting with a station. A target armor stand spawns; if it times out (60 ticks without being dismissed), the station receives a `failed_minigame` tag and replenishment is interrupted.
-
 Stations display particle effects to indicate their status:
 
 - `end_rod` — actively being replenished
-- `totem_of_undying` — available
-- `witch` — Juggernaut is nearby (purple warning)
-- `white_smoke` — blocked by Banishment Glyph
-- `flame` — blocked by Banishment Glyph (runner-side indicator)
+- `totem_of_undying` — indicates presence of station
+- `witch` (for Runners) — Juggernaut is nearby (purple warning)
+- `witch` (for Juggernauts) — Runner has been nearby within the last 6 seconds (purple warning)
+- `white_smoke` (for Juggernauts) — blocked by Banishment Glyph
+- `flame` (for Runners) — blocked by Banishment Glyph
 
 ### Lives & Elimination
 
