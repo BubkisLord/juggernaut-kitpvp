@@ -61,9 +61,6 @@ tag @a remove chain_hunter
 tag @a remove blinker
 tag @a remove spirit_walker
 tag @a remove guide
-tag @a remove using_camera
-tag @a remove eclipse_stalker
-tag @e remove used_camera
 tag @e remove sentinel_tower
 tag @a remove shadow_marked
 tag @a remove beacon_of_hope_active
@@ -142,6 +139,8 @@ execute as @a run tag @s remove in_chase
 execute as @a run tag @s remove undying_ties_target
 tag @e[type=armor_stand] remove highest_station
 
+team modify runner nametagVisibility always
+
 time set noon
 
 clear @a
@@ -182,6 +181,7 @@ scoreboard players set @e[type=armor_stand,tag=replenishment.station] sentinel_p
 scoreboard players set @a lives 0
 scoreboard players set @a game_deaths 0
 scoreboard players set @a borrowed_damage 0
+scoreboard players set @a jug_kills 0
 
 scoreboard players set #engineer_count var 0
 scoreboard players set #escapist_count var 0
@@ -195,7 +195,6 @@ scoreboard players set #trickster_count var 0
 scoreboard players set #windrunner_count var 0
 scoreboard players set #chameleon_count var 0
 scoreboard players set #dragon_count var 0
-scoreboard players set #eclipse_stalker_count var 0
 scoreboard players set #fishmonger_count var 0
 scoreboard players set #hunter_count var 0
 scoreboard players set #classic_juggernaut_count var 0

@@ -2,7 +2,6 @@ tellraw @a [{"text": "Juggernaut","color": "dark_red"},{"text": " is starting!",
 
 execute as @a[tag=chameleon] run function juggernaut:handle_kit_picked {"kit": "chameleon"}
 execute as @a[tag=dragon] run function juggernaut:handle_kit_picked {"kit": "dragon"}
-execute as @a[tag=eclipse_stalker] run function juggernaut:handle_kit_picked {"kit": "eclipse_stalker"}
 execute as @a[tag=fishmonger] run function juggernaut:handle_kit_picked {"kit": "fishmonger"}
 execute as @a[tag=jug_hunter] run function juggernaut:handle_kit_picked {"kit": "hunter"}
 execute as @a[tag=classic_jug] run function juggernaut:handle_kit_picked {"kit": "classic_juggernaut"}

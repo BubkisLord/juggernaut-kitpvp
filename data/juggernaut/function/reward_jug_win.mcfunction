@@ -1,7 +1,6 @@
 execute if score #juggernaut_customisation debug_mode matches 1 run return fail
 function juggernaut:update_stats_win {"kit":"chameleon"}
 function juggernaut:update_stats_win {"kit":"dragon"}
-function juggernaut:update_stats_win {"kit":"eclipse_stalker"}
 function juggernaut:update_stats_win {"kit":"fishmonger"}
 function juggernaut:update_stats_win {"kit":"hunter"}
 function juggernaut:update_stats_win {"kit":"classic_juggernaut"}

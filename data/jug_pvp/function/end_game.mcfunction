@@ -91,9 +91,6 @@ tag @a remove chain_hunter
 tag @a remove blinker
 tag @a remove spirit_walker
 tag @a remove guide
-tag @a remove using_camera
-tag @a remove eclipse_stalker
-tag @e remove used_camera
 tag @e remove sentinel_tower
 tag @a remove shadow_marked
 tag @a remove beacon_of_hope_active

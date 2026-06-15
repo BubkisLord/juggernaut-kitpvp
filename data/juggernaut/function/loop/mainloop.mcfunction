@@ -43,7 +43,6 @@ execute as @a[tag=windrunner] at @s run function juggernaut:loop/kits_loop/windr
 # Juggernaut Kits
 execute as @a[tag=classic_jug] at @s run function juggernaut:loop/kits_loop/classic_jug
 execute as @a[tag=dragon] at @s run function juggernaut:loop/kits_loop/dragon
-execute as @a[tag=eclipse_stalker] at @s run function juggernaut:loop/kits_loop/eclipse_stalker
 execute as @a[tag=jug_hunter] at @s run function juggernaut:loop/kits_loop/hunter
 execute as @a[tag=warlock] at @s run function juggernaut:loop/kits_loop/warlock
 execute as @a[tag=predator] at @s run function juggernaut:loop/kits_loop/predator

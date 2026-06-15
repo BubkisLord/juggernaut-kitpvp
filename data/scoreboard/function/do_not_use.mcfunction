@@ -1,6 +1,5 @@
 function scoreboard:reset_kit_stats {"kit":"chameleon"}
 function scoreboard:reset_kit_stats {"kit":"dragon"}
-function scoreboard:reset_kit_stats {"kit":"eclipse_stalker"}
 function scoreboard:reset_kit_stats {"kit":"fishmonger"}
 function scoreboard:reset_kit_stats {"kit":"hunter"}
 function scoreboard:reset_kit_stats {"kit":"classic_juggernaut"}

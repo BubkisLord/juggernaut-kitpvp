@@ -142,6 +142,7 @@ scoreboard objectives add sprint_timeout dummy
 scoreboard objectives add sprint_time dummy
 scoreboard objectives add jug_ticker dummy
 scoreboard objectives add round_robin dummy
+scoreboard objectives add jug_kills minecraft.custom:player_kills
 
 # Juggernaut Kit Statistics
 scoreboard objectives add picked_kit_chameleon dummy "Picked Kit - Chameleon"
@@ -153,11 +154,6 @@ scoreboard objectives add picked_kit_dragon dummy "Picked Kit - Dragon"
 scoreboard objectives add kills_kit_dragon dummy "Kills with Dragon"
 scoreboard objectives add dragon_wins dummy "Wins with Dragon"
 scoreboard objectives add dragon_losses dummy "Losses with Dragon"
-
-scoreboard objectives add picked_kit_eclipse_stalker dummy "Picked Kit - Eclipse Stalker"
-scoreboard objectives add kills_kit_eclipse_stalker dummy "Kills with Eclipse Stalker"
-scoreboard objectives add eclipse_stalker_wins dummy "Wins with Eclipse Stalker"
-scoreboard objectives add eclipse_stalker_losses dummy "Losses with Eclipse Stalker"
 
 scoreboard objectives add picked_kit_fishmonger dummy "Picked Kit - Fishmonger"
 scoreboard objectives add kills_kit_fishmonger dummy "Kills with Fishmonger"

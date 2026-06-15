@@ -44,7 +44,6 @@ execute if score @s lives_remaining matches ..0 run tag @s remove jug_hunter
 execute if score @s lives_remaining matches ..0 run tag @s remove is_hunting
 execute if score @s lives_remaining matches ..0 run tag @s remove has_hunters_mark
 execute if score @s lives_remaining matches ..0 run tag @s remove dragon
-execute if score @s lives_remaining matches ..0 run tag @s remove eclipse_stalker
 execute if score @s lives_remaining matches ..0 run tag @s remove is_floating
 execute if score @s lives_remaining matches ..0 run tag @s remove chain_hunter
 execute if score @s lives_remaining matches ..0 run tag @s remove blinker

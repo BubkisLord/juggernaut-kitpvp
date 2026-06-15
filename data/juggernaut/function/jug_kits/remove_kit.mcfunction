@@ -3,7 +3,6 @@ tag @s remove predator
 tag @s remove blinker
 tag @s remove dragon
 tag @s remove chain_hunter
-tag @s remove eclipse_stalker
 tag @s remove spirit_walker
 tag @s remove hunter
 tag @s remove warlock
