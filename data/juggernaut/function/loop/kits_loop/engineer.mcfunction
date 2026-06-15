@@ -16,6 +16,8 @@ execute as @e[type=armor_stand,tag=revealing_tower] at @s as @a[tag=juggernaut,d
 # Replenishment Tower Logic
 execute as @e[type=armor_stand,tag=replenishment_tower_particle_emitter] at @s run particle dust{color:[1,1,0],scale:1} ^0.75 ^ ^0.75 0.1 0.1 0.1 0.4 4 normal
 execute as @e[type=armor_stand,tag=replenishment_tower_particle_emitter] at @s run particle dust{color:[0,1,1],scale:1} ^-0.75 ^1 ^-0.75 0.1 0.1 0.1 0.4 4 normal
+execute as @e[type=armor_stand,tag=replenishment_tower_particle_emitter] at @s run particle dust{color:[1,0,1],scale:1} ^0.75 ^ ^-0.75 0.1 0.1 0.1 0.4 4 normal
+execute as @e[type=armor_stand,tag=replenishment_tower_particle_emitter] at @s run particle dust{color:[0,1,0],scale:1} ^-0.75 ^1 ^0.75 0.1 0.1 0.1 0.4 4 normal
 execute as @e[type=armor_stand,tag=replenishment_tower] at @s positioned ~ ~-1 ~ run execute as @e[type=armor_stand,tag=replenishment_tower_particle_emitter,distance=..2] unless entity @s[distance=..1] run tp @s ~ ~-0.5 ~
 execute as @e[type=armor_stand,tag=replenishment_tower_particle_emitter] at @s run tp @s ~ ~0.005 ~ ~10 ~
 execute as @e[type=armor_stand,tag=replenishment_tower_particle_emitter] at @s unless entity @e[type=armor_stand,tag=replenishment_tower,distance=..2] run kill @s
