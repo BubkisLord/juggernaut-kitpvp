@@ -14,20 +14,6 @@ function juggernaut:ability_management/check_ability {\
 
 function juggernaut:ability_management/check_ability {\
     player_tag:"timekeeper",\
-    item_id:"minecraft:slime_ball",\
-    item_name:{"text": "Place Temporal Marker","color": "gold"},\
-    description:[{"text": "Mark all player's space in time,","color": "gray"},\
-                 {"text": "then after 10 seconds they are all","color": "gray"},\
-                 {"text": "teleported to their respective locations.","color": "gray"},\
-                 {"text": "Cooldown: 60s","color": "dark_gray"}],\
-    ability_id:"temporal_mark",\
-    cooldown:60,\
-    hotbar_slot:"hotbar.2",\
-    cooldown_var:"jug_kit_cooldown_2",\
-}
-
-function juggernaut:ability_management/check_ability {\
-    player_tag:"timekeeper",\
     item_id:"minecraft:fermented_spider_eye",\
     item_name:{"text": "Poison Time Strand","color": "gold"},\
     description:[{"text": "Purge a strand of time, a trail of your whereabouts from the world.","color": "gray"},{"text": "Cooldown: 1s","color": "dark_gray"}],\
@@ -47,7 +33,7 @@ function juggernaut:ability_management/check_ability {\
                  {"text": "Cooldown: 1m 10s (45s duration, 25s cooldown)","color": "dark_gray"}],\
     ability_id:"timestream_rupture",\
     cooldown:35,\
-    hotbar_slot:"hotbar.4",\
+    hotbar_slot:"hotbar.2",\
     cooldown_var:"jug_kit_cooldown_4",\
 }
 
