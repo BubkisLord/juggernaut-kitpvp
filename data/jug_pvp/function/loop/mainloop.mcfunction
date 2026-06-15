@@ -30,7 +30,6 @@ execute if entity @a[tag=dragon] run function juggernaut:loop/kits_loop/dragon
 execute if entity @a[tag=jug_hunter] run function juggernaut:loop/kits_loop/hunter
 execute if entity @a[tag=warlock] run function juggernaut:loop/kits_loop/warlock
 execute if entity @a[tag=predator] run function juggernaut:loop/kits_loop/predator
-execute if entity @a[tag=chain_hunter] run function juggernaut:loop/kits_loop/chain_hunter
 execute if entity @a[tag=spirit_walker] run function juggernaut:loop/kits_loop/spirit_walker
 execute if entity @a[tag=witch_doctor] run function juggernaut:loop/kits_loop/witch_doctor
 execute if entity @a[tag=timekeeper] run function juggernaut:loop/kits_loop/timekeeper

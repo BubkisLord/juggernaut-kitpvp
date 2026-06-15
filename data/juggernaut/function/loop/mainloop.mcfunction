@@ -48,7 +48,6 @@ execute as @a[tag=dragon] at @s run function juggernaut:loop/kits_loop/dragon
 execute as @a[tag=jug_hunter] at @s run function juggernaut:loop/kits_loop/hunter
 execute as @a[tag=warlock] at @s run function juggernaut:loop/kits_loop/warlock
 execute as @a[tag=predator] at @s run function juggernaut:loop/kits_loop/predator
-execute as @a[tag=chain_hunter] at @s run function juggernaut:loop/kits_loop/chain_hunter
 execute as @a[tag=spirit_walker] at @s run function juggernaut:loop/kits_loop/spirit_walker
 execute as @a[tag=witch_doctor] at @s run function juggernaut:loop/kits_loop/witch_doctor
 execute as @a[tag=timekeeper] at @s run function juggernaut:loop/kits_loop/timekeeper

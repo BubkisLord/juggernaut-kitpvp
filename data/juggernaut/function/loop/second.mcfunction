@@ -96,9 +96,6 @@ execute as @a[tag=!borrowing_time,scores={borrowed_damage=1..}] run scoreboard p
 
 execute as @a[tag=borrowing_time] run scoreboard players remove @s borrowed_time_remaining 1
 
-# Chain Tether Removal
-execute as @e[type=armor_stand,tag=portal_tether] at @s run scoreboard players add @s var 1
-
 # Warlock cooldowns
 execute as @a[tag=warlock] if score #game_state var matches 10..19 if score @s malevolent_aura_cooldown > #0 var run scoreboard players remove @s malevolent_aura_cooldown 1
 execute as @a[tag=warlock] if score #game_state var matches 10..19 if score @s banishment_glyph_cooldown > #0 var run scoreboard players remove @s banishment_glyph_cooldown 1

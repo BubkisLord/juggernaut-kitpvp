@@ -87,7 +87,6 @@ tag @a remove is_hunting
 tag @a remove has_hunters_mark
 tag @a remove dragon
 tag @a remove is_floating
-tag @a remove chain_hunter
 tag @a remove blinker
 tag @a remove spirit_walker
 tag @a remove guide
