@@ -46,7 +46,7 @@ Further explanation of specific game systems are detailed under the [Mechanics](
 
 ### Juggernauts
 
-The Juggernaut is an extremely hard to kill player with much more powerful abilities than the runners. The strength of different Juggernaut kits lies in different areas, these generally being mobility (out of chase movement around the map), chase ability (speed and damage), and information.
+The Juggernaut is an extremely hard-to-kill player with much more powerful abilities than the runners. The strength of different Juggernaut kits lies in different areas, these generally being mobility (out of chase movement around the map), chase ability (speed and damage), and information.
 
 Runner lives scale with the number of Juggernauts: each Runner starts with `juggernaut_count + 1` lives.
 
