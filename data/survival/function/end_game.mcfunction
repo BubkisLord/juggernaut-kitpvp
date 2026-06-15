@@ -8,6 +8,7 @@ scoreboard players set #crate_count var 0
 scoreboard players set #survival_teams var 0
 scoreboard players set @a damage_absorbed 0
 
+tag @a add lobby.player
 team leave @a
 
 worldborder set 9999
