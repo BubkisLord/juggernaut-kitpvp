@@ -4,7 +4,7 @@ $item replace entity @s $(container_slot) with written_book[written_book_content
 {"text": "§l§4Unyielding Wrath\n\n§r§0When in chase, this perk activates. While active, every 5 seconds, gain a 3% increase in speed, capped at 15%. When the chase ends this perk deactivates. With this perk, chase leniency is doubled."},\
 {"text": "§l§4Domination\n\n§r§0Each runner death increases your movement speed by 2%."},\
 {"text": "§l§4Floods of Rage\n\n§r§0When a station is completed, this perk activates for 5 seconds. While active, all runners are revealed. Players with undetectable cannot be revealed in this way."},\
-{"text": "§l§4Pressure Point\n\n§r§0After killing a runner, this perk activates. When active, the nearest player is revealed for 5 seconds. Players with undetectable cannot be revealed in this way."},\
+{"text": "§l§4Pressure Point\n\n§r§0After killing a runner, this perk activates. When active, the nearest player is revealed for 12 seconds. Players with undetectable cannot be revealed in this way."},\
 {"text": "§l§4Overwhelming Presence\n\n§r§0This perk is constantly active. While active, runners within a 15 block radius suffer from 15% slower replenishing and healing."},\
 {"text": "§l§4Bane of Solidarity\n\n§r§0This perk is constantly active. While active, replenishment stations progress 5% slower when there is only one player working on it."},\
 {"text": "§l§4Crippling Defeat\n\n§r§0When you kill a runner, this perk activates. Upon activation, the highest progressed replenishment station regresses by 15%."},\
