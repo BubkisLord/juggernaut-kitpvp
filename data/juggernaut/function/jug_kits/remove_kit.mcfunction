@@ -9,7 +9,7 @@ tag @s remove witch_doctor
 tag @s remove chameleon
 tag @s remove fishmonger
 tag @s remove classic_jug
-tag @s remove jug_knight
+tag @s remove knight
 tag @s remove timekeeper
 effect clear @s
 clear @s

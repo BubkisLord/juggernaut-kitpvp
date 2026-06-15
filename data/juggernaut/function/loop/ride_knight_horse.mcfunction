@@ -1,1 +1,1 @@
-execute as @p[tag=jug_knight,tag=using_horse] at @s run ride @s mount @n[type=skeleton_horse,tag=knight_horse,distance=..2.5]
+execute as @p[tag=knight,tag=using_horse] at @s run ride @s mount @n[type=skeleton_horse,tag=knight_horse,distance=..2.5]

@@ -67,7 +67,7 @@ tag @a remove ghost
 tag @a remove trickster
 tag @a remove fishmonger
 tag @a remove timekeeper
-tag @a remove jug_knight
+tag @a remove knight
 tag @a remove chameleon
 tag @a remove is_hemorrhaged
 tag @a remove is_mangled

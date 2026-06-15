@@ -35,7 +35,7 @@ execute if entity @a[tag=witch_doctor] run function juggernaut:loop/kits_loop/wi
 execute if entity @a[tag=timekeeper] run function juggernaut:loop/kits_loop/timekeeper
 execute if entity @a[tag=chameleon] run function juggernaut:loop/kits_loop/chameleon
 execute if entity @a[tag=fishmonger] run function juggernaut:loop/kits_loop/fishmonger
-execute if entity @a[tag=jug_knight] run function juggernaut:loop/kits_loop/knight
+execute if entity @a[tag=knight] run function juggernaut:loop/kits_loop/knight
 
 scoreboard players set @a[scores={is_sneaking=1..}] is_sneaking 0
 
