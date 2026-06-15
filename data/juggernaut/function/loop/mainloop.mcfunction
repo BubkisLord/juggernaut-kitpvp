@@ -27,6 +27,9 @@ execute if score #juggernaut_customisation debug_mode matches 0 run function jug
 scoreboard players set #runners_left var 0
 execute as @a[tag=runner] run scoreboard players add #runners_left var 1
 
+execute as @a[tag=juggernaut,scores={jug_kills=1..}] at @s run function juggernaut:hooks/jug_killed_player
+execute as @a[tag=juggernaut,scores={jug_kills=1..}] run scoreboard players set @s jug_kills 0
+
 # Runner Kits
 execute as @a[tag=guide] at @s run function juggernaut:loop/kits_loop/guide
 execute as @a[tag=escapist] at @s run function juggernaut:loop/kits_loop/escapist
