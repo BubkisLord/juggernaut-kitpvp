@@ -143,6 +143,7 @@ scoreboard objectives add sprint_time dummy
 scoreboard objectives add jug_ticker dummy
 scoreboard objectives add round_robin dummy
 scoreboard objectives add jug_kills minecraft.custom:player_kills
+scoreboard objectives add respawn_time_left dummy
 
 # Juggernaut Kit Statistics
 scoreboard objectives add picked_kit_chameleon dummy "Picked Kit - Chameleon"

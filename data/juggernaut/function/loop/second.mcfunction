@@ -159,6 +159,10 @@ execute as @a[tag=beacon_of_hope_active,scores={beacon_of_hope_duration=0}] run 
 # Flame Ward
 effect give @a[tag=using_flame_ward] fire_resistance infinite 0 true
 
+# Remove respawn protection after a few seconds.
+execute as @a[tag=runner,tag=has_respawn_time] run scoreboard players remove @s respawn_time_left 1
+execute as @a[tag=runner,tag=has_respawn_time] if score @s respawn_time_left matches ..0 run function juggernaut:clear_respawn_period
+
 # Spectator
 execute as @a[tag=spectator] run tag @s remove in_chase
 
