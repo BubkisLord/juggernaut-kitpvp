@@ -116,5 +116,5 @@ execute as @e[type=armor_stand,tag=replenish_minigame_target,scores={tick_counte
 execute as @e[type=armor_stand,tag=replenish_minigame_target,scores={tick_counter=60..}] run kill @s
 execute as @e[type=armor_stand,tag=replenish_minigame_target] at @s at @n[type=armor_stand,tag=replenishment.station] unless entity @p[tag=runner,distance=..3] run kill @s
 
-execute as @e[type=armor_stand,tag=replenishment.station] at @s if score #game_state var matches 11 unless entity @e[type=armor_stand,tag=banishment_glyph,distance=..32] unless entity @a[tag=juggernaut,limit=1,sort=nearest,distance=0..12,tag=!shapeshifting] as @a[tag=runner,distance=..3,tag=!is_not_replenishing] unless entity @e[type=armor_stand,tag=replenish_minigame_target,distance=..5] run function juggernaut:replenishment_management/minigame
+execute as @e[type=armor_stand,tag=replenishment.station] at @s if score #game_state var matches 11 unless entity @e[type=armor_stand,tag=banishment_glyph,distance=..32] unless entity @a[tag=juggernaut,limit=1,sort=nearest,distance=0..12,tag=!shapeshifting] as @a[tag=runner,distance=..3,tag=!spectral_cloak_active] unless entity @e[type=armor_stand,tag=replenish_minigame_target,distance=..5] run function juggernaut:replenishment_management/minigame
 execute as @e[type=armor_stand,tag=failed_minigame] run tag @s remove failed_minigame
