@@ -141,9 +141,9 @@ execute as @a[tag=in_chase] run scoreboard players add @s chase_time 1
 execute as @a[tag=!in_chase] run scoreboard players set @s chase_time 0
 
 execute as @a[tag=in_chase] run scoreboard players operation @s unyielding_wrath_time = @s chase_time
-execute as @a[tag=in_chase] if score @s unyielding_wrath_time matches 45.. run scoreboard players set @s unyielding_wrath_time 45
+execute as @a[tag=in_chase] if score @s unyielding_wrath_time matches 40.. run scoreboard players set @s unyielding_wrath_time 40
 execute as @a[tag=using_unyielding_wrath] run attribute @s movement_speed modifier remove juggernaut:unyielding_wrath
-execute as @a[tag=using_unyielding_wrath,tag=in_chase] store result storage juggernaut:unyielding_wrath value float 0.001 run scoreboard players get @s unyielding_wrath_time
+execute as @a[tag=using_unyielding_wrath,tag=in_chase] store result storage juggernaut:unyielding_wrath value float 0.0005 run scoreboard players get @s unyielding_wrath_time
 execute as @a[tag=using_unyielding_wrath,tag=in_chase] run data modify storage juggernaut:unyielding_wrath attribute set value movement_speed
 execute as @a[tag=using_unyielding_wrath,tag=in_chase] run data modify storage juggernaut:unyielding_wrath modifier_id set value unyielding_wrath
 execute as @a[tag=using_unyielding_wrath,tag=in_chase] run data modify storage juggernaut:unyielding_wrath operation set value add_value
