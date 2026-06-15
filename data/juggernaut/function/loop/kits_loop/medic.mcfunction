@@ -5,9 +5,9 @@ function juggernaut:ability_management/check_ability {\
     player_tag:"medic",\
     item_id:"minecraft:nether_star",\
     item_name:{"text": "Rescue","color": "#A4D1EA"},\
-    description:[{"text": "Teleport to another runner.","color": "gray"},{"text": "If there are no other runners, teleport to a spawn point.","color": "gray"},{"text": "Cannot be used if the juggernaut is within 20 blocks.","color": "gray"},{"text": "Cooldown: 2m","color": "dark_gray"}],\
+    description:[{"text": "Teleport to another runner.","color": "gray"},{"text": "If there are no other runners, teleport to a spawn point.","color": "gray"},{"text": "Cannot be used if the juggernaut is within 20 blocks.","color": "gray"},{"text": "Cooldown: 60s","color": "dark_gray"}],\
     ability_id:"rescue",\
-    cooldown:120,\
+    cooldown:60,\
     hotbar_slot:"hotbar.1",\
     cooldown_var:"jug_kit_cooldown",\
 }
