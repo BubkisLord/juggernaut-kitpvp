@@ -91,6 +91,7 @@ tag @a remove using_unwavering_strength
 tag @a remove using_beacon_of_hope
 tag @a remove using_hopeful_sprint
 tag @a remove using_durable
+tag @a remove using_second_wind
 
 tag @a remove using_predatory_instincts
 tag @a remove using_rapid_brutality
@@ -182,6 +183,7 @@ scoreboard players set @a lives 0
 scoreboard players set @a game_deaths 0
 scoreboard players set @a borrowed_damage 0
 scoreboard players set @a jug_kills 0
+scoreboard players set @a used_totem 0
 
 scoreboard players set #engineer_count var 0
 scoreboard players set #escapist_count var 0

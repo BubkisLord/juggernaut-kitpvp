@@ -108,6 +108,7 @@ execute as @a[tag=juggernaut,tag=using_insidious,nbt=!{active_effects:[{id:"mine
 # attribute @n[type=wolf,tag=juggernaut_wolf] scale base set 1.4
 # attribute @p scale base set 0.9
 
+execute as @a[tag=using_second_wind] run function juggernaut:loop/update_second_wind
 
 execute as @e[type=armor_stand,tag=replenish_minigame_target] at @s run particle minecraft:witch ~ ~0.1 ~ 0.11 0.1 0.11 0 70 force
 execute as @e[type=armor_stand,tag=replenish_minigame_target] at @s run scoreboard players add @s tick_counter 1
