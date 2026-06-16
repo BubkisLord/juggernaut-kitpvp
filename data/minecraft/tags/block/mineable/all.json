@@ -1,0 +1,13 @@
+{
+    "values": [
+        "#minecraft:mineable/axe",
+        "#minecraft:mineable/hoe",
+        "#minecraft:mineable/pickaxe",
+        "#minecraft:mineable/shovel",
+        "#minecraft:sword_efficient",
+        "#minecraft:needs_diamond_tool",
+        "#minecraft:needs_iron_tool",
+        "#minecraft:needs_stone_tool",
+        "#replaceable"
+    ]
+}
