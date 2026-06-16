@@ -38,6 +38,8 @@ execute if score #juggernaut_customisation debug_mode matches 1 run tp @a[tag=ju
 scoreboard players add @a[tag=survivor] lives 1
 scoreboard players add @a[tag=survivor] lives_remaining 1
 
+execute as @a[tag=using_fury] run attribute @s movement_speed modifier add juggernaut:fury_speed 0.1 add_multiplied_base
+
 # Set all healing progress to 0
 scoreboard players set @a healing_progress 0
 

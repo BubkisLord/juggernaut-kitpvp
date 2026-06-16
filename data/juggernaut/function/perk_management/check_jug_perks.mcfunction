@@ -24,4 +24,6 @@ execute as @s[nbt={Inventory:[{components:{"minecraft:item_name":{"text":"Insidi
 execute as @s[nbt={Inventory:[{components:{"minecraft:item_name":{"text":"Insidious"}}}]}] run clear @s #minecraft:trim_materials
 execute as @s[nbt={Inventory:[{components:{"minecraft:item_name":{"text":"Hunter's Instinct"}}}]}] run tag @s add using_hunters_instinct
 execute as @s[nbt={Inventory:[{components:{"minecraft:item_name":{"text":"Hunter's Instinct"}}}]}] run clear @s #minecraft:trim_materials
+execute as @s[nbt={Inventory:[{components:{"minecraft:item_name":{"text":"Fury"}}}]}] run tag @s add using_fury
+execute as @s[nbt={Inventory:[{components:{"minecraft:item_name":{"text":"Fury"}}}]}] run clear @s #minecraft:trim_materials
 function juggernaut:descriptions/mechanics/juggernaut_perks {container_slot:"container.9"}

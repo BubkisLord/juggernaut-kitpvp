@@ -124,6 +124,7 @@ tag @a remove self_healing
 tag @a remove rewinding
 execute as @a run attribute @s movement_speed modifier remove juggernaut:abilities/timekeeper/tick_speed
 execute as @a run attribute @s movement_speed modifier remove juggernaut:predator_move_spd
+execute as @a run attribute @s movement_speed modifier remove juggernaut:fury_speed
 
 setblock -62 71 -29 brown_carpet replace
 
