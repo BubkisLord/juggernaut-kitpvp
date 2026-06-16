@@ -153,6 +153,14 @@
                             "add": true
                         },
                         {
+                            "function": "minecraft:set_components",
+                            "components": {
+                                "can_place_on": {
+                                    "blocks": "#minecraft:mineable/all"
+                                }
+                            }
+                        },
+                        {
                             "function": "set_fireworks",
                             "flight_duration": 2,
                             "explosions": {
