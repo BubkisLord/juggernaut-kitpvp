@@ -181,4 +181,8 @@ execute as @a[tag=chameleon] run item replace entity @s container.11 with tipped
 # stopwatch create replenishment_minigame_timer
 # execute if stopwatch replenishment_minigame_timer 3.. run execute as @e[type=armor_stand,tag=replenishment.station] at @s if score #game_state var matches 11 unless entity @e[type=armor_stand,tag=banishment_glyph,distance=..32] unless entity @a[tag=juggernaut,limit=1,sort=nearest,distance=0..12,tag=!shapeshifting] as @a[tag=runner,distance=..3,tag=!spectral_cloak_active] at @s run function juggernaut:replenishment_management/minigame
 # execute if stopwatch replenishment_minigame_timer 3.. run stopwatch restart replenishment_minigame_timer
+
+execute as @a[tag=ghost,tag=spectral_cloak_active] run scoreboard players remove @s ability_cooldown3 1
+execute as @a[tag=ghost,tag=spectral_cloak_active,scores={ability_cooldown3=..0}] run tag @s remove spectral_cloak_active
+
 execute as @a[tag=spectator] at @s run function survival:loop/clone_inventory

@@ -76,6 +76,7 @@ tag @a remove on_horse
 tag @a remove windrunner
 tag @a remove double_chase_progress
 tag @a remove blood_pact_active
+tag @a remove spectral_cloak_active
 tag @a add lobby.player
 
 tag @a remove using_hunters_instinct
