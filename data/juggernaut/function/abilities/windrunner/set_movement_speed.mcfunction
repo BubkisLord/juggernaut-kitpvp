@@ -1,0 +1,1 @@
+$attribute @s movement_speed base set $(movement_speed)
