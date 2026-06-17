@@ -6,6 +6,7 @@ execute as @a[tag=fishmonger] run function juggernaut:handle_kit_picked {"kit": 
 execute as @a[tag=hunter] run function juggernaut:handle_kit_picked {"kit": "hunter"}
 execute as @a[tag=classic_jug] run function juggernaut:handle_kit_picked {"kit": "classic_juggernaut"}
 execute as @a[tag=knight] run function juggernaut:handle_kit_picked {"kit": "knight"}
+execute as @a[tag=il_krusher] run function juggernaut:handle_kit_picked {"kit": "il_krusher"}
 execute as @a[tag=predator] run function juggernaut:handle_kit_picked {"kit": "predator"}
 execute as @a[tag=spirit_walker] run function juggernaut:handle_kit_picked {"kit": "spirit_walker"}
 execute as @a[tag=timekeeper] run function juggernaut:handle_kit_picked {"kit": "timekeeper"}

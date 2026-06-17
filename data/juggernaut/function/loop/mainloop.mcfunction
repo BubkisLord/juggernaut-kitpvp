@@ -54,6 +54,7 @@ execute as @a[tag=timekeeper] at @s run function juggernaut:loop/kits_loop/timek
 execute as @a[tag=chameleon] at @s run function juggernaut:loop/kits_loop/chameleon
 execute as @a[tag=fishmonger] at @s run function juggernaut:loop/kits_loop/fishmonger
 execute as @a[tag=knight] at @s run function juggernaut:loop/kits_loop/knight
+execute as @a[tag=il_krusher] at @s run function juggernaut:loop/kits_loop/il_krusher
 
 execute as @a[tag=using_beacon_of_hope] run function juggernaut:ability_management/check_ability {\
     player_tag:"using_beacon_of_hope",\

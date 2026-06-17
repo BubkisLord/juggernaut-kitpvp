@@ -47,6 +47,9 @@ execute if score @s lives_remaining matches ..0 run tag @s remove dragon
 execute if score @s lives_remaining matches ..0 run tag @s remove is_floating
 execute if score @s lives_remaining matches ..0 run tag @s remove blinker
 execute if score @s lives_remaining matches ..0 run tag @s remove spirit_walker
+execute if score @s lives_remaining matches ..0 run tag @s remove il_krusher
+execute if score @s lives_remaining matches ..0 run tag @s remove il_krusher_dashing
+execute if score @s lives_remaining matches ..0 run tag @s remove il_krusher_crushed
 execute if score @s lives_remaining matches ..0 run tag @s remove guide
 execute if score @s lives_remaining matches ..0 run tag @s remove trickster
 execute if score @s lives_remaining matches ..0 run tag @s remove ghost

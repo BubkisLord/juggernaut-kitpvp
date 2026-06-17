@@ -145,6 +145,7 @@ scoreboard objectives add round_robin dummy
 scoreboard objectives add jug_kills minecraft.custom:player_kills
 scoreboard objectives add respawn_time_left dummy
 scoreboard objectives add used_totem minecraft.used:totem_of_undying
+scoreboard objectives add il_krusher_dash_ticks dummy
 
 # Juggernaut Kit Statistics
 scoreboard objectives add picked_kit_chameleon dummy "Picked Kit - Chameleon"
@@ -176,6 +177,11 @@ scoreboard objectives add picked_kit_knight dummy "Picked Kit - Knight"
 scoreboard objectives add kills_kit_knight dummy "Kills with Knight"
 scoreboard objectives add knight_wins dummy "Wins with Knight"
 scoreboard objectives add knight_losses dummy "Losses with Knight"
+
+scoreboard objectives add picked_kit_il_krusher dummy "Picked Kit - Il Krusher"
+scoreboard objectives add kills_kit_il_krusher dummy "Kills with Il Krusher"
+scoreboard objectives add il_krusher_wins dummy "Wins with Il Krusher"
+scoreboard objectives add il_krusher_losses dummy "Losses with Il Krusher"
 
 scoreboard objectives add picked_kit_predator dummy "Picked Kit - Predator"
 scoreboard objectives add kills_kit_predator dummy "Kills with Predator"

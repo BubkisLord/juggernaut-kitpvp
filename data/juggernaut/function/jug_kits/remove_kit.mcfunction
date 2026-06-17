@@ -11,6 +11,9 @@ tag @s remove fishmonger
 tag @s remove classic_jug
 tag @s remove knight
 tag @s remove timekeeper
+tag @s remove il_krusher
+tag @s remove il_krusher_dashing
+tag @s remove il_krusher_crushed
 effect clear @s
 clear @s
 time set noon

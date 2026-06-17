@@ -68,6 +68,9 @@ tag @a remove trickster
 tag @a remove fishmonger
 tag @a remove timekeeper
 tag @a remove knight
+tag @a remove il_krusher
+tag @a remove il_krusher_dashing
+tag @a remove il_krusher_crushed
 tag @a remove chameleon
 tag @a remove is_hemorrhaged
 tag @a remove is_mangled
@@ -207,6 +210,7 @@ scoreboard players set #spirit_walker_count var 0
 scoreboard players set #timekeeper_count var 0
 scoreboard players set #warlock_count var 0
 scoreboard players set #witch_doctor_count var 0
+scoreboard players set #il_krusher_count var 0
 
 bossbar remove warlock:malevolent_aura
 bossbar remove warlock:banishment_glyph
