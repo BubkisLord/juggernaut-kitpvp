@@ -55,17 +55,6 @@ execute as @a[tag=chameleon] at @s run function juggernaut:loop/kits_loop/chamel
 execute as @a[tag=fishmonger] at @s run function juggernaut:loop/kits_loop/fishmonger
 execute as @a[tag=knight] at @s run function juggernaut:loop/kits_loop/knight
 
-execute as @a[tag=using_beacon_of_hope] run function juggernaut:ability_management/check_ability {\
-    player_tag:"using_beacon_of_hope",\
-    item_id:"minecraft:beacon",\
-    item_name:{"text": "Beacon of Hope","color": "aqua"},\
-    description:[{"text": "Upon using the beacon, you lose a life. If this loss is enough","color": "gray"},{"text": "to reduce you to 0 lives remaining, you die immediately.","color": "gray"},{"text": "When used, all players become fully healed and gain a","color": "gray"},{"text": "100% bonus to replenishment speeds for 60 seconds.","color": "gray"},{"text": "Cooldown: Infinite (Single Use)","color":"gray"}],\
-    ability_id:"beacon_of_hope",\
-    cooldown:999999,\
-    hotbar_slot:"hotbar.8",\
-    cooldown_var:"beacon_of_hope_cooldown",\
-}
-
 # Loop per second function.
 scoreboard players add #tick_counter var 1
 execute if score #tick_counter var >= #20 var run function juggernaut:loop/second
