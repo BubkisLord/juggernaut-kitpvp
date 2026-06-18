@@ -4,7 +4,7 @@ item replace entity @s armor.head with leather_helmet[unbreakable={}]
 item replace entity @s armor.chest with leather_chestplate[unbreakable={}]
 item replace entity @s armor.legs with leather_leggings[unbreakable={}]
 item replace entity @s armor.feet with leather_boots[unbreakable={},enchantments={depth_strider:3}]
-give @s trident[item_name={"text": "Speartooth Trident"},enchantments={riptide:2},damage=248,lore=[{"text":"","color":"dark_gray"}]] 1
+give @s trident[item_name={"text": "Speartooth Trident"},enchantments={riptide:1},damage=248,lore=[{"text":"","color":"dark_gray"}]] 1
 attribute @s safe_fall_distance modifier add max_fishmonger_fall_distance 999 add_value
 attribute @s water_movement_efficiency base set 999999
 weather thunder 999999999999999d
