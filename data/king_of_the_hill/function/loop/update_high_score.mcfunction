@@ -1,1 +1,0 @@
-execute if score @s king_of_the_hill_points > #highest_hill_points var run scoreboard players operation #highest_hill_points var = @s king_of_the_hill_points

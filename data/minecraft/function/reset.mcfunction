@@ -1,7 +1,5 @@
 function juggernaut:end_game
 function survival:end_game
-function king_of_the_hill:end_game
-function juggernaut_pvp:end_game
 function survival:remove_chests
 scoreboard objectives remove health
 scoreboard objectives remove lives_remaining

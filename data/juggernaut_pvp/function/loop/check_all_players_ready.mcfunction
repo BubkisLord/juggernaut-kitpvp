@@ -1,1 +1,0 @@
-execute unless entity @a[tag=!has_jug_kit] run scoreboard players add #game_state var 1

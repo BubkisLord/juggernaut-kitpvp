@@ -1,5 +1,4 @@
 scoreboard objectives add var dummy
-scoreboard objectives add king_of_the_hill_points dummy
 scoreboard objectives add juggernaut_game_time dummy
 scoreboard objectives add tick_counter dummy
 scoreboard objectives add malevolent_aura_cooldown dummy

@@ -1,1 +1,0 @@
-give @s minecraft:oak_sign[minecraft:block_entity_data={id:"sign",front_text:{messages:[{"text": "-=+=+=+=-","click_event": {"action":"run_command","command":"/function juggernaut_pvp:start"}},{"text": "Jug PvP","bold": true,"color": "#853622"},{"text": "Juggernaut Kits","italic": true,"color": "gray"},{"text": "-=+=+=+=-"}]}}]
