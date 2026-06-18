@@ -7,4 +7,3 @@ execute if entity @a[scores={health=..0}] as @a[scores={health=..0}] run functio
 function other:cleanup
 function text:bossbar
 function other:safelobby
-execute unless score #game_state var matches 10..12 run function other:replenishment_stations
