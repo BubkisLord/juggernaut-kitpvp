@@ -10,7 +10,7 @@ execute as @n[type=armor_stand,tag=replenishment.station,distance=..12] if entit
 execute if entity @e[type=armor_stand,tag=replenishment.station,distance=..12] as @p[tag=juggernaut,distance=..6,tag=using_brutal_efficiency] run scoreboard players set @s brutal_efficiency_cooldown 15
 
 # Blood pact perk
-execute if entity @s[tag=using_blood_pact] run tag @s add blood_pact_active
+execute if entity @s[tag=using_blood_pact] run effect give @s regeneration 20 0 true
 
 # Exposed status effect
 execute if entity @s[tag=is_exposed] run function juggernaut:damage_player

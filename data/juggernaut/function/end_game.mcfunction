@@ -27,7 +27,6 @@ scoreboard players set @a ticks_till_decrement_ability 0
 scoreboard players set @a ticks_till_increment_ability 0
 scoreboard players set @a ability_debuff 0
 scoreboard players set @a ability_buff 0
-scoreboard players set @a beacon_of_hope_cooldown 0
 scoreboard players set @a speed_pot_cooldown 0
 scoreboard players set @a fire_pot_cooldown 0
 scoreboard players set @a strength_pot_cooldown 0
@@ -62,7 +61,6 @@ tag @a remove spirit_walker
 tag @a remove guide
 tag @e remove sentinel_tower
 tag @a remove shadow_marked
-tag @a remove beacon_of_hope_active
 tag @a remove ghost
 tag @a remove trickster
 tag @a remove fishmonger
@@ -75,20 +73,17 @@ tag @a remove using_horse
 tag @a remove on_horse
 tag @a remove windrunner
 tag @a remove double_chase_progress
-tag @a remove blood_pact_active
 tag @a remove spectral_cloak_active
 tag @a add lobby.player
 
 tag @a remove using_hunters_instinct
-tag @a remove using_blood_pact
 tag @a remove using_flame_ward
-tag @a remove using_fractured_aid
-tag @a remove using_self_preservation
+tag @a remove using_no_caution
+tag @a remove using_healer
 tag @a remove using_sentinel
 tag @a remove using_quickened_stealth
 tag @a remove using_undying_ties
 tag @a remove using_unwavering_strength
-tag @a remove using_beacon_of_hope
 tag @a remove using_hopeful_sprint
 tag @a remove using_durable
 tag @a remove using_second_wind
@@ -105,6 +100,9 @@ tag @a remove using_bane_of_solidarity
 tag @a remove using_crippling_defeat
 tag @a remove using_waiting_game
 tag @a remove using_insidious
+tag @a remove using_fury
+tag @a remove using_oppression
+tag @a remove using_deep_cuts
 
 tag @a remove has_respawn_time
 tag @a remove see_malevolent_aura_bar

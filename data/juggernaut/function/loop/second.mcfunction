@@ -22,6 +22,8 @@ execute as @a run function juggernaut:attribute_management/check {attribute_name
 execute if score #game_state var matches 11..12 as @a[tag=runner] run function juggernaut:perk_management/check_runner_perks
 execute if score #game_state var matches 11 as @a[tag=juggernaut] run function juggernaut:perk_management/check_jug_perks
 
+execute as @a[tag=using_fury] run attribute @s movement_speed modifier add juggernaut:fury_speed 0.1 add_multiplied_base
+
 # Juggernaut timeout countdown
 execute as @a[tag=juggernaut,scores={juggernaut_game_time=1..}] run scoreboard players remove @a[tag=juggernaut] juggernaut_game_time 1
 # Juggernaut release sequence

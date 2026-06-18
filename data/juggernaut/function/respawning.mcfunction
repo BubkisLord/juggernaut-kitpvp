@@ -5,7 +5,6 @@ scoreboard players set #1 var 1
 scoreboard players set @s borrowed_damage 0
 
 effect give @s saturation infinite 255 true
-tag @s remove blood_pact_active
 
 execute if score @s lives_remaining matches 1.. run spawnpoint @s 0 101 0
 execute if score @s lives_remaining matches 1.. if entity @s[tag=using_undying_ties] run tag @a remove undying_ties_target
