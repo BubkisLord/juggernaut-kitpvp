@@ -7,4 +7,6 @@ execute if score @s health < @s max_health run effect give @s regeneration 5 0 t
 execute as @a[distance=..8,tag=runner] at @s if score @s health < @s max_health run particle heart ~ ~0.5 ~ 0.2 1.5 0.2 0 50 force
 execute if entity @a[distance=..8,tag=runner,tag=!medic_using_ability] run scoreboard players operation @s ability_cooldown0 /= #2 var
 execute if entity @a[distance=..8,tag=runner,tag=!medic_using_ability] run scoreboard players operation @s ability_cooldown1 /= #2 var
+execute if entity @a[distance=..8,tag=runner,tag=!medic_using_ability] run scoreboard players operation @s ability_cooldown2 /= #2 var
+execute if entity @a[distance=..8,tag=runner,tag=!medic_using_ability] run scoreboard players operation @s ability_cooldown3 /= #2 var
 tag @s remove medic_using_ability
