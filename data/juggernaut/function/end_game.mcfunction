@@ -87,6 +87,7 @@ tag @a remove using_unwavering_strength
 tag @a remove using_hopeful_sprint
 tag @a remove using_durable
 tag @a remove using_second_wind
+tag @a remove using_blood_pact
 
 tag @a remove using_predatory_instincts
 tag @a remove using_rapid_brutality
