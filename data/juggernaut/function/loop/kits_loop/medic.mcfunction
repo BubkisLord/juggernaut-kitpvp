@@ -1,4 +1,5 @@
 # Medic
+execute as @a[tag=medic] at @s run effect give @a[tag=runner,distance=0.01..5] regeneration 1 0 true
 
 # Rescue (Active)
 function juggernaut:ability_management/check_ability {\
