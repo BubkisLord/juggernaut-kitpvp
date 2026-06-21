@@ -1,8 +1,6 @@
 #Anti-Damage and Saturation
 effect give @a[tag=lobby.player,tag=!autorespawn] resistance 2 100 true
 effect give @a[tag=lobby.player,tag=!autorespawn] saturation 2 100 true
-effect give @a[tag=tutorial.player,tag=!autorespawn] resistance 2 100 true
-effect give @a[tag=tutorial.player,tag=!autorespawn] saturation 2 100 true
 
 #Anti-Knockback
 execute as @a[tag=lobby.player] run attribute @s minecraft:knockback_resistance base set 1
