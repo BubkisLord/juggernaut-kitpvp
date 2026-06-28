@@ -1,1 +1,0 @@
-execute if score #game_state var matches 0 run function juggernaut:start_pregame
