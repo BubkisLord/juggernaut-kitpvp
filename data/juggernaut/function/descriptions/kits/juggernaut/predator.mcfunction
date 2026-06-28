@@ -8,7 +8,5 @@ item replace entity @s hotbar.8 with written_book[written_book_content={title:"P
 \
 [{"text": "Thrill of the Hunt\n","bold": true,"color": "#245018"},{"text": "Passive Effect\n\n","bold": true,"color": "gray","italic": true},{"text": "You move at 110% speed.","bold": false,"color": "black"}],\
 \
-[{"text": "Seasoned Hunter\n","bold": true,"color": "#245018"},{"text": "Passive Effect\n\n","bold": true,"color": "gray","italic": true},{"text": "While you are not in chase, you hear the direction of the nearest player's footsteps.","bold": false,"color": "black"}],\
-\
 [{"text": "Counterplay\n","bold": true,"color": "#245018"},{"text": "Counterplay for predator is, like other juggernauts lacking mobility, making distance. Predator can still use its stealth to cut off loops so runners should be wary of this. Other strategies include using the environment to your advantage, such as scout using fences to make distance.","bold": false,"color": "black"}]]}\
 ]
