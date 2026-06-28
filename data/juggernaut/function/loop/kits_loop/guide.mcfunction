@@ -1,5 +1,4 @@
 # Guide
-
 # Replenish Boost (Active)
 function juggernaut:ability_management/check_ability {\
     player_tag:"guide",\

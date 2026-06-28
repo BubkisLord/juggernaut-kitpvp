@@ -56,8 +56,6 @@ scoreboard players set @a replenishment_tower_cooldown 0
 scoreboard players set @a point_kills 0
 scoreboard players set @a damage_absorbed 0
 
-scoreboard players set #juggernaut_manager scout_reveal_timer 0
-
 tag @a remove in_chase
 
 
@@ -106,8 +104,8 @@ gamerule natural_health_regeneration false
 
 # Juggernaut and Runner Perks
 function juggernaut:perk_management/clear_prev_perks
-execute if score #juggernaut_customisation perks_enabled matches 1 run function juggernaut:perk_management/give_runner_perks
-execute if score #juggernaut_customisation perks_enabled matches 1 run function juggernaut:perk_management/give_juggernaut_perks
+execute if score #juggernaut_customisation perks_enabled matches 1 as @a[tag=runner] run function juggernaut:perk_management/give_runner_perks
+execute if score #juggernaut_customisation perks_enabled matches 1 as @a[tag=juggernaut] run function juggernaut:perk_management/give_juggernaut_perks
 
 tag @a remove saved_skin
 

@@ -22,15 +22,6 @@ execute as @e[type=armor_stand,tag=replenishment_tower] at @s positioned ~ ~-1 ~
 execute as @e[type=armor_stand,tag=replenishment_tower_particle_emitter] at @s run tp @s ~ ~0.005 ~ ~10 ~
 execute as @e[type=armor_stand,tag=replenishment_tower_particle_emitter] at @s unless entity @e[type=armor_stand,tag=replenishment_tower,distance=..2] run kill @s
 
-# Borrowed Time Logic
-execute as @a[tag=borrowing_time] run effect give @s resistance 1 255 true
-execute as @a[tag=borrowing_time,scores={borrowed_damage_taken=1..}] run scoreboard players operation @s borrowed_damage_taken /= #10 var
-execute as @a[tag=borrowing_time] run scoreboard players operation @s borrowed_damage += @s borrowed_damage_taken
-execute as @a[tag=borrowing_time] run scoreboard players set @s borrowed_damage_taken 0
-execute as @a[tag=borrowing_time,scores={borrowed_time_remaining=..0}] run scoreboard players operation @s borrowed_damage *= #75 var
-execute as @a[tag=borrowing_time,scores={borrowed_time_remaining=..0}] run scoreboard players operation @s borrowed_damage /= #100 var
-execute as @a[tag=borrowing_time,scores={borrowed_time_remaining=..0}] run tag @s remove borrowing_time
-
 # Spawn Revealing Tower (Active)
 function juggernaut:ability_management/check_ability {\
     player_tag:"engineer",\

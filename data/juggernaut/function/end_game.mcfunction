@@ -35,6 +35,7 @@ scoreboard players set @a banishment_glyph_cooldown 0
 scoreboard players set @a withering_surge_cooldown 0
 scoreboard players set @a sprint_time 0
 scoreboard players set @a sprint_timeout 0
+scoreboard players set @a shapeshift_time 0
 spawnpoint @a 2000 100 0
 gamerule show_death_messages false
 tag @a remove has_jug_kit
@@ -67,43 +68,12 @@ tag @a remove fishmonger
 tag @a remove timekeeper
 tag @a remove knight
 tag @a remove chameleon
-tag @a remove is_hemorrhaged
-tag @a remove is_mangled
 tag @a remove using_horse
 tag @a remove on_horse
 tag @a remove windrunner
 tag @a remove double_chase_progress
 tag @a remove spectral_cloak_active
 tag @a add lobby.player
-
-tag @a remove using_hunters_instinct
-tag @a remove using_flame_ward
-tag @a remove using_no_caution
-tag @a remove using_healer
-tag @a remove using_sentinel
-tag @a remove using_quickened_stealth
-tag @a remove using_undying_ties
-tag @a remove using_unwavering_strength
-tag @a remove using_hopeful_sprint
-tag @a remove using_durable
-tag @a remove using_second_wind
-tag @a remove using_blood_pact
-
-tag @a remove using_predatory_instincts
-tag @a remove using_rapid_brutality
-tag @a remove using_brutal_efficiency
-tag @a remove using_unyielding_wrath
-tag @a remove using_domination
-tag @a remove using_floods_of_rage
-tag @a remove using_pressure_point
-tag @a remove using_overwhelming_presence
-tag @a remove using_bane_of_solidarity
-tag @a remove using_crippling_defeat
-tag @a remove using_waiting_game
-tag @a remove using_insidious
-tag @a remove using_fury
-tag @a remove using_oppression
-tag @a remove using_deep_cuts
 
 tag @a remove has_respawn_time
 tag @a remove see_malevolent_aura_bar
@@ -123,7 +93,17 @@ tag @a remove self_healing
 tag @a remove rewinding
 execute as @a run attribute @s movement_speed modifier remove juggernaut:abilities/timekeeper/tick_speed
 execute as @a run attribute @s movement_speed modifier remove juggernaut:predator_move_spd
-execute as @a run attribute @s movement_speed modifier remove juggernaut:fury_speed
+execute as @a run attribute @s movement_speed modifier remove juggernaut:fury
+
+execute as @a run attribute @s sneaking_speed modifier remove juggernaut:adept_stalker
+
+execute as @a run function juggernaut:perk_management/remove_perks
+
+execute as @a run attribute @s bounciness base reset
+execute as @a run attribute @s air_drag_modifier base reset
+execute as @a run attribute @s friction_modifier base reset
+execute as @a run attribute @s jump_strength base reset
+execute as @a run attribute @s safe_fall_distance base reset
 
 setblock -62 71 -29 brown_carpet replace
 
@@ -163,7 +143,11 @@ execute as @a run attribute @s sneaking_speed base set 0.3
 execute as @a run attribute @s sneaking_speed modifier remove juggernaut:quickened_stealth_speed
 execute as @a run attribute @s attack_damage base set 1
 execute as @a run attribute @s water_movement_efficiency base set 0
-execute as @a run attribute @s movement_speed modifier remove juggernaut:windrunner_sprint
+execute as @a run attribute @s scale modifier remove teeny_weeny
+execute as @a run attribute @s sneaking_speed modifier remove juggernaut:ghost_sneaking_effects
+execute as @a run attribute @s jump_strength modifier remove juggernaut:ghost_sneaking_effects
+execute as @a run attribute @s friction_modifier modifier remove juggernaut:windrunner
+execute as @a run attribute @s bounciness modifier remove juggernaut:windrunner
 
 execute as @a run attribute @s movement_speed modifier remove unyielding_wrath_1
 execute as @a run attribute @s movement_speed modifier remove unyielding_wrath_2
@@ -181,9 +165,10 @@ scoreboard players set @e[type=armor_stand,tag=replenishment.station] sentinel_p
 
 scoreboard players set @a lives 0
 scoreboard players set @a game_deaths 0
-scoreboard players set @a borrowed_damage 0
 scoreboard players set @a jug_kills 0
 scoreboard players set @a used_totem 0
+
+scoreboard players set @a perk_rerolls 0
 
 scoreboard players set #engineer_count var 0
 scoreboard players set #escapist_count var 0

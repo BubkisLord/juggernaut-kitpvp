@@ -8,21 +8,12 @@ execute if score #game_state var matches 10 run effect give @a weakness 1 255 tr
 execute if entity @a[tag=using_quickened_stealth] as @a[tag=using_quickened_stealth] run attribute @s sneaking_speed modifier add juggernaut:quickened_stealth_speed 1.2 add_multiplied_base
 
 # Progress and clear old effects.
-execute as @a run function juggernaut:effects/check_effects {effect:"mangled"}
-execute as @a run function juggernaut:effects/check_effects {effect:"hindered"}
-execute as @a run function juggernaut:effects/check_effects {effect:"exposed"}
-execute as @a run function juggernaut:effects/check_effects {effect:"hemorrhaged"}
 execute as @a run function juggernaut:effects/check_effects {effect:"not_replenishing"}
 execute as @a run function juggernaut:effects/check_effects {effect:"undetectable"}
 
 execute as @a run function juggernaut:attribute_management/check {attribute_name:"movement_speed",modifier_name:"hopeful_sprint"}
 execute as @a run function juggernaut:attribute_management/check {attribute_name:"movement_speed",modifier_name:"waiting_game"}
 execute as @a run function juggernaut:attribute_management/check {attribute_name:"movement_speed",modifier_name:"rapid_brutality"}
-
-execute if score #game_state var matches 11..12 as @a[tag=runner] run function juggernaut:perk_management/check_runner_perks
-execute if score #game_state var matches 11 as @a[tag=juggernaut] run function juggernaut:perk_management/check_jug_perks
-
-execute as @a[tag=using_fury] run attribute @s movement_speed modifier add juggernaut:fury_speed 0.1 add_multiplied_base
 
 # Juggernaut timeout countdown
 execute as @a[tag=juggernaut,scores={juggernaut_game_time=1..}] run scoreboard players remove @a[tag=juggernaut] juggernaut_game_time 1
@@ -92,12 +83,6 @@ execute as @e[type=armor_stand,tag=engineer_tower] at @s run execute if score @s
 execute as @e[type=armor_stand,tag=engineer_tower] at @s run execute if score @s dispel_progress >= @s total_dispelling_needed run playsound entity.ender_dragon.growl master @a[tag=engineer] ~ ~ ~ 3 0.2 1
 execute as @e[type=armor_stand,tag=engineer_tower] at @s run execute if score @s dispel_progress >= @s total_dispelling_needed run kill @s
 
-# Borrowed time ability
-execute as @a[tag=!borrowing_time,scores={borrowed_damage=1..}] run damage @s 1
-execute as @a[tag=!borrowing_time,scores={borrowed_damage=1..}] run scoreboard players remove @s borrowed_damage 1
-
-execute as @a[tag=borrowing_time] run scoreboard players remove @s borrowed_time_remaining 1
-
 # Warlock cooldowns
 execute as @a[tag=warlock] if score #game_state var matches 10..19 if score @s malevolent_aura_cooldown > #0 var run scoreboard players remove @s malevolent_aura_cooldown 1
 execute as @a[tag=warlock] if score #game_state var matches 10..19 if score @s banishment_glyph_cooldown > #0 var run scoreboard players remove @s banishment_glyph_cooldown 1
@@ -130,6 +115,15 @@ execute if entity @a[tag=predator] if score #predator_rand_val var matches 1 as 
 # Predatory Instincts Perk
 execute as @a[tag=juggernaut,tag=using_predatory_instincts,scores={is_walking=0,is_sprinting=0,is_crouch_walking=0}] at @s as @a[tag=runner,tag=!is_undetectable,distance=..8] run effect give @s glowing 2 0 true
 
+# Shapeshift time limit
+execute as @a[tag=chameleon,tag=shapeshifting] run scoreboard players add @s shapeshift_time 1
+execute as @a[tag=chameleon,tag=shapeshifting,scores={shapeshift_time=10}] run tellraw @s {text: "30 Seconds of Shapeshift Left.",color:white}
+execute as @a[tag=chameleon,tag=shapeshifting,scores={shapeshift_time=20}] run tellraw @s {text: "20 Seconds of Shapeshift Left.",color:white}
+execute as @a[tag=chameleon,tag=shapeshifting,scores={shapeshift_time=30}] run tellraw @s {text: "10 Seconds of Shapeshift Left.",color:white}
+execute as @a[tag=chameleon,tag=shapeshifting,scores={shapeshift_time=40}] run tellraw @s {text: "Shapeshift expired.",color:white}
+execute as @a[tag=chameleon,tag=shapeshifting,scores={shapeshift_time=40..}] at @s run function juggernaut:abilities/chameleon/exit_shapeshift
+execute as @a[tag=chameleon,scores={shapeshift_time=40..}] run scoreboard players set @s shapeshift_time 0
+
 # Update scores
 scoreboard players set @a[scores={is_sprinting=1..}] is_sprinting 0
 scoreboard players set @a[scores={is_walking=1..}] is_walking 0
@@ -143,9 +137,9 @@ execute as @a[tag=in_chase] run scoreboard players add @s chase_time 1
 execute as @a[tag=!in_chase] run scoreboard players set @s chase_time 0
 
 execute as @a[tag=in_chase] run scoreboard players operation @s unyielding_wrath_time = @s chase_time
-execute as @a[tag=in_chase] if score @s unyielding_wrath_time matches 40.. run scoreboard players set @s unyielding_wrath_time 40
+execute as @a[tag=in_chase] if score @s unyielding_wrath_time matches 20.. run scoreboard players set @s unyielding_wrath_time 20
 execute as @a[tag=using_unyielding_wrath] run attribute @s movement_speed modifier remove juggernaut:unyielding_wrath
-execute as @a[tag=using_unyielding_wrath,tag=in_chase] store result storage juggernaut:unyielding_wrath value float 0.0005 run scoreboard players get @s unyielding_wrath_time
+execute as @a[tag=using_unyielding_wrath,tag=in_chase] store result storage juggernaut:unyielding_wrath value float 0.00075 run scoreboard players get @s unyielding_wrath_time
 execute as @a[tag=using_unyielding_wrath,tag=in_chase] run data modify storage juggernaut:unyielding_wrath attribute set value movement_speed
 execute as @a[tag=using_unyielding_wrath,tag=in_chase] run data modify storage juggernaut:unyielding_wrath modifier_id set value unyielding_wrath
 execute as @a[tag=using_unyielding_wrath,tag=in_chase] run data modify storage juggernaut:unyielding_wrath operation set value add_value
@@ -153,9 +147,6 @@ execute as @a[tag=using_unyielding_wrath,tag=in_chase] run function juggernaut:a
 
 # Update domination speed
 execute as @a[tag=juggernaut,tag=using_domination] run function juggernaut:perk_management/perk_functions/set_domination_speed
-
-# Flame Ward
-effect give @a[tag=using_flame_ward] fire_resistance infinite 0 true
 
 # Remove respawn protection after a few seconds.
 execute as @a[tag=runner,tag=has_respawn_time] run scoreboard players remove @s respawn_time_left 1

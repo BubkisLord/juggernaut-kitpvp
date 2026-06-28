@@ -49,7 +49,7 @@ function juggernaut:ability_management/check_ability {\
     player_tag:"witch_doctor",\
     item_id:"minecraft:ghast_tear",\
     item_name:{"text": "Enlarge","color": "dark_purple"},\
-    description:[{"text": "Increases size of all runners within 8 blocks.","color": "gray"},{"text": "They are given:","color": "gray"},{"text": "  - Increased Step Height (+1 block)","color": "gray"},{"text": "  - Decreased Movement Speed (-30%)","color": "gray"},{"text": "  - Increased Jump Height (+31%)","color": "gray"},{"text": "  - Increased Safe Fall Distance (+1 block)","color": "gray"},{"text": "","color": "gray"},{"text": "Lasts for 10 seconds.","color": "gray"},{"text": "Cooldown: 30s","color": "dark_gray"}],\
+    description:[{"text": "Increases size of all runners within 8 blocks.","color": "gray"},{"text": "They are given:","color": "gray"},{"text": "  - Increased Step Height (+0.6 blocks)","color": "gray"},{"text": "  - Decreased Movement Speed (-30%)","color": "gray"},{"text": "  - Increased Jump Height (+28%)","color": "gray"},{"text": "  - Increased Safe Fall Distance (+1 block)","color": "gray"},{"text": "","color": "gray"},{"text": "Lasts for 10 seconds.","color": "gray"},{"text": "Cooldown: 30s","color": "dark_gray"}],\
     ability_id:"enlarge",\
     cooldown:30,\
     hotbar_slot:"hotbar.6",\

@@ -1,7 +1,7 @@
 scoreboard players set @s self_healing_base 2
 scoreboard players set @s self_healing_modifier 100
 
-execute at @s if entity @a[tag=using_overwhelming_presence,distance=..20] run scoreboard players remove @s self_healing_modifier 90
+execute at @s if entity @a[tag=using_overwhelming_presence,distance=..20] run scoreboard players remove @s self_healing_modifier 15
 execute at @s if entity @a[tag=using_oppression] run scoreboard players remove @s self_healing_modifier 70
 execute at @s if entity @a[tag=using_deep_cuts] run scoreboard players remove @s self_healing_modifier 90
 

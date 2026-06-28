@@ -1,21 +1,26 @@
 # When a runner is hit by the juggernaut, run the respective hook to trigger effects.
 execute as @a[tag=runner,scores={damage_taken=1..}] at @s if entity @a[scores={jug_dmg=1..}] run function juggernaut:hooks/hit_by_juggernaut
 execute as @a[tag=runner,scores={damage_taken=1..}] run scoreboard players set @s damage_taken 0
+execute as @a[tag=juggernaut] run scoreboard players set @s jug_dmg 0
 
 # If a player is undetectable, remove glowing.
 execute as @a[tag=is_undetectable] run effect clear @s glowing
+execute as @a[tag=is_undetectable] run tag @s remove is_glowing
 
 execute at @e[type=armor_stand,tag=respawn_point] as @a[distance=..10] at @r[tag=juggernaut] if entity @e[type=armor_stand,tag=arena.spawn,distance=30..] run tp @s @e[type=armor_stand,tag=arena.spawn,limit=1,sort=random,distance=30..]
 
 # Check if players are in chase.
+execute if score #game_state var matches 11 as @a[tag=runner] at @s run function juggernaut:replenishment_management/calculate_replenishment_modifier
 execute if score #game_state var matches 11 run function juggernaut:chase/check_in_chase
-
-execute if score #game_state var matches 11 as @a[tag=runner] at @s if entity @e[type=armor_stand,tag=replenishment.station,distance=..3] run function juggernaut:replenishment_management/calculate_replenishment_modifier
 execute if score #game_state var matches 11 run function juggernaut:replenishment_management/replenishment_stations
 # While juggernaut is not released, disallow all interactions with replenishment stations but allow for runners to see them.
 execute if score #game_state var matches 12 as @e[type=armor_stand,tag=replenishment.station] at @s run particle minecraft:end_rod ~ ~2.5 ~ 0.2 60 0.2 0 60 force @a[tag=runner]
 
 execute if score #game_state var matches 10 run function juggernaut:loop/display_lobby_particles
+
+# Check perks while in start of game lobby.
+execute if score #game_state var matches 10 as @a[tag=runner] run function juggernaut:perk_management/check_runner_perks
+execute unless score #game_state var matches 11 if score #game_state var matches 10..12 as @a[tag=juggernaut] run function juggernaut:perk_management/check_jug_perks
 
 # Get the highest replenished station.
 execute if score #juggernaut_customisation completable_stations matches 1 run scoreboard players set #highest_station var 0
@@ -71,13 +76,6 @@ execute as @a[tag=runner,scores={is_sneaking=0,is_sprinting=0}] at @s if entity 
 # Self-heal
 execute as @a[tag=runner,scores={is_sneaking=1}] at @s if score @s health < @s max_health run function juggernaut:healing/check_self_heal
 
-# Hemorrhaged Mechanic
-execute if entity @a[tag=is_hemorrhaged] as @a[tag=is_hemorrhaged,tag=!is_being_healed,tag=!self_healing] at @s run function juggernaut:healing/force_unheal_player {amount:1}
-
-# Mangled Mechanic
-execute if entity @a[tag=is_mangled] as @a[tag=is_mangled,tag=is_being_healed,tag=!self_healing] at @s run function juggernaut:healing/force_unheal_player {amount:4}
-execute if entity @a[tag=is_mangled] as @a[tag=is_mangled,tag=is_being_healed,tag=self_healing] at @s run function juggernaut:healing/force_unheal_player {amount:1}
-
 # Remove tags to keep all data current
 execute if entity @a[tag=runner,tag=is_healing] as @a[tag=runner,tag=is_healing] run tag @s remove is_healing
 execute if entity @a[tag=runner,tag=is_healing] as @a[tag=runner,tag=self_healing] run tag @s remove self_healing
@@ -97,7 +95,7 @@ execute as @a[tag=juggernaut,tag=using_insidious,nbt=!{active_effects:[{id:"mine
 # attribute @n[type=wolf,tag=juggernaut_wolf] scale base set 1.4
 # attribute @p scale base set 0.9
 
-execute as @a[tag=using_second_wind] run function juggernaut:loop/update_second_wind
+execute if score #game_state var matches 11 as @a[tag=using_second_wind] run function juggernaut:loop/update_second_wind
 
 execute as @e[type=armor_stand,tag=replenish_minigame_target] at @s run particle minecraft:witch ~ ~0.1 ~ 0.11 0.1 0.11 0 70 force
 execute as @e[type=armor_stand,tag=replenish_minigame_target] at @s run scoreboard players add @s tick_counter 1

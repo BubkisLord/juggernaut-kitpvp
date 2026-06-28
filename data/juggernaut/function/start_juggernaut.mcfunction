@@ -22,6 +22,21 @@ execute as @a[tag=survivor] run function juggernaut:handle_kit_picked {"kit": "s
 execute as @a[tag=trickster] run function juggernaut:handle_kit_picked {"kit": "trickster"}
 execute as @a[tag=windrunner] run function juggernaut:handle_kit_picked {"kit": "windrunner"}
 
+execute as @a[tag=using_durable] run effect give @s health_boost infinite 1 true
+execute as @a[tag=using_durable] run effect give @s regeneration 2 255 true
+
+execute as @a[tag=using_healthy_preparation] run give @s splash_potion[potion_contents={potion:"strong_healing"},max_stack_size=2] 2 
+
+execute as @a[tag=using_fury] run attribute @s movement_speed modifier add juggernaut:fury 0.1 add_multiplied_base
+execute as @a[tag=using_adept_stalker] run attribute @s sneaking_speed modifier add juggernaut:adept_stalker 0.1 add_multiplied_base
+
+execute as @a[tag=using_teeny_weeny] run attribute @s scale modifier add teeny_weeny -0.25 add_multiplied_base
+
+execute as @a[tag=using_lightweight] run attribute @s safe_fall_distance modifier add juggernaut:lightweight 9999 add_value
+execute as @a[tag=using_lightweight] run attribute @s air_drag_modifier modifier add juggernaut:lightweight -0.2 add_multiplied_base
+execute as @a[tag=using_lightweight] run attribute @s gravity modifier add juggernaut:lightweight 0.2 add_multiplied_total
+execute as @a[tag=using_lightweight] run attribute @s jump_strength modifier add juggernaut:lightweight 0.2 add_multiplied_base
+
 # Sets the timer to be 25 seconds.
 execute if score #juggernaut_customisation debug_mode matches 0 run scoreboard players set @a[tag=juggernaut] juggernaut_release_timer 25
 execute if score #juggernaut_customisation debug_mode matches 1 run scoreboard players set @a[tag=juggernaut] juggernaut_release_timer 1

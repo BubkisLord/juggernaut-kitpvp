@@ -1,8 +1,8 @@
 scoreboard players set @s lives_remaining 0
 scoreboard players operation @s lives_remaining = @s lives
 scoreboard players operation @s lives_remaining -= @s game_deaths
-scoreboard players set #1 var 1
-scoreboard players set @s borrowed_damage 0
+
+scoreboard players set @s chase_timeout 0
 
 effect give @s saturation infinite 255 true
 
@@ -18,13 +18,16 @@ execute if score @s lives_remaining matches 1.. if entity @s[tag=survivor] run f
 execute if score @s lives_remaining matches 1.. if entity @s[tag=runner] run effect give @s invisibility 30 0 true
 execute if score @s lives_remaining matches 1.. if entity @s[tag=runner] run tag @s add has_respawn_time
 execute if score @s lives_remaining matches 1.. if entity @s[tag=runner] run scoreboard players set @s respawn_time_left 30
-# execute if entity @s[tag=has_hunters_mark] if entity @a[tag=runner,tag=!has_hunters_mark] run tag @r[tag=runner,tag=!has_hunters_mark] add has_hunters_mark
+execute if score @s lives_remaining matches 1.. if entity @s[tag=using_teeny_weeny] run attribute @s scale modifier add teeny_weeny -0.25 add_multiplied_base
+execute if score @s lives_remaining matches 1.. if entity @s[tag=using_lightweight] run attribute @s safe_fall_distance modifier add juggernaut:lightweight 9999 add_value
+execute if score @s lives_remaining matches 1.. if entity @s[tag=using_lightweight] run attribute @s air_drag_modifier modifier add juggernaut:lightweight -0.2 add_multiplied_base
+execute if score @s lives_remaining matches 1.. if entity @s[tag=using_lightweight] run attribute @s gravity modifier add juggernaut:lightweight 0.2 add_multiplied_total
+execute if score @s lives_remaining matches 1.. if entity @s[tag=using_lightweight] run attribute @s jump_strength modifier add juggernaut:lightweight 0.2 add_multiplied_base
+execute if score @s lives_remaining matches 1.. if entity @s[tag=windrunner] run attribute @s friction_modifier modifier add juggernaut:windrunner -0.9 add_multiplied_total
+execute if score @s lives_remaining matches 1.. if entity @s[tag=windrunner] run attribute @s bounciness modifier add juggernaut:windrunner 0.08 add_value
 tag @s remove has_hunters_mark
 tag @s remove in_chase
 tag @s remove hunted
-tag @s remove is_mangled
-tag @s remove is_hemorrhaged
-scoreboard players set @s chase_timeout 0
 
 execute if score @s lives_remaining matches ..0 run tag @s remove has_jug_kit
 execute if score @s lives_remaining matches ..0 run tag @s remove juggernaut
@@ -49,7 +52,6 @@ execute if score @s lives_remaining matches ..0 run tag @s remove spirit_walker
 execute if score @s lives_remaining matches ..0 run tag @s remove guide
 execute if score @s lives_remaining matches ..0 run tag @s remove trickster
 execute if score @s lives_remaining matches ..0 run tag @s remove ghost
-
 execute if score @s lives_remaining matches ..0 run tag @s remove windrunner
 execute if score @s lives_remaining matches ..0 run tag @s remove saved_skin
 

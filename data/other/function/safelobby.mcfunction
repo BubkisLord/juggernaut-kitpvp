@@ -26,9 +26,9 @@ item replace entity @a[tag=lobby.player] armor.chest with air
 item replace entity @a[tag=lobby.player] armor.legs with air
 item replace entity @a[tag=lobby.player] armor.feet with air
 
-gamemode adventure @a[tag=!spectator,name=!"BubkisLord"]
+# gamemode adventure @a[tag=!spectator,name=!"BubkisLord"]
 gamemode spectator @a[tag=spectator]
 
-execute as @a[tag=lobby.player] at @s if score #game_state var matches 0 if block ~ ~-2 ~ orange_shulker_box run function juggernaut:try_start_jug
+execute as @a[tag=lobby.player] at @s if score #game_state var matches 0 if block ~ ~-2 ~ orange_shulker_box run function juggernaut:start_pregame
 execute as @a[tag=lobby.player] at @s if score #game_state var matches 0 if block ~ ~-2 ~ cyan_shulker_box run function survival:start
 execute as @a[tag=lobby.player] at @s if block ~ ~-2 ~ purple_shulker_box run function tp:exit_arena
