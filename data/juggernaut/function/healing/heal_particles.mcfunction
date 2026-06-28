@@ -1,1 +1,0 @@
-$execute at @s run particle dust{color:[0.0,$(healing_percent),0.0],scale:1} ~ ~ ~ 0.3 0.3 0.3 0 10 force @s
