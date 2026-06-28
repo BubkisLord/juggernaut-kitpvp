@@ -9,8 +9,8 @@ execute as @a[tag=spirit_walker] run function juggernaut:ability_management/chec
     cooldown_var:"ability_cooldown0",\
 }
 
-execute if stopwatch minecraft:phase_time 0.85.. run tag @a[tag=spirit_walker,tag=is_phasing] add teleporting
-execute as @a[tag=spirit_walker,tag=is_phasing] at @s store result storage juggernaut:abilities/spirit_walker/execute_phase teleport_distance long 1 run stopwatch query phase_time 16
+execute if stopwatch minecraft:phase_time 1.02.. run tag @a[tag=spirit_walker,tag=is_phasing] add teleporting
+execute as @a[tag=spirit_walker,tag=is_phasing] at @s store result storage juggernaut:abilities/spirit_walker/execute_phase teleport_distance long 1 run stopwatch query phase_time 12.8
 execute as @a[tag=spirit_walker,tag=is_phasing] at @s run function juggernaut:abilities/spirit_walker/execute_phase with storage juggernaut:abilities/spirit_walker/execute_phase
 execute as @a[tag=spirit_walker,tag=is_phasing,tag=teleporting] run tag @s remove is_phasing
 execute as @a[tag=spirit_walker,tag=teleporting] run tag @s remove teleporting
