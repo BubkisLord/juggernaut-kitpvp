@@ -1,4 +1,3 @@
-
 # Hunter
 # Ambush Ability
 execute as @a[tag=hunter,tag=is_hunting] at @s run particle witch ~ ~0.5 ~ 1 1 1 0.00001 3 force

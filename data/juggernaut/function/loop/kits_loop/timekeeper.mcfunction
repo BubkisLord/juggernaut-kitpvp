@@ -57,13 +57,6 @@ execute as @e[type=area_effect_cloud,tag=poisoned_strand] run scoreboard players
 execute as @e[type=area_effect_cloud,tag=poisoned_strand] if score @s tick_counter matches 20.. run tag @s add dying_strand
 execute as @e[type=area_effect_cloud,tag=poisoned_strand] if score @s tick_counter matches 10.. at @s run tag @e[type=area_effect_cloud,tag=timekeeper_trail,distance=..3] add poisoned_strand
 
-# =============================================================
-# Timestream Rupture
-#   - Damages runners near any of your strands
-#   - High burst damage (configurable)
-# =============================================================
-
-# Optional: visual pulse on all strands
 execute as @e[type=area_effect_cloud,tag=mid_rupture] run scoreboard players add @s var 1
 execute as @e[type=area_effect_cloud,tag=mid_rupture] if score @s var matches 5..399 at @s run tag @e[type=area_effect_cloud,tag=timekeeper_trail,distance=..3] add mid_rupture
 execute as @e[type=area_effect_cloud,tag=mid_rupture] at @s run data modify entity @s custom_particle set value {type:"minecraft:dust",color:14817047,scale:3}
