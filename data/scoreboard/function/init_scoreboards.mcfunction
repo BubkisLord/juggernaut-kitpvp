@@ -8,7 +8,6 @@ scoreboard objectives add raycast_limit dummy
 scoreboard objectives add dispel_progress dummy
 scoreboard objectives add damage_dealt minecraft.custom:damage_dealt
 scoreboard objectives add temp_progress dummy
-scoreboard objectives add borrowed_damage dummy
 scoreboard objectives add game_deaths dummy
 scoreboard objectives add lives dummy
 scoreboard objectives add grace_period dummy
@@ -26,7 +25,6 @@ scoreboard objectives add lives_remaining dummy
 scoreboard objectives add current_raycast_depth dummy
 scoreboard objectives add scout_reveal_timer dummy
 scoreboard objectives add replenish_decimal dummy
-scoreboard objectives add borrowed_damage_taken minecraft.custom:damage_dealt_resisted
 scoreboard objectives add withering_surge_cooldown dummy
 scoreboard objectives add temp_max_progress dummy
 scoreboard objectives add total_dispelling_needed dummy
@@ -88,7 +86,6 @@ scoreboard objectives add is_crouch_walking minecraft.custom:minecraft.crouch_on
 scoreboard objectives add chase_time dummy
 scoreboard objectives add sentinel_progress dummy
 scoreboard objectives add shadow_mark_cooldown dummy
-scoreboard objectives add borrowed_time_remaining dummy
 scoreboard objectives add replenish_amount dummy
 scoreboard objectives add chase_timeout dummy
 scoreboard objectives add brutal_efficiency_cooldown dummy
@@ -142,6 +139,12 @@ scoreboard objectives add round_robin dummy
 scoreboard objectives add jug_kills minecraft.custom:player_kills
 scoreboard objectives add respawn_time_left dummy
 scoreboard objectives add used_totem minecraft.used:totem_of_undying
+scoreboard objectives add perks_enabled dummy
+scoreboard objectives add max_perks_equipped dummy
+scoreboard objectives add random_perks dummy
+scoreboard objectives add perk_rerolls dummy
+scoreboard objectives add shapeshift_time dummy
+scoreboard objectives add completable_stations dummy
 
 # Juggernaut Kit Statistics
 scoreboard objectives add picked_kit_chameleon dummy "Picked Kit - Chameleon"
