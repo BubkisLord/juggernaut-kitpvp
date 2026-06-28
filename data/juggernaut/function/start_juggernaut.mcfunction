@@ -35,7 +35,7 @@ execute as @a[tag=using_teeny_weeny] run attribute @s scale modifier add teeny_w
 execute as @a[tag=using_lightweight] run attribute @s safe_fall_distance modifier add juggernaut:lightweight 9999 add_value
 execute as @a[tag=using_lightweight] run attribute @s air_drag_modifier modifier add juggernaut:lightweight -0.2 add_multiplied_base
 execute as @a[tag=using_lightweight] run attribute @s gravity modifier add juggernaut:lightweight 0.2 add_multiplied_total
-execute as @a[tag=using_lightweight] run attribute @s jump_strength modifier add juggernaut:lightweight 0.2 add_multiplied_base
+execute as @a[tag=using_lightweight] run attribute @s jump_strength modifier add juggernaut:lightweight 0.1 add_multiplied_base
 
 # Sets the timer to be 25 seconds.
 execute if score #juggernaut_customisation debug_mode matches 0 run scoreboard players set @a[tag=juggernaut] juggernaut_release_timer 25

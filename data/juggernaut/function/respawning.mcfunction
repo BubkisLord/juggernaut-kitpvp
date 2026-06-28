@@ -22,7 +22,7 @@ execute if score @s lives_remaining matches 1.. if entity @s[tag=using_teeny_wee
 execute if score @s lives_remaining matches 1.. if entity @s[tag=using_lightweight] run attribute @s safe_fall_distance modifier add juggernaut:lightweight 9999 add_value
 execute if score @s lives_remaining matches 1.. if entity @s[tag=using_lightweight] run attribute @s air_drag_modifier modifier add juggernaut:lightweight -0.2 add_multiplied_base
 execute if score @s lives_remaining matches 1.. if entity @s[tag=using_lightweight] run attribute @s gravity modifier add juggernaut:lightweight 0.2 add_multiplied_total
-execute if score @s lives_remaining matches 1.. if entity @s[tag=using_lightweight] run attribute @s jump_strength modifier add juggernaut:lightweight 0.2 add_multiplied_base
+execute if score @s lives_remaining matches 1.. if entity @s[tag=using_lightweight] run attribute @s jump_strength modifier add juggernaut:lightweight 0.1 add_multiplied_base
 execute if score @s lives_remaining matches 1.. if entity @s[tag=windrunner] run attribute @s friction_modifier modifier add juggernaut:windrunner -0.9 add_multiplied_total
 execute if score @s lives_remaining matches 1.. if entity @s[tag=windrunner] run attribute @s bounciness modifier add juggernaut:windrunner 0.08 add_value
 tag @s remove has_hunters_mark
