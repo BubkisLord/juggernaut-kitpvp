@@ -145,6 +145,7 @@ scoreboard objectives add random_perks dummy
 scoreboard objectives add perk_rerolls dummy
 scoreboard objectives add shapeshift_time dummy
 scoreboard objectives add completable_stations dummy
+scoreboard objectives add random_perks dummy
 
 # Juggernaut Kit Statistics
 scoreboard objectives add picked_kit_chameleon dummy "Picked Kit - Chameleon"
