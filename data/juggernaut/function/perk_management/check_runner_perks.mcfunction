@@ -22,4 +22,5 @@ execute if items entity @s container.* barrier[item_name={"text":"Reset Perk Sel
 execute if items entity @s container.* barrier[item_name={"text":"Reset Perk Selection","color":"red"}] at @s run particle witch ~ ~ ~ 0.3 0.5 0.3 0 100
 execute if items entity @s container.* barrier[item_name={"text":"Reset Perk Selection","color":"red"}] if score #juggernaut_customisation random_perks matches 1 run scoreboard players add @s perk_rerolls 1
 execute if items entity @s container.* barrier[item_name={"text":"Reset Perk Selection","color":"red"}] run function juggernaut:perk_management/give_runner_perks
+execute if items entity @s container.* barrier[item_name={"text":"Reset Perk Selection","color":"red"}] run tellraw @a[tag=runner] [{"selector":"@s"},{"text":": ","color":"dark_aqua"},{"text": "Perk selection has been reset.",color:"white"}]
 execute if items entity @s container.* barrier[item_name={"text":"Reset Perk Selection","color":"red"}] run clear @s barrier[item_name={"text":"Reset Perk Selection","color":"red"}]
