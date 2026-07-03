@@ -18,6 +18,7 @@ tag @s remove using_healthy_preparation
 tag @s remove using_determination
 tag @s remove using_teeny_weeny
 tag @s remove using_lightweight
+tag @s remove using_tailgater
 
 tag @s remove using_adept_stalker
 tag @s remove using_predatory_instincts
