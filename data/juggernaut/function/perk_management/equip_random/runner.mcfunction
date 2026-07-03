@@ -1,7 +1,7 @@
 execute if score @s perks_enabled >= #juggernaut_customisation max_perks_equipped run return fail
 
 scoreboard players set #roll var 0
-execute store result score #roll var run random value 0..13
+execute store result score #roll var run random value 0..14
 
 execute if score #roll var matches 0 if entity @s[tag=using_sentinel] run function juggernaut:perk_management/equip_random/runner
 execute if score #roll var matches 0 unless entity @s[tag=using_sentinel] run function juggernaut:perk_management/add_perk/runner {perk_id:"sentinel",perk_name:"Sentinel"}
@@ -44,5 +44,8 @@ execute if score #roll var matches 12 unless entity @s[tag=using_teeny_weeny] ru
 
 execute if score #roll var matches 13 if entity @s[tag=using_lightweight] run function juggernaut:perk_management/equip_random/runner
 execute if score #roll var matches 13 unless entity @s[tag=using_lightweight] run function juggernaut:perk_management/add_perk/runner {perk_id:"lightweight",perk_name:"Lightweight"}
+
+execute if score #roll var matches 14 if entity @s[tag=using_tailgater] run function juggernaut:perk_management/equip_random/runner
+execute if score #roll var matches 14 unless entity @s[tag=using_tailgater] run function juggernaut:perk_management/add_perk/runner {perk_id:"tailgater",perk_name:"Tailgater"}
 
 execute if score @s perks_enabled < #juggernaut_customisation max_perks_equipped run function juggernaut:perk_management/equip_random/runner

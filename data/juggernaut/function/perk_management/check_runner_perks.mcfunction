@@ -12,6 +12,7 @@ execute if score #juggernaut_customisation random_perks matches 0 if items entit
 execute if score #juggernaut_customisation random_perks matches 0 if items entity @s container.* minecraft:plenty_pottery_sherd run function juggernaut:perk_management/add_perk/runner {perk_id:"determination",perk_name:"Determination"}
 execute if score #juggernaut_customisation random_perks matches 0 if items entity @s container.* minecraft:miner_pottery_sherd run function juggernaut:perk_management/add_perk/runner {perk_id:"lightweight",perk_name:"Lightweight"}
 execute if score #juggernaut_customisation random_perks matches 0 if items entity @s container.* minecraft:howl_pottery_sherd run function juggernaut:perk_management/add_perk/runner {perk_id:"teeny_weeny",perk_name:"Teeny Weeny"}
+execute if score #juggernaut_customisation random_perks matches 0 if items entity @s container.* minecraft:explorer_pottery_sherd run function juggernaut:perk_management/add_perk/runner {perk_id:"tailgater",perk_name:"Tailgater"}
 
 execute if items entity @s container.* end_crystal[item_name={"text": "Get Random Perks","color": "red"}] run function juggernaut:perk_management/equip_random/runner
 execute if items entity @s container.* end_crystal[item_name={"text": "Get Random Perks","color": "red"}] run clear @s end_crystal[item_name={"text": "Get Random Perks","color": "red"}]
