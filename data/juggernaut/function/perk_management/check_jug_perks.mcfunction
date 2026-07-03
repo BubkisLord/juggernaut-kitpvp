@@ -15,6 +15,11 @@ execute if score #juggernaut_customisation random_perks matches 0 if items entit
 execute if score #juggernaut_customisation random_perks matches 0 if items entity @s container.* netherite_ingot[item_name={"text":"Fury","color":"red"}] run function juggernaut:perk_management/add_perk/juggernaut {perk_id:"fury",perk_name:"Fury"}
 execute if score #juggernaut_customisation random_perks matches 0 if items entity @s container.* netherite_ingot[item_name={"text":"Oppression","color":"red"}] run function juggernaut:perk_management/add_perk/juggernaut {perk_id:"oppression",perk_name:"Oppression"}
 execute if score #juggernaut_customisation random_perks matches 0 if items entity @s container.* netherite_ingot[item_name={"text":"Deep Cuts","color":"red"}] run function juggernaut:perk_management/add_perk/juggernaut {perk_id:"deep_cuts",perk_name:"Deep Cuts"}
+execute if score #juggernaut_customisation random_perks matches 1 if items entity @s container.* netherite_ingot run playsound block.note_block.didgeridoo ui @s ~ ~ ~ 1.2
+execute if score #juggernaut_customisation random_perks matches 1 if items entity @s container.* netherite_ingot run particle angry_villager ~ ~ ~ 0.3 0.5 0.3 0 10
+execute if score #juggernaut_customisation random_perks matches 1 if items entity @s container.* netherite_ingot run tellraw @s [{"text": "Could not equip perk.\n","color":"white",bold:false},{"text": "Reason:\n","color":"red",bold:true},{"text": "Random perks are enforced.","color":"white",bold:false}]
+execute if score #juggernaut_customisation random_perks matches 1 if items entity @s container.* netherite_ingot run function juggernaut:perk_management/give_juggernaut_perks
+execute if score #juggernaut_customisation random_perks matches 1 if items entity @s container.* netherite_ingot run clear @s netherite_ingot
 
 execute if items entity @s container.* end_crystal[item_name={"text": "Get Random Perks","color": "red"}] run function juggernaut:perk_management/equip_random/juggernaut
 execute if items entity @s container.* end_crystal[item_name={"text": "Get Random Perks","color": "red"}] run clear @s end_crystal[item_name={"text": "Get Random Perks","color": "red"}]
