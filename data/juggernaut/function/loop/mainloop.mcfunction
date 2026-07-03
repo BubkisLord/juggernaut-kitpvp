@@ -1,5 +1,5 @@
 # When a runner is hit by the juggernaut, run the respective hook to trigger effects.
-execute as @a[tag=runner,scores={damage_taken=1..}] at @s if entity @a[scores={jug_dmg=1..}] run function juggernaut:hooks/hit_by_juggernaut
+execute as @a[tag=runner,scores={damage_taken=1..}] at @s if entity @a[tag=juggernaut,scores={jug_dmg=1..}] run function juggernaut:hooks/hit_by_juggernaut
 execute as @a[tag=runner,scores={damage_taken=1..}] run scoreboard players set @s damage_taken 0
 execute as @a[tag=juggernaut] run scoreboard players set @s jug_dmg 0
 
