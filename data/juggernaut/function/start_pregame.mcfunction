@@ -67,6 +67,7 @@ execute if score #juggernaut_customisation completable_stations matches 1 run sc
 execute if score #juggernaut_customisation completable_stations matches 1 run scoreboard players operation #stations_needed var -= #3 var
 execute if score #juggernaut_customisation completable_stations matches 1 run function juggernaut:replenishment_management/pick_replenishment_stations with storage juggernaut:replenishment_management/pick_replenishment_stations
 
+# Formula for replenishment needed = 95((4500(total_runner_lives - 2) + 4500) / juggernauts)
 scoreboard players set #runner_lives_count var 0
 execute as @a[tag=runner] run scoreboard players operation #runner_lives_count var += @s lives
 scoreboard players remove #runner_lives_count var 2
@@ -87,11 +88,10 @@ scoreboard players operation #juggernaut_manager tmp /= #100 var
 scoreboard players operation #juggernaut_manager tmp *= #5 var
 scoreboard players operation #juggernaut_manager total_replenishment_needed -= #juggernaut_manager tmp
 
+scoreboard players operation #juggernaut_manager total_replenishment_needed *= #100 var
+
 execute if score #juggernaut_customisation completable_stations matches 1 run scoreboard players operation #total_replenishment_per_station var = #juggernaut_manager total_replenishment_needed
 execute if score #juggernaut_customisation completable_stations matches 1 run scoreboard players operation #total_replenishment_per_station var /= #stations_needed var
-
-# For the above code, the formula is:
-# replenishment = 0.95((4500(total_runner_lives - 2) + 4500) / juggernauts)
 
 # Set the game state to pregame
 scoreboard players set #game_state var 10

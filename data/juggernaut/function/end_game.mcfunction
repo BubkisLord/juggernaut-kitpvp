@@ -36,6 +36,11 @@ scoreboard players set @a withering_surge_cooldown 0
 scoreboard players set @a sprint_time 0
 scoreboard players set @a sprint_timeout 0
 scoreboard players set @a shapeshift_time 0
+scoreboard players set @a replenishment_base 0
+scoreboard players set @a replenishment_modifier 0
+scoreboard players set @a replenishment_per_tick 0
+scoreboard players set @a replenishment_display_speed 0
+
 spawnpoint @a 2000 100 0
 gamerule show_death_messages false
 tag @a remove has_jug_kit

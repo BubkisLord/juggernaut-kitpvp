@@ -10,7 +10,6 @@ execute as @a[tag=is_undetectable] run tag @s remove is_glowing
 execute at @e[type=armor_stand,tag=respawn_point] as @a[distance=..10] at @r[tag=juggernaut] if entity @e[type=armor_stand,tag=arena.spawn,distance=30..] run tp @s @e[type=armor_stand,tag=arena.spawn,limit=1,sort=random,distance=30..]
 
 # Check if players are in chase.
-execute if score #game_state var matches 11 as @a[tag=runner] at @s run function juggernaut:replenishment_management/calculate_replenishment_modifier
 execute if score #game_state var matches 11 run function juggernaut:chase/check_in_chase
 execute if score #game_state var matches 11 run function juggernaut:replenishment_management/replenishment_stations
 # While juggernaut is not released, disallow all interactions with replenishment stations but allow for runners to see them.

@@ -5,6 +5,9 @@
 execute as @e[type=armor_stand,tag=replenishment.station] at @s if score #game_state var matches 11 unless entity @e[type=armor_stand,tag=banishment_glyph,distance=..24] run particle minecraft:totem_of_undying ~ ~2.5 ~ 0.2 60 0.2 0 120 force @a[tag=!runner]
 execute as @e[type=armor_stand,tag=replenishment.station] at @s if score #game_state var matches 11 if entity @e[type=armor_stand,tag=banishment_glyph,distance=..24] run particle minecraft:white_smoke ~ ~2.5 ~ 0.2 60 0.2 0 120 force @a[tag=!runner]
 
+execute as @a[tag=!runner] at @s run title @s actionbar [{"text":"Total Replenishment: ","color": "dark_aqua","bold": true},{"score":{"name":"#juggernaut_manager","objective":"replenish_decimal"},"bold": true,"color": "dark_aqua"},{"text": "%"},{"text": " [","color": "dark_aqua","bold":true},{"score":{"name":"#stations_completed","objective":"var"},"color": "dark_aqua","bold":true},{"text": "/","color": "dark_aqua","bold":true},{"score":{"name":"#stations_needed","objective":"var"},"color": "dark_aqua","bold":true},{"text": "]","color": "dark_aqua","bold":true}]
+execute as @a[tag=runner,tag=!in_chase] at @s run title @s actionbar [{"text":"Total Replenishment: ","color": "dark_aqua","bold": true},{"score":{"name":"#juggernaut_manager","objective":"replenish_decimal"},"bold": true,"color": "dark_aqua"},{"text": "%"},{"text": " [","color": "dark_aqua","bold":true},{"score":{"name":"#stations_completed","objective":"var"},"color": "dark_aqua","bold":true},{"text": "/","color": "dark_aqua","bold":true},{"score":{"name":"#stations_needed","objective":"var"},"color": "dark_aqua","bold":true},{"text": "]","color": "dark_aqua","bold":true}]
+
 # Display replenishment stations to the runners.
 execute as @e[type=armor_stand,tag=replenishment.station] at @s run particle minecraft:totem_of_undying ~ ~2.5 ~ 0.2 60 0.2 0 120 force @a[tag=runner]
 
