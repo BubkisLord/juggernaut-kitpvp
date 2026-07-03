@@ -8,6 +8,7 @@ give @s diamond_sword[enchantments={sharpness:4},tooltip_display={hidden_compone
 item replace entity @s hotbar.1 with red_dye[item_name=[{"text": "Spawn Malevolent Aura","color": "dark_red"},{"text": " | "},{"text": "READY","color": "green"}]] 1
 item replace entity @s hotbar.2 with cyan_dye[item_name=[{"text": "Spawn Banishment Glyph","color": "dark_aqua"},{"text": " | "},{"text": "READY","color": "green"}]] 1
 item replace entity @s hotbar.3 with black_dye[item_name=[{"text": "Spawn Withering Surge","color": "dark_gray"},{"text": " | "},{"text": "READY","color": "green"}]] 1
+tellraw @a[tag=juggernaut] [{"selector":"@s"},{"text":": ","color":"red"},{"text": "Selected ","color":"white"},{"text":"Warlock","color":"#350F5B"},{"text":" Kit.","color":"white"}]
 function juggernaut:descriptions/kits/juggernaut/warlock
 tag @s add warlock
 tag @s add has_jug_kit

@@ -5,6 +5,7 @@ item replace entity @s armor.chest with diamond_chestplate[unbreakable={}]
 item replace entity @s armor.legs with diamond_leggings[unbreakable={}]
 item replace entity @s armor.feet with diamond_boots[unbreakable={}]
 item replace entity @s hotbar.0 with diamond_sword[unbreakable={},tooltip_display={hidden_components:["enchantments","unbreakable"]},item_name={text:"Veil Slicer","color":"#577ebe"}]
+tellraw @a[tag=juggernaut] [{"selector":"@s"},{"text":": ","color":"red"},{"text": "Selected ","color":"white"},{"text":"Spirit Walker","color":"#577ebe"},{"text":" Kit.","color":"white"}]
 function juggernaut:descriptions/kits/juggernaut/spirit_walker
 tag @s add spirit_walker
 tag @s add has_jug_kit

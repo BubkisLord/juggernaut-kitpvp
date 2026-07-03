@@ -5,6 +5,7 @@ item replace entity @s armor.chest with iron_chestplate[unbreakable={}]
 item replace entity @s armor.legs with iron_leggings[unbreakable={}]
 item replace entity @s armor.feet with iron_boots[unbreakable={}]
 item replace entity @s hotbar.0 with iron_sword[unbreakable={},tooltip_display={hidden_components:["unbreakable","enchantments"]}]
+tellraw @a[tag=juggernaut] [{"selector":"@s"},{"text":": ","color":"red"},{"text": "Selected ","color":"white"},{"text":"Knight","color":"yellow"},{"text":" Kit.","color":"white"}]
 function juggernaut:descriptions/kits/juggernaut/knight
 stopsound @a
 tag @s add knight

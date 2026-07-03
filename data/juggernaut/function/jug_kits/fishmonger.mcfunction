@@ -13,6 +13,7 @@ summon pufferfish 0 67 0 {Invulnerable:true,Tags:["kill_on_end_game","fishmonger
 summon pufferfish -32 67 45 {Invulnerable:true,Tags:["kill_on_end_game","fishmonger_pufferfish"],CustomName:{"text":"Taffy"},CustomNameVisible:true,Team:jug,DeathLootTable:""}
 execute as @e[type=pufferfish,tag=fishmonger_pufferfish] run attribute @s scale base set 8
 execute as @e[type=pufferfish,tag=fishmonger_pufferfish] run attribute @s movement_speed base set 5
+tellraw @a[tag=juggernaut] [{"selector":"@s"},{"text":": ","color":"red"},{"text": "Selected ","color":"white"},{"text":"Fishmonger","color":"dark_aqua"},{"text":" Kit.","color":"white"}]
 function juggernaut:descriptions/kits/juggernaut/fishmonger
 tag @s add fishmonger
 tag @s add has_jug_kit

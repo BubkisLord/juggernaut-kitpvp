@@ -21,3 +21,4 @@ attribute @s scale base set 1
 attribute @s gravity base set 0.08
 attribute @s jump_strength base set 0.42
 attribute @s safe_fall_distance base set 3
+tellraw @a[tag=juggernaut] [{"selector":"@s"},{"text":": ","color":"red"},{"text": "Removed Juggernaut Kit.","color":"white"}]

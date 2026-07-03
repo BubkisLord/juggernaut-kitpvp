@@ -5,6 +5,7 @@ item replace entity @s armor.chest with golden_chestplate[unbreakable={},lore=[{
 item replace entity @s armor.legs with golden_leggings[unbreakable={},lore=[{"text":"Crafted to stride through different time speeds.","color":"dark_gray"},{"text":"Mind the temporal drag.","color":"dark_gray"}]]
 item replace entity @s armor.feet with golden_boots[unbreakable={},lore=[{"text":"Try not to trip on your own timestream.","color":"dark_gray"},{"text":"(Otherwise they get muddled up sometimes)","color":"dark_gray"}]]
 give @s golden_sword[item_name={"text": "Golden Scimitar"},enchantments={sharpness:3},unbreakable={},tooltip_display={hidden_components:["enchantments","unbreakable"]}]
+tellraw @a[tag=juggernaut] [{"selector":"@s"},{"text":": ","color":"red"},{"text": "Selected ","color":"white"},{"text":"Timekeeper","color":"gold"},{"text":" Kit.","color":"white"}]
 function juggernaut:descriptions/kits/juggernaut/timekeeper
 tag @s add timekeeper
 tag @s add has_jug_kit
