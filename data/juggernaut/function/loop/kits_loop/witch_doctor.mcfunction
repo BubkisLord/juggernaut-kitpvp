@@ -9,7 +9,7 @@ function juggernaut:ability_management/check_ability {\
     ability_id:"damage_pot",\
     cooldown:60,\
     hotbar_slot:"hotbar.1",\
-    cooldown_var:"ability_cooldown3",\
+    cooldown_var:"ability_cooldown0",\
 }
 
 function juggernaut:ability_management/check_ability {\
@@ -20,7 +20,7 @@ function juggernaut:ability_management/check_ability {\
     ability_id:"speed_pot",\
     cooldown:60,\
     hotbar_slot:"hotbar.2",\
-    cooldown_var:"speed_pot_cooldown",\
+    cooldown_var:"ability_cooldown1",\
 }
 
 function juggernaut:ability_management/check_ability {\
@@ -31,7 +31,7 @@ function juggernaut:ability_management/check_ability {\
     ability_id:"fire_pot",\
     cooldown:60,\
     hotbar_slot:"hotbar.3",\
-    cooldown_var:"fire_pot_cooldown",\
+    cooldown_var:"ability_cooldown2",\
 }
 
 function juggernaut:ability_management/check_ability {\
@@ -42,7 +42,7 @@ function juggernaut:ability_management/check_ability {\
     ability_id:"strength_pot",\
     cooldown:60,\
     hotbar_slot:"hotbar.4",\
-    cooldown_var:"strength_pot_cooldown",\
+    cooldown_var:"ability_cooldown3",\
 }
 
 function juggernaut:ability_management/check_ability {\
@@ -53,7 +53,7 @@ function juggernaut:ability_management/check_ability {\
     ability_id:"enlarge",\
     cooldown:30,\
     hotbar_slot:"hotbar.6",\
-    cooldown_var:"ability_cooldown0",\
+    cooldown_var:"ability_cooldown4",\
 }
 
 function juggernaut:ability_management/check_ability {\
@@ -64,5 +64,5 @@ function juggernaut:ability_management/check_ability {\
     ability_id:"reduce",\
     cooldown:20,\
     hotbar_slot:"hotbar.7",\
-    cooldown_var:"ability_cooldown1",\
+    cooldown_var:"ability_cooldown5",\
 }

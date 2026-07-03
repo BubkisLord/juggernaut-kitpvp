@@ -5,7 +5,6 @@ xp set @s 0 points
 xp set @s 0 levels
 tag @s add lobby.player
 tag @s remove autorespawn
-scoreboard players set @s seconds 90
 scoreboard players set @s exit_count 0
 
 tp @s 2054 85.0625 -3

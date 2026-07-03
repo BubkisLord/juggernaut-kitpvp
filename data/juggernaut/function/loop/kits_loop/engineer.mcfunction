@@ -31,7 +31,7 @@ function juggernaut:ability_management/check_ability {\
     ability_id:"revealing_tower",\
     cooldown:90,\
     hotbar_slot:"hotbar.0",\
-    cooldown_var:"revealing_tower_cooldown",\
+    cooldown_var:"ability_cooldown0",\
 }
 
 # Spawn Replenishment Tower (Active)
@@ -39,11 +39,11 @@ function juggernaut:ability_management/check_ability {\
     player_tag:"engineer",\
     item_id:"minecraft:lime_dye",\
     item_name:{"text": "Spawn Replenishment Tower","color": "green"},\
-    description:[{"text": "Summon a tower with a visible nametag.","color": "gray"},{"text": "Acts as an additional replenishment station.","color": "gray"},{"text": "Only engineers can use it.","color": "gray"},{"text": "The Juggernaut may stand near it to dispel/remove it.","color": "gray"},{"text": "Cooldown: 1m","color": "dark_gray"}],\
+    description:[{"text": "Summon a tower with a visible nametag.","color": "gray"},{"text": "Acts as an additional replenishment station.","color": "gray"},{"text": "Only engineers can use it.","color": "gray"},{"text": "The Juggernaut may stand near it to dispel/remove it.","color": "gray"},{"text": "Cooldown: 60s","color": "dark_gray"}],\
     ability_id:"replenishment_tower",\
     cooldown:60,\
     hotbar_slot:"hotbar.1",\
-    cooldown_var:"replenishment_tower_cooldown",\
+    cooldown_var:"ability_cooldown1",\
 }
 
 # Spawn Turret (Active)
@@ -55,5 +55,5 @@ function juggernaut:ability_management/check_ability {\
     ability_id:"turret_tower",\
     cooldown:90,\
     hotbar_slot:"hotbar.2",\
-    cooldown_var:"turret_cooldown",\
+    cooldown_var:"ability_cooldown2",\
 }

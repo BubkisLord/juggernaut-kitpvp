@@ -1,18 +1,11 @@
 scoreboard players set #game_state var 0
-scoreboard players set @a juggernaut_game_time 0
 scoreboard players set @a juggernaut_release_timer 0
 scoreboard players set @a ability_cooldown0 0
 scoreboard players set @a ability_cooldown1 0
 scoreboard players set @a ability_cooldown2 0
 scoreboard players set @a ability_cooldown3 0
-scoreboard players set @a revealing_tower_cooldown 0
-scoreboard players set @a replenishment_tower_cooldown 0
-scoreboard players set @a turret_cooldown 0
-scoreboard players set @a shadow_mark_cooldown 0
 scoreboard players set @a brutal_efficiency_cooldown 0
-scoreboard players set @a unyielding_wrath_stacks 0
 scoreboard players set @a unyielding_wrath_time 0
-scoreboard players set @a domination_kills 0
 scoreboard players set @a ticks_spent_buffing 0
 scoreboard players set @a ticks_spent_debuffing 0
 scoreboard players set @a ticks_spent_replenishing 0
@@ -27,14 +20,6 @@ scoreboard players set @a ticks_till_decrement_ability 0
 scoreboard players set @a ticks_till_increment_ability 0
 scoreboard players set @a ability_debuff 0
 scoreboard players set @a ability_buff 0
-scoreboard players set @a speed_pot_cooldown 0
-scoreboard players set @a fire_pot_cooldown 0
-scoreboard players set @a strength_pot_cooldown 0
-scoreboard players set @a malevolent_aura_cooldown 0
-scoreboard players set @a banishment_glyph_cooldown 0
-scoreboard players set @a withering_surge_cooldown 0
-scoreboard players set @a sprint_time 0
-scoreboard players set @a sprint_timeout 0
 scoreboard players set @a shapeshift_time 0
 scoreboard players set @a replenishment_base 0
 scoreboard players set @a replenishment_modifier 0
@@ -66,7 +51,6 @@ tag @a remove blinker
 tag @a remove spirit_walker
 tag @a remove guide
 tag @e remove sentinel_tower
-tag @a remove shadow_marked
 tag @a remove ghost
 tag @a remove trickster
 tag @a remove fishmonger
@@ -96,7 +80,6 @@ tag @a remove is_being_healed
 tag @a remove self_healing
 
 tag @a remove rewinding
-execute as @a run attribute @s movement_speed modifier remove juggernaut:abilities/timekeeper/tick_speed
 execute as @a run attribute @s movement_speed modifier remove juggernaut:predator_move_spd
 execute as @a run attribute @s movement_speed modifier remove juggernaut:fury
 
@@ -162,9 +145,7 @@ execute as @a run attribute @s movement_speed modifier remove unyielding_wrath_5
 
 scoreboard players set #juggernaut_manager replenish_progress 0
 scoreboard players set #juggernaut_manager replenish_decimal 0
-scoreboard players set #juggernaut_manager replenish_percentage 0
 scoreboard players set #juggernaut_manager total_replenishment_needed 0
-scoreboard players set #juggernaut_manager scout_reveal_timer 0
 
 scoreboard players set @e[type=armor_stand,tag=replenishment.station] sentinel_progress 0
 

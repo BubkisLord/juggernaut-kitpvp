@@ -26,7 +26,7 @@ function juggernaut:ability_management/check_ability {\
     ability_id:"malevolent_aura",\
     cooldown:20,\
     hotbar_slot:"hotbar.1",\
-    cooldown_var:"malevolent_aura_cooldown",\
+    cooldown_var:"ability_cooldown0",\
 }
 
 function juggernaut:ability_management/check_ability {\
@@ -37,7 +37,7 @@ function juggernaut:ability_management/check_ability {\
     ability_id:"banishment_glyph",\
     cooldown:30,\
     hotbar_slot:"hotbar.2",\
-    cooldown_var:"banishment_glyph_cooldown",\
+    cooldown_var:"ability_cooldown1",\
 }
 
 function juggernaut:ability_management/check_ability {\
@@ -48,5 +48,5 @@ function juggernaut:ability_management/check_ability {\
     ability_id:"withering_surge",\
     cooldown:40,\
     hotbar_slot:"hotbar.3",\
-    cooldown_var:"withering_surge_cooldown",\
+    cooldown_var:"ability_cooldown2",\
 }

@@ -33,9 +33,7 @@ effect give @a[tag=juggernaut] regeneration infinite 0 true
 stopsound @a
 execute as @a[tag=juggernaut] run playsound music_disc.creator record @s ~ ~ ~ 3 0.75
 execute as @a[tag=runner] run playsound music_disc.precipice record @s ~ ~ ~ 3 1.1
-# execute as @a[tag=runner] run playsound music_disc.precipice record @s ~ ~ ~ 3 0.75
 
-scoreboard players set @a juggernaut_game_time 0
 scoreboard players set @a juggernaut_release_timer 0
 
 scoreboard players set #juggernaut_count var 0
@@ -49,12 +47,6 @@ scoreboard players operation @a[tag=runner] lives_remaining = @a[tag=runner] liv
 scoreboard players set @a[tag=juggernaut] lives_remaining 1
 
 scoreboard players set @a game_deaths 0
-
-scoreboard players set @a revealing_tower_cooldown 0
-scoreboard players set @a replenishment_tower_cooldown 0
-
-scoreboard players set @a point_kills 0
-scoreboard players set @a damage_absorbed 0
 
 tag @a remove in_chase
 
@@ -97,7 +89,6 @@ execute if score #juggernaut_customisation completable_stations matches 1 run sc
 scoreboard players set #game_state var 10
 scoreboard players set #juggernaut_manager replenish_progress 0
 scoreboard players set #juggernaut_manager replenish_decimal 0
-scoreboard players set #juggernaut_manager replenish_percentage 0
 
 # Turn off natural regeneration.
 gamerule natural_health_regeneration false

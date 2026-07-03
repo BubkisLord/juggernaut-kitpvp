@@ -15,8 +15,6 @@ execute as @a run function juggernaut:attribute_management/check {attribute_name
 execute as @a run function juggernaut:attribute_management/check {attribute_name:"movement_speed",modifier_name:"waiting_game"}
 execute as @a run function juggernaut:attribute_management/check {attribute_name:"movement_speed",modifier_name:"rapid_brutality"}
 
-# Juggernaut timeout countdown
-execute as @a[tag=juggernaut,scores={juggernaut_game_time=1..}] run scoreboard players remove @a[tag=juggernaut] juggernaut_game_time 1
 # Juggernaut release sequence
 scoreboard players remove @a[tag=juggernaut] juggernaut_release_timer 1
 execute as @p[tag=juggernaut,scores={juggernaut_release_timer=30}] run tellraw @a [{"text": "Juggernaut is released in: ","bold": true, "color": "gray"},{"text": "30","bold": true,"color": "dark_red"},{"text": " Seconds","bold": true, "color": "gray"}]
@@ -44,56 +42,31 @@ execute as @e[type=armor_stand,tag=replenishment.station] if score @s replenish_
 execute if entity @a[tag=juggernaut] run tag @a[tag=juggernaut] remove is_glowing
 
 # General kit cooldowns
-execute as @a if score #game_state var matches 10..19 if score @s ability_cooldown0 > #0 var run function juggernaut:ability_management/apply_ability_modifiers
+execute as @a if score @s ability_cooldown0 matches 1.. run scoreboard players remove @s ability_cooldown0 1
+execute as @a if score @s ability_cooldown1 matches 1.. run scoreboard players remove @s ability_cooldown1 1
+execute as @a if score @s ability_cooldown2 matches 1.. run scoreboard players remove @s ability_cooldown2 1
+execute as @a if score @s ability_cooldown3 matches 1.. run scoreboard players remove @s ability_cooldown3 1
 
-execute as @a if score #game_state var matches 10..19 if score @s ability_cooldown0 > #0 var run scoreboard players remove @s ability_cooldown0 1
-execute as @a unless score #game_state var matches 10..19 if score @s ability_cooldown0 > #0 var run scoreboard players set @s ability_cooldown0 0
-
-execute as @a if score #game_state var matches 10..19 if score @s ability_cooldown1 > #0 var run scoreboard players remove @s ability_cooldown1 1
-execute as @a unless score #game_state var matches 10..19 if score @s ability_cooldown1 > #0 var run scoreboard players set @s ability_cooldown1 0
-
-execute as @a if score #game_state var matches 10..19 if score @s ability_cooldown2 > #0 var run scoreboard players remove @s ability_cooldown2 1
-execute as @a unless score #game_state var matches 10..19 if score @s ability_cooldown2 > #0 var run scoreboard players set @s ability_cooldown2 0
-
-execute as @a if score #game_state var matches 10..19 if score @s ability_cooldown3 > #0 var run scoreboard players remove @s ability_cooldown3 1
-execute as @a unless score #game_state var matches 10..19 if score @s ability_cooldown3 > #0 var run scoreboard players set @s ability_cooldown3 0
-
-execute as @a if score #game_state var matches 10..19 if score @s shadow_mark_cooldown > #0 var run scoreboard players remove @s shadow_mark_cooldown 1
-execute as @a unless score #game_state var matches 10..19 if score @s shadow_mark_cooldown > #0 var run scoreboard players set @s shadow_mark_cooldown 0
-
-execute as @a if score #game_state var matches 10..19 if score @s brutal_efficiency_cooldown > #0 var run scoreboard players remove @s brutal_efficiency_cooldown 1
-execute as @a unless score #game_state var matches 10..19 if score @s brutal_efficiency_cooldown > #0 var run scoreboard players set @s brutal_efficiency_cooldown 0
-
-execute as @a if score #game_state var matches 10..19 if score @s speed_pot_cooldown > #0 var run scoreboard players remove @s speed_pot_cooldown 1
-execute as @a unless score #game_state var matches 10..19 if score @s speed_pot_cooldown > #0 var run scoreboard players set @s speed_pot_cooldown 0
-execute as @a if score #game_state var matches 10..19 if score @s fire_pot_cooldown > #0 var run scoreboard players remove @s fire_pot_cooldown 1
-execute as @a unless score #game_state var matches 10..19 if score @s fire_pot_cooldown > #0 var run scoreboard players set @s fire_pot_cooldown 0
-execute as @a if score #game_state var matches 10..19 if score @s strength_pot_cooldown > #0 var run scoreboard players remove @s strength_pot_cooldown 1
-execute as @a unless score #game_state var matches 10..19 if score @s strength_pot_cooldown > #0 var run scoreboard players set @s strength_pot_cooldown 0
+execute as @a if score @s brutal_efficiency_cooldown matches 1.. run scoreboard players remove @s brutal_efficiency_cooldown 1
 
 # Engineer tower cooldowns/duration
 execute as @e[type=armor_stand,tag=engineer_tower] run scoreboard players remove @s var 1
-# TODO - Check if the @e selector is necessary (instead of @a)
-execute as @a[tag=engineer] if score @s revealing_tower_cooldown > #0 var run scoreboard players remove @s revealing_tower_cooldown 1
-execute as @a[tag=engineer] if score @s replenishment_tower_cooldown > #0 var run scoreboard players remove @s replenishment_tower_cooldown 1
-execute as @a[tag=engineer] if score @s turret_cooldown > #0 var run scoreboard players remove @s turret_cooldown 1
-
 execute at @e[type=armor_stand,tag=engineer_tower] run execute as @a[tag=juggernaut,distance=..3] run scoreboard players add @n[type=armor_stand,tag=engineer_tower] dispel_progress 1
 execute as @e[type=armor_stand,tag=engineer_tower] at @s run execute if score @s dispel_progress >= @s total_dispelling_needed run playsound block.note_block.bell master @a[tag=juggernaut,distance=..16] ~ ~ ~ 2 1.2
 execute as @e[type=armor_stand,tag=engineer_tower] at @s run execute if score @s dispel_progress >= @s total_dispelling_needed run playsound entity.ender_dragon.growl master @a[tag=engineer] ~ ~ ~ 3 0.2 1
 execute as @e[type=armor_stand,tag=engineer_tower] at @s run execute if score @s dispel_progress >= @s total_dispelling_needed run kill @s
 
 # Warlock cooldowns
-execute as @a[tag=warlock] if score #game_state var matches 10..19 if score @s malevolent_aura_cooldown > #0 var run scoreboard players remove @s malevolent_aura_cooldown 1
-execute as @a[tag=warlock] if score #game_state var matches 10..19 if score @s banishment_glyph_cooldown > #0 var run scoreboard players remove @s banishment_glyph_cooldown 1
-execute as @a[tag=warlock] if score #game_state var matches 10..19 if score @s withering_surge_cooldown > #0 var run scoreboard players remove @s withering_surge_cooldown 1
+execute as @a[tag=warlock] if score @s ability_cooldown0 matches 1.. run scoreboard players remove @s ability_cooldown0 1
+execute as @a[tag=warlock] if score @s ability_cooldown1 matches 1.. run scoreboard players remove @s ability_cooldown1 1
+execute as @a[tag=warlock] if score @s ability_cooldown2 matches 1.. run scoreboard players remove @s ability_cooldown2 1
 
-execute as @a[tag=warlock] unless score #game_state var matches 10..19 if score @s malevolent_aura_cooldown > #0 var run scoreboard players set @s malevolent_aura_cooldown 0
-execute as @a[tag=warlock] unless score #game_state var matches 10..19 if score @s banishment_glyph_cooldown > #0 var run scoreboard players set @s banishment_glyph_cooldown 0
-execute as @a[tag=warlock] unless score #game_state var matches 10..19 if score @s withering_surge_cooldown > #0 var run scoreboard players set @s withering_surge_cooldown 0
+execute as @a[tag=warlock] if score @s ability_cooldown0 matches 1.. run scoreboard players set @s ability_cooldown0 0
+execute as @a[tag=warlock] if score @s ability_cooldown1 matches 1.. run scoreboard players set @s ability_cooldown1 0
+execute as @a[tag=warlock] if score @s ability_cooldown2 matches 1.. run scoreboard players set @s ability_cooldown2 0
 
 # Hunter remnant delay
-execute as @e[type=armor_stand,tag=hunter_remnant] if score @s var > #0 var run scoreboard players remove @s var 1
+execute as @e[type=armor_stand,tag=hunter_remnant] if score @s var matches 1.. run scoreboard players remove @s var 1
 
 # Scout revealing by maintaining line of sight
 execute as @a[tag=scout] at @s run function juggernaut:raycasts/raycast {\
@@ -154,9 +127,6 @@ execute as @a[tag=runner,tag=has_respawn_time] if score @s respawn_time_left mat
 
 # Spectator
 execute as @a[tag=spectator] run tag @s remove in_chase
-
-# Reset second counter periodically
-execute if score #second_counter var matches 100.. run scoreboard players set #second_counter var 0
 
 # damage @n[type=minecraft:wolf,tag=hunter_wolf] 1 magic by @p[tag=hunted]
 execute unless entity @a[tag=hunted] run kill @n[type=minecraft:wolf,tag=hunter_wolf]

@@ -41,10 +41,6 @@ execute as @a[tag=using_lightweight] run attribute @s jump_strength modifier add
 execute if score #juggernaut_customisation debug_mode matches 0 run scoreboard players set @a[tag=juggernaut] juggernaut_release_timer 25
 execute if score #juggernaut_customisation debug_mode matches 1 run scoreboard players set @a[tag=juggernaut] juggernaut_release_timer 1
 
-# Score for the juggernaut game time left is set to the max time (300 seconds) plus the release timer (25 seconds)
-# This is for when the game time is capped. (Optional)
-# scoreboard players set @a[tag=juggernaut] juggernaut_game_time 325
-
 tag @a remove in_chase
 
 execute if entity @a[tag=runner] run tp @a[tag=runner] @e[type=armor_stand,tag=arena.spawn,limit=1,sort=random]
