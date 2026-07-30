@@ -4,20 +4,22 @@ $execute as @s[nbt={Inventory:[{id:"$(item_id)"}]}] if items entity @s weapon.of
 execute as @s[nbt={Inventory:[{id:"minecraft:barrier"}]}] if items entity @s inventory.* minecraft:barrier run clear @s minecraft:barrier
 execute as @s[nbt={Inventory:[{id:"minecraft:barrier"}]}] if items entity @s player.cursor minecraft:barrier run clear @s minecraft:barrier
 execute as @s[nbt={Inventory:[{id:"minecraft:barrier"}]}] if items entity @s weapon.offhand minecraft:barrier run clear @s minecraft:barrier
-$data modify storage juggernaut:ability_management/check_ability_owner player_tag set value $(player_tag)
-$data modify storage juggernaut:ability_management/check_ability_owner cooldown set value $(cooldown)
-$data modify storage juggernaut:ability_management/check_ability_owner item_name set value $(item_name)
-$data modify storage juggernaut:ability_management/check_ability_owner hotbar_slot set value $(hotbar_slot)
-$data modify storage juggernaut:ability_management/check_ability_owner cooldown_var set value $(cooldown_var)
-$data modify storage juggernaut:ability_management/check_ability_owner ability_id set value $(ability_id)
+$data modify storage juggernaut:ability_management/use_ability player_tag set value $(player_tag)
+$data modify storage juggernaut:ability_management/use_ability cooldown set value $(cooldown)
+# Multiply cooldown by 100 to accommodate for the cooldown modifier being a percentage
+execute store result storage juggernaut:ability_management/use_ability cooldown int 1 run data get storage juggernaut:ability_management/use_ability cooldown 2000
+$data modify storage juggernaut:ability_management/use_ability item_name set value $(item_name)
+$data modify storage juggernaut:ability_management/use_ability hotbar_slot set value $(hotbar_slot)
+$data modify storage juggernaut:ability_management/use_ability cooldown_var set value $(cooldown_var)
+$data modify storage juggernaut:ability_management/use_ability ability_id set value $(ability_id)
+$execute as @s[tag=!spectator] if score @s $(cooldown_var) matches ..-1 run scoreboard players set @s $(cooldown_var) 0
 $execute as @s[scores={$(cooldown_var)=..0},tag=!spectator] at @s if score #game_state var matches 11 unless items entity @s $(hotbar_slot) * run playsound block.note_block.bit master @s ~ ~ ~ 1 0.2
-$execute as @s[scores={$(cooldown_var)=..0},tag=!spectator] at @s if score #game_state var matches 11 unless items entity @s $(hotbar_slot) * run function juggernaut:ability_management/use_ability with storage juggernaut:ability_management/check_ability_owner
+$execute as @s[scores={$(cooldown_var)=..0},tag=!spectator] at @s if score #game_state var matches 11 if score @s health matches 1.. unless items entity @s $(hotbar_slot) * run function juggernaut:ability_management/use_ability with storage juggernaut:ability_management/use_ability
 $execute as @s[tag=!spectator] if score @s $(cooldown_var) matches 0 run item replace entity @s $(hotbar_slot) with $(item_id)[item_name=[$(item_name),{"text": " | ","color": "dark_gray","bold": true},{"text": "READY","color": "green","bold": true}],custom_data={kit:$(player_tag),ability_id:"$(ability_id)"},consumable={consume_seconds:0,animation:"none",has_consume_particles:false,sound:{"sound_id":""}},lore=$(description)]
 $execute as @s[tag=!spectator] if score @s $(cooldown_var) matches 1.. run item replace entity @s $(hotbar_slot) with barrier[item_name=[$(item_name),{"text": " | ","color": "dark_gray","bold": true},{"text": "ON COOLDOWN","color": "red","bold": true}],custom_data={kit:$(player_tag),ability_id:"$(ability_id)"},lore=$(description)]
 $execute as @s[tag=!spectator] if score @s $(cooldown_var) matches 1.. run clear @s $(item_id)[item_name=[$(item_name),{"text": " | ","color": "dark_gray","bold": true},{"text": "READY","color": "green","bold": true}],custom_data={kit:$(player_tag),ability_id:"$(ability_id)"}]
-xp set @a 28 levels
+xp set @a 240 levels
 $scoreboard players operation @s current_cooldown = @s $(cooldown_var)
-scoreboard players operation @s current_cooldown *= #100 var
 $scoreboard players set @s tmp $(cooldown)
 scoreboard players operation @s current_cooldown /= @s tmp
 execute store result storage juggernaut:ability_management/check_ability current_cooldown_percentage int 1 run scoreboard players get @s current_cooldown

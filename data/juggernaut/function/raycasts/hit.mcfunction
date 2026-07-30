@@ -1,1 +1,1 @@
-$function juggernaut:raycasts/hit_player/$(raycast_id)
+$function juggernaut:raycasts/hit_target/$(raycast_id)

@@ -13,11 +13,18 @@ execute if score #juggernaut_customisation random_perks matches 0 if items entit
 execute if score #juggernaut_customisation random_perks matches 0 if items entity @s container.* minecraft:miner_pottery_sherd run function juggernaut:perk_management/add_perk/runner {perk_id:"lightweight",perk_name:"Lightweight"}
 execute if score #juggernaut_customisation random_perks matches 0 if items entity @s container.* minecraft:howl_pottery_sherd run function juggernaut:perk_management/add_perk/runner {perk_id:"teeny_weeny",perk_name:"Teeny Weeny"}
 execute if score #juggernaut_customisation random_perks matches 0 if items entity @s container.* minecraft:explorer_pottery_sherd run function juggernaut:perk_management/add_perk/runner {perk_id:"tailgater",perk_name:"Tailgater"}
+execute if score #juggernaut_customisation random_perks matches 0 if items entity @s container.* minecraft:arms_up_pottery_sherd run function juggernaut:perk_management/add_perk/runner {perk_id:"overclock",perk_name:"Overclock"}
+execute if score #juggernaut_customisation random_perks matches 0 if items entity @s container.* minecraft:shelter_pottery_sherd run function juggernaut:perk_management/add_perk/runner {perk_id:"optimised",perk_name:"Optimised"}
+execute if score #juggernaut_customisation random_perks matches 0 if items entity @s container.* minecraft:sheaf_pottery_sherd run function juggernaut:perk_management/add_perk/runner {perk_id:"any_means",perk_name:"Any Means Necessary"}
 execute if score #juggernaut_customisation random_perks matches 1 if items entity @s container.* #minecraft:decorated_pot_sherds run playsound block.note_block.didgeridoo ui @s ~ ~ ~ 1.2
 execute if score #juggernaut_customisation random_perks matches 1 if items entity @s container.* #minecraft:decorated_pot_sherds run particle angry_villager ~ ~ ~ 0.3 0.5 0.3 0 10
 execute if score #juggernaut_customisation random_perks matches 1 if items entity @s container.* #minecraft:decorated_pot_sherds run tellraw @s [{"text": "Could not equip perk.\n","color":"white",bold:false},{"text": "Reason:\n","color":"aqua",bold:true},{"text": "Random perks are enforced.","color":"white",bold:false}]
 execute if score #juggernaut_customisation random_perks matches 1 if items entity @s container.* #minecraft:decorated_pot_sherds run function juggernaut:perk_management/give_runner_perks
 execute if score #juggernaut_customisation random_perks matches 1 if items entity @s container.* #minecraft:decorated_pot_sherds run clear @s #decorated_pot_sherds
+
+execute if score #juggernaut_customisation random_perks matches 0 run title @s actionbar [{"score":{"name":"@s",objective:"perks_enabled"}},{"text":"/"},{"score":{"name":"#juggernaut_customisation",objective:"max_perks_equipped"}},{"text":" Perks Equipped."}]
+execute if score #juggernaut_customisation random_perks matches 1 if score @s perk_rerolls < #juggernaut_customisation perk_rerolls run title @s actionbar [{"score":{"name":"@s",objective:"perk_rerolls"}},{"text":"/"},{"score":{"name":"#juggernaut_customisation",objective:"perk_rerolls"}},{"text":" Rerolls Used"}]
+execute if score #juggernaut_customisation random_perks matches 1 if score @s perk_rerolls >= #juggernaut_customisation perk_rerolls run title @s actionbar {"text":"Max Rerolls Used","color":red}
 
 execute if items entity @s container.* end_crystal[item_name={"text": "Get Random Perks","color": "red"}] run function juggernaut:perk_management/equip_random/runner
 execute if items entity @s container.* end_crystal[item_name={"text": "Get Random Perks","color": "red"}] run clear @s end_crystal[item_name={"text": "Get Random Perks","color": "red"}]

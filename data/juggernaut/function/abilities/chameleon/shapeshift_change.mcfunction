@@ -1,5 +1,6 @@
 tag @r[tag=saved_skin] add unsaved_skin
 tag @a remove saved_skin
+execute unless entity @a[tag=!unsaved_skin,tag=runner] run tag @a remove unsaved_skin
 tag @r[tag=!unsaved_skin,tag=runner] add saved_skin
 tag @a remove unsaved_skin
 data modify entity @n[type=mannequin,tag=chameleon_mannequin] profile.id set from entity @p[tag=saved_skin] UUID

@@ -8,6 +8,6 @@ item replace entity @s hotbar.8 with written_book[written_book_content={title:"F
 \
 [{"text": "Summon Drowned\n","bold": true,"color": "#2AB8B8"},{"text": "Active Ability\n\n","bold": true,"color": "gray","italic": true},{"text": "Summon a drowned riding a nautilus at random points along the river for each runner in the game. They lurk in the water until spotting a runner, then chase and throw tridents. They despawn in the final 20 seconds of their uptime.","bold": false,"color": "black"}],\
 \
-[{"text": "Counterplay\n","bold": true,"color": "#2AB8B8"},{"text": "Counterplay for fishmonger is primarily avoiding line of sight to the sky, however staying inside may be risky. Escapist is excellent for making distance out of indoor areas and avoiding getting hit by the harpoon.","bold": false,"color": "black"}]\
+[{"text": "Counterplay\n","bold": true,"color": "#2AB8B8"},{"text": "Counterplay for fishmonger is primarily avoiding line of sight to the sky and dodging the thrown trident. Balancing distance with staying in chase is preferable. The riptide trident allows the fishmonger to catch back up easily, and distance lets you dodge the harpoon.","bold": false,"color": "black"}]\
 ]\
 }]

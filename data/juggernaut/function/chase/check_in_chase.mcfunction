@@ -8,15 +8,15 @@ execute as @a[tag=runner,tag=in_chase,scores={chase_timeout=..0}] run function j
 execute as @a[tag=in_chase,scores={chase_timeout=..0}] run tag @s remove in_chase
 
 # Check whether the juggernaut/runner should be eligible for chase.
-execute as @a[tag=juggernaut,scores={is_sneaking=0},tag=!shapeshifting] at @s anchored eyes positioned ^ ^ ^10 if entity @a[tag=runner,distance=..14,scores={is_sneaking=0}] run tag @s add chase_eligible
-execute as @a[tag=juggernaut,scores={is_sneaking=0},tag=!shapeshifting] at @s anchored eyes positioned ^ ^ ^10 as @a[tag=runner,distance=..14,scores={is_sneaking=0}] run tag @s add chase_eligible
+execute as @a[tag=juggernaut,predicate=!is_sneaking,tag=!shapeshifting] at @s anchored eyes positioned ^ ^ ^10 if entity @a[tag=runner,distance=..14,predicate=!is_sneaking] run tag @s add chase_eligible
+execute as @a[tag=juggernaut,predicate=!is_sneaking,tag=!shapeshifting] at @s anchored eyes positioned ^ ^ ^10 as @a[tag=runner,distance=..14,predicate=!is_sneaking] run tag @s add chase_eligible
 
-execute as @a[tag=juggernaut,scores={is_sneaking=0},tag=!shapeshifting] at @s anchored eyes positioned ^ ^ ^12 if entity @a[tag=runner,distance=..18,scores={is_sprinting=1}] run tag @s add chase_eligible
-execute as @a[tag=juggernaut,scores={is_sneaking=0},tag=!shapeshifting] at @s anchored eyes positioned ^ ^ ^12 as @a[tag=runner,distance=..18,scores={is_sprinting=1}] run tag @s add chase_eligible
+execute as @a[tag=juggernaut,predicate=!is_sneaking,tag=!shapeshifting] at @s anchored eyes positioned ^ ^ ^12 if entity @a[tag=runner,distance=..18,scores={is_sprinting=1}] run tag @s add chase_eligible
+execute as @a[tag=juggernaut,predicate=!is_sneaking,tag=!shapeshifting] at @s anchored eyes positioned ^ ^ ^12 as @a[tag=runner,distance=..18,scores={is_sprinting=1}] run tag @s add chase_eligible
 
 # If the runner is using determination, they should always be eligible for chase.
-execute as @a[tag=juggernaut,tag=!shapeshifting] at @s if entity @a[tag=runner,distance=..10,scores={is_sneaking=0},tag=using_determination] run tag @s add chase_eligible
-execute as @a[tag=juggernaut,tag=!shapeshifting] at @s as @a[tag=runner,distance=..10,scores={is_sneaking=0},tag=using_determination] run tag @s add chase_eligible
+execute as @a[tag=juggernaut,tag=!shapeshifting] at @s if entity @a[tag=runner,distance=..10,predicate=!is_sneaking,tag=using_determination] run tag @s add chase_eligible
+execute as @a[tag=juggernaut,tag=!shapeshifting] at @s as @a[tag=runner,distance=..10,predicate=!is_sneaking,tag=using_determination] run tag @s add chase_eligible
 
 # For each player that is eligible for chase, set 3 seconds for their chase timeout.
 execute as @a[tag=chase_eligible] run scoreboard players set @s chase_timeout 60

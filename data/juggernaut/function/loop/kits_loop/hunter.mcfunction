@@ -10,7 +10,7 @@ execute as @e[type=armor_stand,tag=hunter_remnant] if score @s var = #0 var run 
 execute as @e[type=armor_stand,tag=hunter_remnant] if score @s var = #0 var run execute as @a[tag=hunter,tag=is_hunting] at @s run playsound entity.enderman.teleport master @a[distance=..20] ~ ~ ~
 execute as @e[type=armor_stand,tag=hunter_remnant] if score @s var = #0 var run kill @s
 
-execute as @a[tag=has_hunters_mark,tag=!has_respawn_time,tag=!is_undetectable] at @s run particle minecraft:trial_spawner_detection ~ ~-0.5 ~ 1 1.5 1 0 4 force @a[tag=hunter]
+execute as @a[tag=has_hunters_mark,tag=!has_respawn_time,tag=!undetectable] at @s run particle minecraft:trial_spawner_detection ~ ~-0.5 ~ 1 1.5 1 0 4 force @a[tag=hunter]
 
 
 execute unless entity @a[tag=has_hunters_mark] run function juggernaut:ability_management/check_ability {\

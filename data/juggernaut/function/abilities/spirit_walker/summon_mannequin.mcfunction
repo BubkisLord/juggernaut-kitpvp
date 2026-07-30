@@ -1,0 +1,1 @@
+$execute unless entity @n[type=mannequin,tag=phase_shift_destination] run summon mannequin ~ ~ ~ {Tags:["kill_on_end_game","phase_shift_destination"],Invulnerable:1b,pose:"standing",Rotation:$(Rotation),profile:{id:$(UUID)}}

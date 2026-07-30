@@ -1,8 +1,23 @@
-execute if score #game_state var matches 11 as @a[tag=!runner] at @s run title @s actionbar [{"text":"Total Replenishment: ","color": "dark_aqua","bold": true},{"score":{"name":"#juggernaut_manager","objective":"replenish_decimal"},"bold": true,"color": "dark_aqua"},{"text": "%"},{"text": " [","color": "dark_aqua","bold":true},{"score":{"name":"#stations_completed","objective":"var"},"color": "dark_aqua","bold":true},{"text": "/","color": "dark_aqua","bold":true},{"score":{"name":"#stations_needed","objective":"var"},"color": "dark_aqua","bold":true},{"text": "]","color": "dark_aqua","bold":true}]
-
-# When debuffed
-execute if score #game_state var matches 11 as @a[tag=runner] at @s if score @s replenishment_modifier < #100 var run title @s actionbar [{"text":"Station Percentage: ","color": "red","bold": true},{"score":{"name":"#juggernaut_manager","objective":"replenish_decimal"},"bold": true,"color": "red"},{"text": "%"},{"text": " [","color": "red","bold":true},{"score":{"name":"#stations_completed","objective":"var"},"color": "red","bold":true},{"text": "/","color": "red","bold":true},{"score":{"name":"#stations_needed","objective":"var"},"color": "red","bold":true},{"text": "]","color": "red","bold":true},{"text": " (","color": "red","bold": true},{"score": {"name": "@s","objective": "replenishment_display_speed"},"color": "red","bold": true},{"text": "% Speed)","color": "red","bold": true}]
+# Display actionbar for the closest station to a runner when not in chase
+# When debuffed. Sign here is empty, as negative numbers are rendered with the `-` sign already.
+execute if entity @s[tag=!in_chase] at @s if score @s replenishment_modifier < #100 var run function juggernaut:replenishment_management/station_actionbar_mod {station:"@n[type=armor_stand,tag=replenishment.station,distance=..3]",color:"red",sign:""}
 # When normal speed
-execute if score #game_state var matches 11 as @a[tag=runner] at @s if score @s replenishment_modifier = #100 var run title @s actionbar [{"text":"Station Percentage: ","color": "gold","bold": true},{"score":{"name":"#juggernaut_manager","objective":"replenish_decimal"},"bold": true,"color": "gold"},{"text": "%"},{"text": " [","color": "gold","bold":true},{"score":{"name":"#stations_completed","objective":"var"},"color": "gold","bold":true},{"text": "/","color": "gold","bold":true},{"score":{"name":"#stations_needed","objective":"var"},"color": "gold","bold":true},{"text": "]","color": "gold","bold":true}]
+execute if entity @s[tag=!in_chase] at @s if score @s replenishment_modifier = #100 var run function juggernaut:replenishment_management/station_actionbar_norm {station:"@n[type=armor_stand,tag=replenishment.station,distance=..3]",color:"gold"}
 # When buffed
-execute if score #game_state var matches 11 as @a[tag=runner] at @s if score @s replenishment_modifier > #100 var run title @s actionbar [{"text":"Station Percentage: ","color": "green","bold": true},{"score":{"name":"#juggernaut_manager","objective":"replenish_decimal"},"bold": true,"color": "green"},{"text": "%"},{"text": " [","color": "green","bold":true},{"score":{"name":"#stations_completed","objective":"var"},"color": "green","bold":true},{"text": "/","color": "green","bold":true},{"score":{"name":"#stations_needed","objective":"var"},"color": "green","bold":true},{"text": "]","color": "green","bold":true},{"text": " (+","color": "green","bold": true},{"score": {"name": "@s","objective": "replenishment_display_speed"},"color": "green","bold": true},{"text": "% Speed)","color": "green","bold": true}]
+execute if entity @s[tag=!in_chase] at @s if score @s replenishment_modifier > #100 var run function juggernaut:replenishment_management/station_actionbar_mod {station:"@n[type=armor_stand,tag=replenishment.station,distance=..3]",color:"green",sign:"+"}
+
+# Display the most progressed station to a runner when in chase (as that is what they are progressing)
+# When debuffed. Sign here is empty, as negative numbers are rendered with the `-` sign already.
+execute if entity @s[tag=in_chase] at @s if score @s replenishment_modifier < #100 var run function juggernaut:replenishment_management/station_actionbar_mod {station:"@n[type=armor_stand,tag=replenishment.station,tag=highest_station]",color:"red",sign:""}
+# When normal speed
+execute if entity @s[tag=in_chase] at @s if score @s replenishment_modifier = #100 var run function juggernaut:replenishment_management/station_actionbar_norm {station:"@n[type=armor_stand,tag=replenishment.station,tag=highest_station]",color:"gold"}
+# When buffed
+execute if entity @s[tag=in_chase] at @s if score @s replenishment_modifier > #100 var run function juggernaut:replenishment_management/station_actionbar_mod {station:"@n[type=armor_stand,tag=replenishment.station,tag=highest_station]",color:"green",sign:"+"}
+
+# Replenishment Tower
+# When debuffed. Sign here is empty, as negative numbers are rendered with the `-` sign already.
+execute if entity @s[tag=!in_chase] at @s if entity @n[type=armor_stand,tag=replenishment_tower,distance=..3] if score @s replenishment_modifier < #100 var run function juggernaut:replenishment_management/station_actionbar_mod {station:"@n[type=armor_stand,tag=replenishment.station,tag=highest_station]",color:"red",sign:""}
+# When normal speed
+execute if entity @s[tag=!in_chase] at @s if entity @n[type=armor_stand,tag=replenishment_tower,distance=..3] if score @s replenishment_modifier = #100 var run function juggernaut:replenishment_management/station_actionbar_norm {station:"@n[type=armor_stand,tag=replenishment.station,tag=highest_station]",color:"gold"}
+# When buffed
+execute if entity @s[tag=!in_chase] at @s if entity @n[type=armor_stand,tag=replenishment_tower,distance=..3] if score @s replenishment_modifier > #100 var run function juggernaut:replenishment_management/station_actionbar_mod {station:"@n[type=armor_stand,tag=replenishment.station,tag=highest_station]",color:"green",sign:"+"}

@@ -1,0 +1,1 @@
+random reset * 0 false true

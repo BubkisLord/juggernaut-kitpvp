@@ -1,7 +1,7 @@
 execute run tp @n[type=mannequin,tag=chameleon_mannequin,distance=..6] ~ ~ ~ facing ^ ^ ^999999999999999
-execute if entity @s[scores={is_sneaking=0}] run data modify entity @n[type=mannequin,tag=chameleon_mannequin,distance=..6] pose set value "standing"
-execute if entity @s[scores={is_sneaking=1..}] run data modify entity @n[type=mannequin,tag=chameleon_mannequin,distance=..6] pose set value "crouching"
-execute if block ~ ~ ~ water if entity @s[scores={is_sneaking=0}] run data modify entity @n[type=mannequin,tag=chameleon_mannequin,distance=..6] pose set value "swimming"
+execute unless entity @s[predicate=is_sneaking] run data modify entity @n[type=mannequin,tag=chameleon_mannequin,distance=..6] pose set value "standing"
+execute if entity @s[predicate=is_sneaking] run data modify entity @n[type=mannequin,tag=chameleon_mannequin,distance=..6] pose set value "crouching"
+execute if block ~ ~ ~ water unless entity @s[predicate=is_sneaking] run data modify entity @n[type=mannequin,tag=chameleon_mannequin,distance=..6] pose set value "swimming"
 execute run item replace entity @n[type=mannequin,tag=chameleon_mannequin] weapon.mainhand from entity @p[tag=saved_skin] weapon.mainhand
 execute run item replace entity @n[type=mannequin,tag=chameleon_mannequin] weapon.offhand from entity @p[tag=saved_skin] weapon.offhand
 execute run item replace entity @n[type=mannequin,tag=chameleon_mannequin] armor.head from entity @p[tag=saved_skin] armor.head
@@ -29,6 +29,13 @@ execute as @e[type=text_display,tag=chameleon_health_tag] at @s run data modify 
 
 effect give @s resistance 1 0 true
 
+# Hide Chameleon Mainhand
+execute if items entity @s hotbar.0 copper_sword run item modify entity @s hotbar.0 {function:"set_components",components:{item_model:"copper_sword"}}
+execute if items entity @s hotbar.1 bow run item modify entity @s hotbar.1 {function:"set_components",components:{item_model:"bow"}}
+execute if entity @s[tag=shapeshifting] run item modify entity @s weapon.mainhand {function:"set_components",components:{item_model:"air"}}
+execute if entity @s[tag=shapeshifting] run attribute @s camera_distance modifier add juggernaut:chameleon_shapeshift 3 add_value
+execute if entity @s[tag=!shapeshifting] run attribute @s camera_distance modifier remove juggernaut:chameleon_shapeshift
+
 execute if entity @s[tag=!shapeshifting] run function juggernaut:ability_management/check_ability {\
     player_tag:"chameleon",\
     item_id:"minecraft:player_head",\
@@ -53,7 +60,7 @@ execute if entity @s[tag=shapeshifting] run function juggernaut:ability_manageme
 
 execute if entity @s[tag=shapeshifting] run function juggernaut:ability_management/check_ability {\
     player_tag:"chameleon",\
-    item_id:"minecraft:red_dye",\
+    item_id:"minecraft:copper_ingot",\
     item_name:{"text": "Exit Shapeshift","color": "gray"},\
     description:[{"text": "Exit Shapeshifting mode and return to normal.","color": "gray"},{"text": "Cooldown: 1s","color": "dark_gray"}],\
     ability_id:"exit_shapeshift",\
@@ -62,7 +69,7 @@ execute if entity @s[tag=shapeshifting] run function juggernaut:ability_manageme
     cooldown_var:"ability_cooldown1",\
 }
 
-execute if entity @s[tag=!shapeshifting] run item replace entity @s hotbar.3 with red_dye[item_name={"text": "Exit Shapeshift","color": "gray"},lore=[{"text": "Cannot exit shapeshift as you are not shapeshifting.","color": "gray"},{"text": "Cooldown: 1s","color": "dark_gray"}]]
+execute if entity @s[tag=!shapeshifting] run item replace entity @s hotbar.3 with copper_nugget[item_name=[{"text": "Exit Shapeshift","color": "gray"},{"text": " | ","color": "dark_gray","bold": true},{"text": "NOT AVAILABLE","color": "red","bold": true}],lore=[{"text": "Cannot exit shapeshift as you are not shapeshifting.","color": "gray"},{"text": "Cooldown: 1s","color": "dark_gray"}]]
 
 function juggernaut:ability_management/check_ability {\
     player_tag:"chameleon",\

@@ -99,6 +99,7 @@
     "#fire",
     "ladder",
     "#trapdoors",
+    "#pressure_plates",
     "lava"
   ]
 }

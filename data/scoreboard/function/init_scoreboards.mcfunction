@@ -19,6 +19,7 @@ scoreboard objectives add health health
 scoreboard objectives add replenish_progress dummy
 scoreboard objectives add lives_remaining dummy
 scoreboard objectives add current_raycast_depth dummy
+scoreboard objectives add raycast_depth_counter dummy
 scoreboard objectives add replenish_decimal dummy
 scoreboard objectives add temp_max_progress dummy
 scoreboard objectives add total_dispelling_needed dummy
@@ -71,17 +72,27 @@ scoreboard objectives add replenishment_modifier dummy
 scoreboard objectives add replenishment_per_tick dummy
 scoreboard objectives add replenishment_display_speed dummy
 scoreboard objectives add random_perks dummy
+scoreboard objectives add cooldown_modifier dummy
+scoreboard objectives add overclock_damage dummy
+scoreboard objectives add bloodlust_remaining dummy
+scoreboard objectives add healing_time_left dummy
+scoreboard objectives add healing_minutes dummy
+scoreboard objectives add healing_seconds dummy
+scoreboard objectives add undetectable_duration_left dummy
+scoreboard objectives add ts_step dummy
 
 # Initialise game state variable
 scoreboard players set #game_state var 0
 
 # Initialise default customisation variables
-scoreboard players set #juggernaut_customisation round_robin 0
+scoreboard players set #juggernaut_customisation round_robin 1
 scoreboard players set #juggernaut_customisation juggernaut_count 1
 scoreboard players set #juggernaut_customisation perks_enabled 1
 scoreboard players set #juggernaut_customisation completable_stations 1
 scoreboard players set #juggernaut_customisation debug_mode 0
-scoreboard players set #juggernaut_customisation perk_rerolls 3
+scoreboard players set #juggernaut_customisation perk_rerolls 2
+scoreboard players set #juggernaut_customisation max_perks_equipped 2
+scoreboard players operation @a max_perks_equipped = #juggernaut_customisation max_perks_equipped
 
 # Initialise default customisation variables
 scoreboard players set #survival_customisation crate_count 8
@@ -98,9 +109,11 @@ scoreboard players set #6 var 6
 scoreboard players set #10 var 10
 scoreboard players set #20 var 20
 scoreboard players set #25 var 25
+scoreboard players set #40 var 40
 scoreboard players set #60 var 60
 scoreboard players set #100 var 100
 scoreboard players set #1000 var 1000
+scoreboard players set #20000 var 20000
 
 # Juggernaut Kit Statistics
 scoreboard objectives add picked_kit_chameleon dummy "Picked Kit - Chameleon"
@@ -158,6 +171,11 @@ scoreboard objectives add kills_kit_witch_doctor dummy "Kills with Witch Doctor"
 scoreboard objectives add witch_doctor_wins dummy "Wins with Witch Doctor"
 scoreboard objectives add witch_doctor_losses dummy "Losses with Witch Doctor"
 
+scoreboard objectives add picked_kit_phantom dummy "Picked Kit - Phantom"
+scoreboard objectives add kills_kit_phantom dummy "Kills with Phantom"
+scoreboard objectives add phantom_wins dummy "Wins with Phantom"
+scoreboard objectives add phantom_losses dummy "Losses with Phantom"
+
 # Runner Kit Statistics
 scoreboard objectives add picked_kit_engineer dummy "Picked Engineer"
 scoreboard objectives add engineer_wins dummy "Wins with Engineer"
@@ -201,8 +219,39 @@ scoreboard objectives add windrunner_losses dummy "Losses with Windrunner"
 
 # Initialise teams
 team add blue
+team modify blue collisionRule always
+team modify blue color blue
+team modify blue nametagVisibility always
+team modify blue seeFriendlyInvisibles true
 team add yellow
+team modify yellow collisionRule always
+team modify yellow color yellow
+team modify yellow nametagVisibility always
+team modify yellow seeFriendlyInvisibles true
 team add red
+team modify red collisionRule always
+team modify red color red
+team modify red nametagVisibility always
+team modify red seeFriendlyInvisibles true
 team add green
+team modify green collisionRule always
+team modify green color green
+team modify green nametagVisibility always
+team modify green seeFriendlyInvisibles true
+
 team add jug
+team modify jug collisionRule pushOtherTeams
+team modify jug color red
+team modify jug nametagVisibility always
+team modify jug seeFriendlyInvisibles true
 team add runner
+team modify runner collisionRule pushOtherTeams
+team modify runner color dark_aqua
+team modify runner nametagVisibility always
+team modify runner seeFriendlyInvisibles true
+
+team add undetectable
+team modify undetectable collisionRule never
+team modify undetectable color dark_gray
+team modify undetectable nametagVisibility never
+team modify undetectable seeFriendlyInvisibles false

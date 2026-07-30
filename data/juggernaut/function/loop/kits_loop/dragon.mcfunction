@@ -1,10 +1,14 @@
 execute as @a[tag=dragon,tag=is_floating] at @s if block ~ ~-5 ~ #juggernaut:non-surface_blocks run attribute @s gravity base set 0.01
 execute as @a[tag=dragon,tag=is_floating] at @s unless block ~ ~-5 ~ #juggernaut:non-surface_blocks run attribute @s gravity base set -0.015
 execute as @a[tag=dragon,tag=is_floating] at @s if block ~ ~-6 ~ #juggernaut:non-surface_blocks unless block ~ ~-5 ~ #juggernaut:non-surface_blocks run attribute @s gravity base set 0
+
 execute as @a[tag=dragon,tag=is_floating] at @s unless block ~ ~-0.75 ~ #juggernaut:non-surface_blocks run attribute @s gravity base set 0.08
-execute as @a[tag=dragon,tag=is_floating] if entity @s[scores={is_sneaking=1}] run attribute @s gravity base set 0.01
+execute as @a[tag=dragon] at @s unless block ~ ~-0.75 ~ #juggernaut:non-surface_blocks run attribute @s sneaking_speed modifier remove juggernaut:dragon_flight
+execute as @a[tag=dragon] at @s if block ~ ~-4 ~ #juggernaut:non-surface_blocks run attribute @s sneaking_speed modifier add juggernaut:dragon_flight 0.8 add_value
+
+execute as @a[tag=dragon,tag=is_floating] if entity @s[scores={is_sneaking=1}] run attribute @s gravity base set 0.04
 execute as @a[tag=dragon,tag=!is_floating] run attribute @s gravity base set -0.01
-execute as @a[tag=dragon,tag=!is_floating] if entity @s[scores={is_sneaking=1}] run attribute @s gravity base set 0.02
+execute as @a[tag=dragon,tag=!is_floating] if entity @s[scores={is_sneaking=1}] run attribute @s gravity base set 0.05
 
 execute as @a[tag=dragon] run effect give @s resistance 1 0 true
 

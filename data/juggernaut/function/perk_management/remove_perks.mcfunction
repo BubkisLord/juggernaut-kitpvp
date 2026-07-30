@@ -3,7 +3,6 @@ scoreboard players set @s perks_enabled 0
 clear @s #trim_materials
 clear @s #decorated_pot_sherds
 
-tag @s remove using_hunters_instinct
 tag @s remove using_no_caution
 tag @s remove using_healer
 tag @s remove using_sentinel
@@ -19,7 +18,11 @@ tag @s remove using_determination
 tag @s remove using_teeny_weeny
 tag @s remove using_lightweight
 tag @s remove using_tailgater
+tag @s remove using_overclock
+tag @s remove using_optimised
+tag @s remove using_any_means
 
+tag @s remove using_hunters_instinct
 tag @s remove using_adept_stalker
 tag @s remove using_predatory_instincts
 tag @s remove using_rapid_brutality
@@ -36,3 +39,7 @@ tag @s remove using_insidious
 tag @s remove using_fury
 tag @s remove using_oppression
 tag @s remove using_deep_cuts
+tag @s remove using_swift_destruction
+tag @s remove using_weight_of_failure
+tag @s remove using_bloodlust
+tag @s remove using_silent_killer

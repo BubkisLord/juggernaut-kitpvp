@@ -4,8 +4,8 @@ execute as @a[tag=runner,scores={damage_taken=1..}] run scoreboard players set @
 execute as @a[tag=juggernaut] run scoreboard players set @s jug_dmg 0
 
 # If a player is undetectable, remove glowing.
-execute as @a[tag=is_undetectable] run effect clear @s glowing
-execute as @a[tag=is_undetectable] run tag @s remove is_glowing
+execute as @a[tag=undetectable] run effect clear @s glowing
+execute as @a[tag=undetectable] run tag @s remove is_glowing
 
 execute at @e[type=armor_stand,tag=respawn_point] as @a[distance=..10] at @r[tag=juggernaut] if entity @e[type=armor_stand,tag=arena.spawn,distance=30..] run tp @s @e[type=armor_stand,tag=arena.spawn,limit=1,sort=random,distance=30..]
 
@@ -14,6 +14,12 @@ execute if score #game_state var matches 11 run function juggernaut:chase/check_
 execute if score #game_state var matches 11 run function juggernaut:replenishment_management/replenishment_stations
 # While juggernaut is not released, disallow all interactions with replenishment stations but allow for runners to see them.
 execute if score #game_state var matches 12 as @e[type=armor_stand,tag=replenishment.station] at @s run particle minecraft:end_rod ~ ~2.5 ~ 0.2 60 0.2 0 60 force @a[tag=runner]
+execute if score #game_state var matches 12 as @e[type=armor_stand,tag=replenishment.station] at @s as @a[tag=runner,distance=..3] at @s run particle minecraft:flame ~ ~2.5 ~ 0.3 1 0.3 0 3 force
+
+# If debug mode is on, display the arena spawn point to all players.
+execute if score #juggernaut_customisation debug_mode matches 1 as @e[type=armor_stand,tag=arena.spawn] at @s run particle dust_color_transition{from_color:[0.0f, 1.0f, 1.0f],to_color:[0.0f, 0.0f, 1.0f],scale:2} ~ ~ ~ 0.1 100 0.1 0 100 force @a
+
+execute if score #juggernaut_customisation debug_mode matches 1 as @e[type=armor_stand,tag=replenishment.station] at @s run particle dust_color_transition{from_color:[1.0f, 0.0f, 1.0f],to_color:[1.0f, 0.0f, 0.0f],scale:1} ~ ~0.5 ~ 0.1 0.1 0.1 0 10 force @a
 
 execute if score #game_state var matches 10 run function juggernaut:loop/display_lobby_particles
 
@@ -58,6 +64,7 @@ execute as @a[tag=timekeeper] at @s run function juggernaut:loop/kits_loop/timek
 execute as @a[tag=chameleon] at @s run function juggernaut:loop/kits_loop/chameleon
 execute as @a[tag=fishmonger] at @s run function juggernaut:loop/kits_loop/fishmonger
 execute as @a[tag=knight] at @s run function juggernaut:loop/kits_loop/knight
+execute as @a[tag=phantom] at @s run function juggernaut:loop/kits_loop/phantom
 
 # Loop per second function.
 scoreboard players add #tick_counter var 1
@@ -66,28 +73,29 @@ execute if score #tick_counter var = #20 var run function juggernaut:loop/half_s
 execute if score #tick_counter var = #10 var run function juggernaut:loop/half_second
 execute if score #tick_counter var >= #20 var run scoreboard players set #tick_counter var 0
 
+execute as @a run function juggernaut:ability_management/calculate_cooldown_modifier
+execute as @a if score @s ability_cooldown0 matches 1.. run scoreboard players operation @s ability_cooldown0 -= @s cooldown_modifier
+execute as @a if score @s ability_cooldown1 matches 1.. run scoreboard players operation @s ability_cooldown1 -= @s cooldown_modifier
+execute as @a if score @s ability_cooldown2 matches 1.. run scoreboard players operation @s ability_cooldown2 -= @s cooldown_modifier
+execute as @a if score @s ability_cooldown3 matches 1.. run scoreboard players operation @s ability_cooldown3 -= @s cooldown_modifier
+execute as @a if score @s ability_cooldown4 matches 1.. run scoreboard players operation @s ability_cooldown4 -= @s cooldown_modifier
+execute as @a if score @s ability_cooldown5 matches 1.. run scoreboard players operation @s ability_cooldown5 -= @s cooldown_modifier
+
+# Predatory Instincts Perk
+execute as @a[tag=juggernaut,tag=using_predatory_instincts] at @s if entity @e[type=armor_stand,tag=predatory_instincts_marker,distance=0] as @a[tag=runner,tag=!undetectable,distance=..12] run effect give @s glowing 4 0 true
+execute as @a[tag=juggernaut,tag=using_predatory_instincts] at @s run kill @n[type=armor_stand,tag=predatory_instincts_marker]
+execute as @a[tag=juggernaut,tag=using_predatory_instincts] at @s run summon armor_stand ~ ~ ~ {Tags:["predatory_instincts_marker","kill_on_end_game"],NoGravity:1b,Invisible:1b,Invulnerable:1b,Marker:1b}
+
 # Set healing needed
 execute as @a[tag=runner] run function juggernaut:healing/set_healing_needed
 
-# Healing mechanic
-execute as @a[tag=runner,scores={is_sneaking=0,is_sprinting=0}] at @s if entity @a[tag=runner,distance=..1.5] run function juggernaut:healing/check_heal_player
+# Healing check
+execute as @a[tag=runner,predicate=is_sneaking] at @s if score @s health < @s max_health run function juggernaut:healing/check_self_heal
 
-# Self-heal
-execute as @a[tag=runner,scores={is_sneaking=1}] at @s if score @s health < @s max_health run function juggernaut:healing/check_self_heal
+scoreboard players set @a[predicate=is_sneaking] is_sneaking 0
 
-# Remove tags to keep all data current
-execute if entity @a[tag=runner,tag=is_healing] as @a[tag=runner,tag=is_healing] run tag @s remove is_healing
-execute if entity @a[tag=runner,tag=is_healing] as @a[tag=runner,tag=self_healing] run tag @s remove self_healing
-execute if entity @a[tag=runner,tag=is_healing] as @a[tag=runner,tag=is_being_healed] run tag @s remove is_being_healed
-
-scoreboard players set @a[scores={is_sneaking=1..}] is_sneaking 0
-
-# TEST THIS
-execute as @e[type=armor_stand,tag=replenishment.station] run function juggernaut:replenishment_management/below_name_percentage
-
-execute as @a[tag=juggernaut,tag=using_insidious,nbt={active_effects:[{id:"minecraft:invisibility"}]}] run function juggernaut:effects/apply_effect_silent {effect:"undetectable",duration:1,color:"gray"}
-execute as @a[tag=juggernaut,tag=using_insidious,nbt=!{active_effects:[{id:"minecraft:invisibility"}]}] run tag @s remove is_undetectable
-# execute as @a[tag=juggernaut,tag=using_insidious,nbt=!{active_effects:[{id:"minecraft:invisibility"}]}] run scoreboard players set @s undetectable_duration_left 0
+execute as @a[tag=using_insidious,predicate=is_still] run function juggernaut:effects/apply_effect_silent {effect:"undetectable",duration:2}
+execute as @a[tag=using_insidious,predicate=is_still] run effect give @s invisibility 1 0 true
 
 # execute as @a at @s run tp @n[type=wolf] ~ ~ ~ ~ ~
 # execute as @a at @s unless entity @n[type=wolf,distance=..20,tag=juggernaut_wolf] run summon wolf ~ ~ ~ {CustomName:{"text":"Juggernaut Wolf","color":"red","bold":true},CustomNameVisible:true,Invulnerable:true,Health:20.0f,Tags:["juggernaut_wolf","kill_on_end_game"]}
@@ -96,12 +104,12 @@ execute as @a[tag=juggernaut,tag=using_insidious,nbt=!{active_effects:[{id:"mine
 
 execute if score #game_state var matches 11 as @a[tag=using_second_wind] run function juggernaut:loop/update_second_wind
 
-execute as @e[type=armor_stand,tag=replenish_minigame_target] at @s run particle minecraft:witch ~ ~0.1 ~ 0.11 0.1 0.11 0 70 force
-execute as @e[type=armor_stand,tag=replenish_minigame_target] at @s run scoreboard players add @s tick_counter 1
-execute as @e[type=armor_stand,tag=replenish_minigame_target,scores={tick_counter=60..}] at @s as @n[type=armor_stand,tag=replenishment.station] run tag @s add failed_minigame
-execute as @e[type=armor_stand,tag=replenish_minigame_target,scores={tick_counter=60..}] at @s as @a run playsound minecraft:block.note_block.pling master @a[tag=runner,distance=..4] ~ ~ ~ 0.5 0.1
-execute as @e[type=armor_stand,tag=replenish_minigame_target,scores={tick_counter=60..}] run kill @s
-execute as @e[type=armor_stand,tag=replenish_minigame_target] at @s at @n[type=armor_stand,tag=replenishment.station] unless entity @p[tag=runner,distance=..3] run kill @s
+# execute as @e[type=armor_stand,tag=replenish_minigame_target] at @s run particle minecraft:witch ~ ~0.1 ~ 0.11 0.1 0.11 0 70 force
+# execute as @e[type=armor_stand,tag=replenish_minigame_target] at @s run scoreboard players add @s tick_counter 1
+# execute as @e[type=armor_stand,tag=replenish_minigame_target,scores={tick_counter=60..}] at @s as @n[type=armor_stand,tag=replenishment.station] run tag @s add failed_minigame
+# execute as @e[type=armor_stand,tag=replenish_minigame_target,scores={tick_counter=60..}] at @s as @a run playsound minecraft:block.note_block.pling master @a[tag=runner,distance=..4] ~ ~ ~ 0.5 0.1
+# execute as @e[type=armor_stand,tag=replenish_minigame_target,scores={tick_counter=60..}] run kill @s
+# execute as @e[type=armor_stand,tag=replenish_minigame_target] at @s at @n[type=armor_stand,tag=replenishment.station] unless entity @p[tag=runner,distance=..3] run kill @s
 
-execute as @e[type=armor_stand,tag=replenishment.station] at @s if score #game_state var matches 11 unless entity @e[type=armor_stand,tag=banishment_glyph,distance=..32] unless entity @a[tag=juggernaut,limit=1,sort=nearest,distance=0..12,tag=!shapeshifting] as @a[tag=runner,distance=..3,tag=!spectral_cloak_active] unless entity @e[type=armor_stand,tag=replenish_minigame_target,distance=..5] run function juggernaut:replenishment_management/minigame
-execute as @e[type=armor_stand,tag=failed_minigame] run tag @s remove failed_minigame
+# execute as @e[type=armor_stand,tag=replenishment.station] at @s if score #game_state var matches 11 unless entity @e[type=armor_stand,tag=banishment_glyph,distance=..32] unless entity @a[tag=juggernaut,limit=1,sort=nearest,distance=0..12,tag=!shapeshifting] as @a[tag=runner,distance=..3,tag=!spectral_cloak_active] unless entity @e[type=armor_stand,tag=replenish_minigame_target,distance=..5] run function juggernaut:replenishment_management/minigame
+# execute as @e[type=armor_stand,tag=failed_minigame] run tag @s remove failed_minigame

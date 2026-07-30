@@ -1,5 +1,6 @@
 scoreboard objectives add max_perks_equipped dummy
 scoreboard players add #juggernaut_customisation max_perks_equipped 1
+scoreboard players operation @a max_perks_equipped = #juggernaut_customisation max_perks_equipped
 execute if score #juggernaut_customisation max_perks_equipped matches 3.. run scoreboard players set #juggernaut_customisation max_perks_equipped 0
 fill 2048 87 4 2048 87 2 waxed_copper_bulb[lit=false]
 execute if score #juggernaut_customisation max_perks_equipped matches 0 run setblock 2048 87 4 waxed_copper_bulb[lit=true]

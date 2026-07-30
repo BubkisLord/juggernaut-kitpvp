@@ -9,6 +9,7 @@ function scoreboard:reset_kit_stats {"kit":"spirit_walker"}
 function scoreboard:reset_kit_stats {"kit":"timekeeper"}
 function scoreboard:reset_kit_stats {"kit":"warlock"}
 function scoreboard:reset_kit_stats {"kit":"witch_doctor"}
+function scoreboard:reset_kit_stats {"kit":"phantom"}
 
 function scoreboard:reset_kit_stats {"kit":"engineer"}
 function scoreboard:reset_kit_stats {"kit":"escapist"}

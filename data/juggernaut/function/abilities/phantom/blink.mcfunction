@@ -1,0 +1,2 @@
+execute anchored eyes if block ^ ^-1 ^5 #juggernaut:raycast_permeable run tp @s ^ ^-1 ^5
+execute anchored eyes unless block ^ ^-1 ^5 #juggernaut:raycast_permeable run scoreboard players set @s ability_cooldown2 4000

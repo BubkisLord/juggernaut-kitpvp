@@ -1,0 +1,1 @@
+$summon mannequin ~ ~ ~ {Team:"jug",Tags:["chameleon_mannequin","kill_on_end_game"],Rotation:$(Rotation)}

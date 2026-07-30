@@ -1,15 +1,12 @@
 # Start game when ready.
-execute if score #game_state var matches 10 unless entity @a[tag=!has_jug_kit] run function juggernaut:start_juggernaut
-
-# Stop players from doing damage to each other.
-execute if score #game_state var matches 10 run effect give @a weakness 1 255 true
-
-# Quickened Stealth
-execute if entity @a[tag=using_quickened_stealth] as @a[tag=using_quickened_stealth] run attribute @s sneaking_speed modifier add juggernaut:quickened_stealth_speed 1.2 add_multiplied_base
+execute if score #game_state var matches 10 as @a[scores={health=0}] run function juggernaut:spectate
+execute if score #game_state var matches 10 unless entity @a[tag=!has_jug_kit,tag=!spectator,scores={health=1..}] run function juggernaut:start_juggernaut
 
 # Progress and clear old effects.
 execute as @a run function juggernaut:effects/check_effects {effect:"not_replenishing"}
 execute as @a run function juggernaut:effects/check_effects {effect:"undetectable"}
+execute as @a run function juggernaut:effects/check_effects {effect:"risky_business"}
+execute as @a run function juggernaut:effects/check_effects {effect:"haunted"}
 
 execute as @a run function juggernaut:attribute_management/check {attribute_name:"movement_speed",modifier_name:"hopeful_sprint"}
 execute as @a run function juggernaut:attribute_management/check {attribute_name:"movement_speed",modifier_name:"waiting_game"}
@@ -17,35 +14,26 @@ execute as @a run function juggernaut:attribute_management/check {attribute_name
 
 # Juggernaut release sequence
 scoreboard players remove @a[tag=juggernaut] juggernaut_release_timer 1
-execute as @p[tag=juggernaut,scores={juggernaut_release_timer=30}] run tellraw @a [{"text": "Juggernaut is released in: ","bold": true, "color": "gray"},{"text": "30","bold": true,"color": "dark_red"},{"text": " Seconds","bold": true, "color": "gray"}]
-execute as @p[tag=juggernaut,scores={juggernaut_release_timer=10}] run tellraw @a [{"text": "Juggernaut is released in: ","bold": true, "color": "gray"},{"text": "10","bold": true,"color": "dark_red"},{"text": " Seconds","bold": true, "color": "gray"}]
-execute as @p[tag=juggernaut,scores={juggernaut_release_timer=9}] run tellraw @a [{"text": "Juggernaut is released in: ","bold": true, "color": "gray"},{"text": "9","bold": true,"color": "dark_red"},{"text": " Seconds","bold": true, "color": "gray"}]
-execute as @p[tag=juggernaut,scores={juggernaut_release_timer=8}] run tellraw @a [{"text": "Juggernaut is released in: ","bold": true, "color": "gray"},{"text": "8","bold": true,"color": "dark_red"},{"text": " Seconds","bold": true, "color": "gray"}]
-execute as @p[tag=juggernaut,scores={juggernaut_release_timer=7}] run tellraw @a [{"text": "Juggernaut is released in: ","bold": true, "color": "gray"},{"text": "7","bold": true,"color": "dark_red"},{"text": " Seconds","bold": true, "color": "gray"}]
-execute as @p[tag=juggernaut,scores={juggernaut_release_timer=6}] run tellraw @a [{"text": "Juggernaut is released in: ","bold": true, "color": "gray"},{"text": "6","bold": true,"color": "dark_red"},{"text": " Seconds","bold": true, "color": "gray"}]
-execute as @p[tag=juggernaut,scores={juggernaut_release_timer=5}] run tellraw @a [{"text": "Juggernaut is released in: ","bold": true, "color": "gray"},{"text": "5","bold": true,"color": "dark_red"},{"text": " Seconds","bold": true, "color": "gray"}]
-execute as @p[tag=juggernaut,scores={juggernaut_release_timer=4}] run tellraw @a [{"text": "Juggernaut is released in: ","bold": true, "color": "gray"},{"text": "4","bold": true,"color": "dark_red"},{"text": " Seconds","bold": true, "color": "gray"}]
-execute as @p[tag=juggernaut,scores={juggernaut_release_timer=3}] run tellraw @a [{"text": "Juggernaut is released in: ","bold": true, "color": "gray"},{"text": "3","bold": true,"color": "dark_red"},{"text": " Seconds","bold": true, "color": "gray"}]
-execute as @p[tag=juggernaut,scores={juggernaut_release_timer=2}] run tellraw @a [{"text": "Juggernaut is released in: ","bold": true, "color": "gray"},{"text": "2","bold": true,"color": "dark_red"},{"text": " Seconds","bold": true, "color": "gray"}]
-execute as @p[tag=juggernaut,scores={juggernaut_release_timer=1}] run tellraw @a [{"text": "Juggernaut is released in: ","bold": true, "color": "gray"},{"text": "1","bold": true,"color": "dark_red"},{"text": " Seconds","bold": true, "color": "gray"}]
-execute as @p[tag=juggernaut,scores={juggernaut_release_timer=0}] run tellraw @a [{"text": "Juggernaut","bold": true,"color": "dark_red","underlined": true},{"text": " Released!","bold": true,"color": "gray"}]
-execute as @p[tag=juggernaut,scores={juggernaut_release_timer=0}] run title @a title [{"text": "Juggernaut","bold": true,"color": "dark_red","underlined": true},{"text": " Released!","bold": true,"color": "gray"}]
-execute if score #juggernaut_customisation debug_mode matches 0 if entity @a[tag=juggernaut,scores={juggernaut_release_timer=0}] as @r[tag=runner] at @s run tp @a[tag=juggernaut,scores={juggernaut_release_timer=0}] @e[type=armor_stand,tag=arena.spawn,limit=1,sort=furthest]
+execute as @p[tag=juggernaut,scores={juggernaut_release_timer=30}] run tellraw @a [{"text": "Juggernaut is released in: ","bold": false, "color": "gray"},{"text": "30","bold": false,"color": "red"},{"text": " Seconds","bold": false, "color": "gray"}]
+execute as @p[tag=juggernaut,scores={juggernaut_release_timer=10}] run tellraw @a [{"text": "Juggernaut is released in: ","bold": false, "color": "gray"},{"text": "10","bold": false,"color": "red"},{"text": " Seconds","bold": false, "color": "gray"}]
+execute as @p[tag=juggernaut,scores={juggernaut_release_timer=5}] run tellraw @a [{"text": "Juggernaut is released in: ","bold": false, "color": "gray"},{"text": "5","bold": false,"color": "red"},{"text": " Seconds","bold": false, "color": "gray"}]
+execute as @p[tag=juggernaut,scores={juggernaut_release_timer=4}] run tellraw @a [{"text": "Juggernaut is released in: ","bold": false, "color": "gray"},{"text": "4","bold": false,"color": "red"},{"text": " Seconds","bold": false, "color": "gray"}]
+execute as @p[tag=juggernaut,scores={juggernaut_release_timer=3}] run tellraw @a [{"text": "Juggernaut is released in: ","bold": false, "color": "gray"},{"text": "3","bold": false,"color": "red"},{"text": " Seconds","bold": false, "color": "gray"}]
+execute as @p[tag=juggernaut,scores={juggernaut_release_timer=2}] run tellraw @a [{"text": "Juggernaut is released in: ","bold": false, "color": "gray"},{"text": "2","bold": false,"color": "red"},{"text": " Seconds","bold": false, "color": "gray"}]
+execute as @p[tag=juggernaut,scores={juggernaut_release_timer=1}] run tellraw @a [{"text": "Juggernaut is released in: ","bold": false, "color": "gray"},{"text": "1","bold": false,"color": "red"},{"text": " Seconds","bold": false, "color": "gray"}]
+execute as @p[tag=juggernaut,scores={juggernaut_release_timer=0}] run tellraw @a [{"text": "Juggernaut","bold": false,"color": "red"},{"text": " Released!","bold": false,"color": "gray"}]
+execute if score #juggernaut_customisation debug_mode matches 0 if entity @a[tag=juggernaut,scores={juggernaut_release_timer=0}] as @r[tag=runner] at @s run tag @e[type=armor_stand,tag=arena.spawn,limit=6,sort=furthest] add spawn.candidate
+execute as @a[tag=juggernaut,scores={juggernaut_release_timer=0}] run tp @s @e[type=armor_stand,tag=spawn.candidate,limit=1,sort=random]
+tag @e[tag=spawn.candidate] remove spawn.candidate
 execute if score #juggernaut_customisation debug_mode matches 0 if entity @a[tag=juggernaut,scores={juggernaut_release_timer=0}] as @a[tag=runner] at @s run playsound minecraft:block.end_portal.spawn master @s ~ ~ ~ 0.4 0.1
 execute as @p[tag=juggernaut,scores={juggernaut_release_timer=0}] run scoreboard players set #game_state var 11
 
-execute as @e[type=armor_stand,tag=replenishment.station] at @s if entity @a[tag=runner,distance=..6,tag=!is_undetectable] if score @s replenish_timeout = #6 var run tag @s remove apply_undetectable
+execute as @e[type=armor_stand,tag=replenishment.station] at @s if entity @a[tag=runner,distance=..6,tag=!undetectable] if score @s replenish_timeout = #6 var run tag @s remove apply_undetectable
 execute as @e[type=armor_stand,tag=replenishment.station] if score @s replenish_timeout >= #0 var run scoreboard players remove @s replenish_timeout 1
 execute as @e[type=armor_stand,tag=replenishment.station] if score @s replenish_timeout = #0 var run tag @s remove apply_undetectable
 
 # Remove is_glowing tag from juggernaut every second.
 execute if entity @a[tag=juggernaut] run tag @a[tag=juggernaut] remove is_glowing
-
-# General kit cooldowns
-execute as @a if score @s ability_cooldown0 matches 1.. run scoreboard players remove @s ability_cooldown0 1
-execute as @a if score @s ability_cooldown1 matches 1.. run scoreboard players remove @s ability_cooldown1 1
-execute as @a if score @s ability_cooldown2 matches 1.. run scoreboard players remove @s ability_cooldown2 1
-execute as @a if score @s ability_cooldown3 matches 1.. run scoreboard players remove @s ability_cooldown3 1
 
 execute as @a if score @s brutal_efficiency_cooldown matches 1.. run scoreboard players remove @s brutal_efficiency_cooldown 1
 
@@ -55,15 +43,6 @@ execute at @e[type=armor_stand,tag=engineer_tower] run execute as @a[tag=juggern
 execute as @e[type=armor_stand,tag=engineer_tower] at @s run execute if score @s dispel_progress >= @s total_dispelling_needed run playsound block.note_block.bell master @a[tag=juggernaut,distance=..16] ~ ~ ~ 2 1.2
 execute as @e[type=armor_stand,tag=engineer_tower] at @s run execute if score @s dispel_progress >= @s total_dispelling_needed run playsound entity.ender_dragon.growl master @a[tag=engineer] ~ ~ ~ 3 0.2 1
 execute as @e[type=armor_stand,tag=engineer_tower] at @s run execute if score @s dispel_progress >= @s total_dispelling_needed run kill @s
-
-# Warlock cooldowns
-execute as @a[tag=warlock] if score @s ability_cooldown0 matches 1.. run scoreboard players remove @s ability_cooldown0 1
-execute as @a[tag=warlock] if score @s ability_cooldown1 matches 1.. run scoreboard players remove @s ability_cooldown1 1
-execute as @a[tag=warlock] if score @s ability_cooldown2 matches 1.. run scoreboard players remove @s ability_cooldown2 1
-
-execute as @a[tag=warlock] if score @s ability_cooldown0 matches 1.. run scoreboard players set @s ability_cooldown0 0
-execute as @a[tag=warlock] if score @s ability_cooldown1 matches 1.. run scoreboard players set @s ability_cooldown1 0
-execute as @a[tag=warlock] if score @s ability_cooldown2 matches 1.. run scoreboard players set @s ability_cooldown2 0
 
 # Hunter remnant delay
 execute as @e[type=armor_stand,tag=hunter_remnant] if score @s var matches 1.. run scoreboard players remove @s var 1
@@ -75,20 +54,12 @@ execute as @a[tag=scout] at @s run function juggernaut:raycasts/raycast {\
     target_tag:"juggernaut",\
     hit_distance:2.5,\
     raycast_limit:200,\
-    move_function_id:0,\
     collides_with_blocks:1,\
 }
 
-# Predator Sound Addition
-execute if entity @a[tag=predator] store result score #predator_rand_val var run random value 0..99
-execute if entity @a[tag=predator] if score #predator_rand_val var matches 0 as @a at @s run playsound block.bell.resonate master @s ~ ~ ~ 2 0.3
-execute if entity @a[tag=predator] if score #predator_rand_val var matches 1 as @a at @s run playsound entity.player.attack.crit master @s ^ ^ ^-1 1 1
-execute if entity @a[tag=predator] if score #predator_rand_val var matches 1 as @a at @s run playsound entity.player.hurt master @s ~ ~ ~ 1.5 1
-
-# Predatory Instincts Perk
-execute as @a[tag=juggernaut,tag=using_predatory_instincts,scores={is_walking=0,is_sprinting=0,is_crouch_walking=0}] at @s as @a[tag=runner,tag=!is_undetectable,distance=..8] run effect give @s glowing 2 0 true
-
 # Shapeshift time limit
+execute as @a[tag=chameleon,tag=!shapeshifting] run scoreboard players set @s shapeshift_time 0
+
 execute as @a[tag=chameleon,tag=shapeshifting] run scoreboard players add @s shapeshift_time 1
 execute as @a[tag=chameleon,tag=shapeshifting,scores={shapeshift_time=10}] run tellraw @s {text: "30 Seconds of Shapeshift Left.",color:white}
 execute as @a[tag=chameleon,tag=shapeshifting,scores={shapeshift_time=20}] run tellraw @s {text: "20 Seconds of Shapeshift Left.",color:white}
@@ -97,10 +68,7 @@ execute as @a[tag=chameleon,tag=shapeshifting,scores={shapeshift_time=40}] run t
 execute as @a[tag=chameleon,tag=shapeshifting,scores={shapeshift_time=40..}] at @s run function juggernaut:abilities/chameleon/exit_shapeshift
 execute as @a[tag=chameleon,scores={shapeshift_time=40..}] run scoreboard players set @s shapeshift_time 0
 
-# Update scores
-scoreboard players set @a[scores={is_sprinting=1..}] is_sprinting 0
-scoreboard players set @a[scores={is_walking=1..}] is_walking 0
-scoreboard players set @a[scores={is_crouch_walking=1..}] is_crouch_walking 0
+execute as @a[tag=using_bloodlust,scores={bloodlust_remaining=1..}] run scoreboard players remove @s bloodlust_remaining 1
 
 # Update max health score
 execute as @a store result score @s max_health run attribute @s max_health get
@@ -141,7 +109,6 @@ execute as @a[tag=chameleon] run item replace entity @s container.11 with tipped
 # execute if stopwatch replenishment_minigame_timer 3.. run execute as @e[type=armor_stand,tag=replenishment.station] at @s if score #game_state var matches 11 unless entity @e[type=armor_stand,tag=banishment_glyph,distance=..32] unless entity @a[tag=juggernaut,limit=1,sort=nearest,distance=0..12,tag=!shapeshifting] as @a[tag=runner,distance=..3,tag=!spectral_cloak_active] at @s run function juggernaut:replenishment_management/minigame
 # execute if stopwatch replenishment_minigame_timer 3.. run stopwatch restart replenishment_minigame_timer
 
-execute as @a[tag=ghost,tag=spectral_cloak_active] run scoreboard players remove @s ability_cooldown3 1
 execute as @a[tag=ghost,tag=spectral_cloak_active,scores={ability_cooldown3=..0}] run tag @s remove spectral_cloak_active
 
 execute as @a[tag=spectator] at @s run function survival:loop/clone_inventory

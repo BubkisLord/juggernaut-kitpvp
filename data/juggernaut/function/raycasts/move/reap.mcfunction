@@ -1,0 +1,1 @@
+particle sculk_charge{roll:4} ^ ^1 ^ 0.1 0.1 0.1 0 20 force @a

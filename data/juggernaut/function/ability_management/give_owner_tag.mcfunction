@@ -1,1 +1,0 @@
-$execute as @a[nbt={UUID:$(owner)}] run tag @s add ability_owner

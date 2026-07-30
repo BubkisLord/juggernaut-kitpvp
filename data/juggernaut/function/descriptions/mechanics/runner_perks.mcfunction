@@ -1,1 +1,0 @@
-$execute if score #1 var matches $(clear_sherds) run clear @s #minecraft:decorated_pot_sherds

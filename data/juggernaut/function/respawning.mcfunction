@@ -20,9 +20,6 @@ execute if score @s lives_remaining matches 1.. if entity @s[tag=runner] run tag
 execute if score @s lives_remaining matches 1.. if entity @s[tag=runner] run scoreboard players set @s respawn_time_left 30
 execute if score @s lives_remaining matches 1.. if entity @s[tag=using_teeny_weeny] run attribute @s scale modifier add teeny_weeny -0.25 add_multiplied_base
 execute if score @s lives_remaining matches 1.. if entity @s[tag=using_lightweight] run attribute @s safe_fall_distance modifier add juggernaut:lightweight 9999 add_value
-execute if score @s lives_remaining matches 1.. if entity @s[tag=using_lightweight] run attribute @s air_drag_modifier modifier add juggernaut:lightweight -0.2 add_multiplied_base
-execute if score @s lives_remaining matches 1.. if entity @s[tag=using_lightweight] run attribute @s gravity modifier add juggernaut:lightweight 0.2 add_multiplied_total
-execute if score @s lives_remaining matches 1.. if entity @s[tag=using_lightweight] run attribute @s jump_strength modifier add juggernaut:lightweight 0.1 add_multiplied_base
 execute if score @s lives_remaining matches 1.. if entity @s[tag=windrunner] run attribute @s friction_modifier modifier add juggernaut:windrunner -0.9 add_multiplied_total
 execute if score @s lives_remaining matches 1.. if entity @s[tag=windrunner] run attribute @s bounciness modifier add juggernaut:windrunner 0.08 add_value
 tag @s remove has_hunters_mark
@@ -54,6 +51,8 @@ execute if score @s lives_remaining matches ..0 run tag @s remove trickster
 execute if score @s lives_remaining matches ..0 run tag @s remove ghost
 execute if score @s lives_remaining matches ..0 run tag @s remove windrunner
 execute if score @s lives_remaining matches ..0 run tag @s remove saved_skin
+
+execute if entity @s[tag=runner] if score @s lives_remaining matches ..0 run team join runner
 
 execute if score @s lives_remaining matches ..0 run attribute @s max_health base set 20
 execute if score @s lives_remaining matches ..0 run attribute @s scale base set 1

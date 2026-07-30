@@ -1,7 +1,7 @@
 {
     "pack": {
         "pack_format": 48,
-        "description": "KitPvP Data Pack",
+        "description": "Juggernaut",
         "min_format": 48,
         "max_format": 48,
         "supported_formats": [48, 81]

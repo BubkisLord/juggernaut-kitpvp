@@ -4,5 +4,5 @@ item replace entity @s hotbar.8 with written_book[written_book_content={title:"G
 \
 [{"text": "Guidance\n","bold": true,"color": "#FFD700"},{"text": "Passive Effect\n\n","bold": true,"color": "gray","italic": true},{"text": "While sprinting near a runner who is in chase, you grant them speed while they are within 8 blocks of you.","bold": false,"color": "black"}],\
 \
-[{"text": "Replenish Boost\n","bold": true,"color": "#FFD700"},{"text": "Active Ability\n\n","bold": true,"color": "gray","italic": true},{"text": "Instantly progress replenishment by 12% for each runner within 3 blocks of you.","bold": false,"color": "black"},{"text": "\nCooldown: 20s","bold": false,"color": "dark_gray"}]]\
+[{"text": "Replenish Boost\n","bold": true,"color": "#FFD700"},{"text": "Active Ability\n\n","bold": true,"color": "gray","italic": true},{"text": "Instantly progress replenishment by 12% for each runner within 3 blocks of you.","bold": false,"color": "black"},{"text": "\nCooldown: 40s","bold": false,"color": "dark_gray"}]]\
 }]

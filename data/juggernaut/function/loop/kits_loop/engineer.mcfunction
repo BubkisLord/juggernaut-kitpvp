@@ -11,7 +11,7 @@ execute as @e[type=armor_stand,tag=revealing_tower] unless entity @e[type=armor_
 
 execute as @e[type=armor_stand,tag=revealing_tower] at @s if entity @a[tag=juggernaut,distance=..8] run data modify entity @s CustomNameVisible set value true
 execute as @e[type=armor_stand,tag=revealing_tower] at @s unless entity @a[tag=juggernaut,distance=..8] run data modify entity @s CustomNameVisible set value false
-execute as @e[type=armor_stand,tag=revealing_tower] at @s as @a[tag=juggernaut,distance=..8,tag=!is_undetectable] run effect give @s glowing 1 0 true
+execute as @e[type=armor_stand,tag=revealing_tower] at @s as @a[tag=juggernaut,distance=..8,tag=!undetectable] run effect give @s glowing 1 0 true
 
 # Replenishment Tower Logic
 execute as @e[type=armor_stand,tag=replenishment_tower_particle_emitter] at @s run particle dust{color:[1,1,0],scale:1} ^0.75 ^ ^0.75 0.1 0.1 0.1 0.4 4 normal

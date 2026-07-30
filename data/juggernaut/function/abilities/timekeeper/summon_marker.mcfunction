@@ -1,0 +1,1 @@
+$summon marker ~ ~ ~ {Tags:["time_skip_marker","kill_on_end_game"],Rotation:[$(yaw),0]}

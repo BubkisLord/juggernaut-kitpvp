@@ -31,8 +31,9 @@ effect give @a saturation infinite 255 true
 effect give @a[tag=juggernaut] regeneration infinite 0 true
 
 stopsound @a
-execute as @a[tag=juggernaut] run playsound music_disc.creator record @s ~ ~ ~ 3 0.75
-execute as @a[tag=runner] run playsound music_disc.precipice record @s ~ ~ ~ 3 1.1
+
+execute as @a[tag=juggernaut] at @s run playsound music_disc.creator record @s ~ ~ ~ 3 0.75
+execute as @a[tag=runner] at @s run playsound music_disc.precipice record @s ~ ~ ~ 3 1.1
 
 scoreboard players set @a juggernaut_release_timer 0
 
@@ -101,4 +102,4 @@ execute if score #juggernaut_customisation perks_enabled matches 1 as @a[tag=jug
 tag @a remove saved_skin
 
 # Check if debug mode should be off
-execute if score #juggernaut_customisation debug_mode matches 1 run tellraw @a [{"text": "[","bold": true,"color": "dark_gray"},{"text": "WARNING","bold": true,"color": "yellow"},{"text": "]","bold": true,"color": "dark_gray"},{"text": " Debug mode is enabled. This could cause instability and issues.","color": "yellow",bold:false},{"text": " Click here to disable it.","color": "aqua","click_event": {"action": "run_command","command": "/scoreboard players set #juggernaut_customisation debug_mode 0"},bold:false}]
+execute if score #juggernaut_customisation debug_mode matches 1 run tellraw @a [{"text": "[","bold": true,"color": "dark_gray"},{"text": "WARNING","bold": true,"color": "yellow"},{"text": "]","bold": true,"color": "dark_gray"},{"text": " Debug mode is enabled. This could cause instability and issues.","color": "yellow",bold:false},{"text": " Click here to disable it.","color": "aqua","click_event": {"action": "run_command","command": "/function disable_debug_mode"},bold:false}]

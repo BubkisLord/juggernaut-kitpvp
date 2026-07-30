@@ -1,0 +1,1 @@
+$damage @s $(overclock_damage) magic

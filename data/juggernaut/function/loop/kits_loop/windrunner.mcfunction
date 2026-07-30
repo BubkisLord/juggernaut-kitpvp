@@ -1,6 +1,5 @@
-execute as @a[tag=windrunner,tag=in_chase,tag=double_chase_progress] run scoreboard players add #juggernaut_manager replenish_progress 1
-execute as @a[tag=windrunner,tag=in_chase,tag=double_chase_progress] at @s if score #juggernaut_customisation completable_stations matches 1 as @n[type=armor_stand,tag=replenishment.station,tag=highest_station] run scoreboard players add @s replenish_amount 1
-execute as @a[tag=windrunner,tag=double_chase_progress] if score @s ability_cooldown0 matches 0..30 run tag @s remove double_chase_progress
+execute store result storage juggernaut:loop/kits_loop/windrunner movement_speed float 1 run attribute @p[tag=juggernaut] movement_speed base get
+function juggernaut:abilities/windrunner/set_movement_speed with storage juggernaut:loop/kits_loop/windrunner
 
 function juggernaut:ability_management/check_ability {\
     player_tag:"windrunner",\

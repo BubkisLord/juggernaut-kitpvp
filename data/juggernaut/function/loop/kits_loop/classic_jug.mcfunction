@@ -5,6 +5,6 @@ function juggernaut:ability_management/check_ability {\
     description:[{"text": "Summons lightning down to all runner's positions.","color": "gray"},{"text": "Cooldown: 60s","color": "dark_gray"}],\
     ability_id:"find_runners",\
     cooldown:60,\
-    hotbar_slot:"hotbar.2",\
+    hotbar_slot:"hotbar.1",\
     cooldown_var:"ability_cooldown0",\
 }

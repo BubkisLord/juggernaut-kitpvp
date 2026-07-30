@@ -1,11 +1,10 @@
 execute if entity @a[tag=classic_jug] run return fail
 execute if entity @s[tag=has_jug_kit] run return fail
-item replace entity @s armor.head with netherite_helmet
-item replace entity @s armor.chest with netherite_chestplate
-item replace entity @s armor.legs with netherite_leggings
-item replace entity @s armor.feet with netherite_boots
-give @s netherite_axe[attribute_modifiers=[{type:"attack_speed",id:"attack_speed",amount:-3.5,operation:"add_value"}, {type:"attack_damage",id:"attack_damage",amount:14,operation:"add_value"}],item_name={"text": "Dooming Axe","color": "dark_blue"},lore=[{"text": "Most lovingly called by its owners as the following:","color": "dark_gray"},{"text": "Non-Vehicular 'Manslaughter'","color": "dark_gray"},{"text": "WidowMaker","color": "dark_gray"},{"text": "Scourge of Utter Doom","color": "dark_gray"},{"text": "Executioner of the Might of Lord Duke Hotenow XII","color": "dark_gray"},{"text": "Taker of Names","color": "dark_gray"},{"text": "Hades' Employee of the Month #203","color": "dark_gray"},{"text": "Stealer of Lives","color": "dark_gray"},{"text": "Murderer of Cows, (Pea-)Fowls, and All Manner of Cowls (not fashionable!)","color": "dark_gray"}]]
-give @s golden_apple 2
+item replace entity @s armor.head with netherite_helmet[unbreakable={},tooltip_display={hidden_components:["unbreakable"]}]
+item replace entity @s armor.chest with netherite_chestplate[unbreakable={},tooltip_display={hidden_components:["unbreakable"]}]
+item replace entity @s armor.legs with netherite_leggings[unbreakable={},tooltip_display={hidden_components:["unbreakable"]}]
+item replace entity @s armor.feet with netherite_boots[unbreakable={},tooltip_display={hidden_components:["unbreakable"]}]
+give @s netherite_axe[attribute_modifiers=[{type:"attack_speed",id:"attack_speed",amount:-3.5,operation:"add_value"}, {type:"attack_damage",id:"attack_damage",amount:14,operation:"add_value"}],item_name={"text": "Dooming Axe","color": "dark_blue"},lore=[{"text": "Most lovingly called by its owners as the following:","color": "dark_gray"},{"text": "Non-Vehicular 'Manslaughter'","color": "dark_gray"},{"text": "Widowmaker","color": "dark_gray"},{"text": "Scourge of Utter Doom","color": "dark_gray"},{"text": "Executioner of the Might of Lord Duke Hotenow XII","color": "dark_gray"},{"text": "Taker of Names","color": "dark_gray"},{"text": "Hades' Employee of the Month #203","color": "dark_gray"},{"text": "Stealer of Lives","color": "dark_gray"},{"text": "Murderer of Cows, (Pea-)Fowls, and All Manner of Cowls (not fashionable!)","color": "dark_gray"}],unbreakable={},tooltip_display={hidden_components:["unbreakable"]}]
 tellraw @a[tag=juggernaut] [{"selector":"@s"},{"text":": ","color":"red"},{"text": "Selected ","color":"white"},{"text":"Classic Juggernaut","color":"dark_blue"},{"text":" Kit.","color":"white"}]
 function juggernaut:descriptions/kits/juggernaut/juggernaut
 tag @s add classic_jug

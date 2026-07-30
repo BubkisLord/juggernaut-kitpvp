@@ -1,1 +1,8 @@
-execute as @s at @s positioned ^ ^ ^3 anchored eyes as @n[type=area_effect_cloud,tag=timekeeper_trail,distance=..3] run tag @s add poisoned_strand
+function juggernaut:raycasts/raycast {\
+    player_tag:"timekeeper",\
+    raycast_id:"timestrand_poison",\
+    target_tag:"timekeeper_trail",\
+    hit_distance:1,\
+    raycast_limit:24,\
+    collides_with_blocks:1,\
+}
