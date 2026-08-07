@@ -1,6 +1,6 @@
 execute if entity @s[tag=using_pressure_point] as @a[tag=runner,tag=!undetectable] if entity @s[nbt=!{active_effects:[{id:"minecraft:invisibility"}]}] run effect give @s glowing 12 0 true
 
-execute if entity @s[tag=using_crippling_defeat] as @n[type=armor_stand,tag=replenishment.station,tag=highest_station] run function juggernaut:replenishment_management/regress_station {percentage:75}
+execute if entity @s[tag=using_crippling_defeat] as @n[type=armor_stand,tag=replenishment.station,tag=highest_station] run function juggernaut:replenishment_management/regress_station_total {percentage:25}
 
 execute if entity @s[tag=using_bloodlust] run scoreboard players set @s bloodlust_remaining 45
 
