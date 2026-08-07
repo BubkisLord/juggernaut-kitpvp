@@ -21,6 +21,7 @@ execute as @a[tag=scout] run function juggernaut:handle_kit_picked {"kit": "scou
 execute as @a[tag=survivor] run function juggernaut:handle_kit_picked {"kit": "survivor"}
 execute as @a[tag=trickster] run function juggernaut:handle_kit_picked {"kit": "trickster"}
 execute as @a[tag=windrunner] run function juggernaut:handle_kit_picked {"kit": "windrunner"}
+execute as @a[tag=jester] run function juggernaut:handle_kit_picked {"kit": "jester"}
 
 execute as @a[tag=using_quickened_stealth] run attribute @s sneaking_speed modifier add juggernaut:quickened_stealth_speed 1.2 add_multiplied_base
 
@@ -35,6 +36,10 @@ execute as @a[tag=using_adept_stalker] run attribute @s sneaking_speed modifier 
 execute as @a[tag=using_teeny_weeny] run attribute @s scale modifier add teeny_weeny -0.25 add_multiplied_base
 
 execute as @a[tag=using_lightweight] run attribute @s safe_fall_distance modifier add juggernaut:lightweight 9999 add_value
+
+execute if entity @a[tag=jester] run function juggernaut:abilities/jester/generate_rolls
+execute if entity @a[tag=jester] run function juggernaut:abilities/jester/generate_rolls
+execute if entity @a[tag=jester] run function juggernaut:abilities/jester/generate_rolls
 
 # Sets the timer to be 25 seconds.
 execute if score #juggernaut_customisation debug_mode matches 0 run scoreboard players set @a[tag=juggernaut] juggernaut_release_timer 25

@@ -11,11 +11,27 @@ function juggernaut:ability_management/check_ability {\
 
 function juggernaut:ability_management/check_ability {\
     player_tag:"trickster",\
+    item_id:"minecraft:popped_chorus_fruit",\
+    item_name:{"text": "Player Swap","color": "dark_purple"},\
+    description:[\
+        {"text": "Swap with a runner in chase.","color": "gray"},\
+        {"text": "If no runners are in chase,","color": "gray"},\
+        {"text": "swap with the furthest runner.","color": "gray"},\
+        {"text": "Cooldown: 75s","color": "dark_gray"}\
+    ],\
+    ability_id:"player_swap",\
+    cooldown:75,\
+    hotbar_slot:"hotbar.1",\
+    cooldown_var:"ability_cooldown1",\
+}
+
+function juggernaut:ability_management/check_ability {\
+    player_tag:"trickster",\
     item_id:"minecraft:prismarine_crystals",\
     item_name:{"text": "False Detection","color": "dark_purple"},\
     description:[{"text": "Make all replenishment stations look as if they are active to the juggernaut.","color": "gray"},{"text": "Cooldown: 2m","color": "dark_gray"}],\
     ability_id:"false_detection",\
     cooldown:120,\
-    hotbar_slot:"hotbar.1",\
-    cooldown_var:"ability_cooldown1",\
+    hotbar_slot:"hotbar.2",\
+    cooldown_var:"ability_cooldown2",\
 }

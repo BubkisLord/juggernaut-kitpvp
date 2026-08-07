@@ -51,6 +51,7 @@ execute as @a[tag=ghost] at @s run function juggernaut:loop/kits_loop/ghost
 execute as @a[tag=engineer] at @s run function juggernaut:loop/kits_loop/engineer
 execute as @a[tag=trickster] at @s run function juggernaut:loop/kits_loop/trickster
 execute as @a[tag=windrunner] at @s run function juggernaut:loop/kits_loop/windrunner
+execute as @a[tag=jester] at @s run function juggernaut:loop/kits_loop/jester
 
 # Juggernaut Kits
 execute as @a[tag=classic_jug] at @s run function juggernaut:loop/kits_loop/classic_jug

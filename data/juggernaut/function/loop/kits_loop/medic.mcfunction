@@ -18,7 +18,7 @@ function juggernaut:ability_management/check_ability {\
     player_tag:"medic",\
     item_id:"minecraft:glistering_melon_slice",\
     item_name:{"text": "Heal","color": "#dbbe2d"},\
-    description:[{"text": "Heal all runners within 8 blocks.","color": "gray"},{"text": "Cooldown: 60s","color": "dark_gray"}],\
+    description:[{"text": "Heal all runners within 8 blocks,","color": "gray"},{"text": "and half all ability cooldowns.","color": "gray"},{"text": "Cooldown: 60s","color": "dark_gray"}],\
     ability_id:"heal",\
     cooldown:60,\
     hotbar_slot:"hotbar.2",\

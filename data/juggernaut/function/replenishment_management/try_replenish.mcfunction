@@ -1,6 +1,5 @@
 execute unless score #game_state var matches 11 run return fail
 execute if entity @e[type=armor_stand,tag=banishment_glyph,distance=..24] run particle flame ~ ~2.5 ~ 0.3 1 0.3 0 30 force
-execute if entity @e[type=armor_stand,tag=banishment_glyph,distance=..24] run return fail
 execute if entity @s[tag=rogue] if entity @a[tag=juggernaut,distance=18..24,tag=!undetectable] run particle minecraft:witch ~ ~2.5 ~ 0.2 60 0.2 0 120 force @s
 execute if entity @a[tag=juggernaut,distance=..18,tag=!undetectable] run particle minecraft:witch ~ ~2.5 ~ 0.2 60 0.2 0 120 force @s
 execute if entity @a[tag=juggernaut,distance=..18] if entity @s[tag=!using_unwavering_strength] if entity @s[tag=!in_chase] run return fail

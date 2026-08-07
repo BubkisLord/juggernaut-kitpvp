@@ -3,7 +3,7 @@
 execute at @e[type=armor_stand,tag=engineer_tower] run execute as @a[tag=juggernaut,distance=..3] run particle totem_of_undying ~ ~ ~ 0.25 1 0.25 0 20 force
 
 # Skeleton Turret Death Logic
-execute as @e[type=skeleton,tag=skeleton_turret] unless entity @e[type=armor_stand,tag=turret] run kill @s
+execute as @e[type=skeleton,tag=skeleton_turret] unless entity @e[type=armor_stand,tag=turret,distance=..10] run kill @s
 execute as @e[type=skeleton,tag=skeleton_turret] at @s run tp @s @n[type=armor_stand,tag=turret]
 
 # Revealing Tower Logic

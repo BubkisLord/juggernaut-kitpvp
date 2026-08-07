@@ -1,3 +1,1 @@
-execute at @e[type=armor_stand,tag=malevolent_aura] run execute as @a[tag=juggernaut,distance=..24] run effect give @s strength 2 0 true
 execute at @e[type=armor_stand,tag=malevolent_aura] run execute as @a[tag=juggernaut,distance=..24] run effect give @s speed 4 1 true
-execute at @e[type=armor_stand,tag=malevolent_aura] run execute as @a[tag=runner,distance=..24] run effect give @s slowness 1 0 true

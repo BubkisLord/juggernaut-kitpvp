@@ -1,6 +1,6 @@
-$execute as @s[nbt={Inventory:[{id:"$(item_id)"}]}] if items entity @s inventory.* $(item_id) run clear @s $(item_id)
-$execute as @s[nbt={Inventory:[{id:"$(item_id)"}]}] if items entity @s player.cursor $(item_id) run clear @s $(item_id)
-$execute as @s[nbt={Inventory:[{id:"$(item_id)"}]}] if items entity @s weapon.offhand $(item_id) run clear @s $(item_id)
+$execute as @s[nbt={Inventory:[{id:"$(item_id)"}]}] if items entity @s inventory.* $(item_id) run clear @s $(item_id)[item_name=[$(item_name),{"text": " | ","color": "dark_gray","bold": true},{"text": "READY","color": "green","bold": true}],custom_data={kit:$(player_tag),ability_id:"$(ability_id)"}]
+$execute as @s[nbt={Inventory:[{id:"$(item_id)"}]}] if items entity @s player.cursor $(item_id) run clear @s $(item_id)[item_name=[$(item_name),{"text": " | ","color": "dark_gray","bold": true},{"text": "READY","color": "green","bold": true}],custom_data={kit:$(player_tag),ability_id:"$(ability_id)"}]
+$execute as @s[nbt={Inventory:[{id:"$(item_id)"}]}] if items entity @s weapon.offhand $(item_id) run clear @s $(item_id)[item_name=[$(item_name),{"text": " | ","color": "dark_gray","bold": true},{"text": "READY","color": "green","bold": true}],custom_data={kit:$(player_tag),ability_id:"$(ability_id)"}]
 execute as @s[nbt={Inventory:[{id:"minecraft:barrier"}]}] if items entity @s inventory.* minecraft:barrier run clear @s minecraft:barrier
 execute as @s[nbt={Inventory:[{id:"minecraft:barrier"}]}] if items entity @s player.cursor minecraft:barrier run clear @s minecraft:barrier
 execute as @s[nbt={Inventory:[{id:"minecraft:barrier"}]}] if items entity @s weapon.offhand minecraft:barrier run clear @s minecraft:barrier

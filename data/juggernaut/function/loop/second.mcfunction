@@ -2,14 +2,18 @@
 execute if score #game_state var matches 10 as @a[scores={health=0}] run function juggernaut:spectate
 execute if score #game_state var matches 10 unless entity @a[tag=!has_jug_kit,tag=!spectator,scores={health=1..}] run function juggernaut:start_juggernaut
 
+# Give everyone infinite saturation so they never lose hunger.
+effect give @a saturation infinite 255 true
+effect give @a[tag=juggernaut] regeneration infinite 0 true
+
 # Progress and clear old effects.
 execute as @a run function juggernaut:effects/check_effects {effect:"not_replenishing"}
 execute as @a run function juggernaut:effects/check_effects {effect:"undetectable"}
 execute as @a run function juggernaut:effects/check_effects {effect:"risky_business"}
 execute as @a run function juggernaut:effects/check_effects {effect:"haunted"}
+execute as @a run function juggernaut:effects/check_effects {effect:"jesting"}
 
 execute as @a run function juggernaut:attribute_management/check {attribute_name:"movement_speed",modifier_name:"hopeful_sprint"}
-execute as @a run function juggernaut:attribute_management/check {attribute_name:"movement_speed",modifier_name:"waiting_game"}
 execute as @a run function juggernaut:attribute_management/check {attribute_name:"movement_speed",modifier_name:"rapid_brutality"}
 
 # Juggernaut release sequence
@@ -80,11 +84,22 @@ execute as @a[tag=!in_chase] run scoreboard players set @s chase_time 0
 execute as @a[tag=in_chase] run scoreboard players operation @s unyielding_wrath_time = @s chase_time
 execute as @a[tag=in_chase] if score @s unyielding_wrath_time matches 20.. run scoreboard players set @s unyielding_wrath_time 20
 execute as @a[tag=using_unyielding_wrath] run attribute @s movement_speed modifier remove juggernaut:unyielding_wrath
-execute as @a[tag=using_unyielding_wrath,tag=in_chase] store result storage juggernaut:unyielding_wrath value float 0.00075 run scoreboard players get @s unyielding_wrath_time
+execute as @a[tag=using_unyielding_wrath,tag=in_chase] store result storage juggernaut:unyielding_wrath value float 0.001 run scoreboard players get @s unyielding_wrath_time
 execute as @a[tag=using_unyielding_wrath,tag=in_chase] run data modify storage juggernaut:unyielding_wrath attribute set value movement_speed
 execute as @a[tag=using_unyielding_wrath,tag=in_chase] run data modify storage juggernaut:unyielding_wrath modifier_id set value unyielding_wrath
 execute as @a[tag=using_unyielding_wrath,tag=in_chase] run data modify storage juggernaut:unyielding_wrath operation set value add_value
 execute as @a[tag=using_unyielding_wrath,tag=in_chase] run function juggernaut:attribute_management/apply_modifier with storage juggernaut:unyielding_wrath
+
+execute as @a[tag=in_chase] run scoreboard players operation @s waiting_game_time = @s chase_time
+execute as @a[tag=in_chase] run scoreboard players operation @s waiting_game_time -= #5 var
+execute as @a[tag=in_chase] if score @s waiting_game_time matches 30.. run scoreboard players set @s waiting_game_time 30
+execute as @a[tag=using_waiting_game] run attribute @s movement_speed modifier remove juggernaut:waiting_game
+execute as @a[tag=using_waiting_game,tag=in_chase] if score @s waiting_game_time > #0 var store result storage juggernaut:waiting_game value float 0.00125 run scoreboard players get @s waiting_game_time
+execute as @a[tag=using_waiting_game,tag=in_chase] if score @s waiting_game_time <= #0 var store result storage juggernaut:waiting_game value float 0.003 run scoreboard players get @s waiting_game_time
+execute as @a[tag=using_waiting_game,tag=in_chase] run data modify storage juggernaut:waiting_game attribute set value movement_speed
+execute as @a[tag=using_waiting_game,tag=in_chase] run data modify storage juggernaut:waiting_game modifier_id set value waiting_game
+execute as @a[tag=using_waiting_game,tag=in_chase] run data modify storage juggernaut:waiting_game operation set value add_value
+execute as @a[tag=using_waiting_game,tag=in_chase] run function juggernaut:attribute_management/apply_modifier with storage juggernaut:waiting_game
 
 # Update domination speed
 execute as @a[tag=juggernaut,tag=using_domination] run function juggernaut:perk_management/perk_functions/set_domination_speed

@@ -39,6 +39,7 @@ scoreboard objectives add replenish_amount dummy
 scoreboard objectives add chase_timeout dummy
 scoreboard objectives add brutal_efficiency_cooldown dummy
 scoreboard objectives add unyielding_wrath_time dummy
+scoreboard objectives add waiting_game_time dummy
 scoreboard objectives add domination_movement_speed dummy
 scoreboard objectives add grim_determination_speed dummy
 scoreboard objectives add max_health dummy
@@ -64,6 +65,7 @@ scoreboard objectives add used_totem minecraft.used:minecraft.totem_of_undying
 scoreboard objectives add perks_enabled dummy
 scoreboard objectives add max_perks_equipped dummy
 scoreboard objectives add random_perks dummy
+scoreboard objectives add random_kits dummy
 scoreboard objectives add perk_rerolls dummy
 scoreboard objectives add shapeshift_time dummy
 scoreboard objectives add completable_stations dummy
@@ -110,7 +112,9 @@ scoreboard players set #10 var 10
 scoreboard players set #20 var 20
 scoreboard players set #25 var 25
 scoreboard players set #40 var 40
+scoreboard players set #50 var 50
 scoreboard players set #60 var 60
+scoreboard players set #75 var 75
 scoreboard players set #100 var 100
 scoreboard players set #1000 var 1000
 scoreboard players set #20000 var 20000
@@ -217,30 +221,38 @@ scoreboard objectives add picked_kit_windrunner dummy "Picked Windrunner"
 scoreboard objectives add windrunner_wins dummy "Wins with Windrunner"
 scoreboard objectives add windrunner_losses dummy "Losses with Windrunner"
 
+scoreboard objectives add picked_kit_jester dummy "Picked Jester"
+scoreboard objectives add jester_wins dummy "Wins with Jester"
+scoreboard objectives add jester_losses dummy "Losses with Jester"
+
 # Initialise teams
 team add blue
 team modify blue collisionRule always
 team modify blue color blue
+team modify blue prefix "[BLUE] "
 team modify blue nametagVisibility always
 team modify blue seeFriendlyInvisibles true
 team add yellow
 team modify yellow collisionRule always
 team modify yellow color yellow
+team modify yellow prefix "[YELLOW] "
 team modify yellow nametagVisibility always
 team modify yellow seeFriendlyInvisibles true
 team add red
 team modify red collisionRule always
 team modify red color red
+team modify red prefix "[RED] "
 team modify red nametagVisibility always
 team modify red seeFriendlyInvisibles true
 team add green
 team modify green collisionRule always
 team modify green color green
+team modify green prefix "[GREEN] "
 team modify green nametagVisibility always
 team modify green seeFriendlyInvisibles true
 
 team add jug
-team modify jug collisionRule pushOtherTeams
+team modify jug collisionRule never
 team modify jug color red
 team modify jug nametagVisibility always
 team modify jug seeFriendlyInvisibles true

@@ -1,15 +1,24 @@
-execute run tp @n[type=mannequin,tag=chameleon_mannequin,distance=..6] ~ ~ ~ facing ^ ^ ^999999999999999
+execute if entity @s[tag=shapeshifting] run summon area_effect_cloud ~ ~ ~ {Age:0,Duration:10,Tags:["chameleon_breadcrumb","kill_on_end_game"],Radius:0,custom_particle:{type:"dust",scale:0.01,color:[0,0,0]}}
+execute if entity @s[tag=shapeshifting] run data modify entity @n[type=area_effect_cloud,tag=chameleon_breadcrumb] Rotation set from entity @s Rotation
+execute if entity @s[tag=shapeshifting] run kill @e[type=area_effect_cloud,tag=chameleon_breadcrumb,distance=3..]
+execute unless entity @s[tag=shapeshifting] run kill @e[type=area_effect_cloud,tag=chameleon_breadcrumb]
+
+execute if entity @s[tag=shapeshifting] as @n[type=area_effect_cloud,tag=chameleon_breadcrumb,nbt={Age:5}] at @s run tp @n[type=mannequin,tag=chameleon_mannequin,distance=..6] @s
 execute unless entity @s[predicate=is_sneaking] run data modify entity @n[type=mannequin,tag=chameleon_mannequin,distance=..6] pose set value "standing"
 execute if entity @s[predicate=is_sneaking] run data modify entity @n[type=mannequin,tag=chameleon_mannequin,distance=..6] pose set value "crouching"
-execute if block ~ ~ ~ water unless entity @s[predicate=is_sneaking] run data modify entity @n[type=mannequin,tag=chameleon_mannequin,distance=..6] pose set value "swimming"
+execute if entity @s[predicate=is_sneaking] run data modify entity @n[type=text_display,tag=chameleon_name_tag,distance=..6] see_through set value false
+execute if entity @s[predicate=is_sneaking] run data modify entity @n[type=text_display,tag=chameleon_health_tag,distance=..6] see_through set value false
+execute if entity @s[predicate=!is_sneaking] run data modify entity @n[type=text_display,tag=chameleon_name_tag,distance=..6] see_through set value true
+execute if entity @s[predicate=!is_sneaking] run data modify entity @n[type=text_display,tag=chameleon_health_tag,distance=..6] see_through set value true
+execute if entity @s[predicate=is_swimming] run data modify entity @n[type=mannequin,tag=chameleon_mannequin,distance=..6] pose set value "swimming"
 execute run item replace entity @n[type=mannequin,tag=chameleon_mannequin] weapon.mainhand from entity @p[tag=saved_skin] weapon.mainhand
 execute run item replace entity @n[type=mannequin,tag=chameleon_mannequin] weapon.offhand from entity @p[tag=saved_skin] weapon.offhand
 execute run item replace entity @n[type=mannequin,tag=chameleon_mannequin] armor.head from entity @p[tag=saved_skin] armor.head
 execute run item replace entity @n[type=mannequin,tag=chameleon_mannequin] armor.chest from entity @p[tag=saved_skin] armor.chest
 execute run item replace entity @n[type=mannequin,tag=chameleon_mannequin] armor.legs from entity @p[tag=saved_skin] armor.legs
 execute run item replace entity @n[type=mannequin,tag=chameleon_mannequin] armor.feet from entity @p[tag=saved_skin] armor.feet
-execute run tp @n[type=text_display,tag=chameleon_name_tag,distance=..6] ~ ~2.35 ~
-execute run tp @n[type=text_display,tag=chameleon_health_tag,distance=..6] ~ ~2.1 ~
+execute at @n[type=mannequin] run tp @n[type=text_display,tag=chameleon_name_tag,distance=..6] ~ ~2.35 ~
+execute at @n[type=mannequin] run tp @n[type=text_display,tag=chameleon_health_tag,distance=..6] ~ ~2.1 ~
 
 execute if entity @s[tag=shapeshifting] unless entity @e[type=mannequin,tag=chameleon_mannequin,distance=..6] run function juggernaut:abilities/chameleon/exit_shapeshift
 execute as @a[tag=shapeshifting] run function juggernaut:effects/apply_effect_silent {effect:"undetectable",duration:1,color:"gray"}

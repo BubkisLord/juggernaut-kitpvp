@@ -6,6 +6,7 @@ scoreboard players set @a ability_cooldown2 0
 scoreboard players set @a ability_cooldown3 0
 scoreboard players set @a brutal_efficiency_cooldown 0
 scoreboard players set @a unyielding_wrath_time 0
+scoreboard players set @a waiting_game_time 0
 scoreboard players set @a ticks_spent_buffing 0
 scoreboard players set @a ticks_spent_debuffing 0
 scoreboard players set @a ticks_spent_replenishing 0
@@ -27,6 +28,10 @@ scoreboard players set @a replenishment_per_tick 0
 scoreboard players set @a replenishment_display_speed 0
 
 execute as @e[type=armor_stand,tag=replenishment.station] run data modify entity @s CustomNameVisible set value 0b
+
+execute as @a run attribute @s name_tag_distance modifier remove juggernaut:name_tag_distance
+execute as @a run attribute @s waypoint_receive_range base reset
+execute as @a run attribute @s waypoint_transmit_range base reset
 
 spawnpoint @a 2000 100 0
 gamerule show_death_messages false
@@ -65,6 +70,8 @@ tag @a remove windrunner
 tag @a remove double_chase_progress
 tag @a remove spectral_cloak_active
 tag @a remove phantom
+tag @a remove pursued
+tag @a remove jester
 tag @e[type=armor_stand] remove haunted_station
 tag @a add lobby.player
 
@@ -148,12 +155,6 @@ execute as @a run attribute @s bounciness modifier remove juggernaut:windrunner
 execute as @a run attribute @s sneaking_speed modifier remove juggernaut:dragon_flight
 execute as @a run attribute @s camera_distance modifier remove juggernaut:chameleon_shapeshift
 execute as @a run attribute @s movement_speed modifier remove juggernaut:phantom_move_spd
-
-execute as @a run attribute @s movement_speed modifier remove unyielding_wrath_1
-execute as @a run attribute @s movement_speed modifier remove unyielding_wrath_2
-execute as @a run attribute @s movement_speed modifier remove unyielding_wrath_3
-execute as @a run attribute @s movement_speed modifier remove unyielding_wrath_4
-execute as @a run attribute @s movement_speed modifier remove unyielding_wrath_5
 
 scoreboard players set #juggernaut_manager replenish_progress 0
 scoreboard players set #juggernaut_manager replenish_decimal 0

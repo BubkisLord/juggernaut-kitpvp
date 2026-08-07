@@ -1,1 +1,1 @@
-particle sculk_charge{roll:4} ^ ^1 ^ 0.1 0.1 0.1 0 20 force @a
+particle dust{color:[0.3686274509803922, 0.3333333333333333, 0.43137254901960786],scale:1.4} ^ ^1 ^ 0.1 0.1 0.1 0 20 force @a

@@ -1,6 +1,6 @@
 execute as @e[type=armor_stand,tag=survival_chest_indicator] at @s run setblock ~ ~ ~ air replace
 execute as @e[type=armor_stand,tag=survival_chest_indicator] at @s run kill @e[type=item,distance=..1]
-execute as @e[type=armor_stand,tag=survival_chest_indicator] run tag @s remove common
+execute as @e[type=armor_stand,tag=survival_chest_indicator] run tag @s remove empty
 execute as @e[type=armor_stand,tag=survival_chest_indicator] run tag @s remove uncommon
 execute as @e[type=armor_stand,tag=survival_chest_indicator] run tag @s remove rare
 execute as @e[type=armor_stand,tag=survival_chest_indicator] run tag @s remove legendary

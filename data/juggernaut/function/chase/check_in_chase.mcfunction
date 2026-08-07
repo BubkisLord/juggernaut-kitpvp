@@ -20,8 +20,13 @@ execute as @a[tag=juggernaut,tag=!shapeshifting] at @s as @a[tag=runner,distance
 
 # For each player that is eligible for chase, set 3 seconds for their chase timeout.
 execute as @a[tag=chase_eligible] run scoreboard players set @s chase_timeout 60
+
 # If the juggernaut has the unyielding wrath perk, double their chase timeout.
 execute as @a[tag=chase_eligible,tag=using_unyielding_wrath] run scoreboard players add @s chase_timeout 60
+
+# If the juggernaut has the waiting game perk, double their chase timeout.
+execute as @a[tag=chase_eligible,tag=using_waiting_game] run scoreboard players add @s chase_timeout 60
+
 # Clean up the chase_eligible tag for all players. (to avoid infinite chase timeout)
 execute as @a[tag=chase_eligible] run tag @s remove chase_eligible
 

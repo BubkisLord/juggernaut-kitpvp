@@ -1,0 +1,6 @@
+summon firework_rocket ~ ~ ~ {FireworksItem:{id:"minecraft:firework_rocket",components:{fireworks:{flight_duration:1,explosions:[{shape:"large_ball",colors:[I;14103598],fade_colors:[I;12466459],has_trail:false,has_twinkle:false}]}},count:1},LifeTime:20}
+summon firework_rocket ~ ~ ~ {FireworksItem:{id:"minecraft:firework_rocket",components:{fireworks:{flight_duration:1,explosions:[{shape:"large_ball",colors:[I;7324252],fade_colors:[I;55303],has_trail:true,has_twinkle:true}]}},count:1},LifeTime:20}
+summon firework_rocket ~ ~ ~ {FireworksItem:{id:"minecraft:firework_rocket",components:{fireworks:{flight_duration:1,explosions:[{shape:"small_ball",colors:[I;5397473],fade_colors:[I;1511066],has_trail:false,has_twinkle:true}]}},count:1},LifeTime:20}
+summon firework_rocket ~ ~ ~ {FireworksItem:{id:"minecraft:firework_rocket",components:{fireworks:{flight_duration:1,explosions:[{shape:"star",colors:[I;15214260],fade_colors:[I;9437280],has_trail:true,has_twinkle:true}]}},count:1},LifeTime:20}
+summon firework_rocket ~ ~ ~ {FireworksItem:{id:"minecraft:firework_rocket",components:{fireworks:{flight_duration:1,explosions:[{shape:"burst",colors:[I;16246900],fade_colors:[I;16776944],has_trail:true,has_twinkle:true}]}},count:1},LifeTime:20}
+spreadplayers ~ ~ 1 6 false @e[type=firework_rocket,limit=5,sort=nearest]

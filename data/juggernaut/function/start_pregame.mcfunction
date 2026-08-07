@@ -32,6 +32,13 @@ effect give @a[tag=juggernaut] regeneration infinite 0 true
 
 stopsound @a
 
+execute as @a run attribute @s name_tag_distance modifier add juggernaut:name_tag_distance 0.75 add_multiplied_base
+execute as @a[tag=juggernaut] run attribute @s waypoint_receive_range base set 0
+execute as @a[tag=juggernaut] run attribute @s waypoint_transmit_range base set 0
+
+execute as @a[tag=runner] run attribute @s waypoint_receive_range base reset
+execute as @a[tag=runner] run attribute @s waypoint_transmit_range base reset
+
 execute as @a[tag=juggernaut] at @s run playsound music_disc.creator record @s ~ ~ ~ 3 0.75
 execute as @a[tag=runner] at @s run playsound music_disc.precipice record @s ~ ~ ~ 3 1.1
 
@@ -103,3 +110,9 @@ tag @a remove saved_skin
 
 # Check if debug mode should be off
 execute if score #juggernaut_customisation debug_mode matches 1 run tellraw @a [{"text": "[","bold": true,"color": "dark_gray"},{"text": "WARNING","bold": true,"color": "yellow"},{"text": "]","bold": true,"color": "dark_gray"},{"text": " Debug mode is enabled. This could cause instability and issues.","color": "yellow",bold:false},{"text": " Click here to disable it.","color": "aqua","click_event": {"action": "run_command","command": "/function disable_debug_mode"},bold:false}]
+
+execute if score #juggernaut_customisation random_perks matches 1 as @a[tag=runner] run function juggernaut:perk_management/equip_random/runner
+execute if score #juggernaut_customisation random_perks matches 1 as @a[tag=juggernaut] run function juggernaut:perk_management/equip_random/juggernaut
+
+execute if score #juggernaut_customisation random_kits matches 1 as @a[tag=runner] run function juggernaut:surv_kits/random
+execute if score #juggernaut_customisation random_kits matches 1 as @a[tag=juggernaut] run function juggernaut:jug_kits/random

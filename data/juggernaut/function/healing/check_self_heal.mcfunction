@@ -5,7 +5,7 @@ scoreboard players set @s self_healing_modifier 100
 execute as @a[tag=runner,predicate=!is_sneaking,distance=..1.75] at @s run function juggernaut:healing/check_heal_player
 execute if entity @a[tag=runner,predicate=!is_sneaking,scores={healing_modifier=1..},distance=..1.75] run scoreboard players add @s self_healing_base 3
 
-execute if entity @a[tag=using_overwhelming_presence,distance=..20] run scoreboard players remove @s self_healing_modifier 15
+execute if entity @a[tag=using_overwhelming_presence] run scoreboard players remove @s self_healing_modifier 10
 execute if entity @a[tag=using_oppression] run scoreboard players remove @s self_healing_modifier 70
 execute if entity @a[tag=using_deep_cuts] unless entity @a[tag=runner,predicate=!is_sneaking,scores={healing_modifier=1..},distance=..1.75] run scoreboard players remove @s self_healing_modifier 90
 

@@ -1,4 +1,4 @@
-execute if entity @a[tag=juggernaut,distance=..20] run scoreboard players set @s ability_cooldown0 4
+execute if entity @a[tag=juggernaut,distance=..20] run scoreboard players set @s ability_cooldown0 8000
 execute if entity @a[tag=juggernaut,distance=..20] run particle angry_villager ~ ~0.5 ~ 1 1 1 0 80 force
 execute if entity @s[tag=in_chase] run scoreboard players set @s ability_cooldown0 8000
 execute if entity @s[tag=in_chase] run particle angry_villager ~ ~0.5 ~ 1 1 1 0 80 force

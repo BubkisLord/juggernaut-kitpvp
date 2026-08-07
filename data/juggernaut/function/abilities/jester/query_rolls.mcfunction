@@ -1,0 +1,2 @@
+# Display the descriptions to the player
+tellraw @s [{"text": "[Jest] ","color":"#f528d3"},{"text":"Rolls: ","color":"gray"},{"nbt":"Roll_Names[0]","storage":"juggernaut:main",interpret:true,"color":"#f528d3"},{"text": ", ","color":"gray"},{"nbt":"Roll_Names[1]","storage":"juggernaut:main",interpret:true,"color":"#f528d3"},{"text": ", ","color":"gray"},{"nbt":"Roll_Names[2]","storage":"juggernaut:main",interpret:true,"color":"#f528d3"}]
