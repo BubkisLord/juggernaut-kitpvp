@@ -21,6 +21,7 @@ execute as @a[tag=scout] run function juggernaut:handle_kit_picked {"kit": "scou
 execute as @a[tag=survivor] run function juggernaut:handle_kit_picked {"kit": "survivor"}
 execute as @a[tag=trickster] run function juggernaut:handle_kit_picked {"kit": "trickster"}
 execute as @a[tag=windrunner] run function juggernaut:handle_kit_picked {"kit": "windrunner"}
+execute as @a[tag=phantom] run function juggernaut:handle_kit_picked {"kit": "phantom"}
 execute as @a[tag=jester] run function juggernaut:handle_kit_picked {"kit": "jester"}
 
 execute as @a[tag=using_quickened_stealth] run attribute @s sneaking_speed modifier add juggernaut:quickened_stealth_speed 1.2 add_multiplied_base
