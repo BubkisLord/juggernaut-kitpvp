@@ -1,6 +1,9 @@
 scoreboard players set @s replenishment_base 1
 scoreboard players set @s replenishment_modifier 100
 
+# Puppetteer passive: replenishes at only 60% efficiency (perks still stack on top of this).
+execute if entity @s[tag=puppetteer] run scoreboard players remove @s replenishment_modifier 40
+
 execute if entity @a[tag=using_overwhelming_presence,distance=..20] run scoreboard players remove @s replenishment_modifier 15
 execute if entity @s[tag=using_no_caution] run scoreboard players add @s replenishment_modifier 15
 execute if entity @s[tag=using_unwavering_strength] if entity @e[type=armor_stand,tag=replenishment.station,distance=..3] if entity @a[tag=juggernaut,distance=..18] run scoreboard players add @s replenishment_modifier 100

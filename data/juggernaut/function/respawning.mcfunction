@@ -6,6 +6,14 @@ scoreboard players set @s chase_timeout 0
 
 effect give @s saturation infinite 255 true
 
+# Puppetteer: dying clears their mannequin and puppets so nothing lingers or re-triggers Bound Soul.
+execute if entity @s[tag=puppetteer] run scoreboard players operation #pp_link var = @s puppet_id
+execute if entity @s[tag=puppetteer] run tag @s remove has_mannequin
+execute if entity @s[tag=puppetteer] run tag @s remove has_puppets
+execute if entity @s[tag=puppetteer] as @e[type=mannequin,tag=puppetteer_mannequin] if score @s puppet_id = #pp_link var run kill @s
+execute if entity @s[tag=puppetteer] as @e[type=mannequin,tag=puppetteer_puppet] if score @s puppet_id = #pp_link var run kill @s
+execute if entity @s[tag=puppetteer] as @e[type=marker,tag=puppet_center] if score @s puppet_id = #pp_link var run kill @s
+
 execute if score @s lives_remaining matches 1.. run spawnpoint @s 0 101 0
 execute if score @s lives_remaining matches 1.. if entity @s[tag=using_undying_ties] run tag @a remove undying_ties_target
 execute if score @s lives_remaining matches 1.. if entity @s[tag=using_undying_ties] as @r[tag=runner,scores={health=1..}] run tag @s add undying_ties_target
@@ -50,6 +58,7 @@ execute if score @s lives_remaining matches ..0 run tag @s remove guide
 execute if score @s lives_remaining matches ..0 run tag @s remove trickster
 execute if score @s lives_remaining matches ..0 run tag @s remove ghost
 execute if score @s lives_remaining matches ..0 run tag @s remove windrunner
+execute if score @s lives_remaining matches ..0 run tag @s remove puppetteer
 execute if score @s lives_remaining matches ..0 run tag @s remove saved_skin
 
 execute if entity @s[tag=runner] if score @s lives_remaining matches ..0 run team join runner
