@@ -95,7 +95,7 @@ execute as @a[tag=runner,predicate=is_sneaking] at @s if score @s health < @s ma
 
 scoreboard players set @a[predicate=is_sneaking] is_sneaking 0
 
-execute as @a[tag=using_insidious,predicate=is_still] run function juggernaut:effects/apply_effect_silent {effect:"undetectable",duration:2}
+execute as @a[tag=using_insidious,predicate=is_still] run function juggernaut:effects/apply_effect {effect:"undetectable",duration:2}
 execute as @a[tag=using_insidious,predicate=is_still] run effect give @s invisibility 1 0 true
 
 # execute as @a at @s run tp @n[type=wolf] ~ ~ ~ ~ ~

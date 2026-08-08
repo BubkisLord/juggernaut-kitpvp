@@ -10,7 +10,6 @@ effect give @a[tag=juggernaut] regeneration infinite 0 true
 execute as @a run function juggernaut:effects/check_effects {effect:"not_replenishing"}
 execute as @a run function juggernaut:effects/check_effects {effect:"undetectable"}
 execute as @a run function juggernaut:effects/check_effects {effect:"risky_business"}
-execute as @a run function juggernaut:effects/check_effects {effect:"haunted"}
 execute as @a run function juggernaut:effects/check_effects {effect:"jesting"}
 
 execute as @a run function juggernaut:attribute_management/check {attribute_name:"movement_speed",modifier_name:"hopeful_sprint"}

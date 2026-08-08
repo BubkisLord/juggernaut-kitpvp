@@ -117,7 +117,6 @@ scoreboard players set @e[type=armor_stand,tag=replenishment.station] replenish_
 execute as @a run function juggernaut:effects/clear_effect {effect:"not_replenishing"}
 execute as @a run function juggernaut:effects/clear_effect {effect:"undetectable"}
 execute as @a run function juggernaut:effects/clear_effect {effect:"risky_business"}
-execute as @a run function juggernaut:effects/clear_effect {effect:"haunted"}
 
 execute as @a run scoreboard players set @s chase_timeout 0
 execute as @a run tag @s remove in_chase

@@ -13,7 +13,7 @@ execute store result score #roll var run data get storage juggernaut:main Rolls[
 data remove storage juggernaut:main Rolls[0]
 data remove storage juggernaut:main Roll_Names[0]
 
-execute if entity @a[tag=juggernaut,tag=!undetectable,distance=..25] run function juggernaut:effects/apply_effect_silent {effect:"jesting",duration:5}
+execute if entity @a[tag=juggernaut,tag=!undetectable,distance=..25] run function juggernaut:effects/apply_effect {effect:"jesting",duration:5}
 
 # --- Your Execution Logic ---
 execute if score #roll var matches 1 run effect give @a[tag=runner,distance=..8] speed 10 2 true

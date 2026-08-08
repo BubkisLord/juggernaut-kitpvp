@@ -2,7 +2,7 @@
 execute as @a[tag=predator] at @s unless entity @s[predicate=is_sneaking] run particle white_ash ~ ~0.5 ~ 3 3 3 0.0001 30 force @a[tag=!predator,distance=..20]
 execute as @a[tag=predator] at @s unless entity @s[predicate=is_sneaking] run particle ash ~ ~1 ~ 0.25 0.5 0.25 0.0001 100 force @a[tag=!predator,distance=..20]
 
-execute as @a[tag=predator,predicate=is_sneaking] run function juggernaut:effects/apply_effect_silent {effect:"undetectable",duration:1,color:"gray"}
+execute as @a[tag=predator,predicate=is_sneaking] run function juggernaut:effects/apply_effect {effect:"undetectable",duration:1,color:"gray"}
 
 # Predator footsteps management
 # execute at @a[tag=predator] unless entity @n[type=armor_stand,tag=predator_footstep_sound,distance=..3] run summon armor_stand ~ ~ ~ {Tags:["predator_footstep_sound","kill_on_end_game"],Invisible:1b,Marker:1b,NoGravity:1b,Silent:1b,Small:1b}
