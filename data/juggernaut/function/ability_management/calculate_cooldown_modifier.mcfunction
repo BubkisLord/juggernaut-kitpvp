@@ -11,3 +11,5 @@ execute if entity @s[tag=using_bloodlust,scores={bloodlust_remaining=1..}] run s
 
 # Cannot go negative, otherwise will build up more and more cooldown on abilities
 execute if entity @s[scores={cooldown_modifier=..0}] run scoreboard players set @s cooldown_modifier 0
+
+execute if score #juggernaut_customisation debug_mode matches 1 run scoreboard players set @s cooldown_modifier 9999
