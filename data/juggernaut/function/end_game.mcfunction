@@ -72,6 +72,7 @@ tag @a remove spectral_cloak_active
 tag @a remove phantom
 tag @a remove pursued
 tag @a remove jester
+tag @a remove puppeteer
 tag @e[type=armor_stand] remove haunted_station
 tag @a add lobby.player
 
@@ -192,6 +193,7 @@ scoreboard players set #warlock_count var 0
 scoreboard players set #witch_doctor_count var 0
 scoreboard players set #phantom_count var 0
 scoreboard players set #jester_count var 0
+scoreboard players set #puppeteer_count var 0
 
 bossbar remove warlock:revealing_tower
 bossbar remove warlock:malevolent_aura

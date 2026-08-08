@@ -52,6 +52,7 @@ execute as @a[tag=engineer] at @s run function juggernaut:loop/kits_loop/enginee
 execute as @a[tag=trickster] at @s run function juggernaut:loop/kits_loop/trickster
 execute as @a[tag=windrunner] at @s run function juggernaut:loop/kits_loop/windrunner
 execute as @a[tag=jester] at @s run function juggernaut:loop/kits_loop/jester
+execute as @a[tag=puppeteer] at @s run function juggernaut:loop/kits_loop/puppeteer
 
 # Juggernaut Kits
 execute as @a[tag=classic_jug] at @s run function juggernaut:loop/kits_loop/classic_jug
@@ -83,9 +84,7 @@ execute as @a if score @s ability_cooldown4 matches 1.. run scoreboard players o
 execute as @a if score @s ability_cooldown5 matches 1.. run scoreboard players operation @s ability_cooldown5 -= @s cooldown_modifier
 
 # Predatory Instincts Perk
-execute as @a[tag=juggernaut,tag=using_predatory_instincts] at @s if entity @e[type=armor_stand,tag=predatory_instincts_marker,distance=0] as @a[tag=runner,tag=!undetectable,distance=..12] run effect give @s glowing 4 0 true
-execute as @a[tag=juggernaut,tag=using_predatory_instincts] at @s run kill @n[type=armor_stand,tag=predatory_instincts_marker]
-execute as @a[tag=juggernaut,tag=using_predatory_instincts] at @s run summon armor_stand ~ ~ ~ {Tags:["predatory_instincts_marker","kill_on_end_game"],NoGravity:1b,Invisible:1b,Invulnerable:1b,Marker:1b}
+execute as @a[tag=juggernaut,tag=using_predatory_instincts,predicate=is_still] at @s as @a[tag=runner,tag=!undetectable,distance=..12] run effect give @s glowing 4 0 true
 
 # Set healing needed
 execute as @a[tag=runner] run function juggernaut:healing/set_healing_needed
@@ -97,11 +96,6 @@ scoreboard players set @a[predicate=is_sneaking] is_sneaking 0
 
 execute as @a[tag=using_insidious,predicate=is_still] run function juggernaut:effects/apply_effect {effect:"undetectable",duration:2}
 execute as @a[tag=using_insidious,predicate=is_still] run effect give @s invisibility 1 0 true
-
-# execute as @a at @s run tp @n[type=wolf] ~ ~ ~ ~ ~
-# execute as @a at @s unless entity @n[type=wolf,distance=..20,tag=juggernaut_wolf] run summon wolf ~ ~ ~ {CustomName:{"text":"Juggernaut Wolf","color":"red","bold":true},CustomNameVisible:true,Invulnerable:true,Health:20.0f,Tags:["juggernaut_wolf","kill_on_end_game"]}
-# attribute @n[type=wolf,tag=juggernaut_wolf] scale base set 1.4
-# attribute @p scale base set 0.9
 
 execute if score #game_state var matches 11 as @a[tag=using_second_wind] run function juggernaut:loop/update_second_wind
 

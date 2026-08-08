@@ -11,7 +11,7 @@ function juggernaut:ability_management/check_ability {\
     player_tag:"phantom",\
     item_id:"minecraft:echo_shard",\
     item_name:{"text": "Reap","color": "#5e556e"},\
-    description:[{"text": "Deal damage to a runner you are looking at,","color": "gray"},{"text": "making them glowing for 12 seconds.","color": "gray"},{"text": "Works through walls.","color": "gray"},{"text": "Cooldown: 7s","color": "dark_gray"}],\
+    description:[{"text": "Deal damage to a runner you are looking at,","color": "gray"},{"text": "making them glowing for 12 seconds.","color": "gray"},{"text": "Works through walls.","color": "gray"},{"text": "Cooldown: 12s","color": "dark_gray"}],\
     ability_id:"reap",\
     cooldown:12,\
     hotbar_slot:"hotbar.1",\

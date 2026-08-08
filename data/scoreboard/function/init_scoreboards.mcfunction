@@ -225,6 +225,10 @@ scoreboard objectives add picked_kit_jester dummy "Picked Jester"
 scoreboard objectives add jester_wins dummy "Wins with Jester"
 scoreboard objectives add jester_losses dummy "Losses with Jester"
 
+scoreboard objectives add picked_kit_puppeteer dummy "Picked Puppeteer"
+scoreboard objectives add puppeteer_wins dummy "Wins with Puppeteer"
+scoreboard objectives add puppeteer_losses dummy "Losses with Puppeteer"
+
 # Initialise teams
 team add blue
 team modify blue collisionRule always

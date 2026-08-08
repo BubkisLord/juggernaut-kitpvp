@@ -11,6 +11,9 @@ tag @s remove fishmonger
 tag @s remove classic_jug
 tag @s remove knight
 tag @s remove timekeeper
+tag @s remove phantom
+tag @s remove jester
+tag @s remove puppeteer
 effect clear @s
 clear @s
 time set noon

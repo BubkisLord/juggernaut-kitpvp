@@ -2,6 +2,8 @@ execute if entity @s[tag=shapeshifting] run summon area_effect_cloud ~ ~ ~ {Age:
 execute if entity @s[tag=shapeshifting] run data modify entity @n[type=area_effect_cloud,tag=chameleon_breadcrumb] Rotation set from entity @s Rotation
 execute if entity @s[tag=shapeshifting] run kill @e[type=area_effect_cloud,tag=chameleon_breadcrumb,distance=3..]
 execute unless entity @s[tag=shapeshifting] run kill @e[type=area_effect_cloud,tag=chameleon_breadcrumb]
+execute unless entity @s[tag=shapeshifting] run kill @e[type=text_display,tag=chameleon_name_tag]
+execute unless entity @s[tag=shapeshifting] run kill @e[type=text_display,tag=chameleon_health_tag]
 
 execute if entity @s[tag=shapeshifting] as @n[type=area_effect_cloud,tag=chameleon_breadcrumb,nbt={Age:5}] at @s run tp @n[type=mannequin,tag=chameleon_mannequin,distance=..6] @s
 execute unless entity @s[predicate=is_sneaking] run data modify entity @n[type=mannequin,tag=chameleon_mannequin,distance=..6] pose set value "standing"
@@ -21,7 +23,7 @@ execute at @n[type=mannequin] run tp @n[type=text_display,tag=chameleon_name_tag
 execute at @n[type=mannequin] run tp @n[type=text_display,tag=chameleon_health_tag,distance=..6] ~ ~2.1 ~
 
 execute if entity @s[tag=shapeshifting] unless entity @e[type=mannequin,tag=chameleon_mannequin,distance=..6] run function juggernaut:abilities/chameleon/exit_shapeshift
-execute as @a[tag=shapeshifting] run function juggernaut:effects/apply_effect_silent {effect:"undetectable",duration:1,color:"gray"}
+execute as @a[tag=shapeshifting] run function juggernaut:effects/apply_effect {effect:"undetectable",duration:1,color:"gray"}
 execute as @e[type=text_display,tag=chameleon_health_tag] at @s run data modify entity @s text set value [\
   {\
     "score":{\
