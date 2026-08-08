@@ -195,6 +195,8 @@ scoreboard players set #timekeeper_count var 0
 scoreboard players set #warlock_count var 0
 scoreboard players set #witch_doctor_count var 0
 scoreboard players set #phantom_count var 0
+scoreboard players set #jester_count var 0
+scoreboard players set #puppeteer_count var 0
 
 bossbar remove warlock:revealing_tower
 bossbar remove warlock:malevolent_aura

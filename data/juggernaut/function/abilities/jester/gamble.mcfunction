@@ -17,7 +17,7 @@ execute if entity @a[tag=juggernaut,tag=!undetectable,distance=..25] run functio
 
 # --- Your Execution Logic ---
 execute if score #roll var matches 1 run effect give @a[tag=runner,distance=..8] speed 10 2 true
-execute if score #roll var matches 2 run effect give @a[tag=juggernaut,distance=..12] blindness 12 0 true
+execute if score #roll var matches 2 run effect give @a[tag=juggernaut,distance=..12] darkness 12 0 true
 execute if score #roll var matches 3 run effect give @a[tag=juggernaut,distance=..12] slowness 4 0 true
 execute if score #roll var matches 4 run effect give @a[tag=juggernaut,distance=..20] nausea 20 255 true
 execute if score #roll var matches 5 run effect give @a[tag=runner,distance=..8] instant_health 1 11 true

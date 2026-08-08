@@ -1,5 +1,6 @@
-execute at @a[tag=warlock] run summon armor_stand ~ ~0.5 ~ {NoGravity:true,Invulnerable:true,Invisible:true,CustomName:{"text": "Banishment Glyph","color": "blue","bold": true},CustomNameVisible:true,Tags:["banishment_glyph","warlock_armor_stand"]}
-execute at @a[tag=warlock] run scoreboard players set @n[type=armor_stand,tag=banishment_glyph] total_dispelling_needed 40
+execute at @p[tag=warlock] run summon armor_stand ~ ~1.5 ~ {NoGravity:true,Invulnerable:true,Invisible:true,CustomName:{"text": "Banishment Glyph","color": "blue","bold": true},Marker:true,CustomNameVisible:true,Tags:["banishment_glyph","warlock_armor_stand"]}
+execute at @p[tag=warlock] run summon armor_stand ~ ~0.5 ~ {NoGravity:true,Marker:true,Invulnerable:true,Invisible:true,Tags:["banishment_glyph_emitter","kill_on_end_game"]}
+execute at @p[tag=warlock] run scoreboard players set @n[type=armor_stand,tag=banishment_glyph] total_dispelling_needed 40
 bossbar add warlock:banishment_glyph "Banishment Glyph"
 bossbar set warlock:banishment_glyph value 0
 bossbar set warlock:banishment_glyph max 40

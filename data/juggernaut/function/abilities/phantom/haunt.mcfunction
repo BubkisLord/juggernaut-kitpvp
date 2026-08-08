@@ -1,4 +1,4 @@
-scoreboard players set @s ability_cooldown0 4000
+scoreboard players set @s ability_cooldown1 4000
 function juggernaut:raycasts/raycast {\
     player_tag:"phantom",\
     raycast_id:"haunt",\

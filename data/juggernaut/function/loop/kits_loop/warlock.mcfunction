@@ -10,7 +10,7 @@ execute at @e[type=armor_stand,tag=banishment_glyph] run particle dripping_water
 execute at @e[type=armor_stand,tag=withering_surge] run particle large_smoke ~ ~ ~ 16 8 16 0.00001 10 force @a[distance=..14]
 execute at @e[type=armor_stand,tag=withering_surge] run particle dripping_honey ~ ~ ~ 16 8 16 0.00001 20 force @a[distance=..16]
 
-execute at @e[type=armor_stand,tag=warlock_armor_stand] if entity @a[tag=runner,distance=..3] run particle end_rod ~ ~0.75 ~ 0.25 0.5 0.25 0 10 force
+execute at @e[type=armor_stand,tag=warlock_armor_stand] positioned ~ ~-1 ~ if entity @a[tag=runner,distance=..3] run particle end_rod ~ ~0.75 ~ 0.25 0.5 0.25 0 10 force
 
 execute as @e[type=armor_stand,tag=warlock_armor_stand,tag=warlock_revealing_tower] at @s run effect give @a[tag=runner,distance=..16,tag=!undetectable] glowing 1 0 true
 execute as @e[type=armor_stand,tag=warlock_armor_stand,tag=warlock_revealing_tower] at @s if entity @a[tag=runner,distance=..16,tag=!undetectable] run data modify entity @s CustomNameVisible set value true

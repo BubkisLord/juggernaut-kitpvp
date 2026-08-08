@@ -7,6 +7,38 @@ execute as @e[type=armor_stand,tag=warlock_armor_stand] run scoreboard players o
 
 execute as @e[type=armor_stand,tag=warlock_armor_stand] run execute store result score @s replenish_decimal run scoreboard players operation @s temp_progress /= @s total_dispelling_needed
 
+execute as @e[type=armor_stand,tag=malevolent_aura_emitter] at @s run particle dust{color:[1,0,0],scale:1} ^-0.75 ^1 ^0.75 0.1 0.1 0.1 0 24 force
+execute as @e[type=armor_stand,tag=malevolent_aura_emitter] at @s run particle dust{color:[1,0,0],scale:1} ^-0.75 ^1 ^0.8 0.1 0.1 0.1 0 24 force
+execute as @e[type=armor_stand,tag=malevolent_aura_emitter] at @s run particle dust{color:[1,0,0],scale:1} ^0.75 ^1 ^-0.75 0.1 0.1 0.1 0 24 force
+execute as @e[type=armor_stand,tag=malevolent_aura_emitter] at @s run particle dust{color:[1,0,0],scale:1} ^0.75 ^1 ^-0.8 0.1 0.1 0.1 0 24 force
+execute as @e[type=armor_stand,tag=malevolent_aura] at @s positioned ~ ~-1.75 ~ run execute as @n[type=armor_stand,tag=malevolent_aura_emitter,distance=..2] unless entity @s[distance=..0.75] run tp @s ~ ~-0.5 ~
+execute as @e[type=armor_stand,tag=malevolent_aura_emitter] at @s run tp @s ~ ~0.005 ~ ~8 ~
+execute as @e[type=armor_stand,tag=malevolent_aura_emitter] at @s unless entity @e[type=armor_stand,tag=malevolent_aura,distance=..2.5] run kill @s
+
+execute as @e[type=armor_stand,tag=banishment_glyph_emitter] at @s run particle dust{color:[0.1882,0.3765,0.509],scale:1} ^-0.75 ^1 ^0.75 0.1 0.1 0.1 0.4 24 force
+execute as @e[type=armor_stand,tag=banishment_glyph_emitter] at @s run particle dust{color:[0.1882,0.3765,0.509],scale:1} ^-0.75 ^1 ^0.8 0.1 0.1 0.1 0.4 24 force
+execute as @e[type=armor_stand,tag=banishment_glyph_emitter] at @s run particle dust{color:[0.1882,0.3765,0.509],scale:1} ^0.75 ^1 ^-0.75 0.1 0.1 0.1 0.4 24 force
+execute as @e[type=armor_stand,tag=banishment_glyph_emitter] at @s run particle dust{color:[0.1882,0.3765,0.509],scale:1} ^0.75 ^1 ^-0.8 0.1 0.1 0.1 0.4 24 force
+execute as @e[type=armor_stand,tag=banishment_glyph] at @s positioned ~ ~-1.75 ~ run execute as @n[type=armor_stand,tag=banishment_glyph_emitter,distance=..2] unless entity @s[distance=..0.75] run tp @s ~ ~-0.5 ~
+execute as @e[type=armor_stand,tag=banishment_glyph_emitter] at @s run tp @s ~ ~0.005 ~ ~8 ~
+execute as @e[type=armor_stand,tag=banishment_glyph_emitter] at @s unless entity @e[type=armor_stand,tag=banishment_glyph,distance=..2.5] run kill @s
+
+execute as @e[type=armor_stand,tag=withering_surge_emitter] at @s run particle dust{color:[0.431,0.443,0.1686],scale:1} ^-0.75 ^1 ^0.75 0.1 0.1 0.1 0.4 24 force
+execute as @e[type=armor_stand,tag=withering_surge_emitter] at @s run particle dust{color:[0.431,0.443,0.1686],scale:1} ^-0.75 ^1 ^0.8 0.1 0.1 0.1 0.4 24 force
+execute as @e[type=armor_stand,tag=withering_surge_emitter] at @s run particle dust{color:[0.431,0.443,0.1686],scale:1} ^0.75 ^1 ^-0.75 0.1 0.1 0.1 0.4 24 force
+execute as @e[type=armor_stand,tag=withering_surge_emitter] at @s run particle dust{color:[0.431,0.443,0.1686],scale:1} ^0.75 ^1 ^-0.8 0.1 0.1 0.1 0.4 24 force
+execute as @e[type=armor_stand,tag=withering_surge] at @s positioned ~ ~-1.75 ~ run execute as @n[type=armor_stand,tag=withering_surge_emitter,distance=..2] unless entity @s[distance=..0.75] run tp @s ~ ~-0.5 ~
+execute as @e[type=armor_stand,tag=withering_surge_emitter] at @s run tp @s ~ ~0.005 ~ ~8 ~
+execute as @e[type=armor_stand,tag=withering_surge_emitter] at @s unless entity @e[type=armor_stand,tag=withering_surge,distance=..2.5] run kill @s
+
+execute as @e[type=armor_stand,tag=warlock_revealing_tower_emitter] at @s if entity @a[tag=runner,distance=..8] run particle dust{color:[1,1,0.211],scale:1} ^-0.75 ^1 ^0.75 0.1 0.1 0.1 0.4 24 force
+execute as @e[type=armor_stand,tag=warlock_revealing_tower_emitter] at @s if entity @a[tag=runner,distance=..8] run particle dust{color:[1,1,0.211],scale:1} ^-0.75 ^1 ^0.8 0.1 0.1 0.1 0.4 24 force
+execute as @e[type=armor_stand,tag=warlock_revealing_tower_emitter] at @s if entity @a[tag=runner,distance=..8] run particle dust{color:[1,1,0.211],scale:1} ^0.75 ^1 ^-0.75 .1 0.1 0.1 0.4 24 force
+execute as @e[type=armor_stand,tag=warlock_revealing_tower_emitter] at @s if entity @a[tag=runner,distance=..8] run particle dust{color:[1,1,0.211],scale:1} ^0.75 ^1 ^-0.8 0.1 0.1 0.1 0.4 24 force
+execute as @e[type=armor_stand,tag=warlock_revealing_tower] at @s positioned ~ ~-1.75 ~ run execute as @n[type=armor_stand,tag=warlock_revealing_tower_emitter,distance=..2] unless entity @s[distance=..0.75] run tp @s ~ ~-0.5 ~
+execute as @e[type=armor_stand,tag=warlock_revealing_tower_emitter] at @s run tp @s ~ ~0.005 ~ ~8 ~
+execute as @e[type=armor_stand,tag=warlock_revealing_tower_emitter] at @s unless entity @e[type=armor_stand,tag=warlock_revealing_tower,distance=..2.5] run kill @s
+
 bossbar set warlock:malevolent_aura max 100
 bossbar set warlock:banishment_glyph max 100
 bossbar set warlock:withering_surge max 100

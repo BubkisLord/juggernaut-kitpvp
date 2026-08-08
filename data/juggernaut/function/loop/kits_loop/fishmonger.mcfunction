@@ -14,9 +14,9 @@ execute if entity @a[tag=fishmonger] run function juggernaut:ability_management/
 execute as @a[tag=fishmonger,scores={ability_cooldown0=6000}] run kill @e[type=nautilus,tag=fishmonger_nautilus]
 execute as @a[tag=fishmonger,scores={ability_cooldown0=6000}] run kill @e[type=nautilus,tag=fishmonger_drowned]
 
-execute as @a[tag=fishmonger,tag=!in_chase] if items entity @s container.* trident run scoreboard players set @s ability_cooldown1 4000
+execute as @a[tag=fishmonger,tag=!in_chase] if items entity @s container.* trident run scoreboard players set @s ability_cooldown1 2500
 execute as @a[tag=fishmonger,tag=!in_chase] run clear @a trident[damage=249]
-execute as @a[tag=fishmonger,tag=!in_chase,scores={ability_cooldown1=..0}] unless items entity @s container.* trident run give @s trident[item_name={"text": "Speartooth Trident"},enchantments={riptide:1},damage=248,lore=[{"text":"","color":"dark_gray"}]] 1
+execute as @a[tag=fishmonger,tag=!in_chase,scores={ability_cooldown1=..0}] unless items entity @s container.* trident run give @s trident[item_name=[{"text": "Speartooth Trident","bold":false,"color":"dark_aqua"},{"text": " | ","color": "dark_gray","bold": true},{"text": "MAIN WEAPON","color": "gray","bold": true}],enchantments={riptide:2},damage=248,lore=[{"text":"","color":"dark_gray"}]] 1
 
 execute as @a[tag=fishmonger,tag=in_chase] run clear @s trident[enchantments={riptide:1}]
 execute as @a[tag=fishmonger,tag=!in_chase] run clear @s trident[enchantments={loyalty:3}]

@@ -25,7 +25,8 @@ execute as @p[tag=juggernaut,scores={juggernaut_release_timer=3}] run tellraw @a
 execute as @p[tag=juggernaut,scores={juggernaut_release_timer=2}] run tellraw @a [{"text": "Juggernaut is released in: ","bold": false, "color": "gray"},{"text": "2","bold": false,"color": "red"},{"text": " Seconds","bold": false, "color": "gray"}]
 execute as @p[tag=juggernaut,scores={juggernaut_release_timer=1}] run tellraw @a [{"text": "Juggernaut is released in: ","bold": false, "color": "gray"},{"text": "1","bold": false,"color": "red"},{"text": " Seconds","bold": false, "color": "gray"}]
 execute as @p[tag=juggernaut,scores={juggernaut_release_timer=0}] run tellraw @a [{"text": "Juggernaut","bold": false,"color": "red"},{"text": " Released!","bold": false,"color": "gray"}]
-execute if score #juggernaut_customisation debug_mode matches 0 if entity @a[tag=juggernaut,scores={juggernaut_release_timer=0}] as @r[tag=runner] at @s run tag @e[type=armor_stand,tag=arena.spawn,limit=6,sort=furthest] add spawn.candidate
+execute if score #juggernaut_customisation debug_mode matches 0 if entity @a[tag=juggernaut,scores={juggernaut_release_timer=0}] as @a[tag=runner] at @s run tag @e[type=armor_stand,tag=arena.spawn,limit=4,sort=furthest] add spawn.candidate
+execute if score #juggernaut_customisation debug_mode matches 0 if entity @a[tag=juggernaut,scores={juggernaut_release_timer=0}] as @a[tag=runner] at @s run tag @n[type=armor_stand,tag=spawn.candidate] remove spawn.candidate
 execute as @a[tag=juggernaut,scores={juggernaut_release_timer=0}] run tp @s @e[type=armor_stand,tag=spawn.candidate,limit=1,sort=random]
 tag @e[tag=spawn.candidate] remove spawn.candidate
 execute if score #juggernaut_customisation debug_mode matches 0 if entity @a[tag=juggernaut,scores={juggernaut_release_timer=0}] as @a[tag=runner] at @s run playsound minecraft:block.end_portal.spawn master @s ~ ~ ~ 0.4 0.1
