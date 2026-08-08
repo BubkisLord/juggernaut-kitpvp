@@ -77,7 +77,7 @@ Each kit aims to provide the player a different playstyle. Kits are made of pass
 | Ghost | Evasion and upmost stealth. High risk high reward |
 | Engineer | Tower placement anywhere for replenishment and info |
 | Trickster | Deception and chase utility (disorientation) |
-| Puppetteer | Decoy mannequin and puppet ring; misdirection at the cost of replenishment |
+| Puppeteer | Decoy mannequin and puppet ring; misdirection at the cost of replenishment |
 
 ### Juggernaut Kits
 

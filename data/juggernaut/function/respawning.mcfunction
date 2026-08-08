@@ -6,7 +6,7 @@ scoreboard players set @s chase_timeout 0
 
 effect give @s saturation infinite 255 true
 
-# Puppetteer: dying clears their mannequin and puppets so nothing lingers or re-triggers Bound Soul.
+# Puppeteer: dying clears their mannequin and puppets so nothing lingers or re-triggers Bound Soul.
 execute if entity @s[tag=puppeteer] run scoreboard players operation #pp_link var = @s puppet_id
 execute if entity @s[tag=puppeteer] run tag @s remove has_mannequin
 execute if entity @s[tag=puppeteer] run tag @s remove has_puppets

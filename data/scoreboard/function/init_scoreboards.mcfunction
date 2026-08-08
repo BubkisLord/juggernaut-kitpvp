@@ -225,11 +225,11 @@ scoreboard objectives add picked_kit_jester dummy "Picked Jester"
 scoreboard objectives add jester_wins dummy "Wins with Jester"
 scoreboard objectives add jester_losses dummy "Losses with Jester"
 
-scoreboard objectives add picked_kit_puppeteer dummy "Picked Puppetteer"
-scoreboard objectives add puppeteer_wins dummy "Wins with Puppetteer"
-scoreboard objectives add puppeteer_losses dummy "Losses with Puppetteer"
+scoreboard objectives add picked_kit_puppeteer dummy "Picked Puppeteer"
+scoreboard objectives add puppeteer_wins dummy "Wins with Puppeteer"
+scoreboard objectives add puppeteer_losses dummy "Losses with Puppeteer"
 
-# Puppetteer kit internals: owner linkage id, chosen ring slot, puppet lifetime timer, and the
+# Puppeteer kit internals: owner linkage id, chosen ring slot, puppet lifetime timer, and the
 # mannequin's tracked/baseline health (used to detect when it has taken damage).
 scoreboard objectives add puppet_id dummy
 scoreboard objectives add pp_slot dummy

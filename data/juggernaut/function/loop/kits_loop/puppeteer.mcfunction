@@ -1,4 +1,4 @@
-# Puppetteer - runs as each puppeteer, positioned at them.
+# Puppeteer - runs as each puppeteer, positioned at them.
 
 # Track the mannequin's current health first, so the swap ability (registered below) can tell
 # whether it has taken damage this tick.
