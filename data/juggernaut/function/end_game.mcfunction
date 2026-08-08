@@ -73,6 +73,8 @@ tag @a remove phantom
 tag @a remove pursued
 tag @a remove jester
 tag @a remove puppeteer
+tag @a remove has_mannequin
+tag @a remove has_puppets
 tag @e[type=armor_stand] remove haunted_station
 tag @a add lobby.player
 
@@ -179,6 +181,7 @@ scoreboard players set #rogue_count var 0
 scoreboard players set #scout_count var 0
 scoreboard players set #survivor_count var 0
 scoreboard players set #trickster_count var 0
+scoreboard players set #puppeteer_count var 0
 scoreboard players set #windrunner_count var 0
 scoreboard players set #chameleon_count var 0
 scoreboard players set #dragon_count var 0
