@@ -2,16 +2,16 @@ execute as @a[tag=knight] at @s unless entity @s[nbt={active_effects:[{id:"minec
 execute as @a[tag=knight] at @s run scoreboard players add @s ability_cooldown0 110
 execute as @a[tag=knight] at @s if entity @e[type=area_effect_cloud,tag=knight_marker,distance=10..] run scoreboard players set @s ability_cooldown0 0
 execute as @a[tag=knight] at @s if entity @e[type=area_effect_cloud,tag=knight_marker,distance=10..] run kill @e[type=area_effect_cloud,tag=knight_marker]
-execute as @a[tag=knight] at @s unless entity @s[tag=using_horse] if score @s ability_cooldown0 matches 0 run clear @s #spears
-execute as @a[tag=knight] at @s unless entity @s[tag=using_horse] if score @s ability_cooldown0 matches 0 run item replace entity @s hotbar.1 with minecraft:wooden_spear[item_name={"text": "Knight's Lance", "color": "yellow"},unbreakable={},tooltip_display={hidden_components:["unbreakable","enchantments"]}]
-execute as @a[tag=knight] at @s unless entity @s[tag=using_horse] if score @s ability_cooldown0 matches 400 run clear @s #spears
-execute as @a[tag=knight] at @s unless entity @s[tag=using_horse] if score @s ability_cooldown0 matches 400 run item replace entity @s hotbar.1 with minecraft:stone_spear[item_name={"text": "Knight's Lance", "color": "yellow"},enchantments={sharpness:1,lunge:1},unbreakable={},attribute_modifiers=[{type:"attack_damage",id:"attack_damage",amount:-100,operation:"add_multiplied_total",slot:"mainhand"}],tooltip_display={hidden_components:["unbreakable","enchantments"]}]
-execute as @a[tag=knight] at @s unless entity @s[tag=using_horse] if score @s ability_cooldown0 matches 800 run clear @s #spears
-execute as @a[tag=knight] at @s unless entity @s[tag=using_horse] if score @s ability_cooldown0 matches 800 run item replace entity @s hotbar.1 with minecraft:iron_spear[item_name={"text": "Knight's Lance", "color": "yellow"},enchantments={sharpness:1,lunge:2},unbreakable={},attribute_modifiers=[{type:"attack_damage",id:"attack_damage",amount:-100,operation:"add_multiplied_total",slot:"mainhand"}],tooltip_display={hidden_components:["unbreakable","enchantments"]}]
-execute as @a[tag=knight] at @s unless entity @s[tag=using_horse] if score @s ability_cooldown0 matches 1200 run clear @s #spears
-execute as @a[tag=knight] at @s unless entity @s[tag=using_horse] if score @s ability_cooldown0 matches 1200 run item replace entity @s hotbar.1 with minecraft:golden_spear[item_name={"text": "Knight's Lance", "color": "yellow"},enchantments={sharpness:1,lunge:3},unbreakable={},attribute_modifiers=[{type:"attack_damage",id:"attack_damage",amount:-100,operation:"add_multiplied_total",slot:"mainhand"}],tooltip_display={hidden_components:["unbreakable","enchantments"]}]
-execute as @a[tag=knight] at @s unless entity @s[tag=using_horse] if score @s ability_cooldown0 matches 1600 run clear @s #spears
-execute as @a[tag=knight] at @s unless entity @s[tag=using_horse] if score @s ability_cooldown0 matches 1600.. run item replace entity @s hotbar.1 with minecraft:diamond_spear[item_name={"text": "Knight's Lance", "color": "yellow"},enchantments={sharpness:1,lunge:4},unbreakable={},attribute_modifiers=[{type:"attack_damage",id:"attack_damage",amount:-100,operation:"add_multiplied_total",slot:"mainhand"}],tooltip_display={hidden_components:["unbreakable","enchantments"]}]
+execute as @a[tag=knight] at @s if score @s ability_cooldown0 matches 0 run clear @s #spears
+execute as @a[tag=knight] at @s if score @s ability_cooldown0 matches 0 run item replace entity @s hotbar.1 with minecraft:wooden_spear[item_name={"text": "Knight's Lance", "color": "yellow"},unbreakable={},tooltip_display={hidden_components:["unbreakable","enchantments"]}]
+execute as @a[tag=knight] at @s if score @s ability_cooldown0 matches 400 run clear @s #spears
+execute as @a[tag=knight] at @s if score @s ability_cooldown0 matches 400 run item replace entity @s hotbar.1 with minecraft:stone_spear[item_name={"text": "Knight's Lance", "color": "yellow"},enchantments={sharpness:1,lunge:1},unbreakable={},attribute_modifiers=[{type:"attack_damage",id:"attack_damage",amount:-100,operation:"add_multiplied_total",slot:"mainhand"}],tooltip_display={hidden_components:["unbreakable","enchantments"]}]
+execute as @a[tag=knight] at @s if score @s ability_cooldown0 matches 800 run clear @s #spears
+execute as @a[tag=knight] at @s if score @s ability_cooldown0 matches 800 run item replace entity @s hotbar.1 with minecraft:iron_spear[item_name={"text": "Knight's Lance", "color": "yellow"},enchantments={sharpness:1,lunge:2},unbreakable={},attribute_modifiers=[{type:"attack_damage",id:"attack_damage",amount:-100,operation:"add_multiplied_total",slot:"mainhand"}],tooltip_display={hidden_components:["unbreakable","enchantments"]}]
+execute as @a[tag=knight] at @s if score @s ability_cooldown0 matches 1200 run clear @s #spears
+execute as @a[tag=knight] at @s if score @s ability_cooldown0 matches 1200 run item replace entity @s hotbar.1 with minecraft:golden_spear[item_name={"text": "Knight's Lance", "color": "yellow"},enchantments={sharpness:1,lunge:3},unbreakable={},attribute_modifiers=[{type:"attack_damage",id:"attack_damage",amount:-100,operation:"add_multiplied_total",slot:"mainhand"}],tooltip_display={hidden_components:["unbreakable","enchantments"]}]
+execute as @a[tag=knight] at @s if score @s ability_cooldown0 matches 1600 run clear @s #spears
+execute as @a[tag=knight] at @s if score @s ability_cooldown0 matches 1600.. run item replace entity @s hotbar.1 with minecraft:diamond_spear[item_name={"text": "Knight's Lance", "color": "yellow"},enchantments={sharpness:1,lunge:4},unbreakable={},attribute_modifiers=[{type:"attack_damage",id:"attack_damage",amount:-100,operation:"add_multiplied_total",slot:"mainhand"}],tooltip_display={hidden_components:["unbreakable","enchantments"]}]
 
 execute as @a[tag=knight,tag=using_horse,tag=!on_horse] at @s run summon minecraft:skeleton_horse ~ ~ ~ {CanPickUpLoot:false,DeathLootTable:"",Tame:true,equipment:{saddle:{id:"saddle"}},Team:"jug",Tags:["kill_on_end_game", "knight_horse"],attributes:[{"id":"minecraft:step_height",base:2.0},{"id":"movement_speed",base:0.18},{id:"max_health",base:40.0},{"id":"gravity",base:2.2}]}
 execute as @a[tag=knight,tag=using_horse,tag=!on_horse] at @s anchored eyes run tp @e[type=skeleton_horse,tag=knight_horse,distance=..6] ~ ~ ~ facing ^ ^ ^99999
@@ -21,7 +21,7 @@ execute as @a[tag=knight,tag=on_horse] at @s unless entity @e[type=skeleton_hors
 execute as @a[tag=knight,tag=!using_horse,tag=on_horse] at @s run kill @n[type=skeleton_horse,tag=knight_horse]
 execute as @e[type=skeleton_horse,tag=knight_horse] at @s unless entity @a[tag=knight,tag=using_horse,distance=..6] run kill @s
 
-execute as @a[tag=knight] unless entity @s[tag=using_horse] run function juggernaut:ability_management/check_ability {\
+execute as @a[tag=knight] run function juggernaut:ability_management/check_ability {\
     player_tag:"knight",\
     item_id:"minecraft:saddle",\
     item_name:{"text": "Summon Steed","color": "dark_red"},\
