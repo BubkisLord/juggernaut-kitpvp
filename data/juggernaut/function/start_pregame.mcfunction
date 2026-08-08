@@ -38,6 +38,7 @@ execute as @a[tag=juggernaut] run attribute @s waypoint_transmit_range base set 
 
 execute as @a[tag=runner] run attribute @s waypoint_receive_range base reset
 execute as @a[tag=runner] run attribute @s waypoint_transmit_range base reset
+execute as @a[tag=runner] run waypoint modify @s color dark_aqua
 
 execute as @a[tag=juggernaut] at @s run playsound music_disc.creator record @s ~ ~ ~ 3 0.75
 execute as @a[tag=runner] at @s run playsound music_disc.precipice record @s ~ ~ ~ 3 1.1
