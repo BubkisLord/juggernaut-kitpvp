@@ -229,6 +229,14 @@ scoreboard objectives add picked_kit_puppeteer dummy "Picked Puppeteer"
 scoreboard objectives add puppeteer_wins dummy "Wins with Puppeteer"
 scoreboard objectives add puppeteer_losses dummy "Losses with Puppeteer"
 
+# Puppeteer kit internals: owner linkage id, chosen ring slot, puppet lifetime timer, and the
+# mannequin's tracked/baseline health (used to detect when it has taken damage).
+scoreboard objectives add puppet_id dummy
+scoreboard objectives add pp_slot dummy
+scoreboard objectives add puppet_time dummy
+scoreboard objectives add manne_hp dummy
+scoreboard objectives add manne_full dummy
+
 # Initialise teams
 team add blue
 team modify blue collisionRule always
