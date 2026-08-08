@@ -22,4 +22,4 @@ function scoreboard:reset_kit_stats {"kit":"survivor"}
 function scoreboard:reset_kit_stats {"kit":"trickster"}
 function scoreboard:reset_kit_stats {"kit":"windrunner"}
 function scoreboard:reset_kit_stats {"kit":"jester"}
-function scoreboard:reset_kit_stats {"kit":"puppetteer"}
+function scoreboard:reset_kit_stats {"kit":"puppeteer"}

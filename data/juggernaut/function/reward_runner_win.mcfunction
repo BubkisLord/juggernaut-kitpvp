@@ -23,4 +23,4 @@ function juggernaut:update_stats_win {"kit":"survivor"}
 function juggernaut:update_stats_win {"kit":"trickster"}
 function juggernaut:update_stats_win {"kit":"windrunner"}
 function juggernaut:update_stats_win {"kit":"jester"}
-function juggernaut:update_stats_win {"kit":"puppetteer"}
+function juggernaut:update_stats_win {"kit":"puppeteer"}

@@ -23,4 +23,4 @@ function juggernaut:update_stats_loss {"kit":"survivor"}
 function juggernaut:update_stats_loss {"kit":"trickster"}
 function juggernaut:update_stats_loss {"kit":"windrunner"}
 function juggernaut:update_stats_loss {"kit":"jester"}
-function juggernaut:update_stats_loss {"kit":"puppetteer"}
+function juggernaut:update_stats_loss {"kit":"puppeteer"}

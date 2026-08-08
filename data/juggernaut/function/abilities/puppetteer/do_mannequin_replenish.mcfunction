@@ -1,5 +1,5 @@
-# Run as the puppetteer, positioned at their mannequin (which sits within 3 blocks of a station).
-# Mirrors the economy in replenishment_management/try_replenish, using the puppetteer's own
+# Run as the puppeteer, positioned at their mannequin (which sits within 3 blocks of a station).
+# Mirrors the economy in replenishment_management/try_replenish, using the puppeteer's own
 # replenishment rate (60% base from the passive, further scaled by their replenishment perks).
 function juggernaut:replenishment_management/calculate_replenishment_modifier
 
