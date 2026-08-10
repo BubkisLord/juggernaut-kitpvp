@@ -158,6 +158,9 @@ execute as @a run attribute @s sneaking_speed modifier remove juggernaut:dragon_
 execute as @a run attribute @s camera_distance modifier remove juggernaut:chameleon_shapeshift
 execute as @a run attribute @s movement_speed modifier remove juggernaut:phantom_move_spd
 
+xp set @a 0 levels
+xp set @a 0 points
+
 scoreboard players set #juggernaut_manager replenish_progress 0
 scoreboard players set #juggernaut_manager replenish_decimal 0
 scoreboard players set #juggernaut_manager total_replenishment_needed 0
