@@ -25,11 +25,7 @@ scoreboard players set #crate_count var 0
 # Allow players to drop items
 gamerule keep_inventory false
 
-# Set the game state to pregame - Possibly needed if game starting is later changed for some unforseen reason.
-scoreboard players operation #survival_teams var = #survival_customisation teams_mode
-execute if score #survival_teams var matches 0 run scoreboard players set #game_state var 20
-execute if score #survival_teams var matches 1 run scoreboard players set #game_state var 25
-execute if score #survival_teams var matches 1 run function survival:start_with_teams
+execute if score #survival_customisation teams_mode matches 1 run function survival:start_with_teams
 
 # Teleport players into the game
 tp @a 0 101 0
@@ -62,13 +58,31 @@ scoreboard players set #replenish_chest_timer var 120
 scoreboard players set #times_replenished var 0
 
 # Start the game
-execute if score #survival_teams var matches 0 run scoreboard players set #game_state var 21
-execute if score #survival_teams var matches 1 run scoreboard players set #game_state var 26
-
-# Reset - no longer needed.
-scoreboard players set #survival_teams var 0
+execute if score #survival_customisation teams_mode matches 0 run scoreboard players set #game_state var 21
+execute if score #survival_customisation teams_mode matches 1 run scoreboard players set #game_state var 26
 
 # Set the grace period to 40 seconds
 scoreboard players set #grace_period var 40
 
 spawnpoint @a 0 300 0
+
+tellraw @a [\
+  {"text":"Survival ","color":"dark_aqua"},\
+  {"text":"- Game Started!\n","color":"gray"},\
+\
+  {"text":"Loot chests are scattered across the map, and ","color":"gray"},\
+  {"text":"particles","color":"aqua"},\
+  {"text":" above them show rarity: ","color":"gray"},\
+  {"text":"Uncommon","color":"#70d259"},\
+  {"text":", ","color":"gray"},\
+  {"text":"Rare","color":"aqua"},\
+  {"text":", or ","color":"gray"},\
+  {"text":"Legendary","color":"gold"},\
+  {"text":".\n","color":"gray"},\
+\
+  {"text":"Survival Crates also spawn randomly, dropping consumables and bonus loot.\n","color":"gray"},\
+\
+  {"text":"(Teams, crate count & legendary chests can be toggled in game settings.)\n","color":"#7c7c7c"},\
+\
+  {"text":"Eliminate all other players to win!","color":"red"}\
+]

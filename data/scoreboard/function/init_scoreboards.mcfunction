@@ -104,7 +104,7 @@ scoreboard players set #survival_customisation has_legendaries 1
 # Initialise variables for use in calculations
 scoreboard players set #0 var 0
 scoreboard players set #1 var 1
-scoreboard players set #2 var 1
+scoreboard players set #2 var 2
 scoreboard players set #3 var 3
 scoreboard players set #5 var 5
 scoreboard players set #6 var 6
