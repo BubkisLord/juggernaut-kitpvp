@@ -119,6 +119,10 @@ scoreboard players set #100 var 100
 scoreboard players set #1000 var 1000
 scoreboard players set #20000 var 20000
 
+# Tips Management
+scoreboard objectives add tips.data dummy
+function tips:add
+
 # Juggernaut Kit Statistics
 scoreboard objectives add picked_kit_chameleon dummy "Picked Kit - Chameleon"
 scoreboard objectives add kills_kit_chameleon dummy "Kills with Chameleon"
