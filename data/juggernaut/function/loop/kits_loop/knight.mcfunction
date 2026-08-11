@@ -21,7 +21,7 @@ execute as @a[tag=knight,tag=on_horse] at @s unless entity @e[type=skeleton_hors
 execute as @a[tag=knight,tag=!using_horse,tag=on_horse] at @s run kill @n[type=skeleton_horse,tag=knight_horse]
 execute as @e[type=skeleton_horse,tag=knight_horse] at @s unless entity @a[tag=knight,tag=using_horse,distance=..6] run kill @s
 
-execute as @a[tag=knight] run function juggernaut:ability_management/check_ability {\
+execute unless entity @s[tag=using_horse] run function juggernaut:ability_management/check_ability {\
     player_tag:"knight",\
     item_id:"minecraft:saddle",\
     item_name:{"text": "Summon Steed","color": "dark_red"},\
@@ -32,13 +32,13 @@ execute as @a[tag=knight] run function juggernaut:ability_management/check_abili
     cooldown_var:"ability_cooldown1",\
 }
 
-execute as @a[tag=knight] if entity @s[tag=using_horse] run function juggernaut:ability_management/check_ability {\
+execute if entity @s[tag=using_horse] run function juggernaut:ability_management/check_ability {\
     player_tag:"knight",\
     item_id:"minecraft:leather",\
     item_name:{"text": "Dismiss Steed","color": "dark_red"},\
     description:[{"text": "Dismiss your summoned steed and return to default movement.","color": "gray"},{"text": "Cooldown: 0s","color": "dark_gray"}],\
     ability_id:"dismiss_steed",\
-    cooldown:0,\
+    cooldown:1,\
     hotbar_slot:"hotbar.2",\
     cooldown_var:"ability_cooldown1",\
 }
