@@ -28,7 +28,7 @@ execute as @e[type=armor_stand,tag=replenishment.station] at @s as @a[tag=runner
 execute as @e[type=armor_stand,tag=replenishment.station,tag=sentinel_tower] at @s as @a[tag=juggernaut,distance=..8,tag=!undetectable] run effect give @s glowing 8 0 true
 
 # Effects when a station is completed.
-execute as @e[type=armor_stand,tag=replenishment.station] at @s if score @s replenish_amount >= #total_replenishment_per_station var if score #juggernaut_customisation completable_stations matches 1 run function juggernaut:hooks/station_completed
+execute as @e[type=armor_stand,tag=replenishment.station] at @s if score @s replenish_amount >= #total_replenishment_per_station var if score #juggernaut_customisation completable_stations matches 1 unless score #juggernaut_customisation debug_mode matches 1 run function juggernaut:hooks/station_completed
 
 # Allow engineer towers to replenish.
 execute as @e[type=armor_stand,tag=replenishment_tower] at @s as @a[tag=runner,distance=..3] at @s unless entity @n[type=armor_stand,tag=replenishment.station,distance=..3] at @n[type=armor_stand,tag=replenishment.station,tag=highest_station] run function juggernaut:replenishment_management/try_replenish
