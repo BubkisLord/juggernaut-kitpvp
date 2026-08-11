@@ -1,6 +1,7 @@
 # Rogue
 # Stealth Expertise (Passive)
-execute as @a[tag=rogue,predicate=is_sneaking] run attribute @s step_height base set 1
+# Sneaking step height is set to 1.0625 here as carpets are 0.0625 blocks high, and rogue should be able to shift down carpeted blocks.
+execute as @a[tag=rogue,predicate=is_sneaking] run attribute @s step_height base set 1.0625
 execute as @a[tag=rogue,predicate=!is_sneaking] run attribute @s step_height base set 0.6
 
 # Smoke Bomb (Active)
