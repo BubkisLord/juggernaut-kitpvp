@@ -14,7 +14,6 @@ execute if score #game_state var matches 11 run function juggernaut:chase/check_
 execute if score #game_state var matches 11 run function juggernaut:replenishment_management/replenishment_stations
 # While juggernaut is not released, disallow all interactions with replenishment stations but allow for runners to see them.
 execute if score #game_state var matches 12 as @e[type=armor_stand,tag=replenishment.station] at @s run particle minecraft:end_rod ~ ~2.5 ~ 0.2 60 0.2 0 60 force @a[tag=runner]
-execute if score #game_state var matches 12 as @e[type=armor_stand,tag=replenishment.station] at @s as @a[tag=runner,distance=..3] at @s run particle minecraft:flame ~ ~2.5 ~ 0.3 1 0.3 0 3 force
 
 # If debug mode is on, display the arena spawn point to all players.
 execute if score #juggernaut_customisation debug_mode matches 1 as @e[type=armor_stand,tag=arena.spawn] at @s run particle dust_color_transition{from_color:[0.0f, 1.0f, 1.0f],to_color:[0.0f, 0.0f, 1.0f],scale:2} ~ ~ ~ 0.1 100 0.1 0 100 force @a
