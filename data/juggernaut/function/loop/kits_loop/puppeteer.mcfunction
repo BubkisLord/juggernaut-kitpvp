@@ -10,8 +10,8 @@ execute if entity @s[tag=has_mannequin] run function juggernaut:abilities/puppet
 execute unless entity @s[tag=has_mannequin] run function juggernaut:ability_management/check_ability {\
     player_tag:"puppeteer",\
     item_id:"minecraft:armor_stand",\
-    item_name:{"text": "Summon Mannequin","color": "#a64dff"},\
-    description:[{"text": "Summon a stationary mannequin with lots of health.","color": "gray"},{"text": "It replenishes the nearest station at 60% efficiency.","color": "gray"},{"text": "If it dies, you die. Pickup unlocks after this cooldown.","color": "dark_red"},{"text": "Cooldown: 15s","color": "dark_gray"}],\
+    item_name:{"text": "Summon Mannequin","color": "#cfc7ba"},\
+    description:[{"text": "Summon a mannequin clone of you.","color": "gray"},{"text": "It is able to replenish at 60% speed.","color": "gray"},{"text": "If the mannequin dies, you die.","color": "dark_red"},{"text": "Cooldown: 0s","color": "dark_gray"}],\
     ability_id:"summon_mannequin",\
     cooldown:15,\
     hotbar_slot:"hotbar.0",\
@@ -21,37 +21,50 @@ execute unless entity @s[tag=has_mannequin] run function juggernaut:ability_mana
 execute if entity @s[tag=has_mannequin] run function juggernaut:ability_management/check_ability {\
     player_tag:"puppeteer",\
     item_id:"minecraft:lead",\
-    item_name:{"text": "Pickup Mannequin","color": "#a64dff"},\
-    description:[{"text": "Pick your mannequin back up.","color": "gray"},{"text": "You must be within 3 blocks of it.","color": "gray"},{"text": "Cooldown: 2s","color": "dark_gray"}],\
+    item_name:{"text": "Pickup Mannequin","color": "#cfc7ba"},\
+    description:[{"text": "Pick up your placed mannequin within 6 blocks.","color": "gray"},{"text": "Cooldown: 0s","color": "dark_gray"}],\
     ability_id:"pickup_mannequin",\
-    cooldown:2,\
+    cooldown:15,\
     hotbar_slot:"hotbar.0",\
     cooldown_var:"ability_cooldown0",\
 }
 
 # Slot 1: Swap with the mannequin (usable within 10 blocks OR while it has taken damage - enforced
 # inside the ability itself so the item is always visible but only fires when eligible).
-function juggernaut:ability_management/check_ability {\
+execute if entity @s[tag=has_mannequin] run function juggernaut:ability_management/check_ability {\
     player_tag:"puppeteer",\
-    item_id:"minecraft:string",\
-    item_name:{"text": "Swap","color": "#a64dff"},\
-    description:[{"text": "Trade places with your mannequin.","color": "gray"},{"text": "Only while within 10 blocks of it,","color": "gray"},{"text": "or while it has taken any damage.","color": "gray"},{"text": "Cooldown: 15s","color": "dark_gray"}],\
+    item_id:"minecraft:resin_brick",\
+    item_name:{"text": "Swap","color": "#cfc7ba"},\
+    description:[{"text": "Swap places with your mannequin.","color": "gray"},{"text": "Cooldown: 0s","color": "dark_gray"}],\
     ability_id:"swap_mannequin",\
-    cooldown:15,\
+    cooldown:1,\
     hotbar_slot:"hotbar.1",\
     cooldown_var:"ability_cooldown1",\
 }
 
+execute if entity @s[tag=!has_mannequin] run item replace entity @s hotbar.1 with brick[item_name=[{"text": "Swap","color": "#cfc7ba"},{"text": " | ","color": "dark_gray","bold": true},{"text": "NOT AVAILABLE","color": "red","bold": true}],lore=[{"text": "Cannot swap without a mannequin.","color": "gray"},{"text": "Cooldown: 1s","color": "dark_gray"}]]
+
 # Slot 2: Make Puppets.
-function juggernaut:ability_management/check_ability {\
+execute unless entity @s[tag=has_puppets] run function juggernaut:ability_management/check_ability {\
     player_tag:"puppeteer",\
     item_id:"minecraft:cobweb",\
-    item_name:{"text": "Make Puppets","color": "#a64dff"},\
-    description:[{"text": "Conjure six identical puppets that move as you do.","color": "gray"},{"text": "You swap into one - the juggernaut can't tell which.","color": "gray"},{"text": "Each puppet dies in one hit.","color": "gray"},{"text": "Cooldown: 1m 30s","color": "dark_gray"}],\
+    item_name:{"text": "Make Puppets","color": "#cfc7ba"},\
+    description:[{"text": "Create 5 identical copies of you around you.","color": "gray"},{"text": "Cooldown: 60s","color": "dark_gray"}],\
     ability_id:"make_puppets",\
-    cooldown:90,\
+    cooldown:60,\
     hotbar_slot:"hotbar.2",\
     cooldown_var:"ability_cooldown2",\
+}
+
+execute if entity @s[tag=has_puppets] run function juggernaut:ability_management/check_ability {\
+    player_tag:"puppeteer",\
+    item_id:"minecraft:prismarine_shard",\
+    item_name:{"text": "Dimiss Puppets","color": "#cfc7ba"},\
+    description:[{"text": "Dismisses all summoned puppets.","color": "gray"},{"text": "Cooldown: 1s","color": "dark_gray"}],\
+    ability_id:"end_puppets",\
+    cooldown:1,\
+    hotbar_slot:"hotbar.2",\
+    cooldown_var:"ability_cooldown3",\
 }
 
 # Bound Soul passive: if the summoned mannequin has been destroyed, the puppeteer dies too.
