@@ -71,8 +71,6 @@ execute as @a[tag=phantom] at @s run function juggernaut:loop/kits_loop/phantom
 # Loop per second function.
 scoreboard players add #tick_counter var 1
 execute if score #tick_counter var >= #20 var run function juggernaut:loop/second
-execute if score #tick_counter var = #20 var run function juggernaut:loop/half_second
-execute if score #tick_counter var = #10 var run function juggernaut:loop/half_second
 execute if score #tick_counter var >= #20 var run scoreboard players set #tick_counter var 0
 
 execute as @a run function juggernaut:ability_management/calculate_cooldown_modifier
@@ -82,6 +80,12 @@ execute as @a if score @s ability_cooldown2 matches 1.. run scoreboard players o
 execute as @a if score @s ability_cooldown3 matches 1.. run scoreboard players operation @s ability_cooldown3 -= @s cooldown_modifier
 execute as @a if score @s ability_cooldown4 matches 1.. run scoreboard players operation @s ability_cooldown4 -= @s cooldown_modifier
 execute as @a if score @s ability_cooldown5 matches 1.. run scoreboard players operation @s ability_cooldown5 -= @s cooldown_modifier
+
+# Effect particles
+execute as @a[tag=undetectable] at @s run particle dust{color:[0,0,0],scale:1} ~ ~0.5 ~ 0.3 1 0.3 0 1 force @s
+
+# Give respawn time effect
+execute as @a[tag=has_respawn_time] run effect give @s weakness 1 255 true
 
 # Predatory Instincts Perk
 execute as @a[tag=juggernaut,tag=using_predatory_instincts,predicate=is_still] at @s as @a[tag=runner,tag=!undetectable,distance=..12] run effect give @s glowing 4 0 true
