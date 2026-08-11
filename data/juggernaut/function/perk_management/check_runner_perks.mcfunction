@@ -26,9 +26,9 @@ execute if score #juggernaut_customisation random_perks matches 0 run title @s a
 execute if score #juggernaut_customisation random_perks matches 1 if score @s perk_rerolls < #juggernaut_customisation perk_rerolls run title @s actionbar [{"score":{"name":"@s",objective:"perk_rerolls"}},{"text":"/"},{"score":{"name":"#juggernaut_customisation",objective:"perk_rerolls"}},{"text":" Rerolls Used"}]
 execute if score #juggernaut_customisation random_perks matches 1 if score @s perk_rerolls >= #juggernaut_customisation perk_rerolls run title @s actionbar {"text":"Max Rerolls Used","color":red}
 
+execute if items entity @s container.* end_crystal[item_name={"text": "Reroll Random Perks","color": "red"}] if score #juggernaut_customisation random_perks matches 1 run scoreboard players add @s perk_rerolls 1
 execute if items entity @s container.* end_crystal[item_name={"text": "Reroll Random Perks","color": "red"}] run function juggernaut:perk_management/remove_perks
 execute if items entity @s container.* end_crystal[item_name={"text": "Reroll Random Perks","color": "red"}] run function juggernaut:perk_management/equip_random/runner
-execute if items entity @s container.* end_crystal[item_name={"text": "Reroll Random Perks","color": "red"}] if score #juggernaut_customisation random_perks matches 1 run scoreboard players add @s perk_rerolls 1
 execute if items entity @s container.* end_crystal[item_name={"text": "Reroll Random Perks","color": "red"}] run function juggernaut:perk_management/give_runner_perks
 execute if items entity @s container.* end_crystal[item_name={"text": "Reroll Random Perks","color": "red"}] run clear @s end_crystal[item_name={"text": "Reroll Random Perks","color": "red"}]
 
