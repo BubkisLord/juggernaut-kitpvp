@@ -112,7 +112,7 @@ KEYWORDS = {
     "Spectral Cloak": "#AAAAAA",
 
     # Fishmonger
-    "Summon Mcbee": "#FFD700",
+    "Summon Drowned": "#FFD700",
 
     # Escapist
     "Flee Powder": "#646464",
