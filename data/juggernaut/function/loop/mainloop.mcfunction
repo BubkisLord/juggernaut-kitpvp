@@ -89,18 +89,17 @@ execute as @a[tag=has_respawn_time] run effect give @s weakness 1 255 true
 # Predatory Instincts Perk
 execute as @a[tag=juggernaut,tag=using_predatory_instincts,predicate=is_still] at @s as @a[tag=runner,tag=!undetectable,distance=..12] run effect give @s glowing 4 0 true
 
+# Insidious Perk
+execute as @a[tag=using_insidious,predicate=is_still] run function juggernaut:effects/apply_effect {effect:"undetectable",duration:1}
+execute as @a[tag=using_insidious,predicate=is_still] run effect give @s invisibility 1 0 true
+
 # Set healing needed
 execute as @a[tag=runner] run function juggernaut:healing/set_healing_needed
 
 # Healing check
 execute as @a[tag=runner,predicate=is_sneaking] at @s if score @s health < @s max_health run function juggernaut:healing/check_self_heal
 
-scoreboard players set @a[predicate=is_sneaking] is_sneaking 0
-
-execute as @a[tag=using_insidious,predicate=is_still] run function juggernaut:effects/apply_effect {effect:"undetectable",duration:2}
-execute as @a[tag=using_insidious,predicate=is_still] run effect give @s invisibility 1 0 true
-
-execute if score #game_state var matches 11 as @a[tag=using_second_wind] run function juggernaut:loop/update_second_wind
+function juggernaut:loop/update_second_wind
 
 # execute as @e[type=armor_stand,tag=replenish_minigame_target] at @s run particle minecraft:witch ~ ~0.1 ~ 0.11 0.1 0.11 0 70 force
 # execute as @e[type=armor_stand,tag=replenish_minigame_target] at @s run scoreboard players add @s tick_counter 1
