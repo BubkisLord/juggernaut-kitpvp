@@ -5,5 +5,5 @@ scoreboard players operation #pp_link var = @s puppet_id
 tag @e[type=mannequin,tag=puppeteer_mannequin] remove pp_target
 execute as @e[type=mannequin,tag=puppeteer_mannequin] if score @s puppet_id = #pp_link var run tag @s add pp_target
 scoreboard players set @s manne_hp 0
-execute store result score @s manne_hp int 1 run data get entity @n[type=mannequin,tag=pp_target] Health
+execute store result score @s manne_hp run data get entity @n[type=mannequin,tag=pp_target] Health
 tag @e[type=mannequin,tag=puppeteer_mannequin] remove pp_target

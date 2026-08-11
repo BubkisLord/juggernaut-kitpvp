@@ -6,8 +6,10 @@ tag @e[type=mannequin,tag=puppeteer_mannequin] remove pp_target
 execute as @e[type=mannequin,tag=puppeteer_mannequin] if score @s puppet_id = #pp_link var run tag @s add pp_target
 
 # Must be within 3 blocks of the mannequin to pick it up, otherwise refund the cooldown.
-execute unless entity @e[type=mannequin,tag=pp_target,distance=..3] run scoreboard players set @s ability_cooldown0 0
-execute unless entity @e[type=mannequin,tag=pp_target,distance=..3] run return fail
+execute unless entity @e[type=mannequin,tag=pp_target,distance=..6] run scoreboard players set @s ability_cooldown0 4000
+execute unless entity @e[type=mannequin,tag=pp_target,distance=..6] run playsound block.note_block.didgeridoo ui @s ~ ~ ~ 1.2
+execute unless entity @e[type=mannequin,tag=pp_target,distance=..6] run particle angry_villager ~ ~ ~ 1 0.6 1 0 80
+execute unless entity @e[type=mannequin,tag=pp_target,distance=..6] run return fail
 
 # Pick it up: removing the mannequin here (before the death-link check) does NOT kill the puppeteer.
 tag @s remove has_mannequin

@@ -2,8 +2,10 @@
 # Only one mannequin at a time - guarded by the has_mannequin tag in the loop registration.
 
 # Summon the mannequin. It is a stationary decoy with lots of health that can still be damaged.
-summon mannequin ~ ~ ~ {Tags:["puppeteer_mannequin","kill_on_end_game","pp_new_mannequin"],pose:"standing",Health:200f,attributes:[{id:"max_health",base:200}],Rotation:[0f,0f]}
+summon mannequin ~ ~ ~ {Tags:["puppeteer_mannequin","kill_on_end_game","pp_new_mannequin"],pose:"standing",Health:30f,attributes:[{id:"max_health",base:30}],Rotation:[0f,0f]}
 data modify entity @n[type=mannequin,tag=pp_new_mannequin] Rotation set from entity @s Rotation
+execute if entity @s[tag=using_sentinel] run tag @n[type=mannequin,tag=pp_new_mannequin] add using_sentinel
+execute if entity @s[tag=using_durable] run effect give @n[type=mannequin,tag=pp_new_mannequin] health_boost infinite 4 true
 
 # Bail out if for some reason the mannequin was not created (keeps the tag state consistent).
 execute unless entity @n[type=mannequin,tag=pp_new_mannequin] run scoreboard players set @s ability_cooldown0 0
@@ -16,7 +18,7 @@ scoreboard players operation @n[type=mannequin,tag=pp_new_mannequin] puppet_id =
 # Record the mannequin's full health as a baseline for the swap "took damage" check. Reading it
 # from NBT means this works whether or not the max_health attribute above actually applied.
 scoreboard players set @s manne_full 0
-execute store result score @s manne_full int 1 run data get entity @n[type=mannequin,tag=pp_new_mannequin] Health
+execute store result score @s manne_full run data get entity @n[type=mannequin,tag=pp_new_mannequin] Health
 scoreboard players operation @s manne_hp = @s manne_full
 
 tag @n[type=mannequin,tag=pp_new_mannequin] remove pp_new_mannequin
