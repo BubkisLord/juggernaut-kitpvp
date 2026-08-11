@@ -27,7 +27,12 @@ function juggernaut:ability_management/check_ability {\
     player_tag:"warlock",\
     item_id:"minecraft:red_dye",\
     item_name:{"text": "Spawn Malevolent Aura","color": "dark_red"},\
-    description:[{"text": "Summon a tower with a visible nametag.","color": "gray"},{"text": "Within 24 blocks you gain strength and speed, while","color": "gray"},{"text": "runners get slowness and poison.","color": "gray"},{"text": "Runners may stand near it to dispel/remove it.","color": "gray"},{"text": "Cooldown: 20s","color": "dark_gray"}],\
+    description:[\
+        {"text": "Summon a tower with a visible nametag.","color": "gray"},\
+        {"text": "Within 24 blocks you gain Speed II.","color": "gray"},\
+        {"text": "","color": "gray"},\
+        {"text": "Runners may stand near it to dispel/remove it.","color": "gray"},\
+        {"text": "Cooldown: 20s","color": "dark_gray"}],\
     ability_id:"malevolent_aura",\
     cooldown:20,\
     hotbar_slot:"hotbar.1",\
@@ -38,7 +43,12 @@ function juggernaut:ability_management/check_ability {\
     player_tag:"warlock",\
     item_id:"minecraft:cyan_dye",\
     item_name:{"text": "Spawn Banishment Glyph","color": "dark_aqua"},\
-    description:[{"text": "Summon a tower with a visible nametag.","color": "gray"},{"text": "Within 24 blocks replenishment stations cannot be used.","color": "gray"},{"text": "Runners may stand near it to dispel/remove it.","color": "gray"},{"text": "Cooldown: 30s","color": "dark_gray"}],\
+    description:[\
+        {"text": "Summon a tower with a visible nametag.","color": "gray"},\
+        {"text": "Within 24 blocks replenishment stations cannot be used.","color": "gray"},\
+        {"text": "","color": "gray"},\
+        {"text": "Runners may stand near it to dispel/remove it.","color": "gray"},\
+        {"text": "Cooldown: 30s","color": "dark_gray"}],\
     ability_id:"banishment_glyph",\
     cooldown:30,\
     hotbar_slot:"hotbar.2",\
@@ -49,7 +59,12 @@ function juggernaut:ability_management/check_ability {\
     player_tag:"warlock",\
     item_id:"minecraft:black_dye",\
     item_name:{"text": "Spawn Withering Surge","color": "dark_gray"},\
-    description:[{"text": "Summon a tower with a visible nametag.","color": "gray"},{"text": "Within 14 blocks runners get withered.","color": "gray"},{"text": "Runners may stand near it to dispel/remove it.","color": "gray"},{"text": "Cooldown: 40s","color": "dark_gray"}],\
+    description:[\
+        {"text": "Summon a tower with a visible nametag.","color": "gray"},\
+        {"text": "Runners within 14 blocks are inflicted with Wither.","color": "gray"},\
+        {"text": "","color": "gray"},\
+        {"text": "Runners may stand near it to dispel/remove it.","color": "gray"},\
+        {"text": "Cooldown: 40s","color": "dark_gray"}],\
     ability_id:"withering_surge",\
     cooldown:40,\
     hotbar_slot:"hotbar.3",\
@@ -60,7 +75,13 @@ function juggernaut:ability_management/check_ability {\
     player_tag:"warlock",\
     item_id:"minecraft:yellow_dye",\
     item_name:{"text": "Spawn Revealing Tower","color": "gold"},\
-    description:[{"text": "Summon a tower with a visible nametag.","color": "gray"},{"text": "Within 16 blocks runners get revealed.","color": "gray"},{"text": "Runners may stand near it to dispel/remove it.","color": "gray"},{"text": "Cooldown: 35s","color": "dark_gray"}],\
+    description:[\
+        {"text": "Summon an invisible tower.","color": "gray"},\
+        {"text": "It becomes visible when a Runner is nearby.","color": "gray"},\
+        {"text": "Runners within 16 blocks become Glowing.","color": "gray"},\
+        {"text": "","color": "gray"},\
+        {"text": "Runners may stand near it to dispel/remove it.","color": "gray"},\
+        {"text": "Cooldown: 35s","color": "dark_gray"}],\
     ability_id:"revealing_tower",\
     cooldown:35,\
     hotbar_slot:"hotbar.4",\

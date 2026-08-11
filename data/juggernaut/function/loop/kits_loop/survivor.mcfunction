@@ -3,7 +3,7 @@ execute as @a[tag=survivor] run function juggernaut:ability_management/check_abi
     item_id:"minecraft:snowball",\
     item_name:{"text":"Ice Bomb","color":"#A4D1EA"},\
     description:[\
-                {"text": "Freezes those close by!","color": "gray"},\
+                {"text": "Throw at a Juggernaut to freeze them!","color": "gray"},\
                 {"text":"Cooldown: 45s","color":"dark_gray"}],\
     ability_id:"snowball",\
     cooldown:45,\
