@@ -1,0 +1,2 @@
+$execute unless entity @e[type=mannequin,tag=pp_owned,tag=$(puppet)] run kill @n[type=text_display,tag=puppeteer_name_tag,tag=pp_owned,tag=$(puppet)]
+$execute unless entity @e[type=mannequin,tag=pp_owned,tag=$(puppet)] run kill @n[type=text_display,tag=puppeteer_health_tag,tag=pp_owned,tag=$(puppet)]
