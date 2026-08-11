@@ -10,8 +10,19 @@
                     "quality": 2,
                     "functions": [
                         {
-                            "function": "enchant_with_levels",
-                            "levels": 35
+                            "function": "set_enchantments",
+                            "enchantments": {
+                                "sharpness": {
+                                    "type": "binomial",
+                                    "n": 24,
+                                    "p": 0.12
+                                },
+                                "fire_aspect": {
+                                    "type": "binomial",
+                                    "n": 8,
+                                    "p": 0.2
+                                }
+                            }
                         }
                     ],
                     "weight": 7
@@ -22,8 +33,14 @@
                     "quality": 3,
                     "functions": [
                         {
-                            "function": "enchant_with_levels",
-                            "levels": 40
+                            "function": "set_enchantments",
+                            "enchantments": {
+                                "sharpness": {
+                                    "type": "binomial",
+                                    "n": 4,
+                                    "p": 0.5
+                                }
+                            }
                         }
                     ],
                     "weight": 4
@@ -34,7 +51,34 @@
                     "quality": 3,
                     "functions": [
                         {
-                            "function": "enchant_randomly"
+                            "function": "set_enchantments",
+                            "enchantments": {
+                                "protection": {
+                                    "type": "binomial",
+                                    "n": 4,
+                                    "p": 0.4
+                                },
+                                "projectile_protection": {
+                                    "type": "binomial",
+                                    "n": 4,
+                                    "p": 0.5
+                                },
+                                "fire_protection": {
+                                    "type": "binomial",
+                                    "n": 4,
+                                    "p": 0.5
+                                },
+                                "blast_protection": {
+                                    "type": "binomial",
+                                    "n": 4,
+                                    "p": 0.5
+                                },
+                                "thorns": {
+                                    "type": "uniform",
+                                    "max": 3,
+                                    "min": -3
+                                }
+                            }
                         }
                     ],
                     "weight": 5
@@ -45,7 +89,34 @@
                     "quality": 2,
                     "functions": [
                         {
-                            "function": "enchant_randomly"
+                            "function": "set_enchantments",
+                            "enchantments": {
+                                "protection": {
+                                    "type": "binomial",
+                                    "n": 4,
+                                    "p": 0.4
+                                },
+                                "projectile_protection": {
+                                    "type": "binomial",
+                                    "n": 4,
+                                    "p": 0.5
+                                },
+                                "fire_protection": {
+                                    "type": "binomial",
+                                    "n": 4,
+                                    "p": 0.5
+                                },
+                                "blast_protection": {
+                                    "type": "binomial",
+                                    "n": 4,
+                                    "p": 0.5
+                                },
+                                "thorns": {
+                                    "type": "uniform",
+                                    "max": 3,
+                                    "min": -3
+                                }
+                            }
                         }
                     ],
                     "weight": 5
@@ -56,7 +127,34 @@
                     "quality": 2,
                     "functions": [
                         {
-                            "function": "enchant_randomly"
+                            "function": "set_enchantments",
+                            "enchantments": {
+                                "protection": {
+                                    "type": "binomial",
+                                    "n": 4,
+                                    "p": 0.4
+                                },
+                                "projectile_protection": {
+                                    "type": "binomial",
+                                    "n": 4,
+                                    "p": 0.5
+                                },
+                                "fire_protection": {
+                                    "type": "binomial",
+                                    "n": 4,
+                                    "p": 0.5
+                                },
+                                "blast_protection": {
+                                    "type": "binomial",
+                                    "n": 4,
+                                    "p": 0.5
+                                },
+                                "thorns": {
+                                    "type": "uniform",
+                                    "max": 3,
+                                    "min": -3
+                                }
+                            }
                         }
                     ],
                     "weight": 5
@@ -67,10 +165,85 @@
                     "quality": 2,
                     "functions": [
                         {
-                            "function": "enchant_randomly"
+                            "function": "set_enchantments",
+                            "enchantments": {
+                                "protection": {
+                                    "type": "binomial",
+                                    "n": 4,
+                                    "p": 0.4
+                                },
+                                "projectile_protection": {
+                                    "type": "binomial",
+                                    "n": 4,
+                                    "p": 0.5
+                                },
+                                "fire_protection": {
+                                    "type": "binomial",
+                                    "n": 4,
+                                    "p": 0.5
+                                },
+                                "blast_protection": {
+                                    "type": "binomial",
+                                    "n": 4,
+                                    "p": 0.5
+                                },
+                                "depth_strider": {
+                                    "type": "binomial",
+                                    "n": 3,
+                                    "p": 0.5
+                                },
+                                "thorns": {
+                                    "type": "uniform",
+                                    "max": 3,
+                                    "min": -3
+                                }
+                            }
                         }
                     ],
-                    "weight": 5
+                    "weight": 2.5
+                },
+                {
+                    "type": "item",
+                    "name": "minecraft:netherite_boots",
+                    "quality": 2,
+                    "functions": [
+                        {
+                            "function": "set_enchantments",
+                            "enchantments": {
+                                "protection": {
+                                    "type": "binomial",
+                                    "n": 4,
+                                    "p": 0.4
+                                },
+                                "projectile_protection": {
+                                    "type": "binomial",
+                                    "n": 4,
+                                    "p": 0.5
+                                },
+                                "fire_protection": {
+                                    "type": "binomial",
+                                    "n": 4,
+                                    "p": 0.5
+                                },
+                                "blast_protection": {
+                                    "type": "binomial",
+                                    "n": 4,
+                                    "p": 0.5
+                                },
+                                "frost_walker": {
+                                    "type": "binomial",
+                                    "n": 4,
+                                    "p": 0.25
+                                },
+                                "thorns": {
+                                    "type": "uniform",
+                                    "max": 3,
+                                    "min": -3
+                                }
+                            }
+                        }
+                    ],
+                    "weight": 2.5
                 },
                 {
                     "type": "item",
@@ -83,7 +256,7 @@
                             "add": true
                         }
                     ],
-                    "weight": 8
+                    "weight": 5
                 },
                 {
                     "type": "item",
@@ -94,16 +267,27 @@
                 {
                     "type": "item",
                     "name": "mace",
-                    "quality": 8,
+                    "quality": 6,
                     "functions": [
                         {
-                            "function": "set_count",
-                            "count": 1,
-                            "add": true
-                        },
-                        {
-                            "function": "enchant_with_levels",
-                            "levels": 50
+                            "function": "set_enchantments",
+                            "enchantments": {
+                                "density": {
+                                    "type": "binomial",
+                                    "n": 8,
+                                    "p": 0.25
+                                },
+                                "breach": {
+                                    "type": "binomial",
+                                    "n": 8,
+                                    "p": 0.3
+                                },
+                                "wind_burst": {
+                                    "type": "binomial",
+                                    "n": 8,
+                                    "p": 0.4
+                                }
+                            }
                         }
                     ],
                     "weight": 1
@@ -111,16 +295,45 @@
                 {
                     "type": "item",
                     "name": "trident",
-                    "quality": 4,
+                    "quality": 6,
                     "functions": [
                         {
-                            "function": "set_count",
-                            "count": 1,
-                            "add": true
-                        },
+                            "function": "set_enchantments",
+                            "enchantments": {
+                                "sharpness": {
+                                    "type": "binomial",
+                                    "n": 2,
+                                    "p": 0.4
+                                },
+                                "loyalty": {
+                                    "type": "binomial",
+                                    "n": 4,
+                                    "p": 0.65
+                                }
+                            }
+                        }
+                    ],
+                    "weight": 1
+                },
+                {
+                    "type": "item",
+                    "name": "trident",
+                    "quality": 6,
+                    "functions": [
                         {
-                            "function": "enchant_with_levels",
-                            "levels": 50
+                            "function": "set_enchantments",
+                            "enchantments": {
+                                "sharpness": {
+                                    "type": "binomial",
+                                    "n": 2,
+                                    "p": 0.4
+                                },
+                                "riptide": {
+                                    "type": "binomial",
+                                    "n": 4,
+                                    "p": 0.65
+                                }
+                            }
                         }
                     ],
                     "weight": 1
