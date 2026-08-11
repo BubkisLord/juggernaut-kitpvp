@@ -34,6 +34,6 @@ execute as @a[tag=lobby.player] at @s if score #game_state var matches 0 if bloc
 execute as @a[tag=lobby.player] at @s if block ~ ~-2 ~ purple_shulker_box run function tp:exit_arena
 
 # Every 2 seconds, show a random tip
-scoreboard players add #tick_counter var 1
-execute if score #tick_counter var >= #40 var run function tips:random
+execute if score #game_state var matches 0 run scoreboard players add #tick_counter var 1
+execute if score #tick_counter var >= #40 var if entity @a[tag=lobby.player] run function tips:random
 execute if score #tick_counter var >= #40 var run scoreboard players set #tick_counter var 0
