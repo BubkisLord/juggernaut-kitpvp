@@ -181,7 +181,7 @@ TIPS = [
     "Juggernauts always have one perk, while Runners will normally have 1-3",
     "You can change settings by right clicking the 'Customise' sign!",
     "As Puppeteer, some perks may have interesting effects with your mannequin!",
-    "If the Puppeteer's mannequin dies, they will die. Swap with the mannequin when the Juggernaut is close!",
+    "Swap with the mannequin when the Juggernaut is close!",
     "When the Juggernaut is close to the Puppeteer's mannequin, you will hear a sound and they will glow.",
     "Dragon's descent speed is slower when in floating mode.",
     "Dragon automatically adjusts their height when in floating mode.",
@@ -201,6 +201,14 @@ TIPS = [
     "Survivor's Toughen Up can be used to tank fall damage as well!",
     "Witch Doctor's Reduce and Speed abilities stack.",
     "Knight's Horse moves very fast underwater.",
+    "You can take off your armour as Survivor when you're invisible!",
+    "Most replenishment buffs are calculated from the station's position when out of chase.",
+    "Most replenishment buffs are calculated from your position when in chase.",
+    "Chameleon's holding the sword and bow isn't visible when shapeshifting.",
+    "Predator can crouch-shift up to stations without making them purple!",
+    "Juggernaut being Undetectable prevents Runners seeing warning particles.",
+    "Unwavering Strength is always based on your position, not station position.",
+    "Unwavering Strength cannot activate in chase."
 ]
 
 def build_components(tip):
