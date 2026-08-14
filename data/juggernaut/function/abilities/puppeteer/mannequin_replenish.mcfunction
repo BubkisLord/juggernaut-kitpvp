@@ -9,6 +9,8 @@ execute as @e[type=mannequin,tag=puppeteer_mannequin] if score @s puppet_id = #p
 
 # Only replenish when the mannequin sits next to a station, no juggernaut is looming, and the
 # station is not banished. Runs as the puppeteer (for perks) at the mannequin (for position).
-execute at @e[type=mannequin,tag=pp_target] if entity @e[type=armor_stand,tag=replenishment.station,distance=..3] unless entity @a[tag=juggernaut,distance=..12,tag=!undetectable] unless entity @e[type=armor_stand,tag=banishment_glyph,distance=..24] run function juggernaut:replenishment_management/try_replenish
+tag @s add pp_owner
+execute as @e[type=mannequin,tag=pp_target] at @s if entity @n[type=armor_stand,tag=replenishment.station,distance=..3] at @n[type=armor_stand,tag=replenishment.station,distance=..3] unless entity @a[tag=pp_owner,distance=..3] unless entity @a[tag=juggernaut,distance=..12,tag=!undetectable] unless entity @e[type=armor_stand,tag=banishment_glyph,distance=..24] run function juggernaut:replenishment_management/try_replenish
+tag @s remove pp_owner
 
 tag @e[type=mannequin,tag=puppeteer_mannequin] remove pp_target
