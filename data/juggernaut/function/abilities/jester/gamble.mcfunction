@@ -17,11 +17,11 @@ execute if entity @a[tag=juggernaut,tag=!undetectable,distance=..25] run functio
 
 # --- Your Execution Logic ---
 execute if score #roll var matches 1 run effect give @a[tag=runner,distance=..8] speed 10 2 true
-execute if score #roll var matches 2 run effect give @a[tag=juggernaut,distance=..12] darkness 12 0 true
+execute if score #roll var matches 2 run effect give @a[distance=..12,tag=!spectator] darkness 12 0 true
 execute if score #roll var matches 3 run effect give @a[tag=juggernaut,distance=..12] slowness 4 0 true
-execute if score #roll var matches 4 run effect give @a[tag=juggernaut,distance=..20] nausea 20 255 true
-execute if score #roll var matches 5 run effect give @a[tag=runner,distance=..8] instant_health 1 11 true
-execute if score #roll var matches 6 run effect give @a[tag=juggernaut] glowing 12 0 true
+execute if score #roll var matches 4 run effect give @a[distance=..20,tag=!spectator] nausea 20 255 true
+execute if score #roll var matches 5 run effect give @a[tag=runner,distance=..8] instant_health 1 1 true
+execute if score #roll var matches 6 run effect give @a[tag=juggernaut,tag=!spectator] glowing 12 0 true
 execute if score #roll var matches 7 run effect give @a[tag=runner,distance=..8] jump_boost 20 1 true
 execute if score #roll var matches 8 run effect give @a[tag=runner,distance=..8] regeneration 8 0 true
 execute if score #roll var matches 9 run particle minecraft:campfire_cosy_smoke ~ ~ ~ 5 3 5 0 12000 force
