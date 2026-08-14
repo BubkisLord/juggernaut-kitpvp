@@ -93,6 +93,9 @@ execute if score #game_state var matches 11 as @a[tag=juggernaut,tag=using_preda
 execute as @a[tag=using_insidious,predicate=is_still] run function juggernaut:effects/apply_effect {effect:"undetectable",duration:1}
 execute as @a[tag=using_insidious,predicate=is_still] run effect give @s invisibility 1 0 true
 
+# Adept Stalker Perk
+execute as @a[tag=using_adept_stalker,predicate=is_sneaking] run function juggernaut:effects/apply_effect {effect:"undetectable",duration:1}
+
 # Set healing needed
 execute as @a[tag=runner] run function juggernaut:healing/set_healing_needed
 
