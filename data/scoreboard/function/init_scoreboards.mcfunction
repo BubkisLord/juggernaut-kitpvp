@@ -29,9 +29,6 @@ scoreboard objectives add has_respawn_protection dummy
 scoreboard objectives add healing_progress dummy
 scoreboard objectives add healing_needed dummy
 scoreboard objectives add healing_percent dummy
-scoreboard objectives add is_sprinting minecraft.custom:minecraft.sprint_one_cm
-scoreboard objectives add is_walking minecraft.custom:minecraft.walk_one_cm
-scoreboard objectives add is_crouch_walking minecraft.custom:minecraft.crouch_one_cm
 scoreboard objectives add chase_time dummy
 scoreboard objectives add sentinel_progress dummy
 scoreboard objectives add replenish_amount dummy
@@ -113,6 +110,7 @@ scoreboard players set #40 var 40
 scoreboard players set #50 var 50
 scoreboard players set #60 var 60
 scoreboard players set #75 var 75
+scoreboard players set #80 var 80
 scoreboard players set #100 var 100
 scoreboard players set #1000 var 1000
 scoreboard players set #20000 var 20000
