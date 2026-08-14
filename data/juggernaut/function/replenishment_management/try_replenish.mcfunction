@@ -6,7 +6,8 @@ execute if entity @a[tag=juggernaut,distance=..18,tag=!shapeshifting] if entity 
 execute if entity @a[tag=juggernaut,distance=..18,tag=!shapeshifting] if entity @s[tag=using_unwavering_strength] at @s unless entity @a[tag=juggernaut,distance=..18,tag=!shapeshifting] run return fail
 execute if entity @s[tag=spectral_cloak_active] run return fail
 
-execute at @s run function juggernaut:replenishment_management/calculate_replenishment_modifier
+execute if entity @s[tag=in_chase] at @s run function juggernaut:replenishment_management/calculate_replenishment_modifier
+execute if entity @s[tag=!in_chase] run function juggernaut:replenishment_management/calculate_replenishment_modifier
 
 scoreboard players operation @s replenishment_per_tick = @s replenishment_base
 scoreboard players operation @s replenishment_per_tick *= @s replenishment_modifier
