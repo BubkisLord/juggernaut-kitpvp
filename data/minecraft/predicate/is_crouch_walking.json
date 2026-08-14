@@ -1,0 +1,13 @@
+{
+    "condition": "all_of",
+    "terms": [
+        {
+            "condition": "reference",
+            "name": "is_sneaking"
+        },
+        {
+            "condition": "reference",
+            "name": "is_walking"
+        }
+    ]
+}
