@@ -12,8 +12,4 @@ item replace entity @s hotbar.8 with written_book[written_book_content={title:"C
 \
 [{"text": "Swap with Runner\n","bold": true,"color": "#b5ee4a"},{"text": "Active Ability\n\n","bold": true,"color": "gray","italic": true},{"text": "Instantly swap positions with your last/current cloned target. If no target has been cloned, swaps with a random runner.","bold": false,"color": "black"}],\
 \
-[{"text": "Thick Hide\n","bold": true,"color": "#b5ee4a"},{"text": "Passive Effect\n\n","bold": true,"color": "gray","italic": true},{"text": "You have constant resistance one.","bold": false,"color": "black"}],\
-\
-[{"text": "Counterplay\n","bold": true,"color": "#b5ee4a"},{"text": "Counterplay for chameleon is primarily good communication between runners. When a chameleon swaps with you, you gain immunity to damage for 20s so this can be used to your advantage. Paying close attention to the location of other players will allow you to realise when the chameleon is shapeshifted even without communication.","bold": false,"color": "black"}]\
-]\
-}]
+[{"text": "Thick Hide\n","bold": true,"color": "#b5ee4a"},{"text": "Passive Effect\n\n","bold": true,"color": "gray","italic": true},{"text": "You have constant resistance one.","bold": false,"color": "black"}]]}]
