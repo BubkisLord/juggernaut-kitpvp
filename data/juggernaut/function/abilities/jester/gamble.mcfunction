@@ -27,5 +27,8 @@ execute if score #roll var matches 8 run effect give @a[tag=runner,distance=..8]
 execute if score #roll var matches 9 run particle minecraft:campfire_cosy_smoke ~ ~ ~ 5 3 5 0 12000 force
 execute if score #roll var matches 9 run effect give @s invisibility 3 0 false
 execute if score #roll var matches 10 run summon llama ~ ~ ~ {Invulnerable:1b,Tags:["kill_on_end_game"],equipment:{saddle:{id:"blue_carpet"}},CustomName:{"text":"Lorenzo the Llama",font:"minecraft:uniform"}}
+execute if score #roll var matches 11 run damage @s 2 fireworks
+execute if score #roll var matches 12 run effect give @s jump_boost 10 0
+execute if score #roll var matches 12 run function juggernaut:effects/apply_effect {effect:"bouncy",duration:10}
 
 function juggernaut:abilities/jester/spawn_fireworks

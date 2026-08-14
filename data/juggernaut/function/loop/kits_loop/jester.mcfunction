@@ -1,6 +1,6 @@
 function juggernaut:ability_management/check_ability {\
     player_tag:"jester",\
-    item_id:"minecraft:firework_star",\
+    item_id:"minecraft:popped_chorus_fruit",\
     item_name:{"text": "Jest","color": "#f528d3"},\
     description:[{"text": "Trigger a random effect from a predefined list!","color": "gray"},{"text": "Cooldown: 30s","color": "dark_gray"}],\
     ability_id:"gamble",\
