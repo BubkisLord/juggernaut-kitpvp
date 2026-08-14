@@ -2,6 +2,9 @@
 # Escape Artist Passive
 execute as @a[tag=escapist,tag=in_chase,scores={is_sprinting=1..}] run effect give @s speed 1 0 true
 
+# Escapist Invis Particles
+execute if entity @s[predicate=is_invisible,tag=!has_respawn_protection] at @s run particle entity_effect{color:[1,1,1,0.9]} ~ ~ ~ 0.5 1 0.5 0 1 force
+
 # Flee Powder (Active)
 function juggernaut:ability_management/check_ability {\
     player_tag:"escapist",\
