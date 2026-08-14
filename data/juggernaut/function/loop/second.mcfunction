@@ -76,8 +76,6 @@ execute as @a[tag=chameleon,tag=shapeshifting,scores={shapeshift_time=40}] run t
 execute as @a[tag=chameleon,tag=shapeshifting,scores={shapeshift_time=40..}] at @s run function juggernaut:abilities/chameleon/exit_shapeshift
 execute as @a[tag=chameleon,scores={shapeshift_time=40..}] run scoreboard players set @s shapeshift_time 0
 
-execute as @a[tag=using_bloodlust,scores={bloodlust_remaining=1..}] run scoreboard players remove @s bloodlust_remaining 1
-
 # Update max health score
 execute as @a store result score @s max_health run attribute @s max_health get
 

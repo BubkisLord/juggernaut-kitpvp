@@ -7,7 +7,6 @@ execute if entity @s[tag=using_any_means] at @s if entity @e[type=armor_stand,ta
 
 execute if entity @s[tag=using_swift_destruction] run scoreboard players add @s cooldown_modifier 33
 execute if entity @s[tag=using_insidious,predicate=is_still] run scoreboard players add @s cooldown_modifier 100
-execute if entity @s[tag=using_bloodlust,scores={bloodlust_remaining=1..}] run scoreboard players add @s cooldown_modifier 100
 
 # Cannot go negative, otherwise will build up more and more cooldown on abilities
 execute if entity @s[scores={cooldown_modifier=..0}] run scoreboard players set @s cooldown_modifier 0

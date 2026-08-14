@@ -75,7 +75,6 @@ scoreboard objectives add replenishment_display_speed dummy
 scoreboard objectives add random_perks dummy
 scoreboard objectives add cooldown_modifier dummy
 scoreboard objectives add overclock_damage dummy
-scoreboard objectives add bloodlust_remaining dummy
 scoreboard objectives add healing_time_left dummy
 scoreboard objectives add healing_minutes dummy
 scoreboard objectives add healing_seconds dummy
