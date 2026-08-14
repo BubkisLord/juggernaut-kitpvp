@@ -84,7 +84,7 @@ execute as @a if score @s ability_cooldown5 matches 1.. run scoreboard players o
 execute as @a[tag=undetectable] at @s run particle dust{color:[0,0,0],scale:1} ~ ~0.5 ~ 0.3 1 0.3 0 1 force @s
 
 # Give respawn time effect
-execute as @a[tag=has_respawn_time] run effect give @s weakness 1 255 true
+execute as @a[tag=has_respawn_protection] run effect give @s weakness 1 255 true
 
 # Predatory Instincts Perk
 execute as @a[tag=juggernaut,tag=using_predatory_instincts,predicate=is_still] at @s as @a[tag=runner,tag=!undetectable,distance=..12] run effect give @s glowing 4 0 true

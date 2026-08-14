@@ -30,7 +30,7 @@ execute if score #game_state var matches 11 as @e[type=armor_stand,tag=replenish
 execute if score #juggernaut_customisation completable_stations matches 0 run function juggernaut:replenishment_management/display_actionbar_percentage
 execute if score #juggernaut_customisation completable_stations matches 1 run function juggernaut:replenishment_management/display_actionbar_stations
 
-execute if entity @s[tag=has_respawn_time,tag=!in_chase] run function juggernaut:clear_respawn_period
+execute if entity @s[tag=has_respawn_protection,tag=!in_chase] run function juggernaut:clear_respawn_period
 execute if entity @s[tag=using_sentinel] run scoreboard players add @n[type=armor_stand,tag=replenishment.station] sentinel_progress 1
 execute if entity @s[tag=using_sentinel] as @n[type=armor_stand,tag=replenishment.station] if score @s sentinel_progress matches 160.. run tag @s add sentinel_tower
 

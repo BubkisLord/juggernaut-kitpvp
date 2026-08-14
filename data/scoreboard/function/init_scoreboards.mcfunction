@@ -25,7 +25,7 @@ scoreboard objectives add temp_max_progress dummy
 scoreboard objectives add total_dispelling_needed dummy
 scoreboard objectives add damage_taken minecraft.custom:minecraft.damage_taken
 scoreboard objectives add jump_time minecraft.custom:minecraft.jump
-scoreboard objectives add has_respawn_time dummy
+scoreboard objectives add has_respawn_protection dummy
 scoreboard objectives add healing_progress dummy
 scoreboard objectives add healing_needed dummy
 scoreboard objectives add healing_percent dummy

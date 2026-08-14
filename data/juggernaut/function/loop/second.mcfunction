@@ -105,8 +105,8 @@ execute as @a[tag=using_waiting_game,tag=in_chase] run function juggernaut:attri
 execute as @a[tag=juggernaut,tag=using_domination] run function juggernaut:perk_management/perk_functions/set_domination_speed
 
 # Remove respawn protection after a few seconds.
-execute as @a[tag=runner,tag=has_respawn_time] run scoreboard players remove @s respawn_time_left 1
-execute as @a[tag=runner,tag=has_respawn_time] if score @s respawn_time_left matches ..0 run function juggernaut:clear_respawn_period
+execute as @a[tag=runner,tag=has_respawn_protection] run scoreboard players remove @s respawn_time_left 1
+execute as @a[tag=runner,tag=has_respawn_protection] if score @s respawn_time_left matches ..0 run function juggernaut:clear_respawn_period
 
 # Spectator
 execute as @a[tag=spectator] run tag @s remove in_chase

@@ -4,7 +4,7 @@ execute as @a[tag=ghost,predicate=is_sneaking] at @s unless block ~ ~ ~ #juggern
 execute as @a[tag=ghost,predicate=is_sneaking] at @s unless block ~ ~ ~ #juggernaut:underwater_permeables run function juggernaut:effects/apply_effect {effect:"undetectable",duration:1}
 
 execute as @a[tag=ghost,predicate=is_sneaking] at @s unless block ~ ~ ~ #juggernaut:underwater_permeables run attribute @s sneaking_speed modifier add juggernaut:ghost_sneaking_effects -100 add_multiplied_total
-execute as @a[tag=ghost,predicate=!is_sneaking,tag=!spectral_cloak_active,tag=!has_respawn_time] at @s run effect clear @s invisibility
+execute as @a[tag=ghost,predicate=!is_sneaking,tag=!spectral_cloak_active,tag=!has_respawn_protection] at @s run effect clear @s invisibility
 execute as @a[tag=ghost,predicate=!is_sneaking] at @s run attribute @s jump_strength modifier remove juggernaut:ghost_sneaking_effects
 execute as @a[tag=ghost,predicate=!is_sneaking] at @s run attribute @s sneaking_speed modifier remove juggernaut:ghost_sneaking_effects
 

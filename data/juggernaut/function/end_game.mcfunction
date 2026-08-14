@@ -78,7 +78,7 @@ tag @a remove has_puppets
 tag @e[type=armor_stand] remove haunted_station
 tag @a add lobby.player
 
-tag @a remove has_respawn_time
+tag @a remove has_respawn_protection
 tag @a remove see_malevolent_aura_bar
 tag @a remove see_banishment_glyph_bar
 tag @a remove see_withering_surge_bar
