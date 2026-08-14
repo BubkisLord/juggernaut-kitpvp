@@ -87,7 +87,7 @@ execute as @a[tag=undetectable] at @s run particle dust{color:[0,0,0],scale:1} ~
 execute as @a[tag=has_respawn_protection] run effect give @s weakness 1 255 true
 
 # Predatory Instincts Perk
-execute as @a[tag=juggernaut,tag=using_predatory_instincts,predicate=is_still] at @s as @a[tag=runner,tag=!undetectable,distance=..12] run effect give @s glowing 4 0 true
+execute if score #game_state var matches 11 as @a[tag=juggernaut,tag=using_predatory_instincts,predicate=is_still] at @s as @a[tag=runner,tag=!undetectable,distance=..12] run effect give @s glowing 4 0 true
 
 # Insidious Perk
 execute as @a[tag=using_insidious,predicate=is_still] run function juggernaut:effects/apply_effect {effect:"undetectable",duration:1}
