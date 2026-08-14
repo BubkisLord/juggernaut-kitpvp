@@ -40,6 +40,5 @@ tag @s remove using_fury
 tag @s remove using_oppression
 tag @s remove using_deep_cuts
 tag @s remove using_swift_destruction
-tag @s remove using_weight_of_failure
 tag @s remove using_bloodlust
 tag @s remove using_silent_killer

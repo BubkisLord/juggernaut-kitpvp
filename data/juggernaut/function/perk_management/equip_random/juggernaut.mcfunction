@@ -1,7 +1,7 @@
 execute if score @s perks_enabled >= #juggernaut_customisation max_perks_equipped run return fail
 
 scoreboard players set #roll var 0
-execute store result score #roll var run random value 0..20
+execute store result score #roll var run random value 0..19
 
 execute if score #roll var matches 0 if entity @s[tag=using_predatory_instincts] run function juggernaut:perk_management/equip_random/juggernaut
 execute if score #roll var matches 0 unless entity @s[tag=using_predatory_instincts] run function juggernaut:perk_management/add_perk/juggernaut {perk_id:"predatory_instincts",perk_name:"Predatory Instincts"}
@@ -60,10 +60,7 @@ execute if score #roll var matches 17 unless entity @s[tag=using_swift_destructi
 execute if score #roll var matches 18 if entity @s[tag=using_bloodlust] run function juggernaut:perk_management/equip_random/juggernaut
 execute if score #roll var matches 18 unless entity @s[tag=using_bloodlust] run function juggernaut:perk_management/add_perk/juggernaut {perk_id:"bloodlust",perk_name:"Bloodlust"}
 
-execute if score #roll var matches 19 if entity @s[tag=using_weight_of_failure] run function juggernaut:perk_management/equip_random/juggernaut
-execute if score #roll var matches 19 unless entity @s[tag=using_weight_of_failure] run function juggernaut:perk_management/add_perk/juggernaut {perk_id:"weight_of_failure",perk_name:"Weight of Failure"}
-
-execute if score #roll var matches 20 if entity @s[tag=using_silent_killer] run function juggernaut:perk_management/equip_random/juggernaut
-execute if score #roll var matches 20 unless entity @s[tag=using_silent_killer] run function juggernaut:perk_management/add_perk/juggernaut {perk_id:"silent_killer",perk_name:"Silent Killer"}
+execute if score #roll var matches 19 if entity @s[tag=using_silent_killer] run function juggernaut:perk_management/equip_random/juggernaut
+execute if score #roll var matches 19 unless entity @s[tag=using_silent_killer] run function juggernaut:perk_management/add_perk/juggernaut {perk_id:"silent_killer",perk_name:"Silent Killer"}
 
 execute if score @s perks_enabled < #1 var run function juggernaut:perk_management/equip_random/juggernaut
