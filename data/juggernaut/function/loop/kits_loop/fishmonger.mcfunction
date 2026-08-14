@@ -4,7 +4,7 @@ execute if entity @a[tag=fishmonger] run function juggernaut:ability_management/
     player_tag:"fishmonger",\
     item_id:"minecraft:nautilus_shell",\
     item_name:{"text": "Summon Drowned","color": "#FFD700"},\
-    description:[{"text": "Summon drowned with tridents at random points along the river,","color": "gray"},{"text": "Number of drowned equals amount of runners in the game.","color": "gray"},{"text": "Cooldown: 50s","color": "dark_gray"}],\
+    description:[{"text": "Summon drowned with tridents at random points along the river,","color": "gray"},{"text": "Number of drowned equals amount of runners in the game plus 2.","color": "gray"},{"text": "Cooldown: 50s","color": "dark_gray"}],\
     ability_id:"summon_drowned",\
     cooldown:50,\
     hotbar_slot:"hotbar.1",\
