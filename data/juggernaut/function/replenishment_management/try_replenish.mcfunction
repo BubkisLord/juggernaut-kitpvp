@@ -3,6 +3,7 @@ execute if entity @e[type=armor_stand,tag=banishment_glyph,distance=..24] run pa
 execute if entity @s[tag=rogue] if entity @a[tag=juggernaut,distance=18..24,tag=!undetectable] run particle minecraft:witch ~ ~2.5 ~ 0.2 60 0.2 0 120 force @s
 execute if entity @a[tag=juggernaut,distance=..18,tag=!undetectable] run particle minecraft:witch ~ ~2.5 ~ 0.2 60 0.2 0 120 force @s
 execute if entity @a[tag=juggernaut,distance=..18,tag=!shapeshifting] if entity @s[tag=!using_unwavering_strength] if entity @s[tag=!in_chase] run return fail
+execute if entity @a[tag=juggernaut,distance=..18,tag=!shapeshifting] if entity @s[tag=using_unwavering_strength] at @s unless entity @a[tag=juggernaut,distance=..18,tag=!shapeshifting] run return fail
 execute if entity @s[tag=spectral_cloak_active] run return fail
 
 execute at @s run function juggernaut:replenishment_management/calculate_replenishment_modifier
