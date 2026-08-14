@@ -99,7 +99,7 @@ execute as @a[tag=runner] run function juggernaut:healing/set_healing_needed
 # Healing check
 execute as @a[tag=runner,predicate=is_sneaking] at @s if score @s health < @s max_health run function juggernaut:healing/check_self_heal
 
-function juggernaut:loop/update_second_wind
+execute as @a[tag=using_second_wind] run function juggernaut:loop/update_second_wind
 
 # execute as @e[type=armor_stand,tag=replenish_minigame_target] at @s run particle minecraft:witch ~ ~0.1 ~ 0.11 0.1 0.11 0 70 force
 # execute as @e[type=armor_stand,tag=replenish_minigame_target] at @s run scoreboard players add @s tick_counter 1
