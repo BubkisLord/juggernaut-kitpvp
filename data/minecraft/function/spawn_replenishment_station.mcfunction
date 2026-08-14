@@ -1,1 +1,1 @@
-summon armor_stand ~ ~ ~ {Invisible:true,Invulnerable:true,CustomNameVisible:false,NoGravity:true,Marker:true,Small:true,Tags:["replenishment.station"]}
+$summon armor_stand ~ ~ ~ {Invisible:true,Invulnerable:true,CustomNameVisible:true,NoGravity:true,Marker:true,Small:true,Tags:["replenishment.station"],CustomName:{text:"$(name)"}}
