@@ -129,3 +129,8 @@ execute as @a[tag=chameleon] run item replace entity @s container.11 with tipped
 execute as @a[tag=ghost,tag=spectral_cloak_active,scores={ability_cooldown3=..0}] run tag @s remove spectral_cloak_active
 
 execute as @a[tag=spectator] at @s run function survival:loop/clone_inventory
+
+
+execute if score #game_state var matches 12 run scoreboard players add #second_counter var 1
+execute if score #game_state var matches 12 if score #second_counter var matches 4.. as @a run function tips:show
+execute if score #game_state var matches 12 if score #second_counter var matches 4.. run scoreboard players set #second_counter var 0

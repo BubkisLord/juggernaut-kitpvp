@@ -3,4 +3,3 @@ execute store result score #idx tips.data run random value 0..2147483646
 scoreboard players operation #idx tips.data %= #size tips.data
 execute store result storage tips:data idx int 1 run scoreboard players get #idx tips.data
 function tips:pick with storage tips:data
-execute as @a[tag=lobby.player] run function tips:show
