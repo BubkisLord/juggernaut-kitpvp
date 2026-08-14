@@ -208,7 +208,7 @@ bossbar remove warlock:malevolent_aura
 bossbar remove warlock:banishment_glyph
 bossbar remove warlock:withering_surge
 
-# stopwatch remove replenishment_minigame_timer
+stopwatch remove replenishment_minigame_timer
 
 kill @e[type=armor_stand,tag=malevolent_aura]
 kill @e[type=armor_stand,tag=banishment_glyph]

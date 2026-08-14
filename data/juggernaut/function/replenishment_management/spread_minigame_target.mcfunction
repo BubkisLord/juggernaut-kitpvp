@@ -1,0 +1,1 @@
+$spreadplayers ~ ~ 0 3 under $(y) false @n[type=bat,tag=replenish_minigame_target]

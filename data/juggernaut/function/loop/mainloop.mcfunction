@@ -104,12 +104,7 @@ execute as @a[tag=runner,predicate=is_sneaking] at @s if score @s health < @s ma
 
 execute as @a[tag=using_second_wind] run function juggernaut:loop/update_second_wind
 
-# execute as @e[type=armor_stand,tag=replenish_minigame_target] at @s run particle minecraft:witch ~ ~0.1 ~ 0.11 0.1 0.11 0 70 force
-# execute as @e[type=armor_stand,tag=replenish_minigame_target] at @s run scoreboard players add @s tick_counter 1
-# execute as @e[type=armor_stand,tag=replenish_minigame_target,scores={tick_counter=60..}] at @s as @n[type=armor_stand,tag=replenishment.station] run tag @s add failed_minigame
-# execute as @e[type=armor_stand,tag=replenish_minigame_target,scores={tick_counter=60..}] at @s as @a run playsound minecraft:block.note_block.pling master @a[tag=runner,distance=..4] ~ ~ ~ 0.5 0.1
-# execute as @e[type=armor_stand,tag=replenish_minigame_target,scores={tick_counter=60..}] run kill @s
-# execute as @e[type=armor_stand,tag=replenish_minigame_target] at @s at @n[type=armor_stand,tag=replenishment.station] unless entity @p[tag=runner,distance=..3] run kill @s
-
-# execute as @e[type=armor_stand,tag=replenishment.station] at @s if score #game_state var matches 11 unless entity @e[type=armor_stand,tag=banishment_glyph,distance=..32] unless entity @a[tag=juggernaut,limit=1,sort=nearest,distance=0..12,tag=!shapeshifting] as @a[tag=runner,distance=..3,tag=!spectral_cloak_active] unless entity @e[type=armor_stand,tag=replenish_minigame_target,distance=..5] run function juggernaut:replenishment_management/minigame
-# execute as @e[type=armor_stand,tag=failed_minigame] run tag @s remove failed_minigame
+execute as @e[type=bat,tag=replenish_minigame_target] at @s run particle dust{color:[0,1,0],scale:2} ~ ~0.2 ~ 0.1 0.1 0.1 0 10 force
+execute as @a[tag=runner,scores={replenish_minigame_kill=1..}] at @s run playsound block.note_block.pling ui @s ~ ~ ~ 0.4 2
+execute as @a[tag=runner,scores={replenish_minigame_kill=1..}] at @s run function juggernaut:replenishment_management/try_replenish
+execute as @a[tag=runner,scores={replenish_minigame_kill=1..}] run scoreboard players set @s replenish_minigame_kill 0

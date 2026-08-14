@@ -1,0 +1,1 @@
+$execute as @n[type=bat,tag=replenish_minigame_target] at @s run tp @s ~ ~$(y_mod) ~

@@ -77,6 +77,8 @@ scoreboard objectives add healing_minutes dummy
 scoreboard objectives add healing_seconds dummy
 scoreboard objectives add undetectable_duration_left dummy
 scoreboard objectives add ts_step dummy
+scoreboard objectives add replenish_minigame_counter dummy
+scoreboard objectives add replenish_minigame_kill killed:bat
 
 # Initialise game state variable
 scoreboard players set #game_state var 0
