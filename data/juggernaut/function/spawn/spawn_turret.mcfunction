@@ -4,4 +4,4 @@ summon skeleton ~ ~ ~ {Team:"runner",active_effects:[{id:"resistance",duration:9
 scoreboard players set @n[type=armor_stand,tag=turret] var 60
 scoreboard players set @n[type=armor_stand,tag=turret] dispel_progress 0
 scoreboard players set @n[type=armor_stand,tag=turret] total_dispelling_needed 5
-clear @s bone
+clear @s minecraft:iron_nugget[custom_data={kit:"engineer",ability_id:"turret_tower"}]

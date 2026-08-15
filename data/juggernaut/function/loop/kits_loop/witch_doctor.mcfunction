@@ -3,7 +3,7 @@ execute as @a[tag=runner,tag=!spectator] unless entity @s[nbt={active_effects:[{
 
 function juggernaut:ability_management/check_ability {\
     player_tag:"witch_doctor",\
-    item_id:"minecraft:black_dye",\
+    item_model:"minecraft:black_dye",\
     item_name:{"text": "Damage Potions","color": "dark_aqua"},\
     description:[{"text": "Gives you 3 splash potions of instant damage.","color": "gray"},{"text": "Cooldown: 60s","color": "dark_gray"}],\
     ability_id:"damage_pot",\
@@ -14,7 +14,7 @@ function juggernaut:ability_management/check_ability {\
 
 function juggernaut:ability_management/check_ability {\
     player_tag:"witch_doctor",\
-    item_id:"minecraft:cyan_dye",\
+    item_model:"minecraft:cyan_dye",\
     item_name:{"text": "Speed","color": "dark_aqua"},\
     description:[{"text": "Grants a speed boost for a short duration.","color": "gray"},{"text": "Cooldown: 60s","color": "dark_gray"}],\
     ability_id:"speed_pot",\
@@ -25,7 +25,7 @@ function juggernaut:ability_management/check_ability {\
 
 function juggernaut:ability_management/check_ability {\
     player_tag:"witch_doctor",\
-    item_id:"minecraft:red_dye",\
+    item_model:"minecraft:red_dye",\
     item_name:{"text": "Fire Resistance","color": "red"},\
     description:[{"text": "Grants fire resistance for a short duration.","color": "gray"},{"text": "Cooldown: 60s","color": "dark_gray"}],\
     ability_id:"fire_pot",\
@@ -36,7 +36,7 @@ function juggernaut:ability_management/check_ability {\
 
 function juggernaut:ability_management/check_ability {\
     player_tag:"witch_doctor",\
-    item_id:"minecraft:orange_dye",\
+    item_model:"minecraft:orange_dye",\
     item_name:{"text": "Strength","color": "gold"},\
     description:[{"text": "Grants a strength boost for a short duration.","color": "gray"},{"text": "Cooldown: 60s","color": "dark_gray"}],\
     ability_id:"strength_pot",\
@@ -47,7 +47,7 @@ function juggernaut:ability_management/check_ability {\
 
 function juggernaut:ability_management/check_ability {\
     player_tag:"witch_doctor",\
-    item_id:"minecraft:ghast_tear",\
+    item_model:"minecraft:ghast_tear",\
     item_name:{"text": "Enlarge","color": "dark_purple"},\
     description:[{"text": "Increases size of all runners within 8 blocks.","color": "gray"},{"text": "They are given:","color": "gray"},{"text": "  - Increased Step Height (+0.6 blocks)","color": "gray"},{"text": "  - Decreased Movement Speed (-30%)","color": "gray"},{"text": "  - Increased Jump Height (+28%)","color": "gray"},{"text": "  - Increased Safe Fall Distance (+1 block)","color": "gray"},{"text": "","color": "gray"},{"text": "Lasts for 10 seconds.","color": "gray"},{"text": "Cooldown: 30s","color": "dark_gray"}],\
     ability_id:"enlarge",\
@@ -58,7 +58,7 @@ function juggernaut:ability_management/check_ability {\
 
 function juggernaut:ability_management/check_ability {\
     player_tag:"witch_doctor",\
-    item_id:"minecraft:ghast_tear",\
+    item_model:"minecraft:ghast_tear",\
     item_name:{"text": "Reduce","color": "dark_purple"},\
     description:[{"text": "Decreases your size.","color": "gray"},{"text": "You are given:","color": "gray"},{"text": "  - Increased Movement Speed (+10%)","color": "gray"},{"text": "  - Decreased Step Height (-0.1 block)","color": "gray"},{"text": "","color": "gray"},{"text": "Lasts for 10 seconds.","color": "gray"},{"text": "Cooldown: 20s","color": "dark_gray"}],\
     ability_id:"reduce",\

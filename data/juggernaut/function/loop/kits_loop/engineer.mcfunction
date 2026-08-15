@@ -25,7 +25,7 @@ execute as @e[type=armor_stand,tag=replenishment_tower_particle_emitter] at @s u
 # Spawn Revealing Tower (Active)
 function juggernaut:ability_management/check_ability {\
     player_tag:"engineer",\
-    item_id:"minecraft:gold_block",\
+    item_model:"minecraft:gold_block",\
     item_name:{"text": "Spawn Revealing Tower","color": "gold"},\
     description:[{"text": "Summon a tower that is invisible until the Juggernaut is close.","color": "gray"},{"text": "Reveals the Juggernaut when they are within 8 blocks.","color": "gray"},{"text": "The Juggernaut may stand near it to dispel/remove it.","color": "gray"},{"text": "Cooldown: 1m 30s","color": "dark_gray"}],\
     ability_id:"revealing_tower",\
@@ -37,7 +37,7 @@ function juggernaut:ability_management/check_ability {\
 # Spawn Replenishment Tower (Active)
 function juggernaut:ability_management/check_ability {\
     player_tag:"engineer",\
-    item_id:"minecraft:lime_dye",\
+    item_model:"minecraft:lime_dye",\
     item_name:{"text": "Spawn Replenishment Tower","color": "green"},\
     description:[{"text": "Summon a tower with a visible nametag.","color": "gray"},{"text": "Acts as an additional replenishment station.","color": "gray"},{"text": "Only engineers can use it.","color": "gray"},{"text": "The Juggernaut may stand near it to dispel/remove it.","color": "gray"},{"text": "Cooldown: 60s","color": "dark_gray"}],\
     ability_id:"replenishment_tower",\
@@ -49,7 +49,7 @@ function juggernaut:ability_management/check_ability {\
 # Spawn Turret (Active)
 function juggernaut:ability_management/check_ability {\
     player_tag:"engineer",\
-    item_id:"minecraft:bone",\
+    item_model:"minecraft:bone",\
     item_name:{"text": "Spawn Turret","color": "gray"},\
     description:[{"text": "Summon a turret that shoots the Juggernaut.","color": "gray"},{"text": "The Juggernaut may stand near it to dispel/remove it.","color": "gray"},{"text": "Cooldown: 1m 30s","color": "dark_gray"}],\
     ability_id:"turret_tower",\

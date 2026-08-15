@@ -22,7 +22,7 @@ execute as @e[type=skeleton_horse,tag=knight_horse] at @s unless entity @a[tag=k
 
 execute unless entity @s[tag=using_horse] run function juggernaut:ability_management/check_ability {\
     player_tag:"knight",\
-    item_id:"minecraft:saddle",\
+    item_model:"minecraft:saddle",\
     item_name:{"text": "Summon Steed","color": "dark_red"},\
     description:[{"text": "Summon your steed to move at faster speeds and lance your opponents!","color": "gray"},{"text": "Cooldown: 0s","color": "dark_gray"}],\
     ability_id:"summon_steed",\
@@ -33,7 +33,7 @@ execute unless entity @s[tag=using_horse] run function juggernaut:ability_manage
 
 execute if entity @s[tag=using_horse] run function juggernaut:ability_management/check_ability {\
     player_tag:"knight",\
-    item_id:"minecraft:leather",\
+    item_model:"minecraft:leather",\
     item_name:{"text": "Dismiss Steed","color": "dark_red"},\
     description:[{"text": "Dismiss your summoned steed and return to default movement.","color": "gray"},{"text": "Cooldown: 0s","color": "dark_gray"}],\
     ability_id:"dismiss_steed",\

@@ -49,7 +49,7 @@ execute if entity @s[tag=!shapeshifting] run attribute @s camera_distance modifi
 
 execute if entity @s[tag=!shapeshifting] run function juggernaut:ability_management/check_ability {\
     player_tag:"chameleon",\
-    item_id:"minecraft:player_head",\
+    item_model:"minecraft:player_head",\
     item_name:{"text": "Shapeshift","color": "gray"},\
     description:[{"text": "Shapeshift into the last player you were shapeshifting as, or a random player if none are found.","color": "gray"},{"text": "Cooldown: 20s","color": "dark_gray"}],\
     ability_id:"shapeshift",\
@@ -60,7 +60,7 @@ execute if entity @s[tag=!shapeshifting] run function juggernaut:ability_managem
 
 execute if entity @s[tag=shapeshifting] run function juggernaut:ability_management/check_ability {\
     player_tag:"chameleon",\
-    item_id:"minecraft:player_head",\
+    item_model:"minecraft:player_head",\
     item_name:{"text": "Randomise Shapeshift Target","color": "gray"},\
     description:[{"text": "Switch shapeshift target to another player.","color": "gray"},{"text": "Cooldown: 20s","color": "dark_gray"}],\
     ability_id:"shapeshift_change",\
@@ -71,7 +71,7 @@ execute if entity @s[tag=shapeshifting] run function juggernaut:ability_manageme
 
 execute if entity @s[tag=shapeshifting] run function juggernaut:ability_management/check_ability {\
     player_tag:"chameleon",\
-    item_id:"minecraft:copper_ingot",\
+    item_model:"minecraft:copper_ingot",\
     item_name:{"text": "Exit Shapeshift","color": "gray"},\
     description:[{"text": "Exit Shapeshifting mode and return to normal.","color": "gray"},{"text": "Cooldown: 1s","color": "dark_gray"}],\
     ability_id:"exit_shapeshift",\
@@ -84,7 +84,7 @@ execute if entity @s[tag=!shapeshifting] run item replace entity @s hotbar.3 wit
 
 function juggernaut:ability_management/check_ability {\
     player_tag:"chameleon",\
-    item_id:"minecraft:clock",\
+    item_model:"minecraft:clock",\
     item_name:{"text": "Swap with Runner","color": "gray"},\
     description:[{"text": "Swap positions with your current shapeshift target.","color": "gray"},{"text": "Cooldown: 30s","color": "dark_gray"}],\
     ability_id:"swap_player",\

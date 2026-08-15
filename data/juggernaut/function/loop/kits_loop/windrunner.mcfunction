@@ -3,7 +3,7 @@ function juggernaut:abilities/windrunner/set_movement_speed with storage juggern
 
 function juggernaut:ability_management/check_ability {\
     player_tag:"windrunner",\
-    item_id:"minecraft:magma_cream",\
+    item_model:"minecraft:magma_cream",\
     item_name:{"text": "Risky Business","color": "dark_aqua"},\
     description:[{"text": "Gives the juggernaut speed but doubles your replenishment for 10 seconds.","color": "gray"},{"text": "Cooldown: 40s","color": "dark_gray"}],\
     ability_id:"risky_business",\

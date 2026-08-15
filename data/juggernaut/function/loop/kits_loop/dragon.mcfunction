@@ -14,7 +14,7 @@ execute as @a[tag=dragon] run effect give @s resistance 1 0 true
 
 execute as @a[tag=dragon] if entity @s[tag=is_floating] run function juggernaut:ability_management/check_ability {\
     player_tag:"dragon",\
-    item_id:"minecraft:feather",\
+    item_model:"minecraft:feather",\
     item_name:{"text": "Switch to Flight","color": "#7F63D9"},\
     description:[{"text": "Switch to manual flight mode instead of floating mode.","color": "gray"},{"text": "Cooldown: 0s","color": "dark_gray"}],\
     ability_id:"start_flight",\
@@ -25,7 +25,7 @@ execute as @a[tag=dragon] if entity @s[tag=is_floating] run function juggernaut:
 
 execute as @a[tag=dragon] unless entity @s[tag=is_floating] run function juggernaut:ability_management/check_ability {\
     player_tag:"dragon",\
-    item_id:"minecraft:phantom_membrane",\
+    item_model:"minecraft:phantom_membrane",\
     item_name:{"text": "Switch to Floating","color": "#7F63D9"},\
     description:[{"text": "Switch to automated floating mode instead of flight mode.","color": "gray"},{"text": "Cooldown: 0s","color": "dark_gray"}],\
     ability_id:"start_floating",\
@@ -36,7 +36,7 @@ execute as @a[tag=dragon] unless entity @s[tag=is_floating] run function juggern
 
 execute as @a[tag=dragon] run function juggernaut:ability_management/check_ability {\
     player_tag:"dragon",\
-    item_id:"minecraft:dragon_breath",\
+    item_model:"minecraft:dragon_breath",\
     item_name:{"text": "Shoot Dragon Breath","color": "#7F63D9"},\
     description:[{"text": "Shoot a stream of dragon breath at your target.","color": "gray"},{"text": "Cooldown: 2s","color": "dark_gray"}],\
     ability_id:"dragon_breath",\
@@ -47,7 +47,7 @@ execute as @a[tag=dragon] run function juggernaut:ability_management/check_abili
 
 execute as @a[tag=dragon] run function juggernaut:ability_management/check_ability {\
     player_tag:"dragon",\
-    item_id:"minecraft:dragon_breath",\
+    item_model:"minecraft:dragon_breath",\
     item_name:{"text": "Charged Breath Attack","color": "#7F63D9"},\
     description:[{"text": "Release a powerful burst of dragon breath. Takes 4 seconds to charge.","color": "gray"},{"text": "Cooldown: 30s","color": "dark_gray"}],\
     ability_id:"strong_dragon_breath",\

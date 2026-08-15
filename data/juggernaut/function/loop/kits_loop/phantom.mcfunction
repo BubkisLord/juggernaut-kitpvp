@@ -1,4 +1,4 @@
-execute if entity @s[nbt={SelectedItem:{id:"minecraft:ender_eye"}}] run function juggernaut:raycasts/raycast {\
+execute if entity @s[nbt={SelectedItem:{id:"minecraft:iron_nugget",components:{"minecraft:custom_data":{kit:"phantom",ability_id:"tp_station"}}}}] run function juggernaut:raycasts/raycast {\
     player_tag:"phantom",\
     raycast_id:"check_haunt_target",\
     target_tag:"replenishment.station",\
@@ -9,7 +9,7 @@ execute if entity @s[nbt={SelectedItem:{id:"minecraft:ender_eye"}}] run function
 
 function juggernaut:ability_management/check_ability {\
     player_tag:"phantom",\
-    item_id:"minecraft:echo_shard",\
+    item_model:"minecraft:echo_shard",\
     item_name:{"text": "Reap","color": "#5e556e"},\
     description:[{"text": "Deal damage to a runner you are looking at,","color": "gray"},{"text": "making them glowing for 12 seconds.","color": "gray"},{"text": "Works through walls.","color": "gray"},{"text": "Cooldown: 12s","color": "dark_gray"}],\
     ability_id:"reap",\
@@ -20,7 +20,7 @@ function juggernaut:ability_management/check_ability {\
 
 function juggernaut:ability_management/check_ability {\
     player_tag:"phantom",\
-    item_id:"minecraft:ender_eye",\
+    item_model:"minecraft:ender_eye",\
     item_name:{"text": "Haunt Station","color": "#5e556e"},\
     description:[\
         {"text": "Apparate at a replenishment station that you","color": "gray"},\
@@ -37,7 +37,7 @@ function juggernaut:ability_management/check_ability {\
 
 # function juggernaut:ability_management/check_ability {\
 #     player_tag:"phantom",\
-#     item_id:"minecraft:iron_nugget",\
+#     item_model:"minecraft:iron_nugget",\
 #     item_name:{"text": "Blink","color": "#5e556e"},\
 #     description:[\
 #         {"text": "Move forward 5 blocks. Works through walls.","color": "gray"},\

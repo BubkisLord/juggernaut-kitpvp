@@ -10,4 +10,4 @@ summon armor_stand ~ ~0.5 ~ {Invisible:true,Invulnerable:true,Tags:["replenishme
 scoreboard players set @n[type=armor_stand,tag=replenishment_tower] var 60
 scoreboard players set @n[type=armor_stand,tag=replenishment_tower] dispel_progress 0
 scoreboard players set @n[type=armor_stand,tag=replenishment_tower] total_dispelling_needed 5
-clear @s lime_dye
+clear @s minecraft:iron_nugget[custom_data={kit:"engineer",ability_id:"replenishment_tower"}]
