@@ -9,7 +9,7 @@ execute if entity @s[tag=has_mannequin] run function juggernaut:abilities/puppet
 # the momentarily-empty slot. After summoning you must keep the mannequin for the summon cooldown.
 execute unless entity @s[tag=has_mannequin] run function juggernaut:ability_management/check_ability {\
     player_tag:"puppeteer",\
-    item_id:"minecraft:armor_stand",\
+    item_model:"minecraft:armor_stand",\
     item_name:{"text": "Summon Mannequin","color": "#cfc7ba"},\
     description:[{"text": "Summon a mannequin clone of you.","color": "gray"},{"text": "It is able to replenish at 60% speed.","color": "gray"},{"text": "If the mannequin dies, you die.","color": "dark_red"},{"text": "Cooldown: 0s","color": "dark_gray"}],\
     ability_id:"summon_mannequin",\
@@ -20,7 +20,7 @@ execute unless entity @s[tag=has_mannequin] run function juggernaut:ability_mana
 
 execute if entity @s[tag=has_mannequin] run function juggernaut:ability_management/check_ability {\
     player_tag:"puppeteer",\
-    item_id:"minecraft:lead",\
+    item_model:"minecraft:lead",\
     item_name:{"text": "Pickup Mannequin","color": "#cfc7ba"},\
     description:[{"text": "Pick up your placed mannequin within 6 blocks.","color": "gray"},{"text": "Cooldown: 0s","color": "dark_gray"}],\
     ability_id:"pickup_mannequin",\
@@ -33,7 +33,7 @@ execute if entity @s[tag=has_mannequin] run function juggernaut:ability_manageme
 # inside the ability itself so the item is always visible but only fires when eligible).
 execute if entity @s[tag=has_mannequin] run function juggernaut:ability_management/check_ability {\
     player_tag:"puppeteer",\
-    item_id:"minecraft:resin_brick",\
+    item_model:"minecraft:resin_brick",\
     item_name:{"text": "Swap","color": "#cfc7ba"},\
     description:[{"text": "Swap places with your mannequin.","color": "gray"},{"text": "Cooldown: 0s","color": "dark_gray"}],\
     ability_id:"swap_mannequin",\
@@ -47,7 +47,7 @@ execute if entity @s[tag=!has_mannequin] run item replace entity @s hotbar.1 wit
 # Slot 2: Make Puppets.
 execute unless entity @s[tag=has_puppets] run function juggernaut:ability_management/check_ability {\
     player_tag:"puppeteer",\
-    item_id:"minecraft:cobweb",\
+    item_model:"minecraft:cobweb",\
     item_name:{"text": "Make Puppets","color": "#cfc7ba"},\
     description:[{"text": "Create 5 identical copies of you around you.","color": "gray"},{"text": "Cooldown: 60s","color": "dark_gray"}],\
     ability_id:"make_puppets",\
@@ -58,7 +58,7 @@ execute unless entity @s[tag=has_puppets] run function juggernaut:ability_manage
 
 execute if entity @s[tag=has_puppets] run function juggernaut:ability_management/check_ability {\
     player_tag:"puppeteer",\
-    item_id:"minecraft:prismarine_shard",\
+    item_model:"minecraft:prismarine_shard",\
     item_name:{"text": "Dimiss Puppets","color": "#cfc7ba"},\
     description:[{"text": "Dismisses all summoned puppets.","color": "gray"},{"text": "Cooldown: 1s","color": "dark_gray"}],\
     ability_id:"end_puppets",\

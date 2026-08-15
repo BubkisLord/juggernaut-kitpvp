@@ -8,7 +8,7 @@ execute if entity @s[predicate=is_invisible,tag=!has_respawn_protection] at @s r
 # Flee Powder (Active)
 function juggernaut:ability_management/check_ability {\
     player_tag:"escapist",\
-    item_id:"minecraft:gunpowder",\
+    item_model:"minecraft:gunpowder",\
     item_name:{"text": "Flee Powder","color": "#646464"},\
     description:[{"text": "Gain speed 2 for 8s and invisibility for 10s.","color": "gray"},{"text": "Cooldown: 60s","color": "dark_gray"}],\
     ability_id:"escapist_ability",\

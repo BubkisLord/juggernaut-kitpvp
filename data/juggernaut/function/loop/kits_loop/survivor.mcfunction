@@ -1,6 +1,6 @@
 execute as @a[tag=survivor] run function juggernaut:ability_management/check_ability {\
     player_tag:"survivor",\
-    item_id:"minecraft:snowball",\
+    item_model:"minecraft:snowball",\
     item_name:{"text":"Ice Bomb","color":"#A4D1EA"},\
     description:[\
                 {"text": "Throw at a Juggernaut to freeze them!","color": "gray"},\
@@ -13,7 +13,7 @@ execute as @a[tag=survivor] run function juggernaut:ability_management/check_abi
 
 execute as @a[tag=survivor] run function juggernaut:ability_management/check_ability {\
     player_tag:"survivor",\
-    item_id:"minecraft:gold_nugget",\
+    item_model:"minecraft:gold_nugget",\
     item_name:{"text":"Toughen Up","color":"#A4D1EA"},\
     description:[\
                 {"text": "Grants you extra health for 4 seconds.","color": "gray"},\

@@ -25,7 +25,7 @@ execute as @s at @s run function juggernaut:kit_auras/warlock
 
 function juggernaut:ability_management/check_ability {\
     player_tag:"warlock",\
-    item_id:"minecraft:red_dye",\
+    item_model:"minecraft:red_dye",\
     item_name:{"text": "Spawn Malevolent Aura","color": "dark_red"},\
     description:[\
         {"text": "Summon a tower with a visible nametag.","color": "gray"},\
@@ -41,7 +41,7 @@ function juggernaut:ability_management/check_ability {\
 
 function juggernaut:ability_management/check_ability {\
     player_tag:"warlock",\
-    item_id:"minecraft:cyan_dye",\
+    item_model:"minecraft:cyan_dye",\
     item_name:{"text": "Spawn Banishment Glyph","color": "dark_aqua"},\
     description:[\
         {"text": "Summon a tower with a visible nametag.","color": "gray"},\
@@ -57,7 +57,7 @@ function juggernaut:ability_management/check_ability {\
 
 function juggernaut:ability_management/check_ability {\
     player_tag:"warlock",\
-    item_id:"minecraft:black_dye",\
+    item_model:"minecraft:black_dye",\
     item_name:{"text": "Spawn Withering Surge","color": "dark_gray"},\
     description:[\
         {"text": "Summon a tower with a visible nametag.","color": "gray"},\
@@ -73,7 +73,7 @@ function juggernaut:ability_management/check_ability {\
 
 function juggernaut:ability_management/check_ability {\
     player_tag:"warlock",\
-    item_id:"minecraft:yellow_dye",\
+    item_model:"minecraft:yellow_dye",\
     item_name:{"text": "Spawn Revealing Tower","color": "gold"},\
     description:[\
         {"text": "Summon an invisible tower.","color": "gray"},\
