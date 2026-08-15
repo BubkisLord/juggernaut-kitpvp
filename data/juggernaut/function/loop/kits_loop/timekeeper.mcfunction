@@ -1,6 +1,6 @@
 function juggernaut:ability_management/check_ability {\
     player_tag:"timekeeper",\
-    item_id:"minecraft:echo_shard",\
+    item_model:"minecraft:echo_shard",\
     item_name:{"text": "Timestream Rupture","color": "red"},\
     description:[{"text": "Rupture a timestream strand, dealing damage","color": "gray"},\
                  {"text": "over time to any runners within 3 blocks for","color": "gray"},\
@@ -14,7 +14,7 @@ function juggernaut:ability_management/check_ability {\
 
 function juggernaut:ability_management/check_ability {\
     player_tag:"timekeeper",\
-    item_id:"minecraft:fermented_spider_eye",\
+    item_model:"minecraft:fermented_spider_eye",\
     item_name:{"text": "Poison Time Strand","color": "green"},\
     description:[{"text": "Purge a strand of time, a trail of your whereabouts from the world.","color": "gray"},{"text": "Cooldown: 1s","color": "dark_gray"}],\
     ability_id:"kill_strand",\
@@ -25,7 +25,7 @@ function juggernaut:ability_management/check_ability {\
 
 function juggernaut:ability_management/check_ability {\
     player_tag:"timekeeper",\
-    item_id:"minecraft:rabbit_foot",\
+    item_model:"minecraft:rabbit_foot",\
     item_name:{"text": "Time Skip","color": "aqua"},\
     description:[{"text": "Skip forward ahead in time, having your position","color": "gray"},\
                  {"text": "blink forward in an instant. Cannot go through","color": "gray"},\
@@ -39,7 +39,7 @@ function juggernaut:ability_management/check_ability {\
 
 function juggernaut:ability_management/check_ability {\
     player_tag:"timekeeper",\
-    item_id:"minecraft:slime_ball",\
+    item_model:"minecraft:slime_ball",\
     item_name:{"text": "Place Temporal Marker","color": "gold"},\
     description:[{"text": "Place down a marker where you are.","color": "gray"},\
                  {"text": "Placing a marker removes all others.","color": "gray"},\
@@ -53,7 +53,7 @@ function juggernaut:ability_management/check_ability {\
 
 function juggernaut:ability_management/check_ability {\
     player_tag:"timekeeper",\
-    item_id:"minecraft:magma_cream",\
+    item_model:"minecraft:magma_cream",\
     item_name:{"text": "Temporal Rewind","color": "gold"},\
     description:[{"text": "Return to your last placed marker.","color": "gray"},\
                  {"text": "It is not removed.","color": "gray"},\

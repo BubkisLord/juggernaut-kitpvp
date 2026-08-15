@@ -8,7 +8,7 @@ execute as @a[tag=rogue,predicate=is_crouch_walking] run attribute @s movement_s
 # Smoke Bomb (Active)
 function juggernaut:ability_management/check_ability {\
     player_tag:"rogue",\
-    item_id:"minecraft:firework_star",\
+    item_model:"minecraft:firework_star",\
     item_name:{"text": "Smoke Bomb","color": "#646464"},\
     description:[{"text": "Create a smoke cloud that obscures vision","color": "gray"},{"text": "and become invisible for 6 seconds.","color": "gray"},{"text": "Cooldown: 60s","color": "dark_gray"}],\
     ability_id:"smoke_bomb",\
@@ -20,7 +20,7 @@ function juggernaut:ability_management/check_ability {\
 # Backstep (active)
 function juggernaut:ability_management/check_ability {\
     player_tag:"rogue",\
-    item_id:"minecraft:rabbit_foot",\
+    item_model:"minecraft:rabbit_foot",\
     item_name:{"text": "Backstep","color": "#646464"},\
     description:[{"text": "Create a spark around you","color": "gray"},{"text": "and teleport directly behind the juggernaut.","color": "gray"},{"text": "Cooldown: 30s","color": "dark_gray"}],\
     ability_id:"backstep",\

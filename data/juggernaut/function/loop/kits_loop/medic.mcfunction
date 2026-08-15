@@ -4,7 +4,7 @@ execute as @a[tag=medic] at @s run effect give @a[tag=runner,distance=0.01..5] r
 # Rescue (Active)
 function juggernaut:ability_management/check_ability {\
     player_tag:"medic",\
-    item_id:"minecraft:nether_star",\
+    item_model:"minecraft:nether_star",\
     item_name:{"text": "Rescue","color": "#A4D1EA"},\
     description:[{"text": "Teleport to another runner.","color": "gray"},{"text": "If there are no other runners, teleport to a spawn point.","color": "gray"},{"text": "Cannot be used if the juggernaut is within 20 blocks.","color": "gray"},{"text": "Cooldown: 60s","color": "dark_gray"}],\
     ability_id:"rescue",\
@@ -16,7 +16,7 @@ function juggernaut:ability_management/check_ability {\
 # Heal (Active)
 function juggernaut:ability_management/check_ability {\
     player_tag:"medic",\
-    item_id:"minecraft:glistering_melon_slice",\
+    item_model:"minecraft:glistering_melon_slice",\
     item_name:{"text": "Heal","color": "#dbbe2d"},\
     description:[{"text": "Heal all runners within 8 blocks,","color": "gray"},{"text": "and half all ability cooldowns.","color": "gray"},{"text": "Cooldown: 60s","color": "dark_gray"}],\
     ability_id:"heal",\

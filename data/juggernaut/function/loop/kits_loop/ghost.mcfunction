@@ -13,7 +13,7 @@ execute as @a[tag=ghost,predicate=is_sneaking] at @s unless block ~ ~ ~ #juggern
 # Spectral Cloak (Active)
 function juggernaut:ability_management/check_ability {\
     player_tag:"ghost",\
-    item_id:"minecraft:echo_shard",\
+    item_model:"minecraft:echo_shard",\
     item_name:{"text": "Spectral Cloak","color": "gray"},\
     description:[{"text": "Gain invisibility, become undetectable, and stop being able to replenish for 5 seconds","color": "gray"},{"text": "Cooldown: 50s","color": "dark_gray"}],\
     ability_id:"spectral_cloak",\

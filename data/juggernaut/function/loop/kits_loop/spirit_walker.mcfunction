@@ -1,6 +1,6 @@
 execute as @a[tag=spirit_walker] run function juggernaut:ability_management/check_ability {\
     player_tag:"spirit_walker",\
-    item_id:"minecraft:amethyst_shard",\
+    item_model:"minecraft:amethyst_shard",\
     item_name:{"text":"Teleport","color":"dark_purple"},\
     description:[\
                 {"text":"Click to begin teleporting.","color":"gray"},\
