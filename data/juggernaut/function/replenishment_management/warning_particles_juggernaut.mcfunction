@@ -1,0 +1,1 @@
+$execute as @e[type=armor_stand,tag=replenishment.station,scores={replenish_timeout=1..},distance=..$(radius)] at @s run particle minecraft:witch ~ ~2.5 ~ 0.2 60 0.2 0 120 force @a[tag=!runner]

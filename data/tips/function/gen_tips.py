@@ -208,7 +208,12 @@ TIPS = [
     "Predator can crouch-shift up to stations without making them purple!",
     "Juggernaut being Undetectable prevents Runners seeing warning particles.",
     "Unwavering Strength is always based on your position, not station position.",
-    "Unwavering Strength cannot activate in chase."
+    "Purple particles while you're replenishing means the Juggernaut is near!",
+    "Seeing purple particles as the Juggernaut on a station means it was just being replenished.",
+    "Knight's spear charges up faster with ability cooldown buffs!",
+    "Phantom's Haunt teleport executes 3x faster when you're Undetectable.",
+    "Hunter sees particles around you when marked, countering invisibility!",
+    "Chameleon's swap ability gives the target immunity to damage for some time.",
 ]
 
 def build_components(tip):

@@ -61,6 +61,8 @@ execute if score @s lives_remaining matches ..0 run tag @s remove trickster
 execute if score @s lives_remaining matches ..0 run tag @s remove ghost
 execute if score @s lives_remaining matches ..0 run tag @s remove windrunner
 execute if score @s lives_remaining matches ..0 run tag @s remove puppeteer
+execute if score @s lives_remaining matches ..0 run tag @s remove jester
+execute if score @s lives_remaining matches ..0 run tag @s remove beast_tamer
 execute if score @s lives_remaining matches ..0 run tag @s remove saved_skin
 
 execute if entity @s[tag=runner] if score @s lives_remaining matches ..0 run team join runner

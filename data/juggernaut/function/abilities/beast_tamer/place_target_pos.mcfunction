@@ -1,0 +1,4 @@
+$execute on passengers if predicate {condition:"entity_properties",entity:"this",predicate:{"type_specific/player":{input:{forward:true}}}} rotated ~ 0 run summon marker ^ ^ ^$(speed) {Tags:["mv","kill_on_end_game"]}
+$execute on passengers if predicate {condition:"entity_properties",entity:"this",predicate:{"type_specific/player":{input:{backward:true}}}} rotated ~ 0 run summon marker ^ ^ ^-$(speed) {Tags:["mv","kill_on_end_game"]}
+$execute on passengers if predicate {condition:"entity_properties",entity:"this",predicate:{"type_specific/player":{input:{left:true}}}} rotated ~ 0 run summon marker ^$(speed) ^ ^ {Tags:["mv","kill_on_end_game"]}
+$execute on passengers if predicate {condition:"entity_properties",entity:"this",predicate:{"type_specific/player":{input:{right:true}}}} rotated ~ 0 run summon marker ^-$(speed) ^ ^ {Tags:["mv","kill_on_end_game"]}

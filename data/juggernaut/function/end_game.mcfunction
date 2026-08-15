@@ -75,6 +75,7 @@ tag @a remove jester
 tag @a remove puppeteer
 tag @a remove has_mannequin
 tag @a remove has_puppets
+tag @a remove beast_tamer
 tag @e[type=armor_stand] remove haunted_station
 tag @a add lobby.player
 
@@ -217,6 +218,8 @@ gamemode adventure @a
 stopsound @a
 
 stopsound @a master entity.enderman.teleport
+
+function tips:random
 
 execute store result storage juggernaut:salt salt int 1 run random value 0..2147483646
 function juggernaut:reset_randomness with storage juggernaut:salt

@@ -1,0 +1,2 @@
+execute store result storage juggernaut:current_warning_radius radius int 1 run scoreboard players get @s warning_radius
+function juggernaut:replenishment_management/warning_particles_runner with storage juggernaut:current_warning_radius

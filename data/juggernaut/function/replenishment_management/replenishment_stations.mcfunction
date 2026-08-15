@@ -19,7 +19,8 @@ execute as @e[type=armor_stand,tag=replenishment.station] at @s run particle min
 execute if entity @a[tag=phantom] as @e[type=armor_stand,tag=haunted_station] at @s run particle large_smoke ~ ~0.5 ~ 2 2 2 0 20 force @a[tag=runner]
 
 # Display purple particles for jugs
-execute as @e[type=armor_stand,tag=replenishment.station] at @s if entity @a[tag=juggernaut,limit=1,sort=nearest,distance=0..24] if entity @s[scores={replenish_timeout=1..}] run particle minecraft:witch ~ ~2.5 ~ 0.2 60 0.2 0 120 force @a[tag=!runner]
+execute as @a at @s run function juggernaut:replenishment_management/calculate_warning_radius
+execute as @a[tag=juggernaut] at @s run function juggernaut:replenishment_management/activate_warning_juggernaut
 
 # Allow runners to progress stations.
 execute as @e[type=armor_stand,tag=replenishment.station] at @s as @a[tag=runner,distance=..3] run function juggernaut:replenishment_management/try_replenish

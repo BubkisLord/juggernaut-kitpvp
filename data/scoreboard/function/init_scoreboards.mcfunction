@@ -77,6 +77,7 @@ scoreboard objectives add healing_minutes dummy
 scoreboard objectives add healing_seconds dummy
 scoreboard objectives add undetectable_duration_left dummy
 scoreboard objectives add ts_step dummy
+scoreboard objectives add warning_radius dummy
 
 # Initialise game state variable
 scoreboard players set #game_state var 0

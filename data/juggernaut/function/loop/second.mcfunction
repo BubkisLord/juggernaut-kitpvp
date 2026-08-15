@@ -12,12 +12,15 @@ execute as @a run function juggernaut:effects/check_effects {effect:"undetectabl
 execute as @a run function juggernaut:effects/check_effects {effect:"risky_business"}
 execute as @a run function juggernaut:effects/check_effects {effect:"jesting"}
 execute as @a run function juggernaut:effects/check_effects {effect:"bouncy"}
+execute as @e[tag=beast_tamer_mount] run function juggernaut:effects/check_effects {effect:"fatigued"}
 
 execute as @a run function juggernaut:attribute_management/check {attribute_name:"movement_speed",modifier_name:"hopeful_sprint"}
 execute as @a run function juggernaut:attribute_management/check {attribute_name:"movement_speed",modifier_name:"rapid_brutality"}
 
 execute as @a[tag=bouncy] run attribute @s bounciness modifier add effect:bouncy 1 add_value
+execute as @a[tag=bouncy] run attribute @s safe_fall_distance modifier add effect:bouncy 999 add_value
 execute as @a[tag=!bouncy] run attribute @s bounciness modifier remove effect:bouncy
+execute as @a[tag=!bouncy] run attribute @s safe_fall_distance modifier remove effect:bouncy
 
 # Juggernaut release sequence
 scoreboard players remove @a[tag=juggernaut] juggernaut_release_timer 1
@@ -119,13 +122,12 @@ execute unless entity @a[tag=hunted] run kill @n[type=minecraft:wolf,tag=hunter_
 # Withering Surge
 execute if entity @a[tag=warlock] if entity @e[type=armor_stand,tag=withering_surge] run function juggernaut:abilities/warlock/tower_effects/withering_surge
 
-execute as @a[tag=chameleon] run item replace entity @s container.11 with tipped_arrow[potion_contents={custom_effects:[{id:"slowness",duration:100,amplifier:0},{id:"poison",duration:1200,amplifier:0}],custom_name:"Acid",custom_color:12713016},item_name={"text":"Acid Arrow",color:"#b5ee4a"},custom_name={"text":"Acid Arrow",color:"#b5ee4a"}] 64
+execute as @a[tag=chameleon] run item replace entity @s container.35 with tipped_arrow[potion_contents={custom_effects:[{id:"slowness",duration:100,amplifier:0},{id:"poison",duration:1200,amplifier:0}],custom_name:"Acid",custom_color:12713016},item_name={"text":"Acid Arrow",color:"#b5ee4a"},custom_name={"text":"Acid Arrow",color:"#b5ee4a"}] 64
 
 execute as @a[tag=ghost,tag=spectral_cloak_active,scores={ability_cooldown3=..0}] run tag @s remove spectral_cloak_active
 
 execute as @a[tag=spectator] at @s run function survival:loop/clone_inventory
 
-
 execute if score #game_state var matches 12 run scoreboard players add #second_counter var 1
-execute if score #game_state var matches 12 if score #second_counter var matches 4.. as @a run function tips:show
-execute if score #game_state var matches 12 if score #second_counter var matches 4.. run scoreboard players set #second_counter var 0
+execute if score #game_state var matches 12 if score #second_counter var matches 8.. as @a run function tips:random
+execute if score #game_state var matches 12 if score #second_counter var matches 8.. run scoreboard players set #second_counter var 0

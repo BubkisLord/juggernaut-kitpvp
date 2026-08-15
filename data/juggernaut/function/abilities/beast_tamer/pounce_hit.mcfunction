@@ -1,0 +1,1 @@
+execute as @e[tag=runner,tag=!pounce_hit,distance=..1.2] at @s run function juggernaut:abilities/beast_tamer/pounce_damage

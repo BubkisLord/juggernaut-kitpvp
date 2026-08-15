@@ -1,0 +1,1 @@
+$execute if entity @a[tag=juggernaut,distance=..$(radius),tag=!undetectable] at @n[type=armor_stand,tag=replenishment.station,distance=..3] run particle minecraft:witch ~ ~2.5 ~ 0.2 60 0.2 0 120 force @s

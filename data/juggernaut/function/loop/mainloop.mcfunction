@@ -66,6 +66,7 @@ execute as @a[tag=chameleon] at @s run function juggernaut:loop/kits_loop/chamel
 execute as @a[tag=fishmonger] at @s run function juggernaut:loop/kits_loop/fishmonger
 execute as @a[tag=knight] at @s run function juggernaut:loop/kits_loop/knight
 execute as @a[tag=phantom] at @s run function juggernaut:loop/kits_loop/phantom
+execute as @a[tag=beast_tamer] at @s run function juggernaut:loop/kits_loop/beast_tamer
 
 # Loop per second function.
 scoreboard players add #tick_counter var 1
@@ -103,3 +104,6 @@ execute as @a[tag=runner] run function juggernaut:healing/set_healing_needed
 execute as @a[tag=runner,predicate=is_sneaking] at @s if score @s health < @s max_health run function juggernaut:healing/check_self_heal
 
 execute as @a[tag=using_second_wind] run function juggernaut:loop/update_second_wind
+
+# Always show tips in the pregame
+execute if score #game_state var matches 12 as @a run function tips:show

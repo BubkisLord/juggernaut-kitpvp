@@ -6,7 +6,7 @@ execute if entity @s[tag=puppeteer] run scoreboard players remove @s replenishme
 
 execute if entity @a[tag=using_overwhelming_presence,distance=..20] run scoreboard players remove @s replenishment_modifier 15
 execute if entity @s[tag=using_no_caution] run scoreboard players add @s replenishment_modifier 15
-execute if entity @s[tag=using_unwavering_strength] at @s if entity @a[tag=juggernaut,distance=..18] if entity @s[tag=!in_chase] run scoreboard players add @s replenishment_modifier 100
+execute if entity @s[tag=using_unwavering_strength] if entity @e[type=armor_stand,tag=replenishment.station,distance=..3] at @s if entity @a[tag=juggernaut,distance=..18] run scoreboard players add @s replenishment_modifier 100
 execute if entity @s[tag=using_any_means] run scoreboard players add @s replenishment_modifier 20
 
 execute if entity @s[tag=using_tailgater,tag=in_chase] as @a[tag=runner,tag=in_chase,distance=0.1..120] at @s run tag @p[tag=juggernaut,tag=in_chase] add closest_chaser
