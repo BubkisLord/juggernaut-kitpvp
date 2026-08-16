@@ -1,7 +1,4 @@
-execute unless entity @s[tag=beast_tamer] as @p[tag=beast_tamer] at @s run function juggernaut:abilities/beast_tamer/shoot_fireball
-execute unless entity @s[tag=beast_tamer] run return fail
-
-execute at @s anchored eyes positioned ~ ~1 ~ positioned ^ ^ ^1 rotated as @s run summon fireball ~ ~ ~ {Tags:["fireball","kill_on_end_game"],ExplosionPower:3}
+$execute at @s anchored eyes positioned ~ ~1 ~ positioned ^ ^ ^1 rotated as @s run summon fireball ~ ~ ~ {Tags:["fireball","kill_on_end_game"],ExplosionPower:3,Owner:$(UUID)}
 
 execute store result score #dx tmp run data get entity @e[tag=fireball,limit=1,sort=nearest] Pos[0] 1000
 execute store result score #dy tmp run data get entity @e[tag=fireball,limit=1,sort=nearest] Pos[1] 1000
