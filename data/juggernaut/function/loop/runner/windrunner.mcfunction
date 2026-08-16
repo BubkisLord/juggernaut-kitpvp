@@ -1,5 +1,5 @@
-execute store result storage juggernaut:loop/kits_loop/windrunner movement_speed float 1 run attribute @p[tag=juggernaut] movement_speed base get
-function juggernaut:abilities/windrunner/set_movement_speed with storage juggernaut:loop/kits_loop/windrunner
+execute store result storage juggernaut:loop/runner/windrunner movement_speed float 1 run attribute @p[tag=juggernaut] movement_speed base get
+function juggernaut:abilities/windrunner/set_movement_speed with storage juggernaut:loop/runner/windrunner
 
 function juggernaut:ability_management/check_ability {\
     player_tag:"windrunner",\

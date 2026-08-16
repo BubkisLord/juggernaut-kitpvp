@@ -40,33 +40,33 @@ execute as @a[tag=juggernaut,scores={jug_kills=1..}] at @s run function juggerna
 execute as @a[tag=juggernaut,scores={jug_kills=1..}] run scoreboard players set @s jug_kills 0
 
 # Runner Kits
-execute as @a[tag=guide] at @s run function juggernaut:loop/kits_loop/guide
-execute as @a[tag=escapist] at @s run function juggernaut:loop/kits_loop/escapist
-execute as @a[tag=rogue] at @s run function juggernaut:loop/kits_loop/rogue
-execute as @a[tag=medic] at @s run function juggernaut:loop/kits_loop/medic
-execute as @a[tag=scout] at @s run function juggernaut:loop/kits_loop/scout
-execute as @a[tag=survivor] at @s run function juggernaut:loop/kits_loop/survivor
-execute as @a[tag=ghost] at @s run function juggernaut:loop/kits_loop/ghost
-execute as @a[tag=engineer] at @s run function juggernaut:loop/kits_loop/engineer
-execute as @a[tag=trickster] at @s run function juggernaut:loop/kits_loop/trickster
-execute as @a[tag=windrunner] at @s run function juggernaut:loop/kits_loop/windrunner
-execute as @a[tag=jester] at @s run function juggernaut:loop/kits_loop/jester
-execute as @a[tag=puppeteer] at @s run function juggernaut:loop/kits_loop/puppeteer
+execute as @a[tag=guide] at @s run function juggernaut:loop/runner/guide
+execute as @a[tag=escapist] at @s run function juggernaut:loop/runner/escapist
+execute as @a[tag=rogue] at @s run function juggernaut:loop/runner/rogue
+execute as @a[tag=medic] at @s run function juggernaut:loop/runner/medic
+execute as @a[tag=scout] at @s run function juggernaut:loop/runner/scout
+execute as @a[tag=survivor] at @s run function juggernaut:loop/runner/survivor
+execute as @a[tag=ghost] at @s run function juggernaut:loop/runner/ghost
+execute as @a[tag=engineer] at @s run function juggernaut:loop/runner/engineer
+execute as @a[tag=trickster] at @s run function juggernaut:loop/runner/trickster
+execute as @a[tag=windrunner] at @s run function juggernaut:loop/runner/windrunner
+execute as @a[tag=jester] at @s run function juggernaut:loop/runner/jester
+execute as @a[tag=puppeteer] at @s run function juggernaut:loop/runner/puppeteer
 
 # Juggernaut Kits
-execute as @a[tag=classic_jug] at @s run function juggernaut:loop/kits_loop/classic_jug
-execute as @a[tag=dragon] at @s run function juggernaut:loop/kits_loop/dragon
-execute as @a[tag=hunter] at @s run function juggernaut:loop/kits_loop/hunter
-execute as @a[tag=warlock] at @s run function juggernaut:loop/kits_loop/warlock
-execute as @a[tag=predator] at @s run function juggernaut:loop/kits_loop/predator
-execute as @a[tag=spirit_walker] at @s run function juggernaut:loop/kits_loop/spirit_walker
-execute as @a[tag=witch_doctor] at @s run function juggernaut:loop/kits_loop/witch_doctor
-execute as @a[tag=timekeeper] at @s run function juggernaut:loop/kits_loop/timekeeper
-execute as @a[tag=chameleon] at @s run function juggernaut:loop/kits_loop/chameleon
-execute as @a[tag=fishmonger] at @s run function juggernaut:loop/kits_loop/fishmonger
-execute as @a[tag=knight] at @s run function juggernaut:loop/kits_loop/knight
-execute as @a[tag=phantom] at @s run function juggernaut:loop/kits_loop/phantom
-execute as @a[tag=beast_tamer] at @s run function juggernaut:loop/kits_loop/beast_tamer
+execute as @a[tag=classic_jug] at @s run function juggernaut:loop/juggernaut/classic_jug
+execute as @a[tag=dragon] at @s run function juggernaut:loop/juggernaut/dragon
+execute as @a[tag=hunter] at @s run function juggernaut:loop/juggernaut/hunter
+execute as @a[tag=warlock] at @s run function juggernaut:loop/juggernaut/warlock
+execute as @a[tag=predator] at @s run function juggernaut:loop/juggernaut/predator
+execute as @a[tag=spirit_walker] at @s run function juggernaut:loop/juggernaut/spirit_walker
+execute as @a[tag=witch_doctor] at @s run function juggernaut:loop/juggernaut/witch_doctor
+execute as @a[tag=timekeeper] at @s run function juggernaut:loop/juggernaut/timekeeper
+execute as @a[tag=chameleon] at @s run function juggernaut:loop/juggernaut/chameleon
+execute as @a[tag=fishmonger] at @s run function juggernaut:loop/juggernaut/fishmonger
+execute as @a[tag=knight] at @s run function juggernaut:loop/juggernaut/knight
+execute as @a[tag=phantom] at @s run function juggernaut:loop/juggernaut/phantom
+execute as @a[tag=beast_tamer] at @s run function juggernaut:loop/juggernaut/beast_tamer
 
 # Loop per second function.
 scoreboard players add #tick_counter var 1
