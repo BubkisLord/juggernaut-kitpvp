@@ -14,7 +14,7 @@ execute as @a[tag=knight] at @s if score @s ability_cooldown0 matches 0 unless i
 
 execute as @a[tag=knight,tag=using_horse,tag=!on_horse] at @s run summon minecraft:skeleton_horse ~ ~ ~ {CanPickUpLoot:false,DeathLootTable:"",Tame:true,equipment:{saddle:{id:"saddle"}},Team:"jug",Tags:["kill_on_end_game", "knight_horse"],attributes:[{"id":"minecraft:step_height",base:2.0},{"id":"movement_speed",base:0.18},{id:"max_health",base:40.0},{"id":"gravity",base:2.2}]}
 execute as @a[tag=knight,tag=using_horse,tag=!on_horse] at @s anchored eyes run tp @e[type=skeleton_horse,tag=knight_horse,distance=..6] ~ ~ ~ facing ^ ^ ^99999
-execute as @a[tag=knight,tag=using_horse,tag=!on_horse] at @s anchored eyes run schedule function juggernaut:loop/ride_knight_horse 0.25s append
+execute as @a[tag=knight,tag=using_horse,tag=!on_horse] at @s anchored eyes run schedule function juggernaut:abilities/knight/ride_horse 0.25s append
 execute as @a[tag=knight,tag=using_horse,tag=!on_horse] at @s if entity @e[type=skeleton_horse,tag=knight_horse,distance=..6] run tag @s add on_horse
 execute as @a[tag=knight,tag=on_horse] at @s unless entity @e[type=skeleton_horse,tag=knight_horse,distance=..6] run tag @s remove on_horse
 execute as @a[tag=knight,tag=!using_horse,tag=on_horse] at @s run kill @n[type=skeleton_horse,tag=knight_horse]
