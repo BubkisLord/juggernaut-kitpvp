@@ -24,7 +24,7 @@ execute if score #game_state var matches 10 run function juggernaut:loop/display
 
 # Check perks while in start of game lobby.
 execute if score #game_state var matches 10 as @a[tag=runner] run function juggernaut:perk_management/runner/check_perks
-execute unless score #game_state var matches 11 if score #game_state var matches 10..12 as @a[tag=juggernaut] run function juggernaut:perk_management/runner/check_perks
+execute unless score #game_state var matches 11 if score #game_state var matches 10..12 as @a[tag=juggernaut] run function juggernaut:perk_management/juggernaut/check_perks
 
 # Get the highest replenished station.
 execute if score #juggernaut_customisation completable_stations matches 1 run scoreboard players set #highest_station var 0
