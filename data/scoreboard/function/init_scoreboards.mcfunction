@@ -38,7 +38,6 @@ scoreboard objectives add brutal_efficiency_cooldown dummy
 scoreboard objectives add unyielding_wrath_time dummy
 scoreboard objectives add waiting_game_time dummy
 scoreboard objectives add domination_movement_speed dummy
-scoreboard objectives add grim_determination_speed dummy
 scoreboard objectives add max_health dummy
 scoreboard objectives add debug_mode dummy
 scoreboard objectives add healing_base dummy
