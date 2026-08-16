@@ -6,6 +6,9 @@ execute if score #game_state var matches 10 unless entity @a[tag=!has_jug_kit,ta
 effect give @a saturation infinite 255 true
 effect give @a[tag=juggernaut] regeneration infinite 0 true
 
+# Remove knockback resistance
+execute as @a[tag=!lobby.player] run attribute @s knockback_resistance modifier remove lobby:knockback_resistance
+
 # Progress and clear old effects.
 execute as @a run function juggernaut:effects/check_effects {effect:"not_replenishing"}
 execute as @a run function juggernaut:effects/check_effects {effect:"undetectable"}
