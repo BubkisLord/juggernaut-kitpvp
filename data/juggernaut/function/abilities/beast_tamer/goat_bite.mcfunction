@@ -18,5 +18,5 @@ execute store result entity @s Motion[0] double 0.001 run scoreboard players get
 execute store result entity @s Motion[2] double 0.001 run scoreboard players get #pz tmp
 
 execute rotated ~ 0 positioned ^ ^ ^0.75 if entity @a[tag=runner,distance=..3.5] run function juggernaut:effects/apply_effect {effect:"fatigued",duration:2}
-execute rotated ~ 0 positioned ^ ^ ^0.75 if entity @a[tag=runner,distance=..3.5] run scoreboard players set @s ability_cooldown7 4000
+execute rotated ~ 0 positioned ^ ^ ^0.75 if entity @a[tag=runner,distance=..3.5] run scoreboard players set @s ability_cooldown9 4000
 execute rotated ~ 0 positioned ^ ^ ^0.75 run damage @p[tag=runner,distance=..3.5] 8 minecraft:mob_attack by @s
