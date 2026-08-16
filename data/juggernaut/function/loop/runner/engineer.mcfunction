@@ -3,7 +3,7 @@
 execute at @e[type=armor_stand,tag=engineer_tower] run execute as @a[tag=juggernaut,distance=..3] run particle totem_of_undying ~ ~ ~ 0.25 1 0.25 0 20 force
 
 # Skeleton Turret Death Logic
-execute as @e[type=skeleton,tag=skeleton_turret] unless entity @e[type=armor_stand,tag=turret,distance=..10] run kill @s
+execute as @e[type=skeleton,tag=skeleton_turret] at @s unless entity @e[type=armor_stand,tag=turret,distance=..10] run kill @s
 execute as @e[type=skeleton,tag=skeleton_turret] at @s run tp @s @n[type=armor_stand,tag=turret]
 
 # Revealing Tower Logic
@@ -11,7 +11,8 @@ execute as @e[type=armor_stand,tag=revealing_tower] unless entity @e[type=armor_
 
 execute as @e[type=armor_stand,tag=revealing_tower] at @s if entity @a[tag=juggernaut,distance=..8] run data modify entity @s CustomNameVisible set value true
 execute as @e[type=armor_stand,tag=revealing_tower] at @s unless entity @a[tag=juggernaut,distance=..8] run data modify entity @s CustomNameVisible set value false
-execute as @e[type=armor_stand,tag=revealing_tower] at @s as @a[tag=juggernaut,distance=..8,tag=!undetectable] run effect give @s glowing 1 0 true
+execute as @e[type=armor_stand,tag=revealing_tower] at @s as @a[tag=juggernaut,distance=..16,tag=!undetectable] run effect give @s glowing 1 0 true
+execute if entity @e[type=armor_stand,tag=revealing_tower] at @n[type=armor_stand,tag=revealing_tower] as @a[tag=runner,distance=..16] run attribute @s name_tag_distance modifier add juggernaut:revealing_tower -100 add_multiplied_base
 
 # Replenishment Tower Logic
 execute as @e[type=armor_stand,tag=replenishment_tower_particle_emitter] at @s run particle dust{color:[1,1,0],scale:1} ^0.75 ^ ^0.75 0.1 0.1 0.1 0.4 4 normal
@@ -27,7 +28,7 @@ function juggernaut:ability_management/check_ability {\
     player_tag:"engineer",\
     item_model:"minecraft:gold_block",\
     item_name:{"text": "Spawn Revealing Tower","color": "gold"},\
-    description:[{"text": "Summon a tower that is invisible until the Juggernaut is close.","color": "gray"},{"text": "Reveals the Juggernaut when they are within 8 blocks.","color": "gray"},{"text": "The Juggernaut may stand near it to dispel/remove it.","color": "gray"},{"text": "Cooldown: 1m 30s","color": "dark_gray"}],\
+    description:[{"text": "Summon a tower that is invisible until the Juggernaut is within 8 blocks.","color": "gray"},{"text": "Reveals the Juggernaut when they are within 16 blocks.","color": "gray"},{"text": "Hides Runner name tags when they are within 16 blocks.","color": "gray"},{"text": "The Juggernaut may stand near it to dispel/remove it.","color": "gray"},{"text": "Cooldown: 1m 30s","color": "dark_gray"}],\
     ability_id:"revealing_tower",\
     cooldown:90,\
     hotbar_slot:"hotbar.0",\
@@ -39,7 +40,7 @@ function juggernaut:ability_management/check_ability {\
     player_tag:"engineer",\
     item_model:"minecraft:lime_dye",\
     item_name:{"text": "Spawn Replenishment Tower","color": "green"},\
-    description:[{"text": "Summon a tower with a visible nametag.","color": "gray"},{"text": "Acts as an additional replenishment station.","color": "gray"},{"text": "Only engineers can use it.","color": "gray"},{"text": "The Juggernaut may stand near it to dispel/remove it.","color": "gray"},{"text": "Cooldown: 60s","color": "dark_gray"}],\
+    description:[{"text": "Summons a tower which allows Runners to replenish","color": "gray"},{"text": "the highest replenishment station.","color": "gray"},{"text": "The Juggernaut may stand near it to dispel/remove it.","color": "gray"},{"text": "Cooldown: 60s","color": "dark_gray"}],\
     ability_id:"replenishment_tower",\
     cooldown:60,\
     hotbar_slot:"hotbar.1",\

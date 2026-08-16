@@ -106,7 +106,11 @@ execute as @a[tag=runner] run function juggernaut:healing/set_healing_needed
 # Healing check
 execute as @a[tag=runner,predicate=is_sneaking] at @s if score @s health < @s max_health run function juggernaut:healing/check_self_heal
 
+# Second Wind Perk
 execute as @a[tag=using_second_wind] run function juggernaut:loop/update_second_wind
+
+# Remove hidden name tag from Runners when not by revealing tower
+execute as @a[tag=runner] at @s unless entity @e[type=armor_stand,tag=revealing_tower,distance=..16] run attribute @s name_tag_distance modifier remove juggernaut:revealing_tower
 
 # Always show tips in the pregame
 execute if score #game_state var matches 12 as @a run function tips:show
