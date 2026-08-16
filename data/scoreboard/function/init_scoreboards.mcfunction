@@ -13,6 +13,9 @@ scoreboard objectives add ability_cooldown3 dummy
 scoreboard objectives add ability_cooldown4 dummy
 scoreboard objectives add ability_cooldown5 dummy
 scoreboard objectives add ability_cooldown6 dummy
+scoreboard objectives add ability_cooldown7 dummy
+scoreboard objectives add ability_cooldown8 dummy
+scoreboard objectives add ability_cooldown9 dummy
 scoreboard objectives add replenish_timeout dummy
 scoreboard objectives add juggernaut_release_timer dummy
 scoreboard objectives add total_replenishment_needed dummy
