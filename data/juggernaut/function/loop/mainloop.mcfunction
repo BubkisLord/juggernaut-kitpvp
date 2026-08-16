@@ -10,7 +10,7 @@ execute as @a[tag=undetectable] run tag @s remove is_glowing
 execute at @e[type=armor_stand,tag=respawn_point] as @a[distance=..10] at @r[tag=juggernaut] if entity @e[type=armor_stand,tag=arena.spawn,distance=30..] run tp @s @e[type=armor_stand,tag=arena.spawn,limit=1,sort=random,distance=30..]
 
 # Check if players are in chase.
-execute if score #game_state var matches 11 run function juggernaut:chase/check_in_chase
+execute if score #game_state var matches 11 run function juggernaut:loop/check_in_chase
 execute if score #game_state var matches 11 run function juggernaut:replenishment_management/replenishment_stations
 # While juggernaut is not released, disallow all interactions with replenishment stations but allow for runners to see them.
 execute if score #game_state var matches 12 as @e[type=armor_stand,tag=replenishment.station] at @s run particle minecraft:end_rod ~ ~2.5 ~ 0.2 60 0.2 0 60 force @a[tag=runner]
