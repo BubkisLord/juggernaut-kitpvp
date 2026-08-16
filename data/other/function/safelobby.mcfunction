@@ -12,7 +12,7 @@ item replace entity @a[tag=lobby.player,tag=!autorespawn] hotbar.5 with minecraf
 item replace entity @a[tag=lobby.player,tag=!autorespawn] hotbar.8 with minecraft:dark_oak_door[item_name={"text":"Back to Lobby","color":"gold","italic":false},lore=[{"text":"Drop this item to go back","color":"dark_gray"},{"text":"to the Main Lobby.","color":"dark_gray"}]]
 
 #Stats
-execute as @e[type=item,nbt={Item:{id:"minecraft:globe_banner_pattern"}}] at @s as @p run function scoreboard:stats
+execute as @e[type=item,nbt={Item:{id:"minecraft:globe_banner_pattern"}}] at @s as @p run function stats:preview
 
 #Lobby & Market Teleportation
 execute as @e[type=item,nbt={Item:{id:"minecraft:dark_oak_door"}}] at @s as @p run function tp:exit_arena

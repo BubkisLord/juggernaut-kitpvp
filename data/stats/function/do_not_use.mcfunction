@@ -1,0 +1,24 @@
+function stats:reset_kit {"kit":"chameleon"}
+function stats:reset_kit {"kit":"dragon"}
+function stats:reset_kit {"kit":"fishmonger"}
+function stats:reset_kit {"kit":"hunter"}
+function stats:reset_kit {"kit":"classic_juggernaut"}
+function stats:reset_kit {"kit":"knight"}
+function stats:reset_kit {"kit":"predator"}
+function stats:reset_kit {"kit":"spirit_walker"}
+function stats:reset_kit {"kit":"timekeeper"}
+function stats:reset_kit {"kit":"warlock"}
+function stats:reset_kit {"kit":"witch_doctor"}
+function stats:reset_kit {"kit":"phantom"}
+
+function stats:reset_kit {"kit":"engineer"}
+function stats:reset_kit {"kit":"escapist"}
+function stats:reset_kit {"kit":"ghost"}
+function stats:reset_kit {"kit":"guide"}
+function stats:reset_kit {"kit":"medic"}
+function stats:reset_kit {"kit":"rogue"}
+function stats:reset_kit {"kit":"scout"}
+function stats:reset_kit {"kit":"survivor"}
+function stats:reset_kit {"kit":"trickster"}
+function stats:reset_kit {"kit":"jester"}
+function stats:reset_kit {"kit":"puppeteer"}
