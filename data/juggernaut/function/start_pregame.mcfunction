@@ -115,5 +115,5 @@ execute if score #juggernaut_customisation debug_mode matches 1 run tellraw @a [
 execute if score #juggernaut_customisation random_perks matches 1 as @a[tag=runner] run function juggernaut:perk_management/equip_random/runner
 execute if score #juggernaut_customisation random_perks matches 1 as @a[tag=juggernaut] run function juggernaut:perk_management/equip_random/juggernaut
 
-execute if score #juggernaut_customisation random_kits matches 1 as @a[tag=runner] run function juggernaut:surv_kits/random
-execute if score #juggernaut_customisation random_kits matches 1 as @a[tag=juggernaut] run function juggernaut:jug_kits/random
+execute if score #juggernaut_customisation random_kits matches 1 as @a[tag=runner] run function juggernaut:kits/runner/random
+execute if score #juggernaut_customisation random_kits matches 1 as @a[tag=juggernaut] run function juggernaut:kits/juggernaut/random
