@@ -8,6 +8,7 @@ execute if entity @s[tag=using_bloodlust] run scoreboard players set @s ability_
 execute if entity @s[tag=using_bloodlust] run scoreboard players set @s ability_cooldown3 0
 execute if entity @s[tag=using_bloodlust] run scoreboard players set @s ability_cooldown4 0
 execute if entity @s[tag=using_bloodlust] run scoreboard players set @s ability_cooldown5 0
+execute if entity @s[tag=using_bloodlust] run scoreboard players set @s ability_cooldown6 0
 
 execute if entity @s[tag=using_silent_killer] run function juggernaut:effects/apply_effect {effect:"undetectable",duration:35,color:"dark_gray"}
 execute if entity @s[tag=using_silent_killer] run effect give @s invisibility 35 0 true
