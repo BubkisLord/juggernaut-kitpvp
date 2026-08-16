@@ -12,9 +12,9 @@ execute if predicate {condition:"entity_properties",entity:"this",predicate:{veh
 
 execute unless predicate {condition:"entity_properties",entity:"this",predicate:{vehicle:{}}} run item replace entity @s hotbar.0 with stick[enchantments={sharpness:4}]
 
-execute if predicate {condition:"entity_properties",entity:"this",predicate:{vehicle:{}}} run scoreboard players set @s ability_cooldown7 300
-execute if predicate {condition:"entity_properties",entity:"this",predicate:{vehicle:{}}} run scoreboard players set @s ability_cooldown8 300
-execute if predicate {condition:"entity_properties",entity:"this",predicate:{vehicle:{}}} run scoreboard players set @s ability_cooldown9 300
+execute if predicate {condition:"entity_properties",entity:"this",predicate:{vehicle:{}}} run scoreboard players set @s ability_cooldown0 300
+execute if predicate {condition:"entity_properties",entity:"this",predicate:{vehicle:{}}} run scoreboard players set @s ability_cooldown1 300
+execute if predicate {condition:"entity_properties",entity:"this",predicate:{vehicle:{}}} run scoreboard players set @s ability_cooldown2 300
 
 execute unless predicate {condition:"entity_properties",entity:"this",predicate:{vehicle:{}}} run function juggernaut:ability_management/check_ability {\
     player_tag:"beast_tamer",\
@@ -24,7 +24,7 @@ execute unless predicate {condition:"entity_properties",entity:"this",predicate:
     ability_id:"summon_goat",\
     cooldown:1,\
     hotbar_slot:"hotbar.1",\
-    cooldown_var:"ability_cooldown7",\
+    cooldown_var:"ability_cooldown0",\
 }
 
 execute unless predicate {condition:"entity_properties",entity:"this",predicate:{vehicle:{}}} run function juggernaut:ability_management/check_ability {\
@@ -35,7 +35,7 @@ execute unless predicate {condition:"entity_properties",entity:"this",predicate:
     ability_id:"summon_dolphin",\
     cooldown:1,\
     hotbar_slot:"hotbar.2",\
-    cooldown_var:"ability_cooldown8",\
+    cooldown_var:"ability_cooldown1",\
 }
 
 execute unless predicate {condition:"entity_properties",entity:"this",predicate:{vehicle:{}}} run function juggernaut:ability_management/check_ability {\
@@ -46,7 +46,7 @@ execute unless predicate {condition:"entity_properties",entity:"this",predicate:
     ability_id:"summon_blaze",\
     cooldown:1,\
     hotbar_slot:"hotbar.3",\
-    cooldown_var:"ability_cooldown9",\
+    cooldown_var:"ability_cooldown2",\
 }
 
 execute if predicate {condition:"entity_properties",entity:"this",predicate:{vehicle:{}}} run item replace entity @s hotbar.3 with air
@@ -59,7 +59,7 @@ execute if predicate {condition:"entity_properties",entity:"this",predicate:{veh
     ability_id:"goat_bite",\
     cooldown:4,\
     hotbar_slot:"hotbar.0",\
-    cooldown_var:"ability_cooldown1",\
+    cooldown_var:"ability_cooldown3",\
 }
 
 execute if predicate {condition:"entity_properties",entity:"this",predicate:{vehicle:{entity_type:"goat"}}} run function juggernaut:ability_management/check_ability {\
@@ -70,7 +70,7 @@ execute if predicate {condition:"entity_properties",entity:"this",predicate:{veh
     ability_id:"goat_ram",\
     cooldown:8,\
     hotbar_slot:"hotbar.1",\
-    cooldown_var:"ability_cooldown2",\
+    cooldown_var:"ability_cooldown4",\
 }
 
 execute if predicate {condition:"entity_properties",entity:"this",predicate:{vehicle:{entity_type:"dolphin"}}} run function juggernaut:ability_management/check_ability {\
@@ -81,7 +81,7 @@ execute if predicate {condition:"entity_properties",entity:"this",predicate:{veh
     ability_id:"echolocate",\
     cooldown:5,\
     hotbar_slot:"hotbar.0",\
-    cooldown_var:"ability_cooldown3",\
+    cooldown_var:"ability_cooldown5",\
 }
 
 execute if predicate {condition:"entity_properties",entity:"this",predicate:{vehicle:{entity_type:"dolphin"}}} run function juggernaut:ability_management/check_ability {\
@@ -92,7 +92,7 @@ execute if predicate {condition:"entity_properties",entity:"this",predicate:{veh
     ability_id:"dolphin_charge",\
     cooldown:7,\
     hotbar_slot:"hotbar.1",\
-    cooldown_var:"ability_cooldown3",\
+    cooldown_var:"ability_cooldown6",\
 }
 
 execute if predicate {condition:"entity_properties",entity:"this",predicate:{vehicle:{entity_type:"blaze"}}} run function juggernaut:ability_management/check_ability {\
@@ -103,7 +103,7 @@ execute if predicate {condition:"entity_properties",entity:"this",predicate:{veh
     ability_id:"blaze_flight",\
     cooldown:30,\
     hotbar_slot:"hotbar.0",\
-    cooldown_var:"ability_cooldown4",\
+    cooldown_var:"ability_cooldown7",\
 }
 
 execute if predicate {condition:"entity_properties",entity:"this",predicate:{vehicle:{entity_type:"blaze"}}} run function juggernaut:ability_management/check_ability {\
@@ -114,7 +114,7 @@ execute if predicate {condition:"entity_properties",entity:"this",predicate:{veh
     ability_id:"fireball",\
     cooldown:20,\
     hotbar_slot:"hotbar.1",\
-    cooldown_var:"ability_cooldown5",\
+    cooldown_var:"ability_cooldown8",\
 }
 
 execute if predicate {condition:"entity_properties",entity:"this",predicate:{vehicle:{}}} run function juggernaut:ability_management/check_ability {\
@@ -125,5 +125,5 @@ execute if predicate {condition:"entity_properties",entity:"this",predicate:{veh
     ability_id:"dismount",\
     cooldown:1,\
     hotbar_slot:"hotbar.2",\
-    cooldown_var:"ability_cooldown0",\
+    cooldown_var:"ability_cooldown9",\
 }
