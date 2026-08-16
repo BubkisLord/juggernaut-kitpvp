@@ -1,1 +1,0 @@
-execute at @e[type=armor_stand,tag=malevolent_aura] run execute as @a[tag=juggernaut,distance=..24] run effect give @s speed 4 1 true

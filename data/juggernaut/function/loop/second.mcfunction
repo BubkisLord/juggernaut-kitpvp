@@ -127,7 +127,7 @@ execute as @a[tag=spectator] run tag @s remove in_chase
 execute unless entity @a[tag=hunted] run kill @n[type=minecraft:wolf,tag=hunter_wolf]
 
 # Withering Surge
-execute if entity @a[tag=warlock] if entity @e[type=armor_stand,tag=withering_surge] run function juggernaut:abilities/warlock/tower_effects/withering_surge
+execute if entity @a[tag=warlock] at @n[type=armor_stand,tag=withering_surge] as @a[tag=runner,distance=..14] run damage @s 2 wither by @p[tag=warlock]
 
 execute as @a[tag=chameleon] run item replace entity @s container.35 with tipped_arrow[potion_contents={custom_effects:[{id:"slowness",duration:100,amplifier:0},{id:"poison",duration:1200,amplifier:0}],custom_name:"Acid",custom_color:12713016},item_name={"text":"Acid Arrow",color:"#b5ee4a"},custom_name={"text":"Acid Arrow",color:"#b5ee4a"}] 64
 

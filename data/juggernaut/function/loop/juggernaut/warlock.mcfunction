@@ -16,7 +16,7 @@ execute as @e[type=armor_stand,tag=warlock_armor_stand,tag=warlock_revealing_tow
 execute as @e[type=armor_stand,tag=warlock_armor_stand,tag=warlock_revealing_tower] at @s if entity @a[tag=runner,distance=..16,tag=!undetectable] run data modify entity @s CustomNameVisible set value true
 
 #Warlock tower aura effects
-execute if entity @e[type=armor_stand,tag=malevolent_aura] run function juggernaut:abilities/warlock/tower_effects/malevolent_aura
+execute at @e[type=armor_stand,tag=malevolent_aura] run execute as @a[tag=juggernaut,distance=..24] run effect give @s speed 4 1 true
 
 execute if entity @e[type=armor_stand,tag=warlock_armor_stand] run function juggernaut:abilities/warlock/warlock_towers
 
