@@ -6,3 +6,6 @@ execute if entity @a[distance=..8,tag=runner] run scoreboard players operation @
 execute if entity @a[distance=..8,tag=runner] run scoreboard players operation @s ability_cooldown4 /= #2 var
 execute if entity @a[distance=..8,tag=runner] run scoreboard players operation @s ability_cooldown5 /= #2 var
 execute if entity @a[distance=..8,tag=runner] run scoreboard players operation @s ability_cooldown6 /= #2 var
+execute if entity @a[distance=..8,tag=runner] run scoreboard players operation @s ability_cooldown7 /= #2 var
+execute if entity @a[distance=..8,tag=runner] run scoreboard players operation @s ability_cooldown8 /= #2 var
+execute if entity @a[distance=..8,tag=runner] run scoreboard players operation @s ability_cooldown9 /= #2 var
