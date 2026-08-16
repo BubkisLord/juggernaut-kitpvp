@@ -157,6 +157,7 @@ execute as @a run attribute @s camera_distance modifier remove juggernaut:chamel
 execute as @a run attribute @s movement_speed modifier remove juggernaut:phantom_move_spd
 execute as @a run attribute @s movement_speed modifier remove juggernaut:spirit_walker
 execute as @a run attribute @s fall_damage_multiplier modifier remove juggernaut:spirit_walker
+execute as @a run attribute @s safe_fall_distance modifier remove juggernaut:beast_tamer
 
 xp set @a 0 levels
 xp set @a 0 points
