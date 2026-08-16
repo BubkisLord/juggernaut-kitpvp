@@ -29,7 +29,6 @@ tag @s remove using_predatory_instincts
 tag @s remove using_rapid_brutality
 tag @s remove using_brutal_efficiency
 tag @s remove using_unyielding_wrath
-tag @s remove using_domination
 tag @s remove using_floods_of_rage
 tag @s remove using_pressure_point
 tag @s remove using_overwhelming_presence
