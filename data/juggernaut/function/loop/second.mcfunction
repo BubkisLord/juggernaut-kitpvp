@@ -1,6 +1,6 @@
 # Start game when ready.
 execute if score #game_state var matches 10 as @a[scores={health=0}] run function juggernaut:spectate
-execute if score #game_state var matches 10 unless entity @a[tag=!has_jug_kit,tag=!spectator,scores={health=1..}] run function juggernaut:start_juggernaut
+execute if score #game_state var matches 10 unless entity @a[tag=!has_jug_kit,tag=!spectator,scores={health=1..}] run function juggernaut:start_game
 
 # Give everyone infinite saturation so they never lose hunger.
 effect give @a saturation infinite 255 true

@@ -7,6 +7,7 @@ execute if score #juggernaut_manager runner_count matches 7.. run return fail
 #------------------------------------------------------------------------------------------------------------
 
 tag @a remove lobby.player
+execute as @a run attribute @s knockback_resistance modifier remove lobby:knockback_resistance
 
 execute if score #juggernaut_customisation round_robin matches 0 store result storage juggernaut:juggernaut_count count int 1 run scoreboard players get #juggernaut_customisation juggernaut_count
 execute if score #juggernaut_customisation round_robin matches 0 run function juggernaut:set_random_juggernauts with storage juggernaut:juggernaut_count

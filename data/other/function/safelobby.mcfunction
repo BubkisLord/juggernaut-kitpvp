@@ -1,15 +1,13 @@
 #Anti-Damage and Saturation
-effect give @a[tag=lobby.player,tag=!autorespawn] resistance 2 100 true
-effect give @a[tag=lobby.player,tag=!autorespawn] saturation 2 100 true
+effect give @a[tag=lobby.player] resistance 2 100 true
+effect give @a[tag=lobby.player] saturation 2 100 true
 
 #Anti-Knockback
-execute as @a[tag=lobby.player] run attribute @s minecraft:knockback_resistance base set 1
-execute as @a[tag=tutorial.player] run attribute @s minecraft:knockback_resistance base set 1
-execute as @a[tag=!lobby.player,tag=!tutorial.player] run attribute @s minecraft:knockback_resistance base set 0
+execute as @a[tag=lobby.player] run attribute @s minecraft:knockback_resistance modifier add lobby:knockback_resistance 1 add_value
 
 #Teleport and Stats
-item replace entity @a[tag=lobby.player,tag=!autorespawn] hotbar.5 with minecraft:globe_banner_pattern[item_name={"text":"Statistics","color":"green","italic":false}, lore=[{"text":"Drop this item to view","color":"dark_gray"},{"text":"global statistics.","color":"dark_gray"}]] 1
-item replace entity @a[tag=lobby.player,tag=!autorespawn] hotbar.8 with minecraft:dark_oak_door[item_name={"text":"Back to Lobby","color":"gold","italic":false},lore=[{"text":"Drop this item to go back","color":"dark_gray"},{"text":"to the Main Lobby.","color":"dark_gray"}]]
+item replace entity @a[tag=lobby.player] hotbar.5 with minecraft:globe_banner_pattern[item_name={"text":"Statistics","color":"green","italic":false}, lore=[{"text":"Drop this item to view","color":"dark_gray"},{"text":"global statistics.","color":"dark_gray"}]] 1
+item replace entity @a[tag=lobby.player] hotbar.8 with minecraft:dark_oak_door[item_name={"text":"Back to Lobby","color":"gold","italic":false},lore=[{"text":"Drop this item to go back","color":"dark_gray"},{"text":"to the Main Lobby.","color":"dark_gray"}]]
 
 #Stats
 execute as @e[type=item,nbt={Item:{id:"minecraft:globe_banner_pattern"}}] at @s as @p run function stats:preview

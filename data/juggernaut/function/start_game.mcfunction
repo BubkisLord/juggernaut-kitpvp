@@ -25,6 +25,8 @@ execute as @a[tag=jester] run function stats:handle_kit_picked {"kit": "jester"}
 execute as @a[tag=puppeteer] run function stats:handle_kit_picked {"kit": "puppeteer"}
 execute as @a[tag=beast_tamer] run function stats:handle_kit_picked {"kit": "beast_tamer"}
 
+execute as @a run attribute @s knockback_resistance modifier remove lobby:knockback_resistance
+
 execute as @a[tag=using_quickened_stealth] run attribute @s sneaking_speed modifier add juggernaut:quickened_stealth_speed 1.2 add_multiplied_base
 
 execute as @a[tag=using_durable] run effect give @s health_boost infinite 1 true
