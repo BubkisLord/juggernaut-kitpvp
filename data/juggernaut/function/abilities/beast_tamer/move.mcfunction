@@ -1,7 +1,11 @@
 execute unless entity @s[type=dolphin] if block ~ ~-0.1 ~ water run function juggernaut:effects/apply_effect {effect:"fatigued",duration:2}
-execute if entity @s[type=goat] unless entity @s[tag=fatigued] run function juggernaut:abilities/beast_tamer/place_target_pos {speed:0.35}
-execute if entity @s[type=dolphin] unless entity @s[tag=fatigued] run function juggernaut:abilities/beast_tamer/place_target_pos {speed:0.4}
-execute if entity @s[type=blaze] unless entity @s[tag=fatigued] run function juggernaut:abilities/beast_tamer/place_target_pos {speed:0.2}
+execute if entity @s[type=goat] unless entity @s[tag=using_fury] unless entity @s[tag=fatigued] run function juggernaut:abilities/beast_tamer/place_target_pos {speed:0.35}
+execute if entity @s[type=dolphin] unless entity @s[tag=using_fury] unless entity @s[tag=fatigued] run function juggernaut:abilities/beast_tamer/place_target_pos {speed:0.4}
+execute if entity @s[type=blaze] unless entity @s[tag=using_fury] unless entity @s[tag=fatigued] run function juggernaut:abilities/beast_tamer/place_target_pos {speed:0.2}
+
+execute if entity @s[type=goat] if entity @s[tag=using_fury] unless entity @s[tag=fatigued] run function juggernaut:abilities/beast_tamer/place_target_pos {speed:0.385}
+execute if entity @s[type=dolphin] if entity @s[tag=using_fury] unless entity @s[tag=fatigued] run function juggernaut:abilities/beast_tamer/place_target_pos {speed:0.44}
+execute if entity @s[type=blaze] if entity @s[tag=using_fury] unless entity @s[tag=fatigued] run function juggernaut:abilities/beast_tamer/place_target_pos {speed:0.22}
 
 execute if entity @s[tag=fatigued] run function juggernaut:abilities/beast_tamer/place_target_pos {speed:0.1}
 
