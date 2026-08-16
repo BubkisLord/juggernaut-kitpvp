@@ -20,8 +20,8 @@ execute if entity @e[type=armor_stand,tag=malevolent_aura] run function juggerna
 
 execute if entity @e[type=armor_stand,tag=warlock_armor_stand] run function juggernaut:abilities/warlock/warlock_towers
 
-# Warlock aura effect
-execute as @s at @s run function juggernaut:kit_auras/warlock
+# Warlock motion trail
+execute unless entity @e[type=armor_stand,tag=warlock_aura_manager,tag=kill_on_end_game] run summon area_effect_cloud ~ ~ ~ {Tags:["warlock_aura_manager","kill_on_end_game"],NoGravity:true,custom_particle:{type:dust,color:12590108,scale:0.8}}
 
 function juggernaut:ability_management/check_ability {\
     player_tag:"warlock",\
