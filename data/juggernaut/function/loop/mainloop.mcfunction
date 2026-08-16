@@ -49,7 +49,6 @@ execute as @a[tag=survivor] at @s run function juggernaut:loop/runner/survivor
 execute as @a[tag=ghost] at @s run function juggernaut:loop/runner/ghost
 execute as @a[tag=engineer] at @s run function juggernaut:loop/runner/engineer
 execute as @a[tag=trickster] at @s run function juggernaut:loop/runner/trickster
-execute as @a[tag=windrunner] at @s run function juggernaut:loop/runner/windrunner
 execute as @a[tag=jester] at @s run function juggernaut:loop/runner/jester
 execute as @a[tag=puppeteer] at @s run function juggernaut:loop/runner/puppeteer
 

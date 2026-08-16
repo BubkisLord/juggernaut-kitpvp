@@ -66,7 +66,6 @@ tag @a remove knight
 tag @a remove chameleon
 tag @a remove using_horse
 tag @a remove on_horse
-tag @a remove windrunner
 tag @a remove double_chase_progress
 tag @a remove spectral_cloak_active
 tag @a remove phantom
@@ -153,8 +152,6 @@ execute as @a run attribute @s sneaking_speed modifier remove juggernaut:quicken
 execute as @a run attribute @s scale modifier remove teeny_weeny
 execute as @a run attribute @s sneaking_speed modifier remove juggernaut:ghost_sneaking_effects
 execute as @a run attribute @s jump_strength modifier remove juggernaut:ghost_sneaking_effects
-execute as @a run attribute @s friction_modifier modifier remove juggernaut:windrunner
-execute as @a run attribute @s bounciness modifier remove juggernaut:windrunner
 execute as @a run attribute @s sneaking_speed modifier remove juggernaut:dragon_flight
 execute as @a run attribute @s camera_distance modifier remove juggernaut:chameleon_shapeshift
 execute as @a run attribute @s movement_speed modifier remove juggernaut:phantom_move_spd
@@ -188,7 +185,6 @@ scoreboard players set #scout_count var 0
 scoreboard players set #survivor_count var 0
 scoreboard players set #trickster_count var 0
 scoreboard players set #puppeteer_count var 0
-scoreboard players set #windrunner_count var 0
 scoreboard players set #chameleon_count var 0
 scoreboard players set #dragon_count var 0
 scoreboard players set #fishmonger_count var 0

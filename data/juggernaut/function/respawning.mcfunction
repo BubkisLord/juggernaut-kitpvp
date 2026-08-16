@@ -28,8 +28,6 @@ execute if score @s lives_remaining matches 1.. if entity @s[tag=runner] run tag
 execute if score @s lives_remaining matches 1.. if entity @s[tag=runner] run scoreboard players set @s respawn_time_left 30
 execute if score @s lives_remaining matches 1.. if entity @s[tag=using_teeny_weeny] run attribute @s scale modifier add teeny_weeny -0.25 add_multiplied_base
 execute if score @s lives_remaining matches 1.. if entity @s[tag=using_lightweight] run attribute @s safe_fall_distance modifier add juggernaut:lightweight 9999 add_value
-execute if score @s lives_remaining matches 1.. if entity @s[tag=windrunner] run attribute @s friction_modifier modifier add juggernaut:windrunner -0.9 add_multiplied_total
-execute if score @s lives_remaining matches 1.. if entity @s[tag=windrunner] run attribute @s bounciness modifier add juggernaut:windrunner 0.08 add_value
 execute if score @s lives_remaining matches 1.. if entity @s[tag=using_quickened_stealth] run attribute @s sneaking_speed modifier add juggernaut:quickened_stealth_speed 1.2 add_multiplied_base
 
 tag @s remove has_hunters_mark
@@ -59,7 +57,6 @@ execute if score @s lives_remaining matches ..0 run tag @s remove spirit_walker
 execute if score @s lives_remaining matches ..0 run tag @s remove guide
 execute if score @s lives_remaining matches ..0 run tag @s remove trickster
 execute if score @s lives_remaining matches ..0 run tag @s remove ghost
-execute if score @s lives_remaining matches ..0 run tag @s remove windrunner
 execute if score @s lives_remaining matches ..0 run tag @s remove puppeteer
 execute if score @s lives_remaining matches ..0 run tag @s remove jester
 execute if score @s lives_remaining matches ..0 run tag @s remove beast_tamer

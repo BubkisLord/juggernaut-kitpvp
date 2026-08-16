@@ -219,10 +219,6 @@ scoreboard objectives add picked_kit_trickster dummy "Picked Trickster"
 scoreboard objectives add trickster_wins dummy "Wins with Trickster"
 scoreboard objectives add trickster_losses dummy "Losses with Trickster"
 
-scoreboard objectives add picked_kit_windrunner dummy "Picked Windrunner"
-scoreboard objectives add windrunner_wins dummy "Wins with Windrunner"
-scoreboard objectives add windrunner_losses dummy "Losses with Windrunner"
-
 scoreboard objectives add picked_kit_jester dummy "Picked Jester"
 scoreboard objectives add jester_wins dummy "Wins with Jester"
 scoreboard objectives add jester_losses dummy "Losses with Jester"
