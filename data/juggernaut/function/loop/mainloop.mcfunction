@@ -80,6 +80,7 @@ execute as @a if score @s ability_cooldown2 matches 1.. run scoreboard players o
 execute as @a if score @s ability_cooldown3 matches 1.. run scoreboard players operation @s ability_cooldown3 -= @s cooldown_modifier
 execute as @a if score @s ability_cooldown4 matches 1.. run scoreboard players operation @s ability_cooldown4 -= @s cooldown_modifier
 execute as @a if score @s ability_cooldown5 matches 1.. run scoreboard players operation @s ability_cooldown5 -= @s cooldown_modifier
+execute as @a if score @s ability_cooldown6 matches 1.. run scoreboard players operation @s ability_cooldown6 -= @s cooldown_modifier
 
 # Effect particles
 execute as @a[tag=undetectable] at @s run particle dust{color:[0,0,0],scale:1} ~ ~0.5 ~ 0.3 1 0.3 0 1 force @s
