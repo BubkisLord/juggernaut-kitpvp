@@ -25,6 +25,7 @@ execute if entity @s[tag=timekeeper] run scoreboard players add @s kills_kit_tim
 execute if entity @s[tag=warlock] run scoreboard players add @s kills_kit_warlock 1
 execute if entity @s[tag=witch_doctor] run scoreboard players add @s kills_kit_witch_doctor 1
 execute if entity @s[tag=phantom] run scoreboard players add @s kills_kit_phantom 1
+execute if entity @s[tag=beast_tamer] run scoreboard players add @s kills_kit_beast_tamer 1
 
 execute if entity @s[tag=chameleon] run scoreboard players add #juggernaut_manager kills_kit_chameleon 1
 execute if entity @s[tag=dragon] run scoreboard players add #juggernaut_manager kills_kit_dragon 1
@@ -38,3 +39,4 @@ execute if entity @s[tag=timekeeper] run scoreboard players add #juggernaut_mana
 execute if entity @s[tag=warlock] run scoreboard players add #juggernaut_manager kills_kit_warlock 1
 execute if entity @s[tag=witch_doctor] run scoreboard players add #juggernaut_manager kills_kit_witch_doctor 1
 execute if entity @s[tag=phantom] run scoreboard players add #juggernaut_manager kills_kit_phantom 1
+execute if entity @s[tag=beast_tamer] run scoreboard players add #juggernaut_manager kills_kit_beast_tamer 1
