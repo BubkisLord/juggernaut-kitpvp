@@ -1,0 +1,14 @@
+function juggernaut:signs/juggernaut/beast_tamer
+function juggernaut:signs/juggernaut/chameleon
+function juggernaut:signs/juggernaut/classic_juggernaut
+function juggernaut:signs/juggernaut/dragon
+function juggernaut:signs/juggernaut/fishmonger
+function juggernaut:signs/juggernaut/hunter
+function juggernaut:signs/juggernaut/knight
+function juggernaut:signs/juggernaut/phantom
+function juggernaut:signs/juggernaut/predator
+function juggernaut:signs/juggernaut/spirit_walker
+function juggernaut:signs/juggernaut/timekeeper
+function juggernaut:signs/juggernaut/warlock
+function juggernaut:signs/juggernaut/witch_doctor
+function juggernaut:signs/juggernaut/random

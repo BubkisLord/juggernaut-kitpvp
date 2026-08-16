@@ -1,0 +1,12 @@
+function juggernaut:signs/runner/engineer
+function juggernaut:signs/runner/escapist
+function juggernaut:signs/runner/ghost
+function juggernaut:signs/runner/guide
+function juggernaut:signs/runner/jester
+function juggernaut:signs/runner/medic
+function juggernaut:signs/runner/puppeteer
+function juggernaut:signs/runner/rogue
+function juggernaut:signs/runner/scout
+function juggernaut:signs/runner/survivor
+function juggernaut:signs/runner/trickster
+function juggernaut:signs/runner/random
