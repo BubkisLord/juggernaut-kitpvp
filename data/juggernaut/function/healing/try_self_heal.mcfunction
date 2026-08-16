@@ -25,5 +25,4 @@ execute if score @s self_healing_per_tick matches 1.. if score @s self_healing_d
 
 # Health Boost and Reset
 execute if score @s healing_progress >= @s healing_needed run effect give @s instant_health 1 252 true
-execute if score @s healing_progress >= @s healing_needed run function juggernaut:hooks/player_self_healed
 execute if score @s healing_progress >= @s healing_needed run scoreboard players set @s healing_progress 0
