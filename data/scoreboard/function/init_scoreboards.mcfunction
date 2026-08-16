@@ -182,6 +182,11 @@ scoreboard objectives add kills_kit_phantom dummy "Kills with Phantom"
 scoreboard objectives add phantom_wins dummy "Wins with Phantom"
 scoreboard objectives add phantom_losses dummy "Losses with Phantom"
 
+scoreboard objectives add picked_kit_beast_tamer dummy "Picked Kit - Beast Tamer"
+scoreboard objectives add kills_kit_beast_tamer dummy "Kills with Beast Tamer"
+scoreboard objectives add beast_tamer_wins dummy "Wins with Beast Tamer"
+scoreboard objectives add beast_tamer_losses dummy "Losses with Beast Tamer"
+
 # Runner Kit Statistics
 scoreboard objectives add picked_kit_engineer dummy "Picked Engineer"
 scoreboard objectives add engineer_wins dummy "Wins with Engineer"

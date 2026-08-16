@@ -11,6 +11,7 @@ function juggernaut:update_stats_win {"kit":"timekeeper"}
 function juggernaut:update_stats_win {"kit":"warlock"}
 function juggernaut:update_stats_win {"kit":"witch_doctor"}
 function juggernaut:update_stats_win {"kit":"phantom"}
+function juggernaut:update_stats_win {"kit":"beast_tamer"}
 
 function juggernaut:update_stats_loss {"kit":"engineer"}
 function juggernaut:update_stats_loss {"kit":"escapist"}
