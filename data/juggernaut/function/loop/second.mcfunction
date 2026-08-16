@@ -13,6 +13,8 @@ execute as @a run function juggernaut:effects/check_effects {effect:"risky_busin
 execute as @a run function juggernaut:effects/check_effects {effect:"jesting"}
 execute as @a run function juggernaut:effects/check_effects {effect:"bouncy"}
 execute as @e[tag=beast_tamer_mount] run function juggernaut:effects/check_effects {effect:"fatigued"}
+execute as @e[tag=beast_tamer_mount] run function juggernaut:effects/check_effects {effect:"pouncing"}
+execute as @e[tag=beast_tamer_mount] run function juggernaut:effects/check_effects {effect:"flight_unlocked"}
 
 execute as @a run function juggernaut:attribute_management/check {attribute_name:"movement_speed",modifier_name:"hopeful_sprint"}
 execute as @a run function juggernaut:attribute_management/check {attribute_name:"movement_speed",modifier_name:"rapid_brutality"}
