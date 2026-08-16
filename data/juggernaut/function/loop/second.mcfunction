@@ -109,7 +109,12 @@ execute as @a[tag=using_waiting_game,tag=in_chase] run data modify storage jugge
 execute as @a[tag=using_waiting_game,tag=in_chase] run function juggernaut:attribute_management/apply_modifier with storage juggernaut:waiting_game
 
 # Update domination speed
-execute as @a[tag=juggernaut,tag=using_domination] run function juggernaut:perk_management/perk_functions/set_domination_speed
+scoreboard players set #runner_death_count var 0
+execute as @a[tag=runner] run scoreboard players operation #runner_death_count var += @s game_deaths
+scoreboard players operation @a[tag=using_domination] domination_movement_speed = #runner_death_count var
+scoreboard players operation @a[tag=using_domination] domination_movement_speed *= #2 var
+execute store result storage juggernaut:attribute_management/apply_domination value double 0.01 run scoreboard players get @p[tag=using_domination] domination_movement_speed
+execute as @a[tag=using_domination] run function juggernaut:attribute_management/apply_domination with storage juggernaut:attribute_management/apply_domination
 
 # Remove respawn protection after a few seconds.
 execute as @a[tag=runner,tag=has_respawn_protection] run scoreboard players remove @s respawn_time_left 1

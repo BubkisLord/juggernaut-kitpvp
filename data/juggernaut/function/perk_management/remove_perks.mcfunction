@@ -1,6 +1,6 @@
 scoreboard players set @s perks_enabled 0
 
-clear @s #trim_materials
+clear @s netherite_ingot
 clear @s #decorated_pot_sherds
 
 tag @s remove using_no_caution

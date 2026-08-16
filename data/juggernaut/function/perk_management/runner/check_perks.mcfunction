@@ -1,0 +1,41 @@
+execute if score #juggernaut_customisation random_perks matches 0 if items entity @s container.* minecraft:danger_pottery_sherd run function juggernaut:perk_management/runner/add_perk {perk_id:"sentinel",perk_name:"Sentinel"}
+execute if score #juggernaut_customisation random_perks matches 0 if items entity @s container.* minecraft:heart_pottery_sherd run function juggernaut:perk_management/runner/add_perk {perk_id:"healer",perk_name:"Healer"}
+execute if score #juggernaut_customisation random_perks matches 0 if items entity @s container.* minecraft:heartbreak_pottery_sherd run function juggernaut:perk_management/runner/add_perk {perk_id:"no_caution",perk_name:"No Time for Caution"}
+execute if score #juggernaut_customisation random_perks matches 0 if items entity @s container.* minecraft:scrape_pottery_sherd run function juggernaut:perk_management/runner/add_perk {perk_id:"blood_pact",perk_name:"Blood Pact"}
+execute if score #juggernaut_customisation random_perks matches 0 if items entity @s container.* minecraft:burn_pottery_sherd run function juggernaut:perk_management/runner/add_perk {perk_id:"second_wind",perk_name:"Second Wind"}
+execute if score #juggernaut_customisation random_perks matches 0 if items entity @s container.* minecraft:flow_pottery_sherd run function juggernaut:perk_management/runner/add_perk {perk_id:"quickened_stealth",perk_name:"Quickened Stealth"}
+execute if score #juggernaut_customisation random_perks matches 0 if items entity @s container.* minecraft:brewer_pottery_sherd run function juggernaut:perk_management/runner/add_perk {perk_id:"healthy_preparation",perk_name:"Healthy Preparation"}
+execute if score #juggernaut_customisation random_perks matches 0 if items entity @s container.* minecraft:skull_pottery_sherd run function juggernaut:perk_management/runner/add_perk {perk_id:"undying_ties",perk_name:"Undying Ties"}
+execute if score #juggernaut_customisation random_perks matches 0 if items entity @s container.* minecraft:prize_pottery_sherd run function juggernaut:perk_management/runner/add_perk {perk_id:"unwavering_strength",perk_name:"Unwavering Strength"}
+execute if score #juggernaut_customisation random_perks matches 0 if items entity @s container.* minecraft:friend_pottery_sherd run function juggernaut:perk_management/runner/add_perk {perk_id:"durable",perk_name:"Durable"}
+execute if score #juggernaut_customisation random_perks matches 0 if items entity @s container.* minecraft:blade_pottery_sherd run function juggernaut:perk_management/runner/add_perk {perk_id:"hopeful_sprint",perk_name:"Hopeful Sprint"}
+execute if score #juggernaut_customisation random_perks matches 0 if items entity @s container.* minecraft:plenty_pottery_sherd run function juggernaut:perk_management/runner/add_perk {perk_id:"determination",perk_name:"Determination"}
+execute if score #juggernaut_customisation random_perks matches 0 if items entity @s container.* minecraft:miner_pottery_sherd run function juggernaut:perk_management/runner/add_perk {perk_id:"lightweight",perk_name:"Lightweight"}
+execute if score #juggernaut_customisation random_perks matches 0 if items entity @s container.* minecraft:howl_pottery_sherd run function juggernaut:perk_management/runner/add_perk {perk_id:"teeny_weeny",perk_name:"Teeny Weeny"}
+execute if score #juggernaut_customisation random_perks matches 0 if items entity @s container.* minecraft:explorer_pottery_sherd run function juggernaut:perk_management/runner/add_perk {perk_id:"tailgater",perk_name:"Tailgater"}
+execute if score #juggernaut_customisation random_perks matches 0 if items entity @s container.* minecraft:arms_up_pottery_sherd run function juggernaut:perk_management/runner/add_perk {perk_id:"overclock",perk_name:"Overclock"}
+execute if score #juggernaut_customisation random_perks matches 0 if items entity @s container.* minecraft:shelter_pottery_sherd run function juggernaut:perk_management/runner/add_perk {perk_id:"optimised",perk_name:"Optimised"}
+execute if score #juggernaut_customisation random_perks matches 0 if items entity @s container.* minecraft:sheaf_pottery_sherd run function juggernaut:perk_management/runner/add_perk {perk_id:"any_means",perk_name:"Any Means Necessary"}
+execute if score #juggernaut_customisation random_perks matches 0 if items entity @s container.* minecraft:snort_pottery_sherd run function juggernaut:perk_management/runner/add_perk {perk_id:"forewarned",perk_name:"Forewarned"}
+execute if score #juggernaut_customisation random_perks matches 1 if items entity @s container.* #minecraft:decorated_pot_sherds run playsound block.note_block.didgeridoo ui @s ~ ~ ~ 1.2
+execute if score #juggernaut_customisation random_perks matches 1 if items entity @s container.* #minecraft:decorated_pot_sherds run particle angry_villager ~ ~ ~ 0.3 0.5 0.3 0 10
+execute if score #juggernaut_customisation random_perks matches 1 if items entity @s container.* #minecraft:decorated_pot_sherds run tellraw @s [{"text": "Could not equip perk.\n","color":"white",bold:false},{"text": "Reason:\n","color":"aqua",bold:true},{"text": "Random perks are enforced.","color":"white",bold:false}]
+execute if score #juggernaut_customisation random_perks matches 1 if items entity @s container.* #minecraft:decorated_pot_sherds run function juggernaut:perk_management/runner/give_perks
+execute if score #juggernaut_customisation random_perks matches 1 if items entity @s container.* #minecraft:decorated_pot_sherds run clear @s #decorated_pot_sherds
+
+execute if score #juggernaut_customisation random_perks matches 0 run title @s actionbar [{"score":{"name":"@s",objective:"perks_enabled"}},{"text":"/"},{"score":{"name":"#juggernaut_customisation",objective:"max_perks_equipped"}},{"text":" Perks Equipped."}]
+execute if score #juggernaut_customisation random_perks matches 1 if score @s perk_rerolls < #juggernaut_customisation perk_rerolls run title @s actionbar [{"score":{"name":"@s",objective:"perk_rerolls"}},{"text":"/"},{"score":{"name":"#juggernaut_customisation",objective:"perk_rerolls"}},{"text":" Rerolls Used"}]
+execute if score #juggernaut_customisation random_perks matches 1 if score @s perk_rerolls >= #juggernaut_customisation perk_rerolls run title @s actionbar {"text":"Max Rerolls Used","color":red}
+
+execute if items entity @s container.* end_crystal[item_name={"text": "Reroll Random Perks","color": "red"}] if score #juggernaut_customisation random_perks matches 1 run scoreboard players add @s perk_rerolls 1
+execute if items entity @s container.* end_crystal[item_name={"text": "Reroll Random Perks","color": "red"}] run function juggernaut:perk_management/remove_perks
+execute if items entity @s container.* end_crystal[item_name={"text": "Reroll Random Perks","color": "red"}] run function juggernaut:perk_management/runner/equip_random
+execute if items entity @s container.* end_crystal[item_name={"text": "Reroll Random Perks","color": "red"}] run function juggernaut:perk_management/runner/give_perks
+execute if items entity @s container.* end_crystal[item_name={"text": "Reroll Random Perks","color": "red"}] run clear @s end_crystal[item_name={"text": "Reroll Random Perks","color": "red"}]
+
+execute if items entity @s container.* barrier[item_name={"text":"Reset Perk Selection","color":"red"}] run function juggernaut:perk_management/remove_perks
+execute if items entity @s container.* barrier[item_name={"text":"Reset Perk Selection","color":"red"}] at @s run playsound block.note_block.cow_bell ui @s ~ ~ ~
+execute if items entity @s container.* barrier[item_name={"text":"Reset Perk Selection","color":"red"}] at @s run particle witch ~ ~ ~ 0.3 0.5 0.3 0 100
+execute if items entity @s container.* barrier[item_name={"text":"Reset Perk Selection","color":"red"}] run function juggernaut:perk_management/runner/give_perks
+execute if items entity @s container.* barrier[item_name={"text":"Reset Perk Selection","color":"red"}] run tellraw @a[tag=runner] [{"selector":"@s"},{"text":": ","color":"dark_aqua"},{"text": "Perk selection has been reset.",color:"white"}]
+execute if items entity @s container.* barrier[item_name={"text":"Reset Perk Selection","color":"red"}] run clear @s barrier[item_name={"text":"Reset Perk Selection","color":"red"}]

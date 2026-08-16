@@ -103,17 +103,17 @@ scoreboard players set #juggernaut_manager replenish_decimal 0
 gamerule natural_health_regeneration false
 
 # Juggernaut and Runner Perks
-function juggernaut:perk_management/clear_prev_perks
-execute if score #juggernaut_customisation perks_enabled matches 1 as @a[tag=runner] run function juggernaut:perk_management/give_runner_perks
-execute if score #juggernaut_customisation perks_enabled matches 1 as @a[tag=juggernaut] run function juggernaut:perk_management/give_juggernaut_perks
+function juggernaut:perk_management/reset_ender_chest
+execute if score #juggernaut_customisation perks_enabled matches 1 as @a[tag=runner] run function juggernaut:perk_management/runner/give_perks
+execute if score #juggernaut_customisation perks_enabled matches 1 as @a[tag=juggernaut] run function juggernaut:perk_management/juggernaut/give_perks
 
 tag @a remove saved_skin
 
 # Check if debug mode should be off
 execute if score #juggernaut_customisation debug_mode matches 1 run tellraw @a [{"text": "[","bold": true,"color": "dark_gray"},{"text": "WARNING","bold": true,"color": "yellow"},{"text": "]","bold": true,"color": "dark_gray"},{"text": " Debug mode is enabled. This could cause instability and issues.","color": "yellow",bold:false},{"text": " Click here to disable it.","color": "aqua","click_event": {"action": "run_command","command": "/function disable_debug_mode"},bold:false}]
 
-execute if score #juggernaut_customisation random_perks matches 1 as @a[tag=runner] run function juggernaut:perk_management/equip_random/runner
-execute if score #juggernaut_customisation random_perks matches 1 as @a[tag=juggernaut] run function juggernaut:perk_management/equip_random/juggernaut
+execute if score #juggernaut_customisation random_perks matches 1 as @a[tag=runner] run function juggernaut:perk_management/runner/equip_random
+execute if score #juggernaut_customisation random_perks matches 1 as @a[tag=juggernaut] run function juggernaut:perk_management/juggernaut/equip_random
 
 execute if score #juggernaut_customisation random_kits matches 1 as @a[tag=runner] run function juggernaut:kits/runner/random
 execute if score #juggernaut_customisation random_kits matches 1 as @a[tag=juggernaut] run function juggernaut:kits/juggernaut/random

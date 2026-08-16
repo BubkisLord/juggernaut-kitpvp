@@ -1,4 +1,4 @@
-function juggernaut:perk_management/give_juggernaut_perks
+function juggernaut:perk_management/juggernaut/give_perks
 
 # Deny equipping if perk already equipped
 $execute if entity @s[tag=using_$(perk_id)] run playsound block.note_block.didgeridoo ui @s ~ ~ ~ 1.2
