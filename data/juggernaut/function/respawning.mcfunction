@@ -21,8 +21,6 @@ execute if score @s lives_remaining matches 1.. if entity @s[tag=using_undying_t
 execute if score @s lives_remaining matches 1.. if entity @s[tag=using_undying_ties] if entity @a[tag=undying_ties_target] at @p[tag=undying_ties_target] run tp @s ~ ~ ~
 execute if score @s lives_remaining matches 1.. if entity @s[tag=using_durable] run effect give @s health_boost 9999 1 true
 execute if score @s lives_remaining matches 1.. if entity @s[tag=using_durable] run effect give @s regeneration 2 255 true
-execute if score @s lives_remaining matches 1.. if entity @s[tag=medic] run function juggernaut:kit_replenishes/replenish_medic
-execute if score @s lives_remaining matches 1.. if entity @s[tag=survivor] run function juggernaut:kit_replenishes/replenish_survivor
 execute if score @s lives_remaining matches 1.. if entity @s[tag=runner] run effect give @s invisibility 30 0 true
 execute if score @s lives_remaining matches 1.. if entity @s[tag=runner] run tag @s add has_respawn_protection
 execute if score @s lives_remaining matches 1.. if entity @s[tag=runner] run scoreboard players set @s respawn_time_left 30
