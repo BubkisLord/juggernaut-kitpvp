@@ -3,7 +3,7 @@ execute if score #game_state var matches 10..19 run function juggernaut:loop/mai
 execute if score #game_state var matches 20..29 run function survival:loop/mainloop
 
 # Always run
-execute if entity @a[scores={health=..0}] as @a[scores={health=..0}] run function scoreboard:respawning
+execute if entity @a[scores={health=..0}] as @a[scores={health=..0}] run function minecraft:respawning
 function other:cleanup
 function text:bossbar
 function other:safelobby

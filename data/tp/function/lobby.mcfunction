@@ -1,11 +1,4 @@
-clear @s
-effect clear @s
-effect give @s minecraft:instant_health 1 100 true
-xp set @s 0 points
-xp set @s 0 levels
 tag @s add lobby.player
-tag @s remove autorespawn
-scoreboard players set @s exit_count 0
 
 tp @s 2000 100.06250 0
 playsound minecraft:entity.enderman.teleport master @a 2000 100.06250 0 1.2 1

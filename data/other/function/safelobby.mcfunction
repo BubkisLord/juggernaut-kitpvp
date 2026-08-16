@@ -15,7 +15,7 @@ item replace entity @a[tag=lobby.player,tag=!autorespawn] hotbar.8 with minecraf
 execute as @e[type=item,nbt={Item:{id:"minecraft:globe_banner_pattern"}}] at @s as @p run function stats:preview
 
 #Lobby & Market Teleportation
-execute as @e[type=item,nbt={Item:{id:"minecraft:dark_oak_door"}}] at @s as @p run function tp:exit_arena
+execute as @e[type=item,nbt={Item:{id:"minecraft:dark_oak_door"}}] at @s as @p run function tp:lobby
 
 #Spawnpoint
 execute if score #game_state var matches 0 run spawnpoint @a 2000 100 0
@@ -31,4 +31,4 @@ gamemode spectator @a[tag=spectator]
 
 execute as @a[tag=lobby.player] at @s if score #game_state var matches 0 if block ~ ~-2 ~ orange_shulker_box run function juggernaut:start_pregame
 execute as @a[tag=lobby.player] at @s if score #game_state var matches 0 if block ~ ~-2 ~ cyan_shulker_box run function survival:start
-execute as @a[tag=lobby.player] at @s if block ~ ~-2 ~ purple_shulker_box run function tp:exit_arena
+execute as @a[tag=lobby.player] at @s if block ~ ~-2 ~ purple_shulker_box run function tp:lobby
