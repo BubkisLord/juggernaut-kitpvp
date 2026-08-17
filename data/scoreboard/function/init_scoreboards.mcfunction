@@ -80,6 +80,10 @@ scoreboard objectives add healing_seconds dummy
 scoreboard objectives add undetectable_duration_left dummy
 scoreboard objectives add ts_step dummy
 scoreboard objectives add warning_radius dummy
+scoreboard objectives add juggernaut_count dummy
+scoreboard objectives add crate_count dummy
+scoreboard objectives add teams_mode dummy
+scoreboard objectives add has_legendaries dummy
 
 # Initialise game state variable
 scoreboard players set #game_state var 0
