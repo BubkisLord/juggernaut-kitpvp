@@ -13,12 +13,12 @@ execute at @e[type=armor_stand,tag=respawn_point] as @a[distance=..10] at @r[tag
 execute if score #game_state var matches 11 run function juggernaut:loop/check_in_chase
 execute if score #game_state var matches 11 run function juggernaut:replenishment_management/replenishment_stations
 # While juggernaut is not released, disallow all interactions with replenishment stations but allow for runners to see them.
-execute if score #game_state var matches 12 as @e[type=armor_stand,tag=replenishment.station] at @s run particle minecraft:end_rod ~ ~2.5 ~ 0.2 60 0.2 0 60 force @a[tag=runner]
+execute if score #game_state var matches 12 as @e[type=armor_stand,tag=replenishment.station] at @s run particle minecraft:end_rod ~ ~2.5 ~ 0.2 60 0.2 0 60 normal @a[tag=runner]
 
 # If debug mode is on, display the arena spawn point to all players.
-execute if score #juggernaut_customisation debug_mode matches 1 as @e[type=armor_stand,tag=arena.spawn] at @s run particle dust_color_transition{from_color:[0.0f, 1.0f, 1.0f],to_color:[0.0f, 0.0f, 1.0f],scale:2} ~ ~ ~ 0.1 100 0.1 0 100 force @a
+execute if score #juggernaut_customisation debug_mode matches 1 as @e[type=armor_stand,tag=arena.spawn] at @s run particle dust_color_transition{from_color:[0.0f, 1.0f, 1.0f],to_color:[0.0f, 0.0f, 1.0f],scale:2} ~ ~ ~ 0.1 100 0.1 0 100 normal @a
 
-execute if score #juggernaut_customisation debug_mode matches 1 as @e[type=armor_stand,tag=replenishment.station] at @s run particle dust_color_transition{from_color:[1.0f, 0.0f, 1.0f],to_color:[1.0f, 0.0f, 0.0f],scale:1} ~ ~0.5 ~ 0.1 0.1 0.1 0 10 force @a
+execute if score #juggernaut_customisation debug_mode matches 1 as @e[type=armor_stand,tag=replenishment.station] at @s run particle dust_color_transition{from_color:[1.0f, 0.0f, 1.0f],to_color:[1.0f, 0.0f, 0.0f],scale:1} ~ ~0.5 ~ 0.1 0.1 0.1 0 10 normal @a
 
 execute if score #game_state var matches 10 run function juggernaut:loop/display_lobby_particles
 
