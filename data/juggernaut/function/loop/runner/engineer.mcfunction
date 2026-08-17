@@ -3,8 +3,7 @@
 execute at @e[type=armor_stand,tag=engineer_tower] run execute as @a[tag=juggernaut,distance=..3] run particle totem_of_undying ~ ~ ~ 0.25 1 0.25 0 20 force
 
 # Skeleton Turret Death Logic
-execute as @e[type=skeleton,tag=skeleton_turret] at @s unless entity @e[type=armor_stand,tag=turret,distance=..10] run kill @s
-execute as @e[type=skeleton,tag=skeleton_turret] at @s run tp @s @n[type=armor_stand,tag=turret]
+execute as @e[type=skeleton,tag=skeleton_turret] at @s unless entity @e[type=armor_stand,tag=turret,distance=..2] run kill @s
 
 # Revealing Tower Logic
 execute as @e[type=armor_stand,tag=revealing_tower] unless entity @e[type=armor_stand,tag=revealing_tower_particle_emitter] run summon armor_stand ~ ~ ~ {Invisible:true,Invulnerable:true,CustomNameVisible:false,NoGravity:true,Small:true,Tags:["revealing_tower_particle_emitter","kill_on_end_game"]}
@@ -54,7 +53,19 @@ function juggernaut:ability_management/check_ability {\
     item_name:{"text": "Spawn Turret","color": "gray"},\
     description:[{"text": "Summon a turret that shoots the Juggernaut.","color": "gray"},{"text": "The Juggernaut may stand near it to dispel/remove it.","color": "gray"},{"text": "Cooldown: 1m 30s","color": "dark_gray"}],\
     ability_id:"turret_tower",\
-    cooldown:90,\
+    cooldown:45,\
     hotbar_slot:"hotbar.2",\
     cooldown_var:"ability_cooldown2",\
+}
+
+# Spawn Decoy (Active)
+function juggernaut:ability_management/check_ability {\
+    player_tag:"engineer",\
+    item_model:"minecraft:blue_dye",\
+    item_name:{"text": "Spawn Decoy","color": "#5f78d4"},\
+    description:[{"text": "Summon a decoy replenishment station.","color": "gray"},{"text": "The Juggernaut may stand near it to dispel/remove it.","color": "gray"},{"text": "Cooldown: 45s","color": "dark_gray"}],\
+    ability_id:"decoy",\
+    cooldown:45,\
+    hotbar_slot:"hotbar.3",\
+    cooldown_var:"ability_cooldown3",\
 }

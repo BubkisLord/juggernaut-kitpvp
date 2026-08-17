@@ -35,6 +35,9 @@ execute as @e[type=armor_stand,tag=replenishment.station] at @s if score @s repl
 execute as @e[type=armor_stand,tag=replenishment_tower] at @s as @a[tag=runner,distance=..3] unless entity @n[type=armor_stand,tag=replenishment.station,distance=..3] unless entity @a[tag=juggernaut,distance=..18,tag=!shapeshifting] at @n[type=armor_stand,tag=replenishment.station,tag=highest_station] run function juggernaut:replenishment_management/try_replenish
 execute as @e[type=armor_stand,tag=replenishment_tower] at @s run particle minecraft:totem_of_undying ~ ~2.5 ~ 0.2 60 0.2 0 120 force @a[tag=juggernaut]
 
+# Decoy tower particles
+execute as @e[type=armor_stand,tag=decoy_tower] at @s run particle minecraft:totem_of_undying ~ ~2.5 ~ 0.2 60 0.2 0 120 force @a[tag=juggernaut]
+
 # Display shapeshifter's fake replenishment particles to runners
 execute as @e[type=armor_stand,tag=replenishment.station] at @s if score #game_state var matches 11 unless entity @e[type=armor_stand,tag=banishment_glyph,distance=..12] unless entity @a[tag=juggernaut,limit=1,sort=nearest,distance=0..12,tag=!shapeshifting] as @a[tag=shapeshifting,distance=..3] at @s run particle end_rod ~ ~ ~ 0.5 1 0.5 0.00001 1 force
 

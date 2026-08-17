@@ -15,7 +15,7 @@ execute if entity @s[tag=using_tailgater,tag=in_chase] as @p[tag=juggernaut,tag=
 tag @a remove tailgate_target
 tag @a remove closest_chaser
 
-execute at @n[type=armor_stand,tag=replenishment_tower] unless entity @n[type=armor_stand,tag=replenishment.station,distance=..3] as @s run scoreboard players add @s replenish_modifier 20
+execute at @n[type=armor_stand,tag=replenishment_tower,distance=..3] unless entity @e[type=armor_stand,tag=replenishment.station,distance=..3] run scoreboard players add @s replenishment_modifier 20
 
 execute if entity @s[tag=jester,tag=jesting] run scoreboard players add @s replenishment_modifier 50
 
