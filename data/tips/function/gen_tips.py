@@ -214,6 +214,11 @@ TIPS = [
     "Phantom's Haunt teleport executes 3x faster when you're Undetectable.",
     "Hunter sees particles around you when marked, countering invisibility!",
     "Chameleon's swap ability gives the target immunity to damage for some time.",
+    "Holding sprint on Beast Tamer's blaze will cause it to fall faster!",
+    "Garibaldi's Ram can be used to keep up with a Runner while fatigued!",
+    "Beast Tamer's mount Dario is excellent for getting across the map in the river.",
+    "Garibaldi moves extremely slowly when touching water.",
+    "Some perks, such as Fury, will have effects on Beast Tamer's mounts!",
 ]
 
 def build_components(tip):
