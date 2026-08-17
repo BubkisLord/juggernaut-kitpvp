@@ -1,0 +1,3 @@
+execute anchored eyes if block ^ ^ ^2 #juggernaut:raycast_permeable if block ^ ^1 ^2 #juggernaut:raycast_permeable run tp @s ^ ^ ^2
+execute anchored eyes unless block ^ ^ ^2 #juggernaut:raycast_permeable if block ^ ^ ^3 #juggernaut:raycast_permeable if block ^ ^1 ^3 #juggernaut:raycast_permeable run tp @s ^ ^ ^3
+execute anchored eyes unless block ^ ^ ^2 #juggernaut:raycast_permeable unless block ^ ^ ^3 #juggernaut:raycast_permeable if block ^ ^ ^4 #juggernaut:raycast_permeable if block ^ ^1 ^4 #juggernaut:raycast_permeable run tp @s ^ ^ ^4

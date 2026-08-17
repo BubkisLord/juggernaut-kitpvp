@@ -21,3 +21,15 @@ function juggernaut:ability_management/check_ability {\
     hotbar_slot:"hotbar.0",\
     cooldown_var:"ability_cooldown0",\
 }
+
+# Phase (Active)
+function juggernaut:ability_management/check_ability {\
+    player_tag:"ghost",\
+    item_model:"minecraft:phantom_membrane",\
+    item_name:{"text": "Phase","color": "gray"},\
+    description:[{"text": "Teleport through a wall with a maximum of 3 blocks thickness.","color": "gray"},{"text": "Cooldown: 30s","color": "dark_gray"}],\
+    ability_id:"phase",\
+    cooldown:30,\
+    hotbar_slot:"hotbar.1",\
+    cooldown_var:"ability_cooldown1",\
+}
