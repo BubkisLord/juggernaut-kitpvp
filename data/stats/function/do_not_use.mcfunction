@@ -10,6 +10,7 @@ function stats:reset_kit {"kit":"timekeeper"}
 function stats:reset_kit {"kit":"warlock"}
 function stats:reset_kit {"kit":"witch_doctor"}
 function stats:reset_kit {"kit":"phantom"}
+function stats:reset_kit {"kit":"beast_tamer"}
 
 function stats:reset_kit {"kit":"engineer"}
 function stats:reset_kit {"kit":"escapist"}
