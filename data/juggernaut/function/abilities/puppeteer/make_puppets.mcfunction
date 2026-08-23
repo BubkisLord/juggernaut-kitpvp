@@ -20,20 +20,6 @@ summon mannequin ~ ~ ~ {Tags:["puppeteer_puppet","puppet_s3","kill_on_end_game",
 summon mannequin ~ ~ ~ {Tags:["puppeteer_puppet","puppet_s4","kill_on_end_game","pp_new_puppet"],pose:"standing",Health:2f,attributes:[{id:"max_health",base:2}]}
 summon mannequin ~ ~ ~ {Tags:["puppeteer_puppet","puppet_s5","kill_on_end_game","pp_new_puppet"],pose:"standing",Health:2f,attributes:[{id:"max_health",base:2}]}
 
-summon text_display ~ ~ ~ {Tags:["puppeteer_name_tag","puppet_s0","kill_on_end_game","pp_new_puppet"],teleport_duration:3,billboard:"center",see_through:true}
-summon text_display ~ ~ ~ {Tags:["puppeteer_name_tag","puppet_s1","kill_on_end_game","pp_new_puppet"],teleport_duration:3,billboard:"center",see_through:true}
-summon text_display ~ ~ ~ {Tags:["puppeteer_name_tag","puppet_s2","kill_on_end_game","pp_new_puppet"],teleport_duration:3,billboard:"center",see_through:true}
-summon text_display ~ ~ ~ {Tags:["puppeteer_name_tag","puppet_s3","kill_on_end_game","pp_new_puppet"],teleport_duration:3,billboard:"center",see_through:true}
-summon text_display ~ ~ ~ {Tags:["puppeteer_name_tag","puppet_s4","kill_on_end_game","pp_new_puppet"],teleport_duration:3,billboard:"center",see_through:true}
-summon text_display ~ ~ ~ {Tags:["puppeteer_name_tag","puppet_s5","kill_on_end_game","pp_new_puppet"],teleport_duration:3,billboard:"center",see_through:true}
-
-summon text_display ~ ~ ~ {Tags:["puppeteer_health_tag","puppet_s0","kill_on_end_game","pp_new_puppet"],teleport_duration:3,billboard:"center",view_range:0.02,see_through:false}
-summon text_display ~ ~ ~ {Tags:["puppeteer_health_tag","puppet_s1","kill_on_end_game","pp_new_puppet"],teleport_duration:3,billboard:"center",view_range:0.02,see_through:false}
-summon text_display ~ ~ ~ {Tags:["puppeteer_health_tag","puppet_s2","kill_on_end_game","pp_new_puppet"],teleport_duration:3,billboard:"center",view_range:0.02,see_through:false}
-summon text_display ~ ~ ~ {Tags:["puppeteer_health_tag","puppet_s3","kill_on_end_game","pp_new_puppet"],teleport_duration:3,billboard:"center",view_range:0.02,see_through:false}
-summon text_display ~ ~ ~ {Tags:["puppeteer_health_tag","puppet_s4","kill_on_end_game","pp_new_puppet"],teleport_duration:3,billboard:"center",view_range:0.02,see_through:false}
-summon text_display ~ ~ ~ {Tags:["puppeteer_health_tag","puppet_s5","kill_on_end_game","pp_new_puppet"],teleport_duration:3,billboard:"center",view_range:0.02,see_through:false}
-
 data modify storage juggernaut:puppeteer owner_uuid set from entity @s UUID
 scoreboard players operation @e[type=mannequin,tag=pp_new_puppet] puppet_id = @s puppet_id
 scoreboard players operation @e[type=text_display,tag=pp_new_puppet] puppet_id = @s puppet_id

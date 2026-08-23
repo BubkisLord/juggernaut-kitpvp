@@ -18,6 +18,7 @@ execute as @e[type=armor_stand,tag=replenishment.station] run data modify entity
 execute as @a run attribute @s name_tag_distance modifier remove juggernaut:name_tag_distance
 execute as @a run attribute @s waypoint_receive_range base reset
 execute as @a run attribute @s waypoint_transmit_range base reset
+execute as @a run attribute @s name_tag_distance base reset
 
 spawnpoint @a 2000 100 0
 gamerule show_death_messages false
