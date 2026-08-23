@@ -1,5 +1,5 @@
 kill @e[type=armor_stand,tag=malevolent_aura]
-execute at @p[tag=warlock] run summon armor_stand ~ ~1.5 ~ {NoGravity:true,Invulnerable:true,Invisible:true,CustomName:{"text": "Malevolent Aura","color": "dark_red","bold": true},Marker:true,CustomNameVisible:true,Tags:["malevolent_aura","warlock_armor_stand"]}
+execute at @p[tag=warlock] run summon armor_stand ~ ~1 ~ {NoGravity:false,Invulnerable:true,Invisible:true,CustomName:{"text": "Malevolent Aura","color": "dark_red","bold": true},Marker:false,CustomNameVisible:true,Tags:["malevolent_aura","warlock_armor_stand"]}
 execute at @p[tag=warlock] run summon armor_stand ~ ~0.5 ~ {NoGravity:true,Marker:true,Invulnerable:true,Invisible:true,Tags:["malevolent_aura_emitter","kill_on_end_game"]}
 execute at @p[tag=warlock] run scoreboard players set @n[type=armor_stand,tag=malevolent_aura] total_dispelling_needed 30
 bossbar add warlock:malevolent_aura "Malevolent Aura"

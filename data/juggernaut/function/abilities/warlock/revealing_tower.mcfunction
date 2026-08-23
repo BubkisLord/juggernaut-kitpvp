@@ -1,5 +1,5 @@
 kill @e[type=armor_stand,tag=warlock_revealing_tower]
-summon armor_stand ~ ~1.5 ~ {Invisible:true,Invulnerable:true,CustomName:{"text": "Revealing Tower","bold": true,"color": "gold"},Marker:true,CustomNameVisible:false,Small:true,NoGravity:true,Tags:["warlock_revealing_tower","warlock_armor_stand","kill_on_end_game"]}
+summon armor_stand ~ ~1 ~ {Invisible:true,Invulnerable:true,CustomName:{"text": "Revealing Tower","bold": true,"color": "gold"},Marker:false,CustomNameVisible:false,Small:true,NoGravity:false,Tags:["warlock_revealing_tower","warlock_armor_stand","kill_on_end_game"]}
 summon armor_stand ~ ~0.5 ~ {NoGravity:true,Marker:true,Invulnerable:true,Invisible:true,Tags:["warlock_revealing_tower_emitter","kill_on_end_game"]}
 # Duration
 scoreboard players set @n[type=armor_stand,tag=warlock_revealing_tower] var 60
