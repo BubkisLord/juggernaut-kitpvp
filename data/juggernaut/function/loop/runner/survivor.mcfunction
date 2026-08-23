@@ -1,15 +1,6 @@
-execute as @a[tag=survivor] run function juggernaut:ability_management/check_ability {\
-    player_tag:"survivor",\
-    item_model:"minecraft:snowball",\
-    item_name:{"text":"Ice Bomb","color":"#A4D1EA"},\
-    description:[\
-                {"text": "Throw at a Juggernaut to freeze them!","color": "gray"},\
-                {"text":"Cooldown: 45s","color":"dark_gray"}],\
-    ability_id:"snowball",\
-    cooldown:45,\
-    hotbar_slot:"hotbar.0",\
-    cooldown_var:"ability_cooldown0",\
-}
+execute as @a[tag=survivor,scores={ability_cooldown0=..0},nbt=!{Inventory:[{id:"minecraft:snowball"}]}] run item replace entity @s hotbar.0 with snowball[item_name={"text":"Ice Bomb","color":"#a4d1ea"},lore=[{"text": "Throw at a Juggernaut to freeze them!","color": "gray"},{"text":"Cooldown: 45s","color":"dark_gray"}]]
+execute as @a[tag=survivor,nbt={Inventory:[{id:"minecraft:snowball"}]}] run scoreboard players set @s ability_cooldown0 90000
+execute as @a[tag=survivor,scores={ability_cooldown0=1..},nbt=!{Inventory:[{id:"minecraft:snowball"}]}] run item replace entity @s hotbar.0 with barrier[item_name={"text":"Ice Bomb","color":"#a4d1ea"},lore=[{"text": "Throw at a Juggernaut to freeze them!","color": "gray"},{"text":"Cooldown: 45s","color":"dark_gray"}]]
 
 execute as @a[tag=survivor] run function juggernaut:ability_management/check_ability {\
     player_tag:"survivor",\
