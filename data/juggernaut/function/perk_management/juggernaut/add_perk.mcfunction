@@ -7,6 +7,13 @@ $execute if entity @s[tag=using_$(perk_id)] run clear @s #trim_materials
 $execute if entity @s[tag=using_$(perk_id)] run tellraw @s [{"text": "Could not equip ","color":"white",bold:false},{"text": "$(perk_name)","color":"red",bold:true},{"text": " Perk.\n","color":"white",bold:false},{"text": "Reason:\n",bold:true},{"text": "You have already equipped this perk.","color":"white",bold:false}]
 $execute if entity @s[tag=using_$(perk_id)] run return fail
 
+# Deny equipping if perks are completely off
+execute if score #juggernaut_customisation max_perks_equipped matches 0 at @s run playsound block.note_block.didgeridoo ui @s ~ ~ ~ 1.2
+execute if score #juggernaut_customisation max_perks_equipped matches 0 at @s run particle angry_villager ~ ~ ~ 0.3 0.5 0.3 0 10
+execute if score #juggernaut_customisation max_perks_equipped matches 0 at @s run clear @s #trim_materials
+$execute if score #juggernaut_customisation max_perks_equipped matches 0 at @s run tellraw @s [{"text": "Could not equip ","color":"white",bold:false},{"text": "$(perk_name)","color":"red",bold:true},{"text": " Perk.\n","color":"white",bold:false},{"text": "Reason:\n","color":"red",bold:true},{"text": "Perks are not enabled.","color":"white",bold:false}]
+execute if score #juggernaut_customisation max_perks_equipped matches 0 run return fail
+
 # Deny equipping if already at max perks
 execute if score @s perks_enabled >= #1 var at @s run playsound block.note_block.didgeridoo ui @s ~ ~ ~ 1.2
 execute if score @s perks_enabled >= #1 var at @s run particle angry_villager ~ ~ ~ 0.3 0.5 0.3 0 10
