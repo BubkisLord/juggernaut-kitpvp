@@ -29,7 +29,7 @@ function juggernaut:ability_management/check_ability {\
     item_name:{"text": "Phase","color": "gray"},\
     description:[{"text": "Teleport through a wall with a maximum of 3 blocks thickness.","color": "gray"},{"text": "Cooldown: 30s","color": "dark_gray"}],\
     ability_id:"phase",\
-    cooldown:30,\
+    cooldown:25,\
     hotbar_slot:"hotbar.1",\
     cooldown_var:"ability_cooldown1",\
 }
