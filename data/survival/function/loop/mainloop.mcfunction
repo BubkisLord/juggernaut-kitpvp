@@ -1,6 +1,3 @@
-# Main Loop
-execute at @e[type=armor_stand,tag=respawn_point] if entity @a[distance=..10] as @a[distance=..10] run tp @s @e[type=armor_stand,tag=arena.spawn,limit=1,sort=random]
-
 # Enforce Grace Period
 execute if score #grace_period var > #0 var run effect give @a weakness 1 255 true
 execute if score #grace_period var > #0 var run effect give @a resistance 1 255 true
