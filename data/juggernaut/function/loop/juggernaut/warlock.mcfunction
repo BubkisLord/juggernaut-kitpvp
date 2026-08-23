@@ -21,7 +21,7 @@ execute at @e[type=armor_stand,tag=malevolent_aura] run execute as @a[tag=jugger
 execute if entity @e[type=armor_stand,tag=warlock_armor_stand] run function juggernaut:abilities/warlock/warlock_towers
 
 # Warlock motion trail
-execute unless entity @e[type=armor_stand,tag=warlock_aura_manager,tag=kill_on_end_game] run summon area_effect_cloud ~ ~ ~ {Tags:["warlock_aura_manager","kill_on_end_game"],NoGravity:true,custom_particle:{type:dust,color:12590108,scale:0.8}}
+execute unless entity @e[type=area_effect_cloud,tag=warlock_aura_manager,tag=kill_on_end_game,nbt={Age:1}] run summon area_effect_cloud ~ ~ ~ {Tags:["warlock_aura_manager","kill_on_end_game"],NoGravity:true,custom_particle:{type:dust,color:12590108,scale:0.8},Radius:0.3,Duration:20}
 
 function juggernaut:ability_management/check_ability {\
     player_tag:"warlock",\
