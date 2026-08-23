@@ -14,7 +14,7 @@ execute if entity @s[tag=puppeteer] as @e[type=mannequin,tag=puppeteer_mannequin
 execute if entity @s[tag=puppeteer] as @e[type=mannequin,tag=puppeteer_puppet] if score @s puppet_id = #pp_link var run kill @s
 execute if entity @s[tag=puppeteer] as @e[type=marker,tag=puppet_center] if score @s puppet_id = #pp_link var run kill @s
 
-execute if score @s lives_remaining matches 1.. run spawnpoint @s 0 101 0
+execute at @e[type=armor_stand,tag=arena.spawn,limit=1,sort=random] run spawnpoint @s ~ ~ ~
 execute if score @s lives_remaining matches 1.. if entity @s[tag=using_undying_ties] run tag @a remove undying_ties_target
 execute if score @s lives_remaining matches 1.. if entity @s[tag=using_undying_ties] as @r[tag=runner,scores={health=1..}] run tag @s add undying_ties_target
 execute if score @s lives_remaining matches 1.. if entity @s[tag=using_undying_ties] if entity @a[tag=undying_ties_target] at @p[tag=undying_ties_target] run spawnpoint @s ~ ~ ~
@@ -36,28 +36,6 @@ execute if score @s lives_remaining matches ..0 run tag @s remove has_jug_kit
 execute if score @s lives_remaining matches ..0 run tag @s remove juggernaut
 execute if score @s lives_remaining matches ..0 run tag @s remove runner
 execute if score @s lives_remaining matches ..0 run tag @s remove spectator
-execute if score @s lives_remaining matches ..0 run tag @s remove predator
-execute if score @s lives_remaining matches ..0 run tag @s remove witch_doctor
-execute if score @s lives_remaining matches ..0 run tag @s remove medic
-execute if score @s lives_remaining matches ..0 run tag @s remove survivor
-execute if score @s lives_remaining matches ..0 run tag @s remove escapist
-execute if score @s lives_remaining matches ..0 run tag @s remove scout
-execute if score @s lives_remaining matches ..0 run tag @s remove engineer
-execute if score @s lives_remaining matches ..0 run tag @s remove witch_doctor
-execute if score @s lives_remaining matches ..0 run tag @s remove warlock
-execute if score @s lives_remaining matches ..0 run tag @s remove hunter
-execute if score @s lives_remaining matches ..0 run tag @s remove is_hunting
-execute if score @s lives_remaining matches ..0 run tag @s remove has_hunters_mark
-execute if score @s lives_remaining matches ..0 run tag @s remove dragon
-execute if score @s lives_remaining matches ..0 run tag @s remove is_floating
-execute if score @s lives_remaining matches ..0 run tag @s remove blinker
-execute if score @s lives_remaining matches ..0 run tag @s remove spirit_walker
-execute if score @s lives_remaining matches ..0 run tag @s remove guide
-execute if score @s lives_remaining matches ..0 run tag @s remove trickster
-execute if score @s lives_remaining matches ..0 run tag @s remove ghost
-execute if score @s lives_remaining matches ..0 run tag @s remove puppeteer
-execute if score @s lives_remaining matches ..0 run tag @s remove jester
-execute if score @s lives_remaining matches ..0 run tag @s remove beast_tamer
 execute if score @s lives_remaining matches ..0 run tag @s remove saved_skin
 
 execute if entity @s[tag=runner] if score @s lives_remaining matches ..0 run team join runner
@@ -65,6 +43,4 @@ execute if entity @s[tag=runner] if score @s lives_remaining matches ..0 run tea
 execute if score @s lives_remaining matches ..0 run attribute @s max_health base set 20
 execute if score @s lives_remaining matches ..0 run attribute @s scale base set 1
 execute if score @s lives_remaining matches ..0 run attribute @s gravity base set 0.08
-execute if score @s lives_remaining matches ..0 run spawnpoint @s 2000 100 0 ~ ~
-execute if score @s lives_remaining matches ..0 run tag @s add lobby.player
-execute if score @s lives_remaining matches ..0 run clear @s
+execute if score @s lives_remaining matches ..0 run function juggernaut:spectate
