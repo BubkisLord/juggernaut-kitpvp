@@ -2,7 +2,7 @@
 # Only one mannequin at a time - guarded by the has_mannequin tag in the loop registration.
 
 # Summon the mannequin. It is a stationary decoy with lots of health that can still be damaged.
-summon mannequin ~ ~ ~ {Tags:["puppeteer_mannequin","kill_on_end_game","pp_new_mannequin"],pose:"standing",Health:30f,attributes:[{id:"max_health",base:30}],Rotation:[0f,0f]}
+summon mannequin ~ ~ ~ {Tags:["puppeteer_mannequin","runner","kill_on_end_game","pp_new_mannequin"],pose:"standing",Health:30f,attributes:[{id:"max_health",base:30}],Rotation:[0f,0f]}
 data modify entity @n[type=mannequin,tag=pp_new_mannequin] Rotation set from entity @s Rotation
 execute if entity @s[tag=using_any_means] run tag @n[type=mannequin,tag=pp_new_mannequin] add using_any_means
 execute if entity @s[tag=using_no_caution] run tag @n[type=mannequin,tag=pp_new_mannequin] add using_no_caution
