@@ -8,10 +8,9 @@ effect give @s saturation infinite 255 true
 
 # Puppeteer: dying clears their mannequin and puppets so nothing lingers or re-triggers Bound Soul.
 execute if entity @s[tag=puppeteer] run scoreboard players operation #pp_link var = @s puppet_id
-execute if entity @s[tag=puppeteer] run tag @s remove has_mannequin
 execute if entity @s[tag=puppeteer] run tag @s remove has_puppets
-execute if entity @s[tag=puppeteer] as @e[type=mannequin,tag=puppeteer_mannequin] if score @s puppet_id = #pp_link var run kill @s
 execute if entity @s[tag=puppeteer] as @e[type=mannequin,tag=puppeteer_puppet] if score @s puppet_id = #pp_link var run kill @s
+execute if entity @s[tag=puppeteer] if score @s lives_remaining matches ..0 as @e[type=mannequin,tag=puppeteer_mannequin] if score @s puppet_id = #pp_link var run kill @s
 execute if entity @s[tag=puppeteer] as @e[type=marker,tag=puppet_center] if score @s puppet_id = #pp_link var run kill @s
 
 execute at @e[type=armor_stand,tag=arena.spawn,limit=1,sort=random] run spawnpoint @s ~ ~ ~
