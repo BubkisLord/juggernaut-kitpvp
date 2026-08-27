@@ -3,6 +3,12 @@
 # immediately runs off that way, while the caster is flung out along a random heading too. Because
 # every figure - puppets and caster alike - erupts from the same point on the same tick, there is no
 # swap for the juggernaut to watch and no way to tell which runner is the real one.
+# Self-heal the objectives this ability needs. init_scoreboards is only ever run by hand, so
+# without these a freshly reloaded pack silently no-ops every score below - which reads in game as
+# puppets that run and climb but never jump.
+scoreboard objectives add puppet_hop dummy
+scoreboard objectives add puppet_count dummy
+
 scoreboard players operation #pp_link var = @s puppet_id
 
 # Clear any pre-existing puppets belonging to this owner.
@@ -28,7 +34,7 @@ execute as @e[type=mannequin,tag=pp_new_puppet] run function juggernaut:abilitie
 
 # Stagger where each puppet starts in its hop cycle, otherwise the whole crowd's first jump lands on
 # the same tick and reads instantly as scripted.
-execute as @e[type=mannequin,tag=pp_new_puppet] store result score @s puppet_hop run random value -12..0
+execute as @e[type=mannequin,tag=pp_new_puppet] store result score @s puppet_hop run random value -14..0
 
 tag @e[type=mannequin,tag=pp_new_puppet] remove pp_new_puppet
 
