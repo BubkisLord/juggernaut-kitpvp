@@ -32,8 +32,9 @@ scoreboard players operation @e[type=mannequin,tag=pp_new_puppet] puppet_id = @s
 execute as @e[type=mannequin,tag=pp_new_puppet] run data modify entity @s profile.id set from storage juggernaut:puppeteer owner_uuid
 execute as @e[type=mannequin,tag=pp_new_puppet] run function juggernaut:abilities/puppeteer/update_scale with storage juggernaut:puppeteer
 
-# Stagger where each puppet starts in its hop cycle, otherwise the whole crowd's first jump lands on
-# the same tick and reads instantly as scripted.
+# Stagger where each puppet starts in its jump cycle. The cycle runs unbroken from here on, so this
+# one roll is what sets each puppet's phase for good - without it the whole crowd would take off and
+# land in perfect unison, which reads as scripted the moment anyone watches them for a second.
 execute as @e[type=mannequin,tag=pp_new_puppet] store result score @s puppet_hop run random value -14..0
 
 tag @e[type=mannequin,tag=pp_new_puppet] remove pp_new_puppet
