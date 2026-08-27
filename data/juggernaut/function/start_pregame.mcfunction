@@ -1,3 +1,5 @@
+execute unless score #game_state var matches 0 run return fail
+
 #------------------------------------- RUNNER COUNT MAXIMUM -------------------------------------------------
 scoreboard players set #juggernaut_manager runner_count 0
 execute as @a[scores={health=1..}] run scoreboard players add #juggernaut_manager runner_count 1

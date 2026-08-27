@@ -1,3 +1,5 @@
+execute unless score #game_state var matches 0 run return fail
+
 # Reset player stats
 scoreboard players set @a lives 1
 scoreboard players set @a lives_remaining 1
