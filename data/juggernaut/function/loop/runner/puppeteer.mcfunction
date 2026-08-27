@@ -49,7 +49,7 @@ execute unless entity @s[tag=has_puppets] run function juggernaut:ability_manage
     player_tag:"puppeteer",\
     item_model:"minecraft:cobweb",\
     item_name:{"text": "Make Puppets","color": "#cfc7ba"},\
-    description:[{"text": "Create 5 identical copies of you around you.","color": "gray"},{"text": "Cooldown: 60s","color": "dark_gray"}],\
+    description:[{"text": "Scatter a crowd of copies of you.","color": "gray"},{"text": "They sprint off in all directions,","color": "gray"},{"text": "and you are flung out with them.","color": "gray"},{"text": "Cooldown: 60s","color": "dark_gray"}],\
     ability_id:"make_puppets",\
     cooldown:60,\
     hotbar_slot:"hotbar.2",\
@@ -73,7 +73,7 @@ execute if entity @s[tag=has_mannequin] run function juggernaut:abilities/puppet
 # The mannequin passively replenishes the nearest station at 60% efficiency.
 execute if entity @s[tag=has_mannequin] run function juggernaut:abilities/puppeteer/mannequin_replenish
 
-# Puppet ring: tick down its lifetime, keep the formation locked, and clean up when it ends.
+# Puppets: tick down their lifetime, run them onward, and clean up when it ends.
 execute if entity @s[tag=has_puppets] run scoreboard players remove @s puppet_time 1
 execute if entity @s[tag=has_puppets] if score @s puppet_time matches 1.. run function juggernaut:abilities/puppeteer/move_puppets
 execute if entity @s[tag=has_puppets] if score @s puppet_time matches ..0 run function juggernaut:abilities/puppeteer/end_puppets
