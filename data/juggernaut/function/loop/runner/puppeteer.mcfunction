@@ -42,7 +42,7 @@ execute if entity @s[tag=has_mannequin] run function juggernaut:ability_manageme
     cooldown_var:"ability_cooldown1",\
 }
 
-execute if entity @s[tag=!has_mannequin] run item replace entity @s hotbar.1 with brick[item_name=[{"text": "Swap","color": "#cfc7ba"},{"text": " | ","color": "dark_gray","bold": true},{"text": "NOT AVAILABLE","color": "red","bold": true}],lore=[{"text": "Cannot swap without a mannequin.","color": "gray"},{"text": "Cooldown: 1s","color": "dark_gray"}]]
+execute if entity @s[tag=!has_mannequin,tag=!spectator] run item replace entity @s hotbar.1 with brick[item_name=[{"text": "Swap","color": "#cfc7ba"},{"text": " | ","color": "dark_gray","bold": true},{"text": "NOT AVAILABLE","color": "red","bold": true}],lore=[{"text": "Cannot swap without a mannequin.","color": "gray"},{"text": "Cooldown: 1s","color": "dark_gray"}]]
 
 # Slot 2: Make Puppets.
 execute unless entity @s[tag=has_puppets] run function juggernaut:ability_management/check_ability {\
