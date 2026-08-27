@@ -5,7 +5,7 @@ tag @e[type=mannequin,tag=puppeteer_mannequin] remove pp_alive
 execute as @e[type=mannequin,tag=puppeteer_mannequin] if score @s puppet_id = #pp_link var run tag @s add pp_alive
 
 execute at @e[type=mannequin,tag=pp_alive] if entity @a[tag=juggernaut,distance=..20] at @s run playsound block.note_block.guitar master @s ~ ~ ~ 2 0.6
-execute at @e[type=mannequin,tag=pp_alive] as @a[tag=juggernaut,distance=..20] run effect give @s glowing 1 0 true
+execute at @e[type=mannequin,tag=pp_alive] as @a[tag=juggernaut,tag=!undetectable,distance=..20] run effect give @s glowing 1 0 true
 
 execute if entity @e[type=mannequin,tag=pp_alive] run return fail
 
