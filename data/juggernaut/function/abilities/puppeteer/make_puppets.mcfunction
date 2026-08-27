@@ -1,23 +1,18 @@
 # Run as the puppeteer at the puppeteer. Scatters a crowd of identical puppets outward from the
-# caster's own feet: every puppet spawns inside the caster's hitbox and immediately runs off along
-# its own heading, while the caster is flung out along a random heading of their own. Because every
-# figure - puppets and caster alike - erupts from the same point on the same tick, there is no swap
-# for the juggernaut to watch and no way to tell which runner is the real one.
+# caster's own feet: every puppet spawns inside the caster's hitbox facing a heading of its own and
+# immediately runs off that way, while the caster is flung out along a random heading too. Because
+# every figure - puppets and caster alike - erupts from the same point on the same tick, there is no
+# swap for the juggernaut to watch and no way to tell which runner is the real one.
 scoreboard players operation #pp_link var = @s puppet_id
 
 # Clear any pre-existing puppets belonging to this owner.
 execute as @e[type=mannequin,tag=puppeteer_puppet] if score @s puppet_id = #pp_link var run kill @s
 
-# Resolve the configured puppet count, clamped to a range the heading maths can actually space out.
+# Resolve the configured puppet count, clamped to a sane number of entities to spawn at once.
 scoreboard players set #pp_count var 8
 execute if score #puppeteer_config puppet_count matches 1.. run scoreboard players operation #pp_count var = #puppeteer_config puppet_count
 execute if score #pp_count var matches ..1 run scoreboard players set #pp_count var 2
 execute if score #pp_count var matches 25.. run scoreboard players set #pp_count var 24
-
-# Space the headings evenly around the full circle, starting from the caster's own facing.
-scoreboard players set #pp_step var 360
-scoreboard players operation #pp_step var /= #pp_count var
-execute store result score #pp_yaw var run data get entity @s Rotation[0]
 
 # Captured once here so every puppet can be given the caster's skin and body size as it spawns.
 data modify storage juggernaut:puppeteer owner_uuid set from entity @s UUID
