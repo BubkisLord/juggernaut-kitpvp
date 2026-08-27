@@ -2,7 +2,7 @@ function juggernaut:ability_management/check_ability {\
     player_tag:"trickster",\
     item_model:"minecraft:amethyst_shard",\
     item_name:{"text": "Misty Step","color": "dark_aqua"},\
-    description:[[{text: "Teleport", color: "#AA00AA"}, {text: " to a random position within 8 blocks of", color:"gray"}], [{text: "the", color: "gray"}, {text: " Juggernaut", color: "#FF5555"}, {text: ". Prioritises the highest block at", color: "gray"}], [{text: "your destination. Only usable in chase.",color: "gray"}],\
+    description:[[{text: "Teleport", color: "#AA00AA"}, {text: " to a random position within 12 blocks of", color:"gray"}], [{text: "the", color: "gray"}, {text: " Juggernaut", color: "#FF5555"}, {text: ". Prioritises the highest block at", color: "gray"}], [{text: "your destination. Only usable in chase.",color: "gray"}],\
         {"text": "Cooldown: 25s","color": "dark_gray"}],\
     ability_id:"misty_step",\
     cooldown:25,\
