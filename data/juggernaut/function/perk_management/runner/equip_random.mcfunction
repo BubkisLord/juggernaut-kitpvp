@@ -1,7 +1,7 @@
 execute if score @s perks_enabled >= #juggernaut_customisation max_perks_equipped run return fail
 
 scoreboard players set #roll var 0
-execute store result score #roll var run random value 0..18
+execute store result score #roll var run random value 0..17
 
 execute if score #roll var matches 0 if entity @s[tag=using_sentinel] run function juggernaut:perk_management/runner/equip_random
 execute if score #roll var matches 0 unless entity @s[tag=using_sentinel] run function juggernaut:perk_management/runner/add_perk {perk_id:"sentinel",perk_name:"Sentinel"}
@@ -56,8 +56,5 @@ execute if score #roll var matches 16 unless entity @s[tag=using_optimised] run 
 
 execute if score #roll var matches 17 if entity @s[tag=using_any_means] run function juggernaut:perk_management/runner/equip_random
 execute if score #roll var matches 17 unless entity @s[tag=using_any_means] run function juggernaut:perk_management/runner/add_perk {perk_id:"any_means",perk_name:"Any Means Necessary"}
-
-execute if score #roll var matches 18 if entity @s[tag=using_forewarned] run function juggernaut:perk_management/runner/equip_random
-execute if score #roll var matches 18 unless entity @s[tag=using_forewarned] run function juggernaut:perk_management/runner/add_perk {perk_id:"forewarned",perk_name:"Forewarned"}
 
 execute if score @s perks_enabled < #juggernaut_customisation max_perks_equipped run function juggernaut:perk_management/runner/equip_random

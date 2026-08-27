@@ -21,7 +21,6 @@ tag @s remove using_tailgater
 tag @s remove using_overclock
 tag @s remove using_optimised
 tag @s remove using_any_means
-tag @s remove using_forewarned
 
 tag @s remove using_hunters_instinct
 tag @s remove using_adept_stalker
