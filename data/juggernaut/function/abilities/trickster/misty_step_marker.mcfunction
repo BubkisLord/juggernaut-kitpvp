@@ -1,1 +1,1 @@
-$summon marker ~ ~ ~ {Tags:["kill_on_end_game","misty_step_marker"],Rotation:[$(yaw),0]}
+$summon marker ~ ~ ~ {Tags:["kill_on_end_game","misty_step_marker"],Rotation:[$(rotation),0]}
