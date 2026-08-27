@@ -1,55 +1,54 @@
-# Run as the puppeteer at the puppeteer. Conjures a ring of six identical puppets that move
-# like the caster; the caster occupies one of the six slots so the juggernaut cannot tell which
-# figure is real. Each puppet dies to a single hit.
+# Run as the puppeteer at the puppeteer. Scatters a crowd of identical puppets outward from the
+# caster's own feet: every puppet spawns inside the caster's hitbox and immediately runs off along
+# its own heading, while the caster is flung out along a random heading of their own. Because every
+# figure - puppets and caster alike - erupts from the same point on the same tick, there is no swap
+# for the juggernaut to watch and no way to tell which runner is the real one.
 scoreboard players operation #pp_link var = @s puppet_id
 
-# Clear any pre-existing puppets/centre belonging to this owner.
+# Clear any pre-existing puppets belonging to this owner.
 execute as @e[type=mannequin,tag=puppeteer_puppet] if score @s puppet_id = #pp_link var run kill @s
-execute as @e[type=marker,tag=puppet_center] if score @s puppet_id = #pp_link var run kill @s
 
-summon marker ~ ~ ~ {Tags:["puppet_center","kill_on_end_game","pp_new_center"]}
-scoreboard players operation @n[type=marker,tag=pp_new_center] puppet_id = @s puppet_id
-data modify entity @n[type=marker,tag=pp_new_center] Rotation set from entity @s Rotation
-data modify entity @n[type=marker,tag=pp_new_center] Rotation[1] set value 0
-tag @n[type=marker,tag=pp_new_center] remove pp_new_center
+# Resolve the configured puppet count, clamped to a range the heading maths can actually space out.
+scoreboard players set #pp_count var 8
+execute if score #puppeteer_config puppet_count matches 1.. run scoreboard players operation #pp_count var = #puppeteer_config puppet_count
+execute if score #pp_count var matches ..1 run scoreboard players set #pp_count var 2
+execute if score #pp_count var matches 25.. run scoreboard players set #pp_count var 24
 
-summon mannequin ~ ~ ~ {Tags:["puppeteer_puppet","puppet_s0","kill_on_end_game","pp_new_puppet"],pose:"standing",Health:2f,attributes:[{id:"max_health",base:2}]}
-summon mannequin ~ ~ ~ {Tags:["puppeteer_puppet","puppet_s1","kill_on_end_game","pp_new_puppet"],pose:"standing",Health:2f,attributes:[{id:"max_health",base:2}]}
-summon mannequin ~ ~ ~ {Tags:["puppeteer_puppet","puppet_s2","kill_on_end_game","pp_new_puppet"],pose:"standing",Health:2f,attributes:[{id:"max_health",base:2}]}
-summon mannequin ~ ~ ~ {Tags:["puppeteer_puppet","puppet_s3","kill_on_end_game","pp_new_puppet"],pose:"standing",Health:2f,attributes:[{id:"max_health",base:2}]}
-summon mannequin ~ ~ ~ {Tags:["puppeteer_puppet","puppet_s4","kill_on_end_game","pp_new_puppet"],pose:"standing",Health:2f,attributes:[{id:"max_health",base:2}]}
-summon mannequin ~ ~ ~ {Tags:["puppeteer_puppet","puppet_s5","kill_on_end_game","pp_new_puppet"],pose:"standing",Health:2f,attributes:[{id:"max_health",base:2}]}
+# Space the headings evenly around the full circle, starting from the caster's own facing.
+scoreboard players set #pp_step var 360
+scoreboard players operation #pp_step var /= #pp_count var
+execute store result score #pp_yaw var run data get entity @s Rotation[0]
 
+# Captured once here so every puppet can be given the caster's skin and body size as it spawns.
 data modify storage juggernaut:puppeteer owner_uuid set from entity @s UUID
+execute store result storage juggernaut:puppeteer scale float 0.001 run attribute @s scale get 1000
+
+scoreboard players set #pp_i var 0
+function juggernaut:abilities/puppeteer/spawn_puppet_loop
+
+# Link, skin and size every puppet that was just created to this owner.
 scoreboard players operation @e[type=mannequin,tag=pp_new_puppet] puppet_id = @s puppet_id
-scoreboard players operation @e[type=text_display,tag=pp_new_puppet] puppet_id = @s puppet_id
 execute as @e[type=mannequin,tag=pp_new_puppet] run data modify entity @s profile.id set from storage juggernaut:puppeteer owner_uuid
+execute as @e[type=mannequin,tag=pp_new_puppet] run function juggernaut:abilities/puppeteer/update_scale with storage juggernaut:puppeteer
 
-attribute @s step_height modifier add juggernaut:puppet_owner 0.4 add_value
+# Stagger where each puppet starts in its hop cycle, otherwise the whole crowd's first jump lands on
+# the same tick and reads instantly as scripted.
+execute as @e[type=mannequin,tag=pp_new_puppet] store result score @s puppet_hop run random value -12..0
 
-# Pick which ring slot the caster fills, physically move the caster into it, then remove that puppet.
-execute store result score @s pp_slot run random value 0..5
+tag @e[type=mannequin,tag=pp_new_puppet] remove pp_new_puppet
 
-tag @s add pp_owner
-execute as @n[type=marker,tag=puppet_center] at @s if score @p[tag=pp_owner] pp_slot matches 0 run tp @p[tag=pp_owner] ^2.0 ^0 ^0.0
-execute as @n[type=marker,tag=puppet_center] at @s if score @p[tag=pp_owner] pp_slot matches 1 run tp @p[tag=pp_owner] ^1.0 ^0 ^1.732
-execute as @n[type=marker,tag=puppet_center] at @s if score @p[tag=pp_owner] pp_slot matches 2 run tp @p[tag=pp_owner] ^-1.0 ^0 ^1.732
-execute as @n[type=marker,tag=puppet_center] at @s if score @p[tag=pp_owner] pp_slot matches 3 run tp @p[tag=pp_owner] ^-2.0 ^0 ^0.0
-execute as @n[type=marker,tag=puppet_center] at @s if score @p[tag=pp_owner] pp_slot matches 4 run tp @p[tag=pp_owner] ^-1.0 ^0 ^-1.732
-execute as @n[type=marker,tag=puppet_center] at @s if score @p[tag=pp_owner] pp_slot matches 5 run tp @p[tag=pp_owner] ^1.0 ^0 ^-1.732
-tag @s remove pp_owner
-
-execute if score @s pp_slot matches 0 as @e[tag=pp_new_puppet,tag=puppet_s0] if score @s puppet_id = #pp_link var run kill @s
-execute if score @s pp_slot matches 1 as @e[tag=pp_new_puppet,tag=puppet_s1] if score @s puppet_id = #pp_link var run kill @s
-execute if score @s pp_slot matches 2 as @e[tag=pp_new_puppet,tag=puppet_s2] if score @s puppet_id = #pp_link var run kill @s
-execute if score @s pp_slot matches 3 as @e[tag=pp_new_puppet,tag=puppet_s3] if score @s puppet_id = #pp_link var run kill @s
-execute if score @s pp_slot matches 4 as @e[tag=pp_new_puppet,tag=puppet_s4] if score @s puppet_id = #pp_link var run kill @s
-execute if score @s pp_slot matches 5 as @e[tag=pp_new_puppet,tag=puppet_s5] if score @s puppet_id = #pp_link var run kill @s
-
-tag @e[tag=pp_new_puppet] remove pp_new_puppet
 tag @s add has_puppets
 scoreboard players set @s puppet_time 600
 
-# Place the ring immediately so it does not flash at the caster's feet for a tick.
-function juggernaut:abilities/puppeteer/move_puppets
+# Throw the caster clear along a heading of their own, so they leave the spawn point with the crowd
+# rather than standing still in the middle of it.
+execute store result score #pp_esc var run random value 0..359
+execute store result storage juggernaut:puppeteer yaw float 1 run scoreboard players get #pp_esc var
+tag @s remove pp_scattered
+function juggernaut:abilities/puppeteer/scatter_owner with storage juggernaut:puppeteer
+tag @s remove pp_scattered
+
+# Cover the moment of the scatter so nothing is cleanly trackable for a beat.
+particle minecraft:cloud ~ ~1 ~ 0.6 1 0.6 0.02 60 force
+particle minecraft:poof ~ ~1 ~ 0.5 0.8 0.5 0.05 40 force
 playsound minecraft:entity.evoker.cast_spell master @a[distance=..24] ~ ~ ~ 1 1.2

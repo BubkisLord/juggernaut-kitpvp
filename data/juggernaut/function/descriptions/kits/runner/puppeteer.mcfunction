@@ -8,6 +8,6 @@ item replace entity @s hotbar.8 with written_book[written_book_content={title:"P
 \
 [{"text": "Swap\n","bold": true,"color": "#a64dff"},{"text": "Active Ability\n\n","bold": true,"color": "gray","italic": true},{"text": "Instantly trade places with your mannequin.","bold": false,"color": "black"},{"text": "\nCooldown: 1s","bold": false,"color": "dark_gray"}],\
 \
-[{"text": "Make Puppets\n","bold": true,"color": "#a64dff"},{"text": "Active Ability\n\n","bold": true,"color": "gray","italic": true},{"text": "Conjure a ring of six identical puppets that move exactly as you do. You swap into one of them, so the Juggernaut cannot tell which figure is real. Each puppet dies in a single hit.","bold": false,"color": "black"},{"text": "\nCooldown: 60s","bold": false,"color": "dark_gray"}],\
+[{"text": "Make Puppets\n","bold": true,"color": "#a64dff"},{"text": "Active Ability\n\n","bold": true,"color": "gray","italic": true},{"text": "A crowd of identical puppets bursts out of you and sprints away in every direction, and you are thrown clear with them. Every figure leaves the same spot on the same tick, so there is no swap to watch. Each puppet dies in a single hit.","bold": false,"color": "black"},{"text": "\nCooldown: 60s","bold": false,"color": "dark_gray"}],\
 \
 ]}]

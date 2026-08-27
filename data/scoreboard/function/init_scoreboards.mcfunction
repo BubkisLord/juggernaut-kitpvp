@@ -237,13 +237,21 @@ scoreboard objectives add picked_kit_puppeteer dummy "Picked Puppeteer"
 scoreboard objectives add puppeteer_wins dummy "Wins with Puppeteer"
 scoreboard objectives add puppeteer_losses dummy "Losses with Puppeteer"
 
-# Puppeteer kit internals: owner linkage id, chosen ring slot, puppet lifetime timer, and the
+# Puppeteer kit internals: owner linkage id, per-puppet hop timer, puppet lifetime timer, and the
 # mannequin's tracked/baseline health (used to detect when it has taken damage).
 scoreboard objectives add puppet_id dummy
-scoreboard objectives add pp_slot dummy
+scoreboard objectives add puppet_hop dummy
 scoreboard objectives add puppet_time dummy
 scoreboard objectives add manne_hp dummy
 scoreboard objectives add manne_full dummy
+
+# How many puppets Make Puppets scatters. Change it at any time with
+#   scoreboard players set #puppeteer_config puppet_count <n>
+# Values are clamped to 2..24 when the ability fires. The add-then-default below seeds the default
+# without clobbering a value an operator has already set, so re-running this function is safe.
+scoreboard objectives add puppet_count dummy
+scoreboard players add #puppeteer_config puppet_count 0
+execute if score #puppeteer_config puppet_count matches ..0 run scoreboard players set #puppeteer_config puppet_count 8
 
 # Initialise teams
 team add blue
