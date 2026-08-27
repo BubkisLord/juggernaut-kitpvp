@@ -3,6 +3,6 @@ execute if entity @s[scores={used_totem=1..}] run data merge entity @s {Health:1
 execute if entity @s[scores={used_totem=1..}] run clear @s totem_of_undying
 execute if entity @s[scores={used_totem=1..}] run effect clear @s regeneration
 execute if entity @s[scores={used_totem=1..}] run effect clear @s absorption
-execute if entity @s[scores={used_totem=1..}] run effect give @s speed 10 1 true
+execute if entity @s[scores={used_totem=1..}] run effect give @s speed 10 2 true
 execute if entity @s[scores={used_totem=1..}] run effect give @s invisibility 10 0 true
 execute if entity @s[scores={used_totem=1..}] run tag @s remove using_second_wind
