@@ -1,10 +1,9 @@
 {
     "pack": {
-        "pack_format": 48,
+        "pack_format": 121,
         "description": "Juggernaut",
-        "min_format": 48,
-        "max_format": 48,
-        "supported_formats": [48, 81]
+        "min_format": 121,
+        "max_format": 121
     },
     "filter": {
         "block": [

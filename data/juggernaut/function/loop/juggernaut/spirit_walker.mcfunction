@@ -3,12 +3,11 @@ execute as @a[tag=spirit_walker] run function juggernaut:ability_management/chec
     item_model:"minecraft:amethyst_shard",\
     item_name:{"text":"Teleport","color":"dark_purple"},\
     description:[\
-                {"text":"Click to begin teleporting.","color":"gray"},\
-                {"text":"While teleporting, your tp position goes","color":"gray"},\
-                {"text":"further away from you.","color":"gray"},\
-                {"text":"Click again to end the teleport prematurely. ","color":"gray"},\
-                {"text":"Teleport will end at a set max distance.","color":"gray"},\
-                {"text":"You cannot teleport inside of blocks.","color":"gray"}],\
+        {"text":"Right click to begin teleporting.","color":"gray"},\
+        {"text":"The longer you wait, the farther you'll be sent.","color":"gray"},\
+        {"text":"Right click again to teleport early.","color":"gray"},\
+        {"text":"Max range: 20.4 blocks. Won't teleport into blocks.","color":"gray"}\
+    ],\
     ability_id:"phase_shift",\
     cooldown:3,\
     hotbar_slot:"hotbar.1",\

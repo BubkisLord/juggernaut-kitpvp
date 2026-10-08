@@ -1,0 +1,14 @@
+{
+    "type": "entity_properties",
+    "entity": "this",
+    "predicate": {
+        "vehicle": {
+            "nbt": {
+                "CustomName": "Dario",
+                "Tags": [
+                    "beast_tamer_mount"
+                ]
+            }
+        }
+    }
+}

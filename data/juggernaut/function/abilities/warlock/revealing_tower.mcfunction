@@ -4,7 +4,7 @@ summon armor_stand ~ ~0.5 ~ {NoGravity:true,Marker:true,Invulnerable:true,Invisi
 # Duration
 scoreboard players set @n[type=armor_stand,tag=warlock_revealing_tower] var 60
 scoreboard players set @n[type=armor_stand,tag=warlock_revealing_tower] dispel_progress 0
-scoreboard players set @n[type=armor_stand,tag=warlock_revealing_tower] total_dispelling_needed 200
+scoreboard players set @n[type=armor_stand,tag=warlock_revealing_tower] total_dispelling_needed 40
 bossbar add warlock:revealing_tower "Revealing Tower"
 bossbar set warlock:revealing_tower value 0
 bossbar set warlock:revealing_tower max 200

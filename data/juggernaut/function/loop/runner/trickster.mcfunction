@@ -14,7 +14,7 @@ function juggernaut:ability_management/check_ability {\
     player_tag:"trickster",\
     item_model:"minecraft:popped_chorus_fruit",\
     item_name:{"text": "Player Swap","color": "dark_purple"},\
-    description:[[{text: "Swap", color: "#cfc7ba"}, {text: " with a", color: "gray"}, {text: " Runner", color: "#00AAAA"}, {text: " in chase. If no", color: "gray"}, {text: " Runners", color: "#00AAAA"}, {text: " are in", color: "gray"}], [{text: "chase,", color: "gray"}, {text: " swap", color: "#cfc7ba"}, {text: " with the furthest", color: "gray"}, {text: " Runner", color: "#00AAAA"}, {text: " . If there", color: "gray"}], [{text: "are no", color: "gray"}, {text: " Runners", color: "#00AAAA"}, {text: " , you will", color: "gray"}, {text: " teleport", color: "#AA00AA"}, {text: " to the closest",color: "gray"}], [{text: "Replenishment Station", color: "#3AC23A"}, {text: " instead.", color: "gray"}],\
+    description:[[{text: "Swap", color: "#cfc7ba"}, {text: " with a", color: "gray"}, {text: " Runner", color: "#00AAAA"}, {text: " in chase. If no", color: "gray"}, {text: " Runners", color: "#00AAAA"}, {text: " are in", color: "gray"}], [{text: "chase,", color: "gray"}, {text: " swap", color: "#cfc7ba"}, {text: " with the furthest", color: "gray"}, {text: " Runner", color: "#00AAAA"}, {text: ". If there", color: "gray"}], [{text: "are no", color: "gray"}, {text: " Runners", color: "#00AAAA"}, {text: ", you will", color: "gray"}, {text: " teleport", color: "#AA00AA"}, {text: " to the closest",color: "gray"}], [{text: "Replenishment Station", color: "#3AC23A"}, {text: " instead.", color: "gray"}],\
         {"text": "Cooldown: 75s","color": "dark_gray"}\
     ],\
     ability_id:"player_swap",\

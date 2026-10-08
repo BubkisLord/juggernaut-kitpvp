@@ -18,14 +18,14 @@ execute if score #roll var matches 3 unless entity @s[tag=using_blood_pact] run 
 execute if score #roll var matches 4 if entity @s[tag=using_second_wind] run function juggernaut:perk_management/runner/equip_random
 execute if score #roll var matches 4 unless entity @s[tag=using_second_wind] run function juggernaut:perk_management/runner/add_perk {perk_id:"second_wind",perk_name:"Second Wind"}
 
-execute if score #roll var matches 5 if entity @s[tag=using_quickened_stealth] run function juggernaut:perk_management/runner/equip_random
-execute if score #roll var matches 5 unless entity @s[tag=using_quickened_stealth] run function juggernaut:perk_management/runner/add_perk {perk_id:"quickened_stealth",perk_name:"Quickened Stealth"}
+execute if score #roll var matches 5 if entity @s[tag=using_adrenaline] run function juggernaut:perk_management/runner/equip_random
+execute if score #roll var matches 5 unless entity @s[tag=using_adrenaline] run function juggernaut:perk_management/runner/add_perk {perk_id:"adrenaline",perk_name:"Adrenaline"}
 
 execute if score #roll var matches 6 if entity @s[tag=using_healthy_preparation] run function juggernaut:perk_management/runner/equip_random
 execute if score #roll var matches 6 unless entity @s[tag=using_healthy_preparation] run function juggernaut:perk_management/runner/add_perk {perk_id:"healthy_preparation",perk_name:"Healthy Preparation"}
 
-execute if score #roll var matches 7 if entity @s[tag=using_undying_ties] run function juggernaut:perk_management/runner/equip_random
-execute if score #roll var matches 7 unless entity @s[tag=using_undying_ties] run function juggernaut:perk_management/runner/add_perk {perk_id:"undying_ties",perk_name:"Undying Ties"}
+execute if score #roll var matches 7 if entity @s[tag=using_quickened_stealth] run function juggernaut:perk_management/runner/equip_random
+execute if score #roll var matches 7 unless entity @s[tag=using_quickened_stealth] run function juggernaut:perk_management/runner/add_perk {perk_id:"quickened_stealth",perk_name:"Quickened Stealth"}
 
 execute if score #roll var matches 8 if entity @s[tag=using_unwavering_strength] run function juggernaut:perk_management/runner/equip_random
 execute if score #roll var matches 8 unless entity @s[tag=using_unwavering_strength] run function juggernaut:perk_management/runner/add_perk {perk_id:"unwavering_strength",perk_name:"Unwavering Strength"}

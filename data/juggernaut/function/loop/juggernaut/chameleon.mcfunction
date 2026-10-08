@@ -41,9 +41,9 @@ execute as @e[type=text_display,tag=chameleon_health_tag] at @s run data modify 
 effect give @s resistance 1 0 true
 
 # Hide Chameleon Mainhand
-execute if items entity @s hotbar.0 copper_sword run item modify entity @s hotbar.0 {function:"set_components",components:{item_model:"copper_sword"}}
-execute if items entity @s hotbar.1 bow run item modify entity @s hotbar.1 {function:"set_components",components:{item_model:"bow"}}
-execute if entity @s[tag=shapeshifting] run item modify entity @s weapon.mainhand {function:"set_components",components:{item_model:"air"}}
+execute if items entity @s hotbar.0 copper_sword run item modify entity @s hotbar.0 {type:"set_components",components:{item_model:"copper_sword"}}
+execute if items entity @s hotbar.1 bow run item modify entity @s hotbar.1 {type:"set_components","components":{item_model:"bow"}}
+execute if entity @s[tag=shapeshifting] run item modify entity @s weapon.mainhand {type:"set_components","components":{item_model:"air"}}
 execute if entity @s[tag=shapeshifting] run attribute @s camera_distance modifier add juggernaut:chameleon_shapeshift 3 add_value
 execute if entity @s[tag=!shapeshifting] run attribute @s camera_distance modifier remove juggernaut:chameleon_shapeshift
 

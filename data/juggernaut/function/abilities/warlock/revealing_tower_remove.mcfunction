@@ -1,0 +1,1 @@
+kill @e[type=armor_stand,tag=warlock_armor_stand,tag=revealing_tower]

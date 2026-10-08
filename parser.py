@@ -1,4 +1,5 @@
 import re
+import json
 
 # edit these
 KEYWORDS = {
@@ -119,7 +120,8 @@ KEYWORDS = {
 
     # Engineer
     "Replenishment Tower": "#55FF55",
-    "Turret": "#AAAAAA",
+    "Decoy Tower": "#5f78d4",
+    "Decoy": "#5f78d4",
 
     # Dragon
     "Switch to Flight": "#7F63D9",
@@ -162,7 +164,7 @@ def _tokenize(raw_string):
     return words
 
 
-def build_components(raw_string):
+def build_components(raw_string, cooldown):
     """Returns a list of lines; each line is a list of {"text","color"} dicts.
     Wraps by word so no line's text exceeds MAX_LENGTH characters."""
     words = _tokenize(raw_string)
@@ -198,6 +200,7 @@ def build_components(raw_string):
         if cur_text:
             line_components.append({"text": cur_text, "color": cur_color})
         components.append(line_components)
+    components.append([{"text": "Cooldown: " + cooldown, "color": "dark_gray"}])
     return components
 
 
@@ -217,7 +220,58 @@ def to_snbt(lines):
     return "[" + ", ".join(line_strs) + "]"
 
 
+def _clean_snbt_input(text):
+    """Strip line-continuation backslashes, a leading 'description:' prefix,
+    and a trailing comma, so raw copy-pastes from a .mcfunction file parse.
+    Handles both multi-line pastes and single-line pastes (terminals often
+    collapse the line-continuation backslashes onto one line)."""
+    text = text.strip()
+    text = re.sub(r'\\\s*\n', '\n', text)  # backslash-newline continuations
+    text = re.sub(r'\\(?=\s)', '', text)   # bare backslash before whitespace (collapsed continuation)
+    text = re.sub(r'\\\s*$', '', text)     # trailing backslash at the very end
+    idx = text.find('[')
+    if idx > 0:
+        text = text[idx:]
+    text = text.strip()
+    if text.endswith(','):
+        text = text[:-1]
+    return text
+
+
+def unparse_snbt(snbt_text):
+    """Parse a pasted description array (quoted or unquoted keys, with or
+    without line-continuation backslashes) back into (raw_string, cooldown)."""
+    cleaned = _clean_snbt_input(snbt_text)
+    normalized = re.sub(r'(?<=[{,\s])(text|color)(?=\s*:)', r'"\1"', cleaned)
+    data = json.loads(normalized)
+
+    # normalize to a list of lines, each a list of component dicts
+    # (data may be flat: one dict per line, or nested: a list of dicts per line)
+    lines = [[c] if isinstance(c, dict) else c for c in data]
+
+    cooldown = ""
+    if lines and len(lines[-1]) == 1 and lines[-1][0]["text"].strip().lower().startswith("cooldown:"):
+        cooldown = lines[-1][0]["text"].split(":", 1)[1].strip()
+        lines = lines[:-1]
+
+    line_texts = ["".join(c["text"] for c in line) for line in lines]
+    raw_string = " ".join(t.strip() for t in line_texts)
+    raw_string = re.sub(r"\s+", " ", raw_string).strip()
+    return raw_string, cooldown
+
+
+def is_snbt(text):
+    return _clean_snbt_input(text).startswith("[")
+
+
 if __name__ == "__main__":
-    raw_string = input("String to convert: ")
-    comp = build_components(raw_string)
+    old = input("Paste old SNBT data, or type a new plain string: ").strip()
+    if is_snbt(old):
+        raw_string, cooldown = unparse_snbt(old)
+        print(f"Detected text: {raw_string}")
+        print(f"Detected cooldown: {cooldown}")
+    else:
+        raw_string = old
+        cooldown = input("Cooldown string: ")
+    comp = build_components(raw_string, cooldown)
     print(to_snbt(comp))

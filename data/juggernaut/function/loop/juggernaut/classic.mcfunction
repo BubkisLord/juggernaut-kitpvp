@@ -1,5 +1,5 @@
 function juggernaut:ability_management/check_ability {\
-    player_tag:"classic_jug",\
+    player_tag:"classic",\
     item_model:"minecraft:lightning_rod",\
     item_name:{"text": "Find Runners","color": "gray"},\
     description:[{"text": "Summons lightning down to all runner's positions.","color": "gray"},{"text": "Cooldown: 60s","color": "dark_gray"}],\

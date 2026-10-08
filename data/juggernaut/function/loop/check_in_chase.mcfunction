@@ -14,9 +14,12 @@ execute as @a[tag=juggernaut,predicate=!is_sneaking,tag=!shapeshifting] at @s an
 execute as @a[tag=juggernaut,predicate=!is_sneaking,tag=!shapeshifting] at @s anchored eyes positioned ^ ^ ^12 if entity @a[tag=runner,distance=..18,tag=!has_respawn_protection,predicate=!is_sneaking,predicate=is_sprinting] run tag @s add chase_eligible
 execute as @a[tag=juggernaut,predicate=!is_sneaking,tag=!shapeshifting] at @s anchored eyes positioned ^ ^ ^12 as @a[tag=runner,distance=..18,tag=!has_respawn_protection,predicate=!is_sneaking,predicate=is_sprinting] run tag @s add chase_eligible
 
+execute as @a[tag=juggernaut,predicate=!is_sneaking,tag=!shapeshifting] at @s anchored eyes positioned ^ ^ ^-6 if entity @a[tag=runner,distance=..12,tag=!has_respawn_protection,predicate=!is_sneaking,tag=using_tailgater] run tag @s add chase_eligible
+execute as @a[tag=juggernaut,predicate=!is_sneaking,tag=!shapeshifting] at @s anchored eyes positioned ^ ^ ^-6 as @a[tag=runner,distance=..12,tag=!has_respawn_protection,predicate=!is_sneaking,tag=using_tailgater] run tag @s add chase_eligible
+
 # If the runner is using determination, they should always be eligible for chase.
-execute as @a[tag=juggernaut,tag=!shapeshifting] at @s if entity @a[tag=runner,distance=..10,predicate=!is_sneaking,tag=using_determination] run tag @s add chase_eligible
-execute as @a[tag=juggernaut,tag=!shapeshifting] at @s as @a[tag=runner,distance=..10,predicate=!is_sneaking,tag=using_determination] run tag @s add chase_eligible
+execute as @a[tag=juggernaut,tag=!shapeshifting] at @s if entity @a[tag=runner,distance=..10,tag=!has_respawn_protection,predicate=!is_sneaking,tag=using_determination] run tag @s add chase_eligible
+execute as @a[tag=juggernaut,tag=!shapeshifting] at @s as @a[tag=runner,distance=..10,tag=!has_respawn_protection,predicate=!is_sneaking,tag=using_determination] run tag @s add chase_eligible
 
 # For each player that is eligible for chase, set 3 seconds for their chase timeout.
 execute as @a[tag=chase_eligible] run scoreboard players set @s chase_timeout 60

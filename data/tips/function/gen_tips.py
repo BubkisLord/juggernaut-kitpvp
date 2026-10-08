@@ -119,7 +119,8 @@ KEYWORDS = {
 
     # Engineer
     "Replenishment Tower": "#55FF55",
-    "Turret": "#AAAAAA",
+    "Decoy Tower": "#5f78d4",
+    "Decoy": "#5f78d4",
 
     # Dragon
     "Switch to Flight": "#7F63D9",

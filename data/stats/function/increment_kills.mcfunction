@@ -1,0 +1,2 @@
+$scoreboard players add @s $(id)_kills 1
+$data modify storage juggernaut:kits kits[{id: "$(id)"}].kills set compute default integer {type:"add",inputs:[{type:"minecraft:storage",storage:"juggernaut:kits",path:"kits[{id:'$(id)'}].kills",fallback:{type:"constant",value:0}},{type:"constant",value:1}]}

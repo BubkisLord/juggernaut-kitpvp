@@ -11,9 +11,9 @@ function juggernaut:ability_management/check_ability {\
     player_tag:"phantom",\
     item_model:"minecraft:echo_shard",\
     item_name:{"text": "Reap","color": "#5e556e"},\
-    description:[{"text": "Deal damage to a runner you are looking at,","color": "gray"},{"text": "making them glowing for 12 seconds.","color": "gray"},{"text": "Works through walls.","color": "gray"},{"text": "Cooldown: 12s","color": "dark_gray"}],\
+    description:[[{text: "Deal damage to a", color: "gray"}, {text: " Runner", color: "#00AAAA"}, {text: " you are looking at, making", color: "gray"}], [{text: "them", color: "gray"}, {text: " Glowing", color: "#EAE74F"}, {text: " for 4 seconds. Works through walls.", color: "gray"}], [{text: "Cooldown: 15s", color: "dark_gray"}]],\
     ability_id:"reap",\
-    cooldown:12,\
+    cooldown:15,\
     hotbar_slot:"hotbar.1",\
     cooldown_var:"ability_cooldown0",\
 }
@@ -22,13 +22,7 @@ function juggernaut:ability_management/check_ability {\
     player_tag:"phantom",\
     item_model:"minecraft:ender_eye",\
     item_name:{"text": "Haunt Station","color": "#5e556e"},\
-    description:[\
-        {"text": "Apparate at a replenishment station that you","color": "gray"},\
-        {"text": "are looking at. Hold out the item and look","color": "gray"},\
-        {"text": "at a replenishment station. When it is a valid","color": "gray"},\
-        {"text": "teleport it will change color.","color": "gray"},\
-        {"text": "Cooldown: 40s","color": "dark_gray"}\
-    ],\
+    description:[[{text: "Apparate at a", color: "gray"}, {text: " replenishment station", color: "#3AC23A"}, {text: " that you are", color: "gray"}], [{text: "looking at. Hold out the item and look at a", color: "gray"}], [{text: "replenishment station", color: "#3AC23A"}, {text: " . When it is a valid", color: "gray"}], [{text: "teleport", color: "#AA00AA"}, {text: " it will change color.", color: "gray"}], [{text: "Cooldown: 40s", color: "dark_gray"}]],\
     ability_id:"tp_station",\
     cooldown:40,\
     hotbar_slot:"hotbar.2",\

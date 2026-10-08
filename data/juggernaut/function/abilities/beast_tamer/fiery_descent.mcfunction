@@ -1,0 +1,1 @@
+execute on vehicle run tag @s add in_descent

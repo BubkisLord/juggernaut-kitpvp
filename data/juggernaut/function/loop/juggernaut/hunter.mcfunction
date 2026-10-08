@@ -18,7 +18,7 @@ execute unless entity @a[tag=has_hunters_mark] run function juggernaut:ability_m
     player_tag:"hunter",\
     item_model:"minecraft:target",\
     item_name:{"text": "Mark Prey","color": "dark_red"},\
-    description:[{"text": "Mark the closest runner within 12 blocks.","color": "gray"},{"text": "Marked runners will emit orange particles to you.","color": "gray"},{"text": "Cooldown: 5s","color": "dark_gray"}],\
+    description:[[{text: "Mark the closest", color: "gray"}, {text: " runner", color: "#00AAAA"}, {text: " within 12 blocks. Marked", color: "gray"}], [{text: "runners", color: "#00AAAA"}, {text: " will emit orange particles to you.", color: "gray"}], [{text: "Cooldown: 5s", color: "dark_gray"}]],\
     ability_id:"mark_prey",\
     cooldown:5,\
     hotbar_slot:"hotbar.2",\
@@ -29,7 +29,7 @@ execute if entity @a[tag=has_hunters_mark] run function juggernaut:ability_manag
     player_tag:"hunter",\
     item_model:"minecraft:vault",\
     item_name:{"text": "Pursue Prey","color": "dark_red"},\
-    description:[{"text": "Teleport to the runner that you have marked,","color": "gray"},{"text": "but takes 3 seconds to activate.","color": "gray"},{"text": "(When teleporting you will be where they were 3 seconds ago)","color": "gray"},{"text": "Removes hunter's mark from the target.","color": "gray"},{"text": "Cooldown: 35s","color": "dark_gray"}],\
+    description:[[{text: "Teleport", color: "#AA00AA"}, {text: " to the", color: "gray"}, {text: " runner", color: "#00AAAA"}, {text: " that you have marked, but", color: "gray"}], [{text: "takes 3 seconds to activate. (When", color: "gray"}, {text: " teleporting", color: "#AA00AA"}], [{text: " you will be where they were 3 seconds ago) Removes", color: "gray"}], [{text: "hunter", color: "#FF5555"}, {text: " 's mark from the target.", color: "gray"}], [{text: "Cooldown: 35s", color: "dark_gray"}]],\
     ability_id:"pursue_prey",\
     cooldown:35,\
     hotbar_slot:"hotbar.2",\

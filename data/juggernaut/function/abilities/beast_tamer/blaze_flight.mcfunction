@@ -1,1 +1,0 @@
-execute on vehicle run function juggernaut:effects/apply_effect {effect:"flight_unlocked",duration:30}

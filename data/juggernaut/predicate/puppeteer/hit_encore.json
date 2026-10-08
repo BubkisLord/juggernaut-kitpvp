@@ -1,0 +1,17 @@
+{
+    "type": "all_of",
+    "terms": [
+        {
+            "type": "damage_source_properties",
+            "predicate": {
+                "source_entity": {
+                    "entity_tags": {
+                        "any_of": [
+                            "juggernaut"
+                        ]
+                    }
+                }
+            }
+        }
+    ]
+}

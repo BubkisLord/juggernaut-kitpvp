@@ -1,6 +1,6 @@
 # Start game when ready.
 execute if score #game_state var matches 10 as @a[scores={health=0}] run function juggernaut:spectate
-execute if score #game_state var matches 10 unless entity @a[tag=!has_jug_kit,tag=!spectator,scores={health=1..}] run function juggernaut:start_game
+execute if score #game_state var matches 10 unless entity @a[tag=!has_jug_kit,tag=!spectator,scores={health=1..}] unless entity @a[tag=!has_max_perks,tag=!spectator,scores={health=1..}] run function juggernaut:start_game
 
 # Give everyone infinite saturation so they never lose hunger.
 effect give @a saturation infinite 255 true
@@ -10,22 +10,30 @@ effect give @a[tag=juggernaut] regeneration infinite 0 true
 execute as @a[tag=!lobby.player] run attribute @s knockback_resistance modifier remove lobby:knockback_resistance
 
 # Progress and clear old effects.
-execute as @a run function juggernaut:effects/check_effects {effect:"not_replenishing"}
-execute as @a run function juggernaut:effects/check_effects {effect:"undetectable"}
-execute as @a run function juggernaut:effects/check_effects {effect:"risky_business"}
-execute as @a run function juggernaut:effects/check_effects {effect:"jesting"}
-execute as @a run function juggernaut:effects/check_effects {effect:"bouncy"}
-execute as @e[tag=beast_tamer_mount] run function juggernaut:effects/check_effects {effect:"fatigued"}
-execute as @e[tag=beast_tamer_mount] run function juggernaut:effects/check_effects {effect:"pouncing"}
-execute as @e[tag=beast_tamer_mount] run function juggernaut:effects/check_effects {effect:"flight_unlocked"}
+execute as @a run function juggernaut:effects/check_effect {effect:"not_replenishing"}
+execute as @a run function juggernaut:effects/check_effect {effect:"undetectable"}
+execute as @a run function juggernaut:effects/check_effect {effect:"risky_business"}
+execute as @a run function juggernaut:effects/check_effect {effect:"jesting"}
+execute as @a run function juggernaut:effects/check_effect {effect:"bouncy"}
+execute as @a run function juggernaut:effects/check_effect {effect:"exhausted"}
+execute as @a run function juggernaut:effects/check_effect {effect:"no_ghost_particles"}
+execute as @a run function juggernaut:effects/check_effect {effect:"allow_ghost_invisibility"}
+execute as @a run function juggernaut:effects/check_effect {effect:"performing"}
+execute as @e[type=mannequin,tag=encore_mannequin] run function juggernaut:effects/check_effect {effect:"encore_timeout"}
+execute as @a[tag=beast_tamer,predicate=on_vehicle] on vehicle run function juggernaut:effects/check_effect {effect:"fatigued"}
+execute as @a[tag=beast_tamer,predicate=on_vehicle] on vehicle run function juggernaut:effects/check_effect {effect:"pouncing"}
+execute as @a[tag=beast_tamer,predicate=on_vehicle] on vehicle run function juggernaut:effects/check_effect {effect:"flight_unlocked"}
 
 execute as @a run function juggernaut:attribute_management/check {attribute_name:"movement_speed",modifier_name:"hopeful_sprint"}
+execute as @a run function juggernaut:attribute_management/check {attribute_name:"movement_speed",modifier_name:"adrenaline"}
 execute as @a run function juggernaut:attribute_management/check {attribute_name:"movement_speed",modifier_name:"rapid_brutality"}
 
 execute as @a[tag=bouncy] run attribute @s bounciness modifier add effect:bouncy 1 add_value
 execute as @a[tag=bouncy] run attribute @s safe_fall_distance modifier add effect:bouncy 999 add_value
 execute as @a[tag=!bouncy] run attribute @s bounciness modifier remove effect:bouncy
 execute as @a[tag=!bouncy] run attribute @s safe_fall_distance modifier remove effect:bouncy
+
+execute as @a[tag=using_overclock,scores={exhaustion_duration_left=1..}] run scoreboard players remove @s exhaustion_duration_left 1
 
 # Juggernaut release sequence
 scoreboard players remove @a[tag=juggernaut] juggernaut_release_timer 1

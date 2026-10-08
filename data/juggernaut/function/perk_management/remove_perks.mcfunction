@@ -7,7 +7,6 @@ tag @s remove using_no_caution
 tag @s remove using_healer
 tag @s remove using_sentinel
 tag @s remove using_quickened_stealth
-tag @s remove using_undying_ties
 tag @s remove using_unwavering_strength
 tag @s remove using_hopeful_sprint
 tag @s remove using_durable
@@ -21,6 +20,7 @@ tag @s remove using_tailgater
 tag @s remove using_overclock
 tag @s remove using_optimised
 tag @s remove using_any_means
+tag @s remove using_adrenaline
 
 tag @s remove using_hunters_instinct
 tag @s remove using_adept_stalker
@@ -39,5 +39,4 @@ tag @s remove using_fury
 tag @s remove using_oppression
 tag @s remove using_deep_cuts
 tag @s remove using_swift_destruction
-tag @s remove using_bloodlust
 tag @s remove using_silent_killer

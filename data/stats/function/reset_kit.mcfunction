@@ -1,4 +1,1 @@
-$scoreboard players set #juggernaut_manager picked_kit_$(kit) 0
-$scoreboard players set #juggernaut_manager kills_kit_$(kit) 0
-$scoreboard players set #juggernaut_manager $(kit)_wins 0
-$scoreboard players set #juggernaut_manager $(kit)_losses 0
+$data modify storage juggernaut:kits kits[$(kit)] merge value {times_picked: 0, kills: 0, wins: 0, losses: 0, win_ratio: 0}

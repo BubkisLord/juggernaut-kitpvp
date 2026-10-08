@@ -1,4 +1,3 @@
-# Will execute the ability as the player initially. To fix this it just re-executes as the wolf instead.
 execute if entity @s[type=player] on vehicle run function juggernaut:abilities/beast_tamer/dolphin_charge
 execute if entity @s[type=player] run return fail
 
@@ -8,12 +7,12 @@ playsound minecraft:entity.dolphin.play master @a ~ ~ ~ 2 0.8
 
 tag @s add pouncing
 tag @a remove pounce_hit
-execute at @s rotated as @s run summon marker ^ ^ ^2 {Tags:["pounce_target","kill_on_end_game"]}
+execute at @s rotated as @s run summon marker ^ ^ ^3 {Tags:["pounce_target","kill_on_end_game"]}
 execute store result score #px tmp run data get entity @e[tag=pounce_target,limit=1] Pos[0] 1000
 execute store result score #pz tmp run data get entity @e[tag=pounce_target,limit=1] Pos[2] 1000
 kill @e[tag=pounce_target]
 
-function juggernaut:effects/apply_effect {effect:"pouncing",duration:2}
+function juggernaut:effects/apply_effect {effect:"pouncing",duration:3}
 
 execute store result score #sx tmp run data get entity @s Pos[0] 1000
 execute store result score #sz tmp run data get entity @s Pos[2] 1000

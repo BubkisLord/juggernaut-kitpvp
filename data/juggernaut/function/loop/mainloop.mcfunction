@@ -51,7 +51,7 @@ execute as @a[tag=jester] at @s run function juggernaut:loop/runner/jester
 execute as @a[tag=puppeteer] at @s run function juggernaut:loop/runner/puppeteer
 
 # Juggernaut Kits
-execute as @a[tag=classic_jug] at @s run function juggernaut:loop/juggernaut/classic_jug
+execute as @a[tag=classic] at @s run function juggernaut:loop/juggernaut/classic
 execute as @a[tag=dragon] at @s run function juggernaut:loop/juggernaut/dragon
 execute as @a[tag=hunter] at @s run function juggernaut:loop/juggernaut/hunter
 execute as @a[tag=warlock] at @s run function juggernaut:loop/juggernaut/warlock
@@ -89,7 +89,7 @@ execute as @a[tag=undetectable] at @s run particle dust{color:[0,0,0],scale:1} ~
 execute as @a[tag=has_respawn_protection] run effect give @s weakness 1 255 true
 
 # Predatory Instincts Perk
-execute if score #game_state var matches 11 as @a[tag=juggernaut,tag=using_predatory_instincts,predicate=is_still] at @s as @a[tag=runner,tag=!undetectable,distance=..12] run effect give @s glowing 4 0 true
+execute if score #game_state var matches 11 as @a[tag=juggernaut,tag=using_predatory_instincts,predicate=is_still] at @s as @a[tag=runner,tag=!undetectable,tag=!has_respawn_protection,distance=..12] run effect give @s glowing 2 0 true
 
 # Insidious Perk
 execute as @a[tag=using_insidious,predicate=is_still] run function juggernaut:effects/apply_effect {effect:"undetectable",duration:1}
@@ -108,7 +108,10 @@ execute as @a[tag=runner,predicate=is_sneaking] at @s if score @s health < @s ma
 execute as @a[tag=using_second_wind] run function juggernaut:loop/update_second_wind
 
 # Remove hidden name tag from Runners when not by revealing tower
-execute as @a[tag=runner] at @s unless entity @e[type=armor_stand,tag=revealing_tower,distance=..16] run attribute @s name_tag_distance modifier remove juggernaut:revealing_tower
+execute as @a[tag=runner] at @s unless entity @e[type=armor_stand,tag=revealing_tower,distance=..32] run attribute @s name_tag_distance modifier remove juggernaut:revealing_tower
+
+execute as @e[type=marker,tag=performance_path] run scoreboard players add @s var 1
+execute as @e[type=marker,tag=performance_path] store result entity @s data.age int 1 run scoreboard players get @s var
 
 # Always show tips in the pregame
 execute if score #game_state var matches 12 as @a run function tips:show

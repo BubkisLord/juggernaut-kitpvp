@@ -4,7 +4,7 @@
 # player's depth ever reached the limit and the recursion ran until it hit maxCommandChainLength.
 
 # On the first frame only (no stand yet), summon the per-cast marker and zero its depth.
-$execute unless entity @e[type=armor_stand,tag=$(player_tag)_raycast] at @s run summon armor_stand ~ ~ ~ {Invisible:true,Small:true,Invulnerable:true,CustomNameVisible:false,NoGravity:true,Tags:[$(player_tag)_raycast,$(player_tag)_raycast_init,"kill_on_end_game"]}
+$execute unless entity @e[type=armor_stand,tag=$(player_tag)_raycast] at @s run summon armor_stand ~ ~ ~ {Invisible:true,Small:true,Invulnerable:true,CustomNameVisible:false,NoGravity:true,Tags:[$(player_tag)_raycast,$(player_tag)_raycast_init,"kill_on_end_game"],Marker:1b}
 $scoreboard players set @e[type=armor_stand,tag=$(player_tag)_raycast_init] current_raycast_depth 0
 $scoreboard players set @e[type=armor_stand,tag=$(player_tag)_raycast_init] raycast_depth_counter 0
 $tag @e[type=armor_stand,tag=$(player_tag)_raycast_init] remove $(player_tag)_raycast_init

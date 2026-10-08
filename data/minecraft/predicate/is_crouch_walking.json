@@ -1,13 +1,7 @@
 {
-    "condition": "all_of",
+    "type": "all_of",
     "terms": [
-        {
-            "condition": "reference",
-            "name": "is_sneaking"
-        },
-        {
-            "condition": "reference",
-            "name": "is_walking"
-        }
+        "is_sneaking",
+        "is_walking"
     ]
 }

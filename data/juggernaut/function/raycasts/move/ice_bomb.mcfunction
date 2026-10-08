@@ -1,0 +1,1 @@
+particle electric_spark ^ ^1 ^ 0.3 0.3 0.3 0 40 force @a[distance=..32]

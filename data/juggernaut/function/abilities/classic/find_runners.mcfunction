@@ -1,0 +1,1 @@
+execute as @a[tag=runner,tag=!has_respawn_protection] at @s anchored eyes positioned ~ ~5 ~ run summon lightning_bolt ~ ~ ~

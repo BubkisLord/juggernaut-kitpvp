@@ -24,7 +24,7 @@ execute unless entity @s[tag=using_horse] run function juggernaut:ability_manage
     player_tag:"knight",\
     item_model:"minecraft:saddle",\
     item_name:{"text": "Summon Steed","color": "dark_red"},\
-    description:[{"text": "Summon your steed to move at faster speeds and lance your opponents!","color": "gray"},{"text": "Cooldown: 0s","color": "dark_gray"}],\
+    description:[[{text: "Summon your steed to move at faster", color: "gray"}, {text: " speed", color: "#3D92CA"}, {text: "s and", color: "gray"}], [{text: "lance your opponents!", color: "gray"}], [{text: "Cooldown: 1s", color: "dark_gray"}]],\
     ability_id:"summon_steed",\
     cooldown:1,\
     hotbar_slot:"hotbar.2",\
@@ -35,7 +35,7 @@ execute if entity @s[tag=using_horse] run function juggernaut:ability_management
     player_tag:"knight",\
     item_model:"minecraft:leather",\
     item_name:{"text": "Dismiss Steed","color": "dark_red"},\
-    description:[{"text": "Dismiss your summoned steed and return to default movement.","color": "gray"},{"text": "Cooldown: 0s","color": "dark_gray"}],\
+    description:[{"text": "Dismiss your summoned steed and return to default movement.","color": "gray"},{"text": "Cooldown: 1s","color": "dark_gray"}],\
     ability_id:"dismiss_steed",\
     cooldown:1,\
     hotbar_slot:"hotbar.2",\

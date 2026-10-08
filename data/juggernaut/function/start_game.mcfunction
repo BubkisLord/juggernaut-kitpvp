@@ -1,29 +1,15 @@
 tellraw @a [{"text": "Juggernaut","color": "red"},{"text": " is starting!","color": "gray"}]
 
-execute as @a[tag=chameleon] run function stats:handle_kit_picked {"kit": "chameleon"}
-execute as @a[tag=dragon] run function stats:handle_kit_picked {"kit": "dragon"}
-execute as @a[tag=fishmonger] run function stats:handle_kit_picked {"kit": "fishmonger"}
-execute as @a[tag=hunter] run function stats:handle_kit_picked {"kit": "hunter"}
-execute as @a[tag=classic_jug] run function stats:handle_kit_picked {"kit": "classic_juggernaut"}
-execute as @a[tag=knight] run function stats:handle_kit_picked {"kit": "knight"}
-execute as @a[tag=predator] run function stats:handle_kit_picked {"kit": "predator"}
-execute as @a[tag=spirit_walker] run function stats:handle_kit_picked {"kit": "spirit_walker"}
-execute as @a[tag=timekeeper] run function stats:handle_kit_picked {"kit": "timekeeper"}
-execute as @a[tag=warlock] run function stats:handle_kit_picked {"kit": "warlock"}
-execute as @a[tag=witch_doctor] run function stats:handle_kit_picked {"kit": "witch_doctor"}
-execute as @a[tag=engineer] run function stats:handle_kit_picked {"kit": "engineer"}
-execute as @a[tag=escapist] run function stats:handle_kit_picked {"kit": "escapist"}
-execute as @a[tag=ghost] run function stats:handle_kit_picked {"kit": "ghost"}
-execute as @a[tag=guide] run function stats:handle_kit_picked {"kit": "guide"}
-execute as @a[tag=medic] run function stats:handle_kit_picked {"kit": "medic"}
-execute as @a[tag=rogue] run function stats:handle_kit_picked {"kit": "rogue"}
-execute as @a[tag=scout] run function stats:handle_kit_picked {"kit": "scout"}
-execute as @a[tag=survivor] run function stats:handle_kit_picked {"kit": "survivor"}
-execute as @a[tag=trickster] run function stats:handle_kit_picked {"kit": "trickster"}
-execute as @a[tag=phantom] run function stats:handle_kit_picked {"kit": "phantom"}
-execute as @a[tag=jester] run function stats:handle_kit_picked {"kit": "jester"}
-execute as @a[tag=puppeteer] run function stats:handle_kit_picked {"kit": "puppeteer"}
-execute as @a[tag=beast_tamer] run function stats:handle_kit_picked {"kit": "beast_tamer"}
+function stats:calculate_picked_kits
+
+execute if entity @a[tag=fishmonger] run weather thunder 999999999999999d
+execute if entity @a[tag=fishmonger] run summon pufferfish -32 67 -57 {Invulnerable:true,Tags:["kill_on_end_game","fishmonger_pufferfish"],CustomName:{"text":"Taffy"},CustomNameVisible:true,Team:jug,DeathLootTable:""}
+execute if entity @a[tag=fishmonger] run summon pufferfish 0 67 0 {Invulnerable:true,Tags:["kill_on_end_game","fishmonger_pufferfish"],CustomName:{"text":"Taffy"},CustomNameVisible:true,Team:jug,DeathLootTable:""}
+execute if entity @a[tag=fishmonger] run summon pufferfish -32 67 45 {Invulnerable:true,Tags:["kill_on_end_game","fishmonger_pufferfish"],CustomName:{"text":"Taffy"},CustomNameVisible:true,Team:jug,DeathLootTable:""}
+execute if entity @a[tag=fishmonger] run execute as @e[type=pufferfish,tag=fishmonger_pufferfish] run attribute @s scale base set 8
+execute if entity @a[tag=fishmonger] run execute as @e[type=pufferfish,tag=fishmonger_pufferfish] run attribute @s movement_speed base set 5
+
+execute if entity @a[tag=predator] run time set night
 
 execute as @a run attribute @s knockback_resistance modifier remove lobby:knockback_resistance
 
@@ -32,7 +18,7 @@ execute as @a[tag=using_quickened_stealth] run attribute @s sneaking_speed modif
 execute as @a[tag=using_durable] run effect give @s health_boost infinite 1 true
 execute as @a[tag=using_durable] run effect give @s regeneration 2 255 true
 
-execute as @a[tag=using_healthy_preparation] run give @s splash_potion[potion_contents={potion:"strong_healing"},max_stack_size=2] 2 
+execute as @a[tag=using_healthy_preparation] run give @s splash_potion[potion_contents={potion:"strong_healing"}]
 
 execute as @a[tag=using_fury] run attribute @s movement_speed modifier add juggernaut:fury 0.1 add_multiplied_base
 execute as @a[tag=using_adept_stalker] run attribute @s sneaking_speed modifier add juggernaut:adept_stalker 0.1 add_multiplied_base

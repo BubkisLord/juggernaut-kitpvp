@@ -26,7 +26,7 @@ tag @a remove has_jug_kit
 tag @a remove juggernaut
 tag @a remove runner
 tag @a remove spectator
-tag @a remove classic_jug
+tag @a remove classic
 tag @a remove predator
 tag @a remove witch_doctor
 tag @a remove medic
@@ -53,7 +53,6 @@ tag @a remove knight
 tag @a remove chameleon
 tag @a remove using_horse
 tag @a remove on_horse
-tag @a remove double_chase_progress
 tag @a remove spectral_cloak_active
 tag @a remove phantom
 tag @a remove pursued
@@ -63,7 +62,9 @@ tag @a remove has_mannequin
 tag @a remove has_puppets
 tag @a remove beast_tamer
 tag @e[type=armor_stand] remove haunted_station
+tag @a add lobby.new
 tag @a add lobby.player
+tag @a remove has_max_perks
 
 tag @a remove has_respawn_protection
 tag @a remove see_malevolent_aura_bar
@@ -110,7 +111,6 @@ execute as @a run function juggernaut:effects/clear_effect {effect:"risky_busine
 
 execute as @a run scoreboard players set @s chase_timeout 0
 execute as @a run tag @s remove in_chase
-execute as @a run tag @s remove undying_ties_target
 tag @e[type=armor_stand] remove highest_station
 
 team modify runner nametagVisibility always
@@ -177,7 +177,7 @@ scoreboard players set #chameleon_count var 0
 scoreboard players set #dragon_count var 0
 scoreboard players set #fishmonger_count var 0
 scoreboard players set #hunter_count var 0
-scoreboard players set #classic_juggernaut_count var 0
+scoreboard players set #classic_count var 0
 scoreboard players set #knight_count var 0
 scoreboard players set #predator_count var 0
 scoreboard players set #spirit_walker_count var 0

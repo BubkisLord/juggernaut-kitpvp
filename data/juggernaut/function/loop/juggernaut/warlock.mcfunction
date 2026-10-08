@@ -1,4 +1,3 @@
-# Warlock
 execute unless entity @e[type=armor_stand,tag=warlock_armor_stand,tag=malevolent_aura] run bossbar set warlock:malevolent_aura visible false
 execute unless entity @e[type=armor_stand,tag=warlock_armor_stand,tag=banishment_glyph] run bossbar set warlock:banishment_glyph visible false
 execute unless entity @e[type=armor_stand,tag=warlock_armor_stand,tag=withering_surge] run bossbar set warlock:withering_surge visible false
@@ -12,8 +11,8 @@ execute at @e[type=armor_stand,tag=withering_surge] run particle dripping_honey 
 
 execute at @e[type=armor_stand,tag=warlock_armor_stand] positioned ~ ~-1 ~ if entity @a[tag=runner,distance=..3] run particle end_rod ~ ~0.75 ~ 0.25 0.5 0.25 0 10 force
 
-execute as @e[type=armor_stand,tag=warlock_armor_stand,tag=warlock_revealing_tower] at @s run effect give @a[tag=runner,distance=..16,tag=!undetectable] glowing 1 0 true
-execute as @e[type=armor_stand,tag=warlock_armor_stand,tag=warlock_revealing_tower] at @s if entity @a[tag=runner,distance=..16,tag=!undetectable] run data modify entity @s CustomNameVisible set value true
+execute as @e[type=armor_stand,tag=warlock_armor_stand,tag=warlock_revealing_tower] at @s run effect give @a[tag=runner,tag=!has_respawn_protection,distance=..16,tag=!undetectable] glowing 1 0 true
+execute as @e[type=armor_stand,tag=warlock_armor_stand,tag=warlock_revealing_tower] at @s if entity @a[tag=runner,tag=!has_respawn_protection,distance=..16,tag=!undetectable] run data modify entity @s CustomNameVisible set value true
 
 #Warlock tower aura effects
 execute at @e[type=armor_stand,tag=malevolent_aura] run execute as @a[tag=juggernaut,distance=..24] run effect give @s speed 4 1 true
@@ -23,7 +22,8 @@ execute if entity @e[type=armor_stand,tag=warlock_armor_stand] run function jugg
 # Warlock motion trail
 execute unless entity @e[type=area_effect_cloud,tag=warlock_aura_manager,tag=kill_on_end_game,nbt={Age:1}] run summon area_effect_cloud ~ ~ ~ {Tags:["warlock_aura_manager","kill_on_end_game"],NoGravity:true,custom_particle:{type:dust,color:12590108,scale:0.8},Radius:0.3,Duration:20}
 
-function juggernaut:ability_management/check_ability {\
+# Malevolent Aura - place/remove pair (hotbar.1, cooldown_var0)
+execute unless entity @e[type=armor_stand,tag=warlock_armor_stand,tag=malevolent_aura] run function juggernaut:ability_management/check_ability {\
     player_tag:"warlock",\
     item_model:"minecraft:red_dye",\
     item_name:{"text": "Spawn Malevolent Aura","color": "dark_red"},\
@@ -31,15 +31,29 @@ function juggernaut:ability_management/check_ability {\
         {"text": "Summon a tower with a visible nametag.","color": "gray"},\
         {"text": "Within 24 blocks you gain Speed II.","color": "gray"},\
         {"text": "","color": "gray"},\
-        {"text": "Runners may stand near it to dispel/remove it.","color": "gray"},\
-        {"text": "Cooldown: 20s","color": "dark_gray"}],\
+        {"text": "Runners may stand near it to dispel/remove it.","color": "gray"}],\
     ability_id:"malevolent_aura",\
+    cooldown:0,\
+    hotbar_slot:"hotbar.1",\
+    cooldown_var:"ability_cooldown0",\
+}
+
+execute if entity @e[type=armor_stand,tag=warlock_armor_stand,tag=malevolent_aura] run function juggernaut:ability_management/check_ability {\
+    player_tag:"warlock",\
+    item_model:"minecraft:gray_dye",\
+    item_name:{"text": "Remove Malevolent Aura","color": "dark_red"},\
+    description:[\
+        {"text": "Remove your active Malevolent Aura tower.","color": "gray"},\
+        {"text": "","color": "gray"},\
+        {"text": "Cooldown before you can place another: 20s","color": "dark_gray"}],\
+    ability_id:"malevolent_aura_remove",\
     cooldown:20,\
     hotbar_slot:"hotbar.1",\
     cooldown_var:"ability_cooldown0",\
 }
 
-function juggernaut:ability_management/check_ability {\
+# Banishment Glyph - place/remove pair (hotbar.2, cooldown_var1)
+execute unless entity @e[type=armor_stand,tag=warlock_armor_stand,tag=banishment_glyph] run function juggernaut:ability_management/check_ability {\
     player_tag:"warlock",\
     item_model:"minecraft:cyan_dye",\
     item_name:{"text": "Spawn Banishment Glyph","color": "dark_aqua"},\
@@ -47,15 +61,29 @@ function juggernaut:ability_management/check_ability {\
         {"text": "Summon a tower with a visible nametag.","color": "gray"},\
         {"text": "Within 24 blocks replenishment stations cannot be used.","color": "gray"},\
         {"text": "","color": "gray"},\
-        {"text": "Runners may stand near it to dispel/remove it.","color": "gray"},\
-        {"text": "Cooldown: 30s","color": "dark_gray"}],\
+        {"text": "Runners may stand near it to dispel/remove it.","color": "gray"}],\
     ability_id:"banishment_glyph",\
+    cooldown:0,\
+    hotbar_slot:"hotbar.2",\
+    cooldown_var:"ability_cooldown1",\
+}
+
+execute if entity @e[type=armor_stand,tag=warlock_armor_stand,tag=banishment_glyph] run function juggernaut:ability_management/check_ability {\
+    player_tag:"warlock",\
+    item_model:"minecraft:gray_dye",\
+    item_name:{"text": "Remove Banishment Glyph","color": "dark_aqua"},\
+    description:[\
+        {"text": "Remove your active Banishment Glyph tower.","color": "gray"},\
+        {"text": "","color": "gray"},\
+        {"text": "Cooldown before you can place another: 30s","color": "dark_gray"}],\
+    ability_id:"banishment_glyph_remove",\
     cooldown:30,\
     hotbar_slot:"hotbar.2",\
     cooldown_var:"ability_cooldown1",\
 }
 
-function juggernaut:ability_management/check_ability {\
+# Withering Surge - place/remove pair (hotbar.3, cooldown_var2)
+execute unless entity @e[type=armor_stand,tag=warlock_armor_stand,tag=withering_surge] run function juggernaut:ability_management/check_ability {\
     player_tag:"warlock",\
     item_model:"minecraft:black_dye",\
     item_name:{"text": "Spawn Withering Surge","color": "dark_gray"},\
@@ -63,15 +91,29 @@ function juggernaut:ability_management/check_ability {\
         {"text": "Summon a tower with a visible nametag.","color": "gray"},\
         {"text": "Runners within 14 blocks are inflicted with Wither.","color": "gray"},\
         {"text": "","color": "gray"},\
-        {"text": "Runners may stand near it to dispel/remove it.","color": "gray"},\
-        {"text": "Cooldown: 40s","color": "dark_gray"}],\
+        {"text": "Runners may stand near it to dispel/remove it.","color": "gray"}],\
     ability_id:"withering_surge",\
+    cooldown:0,\
+    hotbar_slot:"hotbar.3",\
+    cooldown_var:"ability_cooldown2",\
+}
+
+execute if entity @e[type=armor_stand,tag=warlock_armor_stand,tag=withering_surge] run function juggernaut:ability_management/check_ability {\
+    player_tag:"warlock",\
+    item_model:"minecraft:gray_dye",\
+    item_name:{"text": "Remove Withering Surge","color": "dark_gray"},\
+    description:[\
+        {"text": "Remove your active Withering Surge tower.","color": "gray"},\
+        {"text": "","color": "gray"},\
+        {"text": "Cooldown before you can place another: 40s","color": "dark_gray"}],\
+    ability_id:"withering_surge_remove",\
     cooldown:40,\
     hotbar_slot:"hotbar.3",\
     cooldown_var:"ability_cooldown2",\
 }
 
-function juggernaut:ability_management/check_ability {\
+# Revealing Tower - place/remove pair (hotbar.4, cooldown_var3)
+execute unless entity @e[type=armor_stand,tag=warlock_armor_stand,tag=warlock_revealing_tower] run function juggernaut:ability_management/check_ability {\
     player_tag:"warlock",\
     item_model:"minecraft:yellow_dye",\
     item_name:{"text": "Spawn Revealing Tower","color": "gold"},\
@@ -80,9 +122,22 @@ function juggernaut:ability_management/check_ability {\
         {"text": "It becomes visible when a Runner is nearby.","color": "gray"},\
         {"text": "Runners within 16 blocks become Glowing.","color": "gray"},\
         {"text": "","color": "gray"},\
-        {"text": "Runners may stand near it to dispel/remove it.","color": "gray"},\
-        {"text": "Cooldown: 35s","color": "dark_gray"}],\
+        {"text": "Runners may stand near it to dispel/remove it.","color": "gray"}],\
     ability_id:"revealing_tower",\
+    cooldown:0,\
+    hotbar_slot:"hotbar.4",\
+    cooldown_var:"ability_cooldown3",\
+}
+
+execute if entity @e[type=armor_stand,tag=warlock_armor_stand,tag=warlock_revealing_tower] run function juggernaut:ability_management/check_ability {\
+    player_tag:"warlock",\
+    item_model:"minecraft:gray_dye",\
+    item_name:{"text": "Remove Revealing Tower","color": "gold"},\
+    description:[\
+        {"text": "Remove your active Revealing Tower.","color": "gray"},\
+        {"text": "","color": "gray"},\
+        {"text": "Cooldown before you can place another: 35s","color": "dark_gray"}],\
+    ability_id:"revealing_tower_remove",\
     cooldown:35,\
     hotbar_slot:"hotbar.4",\
     cooldown_var:"ability_cooldown3",\

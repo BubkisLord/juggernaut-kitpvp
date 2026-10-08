@@ -20,4 +20,5 @@ $tellraw @a[tag=runner] [{"selector":"@s"},{"text":": "},{"text": "Equipped ","c
 execute at @s run playsound block.note_block.chime ui @s ~ ~ ~ 1.2 0.8
 execute at @s run particle happy_villager ~ ~ ~ 0.3 0.5 0.3 0 100
 scoreboard players add @s perks_enabled 1
+function juggernaut:perk_management/check_ready
 clear @s #decorated_pot_sherds

@@ -13,10 +13,6 @@ execute if entity @s[tag=puppeteer] as @e[type=mannequin,tag=puppeteer_puppet] i
 execute if entity @s[tag=puppeteer] if score @s lives_remaining matches ..0 as @e[type=mannequin,tag=puppeteer_mannequin] if score @s puppet_id = #pp_link var run kill @s
 
 execute at @e[type=armor_stand,tag=arena.spawn,limit=1,sort=random] run spawnpoint @s ~ ~ ~
-execute if score @s lives_remaining matches 1.. if entity @s[tag=using_undying_ties] run tag @a remove undying_ties_target
-execute if score @s lives_remaining matches 1.. if entity @s[tag=using_undying_ties] as @r[tag=runner,scores={health=1..}] run tag @s add undying_ties_target
-execute if score @s lives_remaining matches 1.. if entity @s[tag=using_undying_ties] if entity @a[tag=undying_ties_target] at @p[tag=undying_ties_target] run spawnpoint @s ~ ~ ~
-execute if score @s lives_remaining matches 1.. if entity @s[tag=using_undying_ties] if entity @a[tag=undying_ties_target] at @p[tag=undying_ties_target] run tp @s ~ ~ ~
 execute if score @s lives_remaining matches 1.. if entity @s[tag=using_durable] run effect give @s health_boost 9999 1 true
 execute if score @s lives_remaining matches 1.. if entity @s[tag=using_durable] run effect give @s regeneration 2 255 true
 execute if score @s lives_remaining matches 1.. if entity @s[tag=runner] run effect give @s invisibility 30 0 true
@@ -25,6 +21,8 @@ execute if score @s lives_remaining matches 1.. if entity @s[tag=runner] run sco
 execute if score @s lives_remaining matches 1.. if entity @s[tag=using_teeny_weeny] run attribute @s scale modifier add teeny_weeny -0.25 add_multiplied_base
 execute if score @s lives_remaining matches 1.. if entity @s[tag=using_lightweight] run attribute @s safe_fall_distance modifier add juggernaut:lightweight 9999 add_value
 execute if score @s lives_remaining matches 1.. if entity @s[tag=using_quickened_stealth] run attribute @s sneaking_speed modifier add juggernaut:quickened_stealth_speed 1.2 add_multiplied_base
+execute if score @s lives_remaining matches 1.. if entity @s[tag=using_healthy_preparation] run clear @s splash_potion[potion_contents={potion:"strong_healing"}] 1
+execute if score @s lives_remaining matches 1.. if entity @s[tag=using_healthy_preparation] run give @s splash_potion[potion_contents={potion:"strong_healing"}] 1
 
 tag @s remove has_hunters_mark
 tag @s remove in_chase

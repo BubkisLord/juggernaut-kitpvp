@@ -1,0 +1,1 @@
+function juggernaut:effects/clear_effect {effect:"performing"}

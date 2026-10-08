@@ -1,1 +1,1 @@
-execute as @e[type=!armor_stand] at @s unless entity @s[team=jug] if block ~ ~ ~ #juggernaut:underwater_permeables run effect give @s glowing 6 0 true
+effect give @a[tag=runner,predicate=underwater,tag=!undetectable,tag=!has_respawn_protection] glowing 6 0 true

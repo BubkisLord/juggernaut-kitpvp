@@ -1,6 +1,6 @@
 function juggernaut:signs/juggernaut/beast_tamer
 function juggernaut:signs/juggernaut/chameleon
-function juggernaut:signs/juggernaut/classic_juggernaut
+function juggernaut:signs/juggernaut/classic
 function juggernaut:signs/juggernaut/dragon
 function juggernaut:signs/juggernaut/fishmonger
 function juggernaut:signs/juggernaut/hunter

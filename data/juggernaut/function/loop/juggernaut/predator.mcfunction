@@ -9,9 +9,9 @@ function juggernaut:ability_management/check_ability {\
     player_tag:"predator",\
     item_model:"minecraft:blaze_powder",\
     item_name:{"text": "Stalk","color": "#b5ee4a"},\
-    description:[{"text": "Become invisible for 30 seconds,","color": "gray"},{"text": "triggering your passive invisibility buffs.","color": "gray"},{"text": "Cooldown: 40s","color": "dark_gray"}],\
+    description:[{"text": "Become invisible for 20 seconds,","color": "gray"},{"text": "triggering your passive invisibility buffs.","color": "gray"},{"text": "Cooldown: 60s","color": "dark_gray"}],\
     ability_id:"stalk",\
-    cooldown:40,\
+    cooldown:60,\
     hotbar_slot:"hotbar.1",\
     cooldown_var:"ability_cooldown0",\
 }

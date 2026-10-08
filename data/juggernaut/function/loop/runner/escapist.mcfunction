@@ -10,7 +10,7 @@ function juggernaut:ability_management/check_ability {\
     player_tag:"escapist",\
     item_model:"minecraft:gunpowder",\
     item_name:{"text": "Flee Powder","color": "#646464"},\
-    description:[{"text": "Gain speed 2 for 8s and invisibility for 10s.","color": "gray"},{"text": "Cooldown: 60s","color": "dark_gray"}],\
+    description:[[{text: "Gain", color: "gray"}, {text: " Speed II", color: "#3D92CA"}, {text: " for 8s and", color: "gray"}, {text: " Invisibility", color: "#E0F3FF"}, {text: " for 10s.", color: "gray"}],[{text: "Cooldown: 60s", color: "dark_gray"}]],\
     ability_id:"escapist_ability",\
     cooldown:60,\
     hotbar_slot:"hotbar.0",\

@@ -21,9 +21,11 @@ kill @e[tag=mv]
 execute store result entity @s Motion[0] double 0.001 run scoreboard players get #mx tmp
 execute store result entity @s Motion[2] double 0.001 run scoreboard players get #mz tmp
 
-execute on passengers if predicate {condition:"entity_properties",entity:"this",predicate:{"type_specific/player":{input:{jump:true}}}} on vehicle if entity @s[type=goat] if entity @s[nbt={OnGround:1b}] run data modify entity @s Motion[1] set value 0.62
-execute on passengers if predicate {condition:"entity_properties",entity:"this",predicate:{"type_specific/player":{input:{jump:true}}}} on vehicle if entity @s[type=dolphin] if block ~ ~1.5 ~ #juggernaut:underwater_permeables run data modify entity @s Motion[1] set value 0.2
-execute on passengers unless predicate {condition:"entity_properties",entity:"this",predicate:{"type_specific/player":{input:{jump:true}}}} on vehicle if entity @s[type=dolphin] if block ~ ~1.5 ~ #juggernaut:underwater_permeables run data modify entity @s Motion[1] set value -0.03
-execute on passengers if predicate {condition:"entity_properties",entity:"this",predicate:{"type_specific/player":{input:{sprint:true}}}} on vehicle if entity @s[type=blaze] run data modify entity @s Motion[1] set value -1
-execute on passengers if predicate {condition:"entity_properties",entity:"this",predicate:{"type_specific/player":{input:{jump:true}}}} on vehicle if entity @s[type=blaze] if entity @s[tag=flight_unlocked] run data modify entity @s Motion[1] set value 0.2
-execute on passengers if predicate {condition:"entity_properties",entity:"this",predicate:{"type_specific/player":{input:{jump:true}}}} on vehicle if entity @s[type=blaze] unless entity @s[tag=flight_unlocked] if entity @s[nbt={OnGround:true}] run data modify entity @s Motion[1] set value 0.62
+execute on passengers if predicate {type:"entity_properties",entity:"this",predicate:{"type_specific/player":{input:{jump:true}}}} on vehicle if entity @s[type=goat] if entity @s[nbt={OnGround:1b}] run data modify entity @s Motion[1] set value 0.62
+execute on passengers if predicate {type:"entity_properties",entity:"this",predicate:{"type_specific/player":{input:{jump:true}}}} on vehicle if entity @s[type=dolphin] if block ~ ~1.5 ~ #juggernaut:underwater_permeables run data modify entity @s Motion[1] set value 0.2
+execute on passengers unless predicate {type:"entity_properties",entity:"this",predicate:{"type_specific/player":{input:{jump:true}}}} on vehicle if entity @s[type=dolphin] if block ~ ~1.5 ~ #juggernaut:underwater_permeables run data modify entity @s Motion[1] set value -0.03
+execute on passengers if predicate {type:"entity_properties",entity:"this",predicate:{"type_specific/player":{input:{sprint:true}}}} on vehicle if entity @s[type=blaze] run data modify entity @s Motion[1] set value -1
+execute on passengers if predicate {type:"entity_properties",entity:"this",predicate:{"type_specific/player":{input:{jump:true}}}} on vehicle if entity @s[type=blaze] unless entity @s[tag=in_descent] run data modify entity @s Motion[1] set value 0.2
+
+# Override the descent speed if the boris is in descent mode (from the fiery descent ability)
+execute on passengers if predicate juggernaut:beast_tamer/on_boris on vehicle if entity @s[tag=in_descent] run data modify entity @s Motion[1] set value -3

@@ -1,5 +1,4 @@
-# Run as a puppeteer who has a mannequin summoned. The mannequin passively replenishes the
-# nearest station at 60% efficiency (the puppeteer's own rate, including their perks).
+# Run as a puppeteer who has a mannequin summoned.
 execute unless score #game_state var matches 11 run return fail
 
 # Tag this owner's mannequin.

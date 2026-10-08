@@ -1,4 +1,4 @@
-execute as @a[tag=dragon] run function juggernaut:raycasts/raycast {\
+function juggernaut:raycasts/raycast {\
     player_tag:"dragon",\
     raycast_id:"dragon_breath",\
     target_tag:"runner",\

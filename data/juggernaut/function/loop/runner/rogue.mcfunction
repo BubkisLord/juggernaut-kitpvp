@@ -10,8 +10,8 @@ execute as @a[tag=rogue,predicate=!is_crouch_walking] run attribute @s movement_
 function juggernaut:ability_management/check_ability {\
     player_tag:"rogue",\
     item_model:"minecraft:firework_star",\
-    item_name:{"text": "Smoke Bomb","color": "#646464"},\
-    description:[{"text": "Create a smoke cloud that obscures vision","color": "gray"},{"text": "and become invisible for 6 seconds.","color": "gray"},{"text": "Cooldown: 60s","color": "dark_gray"}],\
+    item_name:{text: "Smoke Bomb",color: "#646464"},\
+    description:[[{text: "Create a", color: "gray"}, {text: " Smoke Bomb", color: "#646464"}, {text: " that obscures vision and", color: "gray"}], [{text: "become", color: "gray"}, {text: " Invisible", color: "#E0F3FF"}, {text: " for 6 seconds.", color: "gray"}], [{text: "Cooldown: 60s", color: "dark_gray"}]],\
     ability_id:"smoke_bomb",\
     cooldown:60,\
     hotbar_slot:"hotbar.0",\
@@ -23,7 +23,7 @@ function juggernaut:ability_management/check_ability {\
     player_tag:"rogue",\
     item_model:"minecraft:rabbit_foot",\
     item_name:{"text": "Backstep","color": "#646464"},\
-    description:[{"text": "Create a spark around you","color": "gray"},{"text": "and teleport directly behind the juggernaut.","color": "gray"},{"text": "Cooldown: 30s","color": "dark_gray"}],\
+    description:[[{text: "Create a spark around you and", color: "gray"}, {text: " teleport", color: "#AA00AA"}, {text: " directly", color: "gray"}], [{text: "behind the", color: "gray"}, {text: " Juggernaut", color: "#FF5555"}, {text: ".", color: "gray"}], [{text: "Cooldown: 30s", color: "dark_gray"}]],\
     ability_id:"backstep",\
     cooldown:30,\
     hotbar_slot:"hotbar.1",\

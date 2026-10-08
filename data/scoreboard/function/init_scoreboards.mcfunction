@@ -78,6 +78,8 @@ scoreboard objectives add healing_time_left dummy
 scoreboard objectives add healing_minutes dummy
 scoreboard objectives add healing_seconds dummy
 scoreboard objectives add undetectable_duration_left dummy
+scoreboard objectives add exhaustion_duration_left dummy
+scoreboard objectives add start_performance_tick dummy
 scoreboard objectives add ts_step dummy
 scoreboard objectives add warning_radius dummy
 scoreboard objectives add juggernaut_count dummy
@@ -147,10 +149,10 @@ scoreboard objectives add kills_kit_hunter dummy "Kills with Hunter"
 scoreboard objectives add hunter_wins dummy "Wins with Hunter"
 scoreboard objectives add hunter_losses dummy "Losses with Hunter"
 
-scoreboard objectives add picked_kit_classic_juggernaut dummy "Picked Kit - Classic Juggernaut"
-scoreboard objectives add kills_kit_classic_juggernaut dummy "Kills with Classic Juggernaut"
-scoreboard objectives add classic_juggernaut_wins dummy "Wins with Classic Juggernaut"
-scoreboard objectives add classic_juggernaut_losses dummy "Losses with Classic Juggernaut"
+scoreboard objectives add picked_kit_classic dummy "Picked Kit - Classic Juggernaut"
+scoreboard objectives add kills_kit_classic dummy "Kills with Classic Juggernaut"
+scoreboard objectives add classic_wins dummy "Wins with Classic Juggernaut"
+scoreboard objectives add classic_losses dummy "Losses with Classic Juggernaut"
 
 scoreboard objectives add picked_kit_knight dummy "Picked Kit - Knight"
 scoreboard objectives add kills_kit_knight dummy "Kills with Knight"
@@ -282,11 +284,15 @@ team modify green seeFriendlyInvisibles true
 team add jug
 team modify jug collisionRule never
 team modify jug color red
+team modify jug prefix "[JUGGERNAUT] "
+team modify jug friendlyFire false
 team modify jug nametagVisibility always
 team modify jug seeFriendlyInvisibles true
 team add runner
 team modify runner collisionRule pushOtherTeams
 team modify runner color dark_aqua
+team modify runner prefix "[RUNNER] "
+team modify runner friendlyFire false
 team modify runner nametagVisibility always
 team modify runner seeFriendlyInvisibles true
 

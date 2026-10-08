@@ -1,12 +1,10 @@
 execute unless score #game_state var matches 0 run return fail
 
-#------------------------------------- RUNNER COUNT MAXIMUM -------------------------------------------------
 scoreboard players set #juggernaut_manager runner_count 0
 execute as @a[scores={health=1..}] run scoreboard players add #juggernaut_manager runner_count 1
 scoreboard players operation #juggernaut_manager runner_count -= #juggernaut_customisation juggernaut_count
 execute if score #juggernaut_manager runner_count matches 7.. run tellraw @a [{"text": "[","bold": true,"color": "dark_gray"},{"text": "ERROR","bold": true,"color": "red"},{"text": "]","bold": true,"color": "dark_gray"},{"text": " There can only be a max of 6 runners. Allocate more juggernauts or play seperate games in seperate worlds.","color": "red"},{"text": " Click here to increase the juggernaut count to 4. (Experimental)","color": "aqua","click_event": {"action": "run_command","command": "/scoreboard players set #juggernaut_customisation juggernaut_count 4"}}]
 execute if score #juggernaut_manager runner_count matches 7.. run return fail
-#------------------------------------------------------------------------------------------------------------
 
 tag @a remove lobby.player
 execute as @a run attribute @s knockback_resistance modifier remove lobby:knockback_resistance
@@ -24,8 +22,8 @@ clear @a
 function survival:remove_chests
 
 # Teleport everyone to kit selection rooms.
-tp @a[tag=juggernaut] 2054.5 114 0.5 facing 2054.5 114 1.5
-tp @a[tag=runner] 2054.5 124 0.5 facing 2054.5 124 1.5
+tp @a[tag=juggernaut] 2000.5 117 0.5 facing 2000.5 117 1.5
+tp @a[tag=runner] 2000.5 127 0.5 facing 2000.5 127 1.5
 team join jug @a[tag=juggernaut]
 team join runner @a[tag=runner]
 

@@ -6,6 +6,7 @@ scoreboard players set #max_crate_count var 0
 scoreboard players set #end_game_timer var 15
 scoreboard players set #crate_count var 0
 
+tag @a add lobby.new
 tag @a add lobby.player
 team leave @a
 
